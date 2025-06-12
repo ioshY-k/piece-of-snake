@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb2vbijas5dr3"]
+
+[ext_resource type="Texture2D" uid="uid://dcit68wswd7o1" path="res://vector_graphic_data/test_level.svg" id="1_wy6r4"]
+[ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_6exx6"]
+
+[node name="SquareMap" type="Sprite2D"]
+texture = ExtResource("1_wy6r4")
+offset = Vector2(360, 360)
+script = ExtResource("2_6exx6")
+grid_size = 10

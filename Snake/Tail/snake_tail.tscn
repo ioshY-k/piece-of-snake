@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4ocnud8k5oe4"]
+
+[ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="1_42lf2"]
+
+[node name="Tail" type="Sprite2D"]
+texture = ExtResource("1_42lf2")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbbha5rn0kflr"]
+
+[ext_resource type="PackedScene" uid="uid://cb2vbijas5dr3" path="res://Levels/Test_level/square_map.tscn" id="1_5vf1n"]
+[ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="2_ltqjr"]
+[ext_resource type="Script" uid="uid://b1w4urh1bs5rr" path="res://Snake/Head/snake_head.gd" id="3_i31u5"]
+[ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="4_vry8d"]
+[ext_resource type="PackedScene" uid="uid://c4ocnud8k5oe4" path="res://Snake/Tail/snake_tail.tscn" id="5_ebei1"]
+[ext_resource type="Script" uid="uid://dvg2ys4h7imig" path="res://Snake/Tail/snake_tail.gd" id="6_ebei1"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="SquareMap" parent="." instance=ExtResource("1_5vf1n")]
+z_as_relative = false
+grid_size = Vector2i(10, 10)
+starting_position = Vector2(5, 5)
+
+[node name="SnakeHead" type="Sprite2D" parent="SquareMap"]
+z_index = 20
+z_as_relative = false
+position = Vector2(396, 394)
+texture = ExtResource("2_ltqjr")
+script = ExtResource("3_i31u5")
+
+[node name="SnakeBody" parent="SquareMap" instance=ExtResource("4_vry8d")]
+position = Vector2(400, 480)
+
+[node name="SnakeBody2" parent="SquareMap" instance=ExtResource("4_vry8d")]
+position = Vector2(400, 560)
+
+[node name="SnakeBody3" parent="SquareMap" instance=ExtResource("4_vry8d")]
+position = Vector2(400, 640)
+
+[node name="SnakeBody4" parent="SquareMap" instance=ExtResource("4_vry8d")]
+position = Vector2(400, 720)
+
+[node name="SnakeTail" parent="SquareMap" instance=ExtResource("5_ebei1")]
+z_index = 15
+z_as_relative = false
+position = Vector2(402, 717)
+script = ExtResource("6_ebei1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.735, 0.735)

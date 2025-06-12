@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dobkpr5ucg8no"]
+
+[ext_resource type="Texture2D" uid="uid://wjgjxbelk76i" path="res://icon.svg" id="1_4oql8"]
+[ext_resource type="Script" uid="uid://bt650ng55hf75" path="res://Snake/Body/snake_body.gd" id="2_vx0cu"]
+
+[node name="SnakeBody" type="Sprite2D"]
+z_index = 10
+z_as_relative = false
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("1_4oql8")
+script = ExtResource("2_vx0cu")
