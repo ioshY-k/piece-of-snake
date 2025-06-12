@@ -7,7 +7,6 @@ class_name Snake extends MovingSnakePart
 
 
 func _on_next_tile_reached():
-	print("next tile reached snake")
 	current_tile = next_tile
 	
 	map.place_snake_body(current_tile)
@@ -29,6 +28,7 @@ func _on_next_tile_reached():
 		current_direction = DIRECTION.LEFT
 	else:
 		next_tile = map.get_next_tile(next_tile, current_direction)
-
-	get_tree().create_tween().tween_property(self, "position", map.tile_to_position(next_tile), 0.7).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	get_tree().create_tween().tween_property(self, "rotation", get_orientation(current_direction, rotation), 0.4).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	
+	moving_tween = get_moving_tween()
+	turning_tween = get_turning_tween()
+	

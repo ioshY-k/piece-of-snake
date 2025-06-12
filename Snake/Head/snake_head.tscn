@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dadpidbo1my0e"]
+
+[ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
+[ext_resource type="Script" uid="uid://b1w4urh1bs5rr" path="res://Snake/Head/snake_head.gd" id="2_ogxry"]
+
+[node name="SnakeHead" type="Sprite2D"]
+z_index = 20
+z_as_relative = false
+texture = ExtResource("1_2n2vc")
+script = ExtResource("2_ogxry")

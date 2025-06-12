@@ -9,31 +9,27 @@ var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
 @export var starting_position: Vector2
 const TILE_SIZE = 80
 
-@onready var snake_body: SnakeBody = $SnakeBody
-@onready var snake_body_2: SnakeBody = $SnakeBody2
-@onready var snake_body_3: SnakeBody = $SnakeBody3
-@onready var snake_body_4: SnakeBody = $SnakeBody4
-
 
 enum DIRECTION {UP,RIGHT,LEFT,DOWN}
 
-var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
+var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
 var snake_path_bodyparts: Array[SnakeBody]
 
 signal initialized
 func _ready() -> void:
-	print(snake_path_bodyparts)
 	starting_position = starting_position * TILE_SIZE
-	snake_path_bodyparts = [snake_body_4, snake_body_3, snake_body_2, snake_body]
+	snake_path_bodyparts = [$SnakeBody4, $SnakeBody3, $SnakeBody2, $SnakeBody]
 	initialized.emit()
 
 
 func teleport_to_starting_position():
+	snake_head.current_tile = (starting_position / TILE_SIZE)
 	snake_head.position = starting_position
-	snake_head.current_tile = (snake_head.position / TILE_SIZE)
 	
-	snake_tail.position = get_next_tile(snake_head.current_tile, DIRECTION.DOWN) * TILE_SIZE
-	snake_tail.current_tile = (snake_tail.position / TILE_SIZE)
+	snake_tail.current_tile = (starting_position / TILE_SIZE)
+	for i in range(len(snake_path_bodyparts)+1):
+		snake_tail.current_tile = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN)
+	snake_tail.position = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * TILE_SIZE
 	
 
 func tile_to_position(tile: Vector2i) -> Vector2:
@@ -86,8 +82,6 @@ func push_snake_path_bodyparts():
 	snake_path_bodyparts.push_back(newest_snake_body)
 	
 func pop_snake_path_directions() -> int:
-	print(snake_path_directions)
 	return snake_path_directions.pop_front()
-	print(snake_path_directions)
 
 	
