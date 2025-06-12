@@ -1,0 +1,5 @@
+Z index:
+Map: 0
+BodyPart: 10
+SankeTail: 15
+SnakeHead: 20
