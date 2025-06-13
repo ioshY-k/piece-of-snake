@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcit68wswd7o1"
-path="res://.godot/imported/test_level.svg-1cd713e895b122974c235f9618490721.ctex"
+uid="uid://du6lduv6if6e8"
+path="res://.godot/imported/Fruit.svg-6a5f7dbe3433853b7e9cfe9f9f550903.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vector_graphic_data/test_level.svg"
-dest_files=["res://.godot/imported/test_level.svg-1cd713e895b122974c235f9618490721.ctex"]
+source_file="res://MapElements/FruitElements/Fruit.svg"
+dest_files=["res://.godot/imported/Fruit.svg-6a5f7dbe3433853b7e9cfe9f9f550903.ctex"]
 
 [params]
 

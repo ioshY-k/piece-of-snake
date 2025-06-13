@@ -14,7 +14,6 @@ var current_direction
 func _ready() -> void:
 	await map.initialized
 	
-	map.teleport_to_starting_position()
 	current_direction = DIRECTION.UP
 	next_tile = current_tile
 	
@@ -43,7 +42,7 @@ func get_orientation(direction: int, current_rotation: float):
 
 func get_moving_tween() -> Tween:
 	var moving_tween: Tween = create_tween()
-	moving_tween.tween_property(self, "position", map.tile_to_position(next_tile), 0.7).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	moving_tween.tween_property(self, "position", map.tile_to_position(next_tile), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	moving_tween.finished.connect(_on_next_tile_reached)
 	return moving_tween
 	

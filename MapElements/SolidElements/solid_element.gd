@@ -1,0 +1,1 @@
+class_name SolidElement extends MapElement

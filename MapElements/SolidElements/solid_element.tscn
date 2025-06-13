@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddncewppoowpx"]
+
+[ext_resource type="Script" uid="uid://dqvh87gg7wwmw" path="res://MapElements/SolidElements/solid_element.gd" id="1_wrdh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vry8d"]
+size = Vector2(2, 1.95)
+
+[node name="SolidElementArea" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_wrdh8")
+
+[node name="ElementShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vry8d")

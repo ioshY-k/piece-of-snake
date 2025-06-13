@@ -1,38 +1,169 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbbha5rn0kflr"]
+[gd_scene load_steps=7 format=3 uid="uid://bbbha5rn0kflr"]
 
 [ext_resource type="PackedScene" uid="uid://cb2vbijas5dr3" path="res://Levels/Test_level/square_map.tscn" id="1_5vf1n"]
 [ext_resource type="PackedScene" uid="uid://dadpidbo1my0e" path="res://Snake/Head/snake_head.tscn" id="2_vry8d"]
 [ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="4_vry8d"]
 [ext_resource type="PackedScene" uid="uid://c4ocnud8k5oe4" path="res://Snake/Tail/snake_tail.tscn" id="5_ebei1"]
+[ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="6_4gmer"]
 [ext_resource type="Script" uid="uid://dvg2ys4h7imig" path="res://Snake/Tail/snake_tail.gd" id="6_ebei1"]
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="SquareMap" parent="." instance=ExtResource("1_5vf1n")]
-z_as_relative = false
-grid_size = Vector2i(10, 10)
-starting_position = Vector2(5, 5)
-
-[node name="SnakeHead" parent="SquareMap" instance=ExtResource("2_vry8d")]
-position = Vector2(396, 394)
-
-[node name="SnakeBody" parent="SquareMap" instance=ExtResource("4_vry8d")]
-position = Vector2(400, 480)
-
-[node name="SnakeBody2" parent="SquareMap" instance=ExtResource("4_vry8d")]
-position = Vector2(400, 560)
-
-[node name="SnakeBody3" parent="SquareMap" instance=ExtResource("4_vry8d")]
-position = Vector2(400, 640)
-
-[node name="SnakeBody4" parent="SquareMap" instance=ExtResource("4_vry8d")]
-position = Vector2(400, 720)
-
-[node name="SnakeTail" parent="SquareMap" instance=ExtResource("5_ebei1")]
-z_index = 15
-z_as_relative = false
-position = Vector2(402, 717)
-script = ExtResource("6_ebei1")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(377, 376)
+
+[node name="Map" parent="." instance=ExtResource("1_5vf1n")]
+z_as_relative = false
+grid_size = Vector2i(10, 10)
+starting_position = Vector2(4, 5)
+
+[node name="SnakeHead" parent="Map" instance=ExtResource("2_vry8d")]
+position = Vector2(-240, 220)
+
+[node name="SnakeBody" parent="Map" instance=ExtResource("4_vry8d")]
+position = Vector2(-236, 306)
+
+[node name="SnakeBody2" parent="Map" instance=ExtResource("4_vry8d")]
+position = Vector2(-236, 386)
+
+[node name="SnakeBody3" parent="Map" instance=ExtResource("4_vry8d")]
+position = Vector2(-236, 466)
+
+[node name="SnakeBody4" parent="Map" instance=ExtResource("4_vry8d")]
+position = Vector2(-236, 546)
+
+[node name="SnakeTail" parent="Map" instance=ExtResource("5_ebei1")]
+z_index = 15
+z_as_relative = false
+position = Vector2(-234, 543)
+script = ExtResource("6_ebei1")
+
+[node name="SolidWalls" type="Node2D" parent="Map"]
+
+[node name="SolidElement" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+
+[node name="SolidElement2" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(80, 0)
+
+[node name="SolidElement3" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(160, 0)
+
+[node name="SolidElement4" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(240, 0)
+
+[node name="SolidElement5" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(320, 0)
+
+[node name="SolidElement6" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(400, 0)
+
+[node name="SolidElement7" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(480, 0)
+
+[node name="SolidElement8" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(560, 0)
+
+[node name="SolidElement9" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(640, 0)
+
+[node name="SolidElement10" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 0)
+
+[node name="SolidElement11" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 720)
+
+[node name="SolidElement12" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(80, 720)
+
+[node name="SolidElement13" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(160, 720)
+
+[node name="SolidElement14" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(240, 720)
+
+[node name="SolidElement15" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(320, 720)
+
+[node name="SolidElement16" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(400, 720)
+
+[node name="SolidElement17" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(480, 720)
+
+[node name="SolidElement18" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(560, 720)
+
+[node name="SolidElement19" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(640, 720)
+
+[node name="SolidElement20" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 720)
+
+[node name="SolidElement21" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 640)
+
+[node name="SolidElement22" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 560)
+
+[node name="SolidElement23" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 480)
+
+[node name="SolidElement24" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 400)
+
+[node name="SolidElement25" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 320)
+
+[node name="SolidElement26" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 240)
+
+[node name="SolidElement27" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 160)
+
+[node name="SolidElement28" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(0, 80)
+
+[node name="SolidElement29" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 640)
+
+[node name="SolidElement30" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 560)
+
+[node name="SolidElement31" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 480)
+
+[node name="SolidElement32" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 400)
+
+[node name="SolidElement33" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 320)
+
+[node name="SolidElement34" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 240)
+
+[node name="SolidElement35" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 160)
+
+[node name="SolidElement36" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(720, 80)
+
+[node name="SolidElement37" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(160, 400)
+
+[node name="SolidElement38" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(160, 320)
+
+[node name="SolidElement39" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(240, 320)
+
+[node name="SolidElement40" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(480, 160)
+
+[node name="SolidElement41" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(560, 160)
+
+[node name="SolidElement42" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(560, 640)
+
+[node name="SolidElement43" parent="Map/SolidWalls" instance=ExtResource("6_4gmer")]
+position = Vector2(400, 480)
