@@ -25,6 +25,11 @@ window/size/viewport_height=1080
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[global_group]
+
+"Static Solid Element"="A Solid Element that won't ever move or dissappear"
+Snake="parts of the snake that currently occupie the map"
+
 [input]
 
 move_up={

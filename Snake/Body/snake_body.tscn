@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bt650ng55hf75" path="res://Snake/Body/snake_body.gd" id="2_vx0cu"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_2xe0v"]
 
-[node name="SnakeBody" type="Sprite2D"]
+[node name="SnakeBody" type="Sprite2D" groups=["Snake"]]
 z_index = 10
 z_as_relative = false
 scale = Vector2(0.535, 0.535)

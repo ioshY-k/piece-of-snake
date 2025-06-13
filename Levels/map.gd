@@ -15,21 +15,32 @@ enum DIRECTION {UP,RIGHT,LEFT,DOWN}
 
 var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
 var snake_path_bodyparts: Array[SnakeBody]
-var shuffled_map_tiles: Array[Vector2i]
+var free_map_tiles: Array[Vector2i]
 
 signal initialized
 func _ready() -> void:
+	randomize()
 	starting_position = starting_position * TILE_SIZE
 	snake_path_bodyparts = [$SnakeBody4, $SnakeBody3, $SnakeBody2, $SnakeBody]
-	for x in len(range(grid_size.x)):
-		for y in len(range(grid_size.y)):
-			shuffled_map_tiles.append(Vector2i(x,y))
-	shuffled_map_tiles.shuffle()
 	
+	free_map_tiles = find_free_map_tiles()
 	spawn_fruit()
 	teleport_to_starting_position()
 	initialized.emit()
 
+func find_free_map_tiles() -> Array[Vector2i]:
+	var map_tiles: Array[Vector2i]
+	for x in len(range(grid_size.x)):
+		for y in len(range(grid_size.y)):
+				map_tiles.append(Vector2i(x,y))
+	var solid_element_positions = get_tree().get_nodes_in_group("Static Solid Element").map(
+	func(solid_elem): return position_to_tile(solid_elem.position))
+	
+	#subtract all elements from the map tile array, that have solid elements
+	map_tiles = map_tiles.filter(func(x): return not solid_element_positions.has(x))
+	
+	map_tiles.shuffle()
+	return map_tiles
 
 func teleport_to_starting_position():
 	snake_head.current_tile = (starting_position / TILE_SIZE)
@@ -51,12 +62,14 @@ func teleport_to_starting_position():
 func spawn_fruit():
 	var fruit: FruitElement = fruit_element_scene.instantiate()
 	add_child(fruit)
-	await get_tree().process_frame
-	shuffled_map_tiles.shuffle()
-	for tile in shuffled_map_tiles:
-		fruit.position = tile_to_position(tile)
-		if not fruit.has_overlapping_areas():
-			return
+	print("normale frees:" + str(free_map_tiles.size()))
+	var currently_free_map_tiles = free_map_tiles.duplicate()
+	print("vorher" + str(currently_free_map_tiles.size()))
+	for snake_part in get_tree().get_nodes_in_group("Snake"):
+		currently_free_map_tiles.erase(position_to_tile(snake_part.position))
+	print("nachher" + str(currently_free_map_tiles.size()))
+	
+	fruit.position = tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
 
 func tile_to_position(tile: Vector2i) -> Vector2:
 	return tile * TILE_SIZE
