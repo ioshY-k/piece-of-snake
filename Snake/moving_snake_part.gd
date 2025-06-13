@@ -42,13 +42,13 @@ func get_orientation(direction: int, current_rotation: float):
 
 func get_moving_tween() -> Tween:
 	var moving_tween: Tween = create_tween()
-	moving_tween.tween_property(self, "position", map.tile_to_position(next_tile), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	moving_tween.tween_property(self, "position", map.tile_to_position(next_tile), 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	moving_tween.finished.connect(_on_next_tile_reached)
 	return moving_tween
 	
 func get_turning_tween() -> Tween:
 	var turning_tween: Tween = create_tween()
-	turning_tween.tween_property(self, "rotation", get_orientation(current_direction, rotation), 0.4).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	turning_tween.tween_property(self, "rotation", get_orientation(current_direction, rotation), 0.2).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	return turning_tween
 
 #Should never be reached since function is overwritten in Children

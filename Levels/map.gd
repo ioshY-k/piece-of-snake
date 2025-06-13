@@ -62,14 +62,26 @@ func teleport_to_starting_position():
 func spawn_fruit():
 	var fruit: FruitElement = fruit_element_scene.instantiate()
 	add_child(fruit)
-	print("normale frees:" + str(free_map_tiles.size()))
 	var currently_free_map_tiles = free_map_tiles.duplicate()
-	print("vorher" + str(currently_free_map_tiles.size()))
+	
+	
 	for snake_part in get_tree().get_nodes_in_group("Snake"):
 		currently_free_map_tiles.erase(position_to_tile(snake_part.position))
-	print("nachher" + str(currently_free_map_tiles.size()))
-	
-	fruit.position = tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
+	currently_free_map_tiles.erase(position_to_tile(snake_head.next_tile))
+	currently_free_map_tiles.erase(position_to_tile(snake_head.current_tile))
+	print(currently_free_map_tiles.size())
+	if(currently_free_map_tiles.size() <= 30):
+		if currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y-1)):
+			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y-1))
+		if currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y+1)):
+			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y+1))
+		if currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x+1, snake_head.next_tile.y)):
+			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x+1, snake_head.next_tile.y))
+		if currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x-1, snake_head.next_tile.y)):
+			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x-1, snake_head.next_tile.y))
+	else:
+		currently_free_map_tiles.erase(Vector2i(8,8))
+		fruit.position = tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
 
 func tile_to_position(tile: Vector2i) -> Vector2:
 	return tile * TILE_SIZE
