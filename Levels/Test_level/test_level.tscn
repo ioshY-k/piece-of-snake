@@ -1,18 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbbha5rn0kflr"]
+[gd_scene load_steps=10 format=3 uid="uid://bbbha5rn0kflr"]
 
-[ext_resource type="Script" uid="uid://do0scnp22kly2" path="res://Levels/Test_level/level_manager.gd" id="1_0jnd5"]
+[ext_resource type="Script" uid="uid://do0scnp22kly2" path="res://Levels/level_manager.gd" id="1_3ipt5"]
 [ext_resource type="PackedScene" uid="uid://cb2vbijas5dr3" path="res://Levels/Test_level/square_map.tscn" id="1_5vf1n"]
 [ext_resource type="Texture2D" uid="uid://nygc5koouovv" path="res://Background.svg" id="1_dleoh"]
 [ext_resource type="PackedScene" uid="uid://dadpidbo1my0e" path="res://Snake/Head/snake_head.tscn" id="2_vry8d"]
 [ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="4_vry8d"]
 [ext_resource type="PackedScene" uid="uid://c4ocnud8k5oe4" path="res://Snake/Tail/snake_tail.tscn" id="5_ebei1"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="6_4gmer"]
-[ext_resource type="Script" uid="uid://dvg2ys4h7imig" path="res://Snake/Tail/snake_tail.gd" id="6_ebei1"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="8_0jnd5"]
 [ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="10_3ipt5"]
 
-[node name="TestLevel" type="Node2D"]
-script = ExtResource("1_0jnd5")
+[node name="Level" type="Node2D"]
+script = ExtResource("1_3ipt5")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(200, 540)
@@ -45,10 +44,7 @@ position = Vector2(-236, 466)
 position = Vector2(-236, 546)
 
 [node name="SnakeTail" parent="Map" instance=ExtResource("5_ebei1")]
-z_index = 15
-z_as_relative = false
 position = Vector2(-234, 543)
-script = ExtResource("6_ebei1")
 
 [node name="SolidElements" type="Node2D" parent="Map"]
 

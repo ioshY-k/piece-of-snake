@@ -1,7 +1,7 @@
 class_name MapElement extends Area2D
 
 @onready var element_shape: CollisionShape2D = $ElementShape
-@onready var map: Map = $"/root/TestLevel/Map"
+@onready var map: Map = $"/root/Level/Map"
 
 signal collision_with
 

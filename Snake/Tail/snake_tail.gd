@@ -1,4 +1,4 @@
-class_name Tail extends MovingSnakePart
+class_name SnakeTail extends MovingSnakePart
 
 var tiles_to_grow = 0
 

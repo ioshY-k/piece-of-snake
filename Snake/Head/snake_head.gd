@@ -1,4 +1,4 @@
-class_name Snake extends MovingSnakePart
+class_name SnakeHead extends MovingSnakePart
 
 @onready var front_collision_ray: RayCast2D = $FrontCollisionRay
 @onready var right_collision_ray: RayCast2D = $RightCollisionRay
@@ -110,11 +110,8 @@ func buffer_last_input_direction():
 func determine_frame_from_orientation(buffered_input_direction):
 	if 	buffered_input_direction == current_direction+1 or buffered_input_direction == current_direction-3:
 		frame = 2
-		print("watch right")
 	if 	buffered_input_direction == current_direction-1 or buffered_input_direction == current_direction+3:
 		frame = 1
-		print("watch left")
 	elif buffered_input_direction == current_direction or buffered_input_direction == -10:
-		print("watch straight")
 		frame = 0
 #endregion

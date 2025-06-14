@@ -5,8 +5,8 @@ var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
 
 #permanent snake parts
-@onready var snake_head: Snake = $SnakeHead
-@onready var snake_tail: Tail = $SnakeTail
+@onready var snake_head: SnakeHead = $SnakeHead
+@onready var snake_tail: SnakeTail = $SnakeTail
 
 #map data
 @export var grid_size: Vector2i
@@ -40,6 +40,7 @@ func _ready() -> void:
 	teleport_to_starting_position()
 	spawn_fruit()
 	
+	print(free_map_tiles.size())
 	initialized.emit()
 
 
@@ -105,8 +106,6 @@ func spawn_fruit():
 		var snakepartpos = snake_part.position
 		currently_free_map_tiles.erase(position_to_tile(snakepartpos))
 	currently_free_map_tiles.erase(snake_head.next_tile)
-	currently_free_map_tiles.erase(Vector2i(6,8))
-	print(currently_free_map_tiles.size())
 	#different spawn AI whe fruit count below threshhold: fruit spawn one tile away from player
 	if(currently_free_map_tiles.size() <= 25):
 		if currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y-1)):

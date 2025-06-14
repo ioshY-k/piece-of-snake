@@ -7,4 +7,3 @@
 texture = ExtResource("1_wy6r4")
 offset = Vector2(360, 360)
 script = ExtResource("2_6exx6")
-grid_size = 10
