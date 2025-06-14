@@ -1,5 +1,8 @@
 Z index:
-Map: 0
-BodyPart: 10
-SankeTail: 15
-SnakeHead: 20
+	Map: 0
+	BodyPart: 10
+	SankeTail: 15
+	SnakeHead: 20
+
+Calls by Name:
+	"SolidElement" has to be in name of a SolidElement

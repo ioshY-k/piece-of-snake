@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vry8d"]
 size = Vector2(2, 1.95)
 
-[node name="SolidElementArea" type="Area2D"]
+[node name="SolidElementArea" type="Area2D" groups=["Static Solid Element"]]
 collision_mask = 2
 script = ExtResource("1_wrdh8")
 

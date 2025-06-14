@@ -1,12 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://dadpidbo1my0e"]
+[gd_scene load_steps=6 format=3 uid="uid://dadpidbo1my0e"]
 
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
 [ext_resource type="Script" uid="uid://b1w4urh1bs5rr" path="res://Snake/Head/snake_head.gd" id="2_ogxry"]
+[ext_resource type="Texture2D" uid="uid://cqadyeqshgwet" path="res://Snake/Head/snake_head_placeholder_leftlook.svg" id="2_v1ci8"]
+[ext_resource type="Texture2D" uid="uid://dqn5ayp6ip31k" path="res://Snake/Head/snake_head_placeholder_rightlook.svg" id="3_8d6nv"]
 
-[node name="SnakeHead" type="Sprite2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_naox3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2n2vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v1ci8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8d6nv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SnakeHead" type="AnimatedSprite2D" groups=["Snake"]]
 z_index = 20
 z_as_relative = false
-texture = ExtResource("1_2n2vc")
+sprite_frames = SubResource("SpriteFrames_naox3")
+frame = 2
+frame_progress = 0.581337
 script = ExtResource("2_ogxry")
 
 [node name="FrontCollisionRay" type="RayCast2D" parent="."]

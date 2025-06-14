@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4ocnud8k5oe4"]
+[gd_scene load_steps=3 format=3 uid="uid://c4ocnud8k5oe4"]
 
 [ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="1_42lf2"]
 
-[node name="Tail" type="Sprite2D"]
-texture = ExtResource("1_42lf2")
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp2ak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_42lf2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tail" type="AnimatedSprite2D" groups=["Snake"]]
+sprite_frames = SubResource("SpriteFrames_pp2ak")

@@ -6,31 +6,31 @@ class_name Snake extends MovingSnakePart
 
 
 var colliding_element: MapElement
+var buffered_input_direction: int
 
-
+func _process(delta: float) -> void:
+	buffer_last_input_direction()
 
 
 func _on_next_tile_reached():
 	current_tile = next_tile
 	
-	map.place_snake_body(current_tile)
-	map.push_snake_path_directions(current_direction)
-	map.push_snake_path_bodyparts()
+	map.push_snake_directions(current_direction)
 	
 	
-	if Input.is_action_pressed("move_up") and current_direction != DIRECTION.DOWN:
+	if (Input.is_action_pressed("move_up") or buffered_input_direction == DIRECTION.UP) and current_direction != DIRECTION.DOWN:
 		next_tile = map.get_next_tile(next_tile, DIRECTION.UP)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.UP)
 		current_direction = DIRECTION.UP
-	elif Input.is_action_pressed("move_right") and current_direction != DIRECTION.LEFT:
+	elif (Input.is_action_pressed("move_right") or buffered_input_direction == DIRECTION.RIGHT) and current_direction != DIRECTION.LEFT:
 		next_tile = map.get_next_tile(next_tile, DIRECTION.RIGHT)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.RIGHT)
 		current_direction = DIRECTION.RIGHT
-	elif Input.is_action_pressed("move_down") and current_direction != DIRECTION.UP:
+	elif (Input.is_action_pressed("move_down") or buffered_input_direction == DIRECTION.DOWN) and current_direction != DIRECTION.UP:
 		next_tile = map.get_next_tile(next_tile, DIRECTION.DOWN)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.DOWN)
 		current_direction = DIRECTION.DOWN
-	elif Input.is_action_pressed("move_left") and current_direction != DIRECTION.RIGHT:
+	elif (Input.is_action_pressed("move_left") or buffered_input_direction == DIRECTION.LEFT) and current_direction != DIRECTION.RIGHT:
 		next_tile = map.get_next_tile(next_tile, DIRECTION.LEFT)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.LEFT)
 		current_direction = DIRECTION.LEFT
@@ -38,20 +38,23 @@ func _on_next_tile_reached():
 		next_tile = map.get_next_tile(next_tile, current_direction)
 		colliding_element = check_upcoming_collision(current_direction, current_direction)
 	
+	map.push_snake_bodyparts(current_tile, current_direction)
+		
+	#unreachable value
+	buffered_input_direction = -10
+	
 	if colliding_element == null:
 		moving_tween = get_moving_tween()
-		turning_tween = get_turning_tween()
+		turning_tween = get_turning_tween(current_direction)
 		return
 	if colliding_element.collision_layer == 1:#Solid
 		get_tree().reload_current_scene()
 		return
 	if colliding_element.collision_layer == 2:#Fruit
 		colliding_element.collision_with.emit()
-		
-		
-	
+
 	moving_tween = get_moving_tween()
-	turning_tween = get_turning_tween()
+	turning_tween = get_turning_tween(current_direction)
 	
 func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 	match current_dir:
@@ -89,4 +92,29 @@ func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 					return front_collision_ray.get_collider()
 	print_debug("no direction found")
 	return null
-			
+
+#region helper functions
+func buffer_last_input_direction():
+	var current_input_direction = buffered_input_direction
+	if Input.is_action_just_pressed("move_up"):
+		buffered_input_direction = DIRECTION.UP
+	if Input.is_action_just_pressed("move_right"):
+		buffered_input_direction = DIRECTION.RIGHT
+	if Input.is_action_just_pressed("move_down"):
+		buffered_input_direction = DIRECTION.DOWN
+	if Input.is_action_just_pressed("move_left"):
+		buffered_input_direction = DIRECTION.LEFT
+	if current_input_direction != buffered_input_direction or buffered_input_direction == -10:
+		determine_frame_from_orientation(buffered_input_direction)
+
+func determine_frame_from_orientation(buffered_input_direction):
+	if 	buffered_input_direction == current_direction+1 or buffered_input_direction == current_direction-3:
+		frame = 2
+		print("watch right")
+	if 	buffered_input_direction == current_direction-1 or buffered_input_direction == current_direction+3:
+		frame = 1
+		print("watch left")
+	elif buffered_input_direction == current_direction or buffered_input_direction == -10:
+		print("watch straight")
+		frame = 0
+#endregion

@@ -1,13 +1,16 @@
-class_name MovingSnakePart extends Sprite2D
+class_name MovingSnakePart extends AnimatedSprite2D
 
 var moving_tween: Tween
 var turning_tween: Tween
 
 var current_tile: Vector2i
 var next_tile: Vector2i
-enum DIRECTION {UP,RIGHT,LEFT,DOWN}
+enum DIRECTION {UP,RIGHT,DOWN,LEFT}
 var current_direction
 
+var snake_speed: float = 0.38
+
+var you_win: bool = false
 
 @onready var map: Map = get_parent()
 
@@ -19,7 +22,7 @@ func _ready() -> void:
 	
 	
 	moving_tween = get_moving_tween()
-	turning_tween = get_turning_tween()
+	turning_tween = get_turning_tween(current_direction)
 	
 
 
@@ -42,13 +45,14 @@ func get_orientation(direction: int, current_rotation: float):
 
 func get_moving_tween() -> Tween:
 	var moving_tween: Tween = create_tween()
-	moving_tween.tween_property(self, "position", map.tile_to_position(next_tile), 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	moving_tween.finished.connect(_on_next_tile_reached)
+	moving_tween.tween_property(self, "position", map.tile_to_position(next_tile), snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if not you_win:
+		moving_tween.finished.connect(_on_next_tile_reached)
 	return moving_tween
 	
-func get_turning_tween() -> Tween:
+func get_turning_tween(direction: int) -> Tween:
 	var turning_tween: Tween = create_tween()
-	turning_tween.tween_property(self, "rotation", get_orientation(current_direction, rotation), 0.2).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	turning_tween.tween_property(self, "rotation", get_orientation(direction, rotation), 0.2).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	return turning_tween
 
 #Should never be reached since function is overwritten in Children
