@@ -1,0 +1,384 @@
+[gd_scene load_steps=7 format=3 uid="uid://dva5l68ugs40e"]
+
+[ext_resource type="Texture2D" uid="uid://crlbunc4a8gob" path="res://Levels/Map2/test_level_2.png" id="1_sxtxq"]
+[ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_dpaee"]
+[ext_resource type="PackedScene" uid="uid://dadpidbo1my0e" path="res://Snake/Head/snake_head.tscn" id="3_qkr1o"]
+[ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="4_gplah"]
+[ext_resource type="PackedScene" uid="uid://c4ocnud8k5oe4" path="res://Snake/Tail/snake_tail.tscn" id="5_n4udr"]
+[ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="6_0lho0"]
+
+[node name="Map" type="Sprite2D"]
+position = Vector2(340, -40)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("1_sxtxq")
+offset = Vector2(760, 760)
+script = ExtResource("2_dpaee")
+grid_size = Vector2i(20, 20)
+starting_position = Vector2(10, 12)
+
+[node name="SnakeHead" parent="." instance=ExtResource("3_qkr1o")]
+
+[node name="SnakeBody" parent="." instance=ExtResource("4_gplah")]
+
+[node name="SnakeBody2" parent="." instance=ExtResource("4_gplah")]
+
+[node name="SnakeBody3" parent="." instance=ExtResource("4_gplah")]
+
+[node name="SnakeBody4" parent="." instance=ExtResource("4_gplah")]
+
+[node name="SnakeTail" parent="." instance=ExtResource("5_n4udr")]
+
+[node name="SolidElements" type="Node2D" parent="."]
+
+[node name="SolidElementArea" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 480)
+
+[node name="SolidElementArea2" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 480)
+
+[node name="SolidElementArea3" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 560)
+
+[node name="SolidElementArea4" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 560)
+
+[node name="SolidElementArea5" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 640)
+
+[node name="SolidElementArea6" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(80, 720)
+
+[node name="SolidElementArea7" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 720)
+
+[node name="SolidElementArea8" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 800)
+
+[node name="SolidElementArea9" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(80, 800)
+
+[node name="SolidElementArea10" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 640)
+
+[node name="SolidElementArea11" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 560)
+
+[node name="SolidElementArea12" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 480)
+
+[node name="SolidElementArea13" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 400)
+
+[node name="SolidElementArea14" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 320)
+
+[node name="SolidElementArea15" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 240)
+
+[node name="SolidElementArea16" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 160)
+
+[node name="SolidElementArea17" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 80)
+
+[node name="SolidElementArea18" parent="SolidElements" instance=ExtResource("6_0lho0")]
+
+[node name="SolidElementArea25" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 1280)
+
+[node name="SolidElementArea26" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 1360)
+
+[node name="SolidElementArea27" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 1440)
+
+[node name="SolidElementArea28" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 1520)
+
+[node name="SolidElementArea29" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(80, 1520)
+
+[node name="SolidElementArea30" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(160, 1520)
+
+[node name="SolidElementArea20" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 1200)
+
+[node name="SolidElementArea21" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 1120)
+
+[node name="SolidElementArea22" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 1040)
+
+[node name="SolidElementArea23" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 960)
+
+[node name="SolidElementArea24" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(0, 880)
+
+[node name="SolidElementArea31" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(240, 1520)
+
+[node name="SolidElementArea32" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(320, 1520)
+
+[node name="SolidElementArea33" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 1520)
+
+[node name="SolidElementArea34" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 1520)
+
+[node name="SolidElementArea35" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(560, 1520)
+
+[node name="SolidElementArea36" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(640, 1520)
+
+[node name="SolidElementArea37" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(720, 1520)
+
+[node name="SolidElementArea38" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(800, 1520)
+
+[node name="SolidElementArea39" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(880, 1520)
+
+[node name="SolidElementArea40" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(960, 1520)
+
+[node name="SolidElementArea41" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1040, 1520)
+
+[node name="SolidElementArea42" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1120, 1520)
+
+[node name="SolidElementArea43" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1200, 1520)
+
+[node name="SolidElementArea44" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1280, 1520)
+
+[node name="SolidElementArea45" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1360, 1520)
+
+[node name="SolidElementArea46" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1360, 1040)
+
+[node name="SolidElementArea47" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1440, 1040)
+
+[node name="SolidElementArea48" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 1040)
+
+[node name="SolidElementArea49" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1120, 1040)
+
+[node name="SolidElementArea50" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1200, 1040)
+
+[node name="SolidElementArea51" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1280, 1040)
+
+[node name="SolidElementArea52" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 1040)
+
+[node name="SolidElementArea53" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(560, 1040)
+
+[node name="SolidElementArea54" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(640, 1040)
+
+[node name="SolidElementArea55" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(240, 1040)
+
+[node name="SolidElementArea56" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(320, 1040)
+
+[node name="SolidElementArea118" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1519.31, 636.364)
+
+[node name="SolidElementArea119" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1039.31, 1036.36)
+
+[node name="SolidElementArea57" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 1040)
+
+[node name="SolidElementArea58" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 1280)
+
+[node name="SolidElementArea59" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 1280)
+
+[node name="SolidElementArea60" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 1360)
+
+[node name="SolidElementArea61" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 1360)
+
+[node name="SolidElementArea62" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1200, 1280)
+
+[node name="SolidElementArea63" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1280, 1280)
+
+[node name="SolidElementArea64" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1280, 1360)
+
+[node name="SolidElementArea65" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1200, 1360)
+
+[node name="SolidElementArea66" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(720, 0)
+
+[node name="SolidElementArea67" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(800, 0)
+
+[node name="SolidElementArea68" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(800, 80)
+
+[node name="SolidElementArea69" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(720, 80)
+
+[node name="SolidElementArea70" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1440, 720)
+
+[node name="SolidElementArea71" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 720)
+
+[node name="SolidElementArea72" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 800)
+
+[node name="SolidElementArea73" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1440, 800)
+
+[node name="SolidElementArea74" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(800, 1440)
+
+[node name="SolidElementArea75" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(720, 1440)
+
+[node name="SolidElementArea76" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(160, 0)
+
+[node name="SolidElementArea77" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(80, 0)
+
+[node name="SolidElementArea78" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(320, 0)
+
+[node name="SolidElementArea79" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(240, 0)
+
+[node name="SolidElementArea80" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 0)
+
+[node name="SolidElementArea81" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 0)
+
+[node name="SolidElementArea82" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(640, 0)
+
+[node name="SolidElementArea83" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(560, 0)
+
+[node name="SolidElementArea84" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(960, 0)
+
+[node name="SolidElementArea85" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(880, 0)
+
+[node name="SolidElementArea86" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1120, 0)
+
+[node name="SolidElementArea87" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1040, 0)
+
+[node name="SolidElementArea88" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1280, 0)
+
+[node name="SolidElementArea89" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1200, 0)
+
+[node name="SolidElementArea90" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1440, 0)
+
+[node name="SolidElementArea92" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 0)
+
+[node name="SolidElementArea93" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 80)
+
+[node name="SolidElementArea94" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 160)
+
+[node name="SolidElementArea95" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 240)
+
+[node name="SolidElementArea96" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 320)
+
+[node name="SolidElementArea97" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 400)
+
+[node name="SolidElementArea98" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 480)
+
+[node name="SolidElementArea99" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 560)
+
+[node name="SolidElementArea100" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 560)
+
+[node name="SolidElementArea91" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1360, 0)
+
+[node name="SolidElementArea101" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 880)
+
+[node name="SolidElementArea102" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 960)
+
+[node name="SolidElementArea103" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 1120)
+
+[node name="SolidElementArea104" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 1200)
+
+[node name="SolidElementArea105" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 1280)
+
+[node name="SolidElementArea106" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 1360)
+
+[node name="SolidElementArea107" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 1440)
+
+[node name="SolidElementArea108" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1520, 1520)
+
+[node name="SolidElementArea109" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1440, 1520)
+
+[node name="SolidElementArea110" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(1200, 1440)
+
+[node name="SolidElementArea111" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 1440)
+
+[node name="SolidElementArea112" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(240, 240)
+
+[node name="SolidElementArea113" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(320, 240)
+
+[node name="SolidElementArea114" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(400, 240)
+
+[node name="SolidElementArea115" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(480, 240)
+
+[node name="SolidElementArea116" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(560, 240)
+
+[node name="SolidElementArea117" parent="SolidElements" instance=ExtResource("6_0lho0")]
+position = Vector2(640, 240)

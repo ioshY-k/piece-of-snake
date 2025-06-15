@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgp8h4pee15v4"]
+
+[ext_resource type="Script" uid="uid://cth0nydpljyal" path="res://SceneManager/run_manager.gd" id="1_ondx6"]
+
+[node name="RunManager" type="Node"]
+script = ExtResource("1_ondx6")
+
+[node name="RetryButton" type="Button" parent="."]
+custom_minimum_size = Vector2(500, 500)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 161
+text = "Retry"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

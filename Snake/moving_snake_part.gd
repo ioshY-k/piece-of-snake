@@ -3,14 +3,14 @@ class_name MovingSnakePart extends AnimatedSprite2D
 var moving_tween: Tween
 var turning_tween: Tween
 
+
 var current_tile: Vector2i
 var next_tile: Vector2i
 enum DIRECTION {UP,RIGHT,DOWN,LEFT}
 var current_direction
 
-var snake_speed: float = 0.38
+var snake_speed: float = GameConsts.NORMAL_SPEED
 
-var you_win: bool = false
 
 @onready var map: Map = get_parent()
 
@@ -24,6 +24,12 @@ func _ready() -> void:
 	moving_tween = get_moving_tween()
 	turning_tween = get_turning_tween(current_direction)
 	
+	
+func decide_speed_boost():
+	if Input.is_action_pressed("speed_boost"):
+		snake_speed = GameConsts.SPEED_BOOST_SPEED
+	else:
+		snake_speed = GameConsts.NORMAL_SPEED
 
 
 func get_orientation(direction: int, current_rotation: float):
@@ -46,8 +52,7 @@ func get_orientation(direction: int, current_rotation: float):
 func get_moving_tween() -> Tween:
 	var moving_tween: Tween = create_tween()
 	moving_tween.tween_property(self, "position", map.tile_to_position(next_tile), snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	if not you_win:
-		moving_tween.finished.connect(_on_next_tile_reached)
+	moving_tween.finished.connect(_on_next_tile_reached)
 	return moving_tween
 	
 func get_turning_tween(direction: int) -> Tween:

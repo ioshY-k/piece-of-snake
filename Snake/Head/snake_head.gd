@@ -4,6 +4,7 @@ class_name SnakeHead extends MovingSnakePart
 @onready var right_collision_ray: RayCast2D = $RightCollisionRay
 @onready var left_collision_ray: RayCast2D = $LeftCollisionRay
 
+signal got_hit
 
 var colliding_element: MapElement
 var buffered_input_direction: int
@@ -13,6 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_next_tile_reached():
+	
 	current_tile = next_tile
 	
 	map.push_snake_directions(current_direction)
@@ -44,13 +46,10 @@ func _on_next_tile_reached():
 	buffered_input_direction = -10
 	
 	if colliding_element == null:
-		moving_tween = get_moving_tween()
-		turning_tween = get_turning_tween(current_direction)
-		return
-	if colliding_element.collision_layer == 1:#Solid
-		get_tree().reload_current_scene()
-		return
-	if colliding_element.collision_layer == 2:#Fruit
+		pass
+	elif colliding_element.collision_layer == 1:#Solid
+		got_hit.emit()
+	elif colliding_element.collision_layer == 2:#Fruit
 		colliding_element.collision_with.emit()
 
 	moving_tween = get_moving_tween()
@@ -92,6 +91,9 @@ func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 					return front_collision_ray.get_collider()
 	print_debug("no direction found")
 	return null
+
+
+
 
 #region helper functions
 func buffer_last_input_direction():

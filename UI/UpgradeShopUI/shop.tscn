@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://l38062djgpxk"]
+
+[ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_oy471")
+
+[node name="Upgrade" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 260.0
+offset_right = 662.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 86
+text = "Upgrade A"
+
+[node name="Upgrade2" type="Button" parent="."]
+offset_left = 780.0
+offset_top = 680.0
+offset_right = 1222.0
+offset_bottom = 806.0
+theme_override_font_sizes/font_size = 86
+text = "Upgrade B"
+
+[node name="Upgrade3" type="Button" parent="."]
+offset_left = 980.0
+offset_top = 180.0
+offset_right = 1422.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 86
+text = "Upgrade C"
+
+[node name="FruitOverloadInfo" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 422.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 51
+text = "Fruit Overload: "
+
+[connection signal="pressed" from="Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="Upgrade2" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="Upgrade3" to="." method="_on_upgrade_pressed"]

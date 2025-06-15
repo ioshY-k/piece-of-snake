@@ -11,7 +11,6 @@ var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.ts
 #map data
 @export var grid_size: Vector2i
 @export var starting_position: Vector2
-const TILE_SIZE = 80
 
 
 #arrays containing Snake data for the tail to follow
@@ -32,7 +31,7 @@ func _ready() -> void:
 	randomize()
 	
 	#set up attributes
-	starting_position = starting_position * TILE_SIZE
+	starting_position = starting_position * GameConsts.TILE_SIZE
 	snake_path_bodyparts = [$SnakeBody4, $SnakeBody3, $SnakeBody2, $SnakeBody]
 	free_map_tiles = find_free_map_tiles()
 	
@@ -66,20 +65,20 @@ func find_free_map_tiles() -> Array[Vector2i]:
 #find starting positions for snake head, body and tail
 func teleport_to_starting_position():
 	#place snake head
-	snake_head.current_tile = (starting_position / TILE_SIZE)
+	snake_head.current_tile = (starting_position / GameConsts.TILE_SIZE)
 	snake_head.position = starting_position
 	
 	#place body parts below snake head
 	var snake_body_num = 4
 	for bodypart in snake_path_bodyparts:
-		bodypart.position = starting_position + Vector2(0, TILE_SIZE * snake_body_num) 
+		bodypart.position = starting_position + Vector2(0, GameConsts.TILE_SIZE * snake_body_num) 
 		snake_body_num -= 1
 	
 	#place snake tail as far below head ass body parts exist
 	snake_tail.current_tile = snake_head.current_tile
 	for i in range(len(snake_path_bodyparts)):
 		snake_tail.current_tile = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN)
-	snake_tail.position = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * TILE_SIZE
+	snake_tail.position = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * GameConsts.TILE_SIZE
 
 
 #connected to signal collision_with in map_element.gd emitted in snake_head.gd when head collides with a head element
@@ -132,7 +131,7 @@ func push_snake_directions(direction :int):
 func push_snake_bodyparts(tile: Vector2i, direction: int):
 	var newest_snake_body: SnakeBody = snake_body_scene.instantiate()
 	add_child(newest_snake_body)
-	newest_snake_body.position = tile * TILE_SIZE
+	newest_snake_body.position = tile * GameConsts.TILE_SIZE
 	newest_snake_body.find_correct_rotation(snake_path_directions[-1], direction)
 	snake_path_bodyparts.push_back(newest_snake_body)
 
@@ -156,11 +155,11 @@ func take_away_solidElement(obj: Node):
 #region helper functions
 #converts a tile vector to it's actual position
 func tile_to_position(tile: Vector2i) -> Vector2:
-	return tile * TILE_SIZE
+	return tile * GameConsts.TILE_SIZE
 
 #converts a position to its tile vector
 func position_to_tile(pos: Vector2) -> Vector2i:
-	var tileval = round(pos / TILE_SIZE)
+	var tileval = round(pos / GameConsts.TILE_SIZE)
 	return tileval
 		
 #calculates the tile vector to the left/right/top/bottom of a fiven field

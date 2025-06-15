@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc4sb6dmfgooa"]
+
+[ext_resource type="Script" uid="uid://chu777nlkdcqu" path="res://UI/LevelUI/speed_boost_bar.gd" id="1_510ua"]
+[ext_resource type="Texture2D" uid="uid://clb534tcycuf2" path="res://UI/LevelUI/SpeedMeterActive.svg" id="1_v7x50"]
+[ext_resource type="Texture2D" uid="uid://d21dxx1nooh7n" path="res://UI/LevelUI/SpeedMeterInactive.svg" id="2_510ua"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5xqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v7x50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_510ua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpeedBoostBar" type="ProgressBar"]
+modulate = Color(0.388, 0.6984, 0.97, 1)
+z_index = 1
+custom_minimum_size = Vector2(572.365, 134.945)
+offset_left = 520.0
+offset_top = 1620.0
+offset_right = 1092.36
+offset_bottom = 1754.95
+max_value = 400.0
+step = 1.0
+value = 400.0
+show_percentage = false
+script = ExtResource("1_510ua")
+
+[node name="SpeedBoostFrame" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(286, 68)
+scale = Vector2(1.005, 1.35)
+sprite_frames = SubResource("SpriteFrames_p5xqa")
+frame_progress = 0.365877
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

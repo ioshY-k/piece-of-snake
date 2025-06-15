@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcit68wswd7o1"
-path="res://.godot/imported/test_level.svg-bfc60c9e897f44e6a8f486f7cb0dc583.ctex"
+uid="uid://crlbunc4a8gob"
+path="res://.godot/imported/test_level_2.png-26d0353d6d76a05259544014de1bdf34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Test_level/test_level.svg"
-dest_files=["res://.godot/imported/test_level.svg-bfc60c9e897f44e6a8f486f7cb0dc583.ctex"]
+source_file="res://Levels/Map2/test_level_2.png"
+dest_files=["res://.godot/imported/test_level_2.png-26d0353d6d76a05259544014de1bdf34.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
