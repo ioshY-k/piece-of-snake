@@ -17,6 +17,9 @@ signal round_over
 @onready var overload_label: Label = $"Overload"
 @onready var fruits_left_number_label: Label = $FruitsLeftNumber
 @onready var time_left_number_label: Label = $TimeLeftNumber
+@onready var active_item_slot_1: Node2D = $ActiveItemSlot1
+
+var fruit_relocator_1_component_scene = load("res://UpgradeComponents/fruit_relocator_1_component.tscn")
 
 func _ready() -> void:
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
@@ -30,9 +33,17 @@ func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
 	snake_head = $Map/SnakeHead
 	snake_tail = $Map/SnakeTail
 	
+	for upgrade_id in range(len(get_parent().current_upgrades)):
+		if get_parent().current_upgrades[upgrade_id]:
+			if is_upgrade_reload_necessary(upgrade_id):
+				instantiate_upgrade(upgrade_id)
+	
 	current_map.fruit_collected.connect(_on_fruit_collected)
 	snake_head.got_hit.connect(on_snake_got_hit)
+	GameConsts.node_being_dragged = null
+	
 	prepare_new_round(fruit_threshold, time_sec)
+	
 
 func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left = fruit_threshold
@@ -94,3 +105,49 @@ func _on_second_ticker_timeout() -> void:
 	time_left_number_label.text = str(time_left)
 	if time_left == 0:
 		round_over.emit()
+
+func instantiate_upgrade(upgrade_id: int):
+	match upgrade_id:
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
+			current_map.add_upgrade_component(upgrade_id)
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
+			print("child gets added")
+			var fruit_relocator_1_component = fruit_relocator_1_component_scene.instantiate()
+			active_item_slot_1.add_child(fruit_relocator_1_component)
+
+func is_upgrade_reload_necessary(upgrade_id) -> bool:
+	match upgrade_id:
+		1:
+			return false
+		2:
+			return true
+		_:
+			return false
+
+func _on_item_activated(upgrade_id: int):
+	match upgrade_id:
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
+			var fruits: Array[MapElement] = current_map.find_all_fruits()
+			var fruit_tiles: Array[Vector2i] = []
+			for fruit in fruits:
+				fruit_tiles.append(GameConsts.position_to_tile(fruit.position))
+			
+			var surrounding_fruit_tiles: Array[Vector2i] =[]
+			for fruit_position in fruit_tiles:
+				var x = fruit_position.x - 2
+				var y = fruit_position.y -2
+				while x <= fruit_position.x + 2:
+					while y <= fruit_position.y + 2:
+						surrounding_fruit_tiles.append(Vector2i(x,y))
+						y += 1
+					x += 1
+					y = fruit_position.y -2
+			
+			fruit_tiles.append_array(surrounding_fruit_tiles)
+			print(surrounding_fruit_tiles)
+			for tile in surrounding_fruit_tiles:
+				current_map.add_a_fruit(tile)
+			
+			for fruit in fruits:
+				current_map.relocate_fruit(fruit, fruit_tiles)
+	

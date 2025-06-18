@@ -5,9 +5,12 @@ class_name SnakeHead extends MovingSnakePart
 @onready var left_collision_ray: RayCast2D = $LeftCollisionRay
 
 signal got_hit
+signal next_tile_reached
 
 var colliding_element: MapElement
 var buffered_input_direction: int
+
+
 
 func _process(delta: float) -> void:
 	buffer_last_input_direction()
@@ -51,7 +54,9 @@ func _on_next_tile_reached():
 		got_hit.emit()
 	elif colliding_element.collision_layer == 2:#Fruit
 		colliding_element.collision_with.emit()
-
+	
+	next_tile_reached.emit()
+	
 	moving_tween = get_moving_tween()
 	turning_tween = get_turning_tween(current_direction)
 	

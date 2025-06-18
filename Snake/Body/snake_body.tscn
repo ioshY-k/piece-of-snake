@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dobkpr5ucg8no"]
 
-[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://GodoticonCorner.svg" id="1_3khtg"]
-[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://GodoticonEdge.svg" id="2_0pdlf"]
+[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/GodoticonCorner.svg" id="1_3khtg"]
+[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/GodoticonEdge.svg" id="2_0pdlf"]
 [ext_resource type="Script" uid="uid://bt650ng55hf75" path="res://Snake/Body/snake_body.gd" id="2_vx0cu"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_2xe0v"]
 

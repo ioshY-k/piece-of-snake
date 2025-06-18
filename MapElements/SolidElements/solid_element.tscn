@@ -6,7 +6,7 @@
 size = Vector2(2, 1.95)
 
 [node name="SolidElementArea" type="Area2D" groups=["Static Solid Element"]]
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_wrdh8")
 
 [node name="ElementShape" type="CollisionShape2D" parent="."]

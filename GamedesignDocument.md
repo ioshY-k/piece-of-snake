@@ -72,22 +72,25 @@ After each round, the player can spend excess fruit to purchase **one** of the f
 
 At the end of each round, the player may choose **one of three upgrade options**. If it is **not the final round of a level**, one of the three options is always the **temporary upgrade** `Larger Area`, which resets at the beginning of the next level.
 
-Some upgrades have **multiple tiers**:
+> 💡 The two upgrade prices ascend from left to right, while the upgrades themselves are of random rarity. Only the rightmost Upgrade (appearing in the final round of a level) - being the priciest - is guaranteed to be either a special upgrade or an advanced version. This way the Player is incentivised to collect even more fruits in the last rounds.
+
 - Selecting an upgrade may unlock **advanced versions** in future upgrade pools.
 - Upgrades are categorized loosely by function or effect. These categories may influence synergy interactions.
+- The number of obtainable Items is limited by the available slots. Each Categorie has a different number of slots
+- An upgrades price is determined by the spot it appears in as well as the slot it gets bought in: replacing another Item in a slot is cheaper than filling a new slot
 
 ---
 
 ## Upgrade Categories
 
-| Category     | Description                                         |
-|--------------|-----------------------------------------------------|
-| Default      | Always available upgrade (`Larger Area`)            |
-| Active       | Requires activation by the player                   |
-| Passive      | Always-on effect                                    |
-| Bodymod      | Alters how the snake's body behaves or interacts    |
-| Synergy      | Relies on or enhances combinations of other upgrades |
-| Special      | Rule-breaking or run-defining modifiers             |
+| Category     | Description                                         | Slots |
+|--------------|-----------------------------------------------------|-------|
+| Default      | Always available upgrade (`Larger Area`)            |-      |
+| Active       | Requires activation by the player                   |2      |
+| Passive      | Always-on effect                                    |4      |
+| Bodymod      | Alters how the snake's body behaves or interacts    |3      |
+| Synergy      | Relies on or enhances combinations of other upgrades|2      |
+| Special      | Rule-breaking or run-defining modifiers             |1      |
 
 ---
 
@@ -329,7 +332,7 @@ Each letter provides a **cryptic gameplay challenge**. The player must complete 
 | 2  | *"Break down every office door... in one go."*              | Slam into every Office map's door repeatedly in one round (without letting it recover). |Tail Contact invincibility, Wall immunity|
 | 3  | *"Four goals. Four rounds. Score them all."*              | Shoot a goal in the `Stadium` map in **each of the four rounds**. |
 | 4  | *"The statues are watching... surround them all tightly."*| Fully encircle all 3 statues. They subtly react if enclosed. |
-| 5  | *"Don’t blink. Just stare into its eyes."*                | Stay still and look directly at a specific object/creature (even while it moves). | Pause $ reverse, Manual Movement|
+| 5  | *"Don’t blink. Just stare into its eyes."*                | Stay still and look directly at a specific object/creature. | Pause $ reverse, Manual Movement|
 | 6  | *"Catch what hides from the snake."*                      | Intercept a character that only disappears into rooms **not occupied by the snake**. | Wormhole |
 | 7  | *"Sometimes... skipping reveals more than choosing."*     | Press the “skip” button **during chest cash-in**. Only appears in later difficulty tiers. |
 | 9  | *"100m sprint. Beat the clock."*                          | Reach a start/finish line within a specific digital timer (visible stopwatch) threshold. | Hyperspeed Enhancement, Caffeinated (Modifier)

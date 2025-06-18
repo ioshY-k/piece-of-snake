@@ -7,3 +7,4 @@ Z index:
 Calls by Name:
 	"SolidElement" has to be in name of a SolidElement
 	All Level Scenes need to be referred as "Level" in Scenetree to be found by map_element
+	Only Snake parts are allowed their name to begin with "SnakeBody" to not be unloaded by map

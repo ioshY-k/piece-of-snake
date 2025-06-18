@@ -14,11 +14,16 @@ var shop: Shop
 var level_scene: PackedScene = preload("res://Levels/level.tscn")
 var level: LevelManager
 
+var current_upgrades: Array[bool] = [false, false]
+
+
 func _ready() -> void:
 	shop = shop_scene.instantiate()
 	add_child(shop)
 	shop.hide()
 	create_new_run()
+	
+	shop.upgrade_bought.connect(_on_upgrade_bought)
 	
 
 func create_new_run():
@@ -28,27 +33,27 @@ func create_new_run():
 	level.prepare_new_act(maporder[current_act].instantiate(), GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
 	level.round_over.connect(_on_round_over)
 
-
+func _on_upgrade_bought(upgrade: int):
+	current_upgrades[upgrade] = true
+	print("runmanager revieved")
+	level.instantiate_upgrade(upgrade)
 	
 func _on_round_over():
 	if level.fruits_left > 0:
-		print("GAME OVER")
 		level.queue_free()
 	else:
 		print("Overstock collected: " + str(abs(level.fruits_left)))
 		if current_round < 3:
 			current_round += 1
-			print("NEXT ROUND")
 			shop.show()
 			level.process_mode = Node.PROCESS_MODE_DISABLED
-			await shop.upgrade_chosen
+			await shop.finished_buying
 			level.process_mode = Node.PROCESS_MODE_INHERIT
 			shop.hide()
 			level.prepare_new_round(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
 		else:
 			current_act += 1
 			current_round = 0
-			print("NEXT LEVEL")
 			level.prepare_new_act(maporder[current_act].instantiate(), GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
 
 

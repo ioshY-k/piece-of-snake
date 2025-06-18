@@ -2,7 +2,11 @@ class_name Map extends Sprite2D
 
 #temporary instatiated map elements
 var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
+var snake_head_scene = preload("res://Snake/Head/snake_head.tscn")
+var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
+
+var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead = $SnakeHead
@@ -37,9 +41,8 @@ func _ready() -> void:
 	
 	#place fruit and player
 	teleport_to_starting_position()
-	spawn_fruit()
+	spawn_fruit([])
 	
-	print(free_map_tiles.size())
 	initialized.emit()
 
 
@@ -80,6 +83,10 @@ func teleport_to_starting_position():
 		snake_tail.current_tile = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN)
 	snake_tail.position = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * GameConsts.TILE_SIZE
 
+func add_a_fruit(tile: Vector2i):
+	var fruit: FruitElement = fruit_element_scene.instantiate()
+	add_child(fruit)
+	fruit.position = tile_to_position(tile)
 
 #connected to signal collision_with in map_element.gd emitted in snake_head.gd when head collides with a head element
 func _on_collision_with(element: MapElement):
@@ -87,12 +94,15 @@ func _on_collision_with(element: MapElement):
 	if element is FruitElement:
 		snake_tail.tiles_to_grow += 1
 		fruit_collected.emit()
-		element.queue_free()
-		spawn_fruit()
+		relocate_fruit(element, [])
 
+func relocate_fruit(element: MapElement, forbidden_tiles: Array[Vector2i]):
+	element.queue_free()
+	spawn_fruit(forbidden_tiles)
 
 #spawn a new fruit in a place with no solid objects, including the snake
-func spawn_fruit():
+#additional excluded tiles can be handed by forbidden_tiles
+func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 	#instantiate new fruit
 	var fruit: FruitElement = fruit_element_scene.instantiate()
 	add_child(fruit)
@@ -105,24 +115,17 @@ func spawn_fruit():
 		var snakepartpos = snake_part.position
 		currently_free_map_tiles.erase(position_to_tile(snakepartpos))
 	currently_free_map_tiles.erase(snake_head.next_tile)
-	#different spawn AI whe fruit count below threshhold: fruit spawn one tile away from player
-	if(currently_free_map_tiles.size() <= 25):
-		if currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y-1)):
-			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y-1))
-		elif currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y+1)):
-			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x, snake_head.next_tile.y+1))
-		elif currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x+1, snake_head.next_tile.y)):
-			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x+1, snake_head.next_tile.y))
-		elif currently_free_map_tiles.has(Vector2i(snake_head.next_tile.x-1, snake_head.next_tile.y)):
-			fruit.position = tile_to_position(Vector2i(snake_head.next_tile.x-1, snake_head.next_tile.y))
-		elif currently_free_map_tiles.size() == 0:
-			fruit.position = tile_to_position(Vector2i(6,8))
-		else:
-			fruit.position = tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
-	#otherwise the dead end gets erased too and a random position is determined
+	
+	var free_map_tiles_without_forbidden = currently_free_map_tiles
+	
+	for tile in forbidden_tiles:
+		currently_free_map_tiles.erase(position_to_tile(tile))
+	
+	if currently_free_map_tiles.size() < 5:
+		fruit.position = tile_to_position(free_map_tiles_without_forbidden[randi() % currently_free_map_tiles.size()])
 	else:
 		fruit.position = tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
-
+	
 
 #place a new snake body where the head is, add it to the bodypart array, add the new direction to direction array
 func push_snake_directions(direction :int):
@@ -143,13 +146,29 @@ func pop_snake_bodyparts():
 	snake_path_bodyparts.pop_front().queue_free()
 	if snake_path_bodyparts.size()==0:
 		get_tree().quit()
-	take_away_solidElement(snake_path_bodyparts[0])
+	unload_solidElement(snake_path_bodyparts[0])
 	
-
-func take_away_solidElement(obj: Node):
+#called for moving objects like snake tail or moving obstacles so that no collision is anticipated
+func unload_solidElement(obj: Node):
 	for child in obj.get_children():
 		if "SolidElement" in child.name:
 			child.queue_free()
+
+func add_upgrade_component(upgrade: int):
+	var fruit_magnet_1_component = fruit_magnet_1_component_scene.instantiate()
+	snake_head.add_child(fruit_magnet_1_component)
+
+#might be needed  to set up new upgraded Snake
+func reload_snake_and_fruit():
+	var tail_position_on_unload = position_to_tile(snake_tail.position)
+	snake_head.queue_free()
+	snake_tail.queue_free()
+	for child in get_children():
+		if "FruitElement" in child.name or "SnakeBody" in child.name:
+			child.queue_free()
+	
+	
+	
 
 
 #region helper functions
@@ -175,4 +194,11 @@ func get_next_tile(current_tile: Vector2i, direction) -> Vector2i:
 			return Vector2i(current_tile.x-1, current_tile.y)
 		_:
 			return Vector2i.ZERO
+
+func find_all_fruits() -> Array[MapElement]:
+	var fruits: Array[MapElement] = []
+	for node in get_tree().get_nodes_in_group("Fruit"):
+		fruits.append(node)
+	return fruits
+			
 #endregion
