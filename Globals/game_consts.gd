@@ -2,7 +2,7 @@ extends Node
 
 
 const SPEED_BOOST_SPEED = 0.15
-const NORMAL_SPEED = 0.38
+const NORMAL_SPEED = 0.8
 const TILE_SIZE = 80
 
 enum UPGRADE_LIST {FRUIT_MAGNET_1, FRUIT_RELOCATOR_1}

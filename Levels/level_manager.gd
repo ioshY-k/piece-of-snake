@@ -30,6 +30,7 @@ func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
 		await get_tree().process_frame
 	add_child(map)
 	current_map = map
+	await current_map.initialized
 	snake_head = $Map/SnakeHead
 	snake_tail = $Map/SnakeTail
 	
@@ -37,6 +38,7 @@ func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
 		if get_parent().current_upgrades[upgrade_id]:
 			if is_upgrade_reload_necessary(upgrade_id):
 				instantiate_upgrade(upgrade_id)
+	
 	
 	current_map.fruit_collected.connect(_on_fruit_collected)
 	snake_head.got_hit.connect(on_snake_got_hit)

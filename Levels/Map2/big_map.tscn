@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dva5l68ugs40e"]
+[gd_scene load_steps=4 format=3 uid="uid://dva5l68ugs40e"]
 
 [ext_resource type="Texture2D" uid="uid://crlbunc4a8gob" path="res://Levels/Map2/test_level_2.png" id="1_sxtxq"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_dpaee"]
-[ext_resource type="PackedScene" uid="uid://dadpidbo1my0e" path="res://Snake/Head/snake_head.tscn" id="3_qkr1o"]
-[ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="4_gplah"]
-[ext_resource type="PackedScene" uid="uid://c4ocnud8k5oe4" path="res://Snake/Tail/snake_tail.tscn" id="5_n4udr"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="6_0lho0"]
 
 [node name="Map" type="Sprite2D"]
@@ -15,18 +12,6 @@ offset = Vector2(760, 760)
 script = ExtResource("2_dpaee")
 grid_size = Vector2i(20, 20)
 starting_position = Vector2(10, 12)
-
-[node name="SnakeHead" parent="." instance=ExtResource("3_qkr1o")]
-
-[node name="SnakeBody" parent="." instance=ExtResource("4_gplah")]
-
-[node name="SnakeBody2" parent="." instance=ExtResource("4_gplah")]
-
-[node name="SnakeBody3" parent="." instance=ExtResource("4_gplah")]
-
-[node name="SnakeBody4" parent="." instance=ExtResource("4_gplah")]
-
-[node name="SnakeTail" parent="." instance=ExtResource("5_n4udr")]
 
 [node name="SolidElements" type="Node2D" parent="."]
 

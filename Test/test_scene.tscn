@@ -1,12 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://bep4vtmqwsete"]
+[gd_scene load_steps=6 format=3 uid="uid://bep4vtmqwsete"]
 
 [ext_resource type="Script" uid="uid://bip1gh8m3iyan" path="res://Test/test_scene.gd" id="1_ia1lp"]
-[ext_resource type="PackedScene" uid="uid://cnwim1nigr3rc" path="res://MapElements/FruitElements/fruit_element.tscn" id="2_sasra"]
-[ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_coq8p"]
+[ext_resource type="Shader" uid="uid://c23kf1475ne7u" path="res://Shader/invisibility_shader.gdshader" id="2_u5yuk"]
+[ext_resource type="Texture2D" uid="uid://b3r0lvddecr57" path="res://Test/Invisibility_mask.svg" id="3_0s61m"]
+[ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/SnakeDeco.svg" id="4_v6t21"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnkr1"]
+shader = ExtResource("2_u5yuk")
+shader_parameter/mask = ExtResource("3_0s61m")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ia1lp")
 
-[node name="FruitElementArea" parent="." instance=ExtResource("2_sasra")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_vnkr1")
+custom_minimum_size = Vector2(80, 160)
+offset_left = 70.0
+offset_top = -110.0
+offset_right = 150.0
+offset_bottom = 50.0
+stretch = true
 
-[node name="SolidElementArea" parent="." instance=ExtResource("3_coq8p")]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(80, 160)
+render_target_update_mode = 4
+
+[node name="SnakeBodyDeco" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(40, 80)
+texture = ExtResource("4_v6t21")
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_vnkr1")
+custom_minimum_size = Vector2(80, 160)
+offset_left = -130.0
+offset_top = -80.0
+offset_right = -50.0
+offset_bottom = 80.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(80, 160)
+render_target_update_mode = 4
+
+[node name="SnakeBodyDeco" type="Sprite2D" parent="SubViewportContainer2/SubViewport"]
+position = Vector2(40, 80)
+texture = ExtResource("4_v6t21")

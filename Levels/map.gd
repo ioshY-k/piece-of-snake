@@ -9,8 +9,8 @@ var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.ts
 var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
 
 #permanent snake parts
-@onready var snake_head: SnakeHead = $SnakeHead
-@onready var snake_tail: SnakeTail = $SnakeTail
+@onready var snake_head: SnakeHead
+@onready var snake_tail: SnakeTail
 
 #map data
 @export var grid_size: Vector2i
@@ -36,7 +36,6 @@ func _ready() -> void:
 	
 	#set up attributes
 	starting_position = starting_position * GameConsts.TILE_SIZE
-	snake_path_bodyparts = [$SnakeBody4, $SnakeBody3, $SnakeBody2, $SnakeBody]
 	free_map_tiles = find_free_map_tiles()
 	
 	#place fruit and player
@@ -67,6 +66,15 @@ func find_free_map_tiles() -> Array[Vector2i]:
 
 #find starting positions for snake head, body and tail
 func teleport_to_starting_position():
+	snake_head = snake_head_scene.instantiate()
+	snake_tail = snake_tail_scene.instantiate()
+	add_child(snake_head)
+	add_child(snake_tail)
+	for snake_body_count in len(range(4)):
+		var snake_body = snake_body_scene.instantiate()
+		add_child(snake_body)
+		snake_path_bodyparts.append(snake_body)
+	
 	#place snake head
 	snake_head.current_tile = (starting_position / GameConsts.TILE_SIZE)
 	snake_head.position = starting_position
@@ -132,10 +140,9 @@ func push_snake_directions(direction :int):
 	snake_path_directions.push_back(direction)
 
 func push_snake_bodyparts(tile: Vector2i, direction: int):
-	var newest_snake_body: SnakeBody = snake_body_scene.instantiate()
+	var newest_snake_body = SnakeBody.new_snakebody(snake_path_directions[-1], direction)
 	add_child(newest_snake_body)
 	newest_snake_body.position = tile * GameConsts.TILE_SIZE
-	newest_snake_body.find_correct_rotation(snake_path_directions[-1], direction)
 	snake_path_bodyparts.push_back(newest_snake_body)
 
 #delete the bodypart and direction located at the tail from their arrays. returns the direction

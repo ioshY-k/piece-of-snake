@@ -1,7 +1,8 @@
 extends Node
 
 var maporder: Array[PackedScene] = [preload("res://Levels/Map1/square_map.tscn"),
-									preload("res://Levels/Map2/big_map.tscn")
+									#preload("res://Levels/Map2/big_map.tscn")
+									preload("res://Levels/Map1/square_map.tscn")
 									]
 										
 @onready var retry_button: Button = $RetryButton
