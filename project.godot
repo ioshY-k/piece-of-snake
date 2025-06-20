@@ -34,6 +34,7 @@ version_control/autoload_on_startup=true
 "Static Solid Element"="A Solid Element that won't ever move or dissappear"
 Snake="parts of the snake that currently occupie the map"
 Fruit="Every snake accepted edible"
+UpgradeCard=""
 
 [input]
 

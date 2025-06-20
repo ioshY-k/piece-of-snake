@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfpi1mtdjlo2u"]
+
+[ext_resource type="Script" uid="uid://bpv2rpm5f35c7" path="res://UpgradeComponents/fruit_magnet_2_component.gd" id="1_ug7bl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpa51"]
+
+[node name="FruitMagnet2Component" type="Node2D"]
+script = ExtResource("1_ug7bl")
+
+[node name="MagnetField1" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField1"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField2"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField3" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField3"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField4" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField4"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField5" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField5"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField6" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField6"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField7" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField7"]
+shape = SubResource("RectangleShape2D_bpa51")

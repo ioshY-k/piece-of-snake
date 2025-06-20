@@ -1,12 +1,14 @@
-extends Control
+class_name UpgradeCard extends Control
 
 var mouse_in: bool = false
 var is_dragging: bool = false
 @onready var card_shadow: Sprite2D = $CardSprite/CardShadow
-@onready var card_sprite: Sprite2D = $CardSprite
+@onready var card_sprite: AnimatedSprite2D = $CardSprite
 @onready var card_area: Area2D = $CardArea
 
 @export var upgrade_id: int
+
+var owned_slot: Area2D = null
 
 var is_bought: bool = false
 signal bought
@@ -14,12 +16,18 @@ signal bought
 func _ready() -> void:
 	bought.connect(get_parent()._on_upgrade_card_bought)
 
+func instantiate_upgrade_card(id: int):
+	upgrade_id = id
+	card_sprite.frame = id
+
+	
+	
+
 func _process(delta: float) -> void:
 	drag_logic(delta)
 
 func drag_logic(delta: float):
 	card_shadow.position = Vector2(.12, 12).rotated(card_sprite.rotation)
-	
 	if (mouse_in or is_dragging) and (GameConsts.node_being_dragged == null or GameConsts.node_being_dragged == self):
 		if Input.is_action_pressed("click"):
 			global_position = lerp(global_position, get_global_mouse_position() - (size/2.0), 22*delta)
@@ -27,15 +35,20 @@ func drag_logic(delta: float):
 			_set_rotation(delta)
 			card_sprite.z_index = 100
 			is_dragging = true
-			GameConsts.node_being_dragged == self
+			GameConsts.node_being_dragged = self
 		else:
 			_change_scale(Vector2(1.42,1.42))
 			card_sprite.rotation_degrees = lerp(card_sprite.rotation_degrees, 0.0, 22*delta)
-			if is_dragging and !card_area.get_overlapping_areas().is_empty():
-				card_sprite.rotation_degrees = 0
-				_snap_to_slot(card_area.get_overlapping_areas()[0])
-				is_bought = true
-				bought.emit(upgrade_id)
+			if is_dragging:
+				if !is_bought and !card_area.get_overlapping_areas().is_empty():
+					owned_slot = card_area.get_overlapping_areas()[0]
+					card_sprite.rotation_degrees = 0
+					_snap_to_slot(card_area.get_overlapping_areas()[0])
+					card_area.get_overlapping_areas()[0].set_collision_layer_value(4, false)
+					is_bought = true
+					bought.emit(upgrade_id)
+				if is_bought:
+					_snap_to_slot(owned_slot)
 			is_dragging = false
 			if GameConsts.node_being_dragged == self:
 				GameConsts.node_being_dragged = null

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3xunl8h7st88"
-path="res://.godot/imported/UpgradeSlot.png-c800f777bc0c2e4b313dc4df13e7cef1.ctex"
+uid="uid://cvjsd3hpufjmu"
+path="res://.godot/imported/upgrade_fruit_relocator.png-2ed3c6fc248b37cd58f26c3505963008.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UpgradeShopUI/UpgradeSlot.png"
-dest_files=["res://.godot/imported/UpgradeSlot.png-c800f777bc0c2e4b313dc4df13e7cef1.ctex"]
+source_file="res://UI/UpgradeShopUI/UpgradeCards/upgrade_fruit_relocator.png"
+dest_files=["res://.godot/imported/upgrade_fruit_relocator.png-2ed3c6fc248b37cd58f26c3505963008.ctex"]
 
 [params]
 

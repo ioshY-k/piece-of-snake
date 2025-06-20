@@ -57,8 +57,8 @@ func _on_next_tile_reached():
 	
 	next_tile_reached.emit()
 	
-	moving_tween = get_moving_tween()
-	turning_tween = get_turning_tween(current_direction)
+	get_moving_tween()
+	get_turning_tween(current_direction)
 	
 func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 	match current_dir:

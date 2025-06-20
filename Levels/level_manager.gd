@@ -3,6 +3,7 @@ class_name LevelManager extends Node2D
 var snake_head: SnakeHead
 var snake_tail: SnakeTail
 
+var speed_boost_drain_speed: int = 230
 var speed_boost_available: bool = true
 var fruits_left: int
 var time_left: int
@@ -21,6 +22,7 @@ signal round_over
 
 var fruit_relocator_1_component_scene = load("res://UpgradeComponents/fruit_relocator_1_component.tscn")
 
+var hyper_speed_1_component_scene = load("res://UpgradeComponents/hyper_speed_1_component.tscn")
 func _ready() -> void:
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
 
@@ -30,7 +32,6 @@ func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
 		await get_tree().process_frame
 	add_child(map)
 	current_map = map
-	await current_map.initialized
 	snake_head = $Map/SnakeHead
 	snake_tail = $Map/SnakeTail
 	
@@ -48,6 +49,11 @@ func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
 	
 
 func prepare_new_round(fruit_threshold, time_sec):
+	
+	snake_head.snake_speed = GameConsts.NORMAL_SPEED
+	snake_tail.snake_speed = GameConsts.NORMAL_SPEED
+	speed_boost_bar.value  = speed_boost_bar.max_value
+	
 	fruits_left = fruit_threshold
 	fruits_left_number_label.text = str(fruits_left)
 	overload_label.hide()
@@ -59,12 +65,13 @@ func prepare_new_round(fruit_threshold, time_sec):
 func on_snake_got_hit():
 	fruits_left += 1
 	fruits_left_number_label.text = str(fruits_left)
-	print("OUCH!!")
+	print("Ouch!")
 
 func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
 func _on_fruit_collected():
+	print("YUM!")
 	fruits_left -= 1
 	fruits_left_number_label.text = str(abs(fruits_left))
 	if fruits_left == 0:
@@ -82,9 +89,9 @@ func decide_speed_boost(delta):
 		if speed_boost_available:
 			snake_head.snake_speed = GameConsts.SPEED_BOOST_SPEED
 			snake_tail.snake_speed = GameConsts.SPEED_BOOST_SPEED
-			speed_boost_bar.value -= 100*delta
+			speed_boost_bar.value -= speed_boost_drain_speed*delta
 	if not speed_boost_available:
-		speed_boost_bar.value += 70*delta
+		speed_boost_bar.value += 90*delta
 			
 
 #either called when empty or when full
@@ -98,8 +105,8 @@ func _on_speed_boost_bar_value_changed(full: bool) -> void:
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 
-func set_fruit_threshold(act: int, round: int):
-	fruits_left_number_label.text = str(GameConsts.FRUIT_THRESHOLDS[act*4 + round])
+func set_fruit_threshold(current_act: int, current_round: int):
+	fruits_left_number_label.text = str(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round])
 
 
 func _on_second_ticker_timeout() -> void:
@@ -113,15 +120,19 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
 			current_map.add_upgrade_component(upgrade_id)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
-			print("child gets added")
 			var fruit_relocator_1_component = fruit_relocator_1_component_scene.instantiate()
 			active_item_slot_1.add_child(fruit_relocator_1_component)
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
+			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
+			speed_boost_bar.add_child(hyper_speed_1_component)
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
+			current_map.add_upgrade_component(upgrade_id)
 
 func is_upgrade_reload_necessary(upgrade_id) -> bool:
 	match upgrade_id:
-		1:
+		1,2:
 			return false
-		2:
+		0,3:
 			return true
 		_:
 			return false
@@ -146,9 +157,6 @@ func _on_item_activated(upgrade_id: int):
 					y = fruit_position.y -2
 			
 			fruit_tiles.append_array(surrounding_fruit_tiles)
-			print(surrounding_fruit_tiles)
-			for tile in surrounding_fruit_tiles:
-				current_map.add_a_fruit(tile)
 			
 			for fruit in fruits:
 				current_map.relocate_fruit(fruit, fruit_tiles)

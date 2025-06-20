@@ -13,7 +13,7 @@ func _on_next_tile_reached():
 	else:
 		tiles_to_grow -= 1
 	
-	moving_tween = get_moving_tween()
-	turning_tween = get_turning_tween(current_direction)
+	get_moving_tween()
+	get_turning_tween(current_direction)
 	
 	

@@ -4,14 +4,29 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naiko"]
 
-[node name="FruitMagnet1Component" type="Area2D"]
+[node name="FruitMagnet1Component" type="Node2D"]
+script = ExtResource("1_fntuq")
+
+[node name="MagnetField1" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_fntuq")
 metadata/_edit_vertical_guides_ = [-710.0]
 
-[node name="ComponentShape" type="CollisionShape2D" parent="."]
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField1"]
 shape = SubResource("RectangleShape2D_naiko")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[node name="MagnetField2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField2"]
+shape = SubResource("RectangleShape2D_naiko")
+
+[node name="MagnetField3" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField3"]
+shape = SubResource("RectangleShape2D_naiko")

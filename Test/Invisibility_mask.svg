@@ -3,8 +3,8 @@
 
 <svg
    width="80"
-   height="160"
-   viewBox="0 0 21.166667 42.333334"
+   height="80"
+   viewBox="0 0 21.166667 21.166667"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
@@ -24,12 +24,12 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="9.1465569"
-     inkscape:cx="37.555116"
-     inkscape:cy="85.223326"
-     inkscape:window-width="3840"
-     inkscape:window-height="2054"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:cx="25.310071"
+     inkscape:cy="56.250675"
+     inkscape:window-width="2880"
+     inkscape:window-height="1514"
+     inkscape:window-x="5749"
+     inkscape:window-y="1600"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -39,9 +39,16 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-51.218182,-83.290909)">
+    <rect
+       style="fill:#ff0000;fill-opacity:0.95733333;stroke:#212532;stroke-width:0;stroke-opacity:0.786775"
+       id="rect1"
+       width="21.166666"
+       height="21.166666"
+       x="51.218182"
+       y="83.290909" />
     <path
        d="m 68.945266,83.290909 h -14.2875 c -0.43039,1.77565 -2.314747,13.90911 0,21.166671 h 14.2875 c 1.78097,-2.82261 -0.17781,-18.676521 0,-21.166671 z"
-       style="fill:#000000;fill-opacity:1;stroke:#212532;stroke-width:0"
+       style="fill:#ff0000;fill-opacity:0;stroke:#212532;stroke-width:0"
        id="path17" />
   </g>
 </svg>

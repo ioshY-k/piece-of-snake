@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qtlqyj4swgu"]
+
+[ext_resource type="Script" uid="uid://dtp0pcf58qehs" path="res://UpgradeComponents/hyper_speed_1_component.gd" id="1_qt1qw"]
+
+[node name="HyperSpeed1Component" type="Node"]
+script = ExtResource("1_qt1qw")

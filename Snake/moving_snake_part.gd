@@ -1,8 +1,5 @@
 class_name MovingSnakePart extends AnimatedSprite2D
 
-var moving_tween: Tween
-var turning_tween: Tween
-
 
 var current_tile: Vector2i
 var next_tile: Vector2i
@@ -21,8 +18,8 @@ func _ready() -> void:
 	next_tile = current_tile
 	
 	
-	moving_tween = get_moving_tween()
-	turning_tween = get_turning_tween(current_direction)
+	get_moving_tween()
+	get_turning_tween(current_direction)
 	
 	
 func decide_speed_boost():

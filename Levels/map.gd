@@ -7,6 +7,7 @@ var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
 
 var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
+var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_2_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -162,17 +163,13 @@ func unload_solidElement(obj: Node):
 			child.queue_free()
 
 func add_upgrade_component(upgrade: int):
-	var fruit_magnet_1_component = fruit_magnet_1_component_scene.instantiate()
-	snake_head.add_child(fruit_magnet_1_component)
-
-#might be needed  to set up new upgraded Snake
-func reload_snake_and_fruit():
-	var tail_position_on_unload = position_to_tile(snake_tail.position)
-	snake_head.queue_free()
-	snake_tail.queue_free()
-	for child in get_children():
-		if "FruitElement" in child.name or "SnakeBody" in child.name:
-			child.queue_free()
+	match upgrade:
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
+			var fruit_magnet_1_component = fruit_magnet_1_component_scene.instantiate()
+			snake_head.add_child(fruit_magnet_1_component)
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
+			var fruit_magnet_2_component = fruit_magnet_2_component_scene.instantiate()
+			snake_head.add_child(fruit_magnet_2_component)
 	
 	
 	
