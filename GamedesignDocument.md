@@ -135,6 +135,7 @@ Some upgrades have **multiple tiers**:
 
 - **Edge Wrap**  
   - Leaving the map on one side makes you appear on the opposite side
+  - Doing so immediately refills your speed gauge
 
 - **Smart Spawn**  
   - Fruit will not spawn in enclosed areas  
