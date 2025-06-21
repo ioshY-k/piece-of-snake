@@ -135,7 +135,7 @@ Some upgrades have **multiple tiers**:
 
 - **Edge Wrap**  
   - Leaving the map on one side makes you appear on the opposite side
-  - Doing so immediately refills your speed gauge
+  - → Doing so immediately refills your speed gauge
 
 - **Smart Spawn**  
   - Fruit will not spawn in enclosed areas  
@@ -145,9 +145,6 @@ Some upgrades have **multiple tiers**:
   - Two fruits spawn at once  
   - → gruits are worth more and more when left uncollected
   - → Three fruits spawn at once
-
-- **Wall Immunity (while in Hyperspeed)**  
-  - Colliding with a wall during hyperspeed does not cost a fruit
 
 ---
 
@@ -165,6 +162,9 @@ Some upgrades have **multiple tiers**:
 
 - **Headlight**  
   - Head emits light in dark levels, lets see through roofs and kills ghosts on contact
+
+- **Wall Immunity (while in Hyperspeed)**  
+  - Colliding with a wall during hyperspeed does not cost a fruit
 ---
 
 ### 🔵 Synergy
@@ -176,8 +176,7 @@ Some upgrades have **multiple tiers**:
   - When your head passes your body, all fruits move toward you
 
 - **Bodymod Amplifier**  
-  - Bodymods cover double the snake's length  
-  - → Then: triple the length
+  - Bodymods cover double the snake's length
 
 ---
 
