@@ -7,7 +7,9 @@ const UPGRADE_CARD = preload("res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.t
 
 var upgrade_card_pool: Array[int] = [0,1,2,3]
 
-	
+@onready var upgrade_panel_button: Button = $UpgradeOverview/UpgradePanelButton
+@onready var upgrade_overview: Sprite2D = $UpgradeOverview
+
 
 var available_upgrades: Array[PackedScene] = [	load("res://UpgradeComponents/fruit_magnet_1_component.tscn"),
 												load("res://UpgradeComponents/fruit_relocator_1_component.tscn")]
@@ -41,3 +43,19 @@ func hide_shop():
 	$ContinueNextRound.hide()
 	$FruitOverloadInfo.hide()
 	
+
+var upgrades_expanded: bool = false
+func _on_upgrade_panel_button_mouse_entered() -> void:
+	var tween = create_tween()
+	if not upgrades_expanded:
+		tween.tween_property(upgrade_overview, "position:x", 360, 0.4).\
+		set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		tween.tween_property(upgrade_panel_button, "rotation_degrees", 180, 0.25).\
+		set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
+		upgrades_expanded = true
+	else:
+		tween.tween_property(upgrade_overview, "position:x", -388, 0.4).\
+		set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		tween.tween_property(upgrade_panel_button, "rotation_degrees", 0, 0.25).\
+		set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
+		upgrades_expanded = false

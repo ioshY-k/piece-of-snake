@@ -43,8 +43,11 @@ func drag_logic(delta: float):
 				if !is_bought and !card_area.get_overlapping_areas().is_empty():
 					owned_slot = card_area.get_overlapping_areas()[0]
 					card_sprite.rotation_degrees = 0
-					_snap_to_slot(card_area.get_overlapping_areas()[0])
-					card_area.get_overlapping_areas()[0].set_collision_layer_value(4, false)
+					_snap_to_slot(owned_slot)
+					owned_slot.set_collision_layer_value(4, false)
+					
+					get_parent().remove_child(self)
+					owned_slot.add_child(self)
 					is_bought = true
 					bought.emit(upgrade_id)
 				if is_bought:

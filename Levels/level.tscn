@@ -93,7 +93,9 @@ pivot_offset = Vector2(-28.5714, 60)
 position = Vector2(-400, 580)
 script = SubResource("GDScript_uhyyw")
 
-[node name="TestShopForLookChecks" parent="." instance=ExtResource("6_t80w2")]
+[node name="ShopForLooks" parent="." instance=ExtResource("6_t80w2")]
 visible = false
+offset = Vector2(-579.835, -162.325)
+transform = Transform2D(1, 0, 0, 1, -579.835, -162.325)
 
 [connection signal="timeout" from="SecondTicker" to="." method="_on_second_ticker_timeout"]
