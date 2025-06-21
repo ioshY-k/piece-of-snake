@@ -1,11 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=6 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
-[ext_resource type="Texture2D" uid="uid://bugddpjchwltt" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card_magnet.png" id="2_e3owr"]
-[ext_resource type="Texture2D" uid="uid://c08u15g6gioi8" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_unknown.png" id="3_222e7"]
-[ext_resource type="Texture2D" uid="uid://cvjsd3hpufjmu" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_fruit_relocator.png" id="3_b3bcc"]
-[ext_resource type="Texture2D" uid="uid://b161olsa0qjye" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_hper_speed.png" id="4_j6wqs"]
-[ext_resource type="Texture2D" uid="uid://bdpaa7gk1v72r" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card_magnet_2.png" id="5_r303a"]
+[ext_resource type="Texture2D" uid="uid://bblsiqbg1j2fx" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade.svg" id="2_e3owr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -14,16 +10,25 @@ animations = [{
 "texture": ExtResource("2_e3owr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_b3bcc")
+"texture": ExtResource("2_e3owr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_j6wqs")
+"texture": ExtResource("2_e3owr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_r303a")
+"texture": ExtResource("2_e3owr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_222e7")
+"texture": ExtResource("2_e3owr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e3owr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e3owr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e3owr")
 }],
 "loop": true,
 "name": &"default",
