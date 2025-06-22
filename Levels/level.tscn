@@ -20,8 +20,9 @@ scale = Vector2(3.14, 3.14)
 texture = ExtResource("2_ugh17")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 380)
+position = Vector2(240, 380)
 offset = Vector2(62.725, 0)
+zoom = Vector2(0.96, 0.96)
 
 [node name="FruitsLeftToWin" type="Label" parent="."]
 offset_left = -720.0

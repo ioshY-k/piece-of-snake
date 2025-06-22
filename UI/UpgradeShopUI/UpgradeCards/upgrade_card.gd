@@ -7,20 +7,21 @@ var is_dragging: bool = false
 @onready var card_area: Area2D = $CardArea
 
 @export var upgrade_id: int
-
+var upgrade_type: int
 var owned_slot: Area2D = null
 
 var is_bought: bool = false
 signal bought
 
 func _ready() -> void:
-	bought.connect(get_parent()._on_upgrade_card_bought)
+	bought.connect(get_parent().get_parent()._on_upgrade_card_bought)
 
 func instantiate_upgrade_card(id: int):
 	upgrade_id = id
 	card_sprite.frame = id
-
 	
+	upgrade_type = GameConsts.get_upgrade_type(id)
+
 	
 
 func _process(delta: float) -> void:
@@ -40,18 +41,7 @@ func drag_logic(delta: float):
 			_change_scale(Vector2(1.42,1.42))
 			card_sprite.rotation_degrees = lerp(card_sprite.rotation_degrees, 0.0, 22*delta)
 			if is_dragging:
-				if !is_bought and !card_area.get_overlapping_areas().is_empty():
-					owned_slot = card_area.get_overlapping_areas()[0]
-					card_sprite.rotation_degrees = 0
-					_snap_to_slot(owned_slot)
-					owned_slot.set_collision_layer_value(4, false)
-					
-					get_parent().remove_child(self)
-					owned_slot.add_child(self)
-					is_bought = true
-					bought.emit(upgrade_id)
-				if is_bought:
-					_snap_to_slot(owned_slot)
+				decide_on_let_go()
 			is_dragging = false
 			if GameConsts.node_being_dragged == self:
 				GameConsts.node_being_dragged = null
@@ -59,6 +49,25 @@ func drag_logic(delta: float):
 	
 	card_sprite.z_index = 10
 	_change_scale(Vector2(1.2,1.2))
+
+func decide_on_let_go():
+	if !is_bought and\
+	!card_area.get_overlapping_areas().is_empty():
+		
+		owned_slot = card_area.get_overlapping_areas()[0]
+		if upgrade_type == get_slot_type(owned_slot.get_parent().get_groups()):
+		
+			
+			card_sprite.rotation_degrees = 0
+			_snap_to_slot(owned_slot)
+			owned_slot.set_collision_layer_value(4, false)
+			
+			get_parent().remove_child(self)
+			owned_slot.add_child(self)
+			is_bought = true
+			bought.emit(upgrade_id)
+	if is_bought:
+		_snap_to_slot(owned_slot)
 
 var current_goal_scale: Vector2 = Vector2(1.2,1.2)
 var scale_tween: Tween
@@ -91,3 +100,22 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouse_in = false
+
+func get_slot_type(groups) -> int:
+	
+	match groups[0]:
+		"Slot Default":
+			return GameConsts.UPGRADE_TYPE.DEFAULT
+		"Slot Passive":
+			return GameConsts.UPGRADE_TYPE.PASSIVE
+		"Slot Synergy":
+			return GameConsts.UPGRADE_TYPE.SYNERGY
+		"Slot Bodymod":
+			return GameConsts.UPGRADE_TYPE.BODYMOD
+		"Slot Active":
+			return GameConsts.UPGRADE_TYPE.ACTIVE
+		"Slot Special":
+			return GameConsts.UPGRADE_TYPE.SPECIAL
+		_:
+			print_debug("No Slot Type is matching with card type")
+			return -1

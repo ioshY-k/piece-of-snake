@@ -150,7 +150,8 @@ z_index = 10
 z_as_relative = false
 material = SubResource("ShaderMaterial_m5mbj")
 sprite_frames = SubResource("SpriteFrames_krvum")
-frame_progress = 0.420733
+frame = 1
+frame_progress = 0.462284
 script = ExtResource("2_vx0cu")
 
 [node name="SolidElement" parent="." instance=ExtResource("3_2xe0v")]

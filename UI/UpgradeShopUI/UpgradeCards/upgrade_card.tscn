@@ -1,34 +1,105 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=29 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
-[ext_resource type="Texture2D" uid="uid://bblsiqbg1j2fx" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade.svg" id="2_e3owr"]
+[ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
+[ext_resource type="Texture2D" uid="uid://c8iqe3gph5jgy" path="res://UI/UpgradeShopUI/UpgradeCards/FruitMagnet1.svg" id="3_ox4k6"]
+[ext_resource type="Texture2D" uid="uid://dw31wps5onlrq" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade2.svg" id="3_xk1pt"]
+[ext_resource type="Texture2D" uid="uid://c6vsnqoh5wdpi" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade3.svg" id="4_r5us8"]
+[ext_resource type="Texture2D" uid="uid://dr1t4qj2rgeiv" path="res://UI/UpgradeShopUI/UpgradeCards/FruitMagnet2.svg" id="4_wcnut"]
+[ext_resource type="Texture2D" uid="uid://m3kk1umhsx" path="res://UI/UpgradeShopUI/UpgradeCards/FruitMagnet3.svg" id="5_gtu6c"]
+[ext_resource type="Texture2D" uid="uid://b81d7l7fr7t7j" path="res://UI/UpgradeShopUI/UpgradeCards/Hyperspeed1.svg" id="6_xk1pt"]
+[ext_resource type="Texture2D" uid="uid://vjv74823v8d1" path="res://UI/UpgradeShopUI/UpgradeCards/Hyperspeed2.svg" id="7_r5us8"]
+[ext_resource type="Texture2D" uid="uid://dmgh7qavf76y1" path="res://UI/UpgradeShopUI/UpgradeCards/Hyperspeed3.svg" id="8_yyp1t"]
+[ext_resource type="Texture2D" uid="uid://cftky2pry7ogo" path="res://UI/UpgradeShopUI/UpgradeCards/DoubleFruit1.svg" id="9_fwh1f"]
+[ext_resource type="Texture2D" uid="uid://cgxj21tbclcbn" path="res://UI/UpgradeShopUI/UpgradeCards/DoubleFruit2.svg" id="10_sbsg3"]
+[ext_resource type="Texture2D" uid="uid://bkhhuacu7xp8d" path="res://UI/UpgradeShopUI/UpgradeCards/DoubleFruit3.svg" id="11_7lrqi"]
+[ext_resource type="Texture2D" uid="uid://blxbmaeywgv0t" path="res://UI/UpgradeShopUI/UpgradeCards/EdgeWrap1.svg" id="12_qgweo"]
+[ext_resource type="Texture2D" uid="uid://c3rtdww4fnxy" path="res://UI/UpgradeShopUI/UpgradeCards/EdgeWrap2.svg" id="13_t1l65"]
+[ext_resource type="Texture2D" uid="uid://cefv5gxytj2f1" path="res://UI/UpgradeShopUI/UpgradeCards/FruitRelocator1.svg" id="14_a28kx"]
+[ext_resource type="Texture2D" uid="uid://b424xg4rk0q1" path="res://UI/UpgradeShopUI/UpgradeCards/FruitRelocator2.svg" id="15_0pjoy"]
+[ext_resource type="Texture2D" uid="uid://djcvfpnq64tac" path="res://UI/UpgradeShopUI/UpgradeCards/FruitRelocator3.svg" id="16_ibh7n"]
+[ext_resource type="Texture2D" uid="uid://dfd1wa1lmrpfu" path="res://UI/UpgradeShopUI/UpgradeCards/CrossRoad1.svg" id="17_h2lpd"]
+[ext_resource type="Texture2D" uid="uid://dl004d0kqy5ap" path="res://UI/UpgradeShopUI/UpgradeCards/CrossRoad2.svg" id="18_b1hmr"]
+[ext_resource type="Texture2D" uid="uid://dvkpes85sokfm" path="res://UI/UpgradeShopUI/UpgradeCards/CrossRoad3.svg" id="19_evqrt"]
+[ext_resource type="Texture2D" uid="uid://cgql3uve8cfr5" path="res://UI/UpgradeShopUI/UpgradeCards/TailCut.svg" id="20_f1qts"]
+[ext_resource type="Texture2D" uid="uid://c0402cd6i7ho0" path="res://UI/UpgradeShopUI/UpgradeCards/KnotAttractor.svg" id="21_rpqwx"]
+[ext_resource type="Texture2D" uid="uid://cbyk1wowmea3l" path="res://UI/UpgradeShopUI/UpgradeCards/ItemReload.svg" id="22_dse7d"]
+[ext_resource type="Texture2D" uid="uid://bjyb46sxmqy5t" path="res://UI/UpgradeShopUI/UpgradeCards/Immutable.svg" id="23_pxvxx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("2_gtu6c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("3_xk1pt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("4_r5us8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("3_ox4k6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("4_wcnut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("5_gtu6c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("6_xk1pt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_e3owr")
+"texture": ExtResource("7_r5us8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yyp1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fwh1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sbsg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lrqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qgweo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t1l65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a28kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0pjoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ibh7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_h2lpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_b1hmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_evqrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_f1qts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rpqwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dse7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_pxvxx")
 }],
 "loop": true,
 "name": &"default",
@@ -43,6 +114,7 @@ size = Vector2(120, 120)
 
 [node name="UpgradeCard" type="Control" groups=["UpgradeCard"]]
 z_index = 10
+z_as_relative = false
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 3
 anchors_preset = 0
@@ -55,8 +127,8 @@ script = ExtResource("1_1v4fj")
 [node name="CardSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(60, 60)
 sprite_frames = SubResource("SpriteFrames_222e7")
-frame = 1
-frame_progress = 0.467309
+frame = 20
+frame_progress = 0.870103
 
 [node name="CardShadow" type="Sprite2D" parent="CardSprite"]
 modulate = Color(0, 0, 0, 0.635294)

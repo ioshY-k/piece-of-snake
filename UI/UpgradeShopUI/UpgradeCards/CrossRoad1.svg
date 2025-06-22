@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="CeossRoad1.svg"
+   sodipodi:docname="CrossRoad1.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -25,12 +25,12 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="4"
-     inkscape:cx="-62"
-     inkscape:cy="13.875"
-     inkscape:window-width="3840"
-     inkscape:window-height="2054"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:cx="88"
+     inkscape:cy="74.875"
+     inkscape:window-width="2880"
+     inkscape:window-height="1514"
+     inkscape:window-x="5749"
+     inkscape:window-y="1600"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -138,7 +138,7 @@
        ry="3.8429754"
        rx="12.307843" />
     <rect
-       style="fill:#f5f5df;stroke:#212532;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995;fill-opacity:1"
+       style="fill:#f5dada;stroke:#212532;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995;fill-opacity:1"
        id="rect1-8"
        width="29.513771"
        height="29.513775"

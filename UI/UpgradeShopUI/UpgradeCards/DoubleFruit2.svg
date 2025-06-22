@@ -151,7 +151,7 @@
        ry="3.8429754"
        rx="12.307843" />
     <rect
-       style="fill:#f4f48b;stroke:#212532;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995;fill-opacity:1"
+       style="fill:#f4a65c;stroke:#212532;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995;fill-opacity:1"
        id="rect1-8"
        width="29.513771"
        height="29.513775"
@@ -353,7 +353,7 @@
        transform="scale(-1,1)" />
     <path
        id="path8-2-7"
-       style="fill:#f4bc89;fill-opacity:1;stroke:#322d21;stroke-width:0.367605;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
+       style="fill:#f4cda9;fill-opacity:1;stroke:#322d21;stroke-width:0.367605;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
        d="m 13.952368,13.86424 c 0.583559,2.06034 2.66307,3.50695 4.644718,3.231095 1.981648,-0.275852 3.115021,-2.169713 2.531462,-4.23005 -0.823422,-2.8739366 -2.613028,-2.75335 -4.222468,-2.48056 -1.499989,0.254239 -3.611018,0.466034 -2.953712,3.479515 z"
        sodipodi:nodetypes="sssas" />
     <path

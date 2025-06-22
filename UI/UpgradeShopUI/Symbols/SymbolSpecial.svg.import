@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bblsiqbg1j2fx"
-path="res://.godot/imported/DefaultUpgrade.svg-7adcc23c5d5805196419fc80da2ffbf5.ctex"
+uid="uid://c0drrip2mvp6b"
+path="res://.godot/imported/SymbolSpecial.svg-c29111997a1bd495adcbbb3a40c459c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade.svg"
-dest_files=["res://.godot/imported/DefaultUpgrade.svg-7adcc23c5d5805196419fc80da2ffbf5.ctex"]
+source_file="res://UI/UpgradeShopUI/Symbols/SymbolSpecial.svg"
+dest_files=["res://.godot/imported/SymbolSpecial.svg-c29111997a1bd495adcbbb3a40c459c9.ctex"]
 
 [params]
 

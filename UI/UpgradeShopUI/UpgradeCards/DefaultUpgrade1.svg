@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="DefaultUpgrade.svg"
+   sodipodi:docname="DefaultUpgrade1.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="6.4248316"
-     inkscape:cx="22.724331"
-     inkscape:cy="54.087021"
+     inkscape:zoom="4.543042"
+     inkscape:cx="33.897992"
+     inkscape:cy="74.94978"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -62,7 +62,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#d9d9d9;stroke:#212532;stroke-width:0.835;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995;stroke-dasharray:none;fill-opacity:1"
+       style="fill:#8d8d8d;stroke:#212532;stroke-width:0.835;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995;stroke-dasharray:none;fill-opacity:1"
        id="rect1"
        width="33.160828"
        height="33.160831"
@@ -71,7 +71,7 @@
        ry="3.8429754"
        rx="12.307843" />
     <rect
-       style="fill:#f4f4de;stroke:#212532;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995;fill-opacity:1"
+       style="fill:#e2e2e2;stroke:#212532;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995;fill-opacity:1"
        id="rect1-8"
        width="29.513771"
        height="29.513775"
@@ -120,8 +120,8 @@
        inkscape:rounded="0.12173243"
        inkscape:randomized="0"
        d="M 11.385772,7.2216663 C 10.977939,7.5221754 7.7580971,6.2556281 7.4575881,5.8477944 7.1570791,5.4399606 6.9011915,1.9894472 7.3090253,1.6889381 7.7168589,1.3884291 10.9367,2.6549764 11.237209,3.0628101 c 0.300509,0.4078337 0.556397,3.8583472 0.148563,4.1588562 z"
-       inkscape:transform-center-x="0.54042977"
-       inkscape:transform-center-y="-0.35025911"
-       transform="matrix(0.43810933,-0.64178253,0.60435545,0.46524097,10.681421,5.9572907)" />
+       inkscape:transform-center-x="0.68977188"
+       inkscape:transform-center-y="-0.44704944"
+       transform="matrix(0.55917624,-0.81913239,0.77136273,0.59380543,8.6563503,7.6443376)" />
   </g>
 </svg>

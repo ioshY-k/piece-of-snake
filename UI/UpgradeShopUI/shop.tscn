@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=18 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -7,9 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bdhi15hlvy1ju" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotActive.png" id="3_g5c1h"]
 [ext_resource type="Texture2D" uid="uid://cnbttr11jnkip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotDefault.png" id="4_ekhl7"]
 [ext_resource type="Texture2D" uid="uid://bsule4ou303ys" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSynergy.png" id="4_wm7xm"]
+[ext_resource type="Texture2D" uid="uid://c0drrip2mvp6b" path="res://UI/UpgradeShopUI/Symbols/SymbolSpecial.svg" id="4_ymhk7"]
 [ext_resource type="Texture2D" uid="uid://54gbscem2ec0" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotPassive.png" id="5_21fih"]
+[ext_resource type="Texture2D" uid="uid://dmypfpf7o4deq" path="res://UI/UpgradeShopUI/Symbols/SymbolDefault.svg" id="6_7wam5"]
+[ext_resource type="Texture2D" uid="uid://cc3lpmpfxdowe" path="res://UI/UpgradeShopUI/Symbols/SymbolActive.svg" id="6_n3cld"]
 [ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="8_21fih"]
 [ext_resource type="Texture2D" uid="uid://ct6mc8w7ccbph" path="res://UI/UpgradeShopUI/UpgrageOverviewPanelButton.svg" id="9_ekhl7"]
+[ext_resource type="Texture2D" uid="uid://ch83p2wya5pew" path="res://UI/UpgradeShopUI/Symbols/SymbolSynergy.svg" id="10_mq2pp"]
+[ext_resource type="Texture2D" uid="uid://bq3r78ld2lde4" path="res://UI/UpgradeShopUI/Symbols/SymbolPassive.svg" id="12_dcjh5"]
+[ext_resource type="Texture2D" uid="uid://pkldlosua5a2" path="res://UI/UpgradeShopUI/Symbols/SymbolBodymod.svg" id="14_i0r2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1g7c"]
 size = Vector2(80, 80)
@@ -26,17 +32,36 @@ theme_override_font_sizes/font_size = 51
 text = "Fruit Overload: "
 
 [node name="ContinueNextRound" type="Button" parent="."]
-offset_left = 1300.0
-offset_top = 820.0
-offset_right = 1469.0
-offset_bottom = 851.0
-text = "Continue next round"
+offset_left = -50.0
+offset_top = 800.0
+offset_right = 819.0
+offset_bottom = 1044.0
+theme_override_font_sizes/font_size = 86
+text = "Continue
+next round"
+
+[node name="ItemShelf" type="Sprite2D" parent="."]
+position = Vector2(1260, -280)
+texture = ExtResource("2_g5c1h")
+offset = Vector2(0, 800)
+
+[node name="Node2D" type="Node2D" parent="ItemShelf"]
+position = Vector2(-180, 490)
+
+[node name="Itemslot1" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(-200, 500)
+
+[node name="Itemslot2" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(-200, 800)
+
+[node name="Itemslot3" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(-200, 1100)
 
 [node name="UpgradeOverview" type="Sprite2D" parent="."]
 position = Vector2(-388, 539)
 texture = ExtResource("2_g5c1h")
 
-[node name="UpgradeSlotSpecial" type="Control" parent="UpgradeOverview"]
+[node name="UpgradeSlotSpecial" type="Control" parent="UpgradeOverview" groups=["Slot Special"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -60,7 +85,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotSpecial/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotDefault1" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("4_ymhk7")
+
+[node name="UpgradeSlotDefault1" type="Control" parent="UpgradeOverview" groups=["Slot Default"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -84,55 +114,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotDefault1/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotDefault2" type="Control" parent="UpgradeOverview"]
-z_index = 5
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 238.0
-offset_top = 221.0
-offset_right = 318.0
-offset_bottom = 301.0
-pivot_offset = Vector2(40, 40)
-mouse_filter = 2
-
-[node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault2"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1"]
+modulate = Color(1, 1, 1, 0.576471)
 position = Vector2(40, 40)
-texture = ExtResource("4_ekhl7")
+texture = ExtResource("6_7wam5")
 
-[node name="Area2D" type="Area2D" parent="UpgradeOverview/UpgradeSlotDefault2"]
-position = Vector2(40, 40)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotDefault2/Area2D"]
-shape = SubResource("RectangleShape2D_s1g7c")
-
-[node name="UpgradeSlotDefault3" type="Control" parent="UpgradeOverview"]
-z_index = 5
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 238.0
-offset_top = 61.0
-offset_right = 318.0
-offset_bottom = 141.0
-pivot_offset = Vector2(40, 40)
-mouse_filter = 2
-
-[node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault3"]
-position = Vector2(40, 40)
-texture = ExtResource("4_ekhl7")
-
-[node name="Area2D" type="Area2D" parent="UpgradeOverview/UpgradeSlotDefault3"]
-position = Vector2(40, 40)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotDefault3/Area2D"]
-shape = SubResource("RectangleShape2D_s1g7c")
-
-[node name="UpgradeSlotActive1" type="Control" parent="UpgradeOverview"]
+[node name="UpgradeSlotActive1" type="Control" parent="UpgradeOverview" groups=["Slot Active"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -156,7 +143,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotActive1/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotActive2" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("6_n3cld")
+
+[node name="UpgradeSlotActive2" type="Control" parent="UpgradeOverview" groups=["Slot Active"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -180,7 +172,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotActive2/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotSynergie1" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("6_n3cld")
+
+[node name="UpgradeSlotSynergy1" type="Control" parent="UpgradeOverview" groups=["Slot Synergy"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -192,19 +189,24 @@ offset_bottom = 101.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
-[node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergie1"]
+[node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
 position = Vector2(40, 40)
 texture = ExtResource("4_wm7xm")
 
-[node name="Area2D" type="Area2D" parent="UpgradeOverview/UpgradeSlotSynergie1"]
+[node name="Area2D" type="Area2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
 position = Vector2(40, 40)
 collision_layer = 8
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotSynergie1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotSynergy1/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotSynergie2" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("10_mq2pp")
+
+[node name="UpgradeSlotSynergy2" type="Control" parent="UpgradeOverview" groups=["Slot Synergy"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -216,19 +218,24 @@ offset_bottom = 101.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
-[node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergie2"]
+[node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
 position = Vector2(40, 40)
 texture = ExtResource("4_wm7xm")
 
-[node name="Area2D" type="Area2D" parent="UpgradeOverview/UpgradeSlotSynergie2"]
+[node name="Area2D" type="Area2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
 position = Vector2(40, 40)
 collision_layer = 8
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotSynergie2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotSynergy2/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotPassive1" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("10_mq2pp")
+
+[node name="UpgradeSlotPassive1" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -252,7 +259,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotPassive1/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotPassive2" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("12_dcjh5")
+
+[node name="UpgradeSlotPassive2" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -276,7 +288,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotPassive2/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotPassive3" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("12_dcjh5")
+
+[node name="UpgradeSlotPassive3" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -300,7 +317,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotPassive3/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotPassive4" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("12_dcjh5")
+
+[node name="UpgradeSlotPassive4" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -324,7 +346,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotPassive4/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotBodymod1" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("12_dcjh5")
+
+[node name="UpgradeSlotBodymod1" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -348,7 +375,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotBodymod1/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlot1Bodymod2" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("14_i0r2g")
+
+[node name="UpgradeSlot1Bodymod2" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -372,7 +404,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
-[node name="UpgradeSlotBodymod3" type="Control" parent="UpgradeOverview"]
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("14_i0r2g")
+
+[node name="UpgradeSlotBodymod3" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
 z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
@@ -396,11 +433,16 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotBodymod3/Area2D"]
 shape = SubResource("RectangleShape2D_s1g7c")
 
+[node name="Symbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3"]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("14_i0r2g")
+
 [node name="YourUpgrades" type="Label" parent="UpgradeOverview"]
-offset_left = -312.0
-offset_top = -479.0
-offset_right = 256.0
-offset_bottom = -378.0
+offset_left = -292.0
+offset_top = -499.0
+offset_right = 276.0
+offset_bottom = -398.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5

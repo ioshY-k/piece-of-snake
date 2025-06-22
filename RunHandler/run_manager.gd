@@ -14,7 +14,7 @@ var current_act: int = 0
 var level_scene: PackedScene = preload("res://Levels/level.tscn")
 var level: LevelManager
 
-var current_upgrades: Array[bool] = [false, false, false, false]
+var current_upgrades: Array[bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 
 
 func _ready() -> void:
@@ -38,14 +38,14 @@ func _on_round_over():
 	if level.fruits_left > 0:
 		level.queue_free()
 	else:
+		shop.show_shop()
+		shop.generate_items(current_round)
+		level.process_mode = Node.PROCESS_MODE_DISABLED
+		await shop.finished_buying
+		level.process_mode = Node.PROCESS_MODE_INHERIT
+		shop.hide_shop()
 		if current_round < 3:
 			current_round += 1
-			shop.show_shop()
-			shop.generate_items()
-			level.process_mode = Node.PROCESS_MODE_DISABLED
-			await shop.finished_buying
-			level.process_mode = Node.PROCESS_MODE_INHERIT
-			shop.hide_shop()
 			level.prepare_new_round(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
 		else:
 			current_act += 1
