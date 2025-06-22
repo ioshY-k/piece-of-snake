@@ -198,6 +198,10 @@ Some upgrades have **multiple tiers**:
   - Can purchase two upgrades at the end of a round  
   - Lose all current Bodymod upgrades
 
+- **Area Collector**
+  - Every empty Item Slot gets filled with Junk (Except Default Slot)
+  - Get a random (passive?) upgrade everytime you purchase area upgrades (Items obtained that way can replace Debris) 
+
 # Round Modifiers
 
 ## Concept
