@@ -332,6 +332,7 @@ Each letter provides a **cryptic gameplay challenge**. The player must complete 
 | 5  | *"Don’t blink. Just stare into its eyes."*                | Stay still and look directly at a specific object/creature (even while it moves). | Pause $ reverse, Manual Movement|
 | 6  | *"Catch what hides from the snake."*                      | Intercept a character that only disappears into rooms **not occupied by the snake**. | Wormhole |
 | 7  | *"Sometimes... skipping reveals more than choosing."*     | Press the “skip” button **during chest cash-in**. Only appears in later difficulty tiers. |
+|8   |"Reach the furthest corner."                               |Buy every Area Upgrade on a specific (Lvl 1) Map
 | 9  | *"100m sprint. Beat the clock."*                          | Reach a start/finish line within a specific digital timer (visible stopwatch) threshold. | Hyperspeed Enhancement, Caffeinated (Modifier)
 | 10 | *"Find the island. Reach it. Come back alive."*           | Use `Wormhole` to reach a secluded island on the `Beach` map. A return portal spawns on arrival. | Wormhole|
 
