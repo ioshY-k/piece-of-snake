@@ -34,3 +34,6 @@ func _ready() -> void:
 	$MagnetField5.connect("area_exited", _on_area_exited)
 	$MagnetField6.connect("area_exited", _on_area_exited)
 	$MagnetField7.connect("area_exited", _on_area_exited)
+
+func self_destruct():
+	queue_free()

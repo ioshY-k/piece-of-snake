@@ -1,9 +1,20 @@
 class_name Shop extends CanvasLayer
 
 signal upgrade_bought
+signal upgrade_destroyed
 signal finished_buying
 
 const UPGRADE_CARD = preload("res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.tscn")
+
+var default_slots: Array[Control]
+var passive_slots: Array[Control]
+var bodymod_slots: Array[Control]
+var synergy_slots: Array[Control]
+var active_slots: Array[Control]
+var special_slots: Array[Control]
+
+var slots: Array[Control] = []
+
 
 var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
@@ -22,52 +33,88 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 @onready var upgrade_overview: Sprite2D = $UpgradeOverview
 
 func _ready() -> void:
+	default_slots = [$UpgradeOverview/UpgradeSlotDefault1]
+
+	passive_slots = [$UpgradeOverview/UpgradeSlotPassive1,
+					$UpgradeOverview/UpgradeSlotPassive2,
+					$UpgradeOverview/UpgradeSlotPassive3,
+					$UpgradeOverview/UpgradeSlotPassive4]
+	bodymod_slots = [$UpgradeOverview/UpgradeSlotBodymod1,
+					$UpgradeOverview/UpgradeSlot1Bodymod2,
+					$UpgradeOverview/UpgradeSlotBodymod3]
+	synergy_slots = [$UpgradeOverview/UpgradeSlotSynergy1,
+					$UpgradeOverview/UpgradeSlotSynergy2]
+	active_slots = [$UpgradeOverview/UpgradeSlotActive1,
+					$UpgradeOverview/UpgradeSlotActive2]
+	special_slots = [$UpgradeOverview/UpgradeSlotSpecial]
+	
+	slots.append_array(default_slots)
+	slots.append_array(passive_slots)
+	slots.append_array(bodymod_slots)
+	slots.append_array(synergy_slots)
+	slots.append_array(active_slots)
+	slots.append_array(special_slots)
+		
 	hide_shop()
 
+func _on_got_clicked(upgrade_id: int):
+	if GameConsts.advanced_upgrades.has(upgrade_id):
+		for slot in slots:
+			if slot.get_node("Area2D").get_child(-1) is UpgradeCard and\
+			slot.get_node("Area2D").get_child(-1).upgrade_id == upgrade_id -1:
+				slot.get_node("HighlightReplace").visible = true
+	else:
+		var chosen_slots: Array[Control]
+		match GameConsts.get_upgrade_type(upgrade_id):
+			GameConsts.UPGRADE_TYPE.DEFAULT:
+				chosen_slots = default_slots
+			GameConsts.UPGRADE_TYPE.PASSIVE:
+				chosen_slots = passive_slots
+			GameConsts.UPGRADE_TYPE.BODYMOD:
+				chosen_slots = bodymod_slots
+			GameConsts.UPGRADE_TYPE.SYNERGY:
+				chosen_slots = synergy_slots
+			GameConsts.UPGRADE_TYPE.ACTIVE:
+				chosen_slots = active_slots
+			GameConsts.UPGRADE_TYPE.SPECIAL:
+				chosen_slots = special_slots
+		for slot in chosen_slots:
+			if slot.get_node("Area2D").get_child(-1) is UpgradeCard:
+				slot.get_node("HighlightReplace").visible = true
+			else:
+				slot.get_node("HighlightBuy").visible = true
+				
+func _on_let_go():
+	for slot in slots:
+		slot.get_node("HighlightReplace").visible = false
+		slot.get_node("HighlightBuy").visible = false
+		
+	
 func _on_upgrade_card_bought(upgrade_id: int) -> void:
-	print(upgrade_id)
-	print(upgrade_card_pool)
-	update_upgrade_pool(upgrade_id)
-	print(upgrade_card_pool)
-			
+	update_upgrade_pool(upgrade_id, true)
 	upgrade_bought.emit(upgrade_id)
 
-func update_upgrade_pool(upgrade_id: int):
+func _on_upgrade_destroyed(upgrade_id: int) -> void:
+	if GameConsts.upgrades_with_advancement.has(upgrade_id):
+		update_upgrade_pool(upgrade_id, false)
+	upgrade_destroyed.emit(upgrade_id)
 	
-	upgrade_card_pool.erase(upgrade_id)
-	
-	if GameConsts.get_upgrade_type(upgrade_id) == GameConsts.UPGRADE_TYPE.PASSIVE or\
-	GameConsts.get_upgrade_type(upgrade_id) == GameConsts.UPGRADE_TYPE.ACTIVE or\
-	GameConsts.get_upgrade_type(upgrade_id) == GameConsts.UPGRADE_TYPE.DEFAULT:
-		match upgrade_id:
-			GameConsts.UPGRADE_LIST.AREA_SIZE_1:
+
+func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
+	if bought_not_destroyed:
+		upgrade_card_pool.erase(upgrade_id)
+		if GameConsts.upgrades_with_advancement.has(upgrade_id):
+			if upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_1:
 				default_upgrade_card = GameConsts.UPGRADE_LIST.AREA_SIZE_2
-			GameConsts.UPGRADE_LIST.AREA_SIZE_2:
-				default_upgrade_card = GameConsts.UPGRADE_LIST.AREA_SIZE_3
-				
-			GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2)
-			GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3)
-			GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.HYPER_SPEED_2)
-			GameConsts.UPGRADE_LIST.HYPER_SPEED_2:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.HYPER_SPEED_3)
-			GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2)
-			GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3)
-			GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2)
-			GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3)
-			GameConsts.UPGRADE_LIST.CROSS_ROAD_1:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.CROSS_ROAD_2)
-			GameConsts.UPGRADE_LIST.CROSS_ROAD_2:
-				upgrade_card_pool.append(GameConsts.UPGRADE_LIST.CROSS_ROAD_3)
-			_:
-				pass
-				
+			elif upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_2:
+					default_upgrade_card = GameConsts.UPGRADE_LIST.AREA_SIZE_3
+			else:
+				upgrade_card_pool.append(upgrade_id + 1)
+	else:
+		upgrade_card_pool.erase(upgrade_id+1)
+		
+		
+			
 
 func _on_continue_next_round_pressed() -> void:
 	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
@@ -108,7 +155,7 @@ func generate_items(current_round):
 	if not upgrades_expanded:
 		await card_tween.finished
 
-		_on_upgrade_panel_button_mouse_entered()
+		_on_upgrade_panel_button_pressed()
 
 func show_shop():
 	$ContinueNextRound.show()
@@ -122,7 +169,7 @@ func hide_shop():
 	
 
 var upgrades_expanded: bool = false
-func _on_upgrade_panel_button_mouse_entered() -> void:
+func _on_upgrade_panel_button_pressed() -> void:
 	var tween = create_tween()
 	if not upgrades_expanded:
 		tween.tween_property(upgrade_overview, "position:x", 360, 0.4).\

@@ -128,11 +128,33 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
 			current_map.add_upgrade_component(upgrade_id)
 
+
+func destroy_upgrade(upgrade_id: int):
+	var component
+	match upgrade_id:
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
+			component = current_map.snake_head.find_child("FruitMagnet1Component",false,false)
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
+			component = current_map.snake_head.find_child("FruitMagnet2Component",false,false)
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
+			component = active_item_slot_1.find_child("FruitRelocator1Component",false,false)			
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
+			component = speed_boost_bar.find_child("HyperSpeed1Component",false,false)
+	
+	if component != null:
+		component.self_destruct()
+	else:
+		print_debug("No Component found to be destroyed")
+	
+	
+
 func is_upgrade_reload_necessary(upgrade_id) -> bool:
 	match upgrade_id:
-		1,2:
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_1,\
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
 			return false
-		0,3:
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
 			return true
 		_:
 			return false

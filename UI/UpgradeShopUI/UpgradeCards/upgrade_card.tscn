@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=31 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://c0402cd6i7ho0" path="res://UI/UpgradeShopUI/UpgradeCards/KnotAttractor.svg" id="21_rpqwx"]
 [ext_resource type="Texture2D" uid="uid://cbyk1wowmea3l" path="res://UI/UpgradeShopUI/UpgradeCards/ItemReload.svg" id="22_dse7d"]
 [ext_resource type="Texture2D" uid="uid://bjyb46sxmqy5t" path="res://UI/UpgradeShopUI/UpgradeCards/Immutable.svg" id="23_pxvxx"]
+[ext_resource type="Texture2D" uid="uid://wjgjxbelk76i" path="res://icon.svg" id="26_r5us8"]
+[ext_resource type="Texture2D" uid="uid://dcit68wswd7o1" path="res://Levels/Map1/test_level.svg" id="27_yyp1t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -104,6 +106,20 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_r5us8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yyp1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_r5us8")
+}],
+"loop": false,
+"name": &"destroyed_anim",
+"speed": 5.0
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1v4fj"]
@@ -127,8 +143,6 @@ script = ExtResource("1_1v4fj")
 [node name="CardSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(60, 60)
 sprite_frames = SubResource("SpriteFrames_222e7")
-frame = 20
-frame_progress = 0.870103
 
 [node name="CardShadow" type="Sprite2D" parent="CardSprite"]
 modulate = Color(0, 0, 0, 0.635294)
@@ -136,6 +150,7 @@ show_behind_parent = true
 texture = SubResource("CompressedTexture2D_1v4fj")
 
 [node name="CardArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 8
 

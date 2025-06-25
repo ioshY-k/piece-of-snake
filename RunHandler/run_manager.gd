@@ -21,6 +21,7 @@ func _ready() -> void:
 	create_new_run()
 	
 	shop.upgrade_bought.connect(_on_upgrade_bought)
+	shop.upgrade_destroyed.connect(_on_upgrade_destroyed)
 	
 
 func create_new_run():
@@ -33,6 +34,11 @@ func create_new_run():
 func _on_upgrade_bought(upgrade: int):
 	current_upgrades[upgrade] = true
 	level.instantiate_upgrade(upgrade)
+
+func _on_upgrade_destroyed(upgrade: int):
+	current_upgrades[upgrade] = false
+	level.destroy_upgrade(upgrade)
+	
 	
 func _on_round_over():
 	if level.fruits_left > 0:
@@ -54,4 +60,8 @@ func _on_round_over():
 
 
 func _on_retry_button_pressed() -> void:
+	for child in get_children():
+		if child.name == "Level":
+			return
+		
 	create_new_run()
