@@ -1,13 +1,13 @@
 # Core Gameplay Loop
 
 ## Overview
-The game is a **run-based roguelike** inspired by the classic Snake. The player controls a growing snake that must collect fruit under time pressure while avoiding collisions with itself and the environment. The run progresses through increasingly difficult stages and rewards strategic resource use between rounds.
+The game is a **run-based roguelike** inspired by the classic Snake. The player controls a growing snake that must collect fruits within a time limit while avoiding collisions with itself and the environment. The run progresses through increasingly difficult stages and rewards strategic resource use between rounds.
 
 ---
 
 ## Structure of a Run
 
-- A run consists of **3 levels**, each containing **4 rounds**.
+- A run consists of **3 acts**, each containing **4 rounds**.
 - Each round has a **fixed time limit**.
 - The goal is to collect a **minimum number of fruits** before the timer runs out.
 
@@ -19,7 +19,8 @@ The game is a **run-based roguelike** inspired by the classic Snake. The player 
 - A new fruit spawns **immediately after** the current one is collected.
 - Each fruit collected **increases the snake’s length**.
 - If the snake **hits a wall or itself**, one fruit is **subtracted from the current round's progress**.
-  - The snake enters **temporary invincibility frames** after collisions to prevent rapid chain-loss or dead ends.
+
+> 💡 The snake enters **temporary invincibility frames** after collisions to prevent rapid chain-loss or dead ends.
 
 ---
 
@@ -27,7 +28,7 @@ The game is a **run-based roguelike** inspired by the classic Snake. The player 
 
 - If the required number of fruits is **not reached**, the run ends (failure).
 - **Excess fruits** collected beyond the required amount are converted into **upgrade currency**.
-- These excess fruits **do not carry over** across rounds — they must be spent immediately.
+- These excess fruits do carry over across rounds, but **not across acts**.
 
 ---
 
@@ -35,27 +36,33 @@ The game is a **run-based roguelike** inspired by the classic Snake. The player 
 
 After each round, the player can spend excess fruit to purchase **one** of the following:
 
-1. **Two random upgrades** (more powerful or varied).
-2. **A standard upgrade** (always available, cheapest option):
-   - Expands the playable area ("field size").
-   - This upgrade **resets** with each new level.
+1. **An offered permanent upgrade**
+2. **A second different offered permanent upgrade**
+3. **A standard field size upgrade** (always available, always the cheapest option):
+   - Expands the playable area.
+   - This upgrade **resets** with each new act.
 
-> Only **one upgrade** can be purchased per round, forcing trade-offs:
-> Should the player skip the safe, cheap field upgrade to save for more impactful permanent upgrades?
+Only **one upgrade** can be purchased per round, forcing trade-offs:
+> How many times can the Player afford to skip the safe, cheap, but temporary field upgrade?
+> Is it worth to pay less or even nothing in a round to afford a high cost upgrade in a later round?
 
 ---
 
-## Snake Growth & Reset
+## Snake Control $ Growth
 
-- The snake’s **length is preserved** throughout a level (4 rounds).
-- **Length resets** at the start of a **new level**.
+- The snake is unable to stop moving and will move in the direction last inputted until a new dínput is recieved.
+- There is a sprint meter that decreases when holding down sprint. It recharges automatically and can only be reused when full
+- The snake’s **length is preserved** throughout an act (4 rounds).
+- **Length resets** at the start of a **new act**.
 - Players must weigh the benefit of collecting excess fruits (upgrade currency) against the difficulty of controlling a longer snake in subsequent rounds.
+
+> 💡 The Sprint meter allows for more strategy and higher skill ceiling in the early itemless rounds.
 
 ---
 
 ## Difficulty Scaling
 
-- Each level or round increases the challenge:
+- Each act or round increases the challenge:
   - **Higher minimum fruit requirements**
   - **Faster snake speed**
 
@@ -83,21 +90,24 @@ At the end of each round, the player may choose **one of three upgrade options**
 
 ## Upgrade Categories
 
-| Category     | Description                                         | Slots |
-|--------------|-----------------------------------------------------|-------|
-| Default      | Always available upgrade (`Larger Area`)            |-      |
-| Active       | Requires activation by the player                   |2      |
-| Passive      | Always-on effect                                    |4      |
-| Bodymod      | Alters how the snake's body behaves or interacts    |3      |
-| Synergy      | Relies on or enhances combinations of other upgrades|2      |
-| Special      | Rule-breaking or run-defining modifiers             |1      |
+
+| Category     | Description                                         | Slots|
+|--------------|-----------------------------------------------------|-----|
+| Default      | Always available upgrade (`Larger Area`)            |1|
+| Active       | Requires activation by the player                   |2|
+| Passive      | Always-on effect                                    |4|
+| Bodymod      | Alters how the snake's body behaves or interacts    |3|
+| Synergy      | Relies on or enhances combinations of other upgrades |2|
+| Special      | Rule-breaking or run-defining modifiers             |1|
 
 ---
 
 ## Upgrade List
 
 ### 🟢 Default
-- **Larger Area** (resets each level): Increases the size of the playable field.
+- **Larger Area** (resets each act): Increases the size of the playable field.
+  - → advanced version enlarges even further
+  - → third advancement brings area to maximum size
 
 ---
 
@@ -105,22 +115,22 @@ At the end of each round, the player may choose **one of three upgrade options**
 
 - **Crossroad Spawner**  
   - Spawn a crossroad on which you may intersect your body 
-  - Spawn a 3×3 invincible zone  
-  - → Later: Two 4×4 invincible zones  
+  - → Spawn a 3×3 invincible zone  
+  - → Two 4×4 invincible zones  
   - *(Each tile can only be intersected twice to avoid infinite invincibility.)*
 
 - **Pause & Reverse**  
   - Use 2 manual stops  
-  - → Then: beyond stopping you may move in reverse
-  - → Then: 3 reverse moves
+  - → beyond stopping you may move in reverse
+  - → 3 reverse moves
 
 - **Wormhole**  
   - Enter a wormhole and place an exit anywhere  
-  - → Later: Place two wormholes per round
+  - → Place two wormholes per round
 
 - **Fruit Relocator**  
   - Relocate all fruit up to 2 times  
-  - → Then: 4 times  
+  - → 4 times  
 
 ---
 
@@ -138,26 +148,23 @@ At the end of each round, the player may choose **one of three upgrade options**
 
 - **Edge Wrap**  
   - Leaving the map on one side makes you appear on the opposite side
+  - → Doing so immediately refills your hyperspeed gauge
 
 - **Smart Spawn**  
   - Fruit will not spawn in enclosed areas  
-  - → When fruits would've spawned there, spawn two copies elsewhere
+  - → When fruit would've spawned there, spawn two copies elsewhere
 
 - **Double Fruit Spawn**  
-  - Two fruits spawn at once  
-  - → gruits are worth more and more when left uncollected
+  - Two fruit spawn at once  
+  - → fruit are worth more and more when left uncollected
   - → Three fruits spawn at once
-
-- **Wall Immunity (while in Hyperspeed)**  
-  - Colliding with a wall during hyperspeed does not cost a fruit
 
 ---
 
 ### 🟡 Bodymod
 
-- **Tail Contact Invincibility**  
-  - Touching your tail grants brief invincibility  
-  - → Also grants max speed automatically
+- **Center Invincibility**  
+  - Touching the center of a long straight bodysection grants brief invincibility
 
 - **Corner Phasing**  
   - Snake can pass through its own corners
@@ -167,6 +174,9 @@ At the end of each round, the player may choose **one of three upgrade options**
 
 - **Headlight**  
   - Head emits light in dark levels, lets see through roofs and kills ghosts on contact
+
+- **Wall Immunity (while in Hyperspeed)**  
+  - Colliding with a wall during hyperspeed does not cost a fruit
 ---
 
 ### 🔵 Synergy
@@ -178,8 +188,7 @@ At the end of each round, the player may choose **one of three upgrade options**
   - When your head passes your body, all fruits move toward you
 
 - **Bodymod Amplifier**  
-  - Bodymods cover double the snake's length  
-  - → Then: triple the length
+  - Bodymods cover double the snake's length/effectiveness (Wall immunity now also grants snakebody immuniity)
 
 ---
 
@@ -201,23 +210,30 @@ At the end of each round, the player may choose **one of three upgrade options**
   - Can purchase two upgrades at the end of a round  
   - Lose all current Bodymod upgrades
 
+- **Area Collector**
+  - Every empty Item Slot gets filled with junk (Except Default Slot)
+  - Get a random (passive?) upgrade everytime you purchase area upgrades (Items obtained that way can replace junk) 
+
 # Round Modifiers
 
 ## Concept
 
-Each round is affected by a **random Modifier**, which alters core gameplay conditions. Modifiers aim to:
-- **Counter or enhance specific builds** (e.g., active item-based, long-body, control-focused).
+Each round except the first is affected by a **random Modifier**, which alters core gameplay conditions. Modifiers aim to:
+- **Counter or enhance specific builds** (e.g. active item-based, multiple fruit spawns, hyperspeed build).
 - **Provoke meaningful player decisions** by changing expected patterns.
 - **Scale with progression**: some appear more often in early rounds (1–2), others in late rounds (3–4).
+- While in the shopping phase the player sees the upcoming modifier
+- The same modifier never appears two times **in the same act**
 
-This system introduces **run-level variety** and exponential challenge development across levels.
+
+> 💡 This system introduces **run-level variety** and exponential challenge development across levels. The clue on the upcoming modifier gives players room for more informed decisions, for example to replace possessed upgrades
 
 ---
 
 ## Modifier Types
 
 Each modifier is tagged:
-- `E` – **Early Modifier** (common in Rounds 1–2)
+- `E` – **Early Modifier** (common in Rounds 2-3)
 - `L` – **Late Modifier** (common in Rounds 3–4)
 - `?` – **Needs Design Review** (may lack mechanical impact)
 
@@ -235,7 +251,7 @@ Each modifier is tagged:
 | 6   | High Protein   | ?    | Special fruits appear that grow the snake twice as much. _(Note: currently lacks synergy or meaningful counterplay.)_ |
 | 7   | Rice Paper     | —    | Using Active Items increases your snake’s length                           |
 | 8   | Fruitbody      | —    | Passing over your own body enlarges the snake                              |
-| 9   | Kids’ Menu     | L    | Overstock fruit is capped low (only enough for small/standard upgrades). Fruits move toward you at default speed. Cannot appear in final round |
+| 9   | Kids’ Menu     | E    | Overstock fruit is capped low (only enough for small/standard upgrades). Fruits move toward you at default speed. Cannot appear in final round |
 | 10  | Lasers         | L    | Sporadic lasers cross the screen horizontally or vertically                |
 | 11  | Darkness       | E    | Only the snake’s body emits light. The rest of the map is dark             |
 | 12  | Corner Limit   | E    | Having fewer than 3 corners increases your snake’s length                  |
@@ -244,15 +260,9 @@ Each modifier is tagged:
 
 ---
 
-## Design Philosophy
+> 💡 Modifiers also help distribute difficulty **non-linearly** across a run, making the pacing more dynamic and forcing players to adapt.
 
-- Modifiers are designed to **interfere with or enable specific playstyles**:
-  - E.g. `Fruitbody` punishes looping movement, `Rice Paper` challenges item-heavy builds.
-- Some encourage **environmental adaptation**, like `Darkness` or `Lasers`.
-- Others create **risk-reward dynamics**, e.g. `Corner Limit`, `Kids’ Menu`.
-- `High Protein` is marked for review, as it currently **does not meaningfully impact decision-making or counter any builds**.
 
-Modifiers also help distribute difficulty **non-linearly** across a run, making the pacing more dynamic and forcing players to adapt.
 # Map Design
 
 ## Design Philosophy
@@ -262,7 +272,6 @@ Maps are not only static environments — they are **active challenges** that in
 - **Synergy & Counterplay**: Certain upgrades make specific maps easier to navigate or survive.
 - **Evolving Complexity**: Later maps introduce **moving elements**, **dynamic hazards**, and **interactive objects**.
 - **Spatial Identity**: Each map is immediately recognizable by its **shape**, **layout**, and **greymap silhouette**.
-- **Build Incentivization**: Some upgrades (e.g., `Body Unreachable`, `Edge Wrap`, `Wormhole`) are more effective on specific maps.
 
 ---
 
@@ -270,7 +279,7 @@ Maps are not only static environments — they are **active challenges** that in
 
 | ID  | Name         | Level | Description                                                                                   |
 |-----|--------------|--------|-----------------------------------------------------------------------------------------------|
-| 1   | Standard     | 1      | Mostly open map with occasional rocks and hills. Smaller play area to balance accessibility. |
+| 1   | Fields       | 1      | Mostly open map with occasional rocks and hills. Smaller play area to balance accessibility. |
 | 2   | Tomb         | 1      | Chessboard-like blocked tiles with partial openness. Maze-like movement.                     |
 | 3   | Office       | 2      | Divided into rooms with doors that open and close at set intervals. Timing is essential.     |
 | 4   | Beach        | 3      | Tides shift periodically, shrinking or expanding 5-tile water zones that separate landmasses.|
@@ -279,7 +288,7 @@ Maps are not only static environments — they are **active challenges** that in
 | 7   | Stadium      | 1      | Open central field with narrow grandstands around the perimeter.                            |
 | 8   | Space Station| 3      | Three moving platforms scroll horizontally, offset like a checkerboard.                     |
 | 9   | Ice Cave     | 2      | A sliding ice block moves continuously like a puzzle element, pushing through open lanes.    |
-| 10  | Restaurant   | 1      | Open dining area with narrow access to kitchen and exits. Requires efficient routing.        |
+| 10  | Restaurant   | 1      | Open dining area with narrow access to kitchen and exits.        |
 | 11  | Central Station | 2   | Large central plaza with left/right train platforms. Trains block paths for extended time.  |
 
 ---
@@ -287,36 +296,33 @@ Maps are not only static environments — they are **active challenges** that in
 ## Map Mechanics & Strategic Interactions
 
 - **Dynamic Elements**:
-  - `Office`, `Swim Pool`, `Central Station`, `Beach`, `Space Station` add movement, rotation, or timing elements.
+  - `Swim Pool`, `Central Station`, `Beach`, `Space Station` add movement, rotation, or timing elements.
 - **Upgrade-Relevant Features**:
-  - `Corner Phasing` is powerful on maps with cutoff zones (e.g. `Tomb`).
-  - `Stop & Reverse` is powerful on maps with Timed Elements (e.g. `Office` or `Swim Pool`).
+  - `Corner Phasing` or `Crossroad Spawner` is powerful on maps with cross paths (e.g. `Tomb`).
+  - `Stop & Reverse` is powerful on maps with Timed Elements (e.g. `Office` or `Space Station`).
   - `Wormhole` or `Invincibility` upgrades gain value in compartmentalized maps (`Central Station`, `Restaurant`).
-  - `Body Unreachable` upgrade can be leveraged when unreachable areas exist (e.g. `Beach` high tide or `Office` doors).
-- **Visibility Challenges**:
+- **Modifier Synergies**:
   - `Ice Cave` can become dangerous when paired with the `Darkness` modifier.
-- **Hazard Timing**:
-  - `Train` or `Tide` maps combine mobility with **delayed punishment**, encouraging foresight.
+  - Collecting `Telefruits` can become dangerous during `High Tides`
+  - `Laser` puts you in dead ends in twisted maps
 
 ---
 # Meta Progression
 
 ## Overview
 
-Meta progression is driven by **excess fruits** collected in the **final round** of a successful run. These fruits can be spent after the run to **lower the cost of unlocking progression chests**. Each chest eventually reveals a **clue letter** that hints at how to unlock a secret playable character.
+Meta progression is driven by **excess fruits** collected in **every act** of a successful run. These fruits can be spent after the run to **lower the cost of unlocking progression chests**. Each chest eventually reveals a **clue letter** that hints at how to unlock a secret playable character.
+
+> 💡 To invoke a feeling of accomplishment after lost runs, the collected overstock fruit in every run should still partially be able to lower the cost of unlocking the chests
 
 ---
 
 ## Chest System
 
-- Each **difficulty tier** offers **3 progression chests**.
-- Chests cost an increasing number of post-run fruits:
-  - **Chest 1**: ~1 run’s worth of fruit surplus
-  - **Chest 2**: ~3 runs
-  - **Chest 3**: ~5 runs
+- Each **difficulty tier** offers **3 progression chests**, each costing ~1 run worth of fruits
 - **Fruit can be spend freely among the Chests of same or lower difficulty**.
   - If a chest’s price reaches **0**, it reveals three **stylized letters** of which one can be opened.
-  - The unopened letters visually fly into the next box of the same difficulty tier to show that the next choice will be between two, and then only the last
+  - The unopened letters visually fly into the next box of the same difficulty tier to show that the next choice will be between two, and then only one.
 
 > 💡 Letters are designed in the **visual style of the characters** they refer to, reinforcing their identity even before unlocking them.
 
@@ -335,7 +341,13 @@ Each letter provides a **cryptic gameplay challenge**. The player must complete 
 | 5  | *"Don’t blink. Just stare into its eyes."*                | Stay still and look directly at a specific object/creature. | Pause $ reverse, Manual Movement|
 | 6  | *"Catch what hides from the snake."*                      | Intercept a character that only disappears into rooms **not occupied by the snake**. | Wormhole |
 | 7  | *"Sometimes... skipping reveals more than choosing."*     | Press the “skip” button **during chest cash-in**. Only appears in later difficulty tiers. |
+| 8  |"Reach the furthest corner."                               |Buy every Area Upgrade on a specific (Lvl 1) Map
 | 9  | *"100m sprint. Beat the clock."*                          | Reach a start/finish line within a specific digital timer (visible stopwatch) threshold. | Hyperspeed Enhancement, Caffeinated (Modifier)
 | 10 | *"Find the island. Reach it. Come back alive."*           | Use `Wormhole` to reach a secluded island on the `Beach` map. A return portal spawns on arrival. | Wormhole|
 
+## Further Meta Completion
+
+- Besides characters there are two toher Achievement a player can hunt down over the course of multiole runs:
+  1. Classic Achievements, provoking challenge runs or improbable item combos
+  2. Upgrade Gallery, displaying **every Upgrade equipped in a won run**, with a badge showing the highest difficulty tier it was done
 ---
