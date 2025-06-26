@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=26 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
 [ext_resource type="Texture2D" uid="uid://obnifq5ymbgd" path="res://UI/UpgradeShopUI/ItemShelfPanel.svg" id="2_7wam5"]
 [ext_resource type="Texture2D" uid="uid://fvt5q0c0oj87" path="res://UI/UpgradeShopUI/UpgrageOverviewPanel.svg" id="2_g5c1h"]
+[ext_resource type="Texture2D" uid="uid://crcpy24b4fcps" path="res://UI/UpgradeShopUI/Slots/CurrencySymbol.svg" id="3_0a76l"]
 [ext_resource type="Texture2D" uid="uid://b3xunl8h7st88" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotBodymod.png" id="3_3oog2"]
 [ext_resource type="Texture2D" uid="uid://bdhi15hlvy1ju" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotActive.png" id="3_g5c1h"]
 [ext_resource type="Texture2D" uid="uid://cnbttr11jnkip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotDefault.png" id="4_ekhl7"]
@@ -15,7 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cc3lpmpfxdowe" path="res://UI/UpgradeShopUI/Symbols/SymbolActive.svg" id="6_n3cld"]
 [ext_resource type="Texture2D" uid="uid://cixdb6y2jjm17" path="res://UI/UpgradeShopUI/HighlightBuy.png" id="7_i0r2g"]
 [ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="8_21fih"]
+[ext_resource type="Texture2D" uid="uid://ga8gt3rtdqat" path="res://UI/UpgradeShopUI/Slots/BuyZone.png" id="8_xtrhb"]
+[ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="9_0a76l"]
 [ext_resource type="Texture2D" uid="uid://ct6mc8w7ccbph" path="res://UI/UpgradeShopUI/UpgrageOverviewPanelButton.svg" id="9_ekhl7"]
+[ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/Slots/FruitSymbol.svg" id="10_7hl21"]
 [ext_resource type="Texture2D" uid="uid://ch83p2wya5pew" path="res://UI/UpgradeShopUI/Symbols/SymbolSynergy.svg" id="10_mq2pp"]
 [ext_resource type="Texture2D" uid="uid://bq3r78ld2lde4" path="res://UI/UpgradeShopUI/Symbols/SymbolPassive.svg" id="12_dcjh5"]
 [ext_resource type="Texture2D" uid="uid://pkldlosua5a2" path="res://UI/UpgradeShopUI/Symbols/SymbolBodymod.svg" id="14_i0r2g"]
@@ -59,6 +63,22 @@ position = Vector2(-200, 800)
 [node name="Itemslot3" type="Sprite2D" parent="ItemShelf"]
 position = Vector2(-200, 1100)
 
+[node name="CurrencySymbol" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(530, 410)
+texture = ExtResource("3_0a76l")
+
+[node name="CurrencyNumber" type="Label" parent="ItemShelf/CurrencySymbol"]
+offset_left = -230.0
+offset_top = -120.0
+offset_right = -101.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.961, 1, 0.41, 1)
+theme_override_colors/font_outline_color = Color(0.196078, 0.188235, 0.133333, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 216
+text = "0"
+
 [node name="UpgradeOverview" type="Sprite2D" parent="."]
 position = Vector2(-388, 539)
 texture = ExtResource("2_g5c1h")
@@ -94,15 +114,39 @@ texture = ExtResource("4_ymhk7")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotSpecial/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotDefault1" type="Control" parent="UpgradeOverview" groups=["Slot Default"]]
 z_index = 5
@@ -135,15 +179,39 @@ texture = ExtResource("6_7wam5")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotDefault1/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotActive1" type="Control" parent="UpgradeOverview" groups=["Slot Active"]]
 z_index = 5
@@ -176,15 +244,39 @@ texture = ExtResource("6_n3cld")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotActive1/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotActive2" type="Control" parent="UpgradeOverview" groups=["Slot Active"]]
 z_index = 5
@@ -217,15 +309,39 @@ texture = ExtResource("6_n3cld")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotActive2/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotSynergy1" type="Control" parent="UpgradeOverview" groups=["Slot Synergy"]]
 z_index = 5
@@ -258,15 +374,39 @@ texture = ExtResource("10_mq2pp")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotSynergy1/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotSynergy2" type="Control" parent="UpgradeOverview" groups=["Slot Synergy"]]
 z_index = 5
@@ -299,15 +439,39 @@ texture = ExtResource("10_mq2pp")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotSynergy2/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive1" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
@@ -340,15 +504,39 @@ texture = ExtResource("12_dcjh5")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotPassive1/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive2" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
@@ -381,15 +569,39 @@ texture = ExtResource("12_dcjh5")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotPassive2/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive3" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
@@ -422,15 +634,39 @@ texture = ExtResource("12_dcjh5")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotPassive3/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive4" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
 z_index = 5
@@ -463,15 +699,39 @@ texture = ExtResource("12_dcjh5")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotPassive4/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotBodymod1" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
 z_index = 5
@@ -504,15 +764,39 @@ texture = ExtResource("14_i0r2g")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotBodymod1/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlot1Bodymod2" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
 z_index = 5
@@ -545,15 +829,39 @@ texture = ExtResource("14_i0r2g")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlot1Bodymod2/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotBodymod3" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
 z_index = 5
@@ -586,15 +894,39 @@ texture = ExtResource("14_i0r2g")
 
 [node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("6_dcjh5")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3"]
 visible = false
+z_index = 10
 position = Vector2(40, 40)
-scale = Vector2(2.99, 2.99)
+scale = Vector2(1.59, 1.59)
 texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotBodymod3/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3/BuyZone"]
+position = Vector2(40, 0)
+scale = Vector2(0.71, 0.82999)
+texture = ExtResource("10_7hl21")
 
 [node name="YourUpgrades" type="Label" parent="UpgradeOverview"]
 offset_left = -292.0

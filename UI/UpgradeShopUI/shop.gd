@@ -6,6 +6,11 @@ signal finished_buying
 
 const UPGRADE_CARD = preload("res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.tscn")
 
+const BASE_PRICE: int = 4
+
+var fruits_currency: int
+@onready var currency_number_label: Label = $ItemShelf/CurrencySymbol/CurrencyNumber
+
 var default_slots: Array[Control]
 var passive_slots: Array[Control]
 var bodymod_slots: Array[Control]
@@ -58,11 +63,16 @@ func _ready() -> void:
 	hide_shop()
 
 func _on_got_clicked(upgrade_id: int):
+	var buy_price = calculate_price(upgrade_id)
+	var replace_price = buy_price - 1
+	
 	if GameConsts.advanced_upgrades.has(upgrade_id):
 		for slot in slots:
 			if slot.get_node("Area2D").get_child(-1) is UpgradeCard and\
 			slot.get_node("Area2D").get_child(-1).upgrade_id == upgrade_id -1:
 				slot.get_node("HighlightReplace").visible = true
+				slot.get_node("BuyZone").visible = true
+				slot.get_node("BuyZone").get_node("Price").text = str(replace_price)
 	else:
 		var chosen_slots: Array[Control]
 		match GameConsts.get_upgrade_type(upgrade_id):
@@ -81,13 +91,44 @@ func _on_got_clicked(upgrade_id: int):
 		for slot in chosen_slots:
 			if slot.get_node("Area2D").get_child(-1) is UpgradeCard:
 				slot.get_node("HighlightReplace").visible = true
+				slot.get_node("BuyZone").visible = true
+				slot.get_node("BuyZone").get_node("Price").text = str(replace_price)
 			else:
 				slot.get_node("HighlightBuy").visible = true
-				
+				slot.get_node("BuyZone").visible = true
+				slot.get_node("BuyZone").get_node("Price").text = str(buy_price)
+
+func calculate_price(upgrade_id):
+	var modifier = 0
+	
+	match GameConsts.get_upgrade_type(upgrade_id):
+		GameConsts.UPGRADE_TYPE.DEFAULT:
+			modifier -= 3
+		GameConsts.UPGRADE_TYPE.PASSIVE:
+			modifier -= 1
+		GameConsts.UPGRADE_TYPE.BODYMOD:
+			pass
+		GameConsts.UPGRADE_TYPE.SYNERGY:
+			modifier += 1
+		GameConsts.UPGRADE_TYPE.ACTIVE:
+			modifier -= 1
+		GameConsts.UPGRADE_TYPE.SPECIAL:
+			modifier += 2
+	
+	if GameConsts.advanced_upgrades.has(upgrade_id):
+		modifier += 2
+		if not GameConsts.upgrades_with_advancement.has(upgrade_id):
+			modifier += 1
+	
+	return  BASE_PRICE + modifier
+		
+
 func _on_let_go():
 	for slot in slots:
 		slot.get_node("HighlightReplace").visible = false
 		slot.get_node("HighlightBuy").visible = false
+		slot.get_node("BuyZone").visible = false
+		slot.get_node("BuyZone").get_node("Price").text = "0"
 		
 	
 func _on_upgrade_card_bought(upgrade_id: int) -> void:
@@ -134,12 +175,7 @@ func generate_items(current_round):
 	else:
 		offered_upgrades = [default_upgrade_card, upgrade_card_pool[0], upgrade_card_pool[1]]
 		
-	$ItemShelf.rotation_degrees = -180
-	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	shelf_tween.tween_property($ItemShelf, "rotation_degrees", 0, 0.8)
-	await  shelf_tween.finished
 	
-	var card_tween = create_tween()
 	var itemcounter: int = 0
 	var itemslots: Array[Sprite2D] = [$ItemShelf/Itemslot1, $ItemShelf/Itemslot2, $ItemShelf/Itemslot3]
 	for offered_upgrade in offered_upgrades:
@@ -147,13 +183,17 @@ func generate_items(current_round):
 		var upgrade_card = UPGRADE_CARD.instantiate()
 		$ItemShelf.add_child(upgrade_card)
 		upgrade_card.instantiate_upgrade_card( offered_upgrade )
+		var card_tween = create_tween()
 		card_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
 		card_tween.tween_property(upgrade_card, "position" ,itemslots[itemcounter].position + offset_vector, 0.2 + itemcounter * 0.1)
 		card_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 		card_tween.tween_property(upgrade_card, "position", itemslots[itemcounter].position, 0.4)
 		itemcounter += 1
-	if not upgrades_expanded:
+		print("await...")
 		await card_tween.finished
+		card_tween.stop()
+		print("finished")
+	if not upgrades_expanded:
 
 		_on_upgrade_panel_button_pressed()
 
@@ -161,6 +201,12 @@ func show_shop():
 	$ContinueNextRound.show()
 	$FruitOverloadInfo.show()
 	$ItemShelf.show()
+	if upgrades_expanded:
+		_on_upgrade_panel_button_pressed()
+	$ItemShelf.rotation_degrees = -180
+	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	shelf_tween.tween_property($ItemShelf, "rotation_degrees", 0, 0.8)
+	await  shelf_tween.finished
 
 func hide_shop():
 	$ContinueNextRound.hide()

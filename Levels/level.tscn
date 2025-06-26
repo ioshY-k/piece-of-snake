@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://do0scnp22kly2" path="res://Levels/level_manager.gd" id="1_vx8ih"]
 [ext_resource type="Texture2D" uid="uid://nygc5koouovv" path="res://Background.svg" id="2_ugh17"]
+[ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/Slots/FruitSymbol.svg" id="3_t80w2"]
 [ext_resource type="PackedScene" uid="uid://l38062djgpxk" path="res://UI/UpgradeShopUI/shop.tscn" id="6_t80w2"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="8_jjxhf"]
-[ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="9_lybtp"]
 [ext_resource type="PackedScene" uid="uid://bc4sb6dmfgooa" path="res://UI/LevelUI/speed_boost_bar.tscn" id="10_8hqpc"]
 
 [sub_resource type="GDScript" id="GDScript_uhyyw"]
@@ -24,25 +24,16 @@ position = Vector2(240, 380)
 offset = Vector2(62.725, 0)
 zoom = Vector2(0.96, 0.96)
 
-[node name="FruitsLeftToWin" type="Label" parent="."]
-offset_left = -720.0
-offset_top = 120.0
-offset_right = 435.0
-offset_bottom = 300.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/shadow_outline_size = 20
-theme_override_fonts/font = ExtResource("8_jjxhf")
-theme_override_font_sizes/font_size = 96
-text = "Fruits left to win:"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="FruitsLeftSymbol" type="Sprite2D" parent="."]
+position = Vector2(-600, -59.55)
+scale = Vector2(1.86, 1.86)
+texture = ExtResource("3_t80w2")
 
 [node name="FruitsLeftNumber" type="Label" parent="."]
-offset_left = -740.0
-offset_top = 260.0
-offset_right = 415.0
-offset_bottom = 511.0
+offset_left = -980.0
+offset_top = -199.55
+offset_right = 175.0
+offset_bottom = 51.45
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 20
@@ -53,10 +44,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimeLeftNumber" type="Label" parent="."]
-offset_left = -480.0
-offset_top = -220.0
-offset_right = 675.0
-offset_bottom = 31.0
+offset_left = -120.0
+offset_top = 240.0
+offset_right = 63.0
+offset_bottom = 422.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 20
@@ -65,21 +56,6 @@ theme_override_font_sizes/font_size = 161
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Overload" type="Label" parent="."]
-offset_left = -900.0
-offset_top = 140.0
-offset_right = 606.0
-offset_bottom = 1082.0
-theme_override_colors/font_color = Color(0.960667, 1, 0.41, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/shadow_outline_size = 20
-theme_override_fonts/font = ExtResource("9_lybtp")
-theme_override_font_sizes/font_size = 136
-text = "OVERLOAD!
-"
-horizontal_alignment = 1
 
 [node name="SpeedBoostBar" parent="." instance=ExtResource("10_8hqpc")]
 offset_left = -540.0

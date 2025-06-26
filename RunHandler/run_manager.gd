@@ -45,6 +45,15 @@ func _on_round_over():
 		level.queue_free()
 	else:
 		shop.show_shop()
+		
+		await get_tree().create_timer(0.5).timeout
+		while level.fruits_overload > 0:
+			await get_tree().create_timer(0.5).timeout
+			level.fruits_overload -= 1
+			shop.fruits_currency += 1
+			shop.currency_number_label.text = str(shop.fruits_currency)
+			level.fruits_left_number_label.text = str(level.fruits_overload)
+		
 		shop.generate_items(current_round)
 		level.process_mode = Node.PROCESS_MODE_DISABLED
 		await shop.finished_buying

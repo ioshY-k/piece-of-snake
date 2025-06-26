@@ -4,6 +4,12 @@ Z index:
 	SankeTail: 15
 	SnakeHead: 20
 
+Z index Shop Canvas Layer:
+	Held Upgradecard: 100
+	Loose Upgradecard: 5
+	Buy- /Replace-Zone: 10
+	
+
 Calls by Name:
 	"SolidElement" has to be in name of a SolidElement
 	All Level Scenes need to be referred as "Level" in Scenetree to be found by map_element

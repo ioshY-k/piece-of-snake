@@ -6,16 +6,17 @@ var snake_tail: SnakeTail
 var speed_boost_drain_speed: int = 230
 var speed_boost_available: bool = true
 var fruits_left: int
+var fruits_overload: int
 var time_left: int
+var enough_fruits: bool = false
 var current_map: Map
 
 signal round_over
 
 @onready var speed_boost_bar: SpeedBoostBar = $SpeedBoostBar
 @onready var second_ticker: Timer = $SecondTicker
-@onready var fruits_left_to_win_label: Label = $FruitsLeftToWin
+@onready var fruits_left_symbol: Sprite2D = $FruitsLeftSymbol
 @onready var speed_boost_frame: AnimatedSprite2D = $SpeedBoostBar/SpeedBoostFrame
-@onready var overload_label: Label = $"Overload"
 @onready var fruits_left_number_label: Label = $FruitsLeftNumber
 @onready var time_left_number_label: Label = $TimeLeftNumber
 @onready var active_item_slot_1: Node2D = $ActiveItemSlot1
@@ -54,30 +55,47 @@ func prepare_new_round(fruit_threshold, time_sec):
 	snake_tail.snake_speed = GameConsts.NORMAL_SPEED
 	speed_boost_bar.value  = speed_boost_bar.max_value
 	
+	enough_fruits = false
 	fruits_left = fruit_threshold
+	fruits_overload = 0
 	fruits_left_number_label.text = str(fruits_left)
-	overload_label.hide()
-	fruits_left_to_win_label.show()
 	fruits_left_number_label.add_theme_color_override("font_color", Color(1, 1, 1))
+	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_left = time_sec
 	second_ticker.start()
 
 func on_snake_got_hit():
-	fruits_left += 1
-	fruits_left_number_label.text = str(fruits_left)
 	print("Ouch!")
+	if not enough_fruits:
+		fruits_left += 1
+		fruits_left_number_label.text = str(fruits_left)
+	else:
+		if fruits_overload == 0:
+			enough_fruits = false
+			fruits_left_symbol.modulate = Color(1,1,1)
+			fruits_left_number_label.add_theme_color_override("font_color", Color(1,1,1))
+			fruits_left += 1
+			fruits_left_number_label.text = str(fruits_left)
+		else:
+			fruits_overload -= 1
+			fruits_left_number_label.text = str(fruits_overload)
+			
 
 func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
 func _on_fruit_collected():
 	print("YUM!")
-	fruits_left -= 1
-	fruits_left_number_label.text = str(abs(fruits_left))
-	if fruits_left == 0:
-		overload_label.show()
-		fruits_left_to_win_label.hide()
-		fruits_left_number_label.add_theme_color_override("font_color", Color(0.961, 1.0, 0.41))
+	if not enough_fruits:
+		fruits_left -= 1
+		fruits_left_number_label.text = str(fruits_left)
+		if fruits_left == 0:
+			enough_fruits = true
+			fruits_left_symbol.modulate = Color(0.961, 1.0, 0.41)
+			fruits_left_number_label.add_theme_color_override("font_color", Color(0.961, 1.0, 0.41))
+	else:
+		fruits_overload += 1
+		fruits_left_number_label.text = str(fruits_overload)
 
 func decide_speed_boost(delta):
 	if Input.is_action_just_released("speed_boost"):
@@ -113,6 +131,7 @@ func _on_second_ticker_timeout() -> void:
 	time_left -= 1
 	time_left_number_label.text = str(time_left)
 	if time_left == 0:
+		
 		round_over.emit()
 
 func instantiate_upgrade(upgrade_id: int):

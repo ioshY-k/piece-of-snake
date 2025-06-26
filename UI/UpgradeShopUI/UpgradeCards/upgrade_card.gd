@@ -13,6 +13,7 @@ var has_advancements: bool
 
 var owned_slot: Area2D = null
 
+
 var is_bought: bool = false
 signal bought
 signal destroyed
@@ -62,7 +63,7 @@ func drag_logic(delta: float):
 				GameConsts.node_being_dragged = null
 		return
 	
-	card_sprite.z_index = 10
+	card_sprite.z_index = 5
 	_change_scale(Vector2(1.2,1.2))
 
 func decide_on_let_go():
