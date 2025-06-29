@@ -970,20 +970,32 @@ next round"
 position = Vector2(198.561, 904.977)
 texture = ExtResource("25_kcery")
 
-[node name="UpgradeInfoText" type="Label" parent="ItemShelf/UpgradeInfo"]
-custom_minimum_size = Vector2(4, 716.285)
-offset_left = -217.195
-offset_top = -262.443
-offset_right = 621.805
-offset_bottom = 453.842
-theme_override_fonts/font = ExtResource("26_qix85")
-theme_override_font_sizes/font_size = 56
-text = "This  is how
-this Upgrade
-works:
+[node name="UpgradeInfoText" type="RichTextLabel" parent="ItemShelf/UpgradeInfo"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -503.5
+offset_top = -696.0
+offset_right = -87.5
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("9_0a76l")
+theme_override_fonts/bold_font = ExtResource("26_qix85")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 160
+bbcode_enabled = true
+text = "Uncover more area.
 
-First collect fruit
-Then: Profit"
+This Upgrade is lost upon entering the next act."
+autowrap_mode = 2
+vertical_alignment = 1
 
 [connection signal="pressed" from="UpgradeOverview/UpgradePanelButton" to="." method="_on_upgrade_panel_button_pressed"]
 [connection signal="pressed" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_pressed"]

@@ -1,12 +1,40 @@
 class_name UpgradeCard extends Control
 
+var upgrade_descriptions = {
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_1) : "Uncover [color=9e9e9e]more area.[/color]\n\nThis Upgrade is lost upon entering the next act.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_2) : "Uncover [color=9e9e9e]even more area.[/color]\n\nThis Upgrade is lost upon entering the next act.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_3) : "Uncover the [color=9e9e9e]maximum amount of area.[/color]\n\nThis Upgrade is lost upon entering the next act.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1) : "[color=ffc875]Attract fruit[/color] in front of you.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2) : "Attract fruit in a [color=ffc875]radius around you[/color].",
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3) : "Attract fruit in a [color=ffc875]larger radius[/color].",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_3) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.EDGE_WRAP_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.EDGE_WRAP_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.KNOT_ATTRACTOR) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "NO DESCRIPTION YET",
+
+	}
+
 var mouse_in: bool = false
 var is_dragging: bool = false
 @onready var card_shadow: Sprite2D = $CardSprite/CardShadow
 @onready var card_sprite: AnimatedSprite2D = $CardSprite
 @onready var card_area: Area2D = $CardArea
-
 @export var upgrade_id: int
+var upgrade_description: String
 var upgrade_type: int
 var is_advanced: bool
 var has_advancements: bool
@@ -23,6 +51,7 @@ signal let_go
 signal hovered
 
 func _ready() -> void:
+	print(upgrade_descriptions[str(GameConsts.UPGRADE_LIST.AREA_SIZE_1)])
 	got_clicked.connect(get_parent().get_parent()._on_got_clicked)
 	bought.connect(get_parent().get_parent()._on_upgrade_card_bought)
 	destroyed.connect(get_parent().get_parent()._on_upgrade_destroyed)
@@ -32,7 +61,7 @@ func _ready() -> void:
 func instantiate_upgrade_card(id: int):
 	upgrade_id = id
 	card_sprite.frame = id
-	
+	upgrade_description = upgrade_descriptions[str(id)]
 	is_advanced = GameConsts.advanced_upgrades.has(upgrade_id)
 	has_advancements = GameConsts.upgrades_with_advancement.has(upgrade_id)
 	upgrade_type = GameConsts.get_upgrade_type(id)
@@ -139,7 +168,6 @@ func _on_mouse_exited() -> void:
 	mouse_in = false
 
 func get_slot_type(group) -> int:
-	
 	match group:
 		"Slot Default":
 			return GameConsts.UPGRADE_TYPE.DEFAULT

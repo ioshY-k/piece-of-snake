@@ -147,8 +147,11 @@ func _on_upgrade_destroyed(upgrade_id: int) -> void:
 
 var upgrade_info_tween: Tween
 func _on_hovered(upgrade_card: UpgradeCard) -> void:
+	if GameConsts.node_being_dragged != null and GameConsts.node_being_dragged != upgrade_card:
+		return
 	if upgrade_info_tween != null and upgrade_info_tween.is_running():
 		upgrade_info_tween.stop()
+	upgrade_info.get_node("UpgradeInfoText").text = upgrade_card.upgrade_description
 	upgrade_info.show()
 	upgrade_info.scale = Vector2(0.1,0.1)
 	upgrade_info.global_position = upgrade_card.global_position

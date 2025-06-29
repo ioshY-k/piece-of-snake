@@ -1,34 +1,35 @@
 class_name LevelManager extends Node2D
 
+#child objects
 var snake_head: SnakeHead
 var snake_tail: SnakeTail
-
-var speed_boost_drain_speed: int = 230
-var speed_boost_available: bool = true
-var fruits_left: int
-var fruits_overload: int
-var time_left: int
-var enough_fruits: bool = false
 var current_map: Map
 
-signal round_over
-
+#UI Elements + data
 @onready var speed_boost_bar: SpeedBoostBar = $SpeedBoostBar
 @onready var fruits_left_symbol: Sprite2D = $FruitsLeftSymbol
 @onready var speed_boost_frame: AnimatedSprite2D = $SpeedBoostBar/SpeedBoostFrame
 @onready var fruits_left_number_label: Label = $FruitsLeftNumber
 @onready var active_item_slot_1: Node2D = $ActiveItemSlot1
 @onready var time_meter: TimeMeter = $TimeMeter
+var speed_boost_drain_speed: int = 230
+var speed_boost_available: bool = true
+var fruits_left: int
+var fruits_overload: int
+var time_left: int
+var enough_fruits: bool = false
 
+#Upgrade Components
 var fruit_relocator_1_component_scene = load("res://UpgradeComponents/fruit_relocator_1_component.tscn")
 var hyper_speed_1_component_scene = load("res://UpgradeComponents/hyper_speed_1_component.tscn")
+
+signal round_over
 
 func _ready() -> void:
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
 
+#called by run_manager at the start of a run and on new act
 func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
-
-	
 	if current_map != null:
 		current_map.queue_free()
 		await get_tree().process_frame
