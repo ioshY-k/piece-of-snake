@@ -36,10 +36,35 @@ var upgrades_with_advancement: Array[int] = [	UPGRADE_LIST.AREA_SIZE_1, UPGRADE_
  
 
 					
-const FRUIT_THRESHOLDS: Array [int] = [1,1,1,1, 1,1,1,1]
-const ROUND_TIME_SEC: int = 8
+const FRUIT_THRESHOLDS: Array [int] = [1,1,1,1, 4,5,5,5, 6,6,6,6]
+const ROUND_TIME_SEC: int = 5
+const COLLISION_IFRAMES: int = 2
 
 var node_being_dragged: Node = null
+
+
+
+func get_upgrade_type(upgrade_id: int):
+	
+	match upgrade_id:
+		UPGRADE_LIST.AREA_SIZE_1, UPGRADE_LIST.AREA_SIZE_2, UPGRADE_LIST.AREA_SIZE_3:
+			return UPGRADE_TYPE.DEFAULT
+		UPGRADE_LIST.FRUIT_MAGNET_1, UPGRADE_LIST.FRUIT_MAGNET_2, UPGRADE_LIST.FRUIT_MAGNET_3,\
+		UPGRADE_LIST.HYPER_SPEED_1, UPGRADE_LIST.HYPER_SPEED_2, UPGRADE_LIST.HYPER_SPEED_3,\
+		UPGRADE_LIST.DOUBLE_FRUIT_1, UPGRADE_LIST.DOUBLE_FRUIT_2, UPGRADE_LIST.DOUBLE_FRUIT_3,\
+		UPGRADE_LIST.EDGE_WRAP_1, UPGRADE_LIST.EDGE_WRAP_2:
+			return UPGRADE_TYPE.PASSIVE
+		UPGRADE_LIST.FRUIT_RELOCATOR_1, UPGRADE_LIST.FRUIT_RELOCATOR_2, UPGRADE_LIST.FRUIT_RELOCATOR_3,\
+		UPGRADE_LIST.CROSS_ROAD_1, UPGRADE_LIST.CROSS_ROAD_2, UPGRADE_LIST.CROSS_ROAD_3:
+			return UPGRADE_TYPE.ACTIVE
+		UPGRADE_LIST.TAIL_CUT:
+			return UPGRADE_TYPE.BODYMOD
+		UPGRADE_LIST.KNOT_ATTRACTOR, UPGRADE_LIST.ITEM_RELOADER:
+			return UPGRADE_TYPE.SYNERGY
+		UPGRADE_LIST.IMMUTABLE:
+			return UPGRADE_TYPE.SPECIAL
+		_:
+			print_debug("notype has been found for this upgrade: " + str(upgrade_id))
 
 #converts a tile vector to it's actual position
 func tile_to_position(tile: Vector2i) -> Vector2:
@@ -49,21 +74,3 @@ func tile_to_position(tile: Vector2i) -> Vector2:
 func position_to_tile(pos: Vector2) -> Vector2i:
 	var tileval = round(pos / TILE_SIZE)
 	return tileval
-
-func get_upgrade_type(upgrade_id: int):
-	
-	match upgrade_id:
-		0,1,2:
-			return UPGRADE_TYPE.DEFAULT
-		3,4,5,6,7,8,9,10,11,12,13:
-			return UPGRADE_TYPE.PASSIVE
-		14,15,16,17,18,19:
-			return UPGRADE_TYPE.ACTIVE
-		20:
-			return UPGRADE_TYPE.BODYMOD
-		21,22:
-			return UPGRADE_TYPE.SYNERGY
-		23:
-			return UPGRADE_TYPE.SPECIAL
-		_:
-			print_debug("notype has been found for this upgrade: " + str(upgrade_id))

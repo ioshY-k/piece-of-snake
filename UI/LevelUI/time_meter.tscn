@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnn1xmc2b43mm"]
+
+[ext_resource type="Texture2D" uid="uid://btgw2n20bn68a" path="res://UI/LevelUI/TimeMeter.svg" id="1_1kptn"]
+[ext_resource type="Script" uid="uid://bovnqu0hp4t36" path="res://time_meter.gd" id="2_yci6l"]
+[ext_resource type="Texture2D" uid="uid://dj58udh3ffytw" path="res://UI/LevelUI/TimeMeterBar.svg" id="3_enuh3"]
+[ext_resource type="Texture2D" uid="uid://c0m5gt08opemv" path="res://UI/LevelUI/TimeMeterBg.svg" id="3_qkf1t"]
+[ext_resource type="Texture2D" uid="uid://b1226vy5ik4at" path="res://UI/LevelUI/TimeMeterindicator.svg" id="4_yci6l"]
+
+[sub_resource type="Curve2D" id="Curve2D_enuh3"]
+_data = {
+"points": PackedVector2Array(0.444015, -2.43403, 0, 0, 50, -800, 0.310778, -89.3131, -0.310778, 89.3131, 50, -710, 2.25336, -150.403, -2.25336, 150.403, -50, -400, 0.502044, -148.815, -0.502044, 148.815, 70, -100, 0.797921, -87.7171, -0.797921, 87.7171, -50, 230, -8.33393, -50.8104, 8.33393, 50.8104, 40, 560, 0, 0, 0, 0, 50, 720, 0, 0, 0, 0, 50, 780)
+}
+point_count = 8
+
+[node name="TimeMeter" type="Sprite2D"]
+texture = ExtResource("1_1kptn")
+script = ExtResource("2_yci6l")
+
+[node name="TimeMeterBg" type="Sprite2D" parent="."]
+clip_children = 1
+z_index = -1
+scale = Vector2(1.004, 0.989)
+texture = ExtResource("3_qkf1t")
+
+[node name="TimeBar" type="Sprite2D" parent="TimeMeterBg"]
+modulate = Color(0.573753, 0.89, 0.5251, 1)
+texture = ExtResource("3_enuh3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.52, 0.52)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-10, 0)
+curve = SubResource("Curve2D_enuh3")
+
+[node name="IndicatorPath" type="PathFollow2D" parent="Path2D"]
+position = Vector2(50, -800)
+rotation = 1.5708
+
+[node name="Indicator" type="Sprite2D" parent="Path2D/IndicatorPath"]
+position = Vector2(0, 3.05176e-05)
+rotation = -1.58575
+texture = ExtResource("4_yci6l")

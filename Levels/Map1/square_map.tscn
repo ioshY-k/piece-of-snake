@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="6_ifbf1"]
 
 [node name="Map" type="Sprite2D"]
-position = Vector2(380, 20)
+position = Vector2(40, -360)
 texture = ExtResource("1_wy6r4")
 offset = Vector2(360, 360)
 script = ExtResource("2_6exx6")
@@ -126,9 +126,6 @@ position = Vector2(400, 640)
 
 [node name="SolidElement38" parent="SolidElements" instance=ExtResource("6_ifbf1")]
 position = Vector2(400, 560)
-
-[node name="SolidElement39" parent="SolidElements" instance=ExtResource("6_ifbf1")]
-position = Vector2(480, 560)
 
 [node name="SolidElement40" parent="SolidElements" instance=ExtResource("6_ifbf1")]
 position = Vector2(240, 240)

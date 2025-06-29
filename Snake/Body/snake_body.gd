@@ -1,7 +1,7 @@
 class_name SnakeBody extends AnimatedSprite2D
 
 
-enum DIRECTION {UP,RIGHT,DOWN,LEFT}
+enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
 enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL}
 var is_corner: bool
 const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")

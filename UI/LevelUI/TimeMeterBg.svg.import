@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4o5bt3kc2rjk"
-path="res://.godot/imported/FruitSymbol.svg-86eb8750d1a7cc29d339767f1703568f.ctex"
+uid="uid://c0m5gt08opemv"
+path="res://.godot/imported/TimeMeterBg.svg-0a9b1eba18b23a295b99de0651843bd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UpgradeShopUI/Slots/FruitSymbol.svg"
-dest_files=["res://.godot/imported/FruitSymbol.svg-86eb8750d1a7cc29d339767f1703568f.ctex"]
+source_file="res://UI/LevelUI/TimeMeterBg.svg"
+dest_files=["res://.godot/imported/TimeMeterBg.svg-0a9b1eba18b23a295b99de0651843bd2.ctex"]
 
 [params]
 

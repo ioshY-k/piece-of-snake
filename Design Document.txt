@@ -14,3 +14,10 @@ Calls by Name:
 	"SolidElement" has to be in name of a SolidElement
 	All Level Scenes need to be referred as "Level" in Scenetree to be found by map_element
 	Only Snake parts are allowed their name to begin with "SnakeBody" to not be unloaded by map
+
+Worklow for adding new upgrade:
+	Add in GameConst: UPGRADE_LIST, advanced_upgrades, upgrades_with_advancement, get_upgrade_type
+	Add in Shop: upgrade_card_pool
+	Add in Level: instantiate_upgrade, destroy_upgrade, is_upgrade_reload_necessary
+	In Upgrade card: Make sure the frames are in order of GameConst.UPGRADE_LIST
+	Add in Component Parent: packed Component scene

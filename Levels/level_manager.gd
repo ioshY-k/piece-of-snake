@@ -14,24 +14,26 @@ var current_map: Map
 signal round_over
 
 @onready var speed_boost_bar: SpeedBoostBar = $SpeedBoostBar
-@onready var second_ticker: Timer = $SecondTicker
 @onready var fruits_left_symbol: Sprite2D = $FruitsLeftSymbol
 @onready var speed_boost_frame: AnimatedSprite2D = $SpeedBoostBar/SpeedBoostFrame
 @onready var fruits_left_number_label: Label = $FruitsLeftNumber
-@onready var time_left_number_label: Label = $TimeLeftNumber
 @onready var active_item_slot_1: Node2D = $ActiveItemSlot1
+@onready var time_meter: TimeMeter = $TimeMeter
 
 var fruit_relocator_1_component_scene = load("res://UpgradeComponents/fruit_relocator_1_component.tscn")
-
 var hyper_speed_1_component_scene = load("res://UpgradeComponents/hyper_speed_1_component.tscn")
+
 func _ready() -> void:
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
 
 func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
+
+	
 	if current_map != null:
 		current_map.queue_free()
 		await get_tree().process_frame
 	add_child(map)
+	
 	current_map = map
 	snake_head = $Map/SnakeHead
 	snake_tail = $Map/SnakeTail
@@ -61,8 +63,9 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_number_label.text = str(fruits_left)
 	fruits_left_number_label.add_theme_color_override("font_color", Color(1, 1, 1))
 	fruits_left_symbol.modulate = Color(1, 1, 1)
-	time_left = time_sec
-	second_ticker.start()
+	time_meter.reset()
+	time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
+	
 
 func on_snake_got_hit():
 	print("Ouch!")
@@ -127,12 +130,8 @@ func set_fruit_threshold(current_act: int, current_round: int):
 	fruits_left_number_label.text = str(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round])
 
 
-func _on_second_ticker_timeout() -> void:
-	time_left -= 1
-	time_left_number_label.text = str(time_left)
-	if time_left == 0:
-		
-		round_over.emit()
+func _on_timer_expired() -> void:
+	round_over.emit()
 
 func instantiate_upgrade(upgrade_id: int):
 	match upgrade_id:
@@ -201,4 +200,10 @@ func _on_item_activated(upgrade_id: int):
 			
 			for fruit in fruits:
 				current_map.relocate_fruit(fruit, fruit_tiles)
+	
+func disable_map():
+	current_map.process_mode = Node.PROCESS_MODE_DISABLED
+
+func enable_map():
+	current_map.process_mode = Node.PROCESS_MODE_INHERIT
 	

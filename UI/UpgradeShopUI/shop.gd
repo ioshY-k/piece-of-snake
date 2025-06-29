@@ -19,6 +19,7 @@ var active_slots: Array[Control]
 var special_slots: Array[Control]
 
 var slots: Array[Control] = []
+@onready var upgrade_info: Sprite2D = $ItemShelf/UpgradeInfo
 
 
 var upgrade_card_pool: Array[int] = [
@@ -129,9 +130,13 @@ func _on_let_go():
 		slot.get_node("HighlightBuy").visible = false
 		slot.get_node("BuyZone").visible = false
 		slot.get_node("BuyZone").get_node("Price").text = "0"
-		
+
+func can_afford(slot):
+	return int(slot.get_node("BuyZone").get_node("Price").text) <= fruits_currency
 	
-func _on_upgrade_card_bought(upgrade_id: int) -> void:
+func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
+	fruits_currency -= int(slot.get_node("BuyZone").get_node("Price").text)
+	currency_number_label.text = str(fruits_currency)
 	update_upgrade_pool(upgrade_id, true)
 	upgrade_bought.emit(upgrade_id)
 
@@ -139,7 +144,18 @@ func _on_upgrade_destroyed(upgrade_id: int) -> void:
 	if GameConsts.upgrades_with_advancement.has(upgrade_id):
 		update_upgrade_pool(upgrade_id, false)
 	upgrade_destroyed.emit(upgrade_id)
-	
+
+var upgrade_info_tween: Tween
+func _on_hovered(upgrade_card: UpgradeCard) -> void:
+	if upgrade_info_tween != null and upgrade_info_tween.is_running():
+		upgrade_info_tween.stop()
+	upgrade_info.show()
+	upgrade_info.scale = Vector2(0.1,0.1)
+	upgrade_info.global_position = upgrade_card.global_position
+	upgrade_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	upgrade_info_tween.tween_property(upgrade_info, "position", Vector2(198,904), 0.6)
+	upgrade_info_tween.tween_property(upgrade_info, "scale", Vector2(1,1), 1)
+
 
 func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
 	if bought_not_destroyed:
@@ -158,7 +174,7 @@ func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
 			
 
 func _on_continue_next_round_pressed() -> void:
-	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	shelf_tween.tween_property($ItemShelf, "rotation_degrees", -180, 0.8)
 	await  shelf_tween.finished
 	for upgrade_card in get_tree().get_nodes_in_group("UpgradeCard"):
@@ -179,7 +195,7 @@ func generate_items(current_round):
 	var itemcounter: int = 0
 	var itemslots: Array[Sprite2D] = [$ItemShelf/Itemslot1, $ItemShelf/Itemslot2, $ItemShelf/Itemslot3]
 	for offered_upgrade in offered_upgrades:
-		var offset_vector: Vector2 = Vector2(randi_range(20,100), randi_range(20,100))
+		var offset_vector: Vector2 = Vector2(randi_range(-170,170), randi_range(-170,170))
 		var upgrade_card = UPGRADE_CARD.instantiate()
 		$ItemShelf.add_child(upgrade_card)
 		upgrade_card.instantiate_upgrade_card( offered_upgrade )
@@ -189,43 +205,44 @@ func generate_items(current_round):
 		card_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 		card_tween.tween_property(upgrade_card, "position", itemslots[itemcounter].position, 0.4)
 		itemcounter += 1
-		print("await...")
 		await card_tween.finished
 		card_tween.stop()
-		print("finished")
-	if not upgrades_expanded:
+	toggle_upgrade_panel()
 
-		_on_upgrade_panel_button_pressed()
+func reset_area_and_currency():
+	fruits_currency = 0
+	currency_number_label.text = str(fruits_currency)
+	
+	var default_upgrade = default_slots[0].get_node("Area2D").get_child(-1)
+	if default_upgrade is UpgradeCard:
+		default_upgrade.destroyed.emit(default_upgrade.upgrade_id)
+		default_upgrade.queue_free()
+	default_upgrade_card = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 func show_shop():
-	$ContinueNextRound.show()
 	$FruitOverloadInfo.show()
 	$ItemShelf.show()
-	if upgrades_expanded:
-		_on_upgrade_panel_button_pressed()
+	upgrade_info.hide()
 	$ItemShelf.rotation_degrees = -180
-	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	shelf_tween.tween_property($ItemShelf, "rotation_degrees", 0, 0.8)
 	await  shelf_tween.finished
 
 func hide_shop():
-	$ContinueNextRound.hide()
+	if upgrades_expanded:
+		toggle_upgrade_panel()
 	$FruitOverloadInfo.hide()
 	$ItemShelf.hide()
-	
+
 
 var upgrades_expanded: bool = false
-func _on_upgrade_panel_button_pressed() -> void:
+func toggle_upgrade_panel() -> void:
 	var tween = create_tween()
 	if not upgrades_expanded:
-		tween.tween_property(upgrade_overview, "position:x", 360, 0.4).\
-		set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-		tween.tween_property(upgrade_panel_button, "rotation_degrees", 180, 0.25).\
+		tween.tween_property(upgrade_overview, "position:x", 210, 0.4).\
 		set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 		upgrades_expanded = true
 	else:
-		tween.tween_property(upgrade_overview, "position:x", -388, 0.4).\
-		set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-		tween.tween_property(upgrade_panel_button, "rotation_degrees", 0, 0.25).\
+		tween.tween_property(upgrade_overview, "position:x", -425, 0.4).\
 		set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 		upgrades_expanded = false

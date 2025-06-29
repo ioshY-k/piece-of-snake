@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="233.56506mm"
-   height="279.51312mm"
-   viewBox="0 0 233.56507 279.51312"
+   width="218.45445mm"
+   height="327.185mm"
+   viewBox="0 0 218.45446 327.18499"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
@@ -24,29 +24,17 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.5716598"
-     inkscape:cx="-127.69833"
-     inkscape:cy="630.61982"
+     inkscape:zoom="1.1433196"
+     inkscape:cx="440.82162"
+     inkscape:cy="525.22497"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs1">
-    <linearGradient
-       id="linearGradient17"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#3e37bf;stop-opacity:1;"
-         offset="0"
-         id="stop18" />
-      <stop
-         style="stop-color:#756cff;stop-opacity:1;"
-         offset="0.88631189"
-         id="stop19" />
-    </linearGradient>
     <linearGradient
        id="linearGradient15"
        inkscape:collect="always">
@@ -68,46 +56,28 @@
        fx="65.973412"
        fy="149.8856"
        r="60.395"
-       gradientTransform="matrix(4.4288506,0.01145206,-0.00835446,2.2826575,-252.087,-220.72322)"
+       gradientTransform="matrix(4.4216942,0.01342091,-0.00834096,2.6750952,-251.49456,-278.84152)"
        gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient17"
-       id="linearGradient19"
-       x1="170.05826"
-       y1="144.02988"
-       x2="175.81297"
-       y2="144.02986"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.2797101,0,0,1.2797101,3.9627486,-44.595139)" />
   </defs>
-  <rect
-     style="display:inline;fill:url(#linearGradient19);fill-opacity:1;stroke:#212532;stroke-width:2.66308;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
-     id="rect17"
-     width="26.101263"
-     height="31.280218"
-     x="206.13226"
-     y="124.15981"
-     ry="4.8902502" />
   <path
      id="path19"
      style="display:none;fill:#a18fd9;stroke:#212532;stroke-width:1.10229;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
      inkscape:transform-center-x="-0.074448879"
      inkscape:transform-center-y="0.094904335"
-     d="m 178.11214,170.44292 c -3.3e-4,0.68279 -4.44853,3.14227 -5.06443,2.80038 -0.61591,-0.34189 -0.6116,-5.26801 0.005,-5.60891 0.61651,-0.3409 5.06012,2.12574 5.05953,2.80853 z" />
+     d="m 178.11214,194.27885 c -3.3e-4,0.68279 -4.44853,3.14227 -5.06443,2.80038 -0.61591,-0.34189 -0.6116,-5.26801 0.005,-5.60891 0.61651,-0.3409 5.06012,2.12574 5.05953,2.80853 z" />
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-5.3231957,22.428259)"
+     transform="translate(-5.3231938,46.264189)"
      style="display:inline">
     <rect
-       style="display:inline;fill:url(#radialGradient17);fill-opacity:1;stroke:#212532;stroke-width:4.23793;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
+       style="display:inline;fill:url(#radialGradient17);fill-opacity:1;stroke:#212532;stroke-width:4.58408;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
        id="rect1"
-       height="275.27521"
-       x="7.4421606"
-       y="-20.309294"
-       width="214.21652"
-       ry="7.3360167" />
+       height="322.60092"
+       x="7.6152339"
+       y="-43.972149"
+       width="213.87038"
+       ry="8.5972347" />
   </g>
 </svg>

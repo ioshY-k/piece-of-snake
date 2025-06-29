@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://do0scnp22kly2" path="res://Levels/level_manager.gd" id="1_vx8ih"]
 [ext_resource type="Texture2D" uid="uid://nygc5koouovv" path="res://Background.svg" id="2_ugh17"]
-[ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/Slots/FruitSymbol.svg" id="3_t80w2"]
-[ext_resource type="PackedScene" uid="uid://l38062djgpxk" path="res://UI/UpgradeShopUI/shop.tscn" id="6_t80w2"]
+[ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/FruitSymbol.svg" id="3_t80w2"]
+[ext_resource type="PackedScene" uid="uid://bnn1xmc2b43mm" path="res://UI/LevelUI/time_meter.tscn" id="7_8a2b0"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="8_jjxhf"]
 [ext_resource type="PackedScene" uid="uid://bc4sb6dmfgooa" path="res://UI/LevelUI/speed_boost_bar.tscn" id="10_8hqpc"]
 
@@ -15,64 +15,44 @@ script/source = "extends Node2D
 script = ExtResource("1_vx8ih")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(200, 540)
-scale = Vector2(3.14, 3.14)
 texture = ExtResource("2_ugh17")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(240, 380)
+position = Vector2(-60, 0)
 offset = Vector2(62.725, 0)
-zoom = Vector2(0.96, 0.96)
 
 [node name="FruitsLeftSymbol" type="Sprite2D" parent="."]
-position = Vector2(-600, -59.55)
-scale = Vector2(1.86, 1.86)
+position = Vector2(-857, -430)
+scale = Vector2(0.275, 0.275)
 texture = ExtResource("3_t80w2")
 
 [node name="FruitsLeftNumber" type="Label" parent="."]
-offset_left = -980.0
-offset_top = -199.55
-offset_right = 175.0
-offset_bottom = 51.45
+offset_left = -1219.0
+offset_top = -836.0
+offset_right = -64.0
+offset_bottom = -44.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
+theme_override_colors/font_outline_color = Color(0.17, 0.163653, 0.1156, 1)
+theme_override_constants/outline_size = 40
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("8_jjxhf")
-theme_override_font_sizes/font_size = 221
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TimeLeftNumber" type="Label" parent="."]
-offset_left = -120.0
-offset_top = 240.0
-offset_right = 63.0
-offset_bottom = 422.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/shadow_outline_size = 20
-theme_override_fonts/font = ExtResource("8_jjxhf")
-theme_override_font_sizes/font_size = 161
+theme_override_font_sizes/font_size = 191
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SpeedBoostBar" parent="." instance=ExtResource("10_8hqpc")]
-offset_left = -540.0
-offset_top = 740.0
-offset_right = 32.3649
-offset_bottom = 874.945
+offset_left = -931.0
+offset_top = 343.0
+offset_right = -358.635
+offset_bottom = 477.95
 pivot_offset = Vector2(-28.5714, 60)
 
-[node name="SecondTicker" type="Timer" parent="."]
-
 [node name="ActiveItemSlot1" type="Node2D" parent="."]
-position = Vector2(-400, 580)
+position = Vector2(-720, -203)
 script = SubResource("GDScript_uhyyw")
 
-[node name="ShopForLooks" parent="." instance=ExtResource("6_t80w2")]
-visible = false
-offset = Vector2(-579.835, -162.325)
-transform = Transform2D(1, 0, 0, 1, -579.835, -162.325)
-
-[connection signal="timeout" from="SecondTicker" to="." method="_on_second_ticker_timeout"]
+[node name="TimeMeter" parent="." instance=ExtResource("7_8a2b0")]
+z_index = 1
+position = Vector2(-447, -88)
+scale = Vector2(0.46, 0.46)

@@ -19,12 +19,14 @@ var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_
 
 
 #arrays containing Snake data for the tail to follow
-enum DIRECTION {UP,RIGHT,DOWN,LEFT}
+enum DIRECTION {UP,RIGHT,DOWN,LEFT, STOP}
 var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
 var snake_path_bodyparts: Array[SnakeBody]
 
 #array containing constantly free tiles for fruits to spawn in
 var free_map_tiles: Array[Vector2i]
+
+var invincible_ticks = 0
 
 #on fruit collection
 signal fruit_collected
@@ -41,10 +43,26 @@ func _ready() -> void:
 	
 	#place fruit and player
 	teleport_to_starting_position()
+	snake_head.snake_tail = snake_tail
+	snake_tail.snake_head = snake_head
 	spawn_fruit([])
+	
+	snake_head.got_hit.connect(change_iframes.bind(GameConsts.COLLISION_IFRAMES))
+	snake_head.next_tile_reached.connect(_on_next_tile_reached)
 	
 	initialized.emit()
 
+
+func _on_next_tile_reached():
+	if invincible_ticks > 0:
+		for bodypart in snake_path_bodyparts:
+			bodypart.process_mode = Node.PROCESS_MODE_DISABLED
+		invincible_ticks -= 1
+	else:
+		for bodypart in snake_path_bodyparts:
+			bodypart.process_mode = Node.PROCESS_MODE_INHERIT
+		
+	
 
 #returns an array of valid positions for fruits to spawn in
 func find_free_map_tiles() -> Array[Vector2i]:
@@ -171,9 +189,11 @@ func add_upgrade_component(upgrade: int):
 			var fruit_magnet_2_component = fruit_magnet_2_component_scene.instantiate()
 			snake_head.add_child(fruit_magnet_2_component)
 	
+func change_iframes(ticks: int):
+	if invincible_ticks < ticks:
+		invincible_ticks = ticks
 	
 	
-
 
 #region helper functions
 #converts a tile vector to it's actual position

@@ -1,7 +1,9 @@
 extends Node
 
-var maporder: Array[PackedScene] = [preload("res://Levels/Map1/square_map.tscn"),
-									preload("res://Levels/Map2/big_map.tscn")
+var maporder: Array[PackedScene] = [
+									preload("res://Levels/Map1/square_map.tscn"),
+									preload("res://Levels/Map2/big_map.tscn"),
+									preload("res://Levels/Map3/map_3.tscn")
 									]
 										
 @onready var retry_button: Button = $RetryButton
@@ -44,8 +46,9 @@ func _on_round_over():
 	if level.fruits_left > 0:
 		level.queue_free()
 	else:
-		shop.show_shop()
+		level.disable_map()
 		
+		shop.show_shop()
 		await get_tree().create_timer(0.5).timeout
 		while level.fruits_overload > 0:
 			await get_tree().create_timer(0.5).timeout
@@ -53,11 +56,14 @@ func _on_round_over():
 			shop.fruits_currency += 1
 			shop.currency_number_label.text = str(shop.fruits_currency)
 			level.fruits_left_number_label.text = str(level.fruits_overload)
+		await get_tree().create_timer(0.5).timeout
 		
 		shop.generate_items(current_round)
-		level.process_mode = Node.PROCESS_MODE_DISABLED
+		
 		await shop.finished_buying
-		level.process_mode = Node.PROCESS_MODE_INHERIT
+		
+		
+		level.enable_map()
 		shop.hide_shop()
 		if current_round < 3:
 			current_round += 1
@@ -65,6 +71,10 @@ func _on_round_over():
 		else:
 			current_act += 1
 			current_round = 0
+			shop.reset_area_and_currency()
+			current_upgrades[0]
+			current_upgrades[1]
+			current_upgrades[2]
 			level.prepare_new_act(maporder[current_act].instantiate(), GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=29 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -19,10 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://ga8gt3rtdqat" path="res://UI/UpgradeShopUI/Slots/BuyZone.png" id="8_xtrhb"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="9_0a76l"]
 [ext_resource type="Texture2D" uid="uid://ct6mc8w7ccbph" path="res://UI/UpgradeShopUI/UpgrageOverviewPanelButton.svg" id="9_ekhl7"]
-[ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/Slots/FruitSymbol.svg" id="10_7hl21"]
+[ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/FruitSymbol.svg" id="10_7hl21"]
 [ext_resource type="Texture2D" uid="uid://ch83p2wya5pew" path="res://UI/UpgradeShopUI/Symbols/SymbolSynergy.svg" id="10_mq2pp"]
 [ext_resource type="Texture2D" uid="uid://bq3r78ld2lde4" path="res://UI/UpgradeShopUI/Symbols/SymbolPassive.svg" id="12_dcjh5"]
 [ext_resource type="Texture2D" uid="uid://pkldlosua5a2" path="res://UI/UpgradeShopUI/Symbols/SymbolBodymod.svg" id="14_i0r2g"]
+[ext_resource type="Texture2D" uid="uid://cdhi6mv1qy6aw" path="res://Divider.svg" id="24_7hl21"]
+[ext_resource type="Texture2D" uid="uid://4wvixiopwjjg" path="res://UI/UpgradeShopUI/UpgradeInfo.svg" id="25_kcery"]
+[ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="26_qix85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1g7c"]
 size = Vector2(80, 80)
@@ -40,47 +43,8 @@ offset_bottom = 110.0
 theme_override_font_sizes/font_size = 51
 text = "Fruit Overload: "
 
-[node name="ContinueNextRound" type="Button" parent="."]
-offset_left = -50.0
-offset_top = 800.0
-offset_right = 819.0
-offset_bottom = 1044.0
-theme_override_font_sizes/font_size = 86
-text = "Continue
-next round"
-
-[node name="ItemShelf" type="Sprite2D" parent="."]
-position = Vector2(1260, -280)
-texture = ExtResource("2_7wam5")
-offset = Vector2(0, 800)
-
-[node name="Itemslot1" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-200, 500)
-
-[node name="Itemslot2" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-200, 800)
-
-[node name="Itemslot3" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-200, 1100)
-
-[node name="CurrencySymbol" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(530, 410)
-texture = ExtResource("3_0a76l")
-
-[node name="CurrencyNumber" type="Label" parent="ItemShelf/CurrencySymbol"]
-offset_left = -230.0
-offset_top = -120.0
-offset_right = -101.0
-offset_bottom = 118.0
-theme_override_colors/font_color = Color(0.961, 1, 0.41, 1)
-theme_override_colors/font_outline_color = Color(0.196078, 0.188235, 0.133333, 1)
-theme_override_constants/outline_size = 40
-theme_override_fonts/font = ExtResource("9_0a76l")
-theme_override_font_sizes/font_size = 216
-text = "0"
-
 [node name="UpgradeOverview" type="Sprite2D" parent="."]
-position = Vector2(-388, 539)
+position = Vector2(-425, 545)
 texture = ExtResource("2_g5c1h")
 
 [node name="UpgradeSlotSpecial" type="Control" parent="UpgradeOverview" groups=["Slot Special"]]
@@ -88,9 +52,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -62.0
+offset_left = 50.0
 offset_top = 381.0
-offset_right = 18.0
+offset_right = 130.0
 offset_bottom = 461.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -144,8 +108,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotDefault1" type="Control" parent="UpgradeOverview" groups=["Slot Default"]]
@@ -153,9 +117,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 238.0
+offset_left = 275.0
 offset_top = 381.0
-offset_right = 318.0
+offset_right = 355.0
 offset_bottom = 461.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -209,8 +173,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotActive1" type="Control" parent="UpgradeOverview" groups=["Slot Active"]]
@@ -218,9 +182,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -152.0
+offset_left = -25.0
 offset_top = 201.0
-offset_right = -72.0
+offset_right = 55.0
 offset_bottom = 281.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -274,8 +238,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotActive2" type="Control" parent="UpgradeOverview" groups=["Slot Active"]]
@@ -283,9 +247,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 28.0
+offset_left = 125.0
 offset_top = 201.0
-offset_right = 108.0
+offset_right = 205.0
 offset_bottom = 281.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -339,8 +303,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotSynergy1" type="Control" parent="UpgradeOverview" groups=["Slot Synergy"]]
@@ -348,9 +312,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 28.0
+offset_left = 170.0
 offset_top = 21.0
-offset_right = 108.0
+offset_right = 250.0
 offset_bottom = 101.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -404,8 +368,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotSynergy2" type="Control" parent="UpgradeOverview" groups=["Slot Synergy"]]
@@ -413,9 +377,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -152.0
+offset_left = -70.0
 offset_top = 21.0
-offset_right = -72.0
+offset_right = 10.0
 offset_bottom = 101.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -469,8 +433,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive1" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
@@ -478,9 +442,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -312.0
+offset_left = -175.0
 offset_top = -339.0
-offset_right = -232.0
+offset_right = -95.0
 offset_bottom = -259.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -534,8 +498,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive2" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
@@ -543,9 +507,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -132.0
+offset_left = -25.0
 offset_top = -339.0
-offset_right = -52.0
+offset_right = 55.0
 offset_bottom = -259.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -599,8 +563,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive3" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
@@ -608,9 +572,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 48.0
+offset_left = 125.0
 offset_top = -339.0
-offset_right = 128.0
+offset_right = 205.0
 offset_bottom = -259.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -664,8 +628,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotPassive4" type="Control" parent="UpgradeOverview" groups=["Slot Passive"]]
@@ -673,9 +637,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 228.0
+offset_left = 275.0
 offset_top = -339.0
-offset_right = 308.0
+offset_right = 355.0
 offset_bottom = -259.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -729,8 +693,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotBodymod1" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
@@ -738,9 +702,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -232.0
+offset_left = -110.0
 offset_top = -159.0
-offset_right = -152.0
+offset_right = -30.0
 offset_bottom = -79.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -794,8 +758,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlot1Bodymod2" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
@@ -803,9 +767,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -62.0
+offset_left = 50.0
 offset_top = -159.0
-offset_right = 18.0
+offset_right = 130.0
 offset_bottom = -79.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -859,8 +823,8 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="UpgradeSlotBodymod3" type="Control" parent="UpgradeOverview" groups=["Slot Bodymod"]]
@@ -868,9 +832,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 108.0
+offset_left = 210.0
 offset_top = -159.0
-offset_right = 188.0
+offset_right = 290.0
 offset_bottom = -79.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -924,15 +888,15 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3/BuyZone"]
-position = Vector2(40, 0)
-scale = Vector2(0.71, 0.82999)
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="YourUpgrades" type="Label" parent="UpgradeOverview"]
-offset_left = -292.0
-offset_top = -499.0
-offset_right = 276.0
-offset_bottom = -398.0
+offset_left = -190.0
+offset_top = -500.0
+offset_right = 378.0
+offset_bottom = -399.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 5
@@ -954,5 +918,72 @@ icon = ExtResource("9_ekhl7")
 flat = true
 icon_alignment = 1
 
-[connection signal="pressed" from="ContinueNextRound" to="." method="_on_continue_next_round_pressed"]
+[node name="Divider" type="Sprite2D" parent="."]
+z_index = 4
+z_as_relative = false
+position = Vector2(620, 535)
+texture = ExtResource("24_7hl21")
+
+[node name="ItemShelf" type="Sprite2D" parent="."]
+position = Vector2(1340.59, -350)
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("2_7wam5")
+offset = Vector2(0, 800)
+
+[node name="Itemslot1" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(-484.697, 438.914)
+
+[node name="Itemslot2" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(-484.697, 738.914)
+
+[node name="Itemslot3" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(-484.697, 1038.91)
+
+[node name="CurrencySymbol" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(429.326, 420.814)
+texture = ExtResource("3_0a76l")
+
+[node name="CurrencyNumber" type="Label" parent="ItemShelf/CurrencySymbol"]
+offset_left = -230.0
+offset_top = -120.0
+offset_right = -101.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.961, 1, 0.41, 1)
+theme_override_colors/font_outline_color = Color(0.196078, 0.188235, 0.133333, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 216
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="ContinueNextRound" type="Button" parent="ItemShelf"]
+z_index = 1
+offset_left = 31.1403
+offset_top = 398.19
+offset_right = 178.14
+offset_bottom = 478.19
+theme_override_font_sizes/font_size = 26
+text = "Continue
+next round"
+
+[node name="UpgradeInfo" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(198.561, 904.977)
+texture = ExtResource("25_kcery")
+
+[node name="UpgradeInfoText" type="Label" parent="ItemShelf/UpgradeInfo"]
+custom_minimum_size = Vector2(4, 716.285)
+offset_left = -217.195
+offset_top = -262.443
+offset_right = 621.805
+offset_bottom = 453.842
+theme_override_fonts/font = ExtResource("26_qix85")
+theme_override_font_sizes/font_size = 56
+text = "This  is how
+this Upgrade
+works:
+
+First collect fruit
+Then: Profit"
+
 [connection signal="pressed" from="UpgradeOverview/UpgradePanelButton" to="." method="_on_upgrade_panel_button_pressed"]
+[connection signal="pressed" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_pressed"]

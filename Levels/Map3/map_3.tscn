@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6hq0bgfkjhww"]
+
+[ext_resource type="Texture2D" uid="uid://c7di8gl2vij6s" path="res://Levels/Map3/Map3.svg" id="1_0a6eu"]
+[ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_ejmtf"]
+
+[node name="Map" type="Sprite2D"]
+position = Vector2(-276, -484)
+scale = Vector2(1.345, 1.345)
+texture = ExtResource("1_0a6eu")
+offset = Vector2(440, 360)
+script = ExtResource("2_ejmtf")
+grid_size = Vector2i(12, 10)
+starting_position = Vector2(5, 5)
+
+[node name="SolidElements" type="Node2D" parent="."]

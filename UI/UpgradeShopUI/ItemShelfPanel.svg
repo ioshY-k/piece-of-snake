@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="347.58499mm"
-   height="279.51312mm"
-   viewBox="0 0 347.585 279.51312"
+   width="346.43686mm"
+   height="278.58987mm"
+   viewBox="0 0 346.43687 278.58987"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.5716598"
-     inkscape:cx="-447.81879"
-     inkscape:cy="572.89318"
+     inkscape:zoom="1.1433196"
+     inkscape:cx="636.74234"
+     inkscape:cy="404.52381"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -56,7 +56,7 @@
        fx="65.973412"
        fy="149.8856"
        r="60.395"
-       gradientTransform="matrix(7.0756732,0.01140597,-0.01334735,2.2734704,-406.63595,-219.36265)"
+       gradientTransform="matrix(7.052301,0.01136829,-0.01330325,2.2659607,-404.81682,-217.32764)"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <path
@@ -64,20 +64,20 @@
      style="display:none;fill:#a18fd9;stroke:#212532;stroke-width:1.10229;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
      inkscape:transform-center-x="-0.074448879"
      inkscape:transform-center-y="0.094904335"
-     d="m 178.11214,170.44292 c -3.3e-4,0.68279 -4.44853,3.14227 -5.06443,2.80038 -0.61591,-0.34189 -0.6116,-5.26801 0.005,-5.60891 0.61651,-0.3409 5.06012,2.12574 5.05953,2.80853 z" />
+     d="m 177.65378,169.05842 c -3.3e-4,0.68279 -4.44853,3.14227 -5.06443,2.80038 -0.61591,-0.34189 -0.6116,-5.26801 0.005,-5.60891 0.61651,-0.3409 5.06012,2.12574 5.05953,2.80853 z" />
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-5.3231986,22.428257)"
+     transform="translate(-5.7815602,21.043755)"
      style="display:inline">
     <rect
-       style="display:inline;fill:url(#radialGradient17);fill-opacity:1;stroke:#212532;stroke-width:5.34584;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
+       style="display:inline;fill:url(#radialGradient17);fill-opacity:1;stroke:#212532;stroke-width:5.32818;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
        id="rect1"
-       height="274.1673"
-       x="7.9961185"
-       y="-19.755337"
-       width="342.23917"
-       ry="7.3064909" />
+       height="273.26169"
+       x="8.4456501"
+       y="-18.379665"
+       width="341.10867"
+       ry="7.2823563" />
   </g>
 </svg>
