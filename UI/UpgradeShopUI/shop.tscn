@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=28 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -18,19 +18,17 @@
 [ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="8_21fih"]
 [ext_resource type="Texture2D" uid="uid://ga8gt3rtdqat" path="res://UI/UpgradeShopUI/Slots/BuyZone.png" id="8_xtrhb"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="9_0a76l"]
-[ext_resource type="Texture2D" uid="uid://ct6mc8w7ccbph" path="res://UI/UpgradeShopUI/UpgrageOverviewPanelButton.svg" id="9_ekhl7"]
 [ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/FruitSymbol.svg" id="10_7hl21"]
 [ext_resource type="Texture2D" uid="uid://ch83p2wya5pew" path="res://UI/UpgradeShopUI/Symbols/SymbolSynergy.svg" id="10_mq2pp"]
 [ext_resource type="Texture2D" uid="uid://bq3r78ld2lde4" path="res://UI/UpgradeShopUI/Symbols/SymbolPassive.svg" id="12_dcjh5"]
 [ext_resource type="Texture2D" uid="uid://pkldlosua5a2" path="res://UI/UpgradeShopUI/Symbols/SymbolBodymod.svg" id="14_i0r2g"]
+[ext_resource type="Script" uid="uid://pq7y75ujgns1" path="res://UI/UpgradeShopUI/item_shelf.gd" id="23_qix85"]
 [ext_resource type="Texture2D" uid="uid://cdhi6mv1qy6aw" path="res://Divider.svg" id="24_7hl21"]
 [ext_resource type="Texture2D" uid="uid://4wvixiopwjjg" path="res://UI/UpgradeShopUI/UpgradeInfo.svg" id="25_kcery"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="26_qix85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1g7c"]
 size = Vector2(80, 80)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymhk7"]
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_oy471")
@@ -906,18 +904,6 @@ theme_override_fonts/font = ExtResource("8_21fih")
 theme_override_font_sizes/font_size = 81
 text = "Your Upgrades"
 
-[node name="UpgradePanelButton" type="Button" parent="UpgradeOverview"]
-custom_minimum_size = Vector2(39.545, 82.07)
-offset_left = 386.0
-offset_top = -52.0
-offset_right = 433.0
-offset_bottom = 55.0
-pivot_offset = Vector2(21, 51)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ymhk7")
-icon = ExtResource("9_ekhl7")
-flat = true
-icon_alignment = 1
-
 [node name="Divider" type="Sprite2D" parent="."]
 z_index = 4
 z_as_relative = false
@@ -929,6 +915,7 @@ position = Vector2(1340.59, -350)
 scale = Vector2(1.105, 1.105)
 texture = ExtResource("2_7wam5")
 offset = Vector2(0, 800)
+script = ExtResource("23_qix85")
 
 [node name="Itemslot1" type="Sprite2D" parent="ItemShelf"]
 position = Vector2(-484.697, 438.914)
@@ -997,5 +984,4 @@ This Upgrade is lost upon entering the next act."
 autowrap_mode = 2
 vertical_alignment = 1
 
-[connection signal="pressed" from="UpgradeOverview/UpgradePanelButton" to="." method="_on_upgrade_panel_button_pressed"]
 [connection signal="pressed" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_pressed"]

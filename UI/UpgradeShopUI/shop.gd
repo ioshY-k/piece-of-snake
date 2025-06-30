@@ -35,10 +35,12 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.IMMUTABLE]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
-@onready var upgrade_panel_button: Button = $UpgradeOverview/UpgradePanelButton
 @onready var upgrade_overview: Sprite2D = $UpgradeOverview
 
 func _ready() -> void:
+	if GameConsts.test_mode:
+		upgrade_card_pool= [GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1]
+	
 	default_slots = [$UpgradeOverview/UpgradeSlotDefault1]
 
 	passive_slots = [$UpgradeOverview/UpgradeSlotPassive1,
@@ -100,6 +102,9 @@ func _on_got_clicked(upgrade_id: int):
 				slot.get_node("BuyZone").get_node("Price").text = str(buy_price)
 
 func calculate_price(upgrade_id):
+	if GameConsts.test_mode:
+		return 0
+	
 	var modifier = 0
 	
 	match GameConsts.get_upgrade_type(upgrade_id):
@@ -145,19 +150,7 @@ func _on_upgrade_destroyed(upgrade_id: int) -> void:
 		update_upgrade_pool(upgrade_id, false)
 	upgrade_destroyed.emit(upgrade_id)
 
-var upgrade_info_tween: Tween
-func _on_hovered(upgrade_card: UpgradeCard) -> void:
-	if GameConsts.node_being_dragged != null and GameConsts.node_being_dragged != upgrade_card:
-		return
-	if upgrade_info_tween != null and upgrade_info_tween.is_running():
-		upgrade_info_tween.stop()
-	upgrade_info.get_node("UpgradeInfoText").text = upgrade_card.upgrade_description
-	upgrade_info.show()
-	upgrade_info.scale = Vector2(0.1,0.1)
-	upgrade_info.global_position = upgrade_card.global_position
-	upgrade_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	upgrade_info_tween.tween_property(upgrade_info, "position", Vector2(198,904), 0.6)
-	upgrade_info_tween.tween_property(upgrade_info, "scale", Vector2(1,1), 1)
+
 
 
 func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):

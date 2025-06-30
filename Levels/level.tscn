@@ -1,15 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbbha5rn0kflr"]
+[gd_scene load_steps=9 format=3 uid="uid://bbbha5rn0kflr"]
 
 [ext_resource type="Script" uid="uid://do0scnp22kly2" path="res://Levels/level_manager.gd" id="1_vx8ih"]
 [ext_resource type="Texture2D" uid="uid://nygc5koouovv" path="res://Background.svg" id="2_ugh17"]
 [ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://UI/UpgradeShopUI/FruitSymbol.svg" id="3_t80w2"]
+[ext_resource type="Texture2D" uid="uid://dsql3t48snojb" path="res://UI/LevelUI/ActiveItemSlot.svg" id="6_8a2b0"]
 [ext_resource type="PackedScene" uid="uid://bnn1xmc2b43mm" path="res://UI/LevelUI/time_meter.tscn" id="7_8a2b0"]
+[ext_resource type="Script" uid="uid://cle2566xpcd0s" path="res://Levels/active_item_slot.tres.gd" id="7_ecu0b"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="8_jjxhf"]
 [ext_resource type="PackedScene" uid="uid://bc4sb6dmfgooa" path="res://UI/LevelUI/speed_boost_bar.tscn" id="10_8hqpc"]
-
-[sub_resource type="GDScript" id="GDScript_uhyyw"]
-script/source = "extends Node2D
-"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vx8ih")
@@ -48,11 +46,57 @@ offset_right = -358.635
 offset_bottom = 477.95
 pivot_offset = Vector2(-28.5714, 60)
 
-[node name="ActiveItemSlot1" type="Node2D" parent="."]
-position = Vector2(-720, -203)
-script = SubResource("GDScript_uhyyw")
+[node name="ActiveItemSlot1" type="Sprite2D" parent="."]
+position = Vector2(-840, 180)
+texture = ExtResource("6_8a2b0")
+script = ExtResource("7_ecu0b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActiveItemSlot1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = -39.5
+offset_right = -34.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ActiveItemSlot2" type="Sprite2D" parent="."]
+position = Vector2(-611, 180)
+texture = ExtResource("6_8a2b0")
+script = ExtResource("7_ecu0b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActiveItemSlot2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = -39.5
+offset_right = -34.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
 
 [node name="TimeMeter" parent="." instance=ExtResource("7_8a2b0")]
 z_index = 1
 position = Vector2(-447, -88)
 scale = Vector2(0.46, 0.46)
+
+[node name="TestButton" type="CheckButton" parent="."]
+offset_left = -760.0
+offset_top = -360.0
+offset_right = -716.0
+offset_bottom = -336.0
+scale = Vector2(4.84522, 4.84522)
+button_pressed = true
+
+[connection signal="toggled" from="TestButton" to="." method="_on_test_button_toggled"]

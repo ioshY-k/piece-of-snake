@@ -6,5 +6,4 @@ signal collision_with
 
 
 func _ready() -> void: 
-	element_shape.shape.set_size(Vector2(GameConsts.TILE_SIZE/2, GameConsts.TILE_SIZE/2))
 	collision_with.connect(map._on_collision_with.bind(self))

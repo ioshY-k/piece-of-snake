@@ -51,12 +51,11 @@ signal let_go
 signal hovered
 
 func _ready() -> void:
-	print(upgrade_descriptions[str(GameConsts.UPGRADE_LIST.AREA_SIZE_1)])
 	got_clicked.connect(get_parent().get_parent()._on_got_clicked)
 	bought.connect(get_parent().get_parent()._on_upgrade_card_bought)
 	destroyed.connect(get_parent().get_parent()._on_upgrade_destroyed)
 	let_go.connect(get_parent().get_parent()._on_let_go)
-	hovered.connect(get_parent().get_parent()._on_hovered)
+	hovered.connect(get_parent().change_description)
 
 func instantiate_upgrade_card(id: int):
 	upgrade_id = id
@@ -72,9 +71,14 @@ func _process(delta: float) -> void:
 	drag_logic(delta)
 
 func drag_logic(delta: float):
+	#shadow always follows card
 	card_shadow.position = Vector2(.12, 12).rotated(card_sprite.rotation)
+	
+	#all interacting logic works only on a single card, and only if mouse hovers or drags it
 	if (mouse_in or is_dragging) and (GameConsts.node_being_dragged == null or GameConsts.node_being_dragged == self):
+		#card is being dragged
 		if Input.is_action_pressed("click"):
+			#card is just now being dragged
 			if Input.is_action_just_pressed("click") and not is_bought:
 				got_clicked.emit(upgrade_id)
 			global_position = lerp(global_position, get_global_mouse_position() - (size/2.0), 22*delta)
@@ -83,10 +87,11 @@ func drag_logic(delta: float):
 			card_sprite.z_index = 100
 			is_dragging = true
 			GameConsts.node_being_dragged = self
+		#card is only being hovered
 		else:
 			_change_scale(Vector2(1.42,1.42))
 			card_sprite.rotation_degrees = lerp(card_sprite.rotation_degrees, 0.0, 22*delta)
-			
+			#card is just now let go of
 			if is_dragging:
 				decide_on_let_go()
 				let_go.emit()
@@ -94,7 +99,7 @@ func drag_logic(delta: float):
 			if GameConsts.node_being_dragged == self:
 				GameConsts.node_being_dragged = null
 		return
-	
+	#card is not interacted with
 	card_sprite.z_index = 5
 	if is_bought:
 		_change_scale(Vector2(0.7,0.7))
@@ -107,7 +112,6 @@ func decide_on_let_go():
 		return
 	if card_area.get_overlapping_areas().is_empty():
 		return
-	
 	owned_slot_area = card_area.get_overlapping_areas()[0]
 	
 	var replaced_card: UpgradeCard
@@ -156,13 +160,16 @@ func _set_rotation(delta: float) -> void:
 
 
 func _snap_to_slot(upgrade_slot: Area2D):
+	print(global_position)
+	print(upgrade_slot.global_position - (size/2))
+	var start_position = global_position
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_property(self, "global_position", upgrade_slot.global_position - (size/2), 0.2)
+	tween.tween_property(self, "global_position", upgrade_slot.global_position - (size/2), 0.3).from(start_position)
 
 func _on_mouse_entered() -> void:
-	mouse_in = true
 	if not is_dragging:
 		hovered.emit(self)
+	mouse_in = true
 	
 func _on_mouse_exited() -> void:
 	mouse_in = false

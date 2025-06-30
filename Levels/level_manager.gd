@@ -11,6 +11,9 @@ var current_map: Map
 @onready var speed_boost_frame: AnimatedSprite2D = $SpeedBoostBar/SpeedBoostFrame
 @onready var fruits_left_number_label: Label = $FruitsLeftNumber
 @onready var active_item_slot_1: Node2D = $ActiveItemSlot1
+@onready var active_item_slot_2: Sprite2D = $ActiveItemSlot2
+
+var active_item_slots: Array[ActiveItemSlot] = [active_item_slot_1, active_item_slot_2]
 @onready var time_meter: TimeMeter = $TimeMeter
 var speed_boost_drain_speed: int = 230
 var speed_boost_available: bool = true
@@ -26,6 +29,7 @@ var hyper_speed_1_component_scene = load("res://UpgradeComponents/hyper_speed_1_
 signal round_over
 
 func _ready() -> void:
+	active_item_slots = [active_item_slot_1, active_item_slot_2]
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
 
 #called by run_manager at the start of a run and on new act
@@ -34,6 +38,7 @@ func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
 		current_map.queue_free()
 		await get_tree().process_frame
 	add_child(map)
+	
 	
 	current_map = map
 	snake_head = $Map/SnakeHead
@@ -46,7 +51,7 @@ func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
 	
 	
 	current_map.fruit_collected.connect(_on_fruit_collected)
-	snake_head.got_hit.connect(on_snake_got_hit)
+	map.snake_got_hit.connect(on_snake_got_hit)
 	GameConsts.node_being_dragged = null
 	
 	prepare_new_round(fruit_threshold, time_sec)
@@ -57,6 +62,12 @@ func prepare_new_round(fruit_threshold, time_sec):
 	snake_head.snake_speed = GameConsts.NORMAL_SPEED
 	snake_tail.snake_speed = GameConsts.NORMAL_SPEED
 	speed_boost_bar.value  = speed_boost_bar.max_value
+	
+	for active_item_slot in active_item_slots:
+		if active_item_slot.get_child_count() != 1:
+			active_item_slot.refresh_lights()
+			
+		
 	
 	enough_fruits = false
 	fruits_left = fruit_threshold
@@ -70,6 +81,17 @@ func prepare_new_round(fruit_threshold, time_sec):
 
 func on_snake_got_hit():
 	print("Ouch!")
+	#disable the speedboost so that fruit cant be lost in high frequency
+	if speed_boost_bar.value < speed_boost_bar.max_value:
+		snake_head.snake_speed = GameConsts.NORMAL_SPEED
+		snake_tail.snake_speed = GameConsts.NORMAL_SPEED
+		speed_boost_available = false
+		speed_boost_frame.frame = 1
+	
+	#don't lose fruit on wall collision while invincible
+	if current_map.invincible_ticks > 0:
+		return
+	
 	if not enough_fruits:
 		fruits_left += 1
 		fruits_left_number_label.text = str(fruits_left)
@@ -135,12 +157,17 @@ func _on_timer_expired() -> void:
 	round_over.emit()
 
 func instantiate_upgrade(upgrade_id: int):
+	var current_active_item_slot
+	for active_item_slot in active_item_slots:
+		if active_item_slot.get_child_count() == 1:
+			current_active_item_slot = active_item_slot
+			
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
 			current_map.add_upgrade_component(upgrade_id)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
 			var fruit_relocator_1_component = fruit_relocator_1_component_scene.instantiate()
-			active_item_slot_1.add_child(fruit_relocator_1_component)
+			current_active_item_slot.add_child(fruit_relocator_1_component)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_1_component)
@@ -178,7 +205,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		_:
 			return false
 
-func _on_item_activated(upgrade_id: int):
+func _on_item_activated(upgrade_id: int, _uses: int):
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
 			var fruits: Array[MapElement] = current_map.find_all_fruits()
@@ -208,3 +235,7 @@ func disable_map():
 func enable_map():
 	current_map.process_mode = Node.PROCESS_MODE_INHERIT
 	
+
+
+func _on_test_button_toggled(toggled_on: bool) -> void:
+	GameConsts.test_mode = toggled_on

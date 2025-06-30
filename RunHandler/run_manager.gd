@@ -28,6 +28,8 @@ func _ready() -> void:
 
 func create_new_run():
 	maporder.shuffle()
+	if GameConsts.test_mode:
+		maporder = [preload("res://Levels/Map3/map_3.tscn")]
 	level = level_scene.instantiate()
 	add_child(level)
 	level.prepare_new_act(maporder[current_act].instantiate(), GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)

@@ -32,6 +32,8 @@ var invincible_ticks = 0
 signal fruit_collected
 #making sure map initializes before snake
 signal initialized
+#making sure the level catches the signal before the map does, since map gives iframes
+signal snake_got_hit
 
 func _ready() -> void:
 	#change the seed for randomness
@@ -47,8 +49,8 @@ func _ready() -> void:
 	snake_tail.snake_head = snake_head
 	spawn_fruit([])
 	
-	snake_head.got_hit.connect(change_iframes.bind(GameConsts.COLLISION_IFRAMES))
 	snake_head.next_tile_reached.connect(_on_next_tile_reached)
+	snake_head.got_hit.connect(collision_iframes.bind(GameConsts.COLLISION_IFRAMES))
 	
 	initialized.emit()
 
@@ -189,8 +191,9 @@ func add_upgrade_component(upgrade: int):
 			var fruit_magnet_2_component = fruit_magnet_2_component_scene.instantiate()
 			snake_head.add_child(fruit_magnet_2_component)
 	
-func change_iframes(ticks: int):
-	if invincible_ticks < ticks:
+func collision_iframes(ticks: int):
+	snake_got_hit.emit()
+	if invincible_ticks == 0:
 		invincible_ticks = ticks
 	
 	
