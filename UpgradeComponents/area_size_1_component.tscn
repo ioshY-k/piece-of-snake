@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dit13fgrag5jj"]
+
+[ext_resource type="Script" uid="uid://bkvrmcejrdtkd" path="res://UpgradeComponents/area_size_1_component.gd" id="1_j52g0"]
+
+[node name="AreaSize1Component" type="Node"]
+script = ExtResource("1_j52g0")

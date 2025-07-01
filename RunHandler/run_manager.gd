@@ -1,10 +1,7 @@
 extends Node
 
-var maporder: Array[PackedScene] = [
-									preload("res://Levels/Map1/square_map.tscn"),
-									preload("res://Levels/Map2/big_map.tscn"),
-									preload("res://Levels/Map3/map_3.tscn")
-									]
+
+var maporder = [0,1,2]
 										
 @onready var retry_button: Button = $RetryButton
 
@@ -28,11 +25,12 @@ func _ready() -> void:
 
 func create_new_run():
 	maporder.shuffle()
-	if GameConsts.test_mode:
-		maporder = [preload("res://Levels/Map3/map_3.tscn")]
+		
+	maporder = [2,2,2]
+		
 	level = level_scene.instantiate()
 	add_child(level)
-	level.prepare_new_act(maporder[current_act].instantiate(), GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
+	level.prepare_new_act(maporder[current_act], GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
 	level.round_over.connect(_on_round_over)
 
 func _on_upgrade_bought(upgrade: int):
@@ -77,7 +75,7 @@ func _on_round_over():
 			current_upgrades[0]
 			current_upgrades[1]
 			current_upgrades[2]
-			level.prepare_new_act(maporder[current_act].instantiate(), GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
+			level.prepare_new_act(maporder[current_act], GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
 
 
 func _on_retry_button_pressed() -> void:

@@ -3,12 +3,11 @@
 [ext_resource type="Script" uid="uid://dqvh87gg7wwmw" path="res://MapElements/SolidElements/solid_element.gd" id="1_su4ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vry8d"]
-size = Vector2(60, 20)
+size = Vector2(60, 10)
 
 [node name="SolidElementArea" type="Area2D" groups=["Static Solid Element"]]
 collision_mask = 0
 script = ExtResource("1_su4ih")
 
 [node name="ElementShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.53674e-07)
 shape = SubResource("RectangleShape2D_vry8d")

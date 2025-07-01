@@ -74,7 +74,7 @@ func find_free_map_tiles() -> Array[Vector2i]:
 		for y in len(range(grid_size.y)):
 				map_tiles.append(Vector2i(x,y))
 	
-	#creates an array conaining every position of static solid elements
+	#creates an array containing every position of static solid elements
 	var solid_element_positions = get_tree().get_nodes_in_group("Static Solid Element").map(
 	func(solid_elem): return position_to_tile(solid_elem.position))
 	
@@ -84,6 +84,9 @@ func find_free_map_tiles() -> Array[Vector2i]:
 	map_tiles.shuffle()
 	return map_tiles
 
+func update_free_map_tiles(tile: Vector2i):
+	free_map_tiles.append(tile)
+	
 
 #find starting positions for snake head, body and tail
 func teleport_to_starting_position():

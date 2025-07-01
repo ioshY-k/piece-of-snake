@@ -5,6 +5,32 @@ var snake_head: SnakeHead
 var snake_tail: SnakeTail
 var current_map: Map
 
+var maps_in_order: Array[PackedScene] =  [
+											preload("res://Levels/Map1/square_map.tscn"),
+											preload("res://Levels/Map2/big_map.tscn"),
+											preload("res://Levels/Map3/map_3.tscn")
+										]
+var current_map_index: int
+var map_first_pos_and_scale: Array = [	
+										[Vector2(0,0), Vector2(0,0)],
+										[Vector2(0,0),Vector2(0,0)],
+										[Vector2(-487.0,-697.0), Vector2(1.345,1.345)]
+									]
+var map_second_pos_and_scale: Array = [	
+										[Vector2(0,0), Vector2(0,0)],
+										[Vector2(0,0),Vector2(0,0)],
+										[Vector2(-365.0,-592.0), Vector2(1.14,1.14)]
+									]
+var map_third_pos_and_scale: Array = [	
+										[Vector2(0,0), Vector2(0,0)],
+										[Vector2(0,0),Vector2(0,0)],
+										[Vector2(-285.0,-499.0), Vector2(1.07,1.03)]
+									]
+var map_fourth_pos_and_scale: Array = [	
+										[Vector2(0,0), Vector2(0,0)],
+										[Vector2(0,0),Vector2(0,0)],
+										[Vector2(-289.0,-501.0), Vector2(1.01,0.965)]
+									]
 #UI Elements + data
 @onready var speed_boost_bar: SpeedBoostBar = $SpeedBoostBar
 @onready var fruits_left_symbol: Sprite2D = $FruitsLeftSymbol
@@ -25,7 +51,9 @@ var enough_fruits: bool = false
 #Upgrade Components
 var fruit_relocator_1_component_scene = load("res://UpgradeComponents/fruit_relocator_1_component.tscn")
 var hyper_speed_1_component_scene = load("res://UpgradeComponents/hyper_speed_1_component.tscn")
-
+var area_size_1_component_scene = load("res://UpgradeComponents/area_size_1_component.tscn")
+var area_size_2_component_scene = load("res://UpgradeComponents/area_size_2_component.tscn")
+var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_component.tscn")
 signal round_over
 
 func _ready() -> void:
@@ -33,11 +61,16 @@ func _ready() -> void:
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
 
 #called by run_manager at the start of a run and on new act
-func prepare_new_act(map: Map ,fruit_threshold: int, time_sec: int):
+func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int):
 	if current_map != null:
 		current_map.queue_free()
 		await get_tree().process_frame
+	var map: Map = maps_in_order[map_index].instantiate()
+	current_map_index = map_index
 	add_child(map)
+	
+	map.position = map_first_pos_and_scale[map_index][0]
+	map.scale = map_first_pos_and_scale[map_index][1]
 	
 	
 	current_map = map
@@ -163,6 +196,15 @@ func instantiate_upgrade(upgrade_id: int):
 			current_active_item_slot = active_item_slot
 			
 	match upgrade_id:
+		GameConsts.UPGRADE_LIST.AREA_SIZE_1:
+			var area_size_1_component = area_size_1_component_scene.instantiate()
+			add_child(area_size_1_component)
+		GameConsts.UPGRADE_LIST.AREA_SIZE_2:
+			var area_size_2_component = area_size_2_component_scene.instantiate()
+			add_child(area_size_2_component)
+		GameConsts.UPGRADE_LIST.AREA_SIZE_3:
+			var area_size_3_component = area_size_3_component_scene.instantiate()
+			add_child(area_size_3_component)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
 			current_map.add_upgrade_component(upgrade_id)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
@@ -178,6 +220,8 @@ func instantiate_upgrade(upgrade_id: int):
 func destroy_upgrade(upgrade_id: int):
 	var component
 	match upgrade_id:
+		GameConsts.UPGRADE_LIST.AREA_SIZE_1:
+			component = current_map.find_child("AreaSize1Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
 			component = current_map.snake_head.find_child("FruitMagnet1Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
@@ -193,7 +237,7 @@ func destroy_upgrade(upgrade_id: int):
 		print_debug("No Component found to be destroyed")
 	
 	
-
+#decides if the upgrade was attached to an object that reloads on a new act eg map and snake
 func is_upgrade_reload_necessary(upgrade_id) -> bool:
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1,\

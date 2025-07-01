@@ -1,5 +1,6 @@
 Z index:
 	Map: 0
+	Level: 5
 	BodyPart: 10
 	SankeTail: 15
 	SnakeHead: 20

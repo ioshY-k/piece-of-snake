@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bc4sb6dmfgooa" path="res://UI/LevelUI/speed_boost_bar.tscn" id="10_8hqpc"]
 
 [node name="Level" type="Node2D"]
+z_index = 5
+z_as_relative = false
 script = ExtResource("1_vx8ih")
 
 [node name="Background" type="Sprite2D" parent="."]
