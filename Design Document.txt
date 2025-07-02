@@ -4,6 +4,7 @@ Z index:
 	BodyPart: 10
 	SankeTail: 15
 	SnakeHead: 20
+	FruitParticles: 25
 
 Z index Shop Canvas Layer:
 	Held Upgradecard: 100

@@ -55,11 +55,14 @@ func _on_next_tile_reached():
 	buffered_input_direction = -10
 	
 	if colliding_element == null:
+		print("nocollision detected")
 		pass
 	elif colliding_element.collision_layer == 1:#Solid
+		print("wallcollision detected")
 		moves = false
 		got_hit.emit()
 	elif colliding_element.collision_layer == 2:#Fruit
+		print("fruitcollision detected")
 		colliding_element.collision_with.emit()
 	
 	if not moves:

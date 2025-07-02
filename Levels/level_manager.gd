@@ -4,6 +4,7 @@ class_name LevelManager extends Node2D
 var snake_head: SnakeHead
 var snake_tail: SnakeTail
 var current_map: Map
+signal round_started
 
 var maps_in_order: Array[PackedScene] =  [
 											preload("res://Levels/Map1/square_map.tscn"),
@@ -100,7 +101,7 @@ func prepare_new_round(fruit_threshold, time_sec):
 		if active_item_slot.get_child_count() != 1:
 			active_item_slot.refresh_lights()
 			
-		
+	
 	
 	enough_fruits = false
 	fruits_left = fruit_threshold
@@ -110,6 +111,9 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
+	
+	round_started.emit()
+	enable_map()
 	
 
 func on_snake_got_hit():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=30 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -26,20 +26,17 @@
 [ext_resource type="Texture2D" uid="uid://cdhi6mv1qy6aw" path="res://Divider.svg" id="24_7hl21"]
 [ext_resource type="Texture2D" uid="uid://4wvixiopwjjg" path="res://UI/UpgradeShopUI/UpgradeInfo.svg" id="25_kcery"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="26_qix85"]
+[ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="27_fpme6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1g7c"]
 size = Vector2(80, 80)
 
+[sub_resource type="Curve" id="Curve_qix85"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_oy471")
-
-[node name="FruitOverloadInfo" type="Label" parent="."]
-offset_left = 1200.0
-offset_top = 40.0
-offset_right = 1582.0
-offset_bottom = 110.0
-theme_override_font_sizes/font_size = 51
-text = "Fruit Overload: "
 
 [node name="UpgradeOverview" type="Sprite2D" parent="."]
 position = Vector2(-425, 545)
@@ -935,12 +932,15 @@ offset_left = -230.0
 offset_top = -120.0
 offset_right = -101.0
 offset_bottom = 118.0
+pivot_offset = Vector2(64, 119)
 theme_override_colors/font_color = Color(0.961, 1, 0.41, 1)
 theme_override_colors/font_outline_color = Color(0.196078, 0.188235, 0.133333, 1)
 theme_override_constants/outline_size = 40
 theme_override_fonts/font = ExtResource("9_0a76l")
 theme_override_font_sizes/font_size = 216
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ContinueNextRound" type="Button" parent="ItemShelf"]
@@ -983,5 +983,24 @@ text = "Uncover more area.
 This Upgrade is lost upon entering the next act."
 autowrap_mode = 2
 vertical_alignment = 1
+
+[node name="FruitCountParticle" type="CPUParticles2D" parent="."]
+modulate = Color(0.963333, 1, 0.45, 0.878431)
+position = Vector2(1635, 130)
+emitting = false
+amount = 80
+texture = ExtResource("27_fpme6")
+lifetime = 0.2
+emission_shape = 1
+emission_sphere_radius = 26.2
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 19.69
+initial_velocity_max = 43.31
+scale_amount_min = 0.0
+scale_amount_max = 1.3
+scale_amount_curve = SubResource("Curve_qix85")
+hue_variation_min = -0.42
+hue_variation_max = 0.31
 
 [connection signal="pressed" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_pressed"]

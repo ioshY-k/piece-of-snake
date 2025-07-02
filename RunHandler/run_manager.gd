@@ -50,12 +50,19 @@ func _on_round_over():
 		
 		shop.show_shop()
 		await get_tree().create_timer(0.5).timeout
+		shop.fruit_count_particle.emitting = true
 		while level.fruits_overload > 0:
-			await get_tree().create_timer(0.5).timeout
 			level.fruits_overload -= 1
+			shop.fruit_count_particle.position = Vector2(300,85)
+			var tween = create_tween().tween_property(shop.fruit_count_particle, "position", Vector2(1650,130), 0.5)
+			await tween.finished
 			shop.fruits_currency += 1
+			var currency_label_tween = create_tween()
+			currency_label_tween.tween_property(shop.currency_number_label, "scale", Vector2(1.6,1.6), 0.06)
+			currency_label_tween.tween_property(shop.currency_number_label, "scale", Vector2(1,1), 0.06)
 			shop.currency_number_label.text = str(shop.fruits_currency)
 			level.fruits_left_number_label.text = str(level.fruits_overload)
+		shop.fruit_count_particle.emitting = false
 		await get_tree().create_timer(0.5).timeout
 		
 		shop.generate_items(current_round)
@@ -63,7 +70,6 @@ func _on_round_over():
 		await shop.finished_buying
 		
 		
-		level.enable_map()
 		shop.hide_shop()
 		if current_round < 3:
 			current_round += 1

@@ -115,11 +115,6 @@ func teleport_to_starting_position():
 		snake_tail.current_tile = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN)
 	snake_tail.position = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * GameConsts.TILE_SIZE
 
-func add_a_fruit(tile: Vector2i):
-	var fruit: FruitElement = fruit_element_scene.instantiate()
-	add_child(fruit)
-	fruit.position = tile_to_position(tile)
-
 #connected to signal collision_with in map_element.gd emitted in snake_head.gd when head collides with a head element
 func _on_collision_with(element: MapElement):
 	#on fruit collision, grow once, delete fruit and spawn a new one
@@ -128,9 +123,9 @@ func _on_collision_with(element: MapElement):
 		fruit_collected.emit()
 		relocate_fruit(element, [])
 
-func relocate_fruit(element: MapElement, forbidden_tiles: Array[Vector2i]):
-	element.queue_free()
+func relocate_fruit(fruit: FruitElement, forbidden_tiles: Array[Vector2i]):
 	spawn_fruit(forbidden_tiles)
+	fruit.get_collected(snake_head.position, GameConsts.tile_to_position(snake_head.next_tile))
 
 #spawn a new fruit in a place with no solid objects, including the snake
 #additional excluded tiles can be handed by forbidden_tiles

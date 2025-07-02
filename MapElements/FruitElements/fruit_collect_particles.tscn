@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://e2rs62gr4ch"]
+
+[ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="1_nxgan"]
+
+[sub_resource type="Curve" id="Curve_2sf1h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_2j4xi"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.00224215, 0.152954), 0.0, 0.0, 0, 0, Vector2(0.511211, 0.274986), 1.49405, 1.49405, 0, 0, Vector2(0.991031, 0.00938714), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Fruit_collect_particles" type="CPUParticles2D"]
+modulate = Color(0.798, 0.841067, 0.95, 0.403922)
+z_index = 25
+amount = 60
+texture = ExtResource("1_nxgan")
+speed_scale = 1.76
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 9.06
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 110.8
+initial_velocity_max = 173.79
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_2sf1h")
+hue_variation_min = -0.3
+hue_variation_max = 0.06
+hue_variation_curve = SubResource("Curve_2j4xi")
