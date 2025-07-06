@@ -204,7 +204,9 @@ func _on_timer_expired() -> void:
 func instantiate_upgrade(upgrade_id: int):
 	
 	var current_active_item_slot
+	var slot: int = 0
 	for active_item_slot in active_item_slots:
+		slot += 1
 		if active_item_slot.get_child_count() == 1:
 			current_active_item_slot = active_item_slot
 			break
@@ -222,19 +224,19 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
 			current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.set_uses(2)
+			fruit_relocator_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
 			current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.set_uses(3)
+			fruit_relocator_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
 			current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.set_uses(4)
+			fruit_relocator_component.initiate_active_item(4, slot)
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			var time_stop_1_component = time_stop_1_component_scene.instantiate()
 			current_active_item_slot.add_child(time_stop_1_component)
-			time_stop_1_component.set_uses(3)
+			time_stop_1_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_1_component)
@@ -338,17 +340,6 @@ func _on_item_activated(upgrade_id: int, _uses: int):
 			
 			fruit_tiles.append_array(surrounding_fruit_tiles)
 			
-			var fruit_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
-			var testfruit_array = []
-			for pos in fruit_tiles:
-				var testfruit = fruit_scene.instantiate()
-				current_map.add_child(testfruit)
-				testfruit.position = GameConsts.tile_to_position(pos)
-				testfruit_array.append(testfruit)
-			
-			await get_tree().create_timer(1).timeout
-			for tf in testfruit_array:
-				tf.queue_free()
 						
 			for fruit in fruits:
 				current_map.spawn_fruit(fruit_tiles)

@@ -1,9 +1,5 @@
-extends Node2D
+extends ActiveItemBase
 
-var max_uses: int
-var uses: int
-signal item_activated
-var active_item_slot: ActiveItemSlot
 
 func _ready() -> void:
 	active_item_slot = get_parent()
@@ -15,20 +11,10 @@ func _ready() -> void:
 	item_activated.connect(active_item_slot._on_item_activated.bind())
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("item1") and uses > 0:
+	if Input.is_action_just_pressed(active_item_button) and uses > 0:
 		#uses-1 is the light index for the itembag to go out
 		item_activated.emit(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1, uses-1)
 		uses -= 1
-
-func set_uses(use_num: int):
-	print("uses set to " + str(use_num))
-	max_uses = use_num
-	uses = use_num
-	for use in range(uses):
-		active_item_slot.add_light()
-
-func refresh_uses():
-	uses = max_uses
 
 func self_destruct():
 	active_item_slot.remove_lights()
