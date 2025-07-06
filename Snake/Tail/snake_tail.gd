@@ -4,7 +4,6 @@ var tiles_to_grow = 0
 
 var snake_head: MovingSnakePart
 
-
 func _on_next_tile_reached():
 	#when not growing, delete last snake body and direction path, then follow given direction
 	if tiles_to_grow == 0 and snake_head.moves:
@@ -21,6 +20,9 @@ func _on_next_tile_reached():
 	get_moving_tween(true)
 	get_turning_tween(current_direction)
 	
-	snake_head.moves = true
+	SignalBus.continue_moving.emit()
 	
-	
+func _on_stop_moving():
+	pass
+func _on_continue_moving():
+	pass

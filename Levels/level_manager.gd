@@ -229,11 +229,11 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
 			current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.set_uses(5)
+			fruit_relocator_component.set_uses(4)
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			var time_stop_1_component = time_stop_1_component_scene.instantiate()
 			current_active_item_slot.add_child(time_stop_1_component)
-			time_stop_1_component.set_uses(2)
+			time_stop_1_component.set_uses(3)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_1_component)
@@ -335,8 +335,14 @@ func _on_item_activated(upgrade_id: int, _uses: int):
 				current_map.fruit_locations.erase(GameConsts.position_to_tile(fruit.position))
 				fruit.queue_free()
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
-			snake_head.moves = false
+			SignalBus.stop_moving.emit()
+
+func _on_item_deactivated(upgrade_id):
+	match upgrade_id:
+		GameConsts.UPGRADE_LIST.TIME_STOP_1:
+			snake_head.moves = true
 			
+
 func disable_map():
 	current_map.process_mode = Node.PROCESS_MODE_DISABLED
 

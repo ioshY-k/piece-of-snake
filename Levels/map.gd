@@ -63,11 +63,11 @@ func _ready() -> void:
 func _on_next_tile_reached():
 	if invincible_ticks > 0:
 		for bodypart in snake_path_bodyparts:
-			bodypart.process_mode = Node.PROCESS_MODE_DISABLED
+			bodypart.find_child("SolidElement").set_collision_layer_value(1,false)
 		invincible_ticks -= 1
 	else:
 		for bodypart in snake_path_bodyparts:
-			bodypart.process_mode = Node.PROCESS_MODE_INHERIT
+			bodypart.find_child("SolidElement").set_collision_layer_value(1,true)
 		
 	
 
@@ -187,7 +187,7 @@ func pop_snake_bodyparts():
 func unload_solidElement(obj: Node):
 	for child in obj.get_children():
 		if "SolidElement" in child.name:
-			child.queue_free()
+			child.set_collision_layer_value(1,false)
 
 func add_upgrade_component(upgrade: int):
 	match upgrade:
@@ -243,8 +243,10 @@ func get_next_tile(current_tile: Vector2i, direction) -> Vector2i:
 
 func find_all_fruits() -> Array[MapElement]:
 	var fruits: Array[MapElement] = []
-	for node in get_tree().get_nodes_in_group("Fruit"):
-		fruits.append(node)
+	for node: MapElement in get_tree().get_nodes_in_group("Fruit"):
+		#this excludes fruit that are only in their eat up animation
+		if node.get_collision_layer_value(2):
+			fruits.append(node)
 	return fruits
 			
 #endregion

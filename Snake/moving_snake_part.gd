@@ -17,6 +17,8 @@ func _ready() -> void:
 	current_direction = DIRECTION.UP
 	next_tile = current_tile
 	
+	SignalBus.stop_moving.connect(_on_stop_moving)
+	SignalBus.continue_moving.connect(_on_continue_moving)
 	
 	get_moving_tween(true)
 	get_turning_tween(current_direction)
@@ -66,4 +68,7 @@ func get_turning_tween(direction: int) -> Tween:
 #Should never be reached since function is overwritten in Children
 func _on_next_tile_reached():
 	print_debug("The Signal next_tile_reached was not connected to an existing SnakeHead or SnakeTail")
-	
+func _on_stop_moving():
+	print_debug("The Signal stop_moving was not connected to an existing SnakeHead or SnakeTail")
+func _on_continue_moving():
+	print_debug("The Signal continue_moving was not connected to an existing SnakeHead or SnakeTail")

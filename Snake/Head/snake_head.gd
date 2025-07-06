@@ -12,11 +12,9 @@ var colliding_element: MapElement
 var buffered_input_direction: int
 var moves: bool = true
 
-
 func _process(delta: float) -> void:
-	print(moves)
+	#print(moves)
 	buffer_last_input_direction()
-
 
 func _on_next_tile_reached():
 	current_tile = next_tile
@@ -48,7 +46,7 @@ func _on_next_tile_reached():
 	if colliding_element == null:
 		pass
 	elif colliding_element.collision_layer == 1:#Solid
-		moves = false
+		SignalBus.stop_moving.emit()
 		got_hit.emit()
 	elif colliding_element.collision_layer == 2:#Fruit
 		colliding_element.collision_with.emit()
@@ -64,7 +62,11 @@ func _on_next_tile_reached():
 	
 	get_moving_tween(moves)
 	get_turning_tween(current_direction)
-	
+
+func _on_stop_moving():
+	moves = false
+func _on_continue_moving():
+	moves = true
 	
 func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 	match current_dir:

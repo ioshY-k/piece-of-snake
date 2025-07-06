@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cnwim1nigr3rc" path="res://MapElements/FruitElements/fruit_element.tscn" id="1_b8tqi"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="2_q8usp"]
-[ext_resource type="Script" uid="uid://y0kms27ptnkj" path="res://MapElements/FruitElements/riping_component.gd" id="3_uqeek"]
+[ext_resource type="Script" path="res://MapElements/FruitElements/riping_component.gd" id="3_uqeek"]
 
 [sub_resource type="Gradient" id="Gradient_uqeek"]
 offsets = PackedFloat32Array(0.860092, 1)
