@@ -33,8 +33,6 @@ var free_map_tiles: Array[Vector2i]
 
 var invincible_ticks = 0
 
-#on fruit collection
-signal fruit_collected
 #making sure map initializes before snake
 signal initialized
 #making sure the level catches the signal before the map does, since map gives iframes
@@ -125,7 +123,7 @@ func _on_collision_with(element: MapElement):
 	#on fruit collision, grow once, delete fruit and spawn a new one
 	if element is FruitElement:
 		snake_tail.tiles_to_grow += 1
-		fruit_collected.emit(element)
+		SignalBus.fruit_collected.emit(element)
 		spawn_fruit(fruit_locations)
 		fruit_locations.erase(GameConsts.position_to_tile(element.position))
 		element.collected_anim(snake_head.position, GameConsts.tile_to_position(snake_head.next_tile))
@@ -151,7 +149,7 @@ func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 	var free_map_tiles_without_forbidden = currently_free_map_tiles
 	
 	for tile in forbidden_tiles:
-		currently_free_map_tiles.erase(position_to_tile(tile))
+		currently_free_map_tiles.erase(tile)
 	
 	if currently_free_map_tiles.size() < 5:
 		fruit.position = tile_to_position(free_map_tiles_without_forbidden[randi() % currently_free_map_tiles.size()])

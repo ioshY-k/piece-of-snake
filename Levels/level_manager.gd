@@ -59,6 +59,7 @@ var area_size_1_component_scene = load("res://UpgradeComponents/area_size_1_comp
 var area_size_2_component_scene = load("res://UpgradeComponents/area_size_2_component.tscn")
 var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_component.tscn")
 var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_component.tscn")
+var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_component.tscn")
 signal round_over
 
 func _ready() -> void:
@@ -88,7 +89,7 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int):
 				instantiate_upgrade(upgrade_id)
 	
 	
-	current_map.fruit_collected.connect(_on_fruit_collected)
+	SignalBus.fruit_collected.connect(_on_fruit_collected)
 	map.snake_got_hit.connect(on_snake_got_hit)
 	GameConsts.node_being_dragged = null
 	
@@ -243,6 +244,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_3:
 			var hyper_speed_3_component = hyper_speed_3_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_3_component)
+		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
+			var item_reloader_component = item_reloader_component_scene.instantiate()
+			add_child(item_reloader_component)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
@@ -282,6 +286,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("DoubleFruit2Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
 			component = current_map.find_child("DoubleFruit3Component",false,false)
+		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
+			component = find_child("ItemReloaderComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -298,7 +304,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3,\
-		GameConsts.UPGRADE_LIST.TIME_STOP_1:
+		GameConsts.UPGRADE_LIST.TIME_STOP_1,\
+		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
@@ -330,6 +337,19 @@ func _on_item_activated(upgrade_id: int, _uses: int):
 					y = fruit_position.y -2
 			
 			fruit_tiles.append_array(surrounding_fruit_tiles)
+			
+			var fruit_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
+			var testfruit_array = []
+			for pos in fruit_tiles:
+				var testfruit = fruit_scene.instantiate()
+				current_map.add_child(testfruit)
+				testfruit.position = GameConsts.tile_to_position(pos)
+				testfruit_array.append(testfruit)
+			
+			await get_tree().create_timer(1).timeout
+			for tf in testfruit_array:
+				tf.queue_free()
+						
 			for fruit in fruits:
 				current_map.spawn_fruit(fruit_tiles)
 				current_map.fruit_locations.erase(GameConsts.position_to_tile(fruit.position))

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ipk5sbcibcnu"]
+
+[ext_resource type="Script" uid="uid://li0334wr1cix" path="res://UpgradeComponents/item_reloader_component.gd" id="1_ekg7w"]
+
+[node name="ItemReloaderComponent" type="Node"]
+script = ExtResource("1_ekg7w")
