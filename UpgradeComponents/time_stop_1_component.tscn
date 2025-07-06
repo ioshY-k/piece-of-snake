@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg3m0kkoslltd"]
+
+[ext_resource type="Script" uid="uid://cnpqiv2dlod44" path="res://UpgradeComponents/fruit_relocator_component.gd" id="1_q2m2l"]
+[ext_resource type="Texture2D" uid="uid://7a4e3l6e3ots" path="res://UI/UpgradeShopUI/UpgradeCards/TimeStop1.svg" id="2_q2m2l"]
+
+[node name="TimeStop1Component" type="Node2D"]
+script = ExtResource("1_q2m2l")
+
+[node name="ActiveItemUI" type="Sprite2D" parent="."]
+texture = ExtResource("2_q2m2l")

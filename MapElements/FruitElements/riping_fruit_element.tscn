@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://derjqlqy4btc4"]
+
+[ext_resource type="PackedScene" uid="uid://cnwim1nigr3rc" path="res://MapElements/FruitElements/fruit_element.tscn" id="1_b8tqi"]
+[ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="2_q8usp"]
+[ext_resource type="Script" uid="uid://y0kms27ptnkj" path="res://MapElements/FruitElements/riping_component.gd" id="3_uqeek"]
+
+[sub_resource type="Gradient" id="Gradient_uqeek"]
+offsets = PackedFloat32Array(0.860092, 1)
+colors = PackedColorArray(0.341176, 0.47451, 0.839216, 1, 0.59, 0.59, 0.59, 0)
+
+[node name="RipingFruitElementArea" instance=ExtResource("1_b8tqi")]
+
+[node name="RipedParticle" type="CPUParticles2D" parent="." index="2"]
+show_behind_parent = true
+emitting = false
+amount = 37
+texture = ExtResource("2_q8usp")
+lifetime = 2.95
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 46.0
+initial_velocity_max = 46.0
+damping_min = 29.136
+damping_max = 29.136
+scale_amount_min = 0.6
+color_ramp = SubResource("Gradient_uqeek")
+script = ExtResource("3_uqeek")

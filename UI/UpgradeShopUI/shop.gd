@@ -30,6 +30,7 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.EDGE_WRAP_1,
 									GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
 									GameConsts.UPGRADE_LIST.CROSS_ROAD_1,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,
 									GameConsts.UPGRADE_LIST.TAIL_CUT,
 									GameConsts.UPGRADE_LIST.KNOT_ATTRACTOR,
 									GameConsts.UPGRADE_LIST.ITEM_RELOADER,
@@ -38,11 +39,18 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 @onready var upgrade_overview: Sprite2D = $UpgradeOverview
 var purchase_count: int = 1
-var current_purchase_count: int = 1
+var current_purchase_count: int
 
 func _ready() -> void:
 	if GameConsts.test_mode:
-		upgrade_card_pool= [GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1]
+		purchase_count = 3
+		upgrade_card_pool= [		GameConsts.UPGRADE_LIST.TIME_STOP_1,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,]
+	
+	current_purchase_count = purchase_count
 	
 	default_slots = [$UpgradeOverview/UpgradeSlotDefault1]
 

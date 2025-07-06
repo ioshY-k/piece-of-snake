@@ -13,10 +13,16 @@ func add_light():
 	item_light.get_child(0).frame = 1
 
 func _on_item_activated(_compopnent, pos):
-	print(pos)
 	item_lights[pos].get_child(0).frame = 0
 
 func refresh_lights():
 	get_child(-1).refresh_uses()
 	for item_light in item_lights:
 		item_light.get_child(0).frame = 1
+
+func remove_lights():
+	for item_light in item_lights:
+		item_light.queue_free()
+	item_lights = []
+	
+	

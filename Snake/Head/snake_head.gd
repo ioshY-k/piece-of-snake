@@ -10,25 +10,16 @@ signal next_tile_reached
 
 var colliding_element: MapElement
 var buffered_input_direction: int
-
 var moves: bool = true
 
 
 func _process(delta: float) -> void:
-		
+	print(moves)
 	buffer_last_input_direction()
 
 
 func _on_next_tile_reached():
-	if moves:
-		map.push_snake_directions(current_direction)
-		
-	moves = true
-	
 	current_tile = next_tile
-	
-	
-	
 	
 	if (Input.is_action_pressed("move_up") or buffered_input_direction == DIRECTION.UP) and current_direction != DIRECTION.DOWN:
 		next_tile = map.get_next_tile(current_tile, DIRECTION.UP)
@@ -51,30 +42,29 @@ func _on_next_tile_reached():
 		colliding_element = check_upcoming_collision(current_direction, current_direction)
 	
 		
-	#unreachable value
+	#reset buffer to unreachable value
 	buffered_input_direction = -10
 	
 	if colliding_element == null:
-		print("nocollision detected")
 		pass
 	elif colliding_element.collision_layer == 1:#Solid
-		print("wallcollision detected")
 		moves = false
 		got_hit.emit()
 	elif colliding_element.collision_layer == 2:#Fruit
-		print("fruitcollision detected")
 		colliding_element.collision_with.emit()
 	
 	if not moves:
 		next_tile = current_tile
 	else:
 		map.push_snake_bodyparts(current_tile, current_direction)
+		map.push_snake_directions(current_direction)
 	
 	
 	next_tile_reached.emit()
 	
 	get_moving_tween(moves)
 	get_turning_tween(current_direction)
+	
 	
 func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 	match current_dir:

@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu0maqxrfidwd"]
+[gd_scene load_steps=5 format=3 uid="uid://cu0maqxrfidwd"]
 
-[ext_resource type="Script" uid="uid://cwas45hvfwiw0" path="res://UpgradeComponents/fruit_magnet_1_component.gd" id="1_fntuq"]
+[ext_resource type="Script" uid="uid://cwas45hvfwiw0" path="res://UpgradeComponents/fruit_magnet_component.gd" id="1_fntuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fntuq"]
+size = Vector2(60, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naiko"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfjuu"]
+size = Vector2(60, 60)
 
 [node name="FruitMagnet1Component" type="Node2D"]
 script = ExtResource("1_fntuq")
@@ -13,7 +20,8 @@ collision_mask = 2
 metadata/_edit_vertical_guides_ = [-710.0]
 
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField1"]
-shape = SubResource("RectangleShape2D_naiko")
+position = Vector2(0, -160)
+shape = SubResource("RectangleShape2D_fntuq")
 
 [node name="MagnetField2" type="Area2D" parent="."]
 collision_layer = 0
@@ -21,6 +29,7 @@ collision_mask = 2
 metadata/_edit_vertical_guides_ = [-710.0]
 
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField2"]
+position = Vector2(-80, -80)
 shape = SubResource("RectangleShape2D_naiko")
 
 [node name="MagnetField3" type="Area2D" parent="."]
@@ -29,4 +38,5 @@ collision_mask = 2
 metadata/_edit_vertical_guides_ = [-710.0]
 
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField3"]
-shape = SubResource("RectangleShape2D_naiko")
+position = Vector2(80, -80)
+shape = SubResource("RectangleShape2D_vfjuu")

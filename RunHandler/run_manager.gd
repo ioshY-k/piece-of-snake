@@ -13,7 +13,7 @@ var current_act: int = 0
 var level_scene: PackedScene = preload("res://Levels/level.tscn")
 var level: LevelManager
 
-var current_upgrades: Array[bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+var current_upgrades: Array[bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 
 
 func _ready() -> void:

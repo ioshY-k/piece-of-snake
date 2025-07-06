@@ -1,7 +1,8 @@
 class_name FruitElement extends MapElement
 var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particles.tscn")
+var is_riping_fruit = false
 
-func get_collected(snakehead_pos: Vector2, fruit_destination_pos: Vector2):
+func collected_anim(snakehead_pos: Vector2, fruit_destination_pos: Vector2):
 	set_collision_layer_value(2,false)
 	var tweenforth = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel(true)
 	tweenforth.tween_property(self, "position", position+(snakehead_pos-position).rotated(deg_to_rad(180)), 0.15)

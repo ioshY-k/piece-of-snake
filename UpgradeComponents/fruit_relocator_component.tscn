@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd86xf7yk61wi"]
+
+[ext_resource type="Script" uid="uid://cnpqiv2dlod44" path="res://UpgradeComponents/fruit_relocator_component.gd" id="1_goavd"]
+[ext_resource type="Texture2D" uid="uid://cefv5gxytj2f1" path="res://UI/UpgradeShopUI/UpgradeCards/FruitRelocator1.svg" id="2_wras5"]
+
+[node name="FruitRelocatorComponent" type="Node2D"]
+script = ExtResource("1_goavd")
+
+[node name="ActiveItemUI" type="Sprite2D" parent="."]
+texture = ExtResource("2_wras5")

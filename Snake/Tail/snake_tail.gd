@@ -21,4 +21,6 @@ func _on_next_tile_reached():
 	get_moving_tween(true)
 	get_turning_tween(current_direction)
 	
+	snake_head.moves = true
+	
 	

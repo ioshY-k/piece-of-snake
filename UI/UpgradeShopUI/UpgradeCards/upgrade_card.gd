@@ -25,6 +25,9 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.KNOT_ATTRACTOR) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_3) : "NO DESCRIPTION YET",
 
 	}
 
@@ -134,6 +137,8 @@ func decide_on_let_go():
 			
 			get_parent().remove_child(self)
 			owned_slot_area.add_child(self)
+			
+			await get_tree().process_frame
 			is_bought = true
 			bought.emit(upgrade_id, owned_slot_area.get_parent())
 
@@ -160,8 +165,6 @@ func _set_rotation(delta: float) -> void:
 
 
 func _snap_to_slot(upgrade_slot: Area2D):
-	print(global_position)
-	print(upgrade_slot.global_position - (size/2))
 	var start_position = global_position
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	tween.tween_property(self, "global_position", upgrade_slot.global_position - (size/2), 0.3).from(start_position)

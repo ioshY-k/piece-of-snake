@@ -37,12 +37,13 @@ var map_fourth_pos_and_scale: Array = [
 @onready var fruits_left_symbol: Sprite2D = $FruitsLeftSymbol
 @onready var speed_boost_frame: AnimatedSprite2D = $SpeedBoostBar/SpeedBoostFrame
 @onready var fruits_left_number_label: Label = $FruitsLeftNumber
-@onready var active_item_slot_1: Node2D = $ActiveItemSlot1
+@onready var active_item_slot_1: Sprite2D = $ActiveItemSlot1
 @onready var active_item_slot_2: Sprite2D = $ActiveItemSlot2
 
-var active_item_slots: Array[ActiveItemSlot] = [active_item_slot_1, active_item_slot_2]
+var active_item_slots: Array[ActiveItemSlot]
 @onready var time_meter: TimeMeter = $TimeMeter
 var speed_boost_drain_speed: int = 230
+var speed_boost_reload_speed: int = 90
 var speed_boost_available: bool = true
 var fruits_left: int
 var fruits_overload: int
@@ -50,11 +51,14 @@ var time_left: int
 var enough_fruits: bool = false
 
 #Upgrade Components
-var fruit_relocator_1_component_scene = load("res://UpgradeComponents/fruit_relocator_1_component.tscn")
+var fruit_relocator_component_scene = load("res://UpgradeComponents/fruit_relocator_component.tscn")
 var hyper_speed_1_component_scene = load("res://UpgradeComponents/hyper_speed_1_component.tscn")
+var hyper_speed_2_component_scene = load("res://UpgradeComponents/hyper_speed_2_component.tscn")
+var hyper_speed_3_component_scene = load("res://UpgradeComponents/hyper_speed_3_component.tscn")
 var area_size_1_component_scene = load("res://UpgradeComponents/area_size_1_component.tscn")
 var area_size_2_component_scene = load("res://UpgradeComponents/area_size_2_component.tscn")
 var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_component.tscn")
+var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_component.tscn")
 signal round_over
 
 func _ready() -> void:
@@ -110,7 +114,10 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_number_label.add_theme_color_override("font_color", Color(1, 1, 1))
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
-	time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
+	if GameConsts.test_mode and get_parent().current_round == 0:
+		time_meter.initiate_time_bar(1)
+	else:
+		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
 	round_started.emit()
 	enable_map()
@@ -147,7 +154,7 @@ func on_snake_got_hit():
 func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
-func _on_fruit_collected():
+func _on_fruit_collected(_collected_fruit):
 	print("YUM!")
 	if not enough_fruits:
 		fruits_left -= 1
@@ -172,7 +179,7 @@ func decide_speed_boost(delta):
 			snake_tail.snake_speed = GameConsts.SPEED_BOOST_SPEED
 			speed_boost_bar.value -= speed_boost_drain_speed*delta
 	if not speed_boost_available:
-		speed_boost_bar.value += 90*delta
+		speed_boost_bar.value += speed_boost_reload_speed*delta
 			
 
 #either called when empty or when full
@@ -194,10 +201,12 @@ func _on_timer_expired() -> void:
 	round_over.emit()
 
 func instantiate_upgrade(upgrade_id: int):
+	
 	var current_active_item_slot
 	for active_item_slot in active_item_slots:
 		if active_item_slot.get_child_count() == 1:
 			current_active_item_slot = active_item_slot
+			break
 			
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.AREA_SIZE_1:
@@ -209,19 +218,42 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.AREA_SIZE_3:
 			var area_size_3_component = area_size_3_component_scene.instantiate()
 			add_child(area_size_3_component)
-		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
-			current_map.add_upgrade_component(upgrade_id)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
-			var fruit_relocator_1_component = fruit_relocator_1_component_scene.instantiate()
-			current_active_item_slot.add_child(fruit_relocator_1_component)
+			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
+			current_active_item_slot.add_child(fruit_relocator_component)
+			fruit_relocator_component.set_uses(2)
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2:
+			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
+			current_active_item_slot.add_child(fruit_relocator_component)
+			fruit_relocator_component.set_uses(3)
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
+			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
+			current_active_item_slot.add_child(fruit_relocator_component)
+			fruit_relocator_component.set_uses(5)
+		GameConsts.UPGRADE_LIST.TIME_STOP_1:
+			var time_stop_1_component = time_stop_1_component_scene.instantiate()
+			current_active_item_slot.add_child(time_stop_1_component)
+			time_stop_1_component.set_uses(2)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_1_component)
-		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_2:
+			var hyper_speed_2_component = hyper_speed_2_component_scene.instantiate()
+			speed_boost_bar.add_child(hyper_speed_2_component)
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_3:
+			var hyper_speed_3_component = hyper_speed_3_component_scene.instantiate()
+			speed_boost_bar.add_child(hyper_speed_3_component)
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
 			current_map.add_upgrade_component(upgrade_id)
 
 
 func destroy_upgrade(upgrade_id: int):
+	
 	var component
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.AREA_SIZE_1:
@@ -230,10 +262,26 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.snake_head.find_child("FruitMagnet1Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
 			component = current_map.snake_head.find_child("FruitMagnet2Component",false,false)
-		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
-			component = active_item_slot_1.find_child("FruitRelocator1Component",false,false)			
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3:
+			component = current_map.snake_head.find_child("FruitMagnet3Component",false,false)
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
+			component = active_item_slot_1.find_child("FruitRelocatorComponent",false,false)
+		GameConsts.UPGRADE_LIST.TIME_STOP_1:
+			component = active_item_slot_1.find_child("TimeStop1Component",false,false)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			component = speed_boost_bar.find_child("HyperSpeed1Component",false,false)
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_2:
+			component = speed_boost_bar.find_child("HyperSpeed2Component",false,false)
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_3:
+			component = speed_boost_bar.find_child("HyperSpeed3Component",false,false)
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1:
+			component = current_map.find_child("DoubleFruit1Component",false,false)
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2:
+			component = current_map.find_child("DoubleFruit2Component",false,false)
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
+			component = current_map.find_child("DoubleFruit3Component",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -245,10 +293,19 @@ func destroy_upgrade(upgrade_id: int):
 func is_upgrade_reload_necessary(upgrade_id) -> bool:
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1,\
-		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_2,\
+		GameConsts.UPGRADE_LIST.HYPER_SPEED_3,\
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
+		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3,\
+		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
-		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
 			return true
 		_:
 			return false
@@ -273,10 +330,13 @@ func _on_item_activated(upgrade_id: int, _uses: int):
 					y = fruit_position.y -2
 			
 			fruit_tiles.append_array(surrounding_fruit_tiles)
-			
 			for fruit in fruits:
-				current_map.relocate_fruit(fruit, fruit_tiles)
-	
+				current_map.spawn_fruit(fruit_tiles)
+				current_map.fruit_locations.erase(GameConsts.position_to_tile(fruit.position))
+				fruit.queue_free()
+		GameConsts.UPGRADE_LIST.TIME_STOP_1:
+			snake_head.moves = false
+			
 func disable_map():
 	current_map.process_mode = Node.PROCESS_MODE_DISABLED
 

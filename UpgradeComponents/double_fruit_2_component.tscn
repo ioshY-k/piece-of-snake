@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr8i8s42yb1v6"]
+
+[ext_resource type="Script" uid="uid://crswnkhqyh8uy" path="res://UpgradeComponents/double_fruit_2_component.gd" id="1_ylfeq"]
+
+[node name="DoubleFruit2Component" type="Node"]
+script = ExtResource("1_ylfeq")

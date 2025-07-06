@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://buda1rh2esws4"]
+
+[ext_resource type="Script" uid="uid://d1dvgjtyiy3rn" path="res://UpgradeComponents/double_fruit_3_component.gd" id="1_te5n4"]
+
+[node name="DoubleFruit3Component" type="Node"]
+script = ExtResource("1_te5n4")

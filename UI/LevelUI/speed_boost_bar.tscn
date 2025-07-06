@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc4sb6dmfgooa"]
+[gd_scene load_steps=6 format=3 uid="uid://bc4sb6dmfgooa"]
 
 [ext_resource type="Script" uid="uid://chu777nlkdcqu" path="res://UI/LevelUI/speed_boost_bar.gd" id="1_510ua"]
 [ext_resource type="Texture2D" uid="uid://clb534tcycuf2" path="res://UI/LevelUI/SpeedMeterActive.svg" id="1_v7x50"]
 [ext_resource type="Texture2D" uid="uid://d21dxx1nooh7n" path="res://UI/LevelUI/SpeedMeterInactive.svg" id="2_510ua"]
+[ext_resource type="Texture2D" uid="uid://dkxtuwxkwgfee" path="res://UI/LevelUI/SpeedMeterActiveForever.svg" id="4_7qlf8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5xqa"]
 animations = [{
@@ -15,6 +16,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7qlf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7qlf8")
+}],
+"loop": true,
+"name": &"infinite_speed_anim",
 "speed": 5.0
 }]
 
@@ -38,6 +50,6 @@ z_index = -1
 position = Vector2(286, 68)
 scale = Vector2(1.005, 1.35)
 sprite_frames = SubResource("SpriteFrames_p5xqa")
-frame_progress = 0.365877
+animation = &"infinite_speed_anim"
 
 [connection signal="value_changed" from="." to="." method="_on_value_changed"]

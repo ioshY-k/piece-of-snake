@@ -2,9 +2,7 @@ extends Node
 
 func _ready() -> void:
 	var level: LevelManager = get_parent()
-	print("before")
 	await level.round_started
-	print("after")
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT).set_parallel()
 	tween.tween_property(level.current_map, "position", level.map_third_pos_and_scale[level.current_map_index][0], 0.8)
 	tween.tween_property(level.current_map, "scale", level.map_third_pos_and_scale[level.current_map_index][1], 0.8)

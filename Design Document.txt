@@ -18,6 +18,7 @@ Calls by Name:
 	Only Snake parts are allowed their name to begin with "SnakeBody" to not be unloaded by map
 
 Worklow for adding new upgrade:
+	Implement Component Scene
 	Add in GameConst: UPGRADE_LIST, advanced_upgrades, upgrades_with_advancement, get_upgrade_type
 	Add in Shop: upgrade_card_pool
 	Add in Level: instantiate_upgrade, destroy_upgrade, is_upgrade_reload_necessary

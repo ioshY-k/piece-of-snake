@@ -8,6 +8,10 @@ var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.ts
 
 var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
 var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_2_component.tscn")
+var fruit_magnet_3_component_scene = load("res://UpgradeComponents/fruit_magnet_3_component.tscn")
+var double_fruit_1_component_scene = load("res://UpgradeComponents/double_fruit_1_component.tscn")
+var double_fruit_2_component_scene = load("res://UpgradeComponents/double_fruit_2_component.tscn")
+var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_3_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -16,11 +20,12 @@ var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_
 #map data
 @export var grid_size: Vector2i
 @export var starting_position: Vector2
+var fruit_locations: Array[Vector2i]
 
 
 #arrays containing Snake data for the tail to follow
 enum DIRECTION {UP,RIGHT,DOWN,LEFT, STOP}
-var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
+var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
 var snake_path_bodyparts: Array[SnakeBody]
 
 #array containing constantly free tiles for fruits to spawn in
@@ -120,12 +125,12 @@ func _on_collision_with(element: MapElement):
 	#on fruit collision, grow once, delete fruit and spawn a new one
 	if element is FruitElement:
 		snake_tail.tiles_to_grow += 1
-		fruit_collected.emit()
-		relocate_fruit(element, [])
+		fruit_collected.emit(element)
+		spawn_fruit(fruit_locations)
+		fruit_locations.erase(GameConsts.position_to_tile(element.position))
+		element.collected_anim(snake_head.position, GameConsts.tile_to_position(snake_head.next_tile))
+		
 
-func relocate_fruit(fruit: FruitElement, forbidden_tiles: Array[Vector2i]):
-	spawn_fruit(forbidden_tiles)
-	fruit.get_collected(snake_head.position, GameConsts.tile_to_position(snake_head.next_tile))
 
 #spawn a new fruit in a place with no solid objects, including the snake
 #additional excluded tiles can be handed by forbidden_tiles
@@ -152,6 +157,10 @@ func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 		fruit.position = tile_to_position(free_map_tiles_without_forbidden[randi() % currently_free_map_tiles.size()])
 	else:
 		fruit.position = tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
+		
+	fruit_locations.append(GameConsts.position_to_tile(fruit.position))
+	
+	
 	
 
 #place a new snake body where the head is, add it to the bodypart array, add the new direction to direction array
@@ -188,6 +197,18 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
 			var fruit_magnet_2_component = fruit_magnet_2_component_scene.instantiate()
 			snake_head.add_child(fruit_magnet_2_component)
+		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3:
+			var fruit_magnet_3_component = fruit_magnet_3_component_scene.instantiate()
+			snake_head.add_child(fruit_magnet_3_component)
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1:
+			var double_fruit_1_component = double_fruit_1_component_scene.instantiate()
+			add_child(double_fruit_1_component)
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2:
+			var double_fruit_2_component = double_fruit_2_component_scene.instantiate()
+			add_child(double_fruit_2_component)
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
+			var double_fruit_3_component = double_fruit_3_component_scene.instantiate()
+			add_child(double_fruit_3_component)
 	
 func collision_iframes(ticks: int):
 	snake_got_hit.emit()
