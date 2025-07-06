@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6n3srctmsrpr"]
+
+[ext_resource type="Script" uid="uid://b7s2cx3a4g4ox" path="res://UpgradeComponents/edge_wrap_1_component.gd" id="1_n3str"]
+
+[node name="EdgeWrap1Component" type="Node"]
+script = ExtResource("1_n3str")

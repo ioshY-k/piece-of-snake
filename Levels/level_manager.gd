@@ -12,25 +12,10 @@ var maps_in_order: Array[PackedScene] =  [
 											preload("res://Levels/Map3/map_3.tscn")
 										]
 var current_map_index: int
-var map_first_pos_and_scale: Array = [	
-										[Vector2(0,0), Vector2(0,0)],
-										[Vector2(0,0),Vector2(0,0)],
-										[Vector2(-487.0,-697.0), Vector2(1.345,1.345)]
-									]
-var map_second_pos_and_scale: Array = [	
-										[Vector2(0,0), Vector2(0,0)],
-										[Vector2(0,0),Vector2(0,0)],
-										[Vector2(-365.0,-592.0), Vector2(1.14,1.14)]
-									]
-var map_third_pos_and_scale: Array = [	
-										[Vector2(0,0), Vector2(0,0)],
-										[Vector2(0,0),Vector2(0,0)],
-										[Vector2(-285.0,-499.0), Vector2(1.07,1.03)]
-									]
-var map_fourth_pos_and_scale: Array = [	
-										[Vector2(0,0), Vector2(0,0)],
-										[Vector2(0,0),Vector2(0,0)],
-										[Vector2(-289.0,-501.0), Vector2(1.01,0.965)]
+var map_data_size0: Array = [	
+										[Vector2(0,0), Vector2(0,0), Vector2i(0,0)],
+										[Vector2(0,0),Vector2(0,0), Vector2i(0,0)],
+										[Vector2(-487.0,-697.0), Vector2(1.345,1.345), Vector2i(12,10)]
 									]
 #UI Elements + data
 @onready var speed_boost_bar: SpeedBoostBar = $SpeedBoostBar
@@ -75,8 +60,8 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int):
 	current_map_index = map_index
 	add_child(map)
 	
-	map.position = map_first_pos_and_scale[map_index][0]
-	map.scale = map_first_pos_and_scale[map_index][1]
+	map.position = map_data_size0[map_index][0]
+	map.scale = map_data_size0[map_index][1]
 	
 	
 	current_map = map
@@ -197,7 +182,6 @@ func _on_speed_boost_bar_value_changed(full: bool) -> void:
 func set_fruit_threshold(current_act: int, current_round: int):
 	fruits_left_number_label.text = str(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round])
 
-
 func _on_timer_expired() -> void:
 	round_over.emit()
 
@@ -254,7 +238,8 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
-		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
+		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
 			current_map.add_upgrade_component(upgrade_id)
 
 
@@ -263,7 +248,11 @@ func destroy_upgrade(upgrade_id: int):
 	var component
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.AREA_SIZE_1:
-			component = current_map.find_child("AreaSize1Component",false,false)
+			component = find_child("AreaSize1Component",false,false)
+		GameConsts.UPGRADE_LIST.AREA_SIZE_2:
+			component = find_child("AreaSize2Component",false,false)
+		GameConsts.UPGRADE_LIST.AREA_SIZE_3:
+			component = find_child("AreaSize3Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1:
 			component = current_map.snake_head.find_child("FruitMagnet1Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2:
@@ -288,6 +277,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("DoubleFruit2Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
 			component = current_map.find_child("DoubleFruit3Component",false,false)
+		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
+			component = current_map.find_child("EdgeWrap1Component",false,false)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			component = find_child("ItemReloaderComponent",false,false)
 	
@@ -314,7 +305,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
-		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
+		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
+		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
 			return true
 		_:
 			return false

@@ -12,6 +12,7 @@ var fruit_magnet_3_component_scene = load("res://UpgradeComponents/fruit_magnet_
 var double_fruit_1_component_scene = load("res://UpgradeComponents/double_fruit_1_component.tscn")
 var double_fruit_2_component_scene = load("res://UpgradeComponents/double_fruit_2_component.tscn")
 var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_3_component.tscn")
+var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -19,7 +20,9 @@ var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_
 
 #map data
 @export var grid_size: Vector2i
+@export var inbounds_grid_size: Vector2i
 @export var starting_position: Vector2
+var zoom_state: int = 0 #0 by default and +1 for each area size upgrade
 var fruit_locations: Array[Vector2i]
 
 
@@ -73,8 +76,8 @@ func _on_next_tile_reached():
 func find_free_map_tiles() -> Array[Vector2i]:
 	#map_tiles contains every tile in the grid
 	var map_tiles: Array[Vector2i]
-	for x in len(range(grid_size.x)):
-		for y in len(range(grid_size.y)):
+	for x in range(grid_size.x):
+		for y in range(grid_size.y):
 				map_tiles.append(Vector2i(x,y))
 	
 	#creates an array containing every position of static solid elements
@@ -207,6 +210,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
 			var double_fruit_3_component = double_fruit_3_component_scene.instantiate()
 			add_child(double_fruit_3_component)
+		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
+			var edge_wrap_1_component = edge_wrap_1_component_scene.instantiate()
+			add_child(edge_wrap_1_component)
 	
 func collision_iframes(ticks: int):
 	snake_got_hit.emit()

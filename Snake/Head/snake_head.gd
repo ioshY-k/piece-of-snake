@@ -43,12 +43,16 @@ func _on_next_tile_reached():
 	#reset buffer to unreachable value
 	buffered_input_direction = -10
 	
+	if colliding_element != null and colliding_element.get_collision_layer_value(5):#Teleporter
+		position = GameConsts.tile_to_position(colliding_element.destination_tile)
+		next_tile = map.get_next_tile(colliding_element.destination_tile, current_direction)
+		colliding_element = check_upcoming_collision(current_direction, current_direction)
 	if colliding_element == null:
 		pass
-	elif colliding_element.collision_layer == 1:#Solid
+	elif colliding_element.get_collision_layer_value(1):#Solid
 		SignalBus.stop_moving.emit()
 		got_hit.emit()
-	elif colliding_element.collision_layer == 2:#Fruit
+	elif colliding_element.get_collision_layer_value(2) :#Fruit
 		colliding_element.collision_with.emit()
 	
 	if not moves:
