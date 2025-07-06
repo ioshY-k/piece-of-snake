@@ -50,6 +50,5 @@ z_index = -1
 position = Vector2(286, 68)
 scale = Vector2(1.005, 1.35)
 sprite_frames = SubResource("SpriteFrames_p5xqa")
-animation = &"infinite_speed_anim"
 
 [connection signal="value_changed" from="." to="." method="_on_value_changed"]
