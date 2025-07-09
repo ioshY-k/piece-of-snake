@@ -6,17 +6,20 @@ class_name SnakeHead extends MovingSnakePart
 var snake_tail: MovingSnakePart
 
 signal got_hit
-signal next_tile_reached
 
 var colliding_element: MapElement
 var buffered_input_direction: int
 var moves: bool = true
+
+#to store the direction in case of teleportation where it is still relevant but got overwritten
+var original_direction: int
 
 func _process(delta: float) -> void:
 	#print(moves)
 	buffer_last_input_direction()
 
 func _on_next_tile_reached():
+	original_direction = current_direction
 	current_tile = next_tile
 	
 	if (Input.is_action_pressed("move_up") or buffered_input_direction == DIRECTION.UP) and current_direction != DIRECTION.DOWN:
@@ -44,15 +47,28 @@ func _on_next_tile_reached():
 	buffered_input_direction = -10
 	
 	if colliding_element != null and colliding_element.get_collision_layer_value(5):#Teleporter
+		var temp_next_tile = next_tile
+		var temp_position = position
+		var temp_destination = colliding_element.destination_tile
+		
 		position = GameConsts.tile_to_position(colliding_element.destination_tile)
 		next_tile = map.get_next_tile(colliding_element.destination_tile, current_direction)
-		colliding_element = check_upcoming_collision(current_direction, current_direction)
+		colliding_element = check_upcoming_collision(original_direction, current_direction)
+		if colliding_element != null and colliding_element.get_collision_layer_value(1):#SolidAfterTeleport
+			next_tile = temp_next_tile
+			position = temp_position
+		else:
+			SignalBus.teleported.emit(temp_destination)
+		
 	if colliding_element == null:
+		print("nothing")
 		pass
 	elif colliding_element.get_collision_layer_value(1):#Solid
+		print("solid object")
 		SignalBus.stop_moving.emit()
 		got_hit.emit()
 	elif colliding_element.get_collision_layer_value(2) :#Fruit
+		print("fruit")
 		colliding_element.collision_with.emit()
 	
 	if not moves:
@@ -62,7 +78,7 @@ func _on_next_tile_reached():
 		map.push_snake_directions(current_direction)
 	
 	
-	next_tile_reached.emit()
+	SignalBus.next_tile_reached.emit()
 	
 	get_moving_tween(moves)
 	get_turning_tween(current_direction)
@@ -73,6 +89,9 @@ func _on_continue_moving():
 	moves = true
 	
 func check_upcoming_collision(current_dir, next_dir) -> MapElement:
+	front_collision_ray.force_raycast_update()
+	right_collision_ray.force_raycast_update()
+	left_collision_ray.force_raycast_update()
 	match current_dir:
 		DIRECTION.UP:
 			match next_dir:

@@ -4,7 +4,7 @@ func _ready() -> void:
 	var level: LevelManager = get_parent()
 	level.current_map.inbounds_grid_size = map_data_size2[level.current_map_index][2]
 	level.current_map.zoom_state = 2
-	await level.round_started
+	await SignalBus.round_started
 	var tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT).set_parallel()
 	tween.tween_property(level.current_map, "position", map_data_size2[level.current_map_index][0], 0.8)
 	tween.tween_property(level.current_map, "scale", map_data_size2[level.current_map_index][1], 0.8)

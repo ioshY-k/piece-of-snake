@@ -4,7 +4,6 @@ class_name LevelManager extends Node2D
 var snake_head: SnakeHead
 var snake_tail: SnakeTail
 var current_map: Map
-signal round_started
 
 var maps_in_order: Array[PackedScene] =  [
 											preload("res://Levels/Map1/square_map.tscn"),
@@ -105,7 +104,7 @@ func prepare_new_round(fruit_threshold, time_sec):
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
-	round_started.emit()
+	SignalBus.round_started.emit()
 	enable_map()
 	
 

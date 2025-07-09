@@ -79,7 +79,7 @@ func find_correct_rotation(this_direction: int, next_direction: int):
 				scale.y = -scale.y
 			
 func play_edge_deco_anim_tweens():
-	await snake_head.next_tile_reached
+	await SignalBus.next_tile_reached
 	
 	if body_moves:
 		var moving_tween: Tween = create_tween()
@@ -90,7 +90,7 @@ func play_edge_deco_anim_tweens():
 	play_edge_deco_anim_tweens()
 	
 func play_corner_deco_anim_tweens():
-	await snake_head.next_tile_reached
+	await SignalBus.next_tile_reached
 	if body_moves:
 		corner_animation_player.seek(0.0, true)
 		var moving_tween: Tween = create_tween()

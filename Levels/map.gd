@@ -55,7 +55,7 @@ func _ready() -> void:
 	snake_tail.snake_head = snake_head
 	spawn_fruit([])
 	
-	snake_head.next_tile_reached.connect(_on_next_tile_reached)
+	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
 	snake_head.got_hit.connect(collision_iframes.bind(GameConsts.COLLISION_IFRAMES))
 	
 	initialized.emit()
