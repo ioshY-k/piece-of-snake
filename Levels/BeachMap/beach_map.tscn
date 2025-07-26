@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bgv2st1cvj7f7"]
+
+[node name="WoodsMap" type="Sprite2D"]
+
+[node name="SolidElements" type="Node2D" parent="."]
+
+[node name="TeleportElements" type="Node2D" parent="."]
+
+[node name="AreaSize1SolidElements" type="Node2D" parent="."]
+
+[node name="AreaSize2SolidElements" type="Node2D" parent="."]
+
+[node name="AreaSize3SolidElements2" type="Node2D" parent="."]

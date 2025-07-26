@@ -1,7 +1,9 @@
 extends Node
 
-
-var maporder = [0,1,2]
+var maps_act1 = [0,1]
+var maps_act2 = [2,3]
+var maps_act3 = [4,5]
+var maporder = []
 										
 @onready var retry_button: Button = $RetryButton
 
@@ -27,9 +29,11 @@ func _ready() -> void:
 	
 
 func create_new_run():
-	maporder.shuffle()
-		
-	maporder = [2,2,2]
+	maporder = [maps_act1[randi()%maps_act1.size()],
+				maps_act2[randi()%maps_act2.size()],
+				maps_act3[randi()%maps_act3.size()]]
+	#test purpose
+	maporder = [4,1,0]
 		
 	level = level_scene.instantiate()
 	add_child(level)

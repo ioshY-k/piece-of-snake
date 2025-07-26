@@ -6,12 +6,22 @@ var snake_tail: SnakeTail
 var current_map: Map
 
 var maps_in_order: Array[PackedScene] =  [
+											preload("res://Levels/WoodsMap/woods_map.tscn"),
+											preload("res://Levels/StadiumMap/stadium_map.tscn"),
+											preload("res://Levels/OfficeMap/office_map.tscn"),
+											preload("res://Levels/DiscoMap/disco_map.tscn"),
+											preload("res://Levels/CaveMap/cave_map.tscn"),
 											preload("res://Levels/Map1/square_map.tscn"),
 											preload("res://Levels/Map2/big_map.tscn"),
 											preload("res://Levels/Map3/map_3.tscn")
 										]
 var current_map_index: int
 var map_data_size0: Array = [	
+										[Vector2(-450,-579.0), Vector2(1.068,1.116), Vector2i(15,12), Vector2i(1,0), Vector2i(17,13)],
+										[Vector2(-469.0,-675.0), Vector2(1.155,1.125), Vector2i(14,12), Vector2i(1,1), Vector2i(17,15)],
+										[Vector2(-452.0,-662.0), Vector2(1.072,1.035), Vector2i(15,13), Vector2i(1,1), Vector2i(17,15)],
+										[Vector2(-453.0,-663.0), Vector2(1.012,0.972), Vector2i(16,14), Vector2i(1,1), Vector2i(18,16)],
+										[Vector2(-368.0,-578.0), Vector2(1.006,0.963), Vector2i(16,14), Vector2i(0,0), Vector2i(17,15)],
 										[Vector2(0,0), Vector2(0,0), Vector2i(0,0)],
 										[Vector2(0,0),Vector2(0,0), Vector2i(0,0)],
 										[Vector2(-487.0,-697.0), Vector2(1.345,1.345), Vector2i(12,10)]
@@ -101,7 +111,7 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(1)
+		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	

@@ -33,9 +33,10 @@ func _on_next_tile_reached():
 	SignalBus.continue_moving.emit()
 
 func _on_teleported(teleporter: Teleporter):
+	var destination = teleporter.destination_tile
 	var countdown: TailCountdown = TailCountdown.new(get_parent().snake_path_bodyparts.size())
 	await countdown.countdown_reached
-	teleport_destination = teleporter.destination_tile
+	teleport_destination = destination
 	SignalBus.teleport_finished.emit(teleporter)
 
 func _on_stop_moving():

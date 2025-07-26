@@ -7,7 +7,7 @@
    viewBox="0 0 380.99999 317.5"
    version="1.1"
    id="svg1"
-   sodipodi:docname="WoodMap.svg"
+   sodipodi:docname="WoodsMap.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="0.53180323"
-     inkscape:cx="573.5204"
-     inkscape:cy="1189.3497"
+     inkscape:zoom="3.0083334"
+     inkscape:cx="44.210526"
+     inkscape:cy="946.8698"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -1490,10 +1490,6 @@
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="Big Fallen Tree">
-    <path
-       d="m 22.985495,278.0534 v -4.36178 c -10.880157,-0.0613 -21.99534597,-0.12641 -23.6590533,-0.1389 -0.27357481,0.0366 -0.14030834,4.19841 -0.20824912,4.32645 1.14763103,0.12498 12.59216042,0.16517 23.86730242,0.17423 z"
-       style="fill:#935a1e;stroke:#251c08;stroke-width:1.2163;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       id="path92" />
     <path
        d="m 43.392553,274.26081 v 3.24315 c 43.940845,-0.002 79.551957,-0.0117 80.807797,-0.0117 2.24439,-5e-5 4.06454,-0.79543 4.06466,-1.77664 -1.7e-4,-1.9e-4 -1.36352,-1.45294 -7.30196,-1.4018 -2.80793,0.003 -36.229939,-0.0211 -77.570497,-0.053 z"
        style="fill:#935a1e;stroke:#251c08;stroke-width:1.618;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
