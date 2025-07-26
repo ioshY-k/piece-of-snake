@@ -32,23 +32,26 @@ func place_teleporters():
 	for x in range(upper_left_corner.x+1, lower_right_corner.x):
 		var teleporter: Teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
-		teleporter.position = GameConsts.tile_to_position(Vector2i(x,upper_left_corner.y))
+		teleporter.rotation_degrees = 180
+		teleporter.position = TileHelper.tile_to_position(Vector2i(x,upper_left_corner.y))
 		teleporter.destination_tile = Vector2i(x,lower_right_corner.y)
 		teleporters.append(teleporter)
 		teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
-		teleporter.position = GameConsts.tile_to_position(Vector2i(x,lower_right_corner.y))
+		teleporter.position = TileHelper.tile_to_position(Vector2i(x,lower_right_corner.y))
 		teleporter.destination_tile = Vector2i(x,upper_left_corner.y)
 		teleporters.append(teleporter)
 	for y in range(upper_left_corner.y+1, lower_right_corner.y):
 		var teleporter: Teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
-		teleporter.position = GameConsts.tile_to_position(Vector2i(upper_left_corner.x,y))
+		teleporter.rotation_degrees = 90
+		teleporter.position = TileHelper.tile_to_position(Vector2i(upper_left_corner.x,y))
 		teleporter.destination_tile = Vector2i(lower_right_corner.x,y)
 		teleporters.append(teleporter)
 		teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
-		teleporter.position = GameConsts.tile_to_position(Vector2i(lower_right_corner.x,y))
+		teleporter.rotation_degrees = -90
+		teleporter.position = TileHelper.tile_to_position(Vector2i(lower_right_corner.x,y))
 		teleporter.destination_tile = Vector2i(upper_left_corner.x,y)
 		teleporters.append(teleporter)
 		

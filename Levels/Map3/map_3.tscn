@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6hq0bgfkjhww"]
+[gd_scene load_steps=8 format=3 uid="uid://b6hq0bgfkjhww"]
 
 [ext_resource type="Texture2D" uid="uid://c7di8gl2vij6s" path="res://Levels/Map3/Map3.svg" id="1_0a6eu"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_ejmtf"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="3_quld1"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_u12f2"]
+[ext_resource type="PackedScene" uid="uid://cvyaocdswofuq" path="res://MapElements/TeleportElement/teleport_element.tscn" id="5_uwq1h"]
+[ext_resource type="PackedScene" uid="uid://2prhasopicbn" path="res://MapElements/ObstacleElement/obstacle_element.tscn" id="6_duqmy"]
+[ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="7_k7h7p"]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -245,7 +248,23 @@ position = Vector2(1120, 1120)
 [node name="SolidElementArea134" parent="SolidElements" instance=ExtResource("3_u12f2")]
 position = Vector2(1040, 1120)
 
+[node name="SolidElementArea16" parent="SolidElements" instance=ExtResource("3_u12f2")]
+position = Vector2(240, 240)
+
+[node name="SolidElementArea17" parent="SolidElements" instance=ExtResource("3_u12f2")]
+position = Vector2(800, 720)
+
 [node name="TeleportElements" type="Node2D" parent="."]
+
+[node name="TeleportElement" parent="TeleportElements" instance=ExtResource("5_uwq1h")]
+position = Vector2(240, 240)
+rotation = 1.5708
+destination_tile = Vector2i(10, 9)
+
+[node name="TeleportElement2" parent="TeleportElements" instance=ExtResource("5_uwq1h")]
+position = Vector2(800, 720)
+rotation = -1.5708
+destination_tile = Vector2i(3, 3)
 
 [node name="AreaSize1SolidElements" type="Node2D" parent="."]
 
@@ -563,3 +582,11 @@ position = Vector2(1200, 80)
 
 [node name="SolidElementArea114" parent="AreaSize3SolidElements" instance=ExtResource("3_u12f2")]
 position = Vector2(1200, 0)
+
+[node name="ObstacleElement" parent="." instance=ExtResource("6_duqmy")]
+position = Vector2(320, 720)
+path = Array[int]([0, 4, 2, 4])
+
+[node name="ObstacleElement2" parent="." instance=ExtResource("7_k7h7p")]
+position = Vector2(320, 640)
+path = Array[int]([4, 2, 4, 0])

@@ -23,23 +23,23 @@ func _on_next_tile_reached():
 	current_tile = next_tile
 	
 	if (Input.is_action_pressed("move_up") or buffered_input_direction == DIRECTION.UP) and current_direction != DIRECTION.DOWN:
-		next_tile = map.get_next_tile(current_tile, DIRECTION.UP)
+		next_tile = TileHelper.get_next_tile(current_tile, DIRECTION.UP)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.UP)
 		current_direction = DIRECTION.UP
 	elif (Input.is_action_pressed("move_right") or buffered_input_direction == DIRECTION.RIGHT) and current_direction != DIRECTION.LEFT:
-		next_tile = map.get_next_tile(current_tile, DIRECTION.RIGHT)
+		next_tile = TileHelper.get_next_tile(current_tile, DIRECTION.RIGHT)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.RIGHT)
 		current_direction = DIRECTION.RIGHT
 	elif (Input.is_action_pressed("move_down") or buffered_input_direction == DIRECTION.DOWN) and current_direction != DIRECTION.UP:
-		next_tile = map.get_next_tile(current_tile, DIRECTION.DOWN)
+		next_tile = TileHelper.get_next_tile(current_tile, DIRECTION.DOWN)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.DOWN)
 		current_direction = DIRECTION.DOWN
 	elif (Input.is_action_pressed("move_left") or buffered_input_direction == DIRECTION.LEFT) and current_direction != DIRECTION.RIGHT:
-		next_tile = map.get_next_tile(current_tile, DIRECTION.LEFT)
+		next_tile = TileHelper.get_next_tile(current_tile, DIRECTION.LEFT)
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.LEFT)
 		current_direction = DIRECTION.LEFT
 	else:
-		next_tile = map.get_next_tile(current_tile, current_direction)
+		next_tile = TileHelper.get_next_tile(current_tile, current_direction)
 		colliding_element = check_upcoming_collision(current_direction, current_direction)
 	
 		
@@ -49,26 +49,23 @@ func _on_next_tile_reached():
 	if colliding_element != null and colliding_element.get_collision_layer_value(5):#Teleporter
 		var temp_next_tile = next_tile
 		var temp_position = position
-		var temp_destination = colliding_element.destination_tile
+		var temp_teleporter = colliding_element
 		
-		position = GameConsts.tile_to_position(colliding_element.destination_tile)
-		next_tile = map.get_next_tile(colliding_element.destination_tile, current_direction)
+		position = TileHelper.tile_to_position(colliding_element.destination_tile)
+		next_tile = TileHelper.get_next_tile(colliding_element.destination_tile, current_direction)
 		colliding_element = check_upcoming_collision(original_direction, current_direction)
 		if colliding_element != null and colliding_element.get_collision_layer_value(1):#SolidAfterTeleport
 			next_tile = temp_next_tile
 			position = temp_position
 		else:
-			SignalBus.teleported.emit(temp_destination)
+			SignalBus.teleported.emit(temp_teleporter)
 		
 	if colliding_element == null:
-		print("nothing")
 		pass
 	elif colliding_element.get_collision_layer_value(1):#Solid
-		print("solid object")
 		SignalBus.stop_moving.emit()
 		got_hit.emit()
 	elif colliding_element.get_collision_layer_value(2) :#Fruit
-		print("fruit")
 		colliding_element.collision_with.emit()
 	
 	if not moves:

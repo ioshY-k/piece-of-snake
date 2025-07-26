@@ -5,6 +5,11 @@ var uses: int
 signal item_activated
 var active_item_slot: ActiveItemSlot
 var active_item_button: String
+var shop_phase: bool = true
+
+func _ready() -> void:
+	SignalBus.round_started.connect(_on_round_start)
+	SignalBus.round_over.connect(_on_round_over)
 
 func initiate_active_item(use_num: int, slot: int):
 	print("uses set to " + str(use_num))
@@ -19,3 +24,10 @@ func initiate_active_item(use_num: int, slot: int):
 
 func refresh_uses():
 	uses = max_uses
+
+func _on_round_start():
+	shop_phase = false
+
+
+func _on_round_over():
+	shop_phase = true

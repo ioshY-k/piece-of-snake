@@ -13,10 +13,13 @@ var current_act: int = 0
 var level_scene: PackedScene = preload("res://Levels/level.tscn")
 var level: LevelManager
 
-var current_upgrades: Array[bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+var current_upgrades: Array[bool] = []
 
 
 func _ready() -> void:
+	current_upgrades.resize(30)
+	current_upgrades.fill(false)
+	
 	create_new_run()
 	
 	shop.upgrade_bought.connect(_on_upgrade_bought)
@@ -31,7 +34,7 @@ func create_new_run():
 	level = level_scene.instantiate()
 	add_child(level)
 	level.prepare_new_act(maporder[current_act], GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC)
-	level.round_over.connect(_on_round_over)
+	SignalBus.round_over.connect(_on_round_over)
 
 func _on_upgrade_bought(upgrade: int):
 	current_upgrades[upgrade] = true

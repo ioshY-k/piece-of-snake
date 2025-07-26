@@ -12,7 +12,7 @@ func add_light():
 	item_lights.append(item_light)
 	item_light.get_child(0).frame = 1
 
-func _on_item_activated(_compopnent, pos):
+func _on_item_activated(pos):
 	item_lights[pos].get_child(0).frame = 0
 
 func refresh_lights():

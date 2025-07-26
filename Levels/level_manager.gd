@@ -44,7 +44,8 @@ var area_size_2_component_scene = load("res://UpgradeComponents/area_size_2_comp
 var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_component.tscn")
 var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_component.tscn")
 var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_component.tscn")
-signal round_over
+var wormhole_component_scene = load("res://UpgradeComponents/wormhole_component.tscn")
+
 
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
@@ -182,7 +183,7 @@ func set_fruit_threshold(current_act: int, current_round: int):
 	fruits_left_number_label.text = str(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round])
 
 func _on_timer_expired() -> void:
-	round_over.emit()
+	SignalBus.round_over.emit()
 
 func instantiate_upgrade(upgrade_id: int):
 	
@@ -220,6 +221,18 @@ func instantiate_upgrade(upgrade_id: int):
 			var time_stop_1_component = time_stop_1_component_scene.instantiate()
 			current_active_item_slot.add_child(time_stop_1_component)
 			time_stop_1_component.initiate_active_item(3, slot)
+		GameConsts.UPGRADE_LIST.WORMHOLE_1:
+			var wormhole_component = wormhole_component_scene.instantiate()
+			current_active_item_slot.add_child(wormhole_component)
+			wormhole_component.initiate_active_item(1, slot)
+		GameConsts.UPGRADE_LIST.WORMHOLE_2:
+			var wormhole_component = wormhole_component_scene.instantiate()
+			current_active_item_slot.add_child(wormhole_component)
+			wormhole_component.initiate_active_item(2, slot)
+		GameConsts.UPGRADE_LIST.WORMHOLE_3:
+			var wormhole_component = wormhole_component_scene.instantiate()
+			current_active_item_slot.add_child(wormhole_component)
+			wormhole_component.initiate_active_item(4, slot)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_1_component)
@@ -243,7 +256,6 @@ func instantiate_upgrade(upgrade_id: int):
 
 
 func destroy_upgrade(upgrade_id: int):
-	
 	var component
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.AREA_SIZE_1:
@@ -261,9 +273,19 @@ func destroy_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
-			component = active_item_slot_1.find_child("FruitRelocatorComponent",false,false)
+			component = active_item_slot_1.find_child("FruitRelocatorComponent", false, false)
+			if component == null:
+				component = active_item_slot_2.find_child("FruitRelocatorComponent", false, false)
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			component = active_item_slot_1.find_child("TimeStop1Component",false,false)
+			if component == null:
+				component = active_item_slot_2.find_child("TimeStop1Component", false, false)
+		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
+		GameConsts.UPGRADE_LIST.WORMHOLE_2,\
+		GameConsts.UPGRADE_LIST.WORMHOLE_3:
+			component = active_item_slot_1.find_child("WormholeComponent",false,false)
+			if component == null:
+				component = active_item_slot_2.find_child("WormholeComponent", false, false)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			component = speed_boost_bar.find_child("HyperSpeed1Component",false,false)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_2:
@@ -297,6 +319,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_1,\
+		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
@@ -309,40 +332,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 			return true
 		_:
 			return false
-
-func _on_item_activated(upgrade_id: int, _uses: int):
-	match upgrade_id:
-		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
-			var fruits: Array[MapElement] = current_map.find_all_fruits()
-			var fruit_tiles: Array[Vector2i] = []
-			for fruit in fruits:
-				fruit_tiles.append(GameConsts.position_to_tile(fruit.position))
+		
 			
-			var surrounding_fruit_tiles: Array[Vector2i] =[]
-			for fruit_position in fruit_tiles:
-				var x = fruit_position.x - 2
-				var y = fruit_position.y -2
-				while x <= fruit_position.x + 2:
-					while y <= fruit_position.y + 2:
-						surrounding_fruit_tiles.append(Vector2i(x,y))
-						y += 1
-					x += 1
-					y = fruit_position.y -2
-			
-			fruit_tiles.append_array(surrounding_fruit_tiles)
-			
-						
-			for fruit in fruits:
-				current_map.spawn_fruit(fruit_tiles)
-				current_map.fruit_locations.erase(GameConsts.position_to_tile(fruit.position))
-				fruit.queue_free()
-		GameConsts.UPGRADE_LIST.TIME_STOP_1:
-			SignalBus.stop_moving.emit()
-
-func _on_item_deactivated(upgrade_id):
-	match upgrade_id:
-		GameConsts.UPGRADE_LIST.TIME_STOP_1:
-			snake_head.moves = true
 			
 
 func disable_map():

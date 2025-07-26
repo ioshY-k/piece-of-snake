@@ -28,6 +28,9 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "[color=#ff9191]Stop moving[/color] for as long as the button is held down.\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_2) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_3) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "NO DESCRIPTION YET"
 
 	}
 

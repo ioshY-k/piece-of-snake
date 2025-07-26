@@ -5,6 +5,7 @@ var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
 var snake_head_scene = preload("res://Snake/Head/snake_head.tscn")
 var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
+var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 
 var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
 var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_2_component.tscn")
@@ -27,7 +28,7 @@ var fruit_locations: Array[Vector2i]
 
 
 #arrays containing Snake data for the tail to follow
-enum DIRECTION {UP,RIGHT,DOWN,LEFT, STOP}
+enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
 var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
 var snake_path_bodyparts: Array[SnakeBody]
 
@@ -82,7 +83,7 @@ func find_free_map_tiles() -> Array[Vector2i]:
 	
 	#creates an array containing every position of static solid elements
 	var solid_element_positions = get_tree().get_nodes_in_group("Static Solid Element").map(
-	func(solid_elem): return position_to_tile(solid_elem.position))
+	func(solid_elem): return TileHelper.position_to_tile(solid_elem.position))
 	
 	#subtract all elements from the grid array that have solid elements
 	map_tiles = map_tiles.filter(func(x): return not solid_element_positions.has(x))
@@ -118,8 +119,8 @@ func teleport_to_starting_position():
 	#place snake tail as far below head ass body parts exist
 	snake_tail.current_tile = snake_head.current_tile
 	for i in range(len(snake_path_bodyparts)):
-		snake_tail.current_tile = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN)
-	snake_tail.position = get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * GameConsts.TILE_SIZE
+		snake_tail.current_tile = TileHelper.get_next_tile(snake_tail.current_tile, DIRECTION.DOWN)
+	snake_tail.position = TileHelper.get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * GameConsts.TILE_SIZE
 
 #connected to signal collision_with in map_element.gd emitted in snake_head.gd when head collides with a head element
 func _on_collision_with(element: MapElement):
@@ -128,10 +129,17 @@ func _on_collision_with(element: MapElement):
 		snake_tail.tiles_to_grow += 1
 		SignalBus.fruit_collected.emit(element)
 		spawn_fruit(fruit_locations)
-		fruit_locations.erase(GameConsts.position_to_tile(element.position))
-		element.collected_anim(snake_head.position, GameConsts.tile_to_position(snake_head.next_tile))
+		fruit_locations.erase(TileHelper.position_to_tile(element.position))
+		element.collected_anim(snake_head.position, TileHelper.tile_to_position(snake_head.next_tile))
 		
-
+func spawn_teleporter(destination: Vector2) -> Teleporter:
+	var teleporter: Teleporter = teleport_element_scene.instantiate()
+	add_child(teleporter)
+	teleporter.position = TileHelper.tile_to_position( TileHelper.get_next_tile(snake_head.next_tile, snake_head.current_direction))
+	teleporter.rotation = snake_head.get_orientation(snake_head.current_direction, 0.0) + (PI)
+	teleporter.destination_tile = TileHelper.position_to_tile(to_local(destination))
+	return teleporter
+	
 
 #spawn a new fruit in a place with no solid objects, including the snake
 #additional excluded tiles can be handed by forbidden_tiles
@@ -146,7 +154,7 @@ func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 	#erase every tile from that array that is occupied by snake + the tile snake will now occupie (current fruit tile)
 	for snake_part in get_tree().get_nodes_in_group("Snake"):
 		var snakepartpos = snake_part.position
-		currently_free_map_tiles.erase(position_to_tile(snakepartpos))
+		currently_free_map_tiles.erase(TileHelper.position_to_tile(snakepartpos))
 	currently_free_map_tiles.erase(snake_head.next_tile)
 	
 	var free_map_tiles_without_forbidden = currently_free_map_tiles
@@ -155,11 +163,11 @@ func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 		currently_free_map_tiles.erase(tile)
 	
 	if currently_free_map_tiles.size() < 5:
-		fruit.position = tile_to_position(free_map_tiles_without_forbidden[randi() % currently_free_map_tiles.size()])
+		fruit.position = TileHelper.tile_to_position(free_map_tiles_without_forbidden[randi() % currently_free_map_tiles.size()])
 	else:
-		fruit.position = tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
+		fruit.position = TileHelper.tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
 		
-	fruit_locations.append(GameConsts.position_to_tile(fruit.position))
+	fruit_locations.append(TileHelper.position_to_tile(fruit.position))
 	
 	
 	
@@ -222,28 +230,6 @@ func collision_iframes(ticks: int):
 	
 
 #region helper functions
-#converts a tile vector to it's actual position
-func tile_to_position(tile: Vector2i) -> Vector2:
-	return tile * GameConsts.TILE_SIZE
-
-#converts a position to its tile vector
-func position_to_tile(pos: Vector2) -> Vector2i:
-	var tileval = round(pos / GameConsts.TILE_SIZE)
-	return tileval
-		
-#calculates the tile vector to the left/right/top/bottom of a fiven field
-func get_next_tile(current_tile: Vector2i, direction) -> Vector2i:
-	match direction:
-		DIRECTION.UP:
-			return Vector2i(current_tile.x, current_tile.y-1)
-		DIRECTION.RIGHT:
-			return Vector2i(current_tile.x+1, current_tile.y)
-		DIRECTION.DOWN:
-			return Vector2i(current_tile.x, current_tile.y+1)
-		DIRECTION.LEFT:
-			return Vector2i(current_tile.x-1, current_tile.y)
-		_:
-			return Vector2i.ZERO
 
 func find_all_fruits() -> Array[MapElement]:
 	var fruits: Array[MapElement] = []

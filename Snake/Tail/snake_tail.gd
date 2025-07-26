@@ -12,7 +12,7 @@ func _ready() -> void:
 func _on_next_tile_reached():
 	#position can only be changed in this method, cause tweens override it otherwise
 	if teleport_destination != null:
-		position = GameConsts.tile_to_position(teleport_destination)
+		position = TileHelper.tile_to_position(teleport_destination)
 		next_tile = teleport_destination
 		teleport_destination = null
 		
@@ -21,7 +21,7 @@ func _on_next_tile_reached():
 		current_tile = next_tile
 		map.pop_snake_bodyparts()
 		current_direction = map.pop_snake_directions()
-		next_tile = map.get_next_tile(current_tile, current_direction)
+		next_tile = TileHelper.get_next_tile(current_tile, current_direction)
 	#otherwise stand still and grow
 	elif snake_head.moves:
 		tiles_to_grow -= 1
@@ -32,10 +32,11 @@ func _on_next_tile_reached():
 	
 	SignalBus.continue_moving.emit()
 
-func _on_teleported(destination: Vector2i):
+func _on_teleported(teleporter: Teleporter):
 	var countdown: TailCountdown = TailCountdown.new(get_parent().snake_path_bodyparts.size())
 	await countdown.countdown_reached
-	teleport_destination = destination
+	teleport_destination = teleporter.destination_tile
+	SignalBus.teleport_finished.emit(teleporter)
 
 func _on_stop_moving():
 	pass

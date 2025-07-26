@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvyaocdswofuq"]
+[gd_scene load_steps=5 format=3 uid="uid://cvyaocdswofuq"]
 
 [ext_resource type="Script" uid="uid://bileqo436ye10" path="res://MapElements/TeleportElement/teleport_element.gd" id="1_tbl2d"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="2_yfbfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8bw1"]
-size = Vector2(80, 80)
+size = Vector2(40, 60)
+
+[sub_resource type="Curve" id="Curve_yfbfk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.112108, 1), 0.0, 0.0, 0, 0, Vector2(0.683857, 0.540585), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="TeleportElement" type="Area2D"]
 collision_layer = 16
@@ -12,8 +16,28 @@ collision_mask = 0
 script = ExtResource("1_tbl2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_v8bw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_yfbfk")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -35)
+amount = 20
+texture = ExtResource("2_yfbfk")
+lifetime = 1.09
+emission_shape = 3
+emission_rect_extents = Vector2(33.2, 1.825)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 59.06
+initial_velocity_max = 59.06
+damping_min = 81.496
+damping_max = 81.496
+scale_amount_min = 0.0
+scale_amount_max = 0.8
+scale_amount_curve = SubResource("Curve_yfbfk")
+color = Color(0.93, 0.89652, 0.7626, 0.321569)
