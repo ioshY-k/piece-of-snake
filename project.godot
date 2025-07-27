@@ -40,6 +40,7 @@ version_control/autoload_on_startup=true
 Snake="parts of the snake that currently occupie the map"
 Fruit="Every snake accepted edible"
 UpgradeCard=""
+Wall=""
 
 [input]
 

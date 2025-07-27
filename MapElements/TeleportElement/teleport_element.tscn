@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="2_yfbfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8bw1"]
-size = Vector2(40, 60)
+size = Vector2(40, 70)
 
 [sub_resource type="Curve" id="Curve_yfbfk"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.112108, 1), 0.0, 0.0, 0, 0, Vector2(0.683857, 0.540585), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -16,7 +16,7 @@ collision_mask = 0
 script = ExtResource("1_tbl2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_v8bw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

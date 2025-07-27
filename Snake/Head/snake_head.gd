@@ -56,6 +56,17 @@ func _on_next_tile_reached():
 		position = TileHelper.tile_to_position(colliding_element.destination_tile)
 		next_tile = TileHelper.get_next_tile(colliding_element.destination_tile, current_direction)
 		colliding_element = check_upcoming_collision(original_direction, current_direction)
+		if colliding_element != null and colliding_element.is_in_group("Wall"):
+			var temp_colliding_element = colliding_element
+			colliding_element.set_collision_layer_value(1,false)
+			colliding_element = check_upcoming_collision(original_direction, current_direction)
+			if temp_colliding_element == colliding_element:
+				print("still same")
+			else:
+				print("different")
+			temp_colliding_element.set_collision_layer_value(1,true)
+			
+			
 		if colliding_element != null and colliding_element.get_collision_layer_value(1):#SolidAfterTeleport
 			next_tile = temp_next_tile
 			position = temp_position
