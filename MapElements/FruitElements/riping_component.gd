@@ -5,14 +5,14 @@ var very_riped: bool = false
 
 func _ready() -> void:
 	get_parent().is_riping_fruit = true
-	get_parent().get_parent().fruit_collected.connect(_on_this_fruit_collected)
-	get_parent().get_parent().fruit_collected.connect(_on_other_fruit_collected)
+	SignalBus.fruit_collected.connect(_on_this_fruit_collected)
+	SignalBus.fruit_collected.connect(_on_other_fruit_collected)
 
 func _on_this_fruit_collected(collected_fruit: FruitElement):
 	if riped and collected_fruit == get_parent():
-		get_parent().get_parent().fruit_collected.emit(null)
+		SignalBus.fruit_collected.emit(null)
 	if very_riped and collected_fruit == get_parent():
-		get_parent().get_parent().fruit_collected.emit(null)
+		SignalBus.fruit_collected.emit(null)
 		
 func _on_other_fruit_collected(collected_fruit: FruitElement):
 	if collected_fruit == get_parent() or collected_fruit == null:

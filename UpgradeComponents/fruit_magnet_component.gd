@@ -7,7 +7,7 @@ func _ready() -> void:
 			component_shapes.append(child.get_child(0))
 			child.connect("area_entered", _on_area_entered)
 			child.connect("area_exited", _on_area_exited)
-	get_parent().next_tile_reached.connect(_on_next_tile_reached)
+	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
 
 func self_destruct():
 	queue_free()

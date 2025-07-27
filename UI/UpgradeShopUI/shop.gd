@@ -45,9 +45,8 @@ var current_purchase_count: int
 func _ready() -> void:
 	if GameConsts.test_mode:
 		purchase_count = 3
-		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.EDGE_WRAP_1,
-									GameConsts.UPGRADE_LIST.EDGE_WRAP_1,
-									GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1]
+		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.TIME_STOP_1,
+									GameConsts.UPGRADE_LIST.WORMHOLE_1]
 	
 	current_purchase_count = purchase_count
 	
@@ -144,7 +143,6 @@ func _on_let_go():
 		slot.get_node("HighlightReplace").visible = false
 		slot.get_node("HighlightBuy").visible = false
 		slot.get_node("BuyZone").visible = false
-		slot.get_node("BuyZone").get_node("Price").text = "0"
 
 func can_afford(slot):
 	return 	int(slot.get_node("BuyZone").get_node("Price").text) <= fruits_currency and\

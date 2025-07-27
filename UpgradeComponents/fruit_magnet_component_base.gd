@@ -3,11 +3,12 @@ class_name FruitMagnetComponentBase extends Node2D
 
 @onready var component_shapes: Array[CollisionShape2D]
 
-var fruits_this_tick: Array[MapElement] = []
+var fruits_this_tick: Array[FruitElement] = []
 
 func _on_next_tile_reached():
 	for fruit in fruits_this_tick:
-		fruit.collision_with.emit()
+		if not fruit.collected:
+			fruit.collision_with.emit()
 	fruits_this_tick = []
 
 

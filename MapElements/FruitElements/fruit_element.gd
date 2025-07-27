@@ -1,6 +1,7 @@
 class_name FruitElement extends MapElement
 var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particles.tscn")
 var is_riping_fruit = false
+var collected = false
 
 func collected_anim(snakehead_pos: Vector2, fruit_destination_pos: Vector2):
 	set_collision_layer_value(2,false)

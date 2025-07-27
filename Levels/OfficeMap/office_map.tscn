@@ -560,6 +560,18 @@ position = Vector2(1440, 1200)
 [node name="SolidElementArea166" parent="SolidElements" instance=ExtResource("3_jw1gu")]
 position = Vector2(1440, 1280)
 
+[node name="SolidElementArea167" parent="SolidElements" instance=ExtResource("3_jw1gu")]
+position = Vector2(1040, 720)
+
+[node name="SolidElementArea168" parent="SolidElements" instance=ExtResource("3_jw1gu")]
+position = Vector2(1040, 640)
+
+[node name="SolidElementArea169" parent="SolidElements" instance=ExtResource("3_jw1gu")]
+position = Vector2(1120, 640)
+
+[node name="SolidElementArea170" parent="SolidElements" instance=ExtResource("3_jw1gu")]
+position = Vector2(1120, 720)
+
 [node name="TeleportElements" type="Node2D" parent="."]
 
 [node name="AreaSize1SolidElements" type="Node2D" parent="."]

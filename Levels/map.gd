@@ -126,6 +126,7 @@ func teleport_to_starting_position():
 func _on_collision_with(element: MapElement):
 	#on fruit collision, grow once, delete fruit and spawn a new one
 	if element is FruitElement:
+		element.collected = true
 		snake_tail.tiles_to_grow += 1
 		SignalBus.fruit_collected.emit(element)
 		spawn_fruit(fruit_locations)

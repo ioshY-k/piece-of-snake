@@ -11,6 +11,7 @@ var maps_in_order: Array[PackedScene] =  [
 											preload("res://Levels/OfficeMap/office_map.tscn"),
 											preload("res://Levels/DiscoMap/disco_map.tscn"),
 											preload("res://Levels/CaveMap/cave_map.tscn"),
+											preload("res://Levels/BeachMap/beach_map.tscn"),
 											preload("res://Levels/Map1/square_map.tscn"),
 											preload("res://Levels/Map2/big_map.tscn"),
 											preload("res://Levels/Map3/map_3.tscn")
@@ -22,6 +23,7 @@ var map_data_size0: Array = [
 										[Vector2(-452.0,-662.0), Vector2(1.072,1.035), Vector2i(15,13), Vector2i(1,1), Vector2i(17,15)],
 										[Vector2(-453.0,-663.0), Vector2(1.012,0.972), Vector2i(16,14), Vector2i(1,1), Vector2i(18,16)],
 										[Vector2(-368.0,-578.0), Vector2(1.006,0.963), Vector2i(16,14), Vector2i(0,0), Vector2i(17,15)],
+										[Vector2(-447.0,-657.0), Vector2(1.006,0.966), Vector2i(16,14), Vector2i(1,1), Vector2i(18,16)],
 										[Vector2(0,0), Vector2(0,0), Vector2i(0,0)],
 										[Vector2(0,0),Vector2(0,0), Vector2i(0,0)],
 										[Vector2(-487.0,-697.0), Vector2(1.345,1.345), Vector2i(12,10)]
@@ -111,7 +113,7 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	

@@ -2,6 +2,7 @@ extends ActiveItemBase
 
 signal item_deactivated
 var button_held: bool = false
+var next_tile_reached_emitted_this_frame: bool = false
 
 func _ready() -> void:
 	super._ready()
@@ -10,6 +11,7 @@ func _ready() -> void:
 	item_activated.connect(_on_item_activated)
 	item_deactivated.connect(_on_item_deactivated)
 	item_activated.connect(active_item_slot._on_item_activated.bind())
+	SignalBus.pre_next_tile_reached.connect(_on_next_tile_reached)
 
 
 func _process(delta: float) -> void:
@@ -21,8 +23,11 @@ func _process(delta: float) -> void:
 		#uses-1 is the light index for the itembag to go out
 		uses -= 1
 		SignalBus.continue_moving.emit()
+
+func _on_next_tile_reached():
 	if button_held:
 		item_activated.emit(uses-1)
+		print("emited")
 
 func _on_item_activated(_uses):
 	SignalBus.stop_moving.emit()

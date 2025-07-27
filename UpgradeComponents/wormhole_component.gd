@@ -37,7 +37,6 @@ func _process(delta: float) -> void:
 
 func _on_item_activated(_uses):
 	active_item_slot.get_parent().time_meter.stop_timer()
-	print(TileHelper.position_to_tile( current_map.get_local_mouse_position() ) )
 	tile_select_cursor.global_position = current_map.to_global( TileHelper.tile_to_position(TileHelper.position_to_tile(current_map.get_local_mouse_position())))
 
 func _on_item_deactivated():

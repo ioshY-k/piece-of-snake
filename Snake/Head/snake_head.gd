@@ -46,6 +46,8 @@ func _on_next_tile_reached():
 	#reset buffer to unreachable value
 	buffered_input_direction = -10
 	
+	SignalBus.pre_next_tile_reached.emit()
+	
 	if colliding_element != null and colliding_element.get_collision_layer_value(5):#Teleporter
 		var temp_next_tile = next_tile
 		var temp_position = position
@@ -73,7 +75,6 @@ func _on_next_tile_reached():
 	else:
 		map.push_snake_bodyparts(current_tile, current_direction)
 		map.push_snake_directions(current_direction)
-	
 	
 	SignalBus.next_tile_reached.emit()
 	

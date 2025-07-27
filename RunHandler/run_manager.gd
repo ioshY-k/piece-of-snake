@@ -1,8 +1,8 @@
 extends Node
 
 var maps_act1 = [0,1]
-var maps_act2 = [2,3]
-var maps_act3 = [4,5]
+var maps_act2 = [2,4]
+var maps_act3 = [3,5]
 var maporder = []
 										
 @onready var retry_button: Button = $RetryButton
@@ -33,7 +33,7 @@ func create_new_run():
 				maps_act2[randi()%maps_act2.size()],
 				maps_act3[randi()%maps_act3.size()]]
 	#test purpose
-	maporder = [4,1,0]
+	#maporder = [1,1,0]
 		
 	level = level_scene.instantiate()
 	add_child(level)

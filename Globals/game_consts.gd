@@ -42,8 +42,8 @@ var upgrades_with_advancement: Array[int] = [	UPGRADE_LIST.AREA_SIZE_1, UPGRADE_
  
 
 					
-const FRUIT_THRESHOLDS: Array [int] = [0,0,0,0, 4,5,5,5, 6,6,6,6]
-const ROUND_TIME_SEC: int = 10
+var FRUIT_THRESHOLDS: Array [int] = [13,12,11,10, 18,17,16,15, 23,22,21,20]
+const ROUND_TIME_SEC: int = 70
 const COLLISION_IFRAMES: int = 2
 
 var node_being_dragged: Node = null
@@ -73,3 +73,7 @@ func get_upgrade_type(upgrade_id: int):
 			return UPGRADE_TYPE.SPECIAL
 		_:
 			print_debug("notype has been found for this upgrade: " + str(upgrade_id))
+
+func _ready() -> void:
+	if test_mode:
+		FRUIT_THRESHOLDS = [0,0,0,0, 25,25,25,25, 30,30,30,30]

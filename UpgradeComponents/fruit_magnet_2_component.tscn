@@ -70,3 +70,48 @@ metadata/_edit_vertical_guides_ = [-710.0]
 
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField7"]
 shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField8" type="Area2D" parent="."]
+position = Vector2(80, 0)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField8"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField9" type="Area2D" parent="."]
+position = Vector2(0, -80)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField9"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField10" type="Area2D" parent="."]
+position = Vector2(-80, 0)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField10"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField11" type="Area2D" parent="."]
+position = Vector2(-80, 80)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField11"]
+shape = SubResource("RectangleShape2D_bpa51")
+
+[node name="MagnetField12" type="Area2D" parent="."]
+position = Vector2(80, 80)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField12"]
+shape = SubResource("RectangleShape2D_bpa51")
