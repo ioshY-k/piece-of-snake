@@ -1,19 +1,19 @@
 class_name UpgradeCard extends Control
 
 var upgrade_descriptions = {
-	str(GameConsts.UPGRADE_LIST.AREA_SIZE_1) : "Uncover [color=9e9e9e]more area.[/color]\n\nThis Upgrade is lost upon entering the next act.",
-	str(GameConsts.UPGRADE_LIST.AREA_SIZE_2) : "Uncover [color=9e9e9e]even more area.[/color]\n\nThis Upgrade is lost upon entering the next act.",
-	str(GameConsts.UPGRADE_LIST.AREA_SIZE_3) : "Uncover the [color=9e9e9e]maximum amount of area.[/color]\n\nThis Upgrade is lost upon entering the next act.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_1) : "Uncover [color=9e9e9e]more area.[/color]\n\nThis Upgrade is lost upon reaching the next act.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_2) : "Uncover [color=9e9e9e]even more area.[/color]\n\nThis Upgrade is lost upon reaching the next act.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_3) : "Uncover the [color=9e9e9e]maximum amount of area.[/color]\n\nThis Upgrade is lost upon reaching the next act.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1) : "[color=ffc875]Attract fruit[/color] in front of you.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2) : "Attract fruit in a [color=ffc875]radius around you[/color].",
 	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3) : "Attract fruit in a [color=ffc875]larger radius[/color].",
-	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_1) : "Gain a larger [color=ffc875]Speed Meter[/color].",
-	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_2) : "The Speed Meter [color=ffc875]refills faster[/color].",
-	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_3) : "Gain [color=ffc875]unlimited speed[/color].",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_1) : "Gain a [color=ffc875]larger Hyper Speed Meter[/color].",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_2) : "The Hyper Speed Meter [color=ffc875]refills faster[/color].",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_3) : "Gain [color=ffc875]unlimited Hyper Speed[/color].",
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1) : "[color=ffc875]Two Fruits[/color] at once will appear on the Map.",
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2) : "The longer a Fruit is [color=ffc875]left uncollected[/color], the more Fruits it will grant on collection.",
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3) : "[color=ffc875]Three Fruits[/color] at once will appear on the Map.",
-	str(GameConsts.UPGRADE_LIST.EDGE_WRAP_1) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.EDGE_WRAP_1) : "When exiting the screen, [color=ffc875]enter on the opposite side[/color].",
 	str(GameConsts.UPGRADE_LIST.EDGE_WRAP_2) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 2 times.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 3 times.",
@@ -23,14 +23,14 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.KNOT_ATTRACTOR) : "NO DESCRIPTION YET",
-	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit threshold, [color=#4fabf9]all Active Items get refilled[/color]",
 	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "[color=#ff9191]Stop moving[/color] for as long as the button is held down.\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_2) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_3) : "NO DESCRIPTION YET",
-	str(GameConsts.UPGRADE_LIST.WORMHOLE_1) : "NO DESCRIPTION YET",
-	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "NO DESCRIPTION YET",
-	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "NO DESCRIPTION YET"
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_1) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 2 times.",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 4 times.",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 6 times."
 
 	}
 

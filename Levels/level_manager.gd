@@ -236,15 +236,15 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.WORMHOLE_1:
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
-			wormhole_component.initiate_active_item(1, slot)
+			wormhole_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_2:
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
-			wormhole_component.initiate_active_item(2, slot)
+			wormhole_component.initiate_active_item(4, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_3:
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
-			wormhole_component.initiate_active_item(4, slot)
+			wormhole_component.initiate_active_item(6, slot)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_1_component)
