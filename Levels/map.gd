@@ -211,8 +211,8 @@ func pop_snake_bodyparts():
 #called for moving objects like snake tail or moving obstacles so that no collision is anticipated
 func unload_solidElement(obj: Node):
 	for child in obj.get_children():
-		if "SolidElement" in child.name:
-			child.set_collision_layer_value(1,false)
+		if child is SolidElement:
+			child.set_collision_layer_value(6,false)
 
 func add_upgrade_component(upgrade: int):
 	match upgrade:

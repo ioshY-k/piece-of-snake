@@ -8,6 +8,7 @@ var tween: Tween
 
 func _on_tween_finished(_loop):
 	tween.pause()
+	print(modulate.a)
 	await SignalBus.next_tile_reached
 	tween.play()
 
@@ -25,10 +26,17 @@ func _ready() -> void:
 		if path[index] == 5:
 			tween.set_parallel(true)
 			tween.tween_property(self, "scale", Vector2(0.0,0.0), GameConsts.NORMAL_SPEED)
+			tween.tween_callback(_set_particles.bind(false))
 			tween.set_parallel(false)
 		if path[index] == 6:
 			tween.set_parallel(true)
 			tween.tween_property(self, "scale", Vector2(1.0,1.0), GameConsts.NORMAL_SPEED)
+			tween.tween_callback(_set_particles.bind(true))
 			tween.set_parallel(false)
 		
 	tween.step_finished.connect(_on_tween_finished.bind())
+
+func _set_particles(state: bool):
+	for child in get_children():
+		if child is CPUParticles2D:
+			child.emitting = state

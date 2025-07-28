@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv7ln"]
 size = Vector2(60, 60)
 
-[node name="ObstacleElement" type="Area2D"]
+[node name="ObstacleHitboxElement" type="Area2D"]
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("2_lb1ho")
