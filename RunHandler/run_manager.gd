@@ -33,7 +33,7 @@ func create_new_run():
 				maps_act2[randi()%maps_act2.size()],
 				maps_act3[randi()%maps_act3.size()]]
 	if GameConsts.test_mode:
-		maporder = [2,2,2]
+		maporder = [5,2,2]
 		
 	level = level_scene.instantiate()
 	add_child(level)

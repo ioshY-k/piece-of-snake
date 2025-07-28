@@ -1,7 +1,7 @@
 extends Node
 
 const TILE_SIZE = 80
-enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
+enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP,DISAPPEAR,APPEAR}
 
 #calculates the tile vector to the left/right/top/bottom of a given field
 func get_next_tile(current_tile: Vector2i, direction) -> Vector2i:
@@ -14,7 +14,9 @@ func get_next_tile(current_tile: Vector2i, direction) -> Vector2i:
 			return Vector2i(current_tile.x, current_tile.y+1)
 		DIRECTION.LEFT:
 			return Vector2i(current_tile.x-1, current_tile.y)
-		DIRECTION.STOP:
+		DIRECTION.STOP,\
+		DIRECTION.DISAPPEAR,\
+		DIRECTION.APPEAR:
 			return Vector2i(current_tile.x, current_tile.y)
 		_:
 			return Vector2i.ZERO

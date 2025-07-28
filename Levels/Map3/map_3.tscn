@@ -583,10 +583,12 @@ position = Vector2(1200, 80)
 [node name="SolidElementArea114" parent="AreaSize3SolidElements" instance=ExtResource("3_u12f2")]
 position = Vector2(1200, 0)
 
-[node name="ObstacleElement" parent="." instance=ExtResource("6_duqmy")]
+[node name="ObstacleElements" type="Node2D" parent="."]
+
+[node name="ObstacleElement" parent="ObstacleElements" instance=ExtResource("6_duqmy")]
 position = Vector2(320, 720)
 path = Array[int]([0, 4, 2, 4])
 
-[node name="ObstacleElement2" parent="." instance=ExtResource("7_k7h7p")]
+[node name="ObstacleElement2" parent="ObstacleElements" instance=ExtResource("7_k7h7p")]
 position = Vector2(320, 640)
 path = Array[int]([4, 2, 4, 0])

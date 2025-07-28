@@ -155,6 +155,7 @@ frame_progress = 0.341475
 script = ExtResource("2_vx0cu")
 
 [node name="SolidElement" parent="." instance=ExtResource("3_2xe0v")]
+collision_layer = 32
 
 [node name="SnakeBodyDecoEdge" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_81x6j")

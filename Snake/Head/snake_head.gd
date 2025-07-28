@@ -60,10 +60,6 @@ func _on_next_tile_reached():
 			var temp_colliding_element = colliding_element
 			colliding_element.set_collision_layer_value(1,false)
 			colliding_element = check_upcoming_collision(original_direction, current_direction)
-			if temp_colliding_element == colliding_element:
-				print("still same")
-			else:
-				print("different")
 			temp_colliding_element.set_collision_layer_value(1,true)
 			
 			
@@ -75,7 +71,8 @@ func _on_next_tile_reached():
 		
 	if colliding_element == null:
 		pass
-	elif colliding_element.get_collision_layer_value(1):#Solid
+	elif colliding_element.get_collision_layer_value(1) or\
+		colliding_element.get_collision_layer_value(6): #Solid or Obstacle
 		SignalBus.stop_moving.emit()
 		got_hit.emit()
 	elif colliding_element.get_collision_layer_value(2) :#Fruit

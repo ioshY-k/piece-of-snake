@@ -1,4 +1,4 @@
-class_name ObstacleElement extends Sprite2D
+class_name ObstacleHitboxElement extends Area2D
 
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP,DISAPPEAR,APPEAR}
 
@@ -24,11 +24,15 @@ func _ready() -> void:
 		tween.tween_property(self, "position", next_pos, GameConsts.NORMAL_SPEED)
 		if path[index] == 5:
 			tween.set_parallel(true)
-			tween.tween_property(self, "scale", Vector2(0.0,0.0), GameConsts.NORMAL_SPEED)
+			tween.tween_callback(_set_collision.bind(false))
 			tween.set_parallel(false)
 		if path[index] == 6:
 			tween.set_parallel(true)
-			tween.tween_property(self, "scale", Vector2(1.0,1.0), GameConsts.NORMAL_SPEED)
+			tween.tween_callback(_set_collision.bind(true))
 			tween.set_parallel(false)
 		
 	tween.step_finished.connect(_on_tween_finished.bind())
+	
+func _set_collision(state: bool):
+	await tween.step_finished
+	set_collision_layer_value(6,state)

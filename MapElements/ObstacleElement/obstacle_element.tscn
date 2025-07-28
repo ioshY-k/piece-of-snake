@@ -1,9 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://2prhasopicbn"]
 
 [ext_resource type="Texture2D" uid="uid://codp8w4vxnfx4" path="res://MapElements/ObstacleElement/Obstacle.svg" id="1_uq2r3"]
-[ext_resource type="Script" uid="uid://d0oefmxmawte2" path="res://MapElements/ObstacleElement/obstacle_element.gd" id="2_4s714"]
+[ext_resource type="Script" uid="uid://wdhaxjf7gg2h" path="res://MapElements/ObstacleElement/obstacle_element.gd" id="2_4s714"]
 
 [node name="ObstacleElement" type="Sprite2D"]
 texture = ExtResource("1_uq2r3")
 script = ExtResource("2_4s714")
-path = Array[int]([4])

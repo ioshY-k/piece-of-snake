@@ -102,6 +102,7 @@ item2={
 2d_physics/layer_3="Upgrade Card"
 2d_physics/layer_4="Upgrade Slot"
 2d_physics/layer_5="Teleport Element"
+2d_physics/layer_6="Obstacle Element"
 
 [rendering]
 

@@ -113,7 +113,7 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(1)
+		time_meter.initiate_time_bar(60)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -122,7 +122,6 @@ func prepare_new_round(fruit_threshold, time_sec):
 	
 
 func on_snake_got_hit():
-	print("Ouch!")
 	#disable the speedboost so that fruit cant be lost in high frequency
 	if speed_boost_bar.value < speed_boost_bar.max_value:
 		snake_head.snake_speed = GameConsts.NORMAL_SPEED
@@ -153,7 +152,6 @@ func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
 func _on_fruit_collected(_collected_fruit):
-	print("YUM!")
 	if not enough_fruits:
 		fruits_left -= 1
 		fruits_left_number_label.text = str(fruits_left)

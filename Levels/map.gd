@@ -61,15 +61,30 @@ func _ready() -> void:
 	
 	initialized.emit()
 
-
+var invincibility_expired: bool = false
 func _on_next_tile_reached():
 	if invincible_ticks > 0:
+		snake_head.right_collision_ray.set_collision_mask_value(6,false)
+		snake_head.left_collision_ray.set_collision_mask_value(6,false)
+		snake_head.front_collision_ray.set_collision_mask_value(6,false)
 		for bodypart in snake_path_bodyparts:
-			bodypart.find_child("SolidElement").set_collision_layer_value(1,false)
+			bodypart.modulate.a = 0.8
+		for obstacle in find_child("ObstacleElements").get_children():
+			if not obstacle is Area2D:
+				obstacle.modulate. a = 0.8
 		invincible_ticks -= 1
-	else:
+		if invincible_ticks == 0:
+			invincibility_expired = true
+	elif invincibility_expired:
+		invincibility_expired = false
+		snake_head.right_collision_ray.set_collision_mask_value(6,true)
+		snake_head.left_collision_ray.set_collision_mask_value(6,true)
+		snake_head.front_collision_ray.set_collision_mask_value(6,true)
 		for bodypart in snake_path_bodyparts:
-			bodypart.find_child("SolidElement").set_collision_layer_value(1,true)
+			bodypart.modulate.a = 1
+		for obstacle in find_child("ObstacleElements").get_children():
+			if not obstacle is Area2D:
+				obstacle.modulate.a = 1
 		
 	
 

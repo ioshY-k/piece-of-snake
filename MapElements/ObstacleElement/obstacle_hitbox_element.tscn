@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://8x8nslmvyjj6"]
 
-[ext_resource type="Script" uid="uid://d0oefmxmawte2" path="res://MapElements/ObstacleElement/obstacle_element.gd" id="2_lb1ho"]
+[ext_resource type="Script" uid="uid://d0oefmxmawte2" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.gd" id="2_lb1ho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv7ln"]
 size = Vector2(60, 60)
 
 [node name="ObstacleElement" type="Area2D"]
+collision_layer = 32
 collision_mask = 0
 script = ExtResource("2_lb1ho")
 path = Array[int]([4])
