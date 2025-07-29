@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdes8w6rgvyop"]
+
+[ext_resource type="Texture2D" uid="uid://mv024yhp0eyr" path="res://MapElements/OverlapElement/Crossroad.svg" id="1_p4fjm"]
+[ext_resource type="Script" uid="uid://d2exes81lwatq" path="res://MapElements/OverlapElement/crossroad.gd" id="2_k1bnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgvtv"]
+size = Vector2(30, 30)
+
+[node name="CrossroadSmall" type="Sprite2D"]
+texture = ExtResource("1_p4fjm")
+script = ExtResource("2_k1bnt")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mgvtv")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

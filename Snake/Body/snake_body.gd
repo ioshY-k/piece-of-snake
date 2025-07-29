@@ -92,9 +92,10 @@ func set_overlap(state):
 
 func _on_snake_overlaps():
 	if not is_overlapped:
+		print("wasnt overlapped")
 		is_overlapped = true
-		self_modulate.a = 1
 	else:
+		print("was")
 		SignalBus.stop_moving.emit()
 		snake_head.got_hit.emit()
 
@@ -105,7 +106,6 @@ func _on_next_tile_reached():
 			overlap_this_tick = false
 			return
 		if not solid_element.has_overlapping_areas():
-			print("done")
 			is_overlapped = false
 			overlap_this_tick = true
 			self_modulate.a = 0.7

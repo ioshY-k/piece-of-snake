@@ -32,7 +32,6 @@ func _ready() -> void:
 			var first = obstacle.path.pop_front()
 			obstacle.path.append(first)
 		if obstacle.has_node("Particles"):
-			print("didit")
 			var first = obstacle.path.pop_front()
 			obstacle.path.append(first)
 			first = obstacle.path.pop_front()

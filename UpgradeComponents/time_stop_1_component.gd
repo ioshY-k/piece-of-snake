@@ -27,7 +27,6 @@ func _process(delta: float) -> void:
 func _on_next_tile_reached():
 	if button_held:
 		item_activated.emit(uses-1)
-		print("emited")
 
 func _on_item_activated(_uses):
 	SignalBus.stop_moving.emit()

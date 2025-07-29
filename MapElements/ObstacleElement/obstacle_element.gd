@@ -8,7 +8,6 @@ var tween: Tween
 
 func _on_tween_finished(_loop):
 	tween.pause()
-	print(modulate.a)
 	await SignalBus.next_tile_reached
 	tween.play()
 

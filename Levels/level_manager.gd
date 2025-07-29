@@ -57,7 +57,7 @@ var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_comp
 var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_component.tscn")
 var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_component.tscn")
 var wormhole_component_scene = load("res://UpgradeComponents/wormhole_component.tscn")
-
+var crossroad_1_component_scene = load("res://UpgradeComponents/crossroad_1_component.tscn")
 
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
@@ -255,6 +255,19 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			var item_reloader_component = item_reloader_component_scene.instantiate()
 			add_child(item_reloader_component)
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_1:
+			var crossroad_1_component = crossroad_1_component_scene.instantiate()
+			current_active_item_slot.add_child(crossroad_1_component)
+			crossroad_1_component.initiate_active_item(1, slot)
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_2:
+			var crossroad_2_component = crossroad_1_component_scene.instantiate()
+			current_active_item_slot.add_child(crossroad_2_component)
+			crossroad_2_component.initiate_active_item(2, slot)
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_3:
+			var crossroad_3_component = crossroad_1_component_scene.instantiate()
+			crossroad_3_component.big_crossroad = true
+			current_active_item_slot.add_child(crossroad_3_component)
+			crossroad_3_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
@@ -287,6 +300,11 @@ func destroy_upgrade(upgrade_id: int):
 			component = active_item_slot_1.find_child("FruitRelocatorComponent", false, false)
 			if component == null:
 				component = active_item_slot_2.find_child("FruitRelocatorComponent", false, false)
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_2:
+			component = active_item_slot_1.find_child("Crossroad1Component", false, false)
+			if component == null:
+				component = active_item_slot_2.find_child("Crossroad1Component", false, false)
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			component = active_item_slot_1.find_child("TimeStop1Component",false,false)
 			if component == null:

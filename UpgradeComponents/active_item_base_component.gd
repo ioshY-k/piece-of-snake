@@ -12,7 +12,6 @@ func _ready() -> void:
 	SignalBus.round_over.connect(_on_round_over)
 
 func initiate_active_item(use_num: int, slot: int):
-	print("uses set to " + str(use_num))
 	max_uses = use_num
 	uses = use_num
 	for use in range(uses):

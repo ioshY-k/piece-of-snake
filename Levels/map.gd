@@ -205,7 +205,6 @@ func push_snake_bodyparts(tile: Vector2i, direction: int, push_overlap_bodypart:
 	newest_snake_body.position = tile * GameConsts.TILE_SIZE
 	snake_path_bodyparts.push_back(newest_snake_body)
 	if push_overlap_bodypart:
-		print("overlapping new tile")
 		newest_snake_body._on_snake_overlaps()
 		snake_head.push_overlap_bodypart = false
 
