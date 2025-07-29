@@ -14,6 +14,7 @@ var double_fruit_1_component_scene = load("res://UpgradeComponents/double_fruit_
 var double_fruit_2_component_scene = load("res://UpgradeComponents/double_fruit_2_component.tscn")
 var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_3_component.tscn")
 var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_component.tscn")
+var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -67,6 +68,9 @@ func _on_next_tile_reached():
 		snake_head.right_collision_ray.set_collision_mask_value(6,false)
 		snake_head.left_collision_ray.set_collision_mask_value(6,false)
 		snake_head.front_collision_ray.set_collision_mask_value(6,false)
+		snake_head.right_collision_ray.set_collision_mask_value(7,false)
+		snake_head.left_collision_ray.set_collision_mask_value(7,false)
+		snake_head.front_collision_ray.set_collision_mask_value(7,false)
 		for bodypart in snake_path_bodyparts:
 			bodypart.modulate.a = 0.8
 		for obstacle in find_child("ObstacleElements").get_children():
@@ -80,6 +84,9 @@ func _on_next_tile_reached():
 		snake_head.right_collision_ray.set_collision_mask_value(6,true)
 		snake_head.left_collision_ray.set_collision_mask_value(6,true)
 		snake_head.front_collision_ray.set_collision_mask_value(6,true)
+		snake_head.right_collision_ray.set_collision_mask_value(7,true)
+		snake_head.left_collision_ray.set_collision_mask_value(7,true)
+		snake_head.front_collision_ray.set_collision_mask_value(7,true)
 		for bodypart in snake_path_bodyparts:
 			bodypart.modulate.a = 1
 		for obstacle in find_child("ObstacleElements").get_children():
@@ -192,11 +199,15 @@ func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 func push_snake_directions(direction :int):
 	snake_path_directions.push_back(direction)
 
-func push_snake_bodyparts(tile: Vector2i, direction: int):
+func push_snake_bodyparts(tile: Vector2i, direction: int, push_overlap_bodypart: bool):
 	var newest_snake_body = SnakeBody.new_snakebody(snake_path_directions[-1], direction)
 	add_child(newest_snake_body)
 	newest_snake_body.position = tile * GameConsts.TILE_SIZE
 	snake_path_bodyparts.push_back(newest_snake_body)
+	if push_overlap_bodypart:
+		print("overlapping new tile")
+		newest_snake_body._on_snake_overlaps()
+		snake_head.push_overlap_bodypart = false
 
 #delete the bodypart and direction located at the tail from their arrays. returns the direction
 func pop_snake_directions() -> int:
@@ -237,6 +248,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
 			var edge_wrap_1_component = edge_wrap_1_component_scene.instantiate()
 			add_child(edge_wrap_1_component)
+		GameConsts.UPGRADE_LIST.CORNER_PHASING:
+			var corner_phasing = corner_phasing_scene.instantiate()
+			add_child(corner_phasing)
 	
 func collision_iframes(ticks: int):
 	snake_got_hit.emit()

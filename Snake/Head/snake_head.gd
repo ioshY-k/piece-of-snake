@@ -10,6 +10,7 @@ signal got_hit
 var colliding_element: MapElement
 var buffered_input_direction: int
 var moves: bool = true
+var push_overlap_bodypart: bool = false
 
 #to store the direction in case of teleportation where it is still relevant but got overwritten
 var original_direction: int
@@ -77,12 +78,19 @@ func _on_next_tile_reached():
 		got_hit.emit()
 	elif colliding_element.get_collision_layer_value(2) :#Fruit
 		colliding_element.collision_with.emit()
+	elif colliding_element.get_collision_layer_value(7) :#Overlap
+		colliding_element.snake_overlapped.emit()
 	
 	if not moves:
 		next_tile = current_tile
 	else:
-		map.push_snake_bodyparts(current_tile, current_direction)
+		map.push_snake_bodyparts(current_tile, current_direction, push_overlap_bodypart)
 		map.push_snake_directions(current_direction)
+	
+	#same check after the body was pushed, since it is the body after that, which needs to Overlap in overlap cases
+	if colliding_element != null and colliding_element.get_collision_layer_value(7) :#Overlap
+		push_overlap_bodypart = true
+		
 	
 	SignalBus.next_tile_reached.emit()
 	

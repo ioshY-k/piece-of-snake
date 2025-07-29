@@ -156,6 +156,7 @@ script = ExtResource("2_vx0cu")
 
 [node name="SolidElement" parent="." instance=ExtResource("3_2xe0v")]
 collision_layer = 32
+collision_mask = 96
 
 [node name="SnakeBodyDecoEdge" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_81x6j")

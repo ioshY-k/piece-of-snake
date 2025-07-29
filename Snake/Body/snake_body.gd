@@ -5,8 +5,11 @@ enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
 enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL}
 var is_corner: bool
 var body_moves: bool = true
+var is_overlap_bodypart: bool = false
+var is_overlapped: bool = false
 const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 
+@onready var solid_element: SolidElement = $SolidElement
 
 @onready var snake_body_deco_edge: Sprite2D = $SnakeBodyDecoEdge
 @onready var snake_body_deco_corner1: Sprite2D = $SnakeBodyDecoCorner1
@@ -20,7 +23,7 @@ static func new_snakebody(this_direction, next_direction) -> SnakeBody:
 	
 	var snake_body: SnakeBody = snake_body_scene.instantiate()
 	snake_body.find_correct_rotation(this_direction, next_direction)
-			
+	
 	return snake_body
 
 func _ready() -> void:
@@ -35,6 +38,8 @@ func _ready() -> void:
 	
 	SignalBus.stop_moving.connect(_on_stop_moving)
 	SignalBus.continue_moving.connect(_on_continue_moving)
+	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
+	solid_element.snake_overlapped.connect(_on_snake_overlaps)
 	
 	
 func find_correct_rotation(this_direction: int, next_direction: int):
@@ -77,7 +82,34 @@ func find_correct_rotation(this_direction: int, next_direction: int):
 			[3,0]:
 				rotation_degrees = 180
 				scale.y = -scale.y
-			
+
+func set_overlap(state):
+	is_overlap_bodypart = true
+
+	solid_element.set_collision_layer_value(6,not state)
+	solid_element.set_collision_layer_value(7,state)
+	self_modulate.a = 0.7
+
+func _on_snake_overlaps():
+	if not is_overlapped:
+		is_overlapped = true
+		self_modulate.a = 1
+	else:
+		SignalBus.stop_moving.emit()
+		snake_head.got_hit.emit()
+
+var overlap_this_tick = true
+func _on_next_tile_reached():
+	if is_overlap_bodypart and is_overlapped:
+		if overlap_this_tick:
+			overlap_this_tick = false
+			return
+		if not solid_element.has_overlapping_areas():
+			print("done")
+			is_overlapped = false
+			overlap_this_tick = true
+			self_modulate.a = 0.7
+
 func play_edge_deco_anim_tweens():
 	await SignalBus.next_tile_reached
 	

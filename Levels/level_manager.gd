@@ -113,7 +113,7 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(60)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -261,7 +261,8 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
-		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
+		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
+		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			current_map.add_upgrade_component(upgrade_id)
 
 
@@ -312,6 +313,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("EdgeWrap1Component",false,false)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			component = find_child("ItemReloaderComponent",false,false)
+		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
+			component = current_map.find_child("CornerPhasingComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -338,7 +341,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
-		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
+		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
+		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			return true
 		_:
 			return false

@@ -19,7 +19,7 @@ var current_upgrades: Array[bool] = []
 
 
 func _ready() -> void:
-	current_upgrades.resize(30)
+	current_upgrades.resize(31)
 	current_upgrades.fill(false)
 	
 	create_new_run()
@@ -33,7 +33,7 @@ func create_new_run():
 				maps_act2[randi()%maps_act2.size()],
 				maps_act3[randi()%maps_act3.size()]]
 	if GameConsts.test_mode:
-		maporder = [5,2,2]
+		maporder = [0,2,2]
 		
 	level = level_scene.instantiate()
 	add_child(level)

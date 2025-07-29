@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=38 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://1lq4k2l8vt1a" path="res://UI/UpgradeShopUI/UpgradeCards/Wormhole1.svg" id="29_7lrqi"]
 [ext_resource type="Texture2D" uid="uid://dy88np1cv7pp3" path="res://UI/UpgradeShopUI/UpgradeCards/Wormhole2.svg" id="30_t1l65"]
 [ext_resource type="Texture2D" uid="uid://7gdhiwpj3vxx" path="res://UI/UpgradeShopUI/UpgradeCards/Wormhole3.svg" id="31_a28kx"]
+[ext_resource type="Texture2D" uid="uid://vej6lcwmhcmh" path="res://UI/UpgradeShopUI/UpgradeCards/CornerPhasing.png" id="32_a28kx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -126,6 +127,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_a28kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_a28kx")
 }],
 "loop": true,
 "name": &"default",
