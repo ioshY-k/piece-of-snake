@@ -19,7 +19,8 @@ enum UPGRADE_LIST {	AREA_SIZE_1, AREA_SIZE_2, AREA_SIZE_3,
 					IMMUTABLE,
 					TIME_STOP_1, TIME_STOP_2, TIME_STOP_3,
 					WORMHOLE_1, WORMHOLE_2, WORMHOLE_3,
-					CORNER_PHASING}
+					CORNER_PHASING,
+					MOULTING}
 
 var advanced_upgrades: Array[int] = [	UPGRADE_LIST.AREA_SIZE_2, UPGRADE_LIST.AREA_SIZE_3,
 										UPGRADE_LIST.FRUIT_MAGNET_2, UPGRADE_LIST.FRUIT_MAGNET_3,
@@ -44,7 +45,7 @@ var upgrades_with_advancement: Array[int] = [	UPGRADE_LIST.AREA_SIZE_1, UPGRADE_
 
 					
 var FRUIT_THRESHOLDS: Array [int] = [13,12,11,10, 18,17,16,15, 23,22,21,20]
-const ROUND_TIME_SEC: int = 40
+const ROUND_TIME_SEC: int = 8
 const COLLISION_IFRAMES: int = 3
 
 var node_being_dragged: Node = null
@@ -71,7 +72,8 @@ func get_upgrade_type(upgrade_id: int):
 			return UPGRADE_TYPE.BODYMOD
 		UPGRADE_LIST.KNOT_ATTRACTOR, UPGRADE_LIST.ITEM_RELOADER:
 			return UPGRADE_TYPE.SYNERGY
-		UPGRADE_LIST.IMMUTABLE:
+		UPGRADE_LIST.IMMUTABLE,\
+		UPGRADE_LIST.MOULTING:
 			return UPGRADE_TYPE.SPECIAL
 		_:
 			print_debug("notype has been found for this upgrade: " + str(upgrade_id))

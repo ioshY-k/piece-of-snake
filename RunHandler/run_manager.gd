@@ -19,7 +19,7 @@ var current_upgrades: Array[bool] = []
 
 
 func _ready() -> void:
-	current_upgrades.resize(31)
+	current_upgrades.resize(32)
 	current_upgrades.fill(false)
 	
 	create_new_run()

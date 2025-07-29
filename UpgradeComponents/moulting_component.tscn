@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b255nehg06sa5"]
+
+[ext_resource type="Script" uid="uid://bngtujj5rswk" path="res://UpgradeComponents/moulting_component.gd" id="1_cajyd"]
+
+[node name="MoultingComponent" type="Node"]
+script = ExtResource("1_cajyd")

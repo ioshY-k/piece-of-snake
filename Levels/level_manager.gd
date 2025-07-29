@@ -58,6 +58,7 @@ var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_comp
 var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_component.tscn")
 var wormhole_component_scene = load("res://UpgradeComponents/wormhole_component.tscn")
 var crossroad_1_component_scene = load("res://UpgradeComponents/crossroad_1_component.tscn")
+var moulting_component_scene = load("res://UpgradeComponents/moulting_component.tscn")
 
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
@@ -255,6 +256,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			var item_reloader_component = item_reloader_component_scene.instantiate()
 			add_child(item_reloader_component)
+		GameConsts.UPGRADE_LIST.MOULTING:
+			var moulting_component = moulting_component_scene.instantiate()
+			add_child(moulting_component)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1:
 			var crossroad_1_component = crossroad_1_component_scene.instantiate()
 			current_active_item_slot.add_child(crossroad_1_component)
@@ -331,7 +335,9 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("EdgeWrap1Component",false,false)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			component = find_child("ItemReloaderComponent",false,false)
-		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
+		GameConsts.UPGRADE_LIST.MOULTING:
+			component = find_child("MoultingComponent",false,false)
+		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			component = current_map.find_child("CornerPhasingComponent",false,false)
 	
 	if component != null:
@@ -351,7 +357,11 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_1,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
-		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
+		GameConsts.UPGRADE_LIST.ITEM_RELOADER,\
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
+		GameConsts.UPGRADE_LIST.MOULTING:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
