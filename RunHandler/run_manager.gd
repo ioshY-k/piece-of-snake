@@ -1,6 +1,6 @@
 extends Node
 
-var maps_act1 = [GameConsts.MAP_LIST.WOODS,GameConsts.MAP_LIST.STADIUM]
+var maps_act1 = [GameConsts.MAP_LIST.WOODS,GameConsts.MAP_LIST.STADIUM,GameConsts.MAP_LIST.RESTAURANT]
 var maps_act2 = [GameConsts.MAP_LIST.OFFICE,GameConsts.MAP_LIST.CAVE]
 var maps_act3 = [GameConsts.MAP_LIST.DISCO,GameConsts.MAP_LIST.BEACH]
 var maporder = []
@@ -40,7 +40,7 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.CAVE,
+		maporder = [GameConsts.MAP_LIST.RESTAURANT,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS]
 		mapmodorder = [GameConsts.MAP_MODS.LASER,
