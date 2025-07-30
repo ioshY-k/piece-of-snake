@@ -767,3 +767,5 @@ position = Vector2(80, 1360)
 
 [node name="SolidElementArea54" parent="AreaSize3SolidElements" instance=ExtResource("3_5c730")]
 position = Vector2(0, 1360)
+
+[node name="ObstacleElements" type="Node2D" parent="."]

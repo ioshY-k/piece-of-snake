@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpx1ey7qnvtap"]
+
+[ext_resource type="Script" uid="uid://f3b5fv3wdxi7" path="res://MapModComponents/laser_component.gd" id="1_36yef"]
+
+[node name="LaserComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_36yef")
+
+[node name="LaserTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

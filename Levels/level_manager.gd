@@ -4,30 +4,8 @@ class_name LevelManager extends Node2D
 var snake_head: SnakeHead
 var snake_tail: SnakeTail
 var current_map: Map
-
-var maps_in_order: Array[PackedScene] =  [
-											preload("res://Levels/WoodsMap/woods_map.tscn"),
-											preload("res://Levels/StadiumMap/stadium_map.tscn"),
-											preload("res://Levels/OfficeMap/office_map.tscn"),
-											preload("res://Levels/DiscoMap/disco_map.tscn"),
-											preload("res://Levels/CaveMap/cave_map.tscn"),
-											preload("res://Levels/BeachMap/beach_map.tscn"),
-											preload("res://Levels/Map1/square_map.tscn"),
-											preload("res://Levels/Map2/big_map.tscn"),
-											preload("res://Levels/Map3/map_3.tscn")
-										]
 var current_map_index: int
-var map_data_size0: Array = [	
-										[Vector2(-450,-579.0), Vector2(1.068,1.116), Vector2i(15,12), Vector2i(1,0), Vector2i(17,13)],
-										[Vector2(-469.0,-675.0), Vector2(1.155,1.125), Vector2i(14,12), Vector2i(1,1), Vector2i(17,15)],
-										[Vector2(-452.0,-662.0), Vector2(1.072,1.035), Vector2i(15,13), Vector2i(1,1), Vector2i(17,15)],
-										[Vector2(-453.0,-663.0), Vector2(1.012,0.972), Vector2i(16,14), Vector2i(1,1), Vector2i(18,16)],
-										[Vector2(-368.0,-578.0), Vector2(1.006,0.963), Vector2i(16,14), Vector2i(0,0), Vector2i(17,15)],
-										[Vector2(-447.0,-657.0), Vector2(1.006,0.966), Vector2i(16,14), Vector2i(1,1), Vector2i(18,16)],
-										[Vector2(0,0), Vector2(0,0), Vector2i(0,0)],
-										[Vector2(0,0),Vector2(0,0), Vector2i(0,0)],
-										[Vector2(-487.0,-697.0), Vector2(1.345,1.345), Vector2i(12,10)]
-									]
+
 #UI Elements + data
 @onready var speed_boost_bar: SpeedBoostBar = $SpeedBoostBar
 @onready var fruits_left_symbol: Sprite2D = $FruitsLeftSymbol
@@ -65,16 +43,16 @@ func _ready() -> void:
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
 
 #called by run_manager at the start of a run and on new act
-func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int):
+func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod_index: int):
 	if current_map != null:
 		current_map.queue_free()
 		await get_tree().process_frame
-	var map: Map = maps_in_order[map_index].instantiate()
+	var map: Map = MapData.get_map_scene(map_index).instantiate()
 	current_map_index = map_index
 	add_child(map)
 	
-	map.position = map_data_size0[map_index][0]
-	map.scale = map_data_size0[map_index][1]
+	map.position = MapData.get_map_data0(map_index)[0]
+	map.scale = MapData.get_map_data0(map_index)[1]
 	
 	
 	current_map = map
@@ -91,13 +69,13 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int):
 	map.snake_got_hit.connect(on_snake_got_hit)
 	GameConsts.node_being_dragged = null
 	
-	prepare_new_round(fruit_threshold, time_sec)
+	prepare_new_round(fruit_threshold, time_sec, mapmod_index)
 	
 
-func prepare_new_round(fruit_threshold, time_sec):
+func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	
-	snake_head.snake_speed = GameConsts.NORMAL_SPEED
-	snake_tail.snake_speed = GameConsts.NORMAL_SPEED
+	snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
+	snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
 	speed_boost_bar.value  = speed_boost_bar.max_value
 	
 	for active_item_slot in active_item_slots:
@@ -114,9 +92,11 @@ func prepare_new_round(fruit_threshold, time_sec):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(1)
+		time_meter.initiate_time_bar(20)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
+	
+	current_map.apply_mapmod(mapmod)
 	
 	SignalBus.round_started.emit()
 	enable_map()
@@ -125,8 +105,8 @@ func prepare_new_round(fruit_threshold, time_sec):
 func on_snake_got_hit():
 	#disable the speedboost so that fruit cant be lost in high frequency
 	if speed_boost_bar.value < speed_boost_bar.max_value:
-		snake_head.snake_speed = GameConsts.NORMAL_SPEED
-		snake_tail.snake_speed = GameConsts.NORMAL_SPEED
+		snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
+		snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 	
@@ -166,14 +146,14 @@ func _on_fruit_collected(_collected_fruit):
 
 func decide_speed_boost(delta):
 	if Input.is_action_just_released("speed_boost"):
-		snake_head.snake_speed = GameConsts.NORMAL_SPEED
-		snake_tail.snake_speed = GameConsts.NORMAL_SPEED
+		snake_head.current_snake_speed = snake_head.base_snake_speed
+		snake_tail.current_snake_speed = snake_tail.base_snake_speed
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 	if Input.is_action_pressed("speed_boost"):
 		if speed_boost_available:
-			snake_head.snake_speed = GameConsts.SPEED_BOOST_SPEED
-			snake_tail.snake_speed = GameConsts.SPEED_BOOST_SPEED
+			snake_head.current_snake_speed = GameConsts.SPEED_BOOST_SPEED
+			snake_tail.current_snake_speed = GameConsts.SPEED_BOOST_SPEED
 			speed_boost_bar.value -= speed_boost_drain_speed*delta
 	if not speed_boost_available:
 		speed_boost_bar.value += speed_boost_reload_speed*delta
@@ -185,8 +165,8 @@ func _on_speed_boost_bar_value_changed(full: bool) -> void:
 		speed_boost_available = true
 		speed_boost_frame.frame = 0
 	else:
-		snake_head.snake_speed = GameConsts.NORMAL_SPEED
-		snake_tail.snake_speed = GameConsts.NORMAL_SPEED
+		snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
+		snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 
@@ -282,7 +262,6 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			current_map.add_upgrade_component(upgrade_id)
 
-
 func destroy_upgrade(upgrade_id: int):
 	var component
 	match upgrade_id:
@@ -344,8 +323,7 @@ func destroy_upgrade(upgrade_id: int):
 		component.self_destruct()
 	else:
 		print_debug("No Component found to be destroyed")
-	
-	
+
 #decides if the upgrade was attached to an object that reloads on a new act eg map and snake
 func is_upgrade_reload_necessary(upgrade_id) -> bool:
 	match upgrade_id:
@@ -374,9 +352,6 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 			return true
 		_:
 			return false
-		
-			
-			
 
 func disable_map():
 	current_map.process_mode = Node.PROCESS_MODE_DISABLED

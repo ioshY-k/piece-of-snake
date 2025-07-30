@@ -1,4 +1,4 @@
-extends MapData
+extends Node
 
 var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 var teleporters: Array[Teleporter] = []
@@ -13,15 +13,15 @@ func place_teleporters():
 	var map_data_array
 	match map.zoom_state:
 		0:
-			map_data_array = map_data_size0
+			map_data_array = MapData.get_map_data0(map.get_parent().current_map_index)
 		1:
-			map_data_array = map_data_size1
+			map_data_array = MapData.get_map_data1(map.get_parent().current_map_index)
 		2:
-			map_data_array = map_data_size2
+			map_data_array = MapData.get_map_data2(map.get_parent().current_map_index)
 		3:
-			map_data_array = map_data_size3
-	var upper_left_corner = map_data_array[map.get_parent().current_map_index][3]
-	var lower_right_corner = map_data_array[map.get_parent().current_map_index][4]
+			map_data_array = MapData.get_map_data3(map.get_parent().current_map_index)
+	var upper_left_corner = map_data_array[3]
+	var lower_right_corner = map_data_array[4]
 	
 	for tele in teleporters:
 		tele.queue_free()

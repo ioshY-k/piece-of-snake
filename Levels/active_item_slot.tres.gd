@@ -14,6 +14,7 @@ func add_light():
 
 func _on_item_activated(pos):
 	item_lights[pos].get_child(0).frame = 0
+	SignalBus.active_item_used.emit()
 
 func refresh_lights():
 	get_child(-1).refresh_uses()

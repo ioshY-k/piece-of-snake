@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=3 uid="uid://07fp3ejwauov"]
+
+[ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="1_adv52"]
+[ext_resource type="Script" uid="uid://ds717283j6m8q" path="res://MapModComponents/tail_virus_component.gd" id="1_umqci"]
+
+[sub_resource type="Curve" id="Curve_umqci"]
+_data = [Vector2(0, 0.502036), 0.0, 0.0, 0, 0, Vector2(0.0947205, 1), 0.0, 0.0, 0, 0, Vector2(0.849379, 0.0185049), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_x07u2"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.0170807, 1), 0.0, 0.0, 0, 0, Vector2(0.619565, 0.143597), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adv52"]
+size = Vector2(60, 60)
+
+[node name="TailVirusComponent" type="Node2D" groups=["MapMod"]]
+script = ExtResource("1_umqci")
+
+[node name="TailVirusParticles" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+emitting = false
+amount = 233
+texture = ExtResource("1_adv52")
+lifetime = 0.65
+explosiveness = 1.0
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(108.13, 112.995)
+gravity = Vector2(0, 0)
+initial_velocity_max = 82.15
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_umqci")
+color = Color(0.357825, 0.0845, 0.65, 0.239216)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_x07u2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-80, -80)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, -80)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(80, -80)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(80, 0)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D5" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D6" type="Area2D" parent="."]
+position = Vector2(-80, 0)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D6"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D7" type="Area2D" parent="."]
+position = Vector2(-80, 80)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D7"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D8" type="Area2D" parent="."]
+position = Vector2(0, 80)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D8"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")
+
+[node name="Area2D9" type="Area2D" parent="."]
+position = Vector2(80, 80)
+collision_layer = 32
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Area2D9"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_adv52")

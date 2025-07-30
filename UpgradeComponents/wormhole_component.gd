@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 		current_map = active_item_slot.get_parent().current_map
 		current_map.process_mode = Node.PROCESS_MODE_DISABLED
 		button_held = true
+		item_activated.emit(uses-1)
 		tile_select_cursor = TILE_SELECT_CURSOR.instantiate()
 		active_item_slot.get_parent().add_child(tile_select_cursor)
 	if Input.is_action_just_released(active_item_button) and button_held:
@@ -33,11 +34,12 @@ func _process(delta: float) -> void:
 		#uses-1 is the light index for the itembag to go out
 		uses -= 1
 	if button_held:
-		item_activated.emit(uses-1)
+		tile_select_cursor.global_position = current_map.to_global( TileHelper.tile_to_position(TileHelper.position_to_tile(current_map.get_local_mouse_position())))
+		
 
 func _on_item_activated(_uses):
 	active_item_slot.get_parent().time_meter.stop_timer()
-	tile_select_cursor.global_position = current_map.to_global( TileHelper.tile_to_position(TileHelper.position_to_tile(current_map.get_local_mouse_position())))
+	
 
 func _on_item_deactivated():
 	var new_teleporter: Teleporter = current_map.spawn_teleporter(tile_select_cursor.global_position)

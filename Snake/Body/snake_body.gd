@@ -115,7 +115,7 @@ func play_edge_deco_anim_tweens():
 	
 	if body_moves:
 		var moving_tween: Tween = create_tween()
-		moving_tween.tween_property(snake_body_deco_edge, "position:y", - GameConsts.TILE_SIZE, snake_head.snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		moving_tween.tween_property(snake_body_deco_edge, "position:y", - GameConsts.TILE_SIZE, snake_head.current_snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		snake_body_deco_edge.position = Vector2.ZERO
 	
 	body_moves = true
@@ -126,7 +126,7 @@ func play_corner_deco_anim_tweens():
 	if body_moves:
 		corner_animation_player.seek(0.0, true)
 		var moving_tween: Tween = create_tween()
-		moving_tween.tween_method(_set_animation_progress, 0.0, corner_animation_player.current_animation_length, snake_head.snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		moving_tween.tween_method(_set_animation_progress, 0.0, corner_animation_player.current_animation_length, snake_head.current_snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	
 	body_moves = true
 	play_corner_deco_anim_tweens()

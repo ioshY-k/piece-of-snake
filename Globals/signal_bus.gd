@@ -10,3 +10,4 @@ signal teleport_finished
 signal tail_grows
 signal pre_next_tile_reached
 signal next_tile_reached
+signal active_item_used

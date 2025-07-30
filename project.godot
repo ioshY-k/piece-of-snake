@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameConsts="*res://Globals/game_consts.gd"
 SignalBus="*res://Globals/signal_bus.gd"
 TileHelper="*res://Globals/tile_helper.gd"
+MapData="*res://Globals/map_data.gd"
 
 [display]
 
@@ -41,6 +42,7 @@ Snake="parts of the snake that currently occupie the map"
 Fruit="Every snake accepted edible"
 UpgradeCard=""
 Wall=""
+MapMod=""
 
 [input]
 

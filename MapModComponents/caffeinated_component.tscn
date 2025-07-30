@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v6dg7m0g8jpf"]
+
+[ext_resource type="Script" uid="uid://d1ewhcwi8tkmp" path="res://MapModComponents/caffeinated_component.gd" id="1_7eyra"]
+
+[node name="CaffeinatedComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_7eyra")

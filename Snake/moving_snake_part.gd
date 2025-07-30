@@ -6,8 +6,8 @@ var next_tile: Vector2i
 enum DIRECTION {UP,RIGHT,DOWN,LEFT}
 var current_direction
 
-var snake_speed: float = GameConsts.NORMAL_SPEED
-
+var current_snake_speed: float = GameConsts.NORMAL_SPEED
+var base_snake_speed: float = GameConsts.NORMAL_SPEED
 
 @onready var map: Map = get_parent()
 
@@ -24,13 +24,6 @@ func _ready() -> void:
 	
 	get_moving_tween(true)
 	get_turning_tween(current_direction)
-	
-	
-func decide_speed_boost():
-	if Input.is_action_pressed("speed_boost"):
-		snake_speed = GameConsts.SPEED_BOOST_SPEED
-	else:
-		snake_speed = GameConsts.NORMAL_SPEED
 
 
 func get_orientation(direction: int, current_rotation: float) -> float:
@@ -60,7 +53,7 @@ func get_moving_tween(moves: bool) -> Tween:
 	else:
 		tile_to_move_to = current_tile
 	moving_tween = create_tween()
-	moving_tween.tween_property(self, "position", TileHelper.tile_to_position(tile_to_move_to), snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	moving_tween.tween_property(self, "position", TileHelper.tile_to_position(tile_to_move_to), current_snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	moving_tween.finished.connect(_on_next_tile_reached)
 	return moving_tween
 	

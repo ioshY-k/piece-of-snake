@@ -7,6 +7,7 @@ var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
 var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 
+#instantiated upgrade components
 var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
 var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_2_component.tscn")
 var fruit_magnet_3_component_scene = load("res://UpgradeComponents/fruit_magnet_3_component.tscn")
@@ -15,6 +16,12 @@ var double_fruit_2_component_scene = load("res://UpgradeComponents/double_fruit_
 var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_3_component.tscn")
 var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_component.tscn")
 var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_component.tscn")
+
+#instantiated mapmods
+var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
+var tailvirus_component_scene = load("res://MapModComponents/tail_virus_component.tscn")
+var edible_paper_component_scene = load("res://MapModComponents/edible_paper_component.tscn")
+var laser_component_scene = load("res://MapModComponents/laser_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -57,6 +64,7 @@ func _ready() -> void:
 	snake_tail.snake_head = snake_head
 	spawn_fruit([])
 	
+	SignalBus.round_over.connect(_on_round_over)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
 	snake_head.got_hit.connect(collision_iframes.bind(GameConsts.COLLISION_IFRAMES))
 	
@@ -250,7 +258,33 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			var corner_phasing = corner_phasing_scene.instantiate()
 			add_child(corner_phasing)
-	
+
+func apply_mapmod(mapmod: int):
+	print(GameConsts.MAP_MODS.find_key(mapmod))
+	match mapmod:
+		GameConsts.MAP_MODS.CAFFEINATED:
+			var caffeinated_component = caffeinated_component_scene.instantiate()
+			add_child(caffeinated_component)
+		GameConsts.MAP_MODS.TAILVIRUS:
+			var tailvirus_component = tailvirus_component_scene.instantiate()
+			snake_tail.add_child(tailvirus_component)
+		GameConsts.MAP_MODS.EDIBLE_PAPER:
+			var edible_paper_component = edible_paper_component_scene.instantiate()
+			add_child(edible_paper_component)
+		GameConsts.MAP_MODS.LASER:
+			var laser_component = laser_component_scene.instantiate()
+			add_child(laser_component)
+
+func _on_round_over():
+	destroy_current_mapmod()
+
+func destroy_current_mapmod():
+	var current_mod = get_tree().get_first_node_in_group("MapMod")
+	if current_mod == null:
+		print_debug("mapmod could not be found and thus was not destroyed")
+	else:
+		current_mod.self_destruct()
+
 func collision_iframes(ticks: int):
 	snake_got_hit.emit()
 	if invincible_ticks == 0:

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgkn2uasrrsss"]
+
+[ext_resource type="Script" uid="uid://b13f8fnpigbtk" path="res://MapModComponents/edible_paper_component.gd" id="1_dtm1s"]
+
+[node name="EdiblePaperComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_dtm1s")
