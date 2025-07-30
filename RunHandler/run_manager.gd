@@ -40,7 +40,7 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.RESTAURANT,
+		maporder = [GameConsts.MAP_LIST.TOMB,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS]
 		mapmodorder = [GameConsts.MAP_MODS.LASER,
