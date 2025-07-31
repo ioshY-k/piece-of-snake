@@ -40,13 +40,13 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.CAVE,
+		maporder = [GameConsts.MAP_LIST.DISCO,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS]
-		mapmodorder = [GameConsts.MAP_MODS.FRUIT_BODY,
-						GameConsts.MAP_MODS.FRUIT_BODY,
-						GameConsts.MAP_MODS.FRUIT_BODY,
-						GameConsts.MAP_MODS.FRUIT_BODY]
+		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT]
 
 	level = level_scene.instantiate()
 	add_child(level)

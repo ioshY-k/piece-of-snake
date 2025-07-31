@@ -24,6 +24,7 @@ var tailvirus_component_scene = load("res://MapModComponents/tail_virus_componen
 var edible_paper_component_scene = load("res://MapModComponents/edible_paper_component.tscn")
 var laser_component_scene = load("res://MapModComponents/laser_component.tscn")
 var fruit_body_component_scene = load("res://MapModComponents/fruit_body_component.tscn")
+var tetri_fruit_component_scene = load("res://MapModComponents/tetri_fruit_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -287,6 +288,9 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.FRUIT_BODY:
 			var fruit_body_component = fruit_body_component_scene.instantiate()
 			add_child(fruit_body_component)
+		GameConsts.MAP_MODS.TETRI_FRUIT:
+			var tetri_fruit_component = tetri_fruit_component_scene.instantiate()
+			add_child(tetri_fruit_component)
 
 func _on_round_over():
 	destroy_current_mapmod()

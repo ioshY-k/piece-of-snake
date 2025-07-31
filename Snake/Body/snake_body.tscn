@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dobkpr5ucg8no"]
+[gd_scene load_steps=16 format=3 uid="uid://dobkpr5ucg8no"]
 
 [ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/GodoticonCorner.svg" id="1_3khtg"]
 [ext_resource type="Shader" uid="uid://c23kf1475ne7u" path="res://Shader/invisibility_shader.gdshader" id="1_81x6j"]
 [ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/GodoticonEdge.svg" id="2_0pdlf"]
 [ext_resource type="Script" uid="uid://bt650ng55hf75" path="res://Snake/Body/snake_body.gd" id="2_vx0cu"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_2xe0v"]
+[ext_resource type="Texture2D" uid="uid://ds8thpxvy448c" path="res://Snake/Body/GodoticonTetri.svg" id="4_m5mbj"]
 [ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/SnakeDeco.svg" id="5_0pdlf"]
 [ext_resource type="Texture2D" uid="uid://bwbi37uu0dba8" path="res://Snake/Body/SnakeDecoSingle.svg" id="6_krvum"]
 
@@ -20,6 +21,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_0pdlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m5mbj")
 }],
 "loop": true,
 "name": &"default",

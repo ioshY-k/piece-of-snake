@@ -7,6 +7,7 @@ var is_corner: bool
 var body_moves: bool = true
 var is_overlap_bodypart: bool = false
 var is_overlapped: bool = false
+var is_tetris: bool = false
 const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 
 @onready var solid_element: SolidElement = $SolidElement
@@ -17,16 +18,21 @@ const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 @onready var corner_animation_player: AnimationPlayer = $CornerAnimationPlayer
 
 
-@onready var snake_head: SnakeHead = get_parent().snake_head
+var snake_head: SnakeHead
 
 static func new_snakebody(this_direction, next_direction) -> SnakeBody:
-	
 	var snake_body: SnakeBody = snake_body_scene.instantiate()
 	snake_body.find_correct_rotation(this_direction, next_direction)
 	
 	return snake_body
 
 func _ready() -> void:
+	if is_tetris:
+		snake_head = get_parent().get_parent().snake_head
+		frame = 2
+	else:
+		snake_head = get_parent().snake_head
+	
 	if is_corner:
 		snake_body_deco_edge.hide()
 		play_corner_deco_anim_tweens()
