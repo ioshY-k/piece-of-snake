@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=44 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -36,6 +36,10 @@
 [ext_resource type="Texture2D" uid="uid://vej6lcwmhcmh" path="res://UI/UpgradeShopUI/UpgradeCards/CornerPhasing.png" id="32_a28kx"]
 [ext_resource type="Texture2D" uid="uid://m6yrh3g0km4g" path="res://UI/UpgradeShopUI/UpgradeCards/Moulting.svg" id="33_0pjoy"]
 [ext_resource type="Texture2D" uid="uid://bpvwpmgpogfo2" path="res://UI/UpgradeShopUI/UpgradeCards/Anchor.svg" id="34_ibh7n"]
+[ext_resource type="Texture2D" uid="uid://dkl1bses52k5x" path="res://UI/UpgradeShopUI/UpgradeCards/PiggyBank.svg" id="35_h2lpd"]
+[ext_resource type="Texture2D" uid="uid://ljehyg5av4dj" path="res://UI/UpgradeShopUI/UpgradeCards/sale.svg" id="36_b1hmr"]
+[ext_resource type="Texture2D" uid="uid://ds5y6q4r6a38j" path="res://UI/UpgradeShopUI/UpgradeCards/SaleSign.svg" id="39_evqrt"]
+[ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="40_f1qts"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -138,6 +142,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("34_ibh7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_h2lpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_b1hmr")
 }],
 "loop": true,
 "name": &"default",
@@ -162,7 +172,7 @@ animations = [{
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v4fj"]
-size = Vector2(120, 120)
+size = Vector2(160, 160)
 
 [node name="UpgradeCard" type="Control" groups=["UpgradeCard"]]
 z_index = 5
@@ -185,8 +195,28 @@ modulate = Color(0, 0, 0, 0.635294)
 show_behind_parent = true
 texture = SubResource("CompressedTexture2D_1v4fj")
 
-[node name="CardArea" type="Area2D" parent="."]
+[node name="SaleTag" type="Sprite2D" parent="CardSprite"]
 visible = false
+z_index = 1
+position = Vector2(20, 100)
+texture = ExtResource("39_evqrt")
+
+[node name="SaleNumber" type="Label" parent="CardSprite/SaleTag"]
+offset_left = -33.0
+offset_top = -54.0
+offset_right = 35.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.66, 0.198, 0.3289, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("40_f1qts")
+theme_override_font_sizes/font_size = 51
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardArea" type="Area2D" parent="."]
+position = Vector2(40, 40)
 collision_layer = 4
 collision_mask = 8
 

@@ -4,18 +4,16 @@
 
 [node name="TetriConstellation1" type="Node2D"]
 
-[node name="SnakeBody3" parent="." instance=ExtResource("1_txfs0")]
-position = Vector2(-80, 160)
-rotation = -1.57079
-flip_h = true
-
-[node name="SnakeBody4" parent="." instance=ExtResource("1_txfs0")]
-position = Vector2(80, 160)
-rotation = 1.57079
-
 [node name="SnakeBody2" parent="." instance=ExtResource("1_txfs0")]
 position = Vector2(80, 80)
 
+[node name="SnakeBody3" parent="." instance=ExtResource("1_txfs0")]
+position = Vector2(80, 160)
+
 [node name="SnakeBody" parent="." instance=ExtResource("1_txfs0")]
 position = Vector2(-80, 80)
+flip_h = true
+
+[node name="SnakeBody4" parent="." instance=ExtResource("1_txfs0")]
+position = Vector2(-80, 160)
 flip_h = true

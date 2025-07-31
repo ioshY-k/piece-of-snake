@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw6pjmonnibe3"]
+
+[ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="1_qdxnt"]
+
+[node name="TetriConstellation1" type="Node2D"]
+
+[node name="SnakeBody4" parent="." instance=ExtResource("1_qdxnt")]
+position = Vector2(80, 160)
+
+[node name="SnakeBody3" parent="." instance=ExtResource("1_qdxnt")]
+position = Vector2(-160, 80)
+flip_h = true
+
+[node name="SnakeBody" parent="." instance=ExtResource("1_qdxnt")]
+position = Vector2(-80, 80)
+flip_h = true
+
+[node name="SnakeBody2" parent="." instance=ExtResource("1_qdxnt")]
+position = Vector2(80, 80)

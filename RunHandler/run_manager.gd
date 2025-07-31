@@ -1,4 +1,4 @@
-extends Node
+class_name RunManager extends Node
 
 var maps_act1 = [GameConsts.MAP_LIST.WOODS,GameConsts.MAP_LIST.STADIUM,GameConsts.MAP_LIST.RESTAURANT]
 var maps_act2 = [GameConsts.MAP_LIST.OFFICE,GameConsts.MAP_LIST.CAVE]
@@ -20,7 +20,7 @@ var current_upgrades: Array[bool] = []
 
 
 func _ready() -> void:
-	current_upgrades.resize(33)
+	current_upgrades.resize(35)
 	current_upgrades.fill(false)
 	
 	create_new_run()
@@ -40,10 +40,10 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.DISCO,
+		maporder = [GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS]
-		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+		mapmodorder = [GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.TETRI_FRUIT]

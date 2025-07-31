@@ -3,6 +3,7 @@ class_name Shop extends CanvasLayer
 signal upgrade_bought
 signal upgrade_destroyed
 signal finished_buying
+signal upgrade_cards_instantiated
 
 const UPGRADE_CARD = preload("res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.tscn")
 
@@ -18,6 +19,10 @@ var bodymod_slots: Array[Control]
 var synergy_slots: Array[Control]
 var active_slots: Array[Control]
 var special_slots: Array[Control]
+
+@onready var items_shop_lots: Array[Sprite2D] = [	$ItemShelf/Itemslot1,
+													$ItemShelf/Itemslot2,
+													$ItemShelf/Itemslot3]
 
 var slots: Array[Control] = []
 @onready var upgrade_info: Sprite2D = $ItemShelf/UpgradeInfo
@@ -37,7 +42,9 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.ITEM_RELOADER,
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
 									GameConsts.UPGRADE_LIST.CORNER_PHASING,
-									GameConsts.UPGRADE_LIST.MOULTING]
+									GameConsts.UPGRADE_LIST.MOULTING,
+									GameConsts.UPGRADE_LIST.PIGGY_BANK,
+									GameConsts.UPGRADE_LIST.SALE]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 @onready var upgrade_overview: Sprite2D = $UpgradeOverview
@@ -47,11 +54,14 @@ var current_purchase_count: int
 func _ready() -> void:
 	if GameConsts.test_mode:
 		purchase_count = 3
-		upgrade_card_pool= [		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
-									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
-									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2]
+		upgrade_card_pool= [		GameConsts.UPGRADE_LIST.SALE,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,
+									GameConsts.UPGRADE_LIST.PIGGY_BANK,
+									GameConsts.UPGRADE_LIST.ITEM_RELOADER,
+									GameConsts.UPGRADE_LIST.SALE]
 	
 	current_purchase_count = purchase_count
+	
 	
 	default_slots = [$UpgradeOverview/UpgradeSlotDefault1]
 
@@ -81,8 +91,10 @@ func increment_buys(num:int):
 	current_purchase_count += num
 	purchase_count += num
 
-func _on_got_clicked(upgrade_id: int):
-	var buy_price = calculate_price(upgrade_id)
+func _on_got_clicked(upgrade_card: UpgradeCard):
+	
+	var upgrade_id = upgrade_card.upgrade_id
+	var buy_price = upgrade_card.price
 	var replace_price = buy_price - 1
 	
 	if GameConsts.advanced_upgrades.has(upgrade_id):
@@ -116,34 +128,6 @@ func _on_got_clicked(upgrade_id: int):
 				slot.get_node("HighlightBuy").visible = true
 				slot.get_node("BuyZone").visible = true
 				slot.get_node("BuyZone").get_node("Price").text = str(buy_price)
-
-func calculate_price(upgrade_id):
-	if GameConsts.test_mode:
-		return 0
-	
-	var modifier = 0
-	
-	match GameConsts.get_upgrade_type(upgrade_id):
-		GameConsts.UPGRADE_TYPE.DEFAULT:
-			modifier -= 3
-		GameConsts.UPGRADE_TYPE.PASSIVE:
-			modifier -= 1
-		GameConsts.UPGRADE_TYPE.BODYMOD:
-			pass
-		GameConsts.UPGRADE_TYPE.SYNERGY:
-			modifier += 1
-		GameConsts.UPGRADE_TYPE.ACTIVE:
-			modifier -= 1
-		GameConsts.UPGRADE_TYPE.SPECIAL:
-			modifier += 2
-	
-	if GameConsts.advanced_upgrades.has(upgrade_id):
-		modifier += 2
-		if not GameConsts.upgrades_with_advancement.has(upgrade_id):
-			modifier += 1
-	
-	return  BASE_PRICE + modifier
-		
 
 func _on_let_go():
 	for slot in slots:
@@ -204,23 +188,23 @@ func generate_items(current_round):
 		offered_upgrades = [upgrade_card_pool[0],upgrade_card_pool[1],upgrade_card_pool[2]]
 	else:
 		offered_upgrades = [default_upgrade_card, upgrade_card_pool[0], upgrade_card_pool[1]]
-		
 	
 	var itemcounter: int = 0
-	var itemslots: Array[Sprite2D] = [$ItemShelf/Itemslot1, $ItemShelf/Itemslot2, $ItemShelf/Itemslot3]
+	var card_tween: Tween
 	for offered_upgrade in offered_upgrades:
 		var offset_vector: Vector2 = Vector2(randi_range(-170,170), randi_range(-170,170))
 		var upgrade_card = UPGRADE_CARD.instantiate()
 		$ItemShelf.add_child(upgrade_card)
 		upgrade_card.instantiate_upgrade_card( offered_upgrade )
-		var card_tween = create_tween()
+		card_tween = create_tween()
 		card_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-		card_tween.tween_property(upgrade_card, "position" ,itemslots[itemcounter].position + offset_vector, 0.2 + itemcounter * 0.1)
+		card_tween.tween_property(upgrade_card, "position" ,items_shop_lots[itemcounter].position + offset_vector, 0.2 + itemcounter * 0.1)
 		card_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
-		card_tween.tween_property(upgrade_card, "position", itemslots[itemcounter].position, 0.4)
+		card_tween.tween_property(upgrade_card, "position", items_shop_lots[itemcounter].position, 0.4)
 		itemcounter += 1
-		await card_tween.finished
-		card_tween.stop()
+	upgrade_cards_instantiated.emit()
+	await card_tween.finished
+	card_tween.stop()
 	toggle_upgrade_panel()
 
 func reset_area_and_currency():

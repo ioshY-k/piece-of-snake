@@ -25,7 +25,9 @@ enum UPGRADE_LIST {	AREA_SIZE_1, AREA_SIZE_2, AREA_SIZE_3,
 					WORMHOLE_1, WORMHOLE_2, WORMHOLE_3,
 					CORNER_PHASING,
 					MOULTING,
-					ANCHOR}
+					ANCHOR,
+					PIGGY_BANK,
+					SALE}
 
 var advanced_upgrades: Array[int] = [	UPGRADE_LIST.AREA_SIZE_2, UPGRADE_LIST.AREA_SIZE_3,
 										UPGRADE_LIST.FRUIT_MAGNET_2, UPGRADE_LIST.FRUIT_MAGNET_3,
@@ -50,7 +52,7 @@ var upgrades_with_advancement: Array[int] = [	UPGRADE_LIST.AREA_SIZE_1, UPGRADE_
 
 					
 var FRUIT_THRESHOLDS: Array [int] = [12,11,10,9, 18,17,16,15, 23,22,21,20]
-const ROUND_TIME_SEC: int = 20
+const ROUND_TIME_SEC: int = 30
 const COLLISION_IFRAMES: int = 3
 
 var node_being_dragged: Node = null
@@ -75,7 +77,10 @@ func get_upgrade_type(upgrade_id: int):
 		UPGRADE_LIST.TAIL_CUT,\
 		UPGRADE_LIST.CORNER_PHASING:
 			return UPGRADE_TYPE.BODYMOD
-		UPGRADE_LIST.KNOT_ATTRACTOR, UPGRADE_LIST.ITEM_RELOADER:
+		UPGRADE_LIST.KNOT_ATTRACTOR,\
+		UPGRADE_LIST.ITEM_RELOADER,\
+		UPGRADE_LIST.PIGGY_BANK,\
+		UPGRADE_LIST.SALE:
 			return UPGRADE_TYPE.SYNERGY
 		UPGRADE_LIST.IMMUTABLE,\
 		UPGRADE_LIST.MOULTING,\
@@ -86,4 +91,4 @@ func get_upgrade_type(upgrade_id: int):
 
 func _ready() -> void:
 	if test_mode:
-		FRUIT_THRESHOLDS = [0,0,0,0, 25,25,25,25, 30,30,30,30]
+		FRUIT_THRESHOLDS = [1,1,1,1, 25,25,25,25, 30,30,30,30]

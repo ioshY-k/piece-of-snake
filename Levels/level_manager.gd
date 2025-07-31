@@ -38,6 +38,8 @@ var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_
 var wormhole_component_scene = load("res://UpgradeComponents/wormhole_component.tscn")
 var crossroad_1_component_scene = load("res://UpgradeComponents/crossroad_1_component.tscn")
 var moulting_component_scene = load("res://UpgradeComponents/moulting_component.tscn")
+var piggy_bank_component_scene = load("res://UpgradeComponents/piggy_bank_component.tscn")
+var sale_component_scene = load("res://UpgradeComponents/sale_component.tscn")
 
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
@@ -93,7 +95,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(40)
+		time_meter.initiate_time_bar(30)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -239,6 +241,12 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			var item_reloader_component = item_reloader_component_scene.instantiate()
 			add_child(item_reloader_component)
+		GameConsts.UPGRADE_LIST.PIGGY_BANK:
+			var piggy_bank_component = piggy_bank_component_scene.instantiate()
+			add_child(piggy_bank_component)
+		GameConsts.UPGRADE_LIST.SALE:
+			var sale_component = sale_component_scene.instantiate()
+			get_parent().shop.add_child(sale_component)
 		GameConsts.UPGRADE_LIST.MOULTING:
 			var moulting_component = moulting_component_scene.instantiate()
 			add_child(moulting_component)
@@ -318,6 +326,10 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("EdgeWrap1Component",false,false)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			component = find_child("ItemReloaderComponent",false,false)
+		GameConsts.UPGRADE_LIST.PIGGY_BANK:
+			component = find_child("PiggyBankComponent",false,false)
+		GameConsts.UPGRADE_LIST.SALE:
+			component = get_parent().shop.find_child("SaleComponent",false,false)
 		GameConsts.UPGRADE_LIST.MOULTING:
 			component = find_child("MoultingComponent",false,false)
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:

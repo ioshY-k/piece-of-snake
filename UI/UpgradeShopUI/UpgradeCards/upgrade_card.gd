@@ -33,8 +33,9 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_3) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.WORMHOLE_1) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 2 times.",
 	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 4 times.",
-	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 6 times."
-
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 6 times.",
+	str(GameConsts.UPGRADE_LIST.PIGGY_BANK) : "When destroying this Item,\n[color=#4fabf9]lower the Fruit threshold[/color] of the next round by 5",
+	str(GameConsts.UPGRADE_LIST.SALE) : "For each filled Item category \n[color=#4fabf9]Reduce the cost[/color] of a random Item by 1"
 	}
 
 var mouse_in: bool = false
@@ -42,6 +43,7 @@ var is_dragging: bool = false
 @onready var card_shadow: Sprite2D = $CardSprite/CardShadow
 @onready var card_sprite: AnimatedSprite2D = $CardSprite
 @onready var card_area: Area2D = $CardArea
+@onready var sale_number: Label = $CardSprite/SaleTag/SaleNumber
 @export var upgrade_id: int
 var upgrade_description: String
 var upgrade_type: int
@@ -50,7 +52,8 @@ var has_advancements: bool
 
 var owned_slot_area: Area2D = null
 
-
+var base_price: int = 4
+var price: int
 var is_bought: bool = false
 signal bought
 signal destroyed
@@ -73,6 +76,7 @@ func instantiate_upgrade_card(id: int):
 	is_advanced = GameConsts.advanced_upgrades.has(upgrade_id)
 	has_advancements = GameConsts.upgrades_with_advancement.has(upgrade_id)
 	upgrade_type = GameConsts.get_upgrade_type(id)
+	price = calculate_price()
 
 	
 
@@ -89,7 +93,7 @@ func drag_logic(delta: float):
 		if Input.is_action_pressed("click"):
 			#card is just now being dragged
 			if Input.is_action_just_pressed("click") and not is_bought:
-				got_clicked.emit(upgrade_id)
+				got_clicked.emit(self)
 			global_position = lerp(global_position, get_global_mouse_position() - (size/2.0), 22*delta)
 			_change_scale(Vector2(0.7,0.7))
 			_set_rotation(delta)
@@ -200,3 +204,30 @@ func get_slot_type(group) -> int:
 		_:
 			print_debug("No Slot Type is matching with card type")
 			return -1
+
+func calculate_price():
+	#if GameConsts.test_mode:
+		#return 0
+	
+	var modifier = 0
+	
+	match GameConsts.get_upgrade_type(upgrade_id):
+		GameConsts.UPGRADE_TYPE.DEFAULT:
+			modifier -= 3
+		GameConsts.UPGRADE_TYPE.PASSIVE:
+			modifier -= 1
+		GameConsts.UPGRADE_TYPE.BODYMOD:
+			pass
+		GameConsts.UPGRADE_TYPE.SYNERGY:
+			modifier += 1
+		GameConsts.UPGRADE_TYPE.ACTIVE:
+			modifier -= 1
+		GameConsts.UPGRADE_TYPE.SPECIAL:
+			modifier += 2
+	
+	if GameConsts.advanced_upgrades.has(upgrade_id):
+		modifier += 2
+		if not GameConsts.upgrades_with_advancement.has(upgrade_id):
+			modifier += 1
+	
+	return base_price + modifier

@@ -2,7 +2,10 @@ extends Node
 
 var constellations: Array = [
 								preload("res://MapModComponents/TetriConstellations/tetri_constellation_1.tscn"),
-								preload("res://MapModComponents/TetriConstellations/tetri_constellation_2.tscn")
+								preload("res://MapModComponents/TetriConstellations/tetri_constellation_2.tscn"),
+								preload("res://MapModComponents/TetriConstellations/tetri_constellation_3.tscn"),
+								preload("res://MapModComponents/TetriConstellations/tetri_constellation_4.tscn"),
+								preload("res://MapModComponents/TetriConstellations/tetri_constellation_5.tscn")
 							]
 var map: Map
 var countdowns: Array[TailCountdown]
@@ -41,5 +44,6 @@ func _on_kill_countdown_reached(tetris):
 
 func self_destruct():
 	for tetris in tetrises:
-		queue_free()
+		if is_instance_valid(tetris):
+			tetris.queue_free()
 	queue_free()

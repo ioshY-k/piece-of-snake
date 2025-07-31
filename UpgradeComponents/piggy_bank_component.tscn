@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq26od4tpofw0"]
+
+[ext_resource type="Script" uid="uid://dvpgbbh3227dc" path="res://UpgradeComponents/piggy_bank_component.gd" id="1_4dpcw"]
+
+[node name="PiggyBankComponent" type="Node"]
+script = ExtResource("1_4dpcw")
