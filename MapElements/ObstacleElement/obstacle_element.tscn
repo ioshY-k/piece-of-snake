@@ -6,3 +6,4 @@
 [node name="ObstacleElement" type="Sprite2D"]
 texture = ExtResource("1_uq2r3")
 script = ExtResource("2_4s714")
+path = Array[int]([4])

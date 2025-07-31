@@ -39,7 +39,7 @@ func _ready() -> void:
 	SignalBus.stop_moving.connect(_on_stop_moving)
 	SignalBus.continue_moving.connect(_on_continue_moving)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
-	solid_element.snake_overlapped.connect(_on_snake_overlaps)
+	solid_element.snake_overlapped.connect(_on_snake_overlaps.bind(false))
 	
 	
 func find_correct_rotation(this_direction: int, next_direction: int):
@@ -90,12 +90,12 @@ func set_overlap(state):
 	solid_element.set_collision_layer_value(7,state)
 	self_modulate.a = 0.7
 
-func _on_snake_overlaps():
+func _on_snake_overlaps(called_by_spawned_bodypart: bool):
 	if not is_overlapped:
-		print("wasnt overlapped")
 		is_overlapped = true
+		if not called_by_spawned_bodypart:
+			SignalBus.overlapped.emit()
 	else:
-		print("was")
 		SignalBus.stop_moving.emit()
 		snake_head.got_hit.emit()
 

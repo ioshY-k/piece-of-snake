@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd2ankkvetvcf"]
+
+[ext_resource type="Script" uid="uid://qbik1w63hi2g" path="res://UpgradeComponents/anchor_component.gd" id="1_70w64"]
+
+[node name="AnchorComponent" type="Node"]
+script = ExtResource("1_70w64")

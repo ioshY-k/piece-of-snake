@@ -16,12 +16,14 @@ var double_fruit_2_component_scene = load("res://UpgradeComponents/double_fruit_
 var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_3_component.tscn")
 var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_component.tscn")
 var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_component.tscn")
+var anchor_component_scene = load("res://UpgradeComponents/anchor_component.tscn")
 
-#instantiated mapmods
+#mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
 var tailvirus_component_scene = load("res://MapModComponents/tail_virus_component.tscn")
 var edible_paper_component_scene = load("res://MapModComponents/edible_paper_component.tscn")
 var laser_component_scene = load("res://MapModComponents/laser_component.tscn")
+var fruit_body_component_scene = load("res://MapModComponents/fruit_body_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -121,8 +123,13 @@ func find_free_map_tiles() -> Array[Vector2i]:
 	map_tiles.shuffle()
 	return map_tiles
 
-func update_free_map_tiles(tile: Vector2i):
-	free_map_tiles.append(tile)
+func update_free_map_tiles(tile: Vector2i, add_tile: bool):
+	if add_tile:
+		free_map_tiles.append(tile)
+	else:
+		print(free_map_tiles.size())
+		free_map_tiles.erase(tile)
+		print(free_map_tiles.size())
 	
 
 #find starting positions for snake head, body and tail
@@ -158,7 +165,7 @@ func _on_collision_with(element: MapElement):
 	if element is FruitElement:
 		element.collected = true
 		snake_tail.tiles_to_grow += 1
-		SignalBus.fruit_collected.emit(element)
+		SignalBus.fruit_collected.emit(element, true)
 		spawn_fruit(fruit_locations)
 		fruit_locations.erase(TileHelper.position_to_tile(element.position))
 		element.collected_anim(snake_head.position, TileHelper.tile_to_position(snake_head.next_tile))
@@ -213,7 +220,7 @@ func push_snake_bodyparts(tile: Vector2i, direction: int, push_overlap_bodypart:
 	newest_snake_body.position = tile * GameConsts.TILE_SIZE
 	snake_path_bodyparts.push_back(newest_snake_body)
 	if push_overlap_bodypart:
-		newest_snake_body._on_snake_overlaps()
+		newest_snake_body._on_snake_overlaps(true)
 		snake_head.push_overlap_bodypart = false
 
 #delete the bodypart and direction located at the tail from their arrays. returns the direction
@@ -258,6 +265,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			var corner_phasing = corner_phasing_scene.instantiate()
 			add_child(corner_phasing)
+		GameConsts.UPGRADE_LIST.ANCHOR:
+			var anchor_component = anchor_component_scene.instantiate()
+			snake_head.add_child(anchor_component)
 
 func apply_mapmod(mapmod: int):
 	print(GameConsts.MAP_MODS.find_key(mapmod))
@@ -274,6 +284,9 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.LASER:
 			var laser_component = laser_component_scene.instantiate()
 			add_child(laser_component)
+		GameConsts.MAP_MODS.FRUIT_BODY:
+			var fruit_body_component = fruit_body_component_scene.instantiate()
+			add_child(fruit_body_component)
 
 func _on_round_over():
 	destroy_current_mapmod()

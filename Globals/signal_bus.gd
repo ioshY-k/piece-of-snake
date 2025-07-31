@@ -6,6 +6,7 @@ signal fruit_collected
 signal round_started
 signal round_over
 signal teleported
+signal overlapped
 signal teleport_finished
 signal tail_grows
 signal pre_next_tile_reached

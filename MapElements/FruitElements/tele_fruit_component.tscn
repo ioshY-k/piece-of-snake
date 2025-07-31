@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gkrp8joi0fpp"]
+
+[ext_resource type="Script" uid="uid://1hw4c7s6kfe3" path="res://MapElements/FruitElements/tele_fruit_component.gd" id="1_d3atm"]
+
+[node name="TeleFruitComponent" type="Node"]
+script = ExtResource("1_d3atm")

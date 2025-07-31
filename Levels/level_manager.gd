@@ -21,6 +21,7 @@ var speed_boost_reload_speed: int = 90
 var speed_boost_available: bool = true
 var fruits_left: int
 var fruits_overload: int
+var fruit_punishment: int = 1
 var time_left: int
 var enough_fruits: bool = false
 
@@ -92,7 +93,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(20)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -114,25 +115,27 @@ func on_snake_got_hit():
 	if current_map.invincible_ticks > 0:
 		return
 	
-	if not enough_fruits:
-		fruits_left += 1
-		fruits_left_number_label.text = str(fruits_left)
-	else:
-		if fruits_overload == 0:
-			enough_fruits = false
-			fruits_left_symbol.modulate = Color(1,1,1)
-			fruits_left_number_label.add_theme_color_override("font_color", Color(1,1,1))
+	
+	for punish in range(fruit_punishment):
+		if not enough_fruits:
 			fruits_left += 1
 			fruits_left_number_label.text = str(fruits_left)
 		else:
-			fruits_overload -= 1
-			fruits_left_number_label.text = str(fruits_overload)
+			if fruits_overload == 0:
+				enough_fruits = false
+				fruits_left_symbol.modulate = Color(1,1,1)
+				fruits_left_number_label.add_theme_color_override("font_color", Color(1,1,1))
+				fruits_left += 1
+				fruits_left_number_label.text = str(fruits_left)
+			else:
+				fruits_overload -= 1
+				fruits_left_number_label.text = str(fruits_overload)
 			
 
 func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
-func _on_fruit_collected(_collected_fruit):
+func _on_fruit_collected(_collected_fruit, _is_real_collection):
 	if not enough_fruits:
 		fruits_left -= 1
 		fruits_left_number_label.text = str(fruits_left)
@@ -259,7 +262,8 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
-		GameConsts.UPGRADE_LIST.CORNER_PHASING:
+		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
+		GameConsts.UPGRADE_LIST.ANCHOR:
 			current_map.add_upgrade_component(upgrade_id)
 
 func destroy_upgrade(upgrade_id: int):
@@ -318,6 +322,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = find_child("MoultingComponent",false,false)
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			component = current_map.find_child("CornerPhasingComponent",false,false)
+		GameConsts.UPGRADE_LIST.ANCHOR:
+			component = current_map.snake_head.find_child("AnchorComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -348,7 +354,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
-		GameConsts.UPGRADE_LIST.CORNER_PHASING:
+		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
+		GameConsts.UPGRADE_LIST.ANCHOR:
 			return true
 		_:
 			return false

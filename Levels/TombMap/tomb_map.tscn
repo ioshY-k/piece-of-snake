@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://edeeeuho4uhe"]
 
-[ext_resource type="Texture2D" uid="uid://caxfpwttn1w2w" path="res://Levels/TombMap/TombMap.svg" id="1_yu3m4"]
+[ext_resource type="Texture2D" uid="uid://bkv44frr1a0vj" path="res://Levels/TombMap/TombMap.svg" id="1_yu3m4"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_i1wbd"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_i1wbd"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="4_l0dqh"]
@@ -219,6 +219,72 @@ position = Vector2(1200, 0)
 
 [node name="SolidElementArea195" parent="SolidElements" instance=ExtResource("3_i1wbd")]
 position = Vector2(1520, 0)
+
+[node name="SolidElementArea196" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1200, 160)
+
+[node name="SolidElementArea197" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1520, 800)
+
+[node name="SolidElementArea198" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1440, 1280)
+
+[node name="SolidElementArea199" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1360, 1280)
+
+[node name="SolidElementArea200" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1280, 1280)
+
+[node name="SolidElementArea201" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1200, 1280)
+
+[node name="SolidElementArea202" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1120, 1280)
+
+[node name="SolidElementArea203" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1120, 1360)
+
+[node name="SolidElementArea204" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1200, 1360)
+
+[node name="SolidElementArea205" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1280, 1360)
+
+[node name="SolidElementArea206" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1360, 1360)
+
+[node name="SolidElementArea207" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(1440, 1360)
+
+[node name="SolidElementArea208" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(800, 1280)
+
+[node name="SolidElementArea209" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(720, 1280)
+
+[node name="SolidElementArea210" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(640, 1280)
+
+[node name="SolidElementArea211" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(560, 1280)
+
+[node name="SolidElementArea212" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(480, 1280)
+
+[node name="SolidElementArea213" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(480, 1360)
+
+[node name="SolidElementArea214" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(560, 1360)
+
+[node name="SolidElementArea215" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(640, 1360)
+
+[node name="SolidElementArea216" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(720, 1360)
+
+[node name="SolidElementArea217" parent="SolidElements" instance=ExtResource("3_i1wbd")]
+position = Vector2(800, 1360)
 
 [node name="SolidElementArea" parent="SolidElements" instance=ExtResource("4_l0dqh")]
 position = Vector2(280, 320)
@@ -658,21 +724,6 @@ position = Vector2(320, 1360)
 [node name="SolidElementArea20" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
 position = Vector2(400, 1360)
 
-[node name="SolidElementArea21" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(480, 1360)
-
-[node name="SolidElementArea22" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(560, 1360)
-
-[node name="SolidElementArea23" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(640, 1360)
-
-[node name="SolidElementArea24" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(720, 1360)
-
-[node name="SolidElementArea25" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(800, 1360)
-
 [node name="SolidElementArea26" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
 position = Vector2(880, 1360)
 
@@ -681,21 +732,6 @@ position = Vector2(960, 1360)
 
 [node name="SolidElementArea28" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
 position = Vector2(1040, 1360)
-
-[node name="SolidElementArea29" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(1120, 1360)
-
-[node name="SolidElementArea30" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(1200, 1360)
-
-[node name="SolidElementArea31" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(1280, 1360)
-
-[node name="SolidElementArea32" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(1360, 1360)
-
-[node name="SolidElementArea33" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
-position = Vector2(1440, 1360)
 
 [node name="SolidElementArea34" parent="AreaSize2SolidElements" instance=ExtResource("3_i1wbd")]
 position = Vector2(1520, 1360)

@@ -20,7 +20,7 @@ var current_upgrades: Array[bool] = []
 
 
 func _ready() -> void:
-	current_upgrades.resize(32)
+	current_upgrades.resize(33)
 	current_upgrades.fill(false)
 	
 	create_new_run()
@@ -40,13 +40,13 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.TOMB,
+		maporder = [GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS]
-		mapmodorder = [GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER]
+		mapmodorder = [GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY]
 
 	level = level_scene.instantiate()
 	add_child(level)

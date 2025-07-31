@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqb18aktx67mx"]
+
+[ext_resource type="Script" uid="uid://bh05px0jcuwqh" path="res://MapModComponents/tetri_fruit_component.gd" id="1_ue5q1"]
+
+[node name="TetriFruitComponent" type="Node"]
+script = ExtResource("1_ue5q1")

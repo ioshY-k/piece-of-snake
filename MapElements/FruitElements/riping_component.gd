@@ -10,9 +10,9 @@ func _ready() -> void:
 
 func _on_this_fruit_collected(collected_fruit: FruitElement):
 	if riped and collected_fruit == get_parent():
-		SignalBus.fruit_collected.emit(null)
+		SignalBus.fruit_collected.emit(null, false)
 	if very_riped and collected_fruit == get_parent():
-		SignalBus.fruit_collected.emit(null)
+		SignalBus.fruit_collected.emit(null, false)
 		
 func _on_other_fruit_collected(collected_fruit: FruitElement):
 	if collected_fruit == get_parent() or collected_fruit == null:

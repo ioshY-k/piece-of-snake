@@ -8,7 +8,7 @@ var snake_tail: MovingSnakePart
 signal got_hit
 
 var colliding_element: MapElement
-var buffered_input_direction: int
+var buffered_input_direction: int = -10
 var moves: bool = true
 var push_overlap_bodypart: bool = false
 
@@ -43,13 +43,14 @@ func _on_next_tile_reached():
 		next_tile = TileHelper.get_next_tile(current_tile, current_direction)
 		colliding_element = check_upcoming_collision(current_direction, current_direction)
 	
-		
+	SignalBus.pre_next_tile_reached.emit()
+	
 	#reset buffer to unreachable value
 	buffered_input_direction = -10
 	
-	SignalBus.pre_next_tile_reached.emit()
 	
-	if colliding_element != null and colliding_element.get_collision_layer_value(5):#Teleporter
+	
+	if colliding_element != null and colliding_element.get_collision_layer_value(5) and moves:#Teleporter
 		var temp_next_tile = next_tile
 		var temp_position = position
 		var temp_teleporter = colliding_element
@@ -70,7 +71,7 @@ func _on_next_tile_reached():
 		else:
 			SignalBus.teleported.emit(temp_teleporter)
 		
-	if colliding_element == null:
+	if colliding_element == null or not moves:
 		pass
 	elif colliding_element.get_collision_layer_value(1) or\
 		colliding_element.get_collision_layer_value(6): #Solid or Obstacle

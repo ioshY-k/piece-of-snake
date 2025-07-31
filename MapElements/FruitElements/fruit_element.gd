@@ -1,4 +1,5 @@
 class_name FruitElement extends MapElement
+
 var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particles.tscn")
 var is_riping_fruit = false
 var collected = false
