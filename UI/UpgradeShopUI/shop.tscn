@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=45 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -25,11 +25,119 @@
 [ext_resource type="Script" uid="uid://pq7y75ujgns1" path="res://UI/UpgradeShopUI/item_shelf.gd" id="23_qix85"]
 [ext_resource type="Texture2D" uid="uid://cdhi6mv1qy6aw" path="res://Divider.svg" id="24_7hl21"]
 [ext_resource type="Texture2D" uid="uid://4wvixiopwjjg" path="res://UI/UpgradeShopUI/UpgradeInfo.svg" id="25_kcery"]
+[ext_resource type="Texture2D" uid="uid://c03gm4jg38h81" path="res://UI/UpgradeShopUI/NextRoundButton.png" id="25_kh3o2"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="26_qix85"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="27_fpme6"]
+[ext_resource type="Texture2D" uid="uid://b4plst0mdel4p" path="res://UI/UpgradeShopUI/MapPreview.svg" id="27_irsui"]
+[ext_resource type="Texture2D" uid="uid://m1vtyl4oq3m2" path="res://UI/UpgradeShopUI/MapPreviews/WoodsPreview.png" id="28_6erqh"]
+[ext_resource type="Texture2D" uid="uid://jcvukqga3igs" path="res://UI/UpgradeShopUI/MapmodInfo.svg" id="28_6exio"]
+[ext_resource type="Texture2D" uid="uid://bpwmwtdrgfcrq" path="res://UI/UpgradeShopUI/MapPreviews/StadiumPreview.png" id="29_fkwd4"]
+[ext_resource type="Texture2D" uid="uid://c34nbgcv0661t" path="res://UI/UpgradeShopUI/MapPreviews/OfficePreview.png" id="30_kh3o2"]
+[ext_resource type="Texture2D" uid="uid://d1hsmnh3wvrk1" path="res://UI/UpgradeShopUI/MapPreviews/CavePreview.png" id="31_6exio"]
+[ext_resource type="Texture2D" uid="uid://b4068c28qurgg" path="res://UI/UpgradeShopUI/MapPreviews/DiscoPreview.png" id="32_12c50"]
+[ext_resource type="Texture2D" uid="uid://id2dwak6pey3" path="res://UI/UpgradeShopUI/MapPreviews/BeachPreview.png" id="33_cug3m"]
+[ext_resource type="Texture2D" uid="uid://r0qu0vrb4gvn" path="res://UI/UpgradeShopUI/MapPreviews/RestaurantPreview.png" id="34_e7gtn"]
+[ext_resource type="Texture2D" uid="uid://rx18i741y3kr" path="res://UI/UpgradeShopUI/MapPreviews/TombPreview_Ebene 1.png" id="35_ljcx5"]
+[ext_resource type="Texture2D" uid="uid://dqfsjapxy66a5" path="res://UI/UpgradeShopUI/MapPreviews/Covering.svg" id="36_fkwd4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1g7c"]
 size = Vector2(80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irsui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_6erqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_fkwd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kh3o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6exio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_12c50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cug3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_e7gtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ljcx5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mw48v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_6erqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_fkwd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kh3o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6exio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_12c50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cug3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_e7gtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ljcx5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4x6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_6erqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_fkwd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kh3o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6exio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_12c50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cug3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_e7gtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ljcx5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Curve" id="Curve_qix85"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -915,23 +1023,23 @@ offset = Vector2(0, 800)
 script = ExtResource("23_qix85")
 
 [node name="Itemslot1" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-484.697, 438.914)
+position = Vector2(-480.172, 533.937)
 
 [node name="Itemslot2" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-484.697, 738.914)
+position = Vector2(-480.172, 805.43)
 
 [node name="Itemslot3" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-484.697, 1038.91)
+position = Vector2(-480.172, 1076.92)
 
 [node name="CurrencySymbol" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(429.326, 420.814)
+position = Vector2(-380.624, 398.19)
 texture = ExtResource("3_0a76l")
 
 [node name="CurrencyNumber" type="Label" parent="ItemShelf/CurrencySymbol"]
-offset_left = -230.0
-offset_top = -120.0
-offset_right = -101.0
-offset_bottom = 118.0
+offset_left = -235.294
+offset_top = -135.747
+offset_right = -106.294
+offset_bottom = 102.253
 pivot_offset = Vector2(64, 119)
 theme_override_colors/font_color = Color(0.961, 1, 0.41, 1)
 theme_override_colors/font_outline_color = Color(0.196078, 0.188235, 0.133333, 1)
@@ -945,13 +1053,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ContinueNextRound" type="Button" parent="ItemShelf"]
 z_index = 1
-offset_left = 31.1403
-offset_top = 398.19
-offset_right = 178.14
-offset_bottom = 478.19
+offset_left = 337.928
+offset_top = 318.552
+offset_right = 512.928
+offset_bottom = 509.552
+scale = Vector2(0.96966, 0.861435)
 theme_override_font_sizes/font_size = 26
-text = "Continue
-next round"
+icon = ExtResource("25_kh3o2")
 
 [node name="UpgradeInfo" type="Sprite2D" parent="ItemShelf"]
 position = Vector2(198.561, 904.977)
@@ -984,6 +1092,62 @@ This Upgrade is lost upon entering the next act."
 autowrap_mode = 2
 vertical_alignment = 1
 
+[node name="MapmodInfo" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(417.566, 399.095)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("28_6exio")
+
+[node name="MapmodInfoText" type="RichTextLabel" parent="ItemShelf/MapmodInfo"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.891
+offset_top = -168.923
+offset_right = -14.8914
+offset_bottom = -21.9231
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("9_0a76l")
+theme_override_fonts/bold_font = ExtResource("26_qix85")
+theme_override_font_sizes/bold_italics_font_size = 33
+theme_override_font_sizes/italics_font_size = 33
+theme_override_font_sizes/mono_font_size = 33
+theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/bold_font_size = 160
+bbcode_enabled = true
+text = "Surpassing your own body leves a permanent Block at that place"
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MapPreview" type="Sprite2D" parent="ItemShelf"]
+position = Vector2(20.2806, 395.475)
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("27_irsui")
+
+[node name="Preview1" type="AnimatedSprite2D" parent="ItemShelf/MapPreview"]
+position = Vector2(-499.794, 0)
+sprite_frames = SubResource("SpriteFrames_irsui")
+
+[node name="Covering" type="Sprite2D" parent="ItemShelf/MapPreview/Preview1"]
+texture = ExtResource("36_fkwd4")
+
+[node name="Preview2" type="AnimatedSprite2D" parent="ItemShelf/MapPreview"]
+sprite_frames = SubResource("SpriteFrames_mw48v")
+
+[node name="Covering" type="Sprite2D" parent="ItemShelf/MapPreview/Preview2"]
+texture = ExtResource("36_fkwd4")
+
+[node name="Preview3" type="AnimatedSprite2D" parent="ItemShelf/MapPreview"]
+position = Vector2(499.794, 0)
+sprite_frames = SubResource("SpriteFrames_j4x6u")
+
+[node name="Covering" type="Sprite2D" parent="ItemShelf/MapPreview/Preview3"]
+texture = ExtResource("36_fkwd4")
+
 [node name="FruitCountParticle" type="CPUParticles2D" parent="."]
 modulate = Color(0.963333, 1, 0.45, 0.878431)
 position = Vector2(1635, 130)
@@ -1003,4 +1167,6 @@ scale_amount_curve = SubResource("Curve_qix85")
 hue_variation_min = -0.42
 hue_variation_max = 0.31
 
+[connection signal="mouse_entered" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_mouse_entered"]
+[connection signal="mouse_exited" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_mouse_exited"]
 [connection signal="pressed" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_pressed"]

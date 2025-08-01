@@ -44,6 +44,7 @@ var sale_component_scene = load("res://UpgradeComponents/sale_component.tscn")
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
+	SignalBus.fruit_collected.connect(_on_fruit_collected)
 
 #called by run_manager at the start of a run and on new act
 func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod_index: int):
@@ -68,7 +69,6 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 				instantiate_upgrade(upgrade_id)
 	
 	
-	SignalBus.fruit_collected.connect(_on_fruit_collected)
 	map.snake_got_hit.connect(on_snake_got_hit)
 	GameConsts.node_being_dragged = null
 	
@@ -95,7 +95,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(30)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	

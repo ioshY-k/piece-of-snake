@@ -30,6 +30,7 @@ func _ready() -> void:
 	
 	create_new_run()
 	
+	shop.initiate_map_preview(maporder)
 	shop.upgrade_bought.connect(_on_upgrade_bought)
 	shop.upgrade_destroyed.connect(_on_upgrade_destroyed)
 	
@@ -46,11 +47,19 @@ func create_new_run():
 	
 	if GameConsts.test_mode:
 		maporder = [GameConsts.MAP_LIST.WOODS,
-					GameConsts.MAP_LIST.WOODS,
-					GameConsts.MAP_LIST.WOODS]
+					GameConsts.MAP_LIST.BEACH,
+					GameConsts.MAP_LIST.DISCO]
 		mapmodorder = [GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.EDIBLE_PAPER,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.CAFFEINATED,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.TETRI_FRUIT]
 
 	level = level_scene.instantiate()
@@ -69,18 +78,20 @@ func _on_upgrade_destroyed(upgrade: int):
 	
 func _on_round_over():
 	if level.fruits_left > 0:
-		pass
-		#scene_loader.change_scene(main_menu_scene)
+		scene_loader.change_scene("MAIN_MENU")
 	else:
 		level.disable_map()
 		
-		shop.show_shop()
+		shop.update_map_preview(current_act)
+		var shelf_tween:Tween = shop.show_shop()
+		await shelf_tween.finished
+		print("shop is da")
 		await get_tree().create_timer(0.5).timeout
 		shop.fruit_count_particle.emitting = true
 		while level.fruits_overload > 0:
 			level.fruits_overload -= 1
 			shop.fruit_count_particle.position = Vector2(300,85)
-			var tween = create_tween().tween_property(shop.fruit_count_particle, "position", Vector2(1650,130), 0.5)
+			var tween = create_tween().tween_property(shop.fruit_count_particle, "global_position", shop.currency_number_label.global_position + Vector2(100,150), 0.27)
 			await tween.finished
 			shop.fruits_currency += 1
 			var currency_label_tween = create_tween()

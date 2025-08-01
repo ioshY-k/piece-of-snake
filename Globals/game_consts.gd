@@ -52,12 +52,12 @@ var upgrades_with_advancement: Array[int] = [	UPGRADE_LIST.AREA_SIZE_1, UPGRADE_
 
 					
 var FRUIT_THRESHOLDS: Array [int] = [12,11,10,9, 18,17,16,15, 23,22,21,20]
-const ROUND_TIME_SEC: int = 30
+const ROUND_TIME_SEC: int = 60
 const COLLISION_IFRAMES: int = 3
 
 var node_being_dragged: Node = null
 
-var test_mode = true
+var test_mode = false
 
 func get_upgrade_type(upgrade_id: int):
 	
@@ -91,4 +91,4 @@ func get_upgrade_type(upgrade_id: int):
 
 func _ready() -> void:
 	if test_mode:
-		FRUIT_THRESHOLDS = [1,1,1,1, 25,25,25,25, 30,30,30,30]
+		FRUIT_THRESHOLDS = [0,0,0,0, 0,0,0,0, 0,0,0,0]

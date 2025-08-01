@@ -67,7 +67,7 @@ func _ready() -> void:
 	bought.connect(get_parent().get_parent()._on_upgrade_card_bought)
 	destroyed.connect(get_parent().get_parent()._on_upgrade_destroyed)
 	let_go.connect(get_parent().get_parent()._on_let_go)
-	hovered.connect(get_parent().change_description)
+	hovered.connect(get_parent().change_item_description)
 
 func instantiate_upgrade_card(id: int):
 	upgrade_id = id
@@ -150,6 +150,7 @@ func decide_on_let_go():
 			
 			await get_tree().process_frame
 			is_bought = true
+			sale_number.get_parent().hide()
 			bought.emit(upgrade_id, owned_slot_area.get_parent())
 
 var current_goal_scale: Vector2 = Vector2(1.2,1.2)

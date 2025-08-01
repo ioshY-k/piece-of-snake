@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200"
+   height="200.26396"
+   viewBox="0 0 52.916666 52.986506"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="NextRoundButton.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="6.4248316"
+     inkscape:cx="72.064146"
+     inkscape:cy="113.38819"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#a3a3a3;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="radialGradient2"
+       cx="26.572936"
+       cy="-26.40308"
+       fx="26.572936"
+       fy="-26.40308"
+       r="24.215273"
+       gradientTransform="matrix(1,0,0,0.91360395,0,-2.2811219)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.20000285,-0.02092876)">
+    <rect
+       style="fill:url(#radialGradient2);fill-opacity:1;stroke:#212532;stroke-width:2.458;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
+       id="rect1-8"
+       width="45.972546"
+       height="41.788338"
+       x="3.586663"
+       y="-47.297249"
+       ry="4.8428078"
+       rx="17.06299"
+       transform="rotate(90)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.0762px;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi Bold';text-align:center;letter-spacing:0.0515753px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#575757;fill-opacity:0.71851039;stroke:#202720;stroke-width:0.645649;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="26.653809"
+       y="9.7792797"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi Bold';fill:#575757;fill-opacity:0.71851039;stroke-width:0.645649;stroke-dasharray:none"
+         x="26.653809"
+         y="9.7792797"
+         dy="5">Next</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi Bold';fill:#575757;fill-opacity:0.71851039;stroke-width:0.645649;stroke-dasharray:none"
+         x="26.679596"
+         y="24.874529"
+         id="tspan3">Round</tspan></text>
+    <ellipse
+       style="fill:#575757;fill-opacity:0.71851;stroke:#202720;stroke-width:1.358;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="path3"
+       cx="26.947296"
+       cy="37.804832"
+       rx="12.045549"
+       ry="8.4627705" />
+  </g>
+</svg>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="93.589859mm"
+   height="63.480484mm"
+   viewBox="0 0 93.589864 63.480482"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="DiscoPreview.svg"
+   inkscape:export-filename="CavePreview.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.2866392"
+     inkscape:cx="242.71429"
+     inkscape:cy="165.52677"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid2"
+       units="px"
+       originx="-80.204087"
+       originy="-101.1455"
+       spacingx="2.6458333"
+       spacingy="2.6458333"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#d3a8a8;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#c0c3a7;stop-opacity:1;"
+         offset="0.18452983"
+         id="stop5" />
+      <stop
+         style="stop-color:#b5c9ba;stop-opacity:1;"
+         offset="0.50834173"
+         id="stop6" />
+      <stop
+         style="stop-color:#8a8aaa;stop-opacity:1;"
+         offset="0.76175427"
+         id="stop7" />
+      <stop
+         style="stop-color:#d9aeda;stop-opacity:1;"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <rect
+       x="56.866434"
+       y="57.717783"
+       width="52.464996"
+       height="20.740758"
+       id="rect3" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient4"
+       x1="4.3447187"
+       y1="108.06738"
+       x2="97.934578"
+       y2="108.06738"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <path
+     id="path19"
+     style="display:none;fill:#a18fd9;stroke:#212532;stroke-width:1.10229;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
+     inkscape:transform-center-x="-0.074448879"
+     inkscape:transform-center-y="0.094904335"
+     d="m 99.716107,69.042054 c -3.3e-4,0.68279 -4.44853,3.14227 -5.06443,2.80038 -0.61591,-0.34189 -0.6116,-5.26801 0.005,-5.60891 0.61651,-0.3409 5.06012,2.12574 5.05953,2.80853 z" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-83.719229,-78.972603)"
+     style="display:inline">
+    <path
+       id="rect2-5"
+       style="display:inline;fill:url(#linearGradient4);fill-opacity:1;stroke:#242027;stroke-width:4.084;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="-7.937129"
+       inkscape:original="M 37.542969 70.431641 C 15.885454 70.431641 -1.5507812 77.236807 -1.5507812 85.691406 L -1.5507812 130.44336 C -1.5507813 138.89796 15.885454 145.70312 37.542969 145.70312 L 64.738281 145.70312 C 86.395796 145.70312 103.83008 138.89796 103.83008 130.44336 L 103.83008 85.691406 C 103.83008 77.236807 86.395796 70.431641 64.738281 70.431641 L 37.542969 70.431641 z "
+       d="m 37.542969,78.369141 c -9.99743,0 -18.996361,1.65728 -24.783203,3.916015 -2.8934215,1.129368 -4.943501,2.434874 -5.8554691,3.279297 -0.3921005,0.36306 -0.4731385,0.477899 -0.5175782,0.525391 v 43.955076 c 0.04444,0.0475 0.1254779,0.16233 0.5175782,0.52539 0.9119677,0.84443 2.9620476,2.14993 5.8554691,3.2793 5.786842,2.25873 14.785772,3.91601 24.783203,3.91601 h 27.195312 c 9.997431,0 18.994993,-1.65735 24.78125,-3.91601 2.893129,-1.12933 4.943667,-2.43495 5.855469,-3.2793 0.391926,-0.36293 0.47309,-0.47586 0.517578,-0.52344 V 86.087891 C 95.84809,86.04032 95.766926,85.927385 95.375,85.564453 94.463197,84.720105 92.41266,83.414488 89.519531,82.285156 83.733274,80.026493 74.735711,78.369141 64.738281,78.369141 Z"
+       transform="translate(79.37451,2.6454623)" />
+    <text
+       xml:space="preserve"
+       transform="matrix(2.1062638,0,0,2.702628,-44.716345,-64.415034)"
+       id="text3"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.1128px;font-family:'Bauhaus 93';-inkscape-font-specification:'Bauhaus 93 Bold';text-align:center;letter-spacing:0.0452802px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);shape-padding:0.107022;display:inline;fill:#4d6a6a;fill-opacity:1;stroke:#242027;stroke-width:0.840901;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="23.523537"
+       y="0"><tspan
+         x="66.437521"
+         y="68.04127"
+         id="tspan1">DISCO</tspan></text>
+  </g>
+</svg>

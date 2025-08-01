@@ -9,9 +9,12 @@ const UPGRADE_CARD = preload("res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.t
 
 const BASE_PRICE: int = 4
 
+@onready var run_manager: RunManager = get_parent()
 var fruits_currency: int
 @onready var currency_number_label: Label = $ItemShelf/CurrencySymbol/CurrencyNumber
 @onready var fruit_count_particle: CPUParticles2D = $FruitCountParticle
+
+
 
 var default_slots: Array[Control]
 var passive_slots: Array[Control]
@@ -26,6 +29,7 @@ var special_slots: Array[Control]
 
 var slots: Array[Control] = []
 @onready var upgrade_info: Sprite2D = $ItemShelf/UpgradeInfo
+@onready var item_shelf: ItemShelf = $ItemShelf
 
 
 var upgrade_card_pool: Array[int] = [
@@ -58,7 +62,12 @@ func _ready() -> void:
 									GameConsts.UPGRADE_LIST.TIME_STOP_1,
 									GameConsts.UPGRADE_LIST.PIGGY_BANK,
 									GameConsts.UPGRADE_LIST.ITEM_RELOADER,
-									GameConsts.UPGRADE_LIST.SALE]
+									GameConsts.UPGRADE_LIST.CORNER_PHASING,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
+									GameConsts.UPGRADE_LIST.HYPER_SPEED_1,
+									GameConsts.UPGRADE_LIST.CROSS_ROAD_1,
+									GameConsts.UPGRADE_LIST.MOULTING,
+									GameConsts.UPGRADE_LIST.ANCHOR]
 	
 	current_purchase_count = purchase_count
 	
@@ -86,6 +95,16 @@ func _ready() -> void:
 	slots.append_array(special_slots)
 		
 	hide_shop()
+
+func initiate_map_preview(maporder: Array):
+	if maporder.size() != 3:
+		print_debug("not 3 maps or 3 previews")
+		return
+	for index in range(len(maporder)):
+		item_shelf.set_map_preview(index, maporder[index])
+
+func update_map_preview(current_act):
+	item_shelf.set_map_covering(current_act)
 
 func increment_buys(num:int):
 	current_purchase_count += num
@@ -138,7 +157,7 @@ func _on_let_go():
 func can_afford(slot):
 	return 	int(slot.get_node("BuyZone").get_node("Price").text) <= fruits_currency and\
 			current_purchase_count > 0
-	
+
 func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
 	current_purchase_count -= 1
 	fruits_currency -= int(slot.get_node("BuyZone").get_node("Price").text)
@@ -217,13 +236,13 @@ func reset_area_and_currency():
 		default_upgrade.queue_free()
 	default_upgrade_card = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
-func show_shop():
+func show_shop() -> Tween:
 	$ItemShelf.show()
 	upgrade_info.hide()
 	$ItemShelf.rotation_degrees = -180
 	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	shelf_tween.tween_property($ItemShelf, "rotation_degrees", 0, 0.8)
-	await  shelf_tween.finished
+	return shelf_tween
 
 func hide_shop():
 	if upgrades_expanded:
@@ -242,3 +261,12 @@ func toggle_upgrade_panel() -> void:
 		tween.tween_property(upgrade_overview, "position:x", -425, 0.4).\
 		set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 		upgrades_expanded = false
+
+
+func _on_continue_next_round_mouse_entered() -> void:
+	var upcoming_mapmod = run_manager.mapmodorder[run_manager.current_round+1]
+	item_shelf.show_mapmod_description(upcoming_mapmod)
+
+
+func _on_continue_next_round_mouse_exited() -> void:
+	item_shelf.hide_mapmod_description()
