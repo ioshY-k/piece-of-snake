@@ -1,5 +1,7 @@
 class_name RunManager extends Node
 
+var scene_loader
+
 var maps_act1 = [GameConsts.MAP_LIST.WOODS,GameConsts.MAP_LIST.STADIUM,GameConsts.MAP_LIST.RESTAURANT]
 var maps_act2 = [GameConsts.MAP_LIST.OFFICE,GameConsts.MAP_LIST.CAVE]
 var maps_act3 = [GameConsts.MAP_LIST.DISCO,GameConsts.MAP_LIST.BEACH]
@@ -14,12 +16,15 @@ var current_act: int = 0
 @onready var shop: Shop = $Shop
 
 var level_scene: PackedScene = preload("res://Levels/level.tscn")
+var main_menu_scene: PackedScene = preload("res://UI/MainMenuUI/main_menu.tscn")
 var level: LevelManager
 
 var current_upgrades: Array[bool] = []
 
 
 func _ready() -> void:
+	scene_loader = get_parent()
+	
 	current_upgrades.resize(35)
 	current_upgrades.fill(false)
 	
@@ -64,7 +69,8 @@ func _on_upgrade_destroyed(upgrade: int):
 	
 func _on_round_over():
 	if level.fruits_left > 0:
-		level.queue_free()
+		pass
+		#scene_loader.change_scene(main_menu_scene)
 	else:
 		level.disable_map()
 		

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5ds1gbyf4iit"]
+
+[ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://UI/MainMenuUI/main_menu.gd" id="1_hy30b"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_hy30b")
+
+[node name="NewRun" type="Button" parent="."]
+offset_left = 600.0
+offset_top = 400.0
+offset_right = 1221.0
+offset_bottom = 601.0
+theme_override_font_sizes/font_size = 141
+text = "New Run"
+
+[connection signal="pressed" from="NewRun" to="." method="_on_new_run_pressed"]
