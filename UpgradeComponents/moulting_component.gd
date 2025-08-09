@@ -8,4 +8,3 @@ func _ready() -> void:
 				child.destroyed.emit(child.upgrade_id)
 				child.queue_free()
 	shop.increment_buys(1)
-	print("two buys!")

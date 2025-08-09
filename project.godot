@@ -21,6 +21,7 @@ GameConsts="*res://Globals/game_consts.gd"
 SignalBus="*res://Globals/signal_bus.gd"
 TileHelper="*res://Globals/tile_helper.gd"
 MapData="*res://Globals/map_data.gd"
+Descriptions="*res://Globals/descriptions.gd"
 
 [display]
 

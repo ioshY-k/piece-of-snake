@@ -5,6 +5,7 @@ Z index:
 	SankeTail: 15
 	SnakeHead: 20
 	FruitParticles: 25
+	MapmodInfoPanel: 200
 
 Z index Shop Canvas Layer:
 	Held Upgradecard: 100

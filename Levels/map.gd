@@ -11,6 +11,9 @@ var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_el
 var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
 var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_2_component.tscn")
 var fruit_magnet_3_component_scene = load("res://UpgradeComponents/fruit_magnet_3_component.tscn")
+var diet_1_component_scene = load("res://UpgradeComponents/diet_1_component.tscn")
+var diet_2_component_scene = load("res://UpgradeComponents/diet_2_component.tscn")
+var diet_3_component_scene = load("res://UpgradeComponents/diet_3_component.tscn")
 var double_fruit_1_component_scene = load("res://UpgradeComponents/double_fruit_1_component.tscn")
 var double_fruit_2_component_scene = load("res://UpgradeComponents/double_fruit_2_component.tscn")
 var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_3_component.tscn")
@@ -128,9 +131,7 @@ func update_free_map_tiles(tile: Vector2i, add_tile: bool):
 	if add_tile:
 		free_map_tiles.append(tile)
 	else:
-		print(free_map_tiles.size())
 		free_map_tiles.erase(tile)
-		print(free_map_tiles.size())
 	
 
 #find starting positions for snake head, body and tail
@@ -251,6 +252,15 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3:
 			var fruit_magnet_3_component = fruit_magnet_3_component_scene.instantiate()
 			snake_head.add_child(fruit_magnet_3_component)
+		GameConsts.UPGRADE_LIST.DIET_1:
+			var diet_1_component = diet_1_component_scene.instantiate()
+			snake_tail.add_child(diet_1_component)
+		GameConsts.UPGRADE_LIST.DIET_2:
+			var diet_2_component = diet_2_component_scene.instantiate()
+			snake_tail.add_child(diet_2_component)
+		GameConsts.UPGRADE_LIST.DIET_3:
+			var diet_3_component = diet_3_component_scene.instantiate()
+			snake_tail.add_child(diet_3_component)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1:
 			var double_fruit_1_component = double_fruit_1_component_scene.instantiate()
 			add_child(double_fruit_1_component)

@@ -27,7 +27,6 @@ func reset():
 	time_bar.modulate = Color(0.574, 0.89, 0.525)
 
 func stop_timer():
-	print("pause timer")
 	if progress_tween.is_valid() and color_tween.is_valid():
 		progress_tween.pause()
 		color_tween.pause()

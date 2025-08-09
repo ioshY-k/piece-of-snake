@@ -5,5 +5,4 @@ func _ready() -> void:
 	animation_player.play("laser")
 
 func _on_animplayer_kill():
-	print("killedbyanimation")
 	queue_free()

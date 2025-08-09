@@ -12,7 +12,6 @@ func _init(body_count: int) -> void:
 
 func _tick_down():
 	ticks -= 1
-	print(ticks)
 	if ticks == 0:
 		countdown_reached.emit()
 	

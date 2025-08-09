@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqaa1b3aani8j"]
+
+[ext_resource type="Script" uid="uid://c7qi6xrbv0xn" path="res://UpgradeComponents/coating_component.gd" id="1_afdj0"]
+
+[node name="CoatingComponent" type="Node"]
+script = ExtResource("1_afdj0")

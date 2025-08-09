@@ -35,7 +35,11 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 4 times.",
 	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 6 times.",
 	str(GameConsts.UPGRADE_LIST.PIGGY_BANK) : "When destroying this Item,\n[color=#4fabf9]lower the Fruit threshold[/color] of the next round by 5",
-	str(GameConsts.UPGRADE_LIST.SALE) : "For each filled Item category \n[color=#4fabf9]Reduce the cost[/color] of a random Item by 1"
+	str(GameConsts.UPGRADE_LIST.SALE) : "For each filled Item category \n[color=#4fabf9]Reduce the cost[/color] of a random Item by 1",
+	str(GameConsts.UPGRADE_LIST.DIET_1) : "Collecting fruits in quick succession makes [color=ffc875]growing less likeley[/color].",
+	str(GameConsts.UPGRADE_LIST.DIET_2) : "[color=ffc875]Don't grow at all[/color] when collecting overstock fruit.",
+	str(GameConsts.UPGRADE_LIST.DIET_3) : "The probability for not growing [color=ffc875]stays high for longer[/color].",
+	str(GameConsts.UPGRADE_LIST.COATING) : "[color=#80d984]Prevent[/color] the first time [color=#80d984]losing fruit[/color] per round"
 	}
 
 var mouse_in: bool = false
@@ -207,8 +211,8 @@ func get_slot_type(group) -> int:
 			return -1
 
 func calculate_price():
-	#if GameConsts.test_mode:
-		#return 0
+	if GameConsts.test_mode:
+		return 0
 	
 	var modifier = 0
 	

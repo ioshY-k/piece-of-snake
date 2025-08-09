@@ -21,7 +21,6 @@ func _spread_sales():
 			if not slot.get_node("Area2D").get_child(-1) is UpgradeCard:
 				is_filled = false
 		if is_filled:
-			print(slot_type, " is filled!")
 			full_categories += 1
 	
 	var upgrade_cards: Array[UpgradeCard]
@@ -30,7 +29,6 @@ func _spread_sales():
 			upgrade_cards.append(upgrade_card)
 	
 	for sale in range(full_categories):
-		print("sale!")
 		upgrade_cards.shuffle()
 		for upgrade_card in upgrade_cards:
 			if upgrade_card.price > 0:

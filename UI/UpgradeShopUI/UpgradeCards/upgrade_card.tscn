@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=48 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -38,8 +38,12 @@
 [ext_resource type="Texture2D" uid="uid://bpvwpmgpogfo2" path="res://UI/UpgradeShopUI/UpgradeCards/Anchor.svg" id="34_ibh7n"]
 [ext_resource type="Texture2D" uid="uid://dkl1bses52k5x" path="res://UI/UpgradeShopUI/UpgradeCards/PiggyBank.svg" id="35_h2lpd"]
 [ext_resource type="Texture2D" uid="uid://ljehyg5av4dj" path="res://UI/UpgradeShopUI/UpgradeCards/sale.svg" id="36_b1hmr"]
+[ext_resource type="Texture2D" uid="uid://crur3bln6mti" path="res://UI/UpgradeShopUI/UpgradeCards/Diet1.svg" id="37_pxvxx"]
+[ext_resource type="Texture2D" uid="uid://csfnnf6f08xmx" path="res://UI/UpgradeShopUI/UpgradeCards/Diet2.svg" id="38_t6avq"]
 [ext_resource type="Texture2D" uid="uid://ds5y6q4r6a38j" path="res://UI/UpgradeShopUI/UpgradeCards/SaleSign.svg" id="39_evqrt"]
+[ext_resource type="Texture2D" uid="uid://q200oh72yttn" path="res://UI/UpgradeShopUI/UpgradeCards/Diet3.svg" id="39_nsm8n"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="40_f1qts"]
+[ext_resource type="Texture2D" uid="uid://ddtg5b7bfse3r" path="res://UI/UpgradeShopUI/UpgradeCards/HolyMantle.svg" id="40_t6avq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -148,6 +152,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("36_b1hmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_pxvxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_t6avq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nsm8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_t6avq")
 }],
 "loop": true,
 "name": &"default",

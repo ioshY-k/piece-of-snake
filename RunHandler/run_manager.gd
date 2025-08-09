@@ -25,7 +25,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(35)
+	current_upgrades.resize(39)
 	current_upgrades.fill(false)
 	
 	create_new_run()
@@ -46,14 +46,14 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.WOODS,
+		maporder = [GameConsts.MAP_LIST.BEACH,
 					GameConsts.MAP_LIST.BEACH,
 					GameConsts.MAP_LIST.DISCO]
 		mapmodorder = [GameConsts.MAP_MODS.CAFFEINATED,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.EDIBLE_PAPER,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.CAFFEINATED,
+						GameConsts.MAP_MODS.CAFFEINATED,
+						GameConsts.MAP_MODS.CAFFEINATED,
+						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.LASER,
@@ -85,7 +85,6 @@ func _on_round_over():
 		shop.update_map_preview(current_act)
 		var shelf_tween:Tween = shop.show_shop()
 		await shelf_tween.finished
-		print("shop is da")
 		await get_tree().create_timer(0.5).timeout
 		shop.fruit_count_particle.emitting = true
 		while level.fruits_overload > 0:

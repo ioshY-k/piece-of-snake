@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi3gmpylvobb3"]
+
+[ext_resource type="Texture2D" uid="uid://dd67ous44ep43" path="res://Snake/Tail/snake_tail_growth_prevention.svg" id="1_av6at"]
+[ext_resource type="Script" uid="uid://bjcbpp87fm2o0" path="res://UpgradeComponents/diet_2_component.gd" id="2_av6at"]
+
+[node name="Diet2Component" type="Sprite2D"]
+texture = ExtResource("1_av6at")
+script = ExtResource("2_av6at")

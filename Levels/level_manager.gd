@@ -35,6 +35,7 @@ var area_size_2_component_scene = load("res://UpgradeComponents/area_size_2_comp
 var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_component.tscn")
 var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_component.tscn")
 var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_component.tscn")
+var coating_component_scene = load("res://UpgradeComponents/coating_component.tscn")
 var wormhole_component_scene = load("res://UpgradeComponents/wormhole_component.tscn")
 var crossroad_1_component_scene = load("res://UpgradeComponents/crossroad_1_component.tscn")
 var moulting_component_scene = load("res://UpgradeComponents/moulting_component.tscn")
@@ -55,11 +56,11 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 	current_map_index = map_index
 	add_child(map)
 	
-	map.position = MapData.get_map_data0(map_index)[0]
-	map.scale = MapData.get_map_data0(map_index)[1]
-	
-	
 	current_map = map
+	current_map.position = MapData.get_map_data0(map_index)[0]
+	current_map.scale = MapData.get_map_data0(map_index)[1]
+	disable_map()
+	
 	snake_head = $Map/SnakeHead
 	snake_tail = $Map/SnakeTail
 	
@@ -100,6 +101,11 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
 	current_map.apply_mapmod(mapmod)
+	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
+	var round_count_down: RoundCountDown = round_count_down_scene.instantiate()
+	add_child(round_count_down)
+	round_count_down.change_text(Descriptions.mapmod_descriptions[str(mapmod)])
+	await round_count_down.count_down_finished
 	
 	SignalBus.round_started.emit()
 	enable_map()
@@ -125,6 +131,7 @@ func on_snake_got_hit():
 		else:
 			if fruits_overload == 0:
 				enough_fruits = false
+				SignalBus.enough_fruits_changed.emit(false)
 				fruits_left_symbol.modulate = Color(1,1,1)
 				fruits_left_number_label.add_theme_color_override("font_color", Color(1,1,1))
 				fruits_left += 1
@@ -143,6 +150,7 @@ func _on_fruit_collected(_collected_fruit, _is_real_collection):
 		fruits_left_number_label.text = str(fruits_left)
 		if fruits_left == 0:
 			enough_fruits = true
+			SignalBus.enough_fruits_changed.emit(true)
 			fruits_left_symbol.modulate = Color(0.961, 1.0, 0.41)
 			fruits_left_number_label.add_theme_color_override("font_color", Color(0.961, 1.0, 0.41))
 	else:
@@ -241,6 +249,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			var item_reloader_component = item_reloader_component_scene.instantiate()
 			add_child(item_reloader_component)
+		GameConsts.UPGRADE_LIST.COATING:
+			var coating_component = coating_component_scene.instantiate()
+			add_child(coating_component)
 		GameConsts.UPGRADE_LIST.PIGGY_BANK:
 			var piggy_bank_component = piggy_bank_component_scene.instantiate()
 			add_child(piggy_bank_component)
@@ -271,7 +282,10 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
-		GameConsts.UPGRADE_LIST.ANCHOR:
+		GameConsts.UPGRADE_LIST.ANCHOR,\
+		GameConsts.UPGRADE_LIST.DIET_1,\
+		GameConsts.UPGRADE_LIST.DIET_2,\
+		GameConsts.UPGRADE_LIST.DIET_3:
 			current_map.add_upgrade_component(upgrade_id)
 
 func destroy_upgrade(upgrade_id: int):
@@ -289,6 +303,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.snake_head.find_child("FruitMagnet2Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3:
 			component = current_map.snake_head.find_child("FruitMagnet3Component",false,false)
+		GameConsts.UPGRADE_LIST.DIET_1:
+			component = current_map.snake_tail.find_child("Diet1Component",false,false)
+		GameConsts.UPGRADE_LIST.DIET_2:
+			component = current_map.snake_tail.find_child("Diet2Component",false,false)
+		GameConsts.UPGRADE_LIST.DIET_3:
+			component = current_map.snake_tail.find_child("Diet3Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
@@ -326,6 +346,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("EdgeWrap1Component",false,false)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			component = find_child("ItemReloaderComponent",false,false)
+		GameConsts.UPGRADE_LIST.COATING:
+			component = find_child("CoatingComponent",false,false)
 		GameConsts.UPGRADE_LIST.PIGGY_BANK:
 			component = find_child("PiggyBankComponent",false,false)
 		GameConsts.UPGRADE_LIST.SALE:
@@ -362,6 +384,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
+		GameConsts.UPGRADE_LIST.DIET_1,\
+		GameConsts.UPGRADE_LIST.DIET_2,\
+		GameConsts.UPGRADE_LIST.DIET_3,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\

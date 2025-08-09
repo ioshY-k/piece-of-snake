@@ -11,7 +11,6 @@ func _ready() -> void:
 	laser_timer.timeout.connect(spawn_laser)
 
 func spawn_laser():
-	print("spawn laser")
 	current_laser = laser_scene.instantiate()
 	map.add_child(current_laser)
 	if randi()%2 == 0:
