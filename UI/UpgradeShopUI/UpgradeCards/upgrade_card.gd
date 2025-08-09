@@ -21,7 +21,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_1) : "Place a [color=#ff9191]permanent Crossroad[/color] on the Map.\n\nBodyparts may [color=#ff9191]overlap[/color] on it 1 time.\n\nUsable up to 1 time.",
 	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_2) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "NO DESCRIPTION YET",
-	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, [color=#80d984]cut off your tail[/color] when surpassing it",
 	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take [color=#80d984]may be overlapped[/color] 1 time",
 	str(GameConsts.UPGRADE_LIST.KNOT_ATTRACTOR) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit threshold, [color=#4fabf9]all Active Items get refilled[/color]",

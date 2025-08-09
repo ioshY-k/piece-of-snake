@@ -5,7 +5,8 @@ class_name SnakeHead extends MovingSnakePart
 @onready var left_collision_ray: RayCast2D = $LeftCollisionRay
 var snake_tail: MovingSnakePart
 
-signal got_hit
+#when cutting tail
+signal cut
 
 var colliding_element: MapElement
 var buffered_input_direction: int = -10
@@ -76,11 +77,14 @@ func _on_next_tile_reached():
 	elif colliding_element.get_collision_layer_value(1) or\
 		colliding_element.get_collision_layer_value(6): #Solid or Obstacle
 		SignalBus.stop_moving.emit()
-		got_hit.emit()
-	elif colliding_element.get_collision_layer_value(2) :#Fruit
-		colliding_element.collision_with.emit()
+		SignalBus.got_hit.emit()
 	elif colliding_element.get_collision_layer_value(7) :#Overlap
 		colliding_element.snake_overlapped.emit()
+	elif colliding_element.get_collision_layer_value(2) :#Fruit
+		colliding_element.collision_with.emit()
+	elif colliding_element.get_collision_layer_value(9): #TailCut
+		cut.emit(colliding_element)
+		
 	
 	if not moves:
 		next_tile = current_tile

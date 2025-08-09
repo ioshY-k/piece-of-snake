@@ -20,6 +20,7 @@ var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_
 var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_component.tscn")
 var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_component.tscn")
 var anchor_component_scene = load("res://UpgradeComponents/anchor_component.tscn")
+var tail_cut_component_scene = load("res://UpgradeComponents/tail_cut_component.tscn")
 
 #mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
@@ -72,7 +73,7 @@ func _ready() -> void:
 	
 	SignalBus.round_over.connect(_on_round_over)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
-	snake_head.got_hit.connect(collision_iframes.bind(GameConsts.COLLISION_IFRAMES))
+	SignalBus.got_hit.connect(collision_iframes.bind(GameConsts.COLLISION_IFRAMES))
 	
 	initialized.emit()
 
@@ -273,6 +274,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
 			var edge_wrap_1_component = edge_wrap_1_component_scene.instantiate()
 			add_child(edge_wrap_1_component)
+		GameConsts.UPGRADE_LIST.TAIL_CUT:
+			var tail_cut_component = tail_cut_component_scene.instantiate()
+			add_child(tail_cut_component)
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			var corner_phasing = corner_phasing_scene.instantiate()
 			add_child(corner_phasing)

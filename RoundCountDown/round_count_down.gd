@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("click"):
-		animation_player.speed_scale = 4
+		animation_player.speed_scale = 6
 	else:
 		animation_player.speed_scale = 1
 		

@@ -9,6 +9,7 @@ func _init(body_count: int) -> void:
 	SignalBus.tail_grows.connect(_tick_up)
 	SignalBus.stop_moving.connect(_tick_up)
 	SignalBus.next_tile_reached.connect(_tick_down)
+	SignalBus.tail_skip.connect(_tick_down)
 
 func _tick_down():
 	ticks -= 1

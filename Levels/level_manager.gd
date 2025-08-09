@@ -282,6 +282,7 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
+		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.ANCHOR,\
 		GameConsts.UPGRADE_LIST.DIET_1,\
 		GameConsts.UPGRADE_LIST.DIET_2,\
@@ -344,6 +345,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("DoubleFruit3Component",false,false)
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
 			component = current_map.find_child("EdgeWrap1Component",false,false)
+		GameConsts.UPGRADE_LIST.TAIL_CUT:
+			component = current_map.find_child("TailCutComponent",false,false)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			component = find_child("ItemReloaderComponent",false,false)
 		GameConsts.UPGRADE_LIST.COATING:
@@ -391,8 +394,10 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
+		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
-		GameConsts.UPGRADE_LIST.ANCHOR:
+		GameConsts.UPGRADE_LIST.ANCHOR,\
+		GameConsts.UPGRADE_LIST.COATING:
 			return true
 		_:
 			return false

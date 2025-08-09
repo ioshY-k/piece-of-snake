@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcbi6hnu1t5p"]
+
+[ext_resource type="Script" uid="uid://p1lm6tm1t5v8" path="res://UpgradeComponents/tail_cut_component.gd" id="1_h801c"]
+
+[node name="TailCutComponent" type="Node"]
+script = ExtResource("1_h801c")

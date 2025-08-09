@@ -58,9 +58,10 @@ var current_purchase_count: int
 func _ready() -> void:
 	if GameConsts.test_mode:
 		purchase_count = 3
-		upgrade_card_pool= [		GameConsts.UPGRADE_LIST.COATING,
-									GameConsts.UPGRADE_LIST.COATING,
-									GameConsts.UPGRADE_LIST.COATING]
+		upgrade_card_pool= [		GameConsts.UPGRADE_LIST.TAIL_CUT,
+									GameConsts.UPGRADE_LIST.TAIL_CUT,
+									GameConsts.UPGRADE_LIST.WORMHOLE_1,
+									GameConsts.UPGRADE_LIST.WORMHOLE_1]
 	
 	current_purchase_count = purchase_count
 	

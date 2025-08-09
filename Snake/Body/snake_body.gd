@@ -103,7 +103,7 @@ func _on_snake_overlaps(called_by_spawned_bodypart: bool):
 			SignalBus.overlapped.emit()
 	else:
 		SignalBus.stop_moving.emit()
-		snake_head.got_hit.emit()
+		SignalBus.got_hit.emit()
 
 var overlap_this_tick = true
 func _on_next_tile_reached():

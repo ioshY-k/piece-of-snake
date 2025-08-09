@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dobkpr5ucg8no"]
+[gd_scene load_steps=18 format=3 uid="uid://dobkpr5ucg8no"]
 
 [ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/GodoticonCorner.svg" id="1_3khtg"]
 [ext_resource type="Shader" uid="uid://c23kf1475ne7u" path="res://Shader/invisibility_shader.gdshader" id="1_81x6j"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_2xe0v"]
 [ext_resource type="Texture2D" uid="uid://ds8thpxvy448c" path="res://Snake/Body/GodoticonTetri.svg" id="4_m5mbj"]
 [ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/SnakeDeco.svg" id="5_0pdlf"]
+[ext_resource type="Texture2D" uid="uid://d4lbldjc1a0u2" path="res://Snake/Body/GodoticonCornerCuttable.svg" id="5_mkah5"]
 [ext_resource type="Texture2D" uid="uid://bwbi37uu0dba8" path="res://Snake/Body/SnakeDecoSingle.svg" id="6_krvum"]
+[ext_resource type="Texture2D" uid="uid://ckjtuv8dyud8g" path="res://Snake/Body/GodoticonEdgeCuttable.svg" id="6_r0xmd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5mbj"]
 shader = ExtResource("1_81x6j")
@@ -24,6 +26,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_m5mbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mkah5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r0xmd")
 }],
 "loop": true,
 "name": &"default",

@@ -108,6 +108,7 @@ item2={
 2d_physics/layer_6="Obstacle Element"
 2d_physics/layer_7="Overlap Element"
 2d_physics/layer_8="Crossroad"
+2d_physics/layer_9="Cut Element"
 
 [rendering]
 

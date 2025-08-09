@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://th7rf24vf4kl"]
+
+[ext_resource type="Texture2D" uid="uid://c84br87pkuit4" path="res://Snake/Head/snake_head_coat.svg" id="1_neu3s"]
+
+[node name="Coating" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.623529)
+show_behind_parent = true
+position = Vector2(0, -9.01)
+texture = ExtResource("1_neu3s")

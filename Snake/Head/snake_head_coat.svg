@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="31.661757mm"
+   height="24.913887mm"
+   viewBox="0 0 31.661756 24.913887"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="Rastergrafik.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="snake_head_coat.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="6.4675925"
+     inkscape:cx="9.5862564"
+     inkscape:cy="67.490337"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="83.631589,57.231884"
+       end_point="83.631589,82.109186"
+       center_point="83.631589,69.670535"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       mode="free"
+       discard_orig_path="false"
+       fuse_paths="true"
+       oposite_fuse="false"
+       split_items="false"
+       split_open="false"
+       link_styles="false" />
+    <marker
+       markerWidth="318.07428"
+       markerHeight="293.58423"
+       refX="159.03716"
+       refY="146.79211"
+       orient="auto"
+       id="marker1">
+      <path
+         id="path1"
+         style="fill:#000000;fill-opacity:0.184314;stroke:#000000;stroke-width:1.88976"
+         d="M 317.12941,146.79211 A 158.09227,145.84723 0 0 1 159.03714,292.63935 158.09227,145.84723 0 0 1 0.94487997,146.79211 158.09227,145.84723 0 0 1 159.03714,0.94487997 158.09227,145.84723 0 0 1 317.12941,146.79211 Z" />
+    </marker>
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="83.631589,57.231884"
+       end_point="83.631589,82.109186"
+       center_point="83.631589,69.670535"
+       id="path-effect2-4"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       mode="free"
+       discard_orig_path="false"
+       fuse_paths="true"
+       oposite_fuse="false"
+       split_items="false"
+       split_open="false"
+       link_styles="false" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-67.849908,-57.68597)" />
+  <path
+     style="fill:#c1ffa6;fill-opacity:0.666222;stroke:#74b264;stroke-width:0.871;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m 83.630859,56.058594 c -0.801001,0.306626 -3.00562,1.103992 -6.373047,1.951172 -7.32224,1.842134 -3.518295,14.819756 -6.884765,21.578125 -0.521268,1.046474 -2.548215,1.819536 -2.025391,2.865234 2.152082,4.304362 13.765363,0.944764 15.283203,0.484375 1.517841,0.460389 13.131122,3.819987 15.283203,-0.484375 0.522825,-1.045698 -1.502169,-1.81876 -2.023437,-2.865234 -3.36647,-6.758369 0.437475,-19.735991 -6.884766,-21.578125 -3.367426,-0.84718 -5.573998,-1.644546 -6.375,-1.951172 z"
+     id="path2"
+     inkscape:path-effect="#path-effect2-4"
+     inkscape:original-d="m 70.373053,79.58877 c 3.36647,-6.758369 -0.437592,-19.737479 6.884649,-21.579613 4.305153,-1.083093 6.711087,-2.082751 6.711087,-2.082751 l -0.173563,26.960053 c 0,0 -13.143534,4.173379 -15.44707,-0.433906 -0.522824,-1.045698 1.503629,-1.817309 2.024897,-2.863783 z"
+     transform="matrix(1.0022175,0,0,0.84645981,-67.985474,-47.082716)"
+     sodipodi:nodetypes="asccaa" />
+</svg>
