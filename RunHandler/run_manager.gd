@@ -46,11 +46,11 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.CAVE,
-					GameConsts.MAP_LIST.CAVE,
+		maporder = [GameConsts.MAP_LIST.BEACH,
+					GameConsts.MAP_LIST.BEACH,
 					GameConsts.MAP_LIST.DISCO]
 		mapmodorder = [GameConsts.MAP_MODS.CAFFEINATED,
-						GameConsts.MAP_MODS.CAFFEINATED,
+						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.CAFFEINATED,

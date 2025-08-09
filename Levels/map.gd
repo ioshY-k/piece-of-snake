@@ -35,6 +35,7 @@ var tetri_fruit_component_scene = load("res://MapModComponents/tetri_fruit_compo
 @onready var snake_tail: SnakeTail
 
 #map data
+@onready var obstacle_elements: Node2D = $ObstacleElements
 @export var grid_size: Vector2i
 @export var inbounds_grid_size: Vector2i
 @export var starting_position: Vector2
