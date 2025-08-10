@@ -25,7 +25,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(39)
+	current_upgrades.resize(40)
 	current_upgrades.fill(false)
 	
 	create_new_run()
@@ -46,13 +46,13 @@ func create_new_run():
 		mapmodorder.append_array(mods)
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.BEACH,
-					GameConsts.MAP_LIST.BEACH,
+		maporder = [GameConsts.MAP_LIST.DISCO,
+					GameConsts.MAP_LIST.DISCO,
 					GameConsts.MAP_LIST.DISCO]
-		mapmodorder = [GameConsts.MAP_MODS.CAFFEINATED,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.CAFFEINATED,
-						GameConsts.MAP_MODS.CAFFEINATED,
+		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,

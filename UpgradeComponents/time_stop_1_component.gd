@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed(active_item_button) and uses > 0 and not shop_phase:
 		button_held = true
 		item_activated.emit(uses-1)
-	if Input.is_action_just_released(active_item_button):
+	if Input.is_action_just_released(active_item_button) and button_held == true:
 		button_held = false
 		item_deactivated.emit()
 		#uses-1 is the light index for the itembag to go out

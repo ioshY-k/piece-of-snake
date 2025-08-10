@@ -22,7 +22,6 @@ var speed_boost_available: bool = true
 var fruits_left: int
 var fruits_overload: int
 var fruit_punishment: int = 1
-var time_left: int
 var enough_fruits: bool = false
 
 #Upgrade Components
@@ -35,6 +34,7 @@ var area_size_2_component_scene = load("res://UpgradeComponents/area_size_2_comp
 var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_component.tscn")
 var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_component.tscn")
 var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_component.tscn")
+var knot_slowmo_component_scene = load("res://UpgradeComponents/knot_slowmo.tscn")
 var coating_component_scene = load("res://UpgradeComponents/coating_component.tscn")
 var wormhole_component_scene = load("res://UpgradeComponents/wormhole_component.tscn")
 var crossroad_1_component_scene = load("res://UpgradeComponents/crossroad_1_component.tscn")
@@ -96,7 +96,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(10)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -190,7 +190,6 @@ func _on_timer_expired() -> void:
 	SignalBus.round_over.emit()
 
 func instantiate_upgrade(upgrade_id: int):
-	
 	var current_active_item_slot
 	var slot: int = 0
 	for active_item_slot in active_item_slots:
@@ -249,6 +248,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			var item_reloader_component = item_reloader_component_scene.instantiate()
 			add_child(item_reloader_component)
+		GameConsts.UPGRADE_LIST.KNOT_SLOWMO:
+			var knot_slowmo_component = knot_slowmo_component_scene.instantiate()
+			add_child(knot_slowmo_component)
 		GameConsts.UPGRADE_LIST.COATING:
 			var coating_component = coating_component_scene.instantiate()
 			add_child(coating_component)
@@ -283,6 +285,7 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
+		GameConsts.UPGRADE_LIST.STEEL_HELMET,\
 		GameConsts.UPGRADE_LIST.ANCHOR,\
 		GameConsts.UPGRADE_LIST.DIET_1,\
 		GameConsts.UPGRADE_LIST.DIET_2,\
@@ -347,8 +350,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("EdgeWrap1Component",false,false)
 		GameConsts.UPGRADE_LIST.TAIL_CUT:
 			component = current_map.find_child("TailCutComponent",false,false)
+		GameConsts.UPGRADE_LIST.STEEL_HELMET:
+			component = current_map.snake_head.find_child("SteelHelmetComponent",false,false)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			component = find_child("ItemReloaderComponent",false,false)
+		GameConsts.UPGRADE_LIST.KNOT_SLOWMO:
+			component = find_child("KnotSlowmo",false,false)
 		GameConsts.UPGRADE_LIST.COATING:
 			component = find_child("CoatingComponent",false,false)
 		GameConsts.UPGRADE_LIST.PIGGY_BANK:
@@ -379,6 +386,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.TIME_STOP_1,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER,\
+		GameConsts.UPGRADE_LIST.KNOT_SLOWMO,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
@@ -395,6 +403,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
+		GameConsts.UPGRADE_LIST.STEEL_HELMET,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
 		GameConsts.UPGRADE_LIST.ANCHOR,\
 		GameConsts.UPGRADE_LIST.COATING:

@@ -21,6 +21,7 @@ var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_comp
 var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_component.tscn")
 var anchor_component_scene = load("res://UpgradeComponents/anchor_component.tscn")
 var tail_cut_component_scene = load("res://UpgradeComponents/tail_cut_component.tscn")
+var steel_helmet_component_scene = load("res://UpgradeComponents/steel_helmet_component.tscn")
 
 #mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
@@ -87,8 +88,12 @@ func _on_next_tile_reached():
 		snake_head.right_collision_ray.set_collision_mask_value(7,false)
 		snake_head.left_collision_ray.set_collision_mask_value(7,false)
 		snake_head.front_collision_ray.set_collision_mask_value(7,false)
-		for bodypart in snake_path_bodyparts:
+		snake_head.right_collision_ray.set_collision_mask_value(10,true)
+		snake_head.left_collision_ray.set_collision_mask_value(10,true)
+		snake_head.front_collision_ray.set_collision_mask_value(10,true)
+		for bodypart:SnakeBody in snake_path_bodyparts:
 			bodypart.modulate.a = 0.8
+			bodypart.solid_element.set_collision_layer_value(10,true)
 		for obstacle in find_child("ObstacleElements").get_children():
 			if not obstacle is Area2D:
 				obstacle.modulate. a = 0.8
@@ -103,8 +108,12 @@ func _on_next_tile_reached():
 		snake_head.right_collision_ray.set_collision_mask_value(7,true)
 		snake_head.left_collision_ray.set_collision_mask_value(7,true)
 		snake_head.front_collision_ray.set_collision_mask_value(7,true)
+		snake_head.right_collision_ray.set_collision_mask_value(10,false)
+		snake_head.left_collision_ray.set_collision_mask_value(10,false)
+		snake_head.front_collision_ray.set_collision_mask_value(10,false)
 		for bodypart in snake_path_bodyparts:
 			bodypart.modulate.a = 1
+			bodypart.solid_element.set_collision_layer_value(10,false)
 		for obstacle in find_child("ObstacleElements").get_children():
 			if not obstacle is Area2D:
 				obstacle.modulate.a = 1
@@ -278,6 +287,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.TAIL_CUT:
 			var tail_cut_component = tail_cut_component_scene.instantiate()
 			add_child(tail_cut_component)
+		GameConsts.UPGRADE_LIST.STEEL_HELMET:
+			var steel_helmet_component = steel_helmet_component_scene.instantiate()
+			snake_head.add_child(steel_helmet_component)
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			var corner_phasing = corner_phasing_scene.instantiate()
 			add_child(corner_phasing)

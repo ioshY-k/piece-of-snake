@@ -23,7 +23,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, [color=#80d984]cut off your tail[/color] when surpassing it",
 	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take [color=#80d984]may be overlapped[/color] 1 time",
-	str(GameConsts.UPGRADE_LIST.KNOT_ATTRACTOR) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "The [color=#4fabf9]timer stops[/color] whenever you surpass your body",
 	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit threshold, [color=#4fabf9]all Active Items get refilled[/color]",
 	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "NO DESCRIPTION YET",
 	str(GameConsts.UPGRADE_LIST.MOULTING) : "[color=#d75eff]Remove every Body Modification[/color]. You can buy [color=#d75eff]one more Item[/color] in Shops",
@@ -39,7 +39,8 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.DIET_1) : "Collecting fruits in quick succession makes [color=ffc875]growing less likeley[/color].",
 	str(GameConsts.UPGRADE_LIST.DIET_2) : "[color=ffc875]Don't grow at all[/color] when collecting overstock fruit.",
 	str(GameConsts.UPGRADE_LIST.DIET_3) : "The probability for not growing [color=ffc875]stays high for longer[/color].",
-	str(GameConsts.UPGRADE_LIST.COATING) : "[color=#80d984]Prevent[/color] the first time [color=#80d984]losing fruit[/color] per round"
+	str(GameConsts.UPGRADE_LIST.COATING) : "[color=#80d984]Prevent[/color] the first time [color=#80d984]losing fruit[/color] per round",
+	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "[color=#80d984]Don't get hit[/color] when running into walls [color=#80d984]with Hyper Speed[/color].\nYour body doesn't count."
 	}
 
 var mouse_in: bool = false

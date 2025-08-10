@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsf1ie8no8qih"]
+
+[ext_resource type="Script" uid="uid://c3n8s2xb0p7c0" path="res://UpgradeComponents/steel_helmet_component.gd" id="1_03bae"]
+
+[node name="SteelHelmetComponent" type="Node"]
+script = ExtResource("1_03bae")

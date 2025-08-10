@@ -1,16 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnn1xmc2b43mm"]
+[gd_scene load_steps=9 format=3 uid="uid://bnn1xmc2b43mm"]
 
 [ext_resource type="Texture2D" uid="uid://btgw2n20bn68a" path="res://UI/LevelUI/TimeMeter.svg" id="1_1kptn"]
 [ext_resource type="Script" uid="uid://bovnqu0hp4t36" path="res://time_meter.gd" id="2_yci6l"]
 [ext_resource type="Texture2D" uid="uid://dj58udh3ffytw" path="res://UI/LevelUI/TimeMeterBar.svg" id="3_enuh3"]
 [ext_resource type="Texture2D" uid="uid://c0m5gt08opemv" path="res://UI/LevelUI/TimeMeterBg.svg" id="3_qkf1t"]
-[ext_resource type="Texture2D" uid="uid://b1226vy5ik4at" path="res://UI/LevelUI/TimeMeterindicator.svg" id="4_yci6l"]
+[ext_resource type="Shader" uid="uid://bvegwg3krs5ih" path="res://UI/LevelUI/grow_and_vanish.gdshader" id="5_qkf1t"]
+[ext_resource type="Texture2D" uid="uid://bkvnaakcolxq4" path="res://UI/LevelUI/TimeMeterindicatorEffect.svg" id="7_40pqe"]
 
 [sub_resource type="Curve2D" id="Curve2D_enuh3"]
 _data = {
 "points": PackedVector2Array(0.444015, -2.43403, 0, 0, 50, -800, 0.310778, -89.3131, -0.310778, 89.3131, 50, -710, 2.25336, -150.403, -2.25336, 150.403, -50, -400, 0.502044, -148.815, -0.502044, 148.815, 70, -100, 0.797921, -87.7171, -0.797921, 87.7171, -50, 230, -8.33393, -50.8104, 8.33393, 50.8104, 40, 560, 0, 0, 0, 0, 50, 720, 0, 0, 0, 0, 50, 780)
 }
 point_count = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40pqe"]
+shader = ExtResource("5_qkf1t")
+shader_parameter/duration = 1.0
+shader_parameter/final_scale = 2.0
+shader_parameter/elapsed_time = 0.0
 
 [node name="TimeMeter" type="Sprite2D"]
 texture = ExtResource("1_1kptn")
@@ -38,6 +45,7 @@ position = Vector2(50, -800)
 rotation = 1.5708
 
 [node name="Indicator" type="Sprite2D" parent="Path2D/IndicatorPath"]
+material = SubResource("ShaderMaterial_40pqe")
 position = Vector2(0, 3.05176e-05)
 rotation = -1.58575
-texture = ExtResource("4_yci6l")
+texture = ExtResource("7_40pqe")

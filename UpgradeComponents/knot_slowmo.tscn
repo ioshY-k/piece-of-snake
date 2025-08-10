@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5m5mrpg4c5oe"]
+
+[ext_resource type="Script" uid="uid://vynfxe0hia5" path="res://UpgradeComponents/knot_slowmo.gd" id="1_5pwv0"]
+[ext_resource type="AudioStream" uid="uid://bt8spi17a37xk" path="res://UpgradeComponents/KnotSlowmo/KnotSlowmoTimerstop.wav" id="2_uo7sl"]
+
+[node name="KnotSlowmo" type="Node"]
+script = ExtResource("1_5pwv0")
+
+[node name="TimerStopAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_uo7sl")

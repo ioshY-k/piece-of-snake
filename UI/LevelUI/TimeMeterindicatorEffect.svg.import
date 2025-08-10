@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0402cd6i7ho0"
-path="res://.godot/imported/KnotAttractor.svg-0801a1d9d564851ccb1783a6e800fe50.ctex"
+uid="uid://bkvnaakcolxq4"
+path="res://.godot/imported/TimeMeterindicatorEffect.svg-29e72caa54c6ddc600bd8b2c35c22f40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UpgradeShopUI/UpgradeCards/KnotAttractor.svg"
-dest_files=["res://.godot/imported/KnotAttractor.svg-0801a1d9d564851ccb1783a6e800fe50.ctex"]
+source_file="res://UI/LevelUI/TimeMeterindicatorEffect.svg"
+dest_files=["res://.godot/imported/TimeMeterindicatorEffect.svg-29e72caa54c6ddc600bd8b2c35c22f40.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=49 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dl004d0kqy5ap" path="res://UI/UpgradeShopUI/UpgradeCards/CrossRoad2.svg" id="18_b1hmr"]
 [ext_resource type="Texture2D" uid="uid://dvkpes85sokfm" path="res://UI/UpgradeShopUI/UpgradeCards/CrossRoad3.svg" id="19_evqrt"]
 [ext_resource type="Texture2D" uid="uid://cgql3uve8cfr5" path="res://UI/UpgradeShopUI/UpgradeCards/TailCut.svg" id="20_f1qts"]
-[ext_resource type="Texture2D" uid="uid://c0402cd6i7ho0" path="res://UI/UpgradeShopUI/UpgradeCards/KnotAttractor.svg" id="21_rpqwx"]
+[ext_resource type="Texture2D" uid="uid://c0402cd6i7ho0" path="res://UI/UpgradeShopUI/UpgradeCards/KnotSlowmo.svg" id="21_rpqwx"]
 [ext_resource type="Texture2D" uid="uid://cbyk1wowmea3l" path="res://UI/UpgradeShopUI/UpgradeCards/ItemReload.svg" id="22_dse7d"]
 [ext_resource type="Texture2D" uid="uid://bjyb46sxmqy5t" path="res://UI/UpgradeShopUI/UpgradeCards/Immutable.svg" id="23_pxvxx"]
 [ext_resource type="Texture2D" uid="uid://wjgjxbelk76i" path="res://icon.svg" id="26_r5us8"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://q200oh72yttn" path="res://UI/UpgradeShopUI/UpgradeCards/Diet3.svg" id="39_nsm8n"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="40_f1qts"]
 [ext_resource type="Texture2D" uid="uid://ddtg5b7bfse3r" path="res://UI/UpgradeShopUI/UpgradeCards/HolyMantle.svg" id="40_t6avq"]
+[ext_resource type="Texture2D" uid="uid://dsis8fdf4ptt1" path="res://UI/UpgradeShopUI/UpgradeCards/SteelHelmet.svg" id="41_nsm8n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -164,6 +165,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("40_t6avq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_nsm8n")
 }],
 "loop": true,
 "name": &"default",

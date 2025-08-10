@@ -12,6 +12,7 @@ var colliding_element: MapElement
 var buffered_input_direction: int = -10
 var moves: bool = true
 var push_overlap_bodypart: bool = false
+var hit_signal_muted: bool = false
 
 #to store the direction in case of teleportation where it is still relevant but got overwritten
 var original_direction: int
@@ -74,10 +75,13 @@ func _on_next_tile_reached():
 		
 	if colliding_element == null or not moves:
 		pass
+	elif colliding_element.get_collision_layer_value(10): #Overlapping because Iframes
+		SignalBus.overlapped.emit()
 	elif colliding_element.get_collision_layer_value(1) or\
 		colliding_element.get_collision_layer_value(6): #Solid or Obstacle
 		SignalBus.stop_moving.emit()
-		SignalBus.got_hit.emit()
+		if not hit_signal_muted:
+			SignalBus.got_hit.emit()
 	elif colliding_element.get_collision_layer_value(7) :#Overlap
 		colliding_element.snake_overlapped.emit()
 	elif colliding_element.get_collision_layer_value(2) :#Fruit
