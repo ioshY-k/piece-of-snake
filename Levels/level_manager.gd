@@ -44,6 +44,7 @@ var sale_component_scene = load("res://UpgradeComponents/sale_component.tscn")
 var fuel_1_component_scene = load("res://UpgradeComponents/fuel_1_component.tscn")
 var fuel_2_component_scene = load("res://UpgradeComponents/fuel_2_component.tscn")
 var fuel_3_component_scene = load("res://UpgradeComponents/fuel_3_component.tscn")
+var swiss_knive_component_scene = load("res://UpgradeComponents/swiss_knive_component.tscn")
 
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
@@ -266,6 +267,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.COATING:
 			var coating_component = coating_component_scene.instantiate()
 			add_child(coating_component)
+		GameConsts.UPGRADE_LIST.SWISS_KNIVE:
+			var swiss_knive_component = swiss_knive_component_scene.instantiate()
+			add_child(swiss_knive_component)
 		GameConsts.UPGRADE_LIST.PIGGY_BANK:
 			var piggy_bank_component = piggy_bank_component_scene.instantiate()
 			add_child(piggy_bank_component)
@@ -301,7 +305,8 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.ANCHOR,\
 		GameConsts.UPGRADE_LIST.DIET_1,\
 		GameConsts.UPGRADE_LIST.DIET_2,\
-		GameConsts.UPGRADE_LIST.DIET_3:
+		GameConsts.UPGRADE_LIST.DIET_3,\
+		GameConsts.UPGRADE_LIST.RUBBER_BAND:
 			current_map.add_upgrade_component(upgrade_id)
 
 func destroy_upgrade(upgrade_id: int):
@@ -386,6 +391,10 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("CornerPhasingComponent",false,false)
 		GameConsts.UPGRADE_LIST.ANCHOR:
 			component = current_map.snake_head.find_child("AnchorComponent",false,false)
+		GameConsts.UPGRADE_LIST.RUBBER_BAND:
+			component = current_map.find_child("RubberBandComponent",false,false)
+		GameConsts.UPGRADE_LIST.SWISS_KNIVE:
+			component = current_map.find_child("SwissKniveComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -411,6 +420,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
+		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
 		GameConsts.UPGRADE_LIST.MOULTING:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
@@ -427,6 +437,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.STEEL_HELMET,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
 		GameConsts.UPGRADE_LIST.ANCHOR,\
+		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
 		GameConsts.UPGRADE_LIST.COATING:
 			return true
 		_:

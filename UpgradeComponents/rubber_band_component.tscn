@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8gqeobsl6fn4"]
+
+[ext_resource type="Script" uid="uid://c2f0u1iu12wfd" path="res://UpgradeComponents/rubber_band_component.gd" id="1_e36un"]
+
+[node name="RubberBandComponent" type="Node"]
+script = ExtResource("1_e36un")

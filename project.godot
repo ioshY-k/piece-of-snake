@@ -110,6 +110,7 @@ item2={
 2d_physics/layer_8="Crossroad"
 2d_physics/layer_9="Cut Element"
 2d_physics/layer_10="Iframe Bodypart"
+2d_physics/layer_11="Rubber Element"
 
 [rendering]
 

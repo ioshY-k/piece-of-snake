@@ -1,5 +1,6 @@
 extends Node
 
+var swiss_knive = false
 var map:Map
 var snake_tail:SnakeTail
 var already_cut: bool = false
@@ -12,7 +13,14 @@ func _ready() -> void:
 	map.snake_head.cut.connect(_cuttable_tail_hit)
 	SignalBus.pre_next_tile_reached.connect(_make_bodyparts_cuttable)
 	SignalBus.round_started.connect(_reset_already_cut)
-	
+	SignalBus.swiss_knive_synergy.connect(_set_swiss_knive)
+
+func _set_swiss_knive(state:bool):
+	swiss_knive = state
+	if swiss_knive:
+		cuttable_area = 6
+	else:
+		cuttable_area = 3
 
 func _cuttable_tail_hit(colliding_element):
 	var body_parts:Array[SnakeBody] = map.snake_path_bodyparts

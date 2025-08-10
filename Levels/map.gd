@@ -22,6 +22,7 @@ var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_componen
 var anchor_component_scene = load("res://UpgradeComponents/anchor_component.tscn")
 var tail_cut_component_scene = load("res://UpgradeComponents/tail_cut_component.tscn")
 var steel_helmet_component_scene = load("res://UpgradeComponents/steel_helmet_component.tscn")
+var rubber_band_component_scene = load("res://UpgradeComponents/rubber_band_component.tscn")
 
 #mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
@@ -296,6 +297,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.ANCHOR:
 			var anchor_component = anchor_component_scene.instantiate()
 			snake_head.add_child(anchor_component)
+		GameConsts.UPGRADE_LIST.RUBBER_BAND:
+			var rubber_band_component = rubber_band_component_scene.instantiate()
+			add_child(rubber_band_component)
 
 func apply_mapmod(mapmod: int):
 	print(GameConsts.MAP_MODS.find_key(mapmod))

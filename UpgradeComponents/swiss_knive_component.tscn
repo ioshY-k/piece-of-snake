@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hk87jafoclw"]
+
+[ext_resource type="Script" uid="uid://bm4batuhf255c" path="res://UpgradeComponents/swiss_knive_component.gd" id="1_clxsj"]
+
+[node name="SwissKniveComponent" type="Node"]
+script = ExtResource("1_clxsj")

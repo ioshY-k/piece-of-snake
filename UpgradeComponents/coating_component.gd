@@ -1,8 +1,10 @@
 extends Node
 
+var swiss_knive = false
 var level:LevelManager
 var initial_fruit_punishment
-var coated: bool = true
+var coatings_left: int = 0
+var max_times_coated: int = 1
 var coat_scene = load("res://UpgradeComponents/coating.tscn")
 var coat: Sprite2D
 
@@ -13,21 +15,35 @@ func _ready():
 	SignalBus.round_started.connect(_apply_coat)
 	SignalBus.got_hit.connect(_coating_used)
 	SignalBus.round_over.connect(_reset_fruit_punishment)
+	SignalBus.act_over.connect(self_destruct)
+	SignalBus.swiss_knive_synergy.connect(_set_swiss_knive)
 
+func _set_swiss_knive(state:bool):
+	swiss_knive = state
+	if swiss_knive:
+		coatings_left = 2
+		max_times_coated = 2
+	else:
+		coatings_left = 1
+		max_times_coated = 1
+	
 func _apply_coat():
 	initial_fruit_punishment = level.fruit_punishment
 	level.fruit_punishment = 0
-	coated = true
+	coatings_left = max_times_coated
 	coat.show()
 
 func _reset_fruit_punishment():
 	level.fruit_punishment = initial_fruit_punishment
 
 func _coating_used():
-	if coated:
-		level.fruit_punishment = initial_fruit_punishment
-		coated = false
-		coat.hide()
+	if coatings_left > 0:
+		coatings_left -= 1
+		if coatings_left == 0:
+			level.fruit_punishment = initial_fruit_punishment
+			coat.hide()
+			
 
 func self_destruct():
+	coat.queue_free()
 	queue_free()

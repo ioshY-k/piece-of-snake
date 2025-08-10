@@ -5,8 +5,9 @@ class_name SnakeHead extends MovingSnakePart
 @onready var left_collision_ray: RayCast2D = $LeftCollisionRay
 var snake_tail: MovingSnakePart
 
-#when cutting tail
+#when passing special bodyparts
 signal cut
+signal rubber
 
 var colliding_element: MapElement
 var buffered_input_direction: int = -10
@@ -73,21 +74,23 @@ func _on_next_tile_reached():
 		else:
 			SignalBus.teleported.emit(temp_teleporter)
 		
-	if colliding_element == null or not moves:
-		pass
-	elif colliding_element.get_collision_layer_value(10): #Overlapping because Iframes
-		SignalBus.overlapped.emit()
-	elif colliding_element.get_collision_layer_value(1) or\
-		colliding_element.get_collision_layer_value(6): #Solid or Obstacle
-		SignalBus.stop_moving.emit()
-		if not hit_signal_muted:
-			SignalBus.got_hit.emit()
-	elif colliding_element.get_collision_layer_value(7) :#Overlap
-		colliding_element.snake_overlapped.emit()
-	elif colliding_element.get_collision_layer_value(2) :#Fruit
-		colliding_element.collision_with.emit()
-	elif colliding_element.get_collision_layer_value(9): #TailCut
-		cut.emit(colliding_element)
+	if colliding_element != null and moves:
+		if colliding_element.get_collision_layer_value(10): #Overlapping because Iframes
+			SignalBus.overlapped.emit()
+		elif colliding_element.get_collision_layer_value(1) or\
+			colliding_element.get_collision_layer_value(6): #Solid or Obstacle
+			SignalBus.stop_moving.emit()
+			if not hit_signal_muted:
+				SignalBus.got_hit.emit()
+		elif colliding_element.get_collision_layer_value(7) :#Overlap
+			colliding_element.snake_overlapped.emit()
+		elif colliding_element.get_collision_layer_value(2) :#Fruit
+			colliding_element.collision_with.emit()
+			
+		if colliding_element.get_collision_layer_value(9): #TailCut
+			cut.emit(colliding_element)
+		if colliding_element.get_collision_layer_value(11): #Rubber
+			rubber.emit()
 		
 	
 	if not moves:

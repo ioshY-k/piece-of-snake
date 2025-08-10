@@ -6,6 +6,7 @@ signal fruit_collected
 signal got_hit
 signal round_started
 signal round_over
+signal act_over
 signal teleported
 signal overlapped
 signal teleport_finished
@@ -15,3 +16,4 @@ signal pre_next_tile_reached
 signal next_tile_reached
 signal active_item_used
 signal enough_fruits_changed(enough:bool)
+signal swiss_knive_synergy(active:bool)

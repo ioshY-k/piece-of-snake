@@ -25,7 +25,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(43)
+	current_upgrades.resize(45)
 	current_upgrades.fill(false)
 	
 	create_new_run()
@@ -49,11 +49,11 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.DISCO,
 					GameConsts.MAP_LIST.DISCO,
 					GameConsts.MAP_LIST.DISCO]
-		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.CAFFEINATED,
+		mapmodorder = [GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.LASER,
@@ -111,6 +111,7 @@ func _on_round_over():
 			current_round += 1
 			level.prepare_new_round(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
 		else:
+			SignalBus.act_over.emit()
 			current_act += 1
 			current_round = 0
 			shop.reset_area_and_currency()

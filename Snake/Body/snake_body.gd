@@ -140,6 +140,11 @@ func play_corner_deco_anim_tweens():
 func _set_animation_progress(time: float):
 	corner_animation_player.seek(time, true)
 
+func turn_rubber():
+	solid_element.set_collision_layer_value(6,false)
+	solid_element.set_collision_layer_value(11,true)
+	frame = 5
+
 func _on_stop_moving():
 	body_moves = false
 func _on_continue_moving():

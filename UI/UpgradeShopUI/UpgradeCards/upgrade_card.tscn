@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=54 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -48,6 +48,8 @@
 [ext_resource type="Texture2D" uid="uid://dllsevn4oih4k" path="res://UI/UpgradeShopUI/UpgradeCards/Fuel1.svg" id="42_u8qu0"]
 [ext_resource type="Texture2D" uid="uid://dye5rnhdb3doj" path="res://UI/UpgradeShopUI/UpgradeCards/Fuel2.svg" id="43_iqm1b"]
 [ext_resource type="Texture2D" uid="uid://bg6bbxyxo2e50" path="res://UI/UpgradeShopUI/UpgradeCards/Fuel3.svg" id="44_lmueq"]
+[ext_resource type="Texture2D" uid="uid://bbpwacdc1jvg4" path="res://UI/UpgradeShopUI/UpgradeCards/RubberBand.svg" id="45_iqm1b"]
+[ext_resource type="Texture2D" uid="uid://cy8t72e7rllnq" path="res://UI/UpgradeShopUI/UpgradeCards/SwissKnive.svg" id="46_lmueq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -180,6 +182,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("44_lmueq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_iqm1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lmueq")
 }],
 "loop": true,
 "name": &"default",
