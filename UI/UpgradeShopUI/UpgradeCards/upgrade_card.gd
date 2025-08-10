@@ -40,7 +40,10 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.DIET_2) : "[color=ffc875]Don't grow at all[/color] when collecting overstock fruit.",
 	str(GameConsts.UPGRADE_LIST.DIET_3) : "The probability for not growing [color=ffc875]stays high for longer[/color].",
 	str(GameConsts.UPGRADE_LIST.COATING) : "[color=#80d984]Prevent[/color] the first time [color=#80d984]losing fruit[/color] per round",
-	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "[color=#80d984]Don't get hit[/color] when running into walls [color=#80d984]with Hyper Speed[/color].\nYour body doesn't count."
+	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "[color=#80d984]Don't get hit[/color] when running into walls [color=#80d984]with Hyper Speed[/color].\nYour body doesn't count.",
+	str(GameConsts.UPGRADE_LIST.FUEL_1) : "Collecting fruits while in Hyper Speed [color=ffc875]fills a chunk of the Hyper Speed gauge[/color].",
+	str(GameConsts.UPGRADE_LIST.FUEL_2) : "Collecting fruits while in Hyper Speed [color=ffc875]fills a bigger chunk of the Hyper Speed gauge[/color].",
+	str(GameConsts.UPGRADE_LIST.FUEL_3) : "Collecting fruits while in Hyper Speed [color=ffc875]refills the Hyper Speed gauge completely[/color]."
 	}
 
 var mouse_in: bool = false

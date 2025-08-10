@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=52 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -45,6 +45,9 @@
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="40_f1qts"]
 [ext_resource type="Texture2D" uid="uid://ddtg5b7bfse3r" path="res://UI/UpgradeShopUI/UpgradeCards/HolyMantle.svg" id="40_t6avq"]
 [ext_resource type="Texture2D" uid="uid://dsis8fdf4ptt1" path="res://UI/UpgradeShopUI/UpgradeCards/SteelHelmet.svg" id="41_nsm8n"]
+[ext_resource type="Texture2D" uid="uid://dllsevn4oih4k" path="res://UI/UpgradeShopUI/UpgradeCards/Fuel1.svg" id="42_u8qu0"]
+[ext_resource type="Texture2D" uid="uid://dye5rnhdb3doj" path="res://UI/UpgradeShopUI/UpgradeCards/Fuel2.svg" id="43_iqm1b"]
+[ext_resource type="Texture2D" uid="uid://bg6bbxyxo2e50" path="res://UI/UpgradeShopUI/UpgradeCards/Fuel3.svg" id="44_lmueq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -168,6 +171,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("41_nsm8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_u8qu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_iqm1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_lmueq")
 }],
 "loop": true,
 "name": &"default",

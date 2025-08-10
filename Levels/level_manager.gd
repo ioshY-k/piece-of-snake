@@ -41,6 +41,9 @@ var crossroad_1_component_scene = load("res://UpgradeComponents/crossroad_1_comp
 var moulting_component_scene = load("res://UpgradeComponents/moulting_component.tscn")
 var piggy_bank_component_scene = load("res://UpgradeComponents/piggy_bank_component.tscn")
 var sale_component_scene = load("res://UpgradeComponents/sale_component.tscn")
+var fuel_1_component_scene = load("res://UpgradeComponents/fuel_1_component.tscn")
+var fuel_2_component_scene = load("res://UpgradeComponents/fuel_2_component.tscn")
+var fuel_3_component_scene = load("res://UpgradeComponents/fuel_3_component.tscn")
 
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
@@ -245,6 +248,15 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_3:
 			var hyper_speed_3_component = hyper_speed_3_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_3_component)
+		GameConsts.UPGRADE_LIST.FUEL_1:
+			var fuel_1_component = fuel_1_component_scene.instantiate()
+			speed_boost_bar.add_child(fuel_1_component)
+		GameConsts.UPGRADE_LIST.FUEL_2:
+			var fuel_2_component = fuel_2_component_scene.instantiate()
+			speed_boost_bar.add_child(fuel_2_component)
+		GameConsts.UPGRADE_LIST.FUEL_3:
+			var fuel_3_component = fuel_3_component_scene.instantiate()
+			speed_boost_bar.add_child(fuel_3_component)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			var item_reloader_component = item_reloader_component_scene.instantiate()
 			add_child(item_reloader_component)
@@ -340,6 +352,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = speed_boost_bar.find_child("HyperSpeed2Component",false,false)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_3:
 			component = speed_boost_bar.find_child("HyperSpeed3Component",false,false)
+		GameConsts.UPGRADE_LIST.FUEL_1:
+			component = speed_boost_bar.find_child("Fuel1Component",false,false)
+		GameConsts.UPGRADE_LIST.FUEL_2:
+			component = speed_boost_bar.find_child("Fuel2Component",false,false)
+		GameConsts.UPGRADE_LIST.FUEL_3:
+			component = speed_boost_bar.find_child("Fuel3Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1:
 			component = current_map.find_child("DoubleFruit1Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2:
@@ -380,6 +398,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1,\
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_2,\
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_3,\
+		GameConsts.UPGRADE_LIST.FUEL_1,\
+		GameConsts.UPGRADE_LIST.FUEL_2,\
+		GameConsts.UPGRADE_LIST.FUEL_3,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3,\

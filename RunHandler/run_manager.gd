@@ -25,7 +25,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(40)
+	current_upgrades.resize(43)
 	current_upgrades.fill(false)
 	
 	create_new_run()
