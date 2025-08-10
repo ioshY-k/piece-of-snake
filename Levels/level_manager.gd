@@ -46,6 +46,9 @@ var fuel_2_component_scene = load("res://UpgradeComponents/fuel_2_component.tscn
 var fuel_3_component_scene = load("res://UpgradeComponents/fuel_3_component.tscn")
 var swiss_knive_component_scene = load("res://UpgradeComponents/swiss_knive_component.tscn")
 
+@onready var hit_audio: AudioStreamPlayer = $HitAudio
+@onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
+
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
@@ -100,7 +103,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(1)
+		time_meter.initiate_time_bar(5)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -127,7 +130,9 @@ func on_snake_got_hit():
 	if current_map.invincible_ticks > 0:
 		return
 	
-	
+	if fruit_punishment > 0:
+		hit_audio.play()
+		
 	for punish in range(fruit_punishment):
 		if not enough_fruits:
 			fruits_left += 1
@@ -149,6 +154,7 @@ func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
 func _on_fruit_collected(_collected_fruit, _is_real_collection):
+	
 	if not enough_fruits:
 		fruits_left -= 1
 		fruits_left_number_label.text = str(fruits_left)
@@ -160,6 +166,7 @@ func _on_fruit_collected(_collected_fruit, _is_real_collection):
 	else:
 		fruits_overload += 1
 		fruits_left_number_label.text = str(fruits_overload)
+	eat_fruit_audio.play()
 
 func decide_speed_boost(delta):
 	if Input.is_action_just_released("speed_boost"):

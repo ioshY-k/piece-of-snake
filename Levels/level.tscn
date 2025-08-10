@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbbha5rn0kflr"]
+[gd_scene load_steps=11 format=3 uid="uid://bbbha5rn0kflr"]
 
 [ext_resource type="Script" uid="uid://do0scnp22kly2" path="res://Levels/level_manager.gd" id="1_vx8ih"]
 [ext_resource type="Texture2D" uid="uid://nygc5koouovv" path="res://Background.svg" id="2_ugh17"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bnn1xmc2b43mm" path="res://UI/LevelUI/time_meter.tscn" id="7_8a2b0"]
 [ext_resource type="Script" uid="uid://cle2566xpcd0s" path="res://Levels/active_item_slot.tres.gd" id="7_ecu0b"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="8_jjxhf"]
+[ext_resource type="AudioStream" uid="uid://qn1q6ig0svqg" path="res://Snake/HitAudio.wav" id="9_t2u7g"]
 [ext_resource type="PackedScene" uid="uid://bc4sb6dmfgooa" path="res://UI/LevelUI/speed_boost_bar.tscn" id="10_8hqpc"]
+[ext_resource type="AudioStream" uid="uid://cydw70e7incnh" path="res://Snake/EatFruitAudio.wav" id="10_vx8ih"]
 
 [node name="Level" type="Node2D"]
 z_index = 5
@@ -100,5 +102,11 @@ offset_right = -716.0
 offset_bottom = -336.0
 scale = Vector2(4.84522, 4.84522)
 button_pressed = true
+
+[node name="HitAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_t2u7g")
+
+[node name="EatFruitAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_vx8ih")
 
 [connection signal="toggled" from="TestButton" to="." method="_on_test_button_toggled"]

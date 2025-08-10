@@ -48,23 +48,29 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.CORNER_PHASING,
 									GameConsts.UPGRADE_LIST.MOULTING,
 									GameConsts.UPGRADE_LIST.PIGGY_BANK,
-									GameConsts.UPGRADE_LIST.SALE]
+									GameConsts.UPGRADE_LIST.SALE,
+									GameConsts.UPGRADE_LIST.DIET_1,
+									GameConsts.UPGRADE_LIST.COATING,
+									GameConsts.UPGRADE_LIST.STEEL_HELMET,
+									GameConsts.UPGRADE_LIST.FUEL_1,
+									GameConsts.UPGRADE_LIST.RUBBER_BAND,
+									GameConsts.UPGRADE_LIST.SWISS_KNIVE,]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 @onready var upgrade_overview: Sprite2D = $UpgradeOverview
 var purchase_count: int = 1
 var current_purchase_count: int
 
+@onready var card_deal_audio: AudioStreamPlayer = $CardDealAudio
+@onready var button_press_audio: AudioStreamPlayer = $ButtonPressAudio
+
 func _ready() -> void:
 	if GameConsts.test_mode:
 		purchase_count = 3
-		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.SWISS_KNIVE,
-									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
-									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
-									GameConsts.UPGRADE_LIST.RUBBER_BAND,
-									GameConsts.UPGRADE_LIST.TAIL_CUT,
-									GameConsts.UPGRADE_LIST.COATING,
-									GameConsts.UPGRADE_LIST.STEEL_HELMET,]
+		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
+									GameConsts.UPGRADE_LIST.CORNER_PHASING,
+									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,
+									GameConsts.UPGRADE_LIST.CORNER_PHASING]
 	
 	current_purchase_count = purchase_count
 	
@@ -187,6 +193,7 @@ func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
 			
 
 func _on_continue_next_round_pressed() -> void:
+	button_press_audio.play()
 	current_purchase_count = purchase_count
 	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	shelf_tween.tween_property($ItemShelf, "rotation_degrees", -180, 0.8)
@@ -207,6 +214,7 @@ func generate_items(current_round):
 	
 	var itemcounter: int = 0
 	var card_tween: Tween
+	card_deal_audio.play()
 	for offered_upgrade in offered_upgrades:
 		var offset_vector: Vector2 = Vector2(randi_range(-170,170), randi_range(-170,170))
 		var upgrade_card = UPGRADE_CARD.instantiate()

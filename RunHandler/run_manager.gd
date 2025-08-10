@@ -3,7 +3,9 @@ class_name RunManager extends Node
 var scene_loader
 
 var maps_act1 = [GameConsts.MAP_LIST.WOODS,GameConsts.MAP_LIST.STADIUM,GameConsts.MAP_LIST.RESTAURANT]
-var maps_act2 = [GameConsts.MAP_LIST.OFFICE,GameConsts.MAP_LIST.CAVE]
+var maps_act2 = [
+	#GameConsts.MAP_LIST.OFFICE,
+	GameConsts.MAP_LIST.CAVE]
 var maps_act3 = [GameConsts.MAP_LIST.DISCO,GameConsts.MAP_LIST.BEACH]
 var maporder = []
 var mapmodorder = []
@@ -21,6 +23,7 @@ var level: LevelManager
 
 var current_upgrades: Array[bool] = []
 
+@onready var fruit_payout_audio: AudioStreamPlayer = $FruitPayoutAudio
 
 func _ready() -> void:
 	scene_loader = get_parent()
@@ -98,6 +101,7 @@ func _on_round_over():
 			currency_label_tween.tween_property(shop.currency_number_label, "scale", Vector2(1,1), 0.06)
 			shop.currency_number_label.text = str(shop.fruits_currency)
 			level.fruits_left_number_label.text = str(level.fruits_overload)
+			fruit_payout_audio.play()
 		shop.fruit_count_particle.emitting = false
 		await get_tree().create_timer(0.5).timeout
 		

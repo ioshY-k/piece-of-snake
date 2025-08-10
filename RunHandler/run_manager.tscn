@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgp8h4pee15v4"]
+[gd_scene load_steps=4 format=3 uid="uid://dgp8h4pee15v4"]
 
 [ext_resource type="Script" uid="uid://cth0nydpljyal" path="res://RunHandler/run_manager.gd" id="1_ondx6"]
 [ext_resource type="PackedScene" uid="uid://l38062djgpxk" path="res://UI/UpgradeShopUI/shop.tscn" id="2_kmd66"]
+[ext_resource type="AudioStream" uid="uid://c0im0hy83l5hp" path="res://Shop/FruitPayoutAudio.wav" id="3_vxqjj"]
 
 [node name="RunManager" type="Node"]
 script = ExtResource("1_ondx6")
@@ -14,5 +15,8 @@ theme_override_font_sizes/font_size = 161
 text = "Retry"
 
 [node name="Shop" parent="." instance=ExtResource("2_kmd66")]
+
+[node name="FruitPayoutAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vxqjj")
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

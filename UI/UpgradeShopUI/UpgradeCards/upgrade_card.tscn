@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=58 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://UI/UpgradeShopUI/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://UI/UpgradeShopUI/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -50,6 +50,10 @@
 [ext_resource type="Texture2D" uid="uid://bg6bbxyxo2e50" path="res://UI/UpgradeShopUI/UpgradeCards/Fuel3.svg" id="44_lmueq"]
 [ext_resource type="Texture2D" uid="uid://bbpwacdc1jvg4" path="res://UI/UpgradeShopUI/UpgradeCards/RubberBand.svg" id="45_iqm1b"]
 [ext_resource type="Texture2D" uid="uid://cy8t72e7rllnq" path="res://UI/UpgradeShopUI/UpgradeCards/SwissKnive.svg" id="46_lmueq"]
+[ext_resource type="AudioStream" uid="uid://c8dmgwp22cyce" path="res://Shop/CardSnap.wav" id="51_dqar4"]
+[ext_resource type="AudioStream" uid="uid://bswqsb1vkijts" path="res://Shop/CardSelect.wav" id="52_ea03u"]
+[ext_resource type="AudioStream" uid="uid://b8j31t0jdbxn4" path="res://Shop/CardDeselesct.wav" id="53_1kqk4"]
+[ext_resource type="AudioStream" uid="uid://dejdw5oc0tjyw" path="res://Shop/CardBuy.wav" id="54_5fd0j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -263,6 +267,18 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardArea"]
 position = Vector2(60, 60)
 shape = SubResource("RectangleShape2D_1v4fj")
+
+[node name="CardSnapAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("51_dqar4")
+
+[node name="CardSelectAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("52_ea03u")
+
+[node name="CardDeselectAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("53_1kqk4")
+
+[node name="CardBuyAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("54_5fd0j")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

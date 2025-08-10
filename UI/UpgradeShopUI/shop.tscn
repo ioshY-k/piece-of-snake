@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=47 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://UI/UpgradeShopUI/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://UI/UpgradeShopUI/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://r0qu0vrb4gvn" path="res://UI/UpgradeShopUI/MapPreviews/RestaurantPreview.png" id="34_e7gtn"]
 [ext_resource type="Texture2D" uid="uid://rx18i741y3kr" path="res://UI/UpgradeShopUI/MapPreviews/TombPreview_Ebene 1.png" id="35_ljcx5"]
 [ext_resource type="Texture2D" uid="uid://dqfsjapxy66a5" path="res://UI/UpgradeShopUI/MapPreviews/Covering.svg" id="36_fkwd4"]
+[ext_resource type="AudioStream" uid="uid://x0jm6gfjswja" path="res://Shop/CardDeal.wav" id="40_12c50"]
+[ext_resource type="AudioStream" uid="uid://c1jyabebv6bq2" path="res://UI/ButtonPress.wav" id="41_cug3m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1g7c"]
 size = Vector2(80, 80)
@@ -1166,6 +1168,12 @@ scale_amount_max = 1.3
 scale_amount_curve = SubResource("Curve_qix85")
 hue_variation_min = -0.42
 hue_variation_max = 0.31
+
+[node name="CardDealAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_12c50")
+
+[node name="ButtonPressAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_cug3m")
 
 [connection signal="mouse_entered" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_mouse_entered"]
 [connection signal="mouse_exited" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_mouse_exited"]

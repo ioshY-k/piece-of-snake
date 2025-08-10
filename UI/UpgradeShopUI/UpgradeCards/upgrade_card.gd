@@ -55,6 +55,11 @@ var is_dragging: bool = false
 @onready var card_area: Area2D = $CardArea
 @onready var sale_number: Label = $CardSprite/SaleTag/SaleNumber
 @export var upgrade_id: int
+@onready var card_snap_audio: AudioStreamPlayer = $CardSnapAudio
+@onready var card_select_audio: AudioStreamPlayer = $CardSelectAudio
+@onready var card_deselect_audio: AudioStreamPlayer = $CardDeselectAudio
+@onready var card_buy_audio: AudioStreamPlayer = $CardBuyAudio
+
 var upgrade_description: String
 var upgrade_type: int
 var is_advanced: bool
@@ -102,8 +107,10 @@ func drag_logic(delta: float):
 		#card is being dragged
 		if Input.is_action_pressed("click"):
 			#card is just now being dragged
-			if Input.is_action_just_pressed("click") and not is_bought:
-				got_clicked.emit(self)
+			if Input.is_action_just_pressed("click"):
+				card_select_audio.play()
+				if not is_bought:
+					got_clicked.emit(self)
 			global_position = lerp(global_position, get_global_mouse_position() - (size/2.0), 22*delta)
 			_change_scale(Vector2(0.7,0.7))
 			_set_rotation(delta)
@@ -116,6 +123,7 @@ func drag_logic(delta: float):
 			card_sprite.rotation_degrees = lerp(card_sprite.rotation_degrees, 0.0, 22*delta)
 			#card is just now let go of
 			if is_dragging:
+				card_deselect_audio.play()
 				decide_on_let_go()
 				let_go.emit()
 			is_dragging = false
@@ -132,6 +140,7 @@ func drag_logic(delta: float):
 func decide_on_let_go():
 	if is_bought:
 		_snap_to_slot(owned_slot_area)
+		card_snap_audio.play()
 		return
 	if card_area.get_overlapping_areas().is_empty():
 		return
@@ -150,7 +159,7 @@ func decide_on_let_go():
 		if get_parent().get_parent().can_afford(owned_slot_area.get_parent()):
 			card_sprite.rotation_degrees = 0
 			_snap_to_slot(owned_slot_area)
-			
+			card_buy_audio.play()
 			if replaced_card != null:
 				replaced_card.destroyed.emit(replaced_card.upgrade_id)
 				replaced_card.queue_free()
