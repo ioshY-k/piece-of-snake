@@ -4,6 +4,7 @@ var swiss_knive = false
 var map:Map
 var straights_in_succession: int = 0
 var invincibility_length: int = 4
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	map = get_parent()
@@ -30,6 +31,8 @@ func _count_straight_bodyparts():
 
 func _turn_invincible():
 	map.invincible_ticks = invincibility_length
+	if not audio_stream_player.playing:
+		audio_stream_player.play()
 
 func self_destruct():
 	queue_free()

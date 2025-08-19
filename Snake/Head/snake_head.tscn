@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dadpidbo1my0e"]
+[gd_scene load_steps=10 format=3 uid="uid://dadpidbo1my0e"]
 
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
+[ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="1_v1ci8"]
+[ext_resource type="Texture2D" uid="uid://nuurtwulnu6g" path="res://Snake/Head/PythonHeadLeft.svg" id="2_8d6nv"]
 [ext_resource type="Script" uid="uid://b1w4urh1bs5rr" path="res://Snake/Head/snake_head.gd" id="2_ogxry"]
 [ext_resource type="Texture2D" uid="uid://cqadyeqshgwet" path="res://Snake/Head/snake_head_placeholder_leftlook.svg" id="2_v1ci8"]
 [ext_resource type="Texture2D" uid="uid://dqn5ayp6ip31k" path="res://Snake/Head/snake_head_placeholder_rightlook.svg" id="3_8d6nv"]
+[ext_resource type="Texture2D" uid="uid://d2ex3w8x7ujqv" path="res://Snake/Head/PythonHeadRight.svg" id="3_naox3"]
+[ext_resource type="AudioStream" uid="uid://ehxu7o35artm" path="res://MapElements/TeleportElement/TeleportAudio.wav" id="8_n1yu6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_naox3"]
 animations = [{
@@ -16,8 +20,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_8d6nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_v1ci8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8d6nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_naox3")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 5.0
 }]
@@ -26,8 +39,7 @@ animations = [{
 z_index = 20
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_naox3")
-frame = 2
-frame_progress = 0.581337
+frame_progress = 0.403755
 script = ExtResource("2_ogxry")
 
 [node name="FrontCollisionRay" type="RayCast2D" parent="."]
@@ -44,3 +56,6 @@ collide_with_areas = true
 target_position = Vector2(80, 0)
 collision_mask = 1395
 collide_with_areas = true
+
+[node name="TeleportAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_n1yu6")

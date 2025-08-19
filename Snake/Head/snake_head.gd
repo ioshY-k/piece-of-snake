@@ -73,6 +73,7 @@ func _on_next_tile_reached():
 			position = temp_position
 		else:
 			SignalBus.teleported.emit(temp_teleporter)
+			$TeleportAudio.play()
 		
 	if colliding_element != null and moves:
 		if colliding_element.get_collision_layer_value(10): #Overlapping because Iframes
@@ -173,9 +174,9 @@ func buffer_last_input_direction():
 
 func determine_frame_from_orientation(buffered_input_direction):
 	if 	buffered_input_direction == current_direction+1 or buffered_input_direction == current_direction-3:
-		frame = 2
+		frame = 2 + (RunSettings.current_char * 3)
 	if 	buffered_input_direction == current_direction-1 or buffered_input_direction == current_direction+3:
-		frame = 1
+		frame = 1 + (RunSettings.current_char * 3)
 	elif buffered_input_direction == current_direction or buffered_input_direction == -10:
-		frame = 0
+		frame = 0 + (RunSettings.current_char * 3)
 #endregion

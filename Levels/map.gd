@@ -72,6 +72,9 @@ func _ready() -> void:
 	teleport_to_starting_position()
 	snake_head.snake_tail = snake_tail
 	snake_tail.snake_head = snake_head
+	print("head: ", 0 + (RunSettings.current_char * 3))
+	snake_head.frame = 0 + (RunSettings.current_char * 3) #frames per snakehead
+	snake_tail.frame = 0 + (RunSettings.current_char * 1) #frames per snaketail
 	spawn_fruit([])
 	
 	SignalBus.round_over.connect(_on_round_over)
@@ -150,10 +153,12 @@ func update_free_map_tiles(tile: Vector2i, add_tile: bool):
 func teleport_to_starting_position():
 	snake_head = snake_head_scene.instantiate()
 	snake_tail = snake_tail_scene.instantiate()
+	
 	add_child(snake_head)
 	add_child(snake_tail)
 	for snake_body_count in len(range(4)):
-		var snake_body = snake_body_scene.instantiate()
+		var snake_body: SnakeBody = snake_body_scene.instantiate()
+		snake_body.frame = 1 + (RunSettings.current_char * 9) #frames per snake
 		add_child(snake_body)
 		snake_path_bodyparts.append(snake_body)
 	

@@ -1,0 +1,157 @@
+[gd_scene load_steps=12 format=3 uid="uid://wm1t2vil6cf3"]
+
+[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/GodoticonEdge.svg" id="1_bvreb"]
+[ext_resource type="Script" uid="uid://d3jsbv4fevho1" path="res://MainMenu/CharacterSelect/snake_body_char_selesct.gd" id="3_3vutc"]
+[ext_resource type="Shader" uid="uid://c23kf1475ne7u" path="res://Shader/invisibility_shader.gdshader" id="4_qeho6"]
+[ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/SnakeDeco.svg" id="5_uniil"]
+[ext_resource type="Texture2D" uid="uid://bwbi37uu0dba8" path="res://Snake/Body/SnakeDecoSingle.svg" id="6_vgdh7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5mbj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81x6j"]
+shader = ExtResource("4_qeho6")
+shader_parameter/hidden_percentage = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jq760"]
+shader = ExtResource("4_qeho6")
+shader_parameter/hidden_percentage = 1.0
+
+[sub_resource type="Animation" id="Animation_krvum"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnakeBodyDecoCorner2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SnakeBodyDecoCorner2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SnakeBodyDecoCorner1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SnakeBodyDecoCorner1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.785398]
+}
+
+[sub_resource type="Animation" id="Animation_81x6j"]
+resource_name = "move_tile_anim"
+length = 0.38
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnakeBodyDecoCorner2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.38),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SnakeBodyDecoCorner2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.38),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.785398, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SnakeBodyDecoCorner1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.38),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-80, 0), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SnakeBodyDecoCorner1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.38),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.5708, 1.5708, 0.785398]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m5mbj"]
+_data = {
+&"RESET": SubResource("Animation_krvum"),
+&"move_tile_anim": SubResource("Animation_81x6j")
+}
+
+[node name="SnakeBody" type="Sprite2D" groups=["Snake"]]
+clip_children = 2
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_m5mbj")
+rotation = -1.57079
+texture = ExtResource("1_bvreb")
+script = ExtResource("3_3vutc")
+
+[node name="SnakeBodyDecoEdge" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_81x6j")
+texture = ExtResource("5_uniil")
+offset = Vector2(0, 40)
+
+[node name="SnakeBodyDecoCorner1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jq760")
+rotation = 0.785398
+texture = ExtResource("6_vgdh7")
+
+[node name="SnakeBodyDecoCorner2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_81x6j")
+position = Vector2(0, -80)
+texture = ExtResource("6_vgdh7")
+
+[node name="CornerAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m5mbj")
+}
+autoplay = "move_tile_anim"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ocnud8k5oe4"]
+[gd_scene load_steps=5 format=3 uid="uid://c4ocnud8k5oe4"]
 
 [ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="1_42lf2"]
+[ext_resource type="Texture2D" uid="uid://blke1i7mxvqa4" path="res://Snake/Tail/PythonTail.svg" id="1_d2p80"]
 [ext_resource type="Script" uid="uid://dvg2ys4h7imig" path="res://Snake/Tail/snake_tail.gd" id="2_d2p80"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pp2ak"]
@@ -8,6 +9,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_42lf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_d2p80")
 }],
 "loop": true,
 "name": &"default",

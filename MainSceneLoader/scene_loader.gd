@@ -1,7 +1,7 @@
 class_name SceneLoader extends Node
 
 const RUN_MANAGER = preload("res://RunHandler/run_manager.tscn")
-const MAIN_MENU = preload("res://UI/MainMenuUI/main_menu.tscn")
+const MAIN_MENU = preload("res://MainMenu/main_menu.tscn")
 
 func _ready() -> void:
 	change_scene("MAIN_MENU")

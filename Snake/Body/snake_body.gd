@@ -4,20 +4,21 @@ class_name SnakeBody extends AnimatedSprite2D
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
 enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL}
 var is_corner: bool
+var is_tetris: bool = false
+var is_rubber: bool = false
 var body_moves: bool = true
 var is_overlap_bodypart: bool = false
 var is_overlapped: bool = false
-var is_tetris: bool = false
 const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 
 @onready var solid_element: SolidElement = $SolidElement
 
 @onready var snake_body_deco_edge: Sprite2D = $SnakeBodyDecoEdge
-@onready var snake_body_deco_corner1: Sprite2D = $SnakeBodyDecoCorner1
-@onready var snake_body_deco_corner2: Sprite2D = $SnakeBodyDecoCorner2
+@onready var snake_body_deco_corner_front: Node2D = $SnakeBodyCornerFront
+@onready var snake_body_deco_corner_back: Node2D = $SnakeBodyCornerDecoBack
 @onready var corner_animation_player: AnimationPlayer = $CornerAnimationPlayer
 
-
+var map: Map
 var snake_head: SnakeHead
 
 static func new_snakebody(this_direction, next_direction) -> SnakeBody:
@@ -28,18 +29,20 @@ static func new_snakebody(this_direction, next_direction) -> SnakeBody:
 
 func _ready() -> void:
 	if is_tetris:
-		snake_head = get_parent().get_parent().snake_head
-		frame = 2
+		map = get_parent().get_parent()
+		frame = 2 + (RunSettings.current_char * 9) #frames per snake
 	else:
-		snake_head = get_parent().snake_head
+		map = get_parent()
+	
+	snake_head = map.snake_head
 	
 	if is_corner:
 		snake_body_deco_edge.hide()
 		play_corner_deco_anim_tweens()
 		
 	else:
-		snake_body_deco_corner1.hide()
-		snake_body_deco_corner2.hide()
+		snake_body_deco_corner_front.hide()
+		snake_body_deco_corner_back.hide()
 		play_edge_deco_anim_tweens()
 	
 	SignalBus.stop_moving.connect(_on_stop_moving)
@@ -51,7 +54,7 @@ func _ready() -> void:
 func find_correct_rotation(this_direction: int, next_direction: int):
 	if this_direction == next_direction:
 		is_corner = false
-		frame = 1
+		frame = 1 + (RunSettings.current_char * 9) #frames per snake
 		match this_direction:
 			DIRECTION.UP:
 				rotation_degrees = 0
@@ -66,7 +69,7 @@ func find_correct_rotation(this_direction: int, next_direction: int):
 				rotation_degrees = 270
 	else:
 		is_corner = true
-		frame = 0
+		frame = 0 + (RunSettings.current_char * 9) #frames per snake
 		match [this_direction ,next_direction]:
 			[2,1]:
 				rotation_degrees = 90
@@ -141,9 +144,20 @@ func _set_animation_progress(time: float):
 	corner_animation_player.seek(time, true)
 
 func turn_rubber():
+	is_rubber = true
 	solid_element.set_collision_layer_value(6,false)
 	solid_element.set_collision_layer_value(11,true)
-	frame = 5
+	var body_position = map.snake_path_bodyparts.find(self)
+	if body_position == 0 or not map.snake_path_bodyparts[body_position-1].is_rubber:
+		frame = 5 + (RunSettings.current_char * 9) #frames per snake
+		await SignalBus.next_tile_reached
+		if map.snake_path_bodyparts[body_position].is_rubber:
+			frame = 6 + (RunSettings.current_char * 9) #frames per snake
+	else:
+		frame = 7 + (RunSettings.current_char * 9) #frames per snake
+		await SignalBus.next_tile_reached
+		if map.snake_path_bodyparts[body_position].is_rubber:
+			frame = 8 + (RunSettings.current_char * 9) #frames per snake
 
 func _on_stop_moving():
 	body_moves = false

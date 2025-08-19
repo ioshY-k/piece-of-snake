@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr0dbax8tth7u"]
 
 [ext_resource type="Script" uid="uid://dnsv2lwiuk7h7" path="res://UpgradeComponents/wormhole_component.gd" id="1_lavbx"]
-[ext_resource type="Texture2D" uid="uid://1lq4k2l8vt1a" path="res://UI/UpgradeShopUI/UpgradeCards/Wormhole1.svg" id="2_lavbx"]
+[ext_resource type="Texture2D" uid="uid://1lq4k2l8vt1a" path="res://Shop/UpgradeCards/Wormhole1.svg" id="2_lavbx"]
 
 [node name="WormholeComponent" type="Node2D"]
 script = ExtResource("1_lavbx")

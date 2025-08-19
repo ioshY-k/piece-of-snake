@@ -59,7 +59,9 @@ func get_moving_tween(moves: bool) -> Tween:
 	
 func get_turning_tween(direction: int) -> Tween:
 	var turning_tween: Tween = create_tween()
-	turning_tween.tween_property(self, "rotation", get_orientation(direction, rotation), 0.2).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	if self is SnakeTail:
+		turning_tween.tween_property(self, "rotation", rotation, current_snake_speed/2)
+	turning_tween.tween_property(self, "rotation", get_orientation(direction, rotation), current_snake_speed/2).set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 	return turning_tween
 
 #Should never be reached since function is overwritten in Children

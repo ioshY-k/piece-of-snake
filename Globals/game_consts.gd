@@ -5,6 +5,8 @@ const SPEED_BOOST_SPEED = 0.15
 const NORMAL_SPEED = 0.38
 const TILE_SIZE = 80
 
+enum CHAR_LIST {GODOT, PYTHON, CHAR2}
+
 enum MAP_LIST {WOODS,STADIUM,OFFICE,CAVE,DISCO,BEACH,RESTAURANT,TOMB}
 
 enum MAP_MODS {CAFFEINATED, TAILVIRUS, EDIBLE_PAPER, LASER, FRUIT_BODY, TETRI_FRUIT}
@@ -61,8 +63,8 @@ var upgrades_with_advancement: Array[int] = [	UPGRADE_LIST.AREA_SIZE_1, UPGRADE_
 
 
 var FRUIT_THRESHOLDS: Array [int] = [7,6,6,5, 8,7,7,6, 9,8,8,7]
-const ROUND_TIME_SEC: int = 30
-const COLLISION_IFRAMES: int = 3
+const ROUND_TIME_SEC: int = 60
+const COLLISION_IFRAMES: int = 4
 
 var node_being_dragged: Node = null
 

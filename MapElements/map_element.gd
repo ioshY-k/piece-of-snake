@@ -6,6 +6,5 @@ signal collision_with
 #for Overlap Elements
 signal snake_overlapped
 
-
 func _ready() -> void: 
 	collision_with.connect(map._on_collision_with.bind(self))

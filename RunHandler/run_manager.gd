@@ -17,8 +17,7 @@ var current_act: int = 0
 
 @onready var shop: Shop = $Shop
 
-var level_scene: PackedScene = preload("res://Levels/level.tscn")
-var main_menu_scene: PackedScene = preload("res://UI/MainMenuUI/main_menu.tscn")
+var level_scene: PackedScene = preload("res://Level/level.tscn")
 var level: LevelManager
 
 var current_upgrades: Array[bool] = []
@@ -26,6 +25,8 @@ var current_upgrades: Array[bool] = []
 @onready var fruit_payout_audio: AudioStreamPlayer = $FruitPayoutAudio
 
 func _ready() -> void:
+	print(RunSettings.current_char)
+	
 	scene_loader = get_parent()
 	
 	current_upgrades.resize(45)
@@ -36,7 +37,10 @@ func _ready() -> void:
 	shop.initiate_map_preview(maporder)
 	shop.upgrade_bought.connect(_on_upgrade_bought)
 	shop.upgrade_destroyed.connect(_on_upgrade_destroyed)
-	
+
+#func _process(delta: float) -> void:
+	#if Input.is_action_just_pressed("item1"):
+		#level.current_map.sna
 
 func create_new_run():
 	maporder = [maps_act1[randi()%maps_act1.size()],

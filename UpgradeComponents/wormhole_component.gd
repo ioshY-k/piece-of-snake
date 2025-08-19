@@ -3,7 +3,7 @@ extends ActiveItemBase
 signal item_deactivated
 var button_held: bool = false
 
-const TILE_SELECT_CURSOR = preload("res://UI/OtherUI/tile_select_cursor.tscn")
+const TILE_SELECT_CURSOR = preload("res://UpgradeComponents/WormHole/tile_select_cursor.tscn")
 var tile_select_cursor: Sprite2D
 
 var current_teleporters: Array[Teleporter] = []

@@ -47,10 +47,10 @@ func _make_bodyparts_cuttable():
 	body_parts[cuttable_area].solid_element.collision_layer = 0
 	body_parts[cuttable_area].solid_element.set_collision_layer_value(9,true)
 	#set look
-	if body_parts[cuttable_area].frame == 0:
-		body_parts[cuttable_area].frame = 3
+	if body_parts[cuttable_area].frame == 0 + (RunSettings.current_char * 9):
+		body_parts[cuttable_area].frame = 3 + (RunSettings.current_char * 9)
 	else:
-		body_parts[cuttable_area].frame = 4
+		body_parts[cuttable_area].frame = 4 + (RunSettings.current_char * 9) #frames per snake
 
 func _reset_already_cut():
 	already_cut = false
@@ -58,9 +58,9 @@ func _reset_already_cut():
 func self_destruct():
 	for bodypart in map.snake_path_bodyparts:
 		bodypart.solid_element.set_collision_layer_value(9,false)
-		if bodypart.frame == 3:
-			bodypart.frame = 0
-		elif bodypart.frame == 4:
-			bodypart.frame = 1
+		if bodypart.frame == 3 + (RunSettings.current_char * 9):
+			bodypart.frame = 0 + (RunSettings.current_char * 9)
+		elif bodypart.frame == 4 + (RunSettings.current_char * 9):
+			bodypart.frame = 1 + (RunSettings.current_char * 9)
 	queue_free()
 	

@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ymqdeoh1nb8v"]
+
+[ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://Shop/Slots/UpgradeSlotSpecial.png" id="1_ug3y3"]
+[ext_resource type="Texture2D" uid="uid://c0drrip2mvp6b" path="res://Shop/Symbols/SymbolSpecial.svg" id="2_m26mm"]
+[ext_resource type="Texture2D" uid="uid://bx11chgwwvqj2" path="res://Shop/UI/HighlightReplace.png" id="3_a1572"]
+[ext_resource type="Texture2D" uid="uid://cixdb6y2jjm17" path="res://Shop/UI/HighlightBuy.png" id="4_sclax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1g7c"]
+size = Vector2(80, 80)
+
+[node name="UpgradeSlotSpecial" type="Control" groups=["Slot Special"]]
+z_index = 5
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -62.0
+offset_top = 381.0
+offset_right = 18.0
+offset_bottom = 461.0
+pivot_offset = Vector2(40, 40)
+mouse_filter = 2
+
+[node name="SlotSprite" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+texture = ExtResource("1_ug3y3")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(40, 40)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s1g7c")
+
+[node name="Symbol" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.576471)
+position = Vector2(40, 40)
+texture = ExtResource("2_m26mm")
+
+[node name="HighlightReplace" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+scale = Vector2(1.505, 1.505)
+texture = ExtResource("3_a1572")
+
+[node name="HighlightBuy" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+scale = Vector2(1.505, 1.505)
+texture = ExtResource("4_sclax")
