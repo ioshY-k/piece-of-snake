@@ -43,3 +43,5 @@ func _on_stop_moving():
 	pass
 func _on_continue_moving():
 	pass
+func check_moves():
+	return snake_head.moves

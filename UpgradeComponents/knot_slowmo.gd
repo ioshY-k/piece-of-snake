@@ -15,12 +15,10 @@ func _slow_down_time():
 		level.time_meter.grow_and_vanish_effect()
 	level.time_meter.change_timer_speed(0.0)
 	slow_steps = 3
-	print("slowmo")
 
 func _decide_back_to_normal_speed():
 	if slow_steps > 0:
 		slow_steps -= 1
-		print(slow_steps)
 	else:
 		level.time_meter.change_timer_speed(1)
 

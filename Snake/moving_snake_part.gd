@@ -9,6 +9,7 @@ var current_direction
 var current_snake_speed: float = GameConsts.NORMAL_SPEED
 var base_snake_speed: float = GameConsts.NORMAL_SPEED
 
+@onready var leg_animation_player: AnimationPlayer = $LegAnimationPlayer
 @onready var map: Map = get_parent()
 
 func _ready() -> void:
@@ -29,19 +30,20 @@ func _ready() -> void:
 func get_orientation(direction: int, current_rotation: float) -> float:
 	match direction:
 		DIRECTION.UP:
-			return 0
+			if abs(current_rotation-360) < abs(current_rotation-0):
+				return 360
+			else:
+				return 0
 		DIRECTION.RIGHT:
-			if current_rotation < -3 * PI/4:
-				rotation = PI
-			return PI/2
+			if current_rotation == 360:
+				rotation_degrees = 0
+			return 90
 		DIRECTION.DOWN:
-			if current_rotation < (-1/4 * PI) and current_rotation < (-3/4 * PI):
-				return -PI
-			return PI
+			return 180
 		DIRECTION.LEFT:
-			if current_rotation > 3 * PI/4:
-				rotation = -PI
-			return -PI/2
+			if current_rotation == 0:
+				rotation_degrees = 360
+			return 270
 		_:
 			return 0
 
@@ -52,17 +54,27 @@ func get_moving_tween(moves: bool) -> Tween:
 		tile_to_move_to = next_tile
 	else:
 		tile_to_move_to = current_tile
-	moving_tween = create_tween()
+	leg_animation_player.seek(0.0, true)
+	moving_tween = create_tween().set_parallel()
 	moving_tween.tween_property(self, "position", TileHelper.tile_to_position(tile_to_move_to), current_snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if check_moves():
+		moving_tween.tween_method(_set_animation_progress, 0.0, leg_animation_player.current_animation_length, current_snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	moving_tween.finished.connect(_on_next_tile_reached)
 	return moving_tween
 	
 func get_turning_tween(direction: int) -> Tween:
 	var turning_tween: Tween = create_tween()
 	if self is SnakeTail:
-		turning_tween.tween_property(self, "rotation", rotation, current_snake_speed/4.4)
-	turning_tween.tween_property(self, "rotation", get_orientation(direction, rotation), current_snake_speed/1.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		turning_tween.tween_property(self, "modulate", modulate, current_snake_speed/4.4)#just an improv timer
+	
+	var orientation = get_orientation(direction, rotation_degrees)
+	turning_tween.tween_property(self, "rotation_degrees", orientation, current_snake_speed/1.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	return turning_tween
+
+
+func _set_animation_progress(time: float):
+	leg_animation_player.seek(time, true)
+
 
 #Should never be reached since function is overwritten in Children
 func _on_next_tile_reached():
@@ -71,3 +83,5 @@ func _on_stop_moving():
 	print_debug("The Signal stop_moving was not connected to an existing SnakeHead or SnakeTail")
 func _on_continue_moving():
 	print_debug("The Signal continue_moving was not connected to an existing SnakeHead or SnakeTail")
+func check_moves():
+	print("The Method check_moves was not connected to an existing SnakeHead or SnakeTail")

@@ -25,8 +25,6 @@ var current_upgrades: Array[bool] = []
 @onready var fruit_payout_audio: AudioStreamPlayer = $FruitPayoutAudio
 
 func _ready() -> void:
-	print(RunSettings.current_char)
-	
 	scene_loader = get_parent()
 	
 	current_upgrades.resize(45)

@@ -72,7 +72,6 @@ func _ready() -> void:
 	teleport_to_starting_position()
 	snake_head.snake_tail = snake_tail
 	snake_tail.snake_head = snake_head
-	print("head: ", 0 + (RunSettings.current_char * 3))
 	snake_head.frame = 0 + (RunSettings.current_char * 3) #frames per snakehead
 	snake_tail.frame = 0 + (RunSettings.current_char * 1) #frames per snaketail
 	spawn_fruit([])

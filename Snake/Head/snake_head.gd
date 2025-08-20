@@ -179,4 +179,7 @@ func determine_frame_from_orientation(buffered_input_direction):
 		frame = 1 + (RunSettings.current_char * 3)
 	elif buffered_input_direction == current_direction or buffered_input_direction == -10:
 		frame = 0 + (RunSettings.current_char * 3)
+
+func check_moves():
+	return moves
 #endregion

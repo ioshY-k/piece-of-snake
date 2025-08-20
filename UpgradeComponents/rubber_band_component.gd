@@ -13,7 +13,6 @@ func _ready() -> void:
 	SignalBus.swiss_knive_synergy.connect(_set_swiss_knive)
 
 func _set_swiss_knive(state:bool):
-	print("knived")
 	swiss_knive = state
 	if swiss_knive:
 		invincibility_length = 8
