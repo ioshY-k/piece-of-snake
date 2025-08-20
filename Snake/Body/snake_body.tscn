@@ -1,31 +1,33 @@
-[gd_scene load_steps=33 format=3 uid="uid://dobkpr5ucg8no"]
+[gd_scene load_steps=50 format=3 uid="uid://dobkpr5ucg8no"]
 
 [ext_resource type="Shader" uid="uid://bkx7vquyjt8lc" path="res://Snake/Body/squeeze.gdshader" id="1_2fwst"]
-[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/GodoticonCorner.svg" id="1_3khtg"]
-[ext_resource type="Texture2D" uid="uid://rh01wewcgxxn" path="res://Snake/Body/PythonCorner.svg" id="1_r0xmd"]
-[ext_resource type="Texture2D" uid="uid://cun27qgpp0q2v" path="res://Snake/Body/PythonEdge.svg" id="2_8jmg2"]
-[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/GodoticonEdge.svg" id="2_r0xmd"]
+[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Godoticon/GodoticonCorner.svg" id="1_3khtg"]
+[ext_resource type="Texture2D" uid="uid://rh01wewcgxxn" path="res://Snake/Body/Sprites/Python/PythonCorner.svg" id="1_r0xmd"]
+[ext_resource type="Texture2D" uid="uid://cun27qgpp0q2v" path="res://Snake/Body/Sprites/Python/PythonEdge.svg" id="2_8jmg2"]
+[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdge.svg" id="2_r0xmd"]
 [ext_resource type="Script" uid="uid://bt650ng55hf75" path="res://Snake/Body/snake_body.gd" id="2_vx0cu"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_2xe0v"]
-[ext_resource type="Texture2D" uid="uid://ds8thpxvy448c" path="res://Snake/Body/GodoticonTetri.svg" id="3_8jmg2"]
-[ext_resource type="Texture2D" uid="uid://d4lbldjc1a0u2" path="res://Snake/Body/GodoticonCornerCuttable.svg" id="4_swg5f"]
-[ext_resource type="Texture2D" uid="uid://ckjtuv8dyud8g" path="res://Snake/Body/GodoticonEdgeCuttable.svg" id="5_2i62l"]
-[ext_resource type="Texture2D" uid="uid://crj6in3rcg5sp" path="res://Snake/Body/GodoticonEdgeRubber.svg" id="6_o0fqg"]
-[ext_resource type="Texture2D" uid="uid://ps6ic4fmgd2e" path="res://Snake/Body/GodoticonEdgeRubberStart.svg" id="7_e7fu4"]
-[ext_resource type="Texture2D" uid="uid://8trjmyw4in30" path="res://Snake/Body/GodoticonEdgeRubberEnd.svg" id="8_rju27"]
-[ext_resource type="Texture2D" uid="uid://cj0r2q26mi1bj" path="res://Snake/Body/GodoticonEdgeRubberCenter.svg" id="9_pnw4c"]
-[ext_resource type="Texture2D" uid="uid://bpn11muqc4tih" path="res://Snake/Body/PythonEdgeDeco.svg" id="10_swg5f"]
-[ext_resource type="Texture2D" uid="uid://b3bl7kqotdjy3" path="res://Snake/Body/PythonEdgeRubber.svg" id="12_egqnd"]
-[ext_resource type="Texture2D" uid="uid://ca3o35mavbuvo" path="res://Snake/Body/PythonCornerDeco1.svg" id="12_rpm4a"]
-[ext_resource type="Texture2D" uid="uid://df60u4h843ky6" path="res://Snake/Body/PythonEdgeRubberStart.svg" id="13_45k87"]
-[ext_resource type="Texture2D" uid="uid://cbq8ip05jjawl" path="res://Snake/Body/PythonCornerDeco2.svg" id="13_ese67"]
-[ext_resource type="Texture2D" uid="uid://coivi4lnbt5il" path="res://Snake/Body/PythonCornerDeco3.svg" id="14_718ry"]
-[ext_resource type="Texture2D" uid="uid://2cmvy8clws28" path="res://Snake/Body/PythonEdgeRubberEnd.svg" id="14_fec36"]
-[ext_resource type="Texture2D" uid="uid://btoc6aiqntju2" path="res://Snake/Body/PythonCornerDeco4.svg" id="15_2fwst"]
-[ext_resource type="Texture2D" uid="uid://nagaye00ot28" path="res://Snake/Body/PythonEdgeRubberCenter.svg" id="15_fyeds"]
-[ext_resource type="Texture2D" uid="uid://ogtl5ds36hks" path="res://Snake/Body/PythonCornerDeco5.svg" id="16_ese67"]
-[ext_resource type="Texture2D" uid="uid://bcn07mx5byjfq" path="res://Snake/Body/PythonCornerDeco6.svg" id="16_hpit8"]
-[ext_resource type="Texture2D" uid="uid://dnt0xbel1karr" path="res://Snake/Body/PythonCornerDeco7.svg" id="17_e7fu4"]
+[ext_resource type="Texture2D" uid="uid://ds8thpxvy448c" path="res://Snake/Body/Sprites/Godoticon/GodoticonTetri.svg" id="3_8jmg2"]
+[ext_resource type="Texture2D" uid="uid://d4lbldjc1a0u2" path="res://Snake/Body/Sprites/Godoticon/GodoticonCornerCuttable.svg" id="4_swg5f"]
+[ext_resource type="Texture2D" uid="uid://ckjtuv8dyud8g" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdgeCuttable.svg" id="5_2i62l"]
+[ext_resource type="Texture2D" uid="uid://crj6in3rcg5sp" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdgeRubber.svg" id="6_o0fqg"]
+[ext_resource type="Texture2D" uid="uid://ps6ic4fmgd2e" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdgeRubberStart.svg" id="7_e7fu4"]
+[ext_resource type="Texture2D" uid="uid://8trjmyw4in30" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdgeRubberEnd.svg" id="8_rju27"]
+[ext_resource type="Texture2D" uid="uid://cj0r2q26mi1bj" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdgeRubberCenter.svg" id="9_pnw4c"]
+[ext_resource type="Texture2D" uid="uid://bpn11muqc4tih" path="res://Snake/Body/Sprites/Python/PythonEdgeDeco.svg" id="10_swg5f"]
+[ext_resource type="Texture2D" uid="uid://b3bl7kqotdjy3" path="res://Snake/Body/Sprites/Python/PythonEdgeRubber.svg" id="12_egqnd"]
+[ext_resource type="Texture2D" uid="uid://ca3o35mavbuvo" path="res://Snake/Body/Sprites/Python/PythonCornerDeco1.svg" id="12_rpm4a"]
+[ext_resource type="Texture2D" uid="uid://df60u4h843ky6" path="res://Snake/Body/Sprites/Python/PythonEdgeRubberStart.svg" id="13_45k87"]
+[ext_resource type="Texture2D" uid="uid://cbq8ip05jjawl" path="res://Snake/Body/Sprites/Python/PythonCornerDeco2.svg" id="13_ese67"]
+[ext_resource type="Texture2D" uid="uid://coivi4lnbt5il" path="res://Snake/Body/Sprites/Python/PythonCornerDeco3.svg" id="14_718ry"]
+[ext_resource type="Texture2D" uid="uid://2cmvy8clws28" path="res://Snake/Body/Sprites/Python/PythonEdgeRubberEnd.svg" id="14_fec36"]
+[ext_resource type="Texture2D" uid="uid://btoc6aiqntju2" path="res://Snake/Body/Sprites/Python/PythonCornerDeco4.svg" id="15_2fwst"]
+[ext_resource type="Texture2D" uid="uid://nagaye00ot28" path="res://Snake/Body/Sprites/Python/PythonEdgeRubberCenter.svg" id="15_fyeds"]
+[ext_resource type="Texture2D" uid="uid://ogtl5ds36hks" path="res://Snake/Body/Sprites/Python/PythonCornerDeco5.svg" id="16_ese67"]
+[ext_resource type="Texture2D" uid="uid://bcn07mx5byjfq" path="res://Snake/Body/Sprites/Python/PythonCornerDeco6.svg" id="16_hpit8"]
+[ext_resource type="Texture2D" uid="uid://dnt0xbel1karr" path="res://Snake/Body/Sprites/Python/PythonCornerDeco7.svg" id="17_e7fu4"]
+[ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/Sprites/Godoticon/SnakeDeco.svg" id="18_fec36"]
+[ext_resource type="Texture2D" uid="uid://bwbi37uu0dba8" path="res://Snake/Body/Sprites/Godoticon/SnakeDecoSingle.svg" id="23_45k87"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5mbj"]
 
@@ -89,28 +91,19 @@ animations = [{
 "loop": true,
 "name": &"godot_frames",
 "speed": 5.0
-}, {
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u3ak"]
+animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_r0xmd")
+"texture": ExtResource("18_fec36")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_8jmg2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_8jmg2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_swg5f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_2i62l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_o0fqg")
+"texture": ExtResource("10_swg5f")
 }],
 "loop": true,
-"name": &"python_frames",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -118,6 +111,202 @@ animations = [{
 shader = ExtResource("1_2fwst")
 shader_parameter/squeeze_amount = 1.0
 shader_parameter/falloff = 0.96
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egqnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rpm4a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45k87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ese67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fec36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_718ry")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fyeds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_45k87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2fwst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrf2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ese67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8jkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hpit8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjfy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e7fu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41br8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rpm4a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xftn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ese67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15hkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_718ry")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_towqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_45k87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2fwst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pehkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ese67")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wigrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hpit8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tq0ap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e7fu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_krvum"]
 length = 0.001
@@ -818,95 +1007,95 @@ script = ExtResource("2_vx0cu")
 collision_layer = 32
 collision_mask = 96
 
-[node name="SnakeBodyDecoEdge" type="Sprite2D" parent="."]
-texture = ExtResource("10_swg5f")
+[node name="SnakeBodyDecoEdge" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0u3ak")
 offset = Vector2(0, 40)
 
 [node name="SnakeBodyCornerFront" type="Node2D" parent="."]
 
-[node name="SnakeBodyCornerDecoFront1" type="Sprite2D" parent="SnakeBodyCornerFront"]
+[node name="SnakeBodyCornerDecoFront1" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
 material = SubResource("ShaderMaterial_81x6j")
 position = Vector2(0, -42)
-texture = ExtResource("12_rpm4a")
+sprite_frames = SubResource("SpriteFrames_egqnd")
 offset = Vector2(0, 30)
 
-[node name="SnakeBodyCornerDecoFront2" type="Sprite2D" parent="SnakeBodyCornerFront"]
+[node name="SnakeBodyCornerDecoFront2" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
 material = SubResource("ShaderMaterial_81x6j")
 position = Vector2(2, -33)
 rotation = 0.261799
-texture = ExtResource("13_ese67")
+sprite_frames = SubResource("SpriteFrames_45k87")
 offset = Vector2(0, 21)
 
-[node name="SnakeBodyCornerDecoFront3" type="Sprite2D" parent="SnakeBodyCornerFront"]
+[node name="SnakeBodyCornerDecoFront3" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
 position = Vector2(0, -19)
 rotation = 0.523598
-texture = ExtResource("14_718ry")
+sprite_frames = SubResource("SpriteFrames_fec36")
 offset = Vector2(0, 12)
 
-[node name="SnakeBodyCornerDecoFront4" type="Sprite2D" parent="SnakeBodyCornerFront"]
+[node name="SnakeBodyCornerDecoFront4" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
 rotation = 0.523598
-texture = ExtResource("15_2fwst")
+sprite_frames = SubResource("SpriteFrames_fyeds")
 
-[node name="SnakeBodyCornerDecoFront5" type="Sprite2D" parent="SnakeBodyCornerFront"]
+[node name="SnakeBodyCornerDecoFront5" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
 position = Vector2(-11, 0)
 rotation = 1.0472
-texture = ExtResource("16_ese67")
+sprite_frames = SubResource("SpriteFrames_nrf2s")
 offset = Vector2(0, -10)
 
-[node name="SnakeBodyCornerDecoFront6" type="Sprite2D" parent="SnakeBodyCornerFront"]
+[node name="SnakeBodyCornerDecoFront6" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
 position = Vector2(-20, 0)
 rotation = 1.309
-texture = ExtResource("16_hpit8")
+sprite_frames = SubResource("SpriteFrames_c8jkt")
 offset = Vector2(0, -21)
 
-[node name="SnakeBodyCornerDecoFront7" type="Sprite2D" parent="SnakeBodyCornerFront"]
+[node name="SnakeBodyCornerDecoFront7" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
 position = Vector2(-32, 0)
 rotation = 1.57079
-texture = ExtResource("17_e7fu4")
+sprite_frames = SubResource("SpriteFrames_pjfy4")
 offset = Vector2(0, -30)
 
 [node name="SnakeBodyCornerDecoBack" type="Node2D" parent="."]
 position = Vector2(-80, 0)
 rotation = 1.5708
 
-[node name="SnakeBodyCornerDecoBack1" type="Sprite2D" parent="SnakeBodyCornerDecoBack"]
+[node name="SnakeBodyCornerDecoBack1" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
 position = Vector2(17.9997, -81.0001)
 rotation = -1.57079
-texture = ExtResource("12_rpm4a")
+sprite_frames = SubResource("SpriteFrames_41br8")
 offset = Vector2(0, 30)
 
-[node name="SnakeBodyCornerDecoBack2" type="Sprite2D" parent="SnakeBodyCornerDecoBack"]
+[node name="SnakeBodyCornerDecoBack2" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
 position = Vector2(16.9997, -69.0001)
 rotation = -1.309
-texture = ExtResource("13_ese67")
+sprite_frames = SubResource("SpriteFrames_xftn4")
 offset = Vector2(0, 21)
 
-[node name="SnakeBodyCornerDecoBack3" type="Sprite2D" parent="SnakeBodyCornerDecoBack"]
+[node name="SnakeBodyCornerDecoBack3" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
 position = Vector2(17.9998, -60.0001)
 rotation = -1.0472
-texture = ExtResource("14_718ry")
+sprite_frames = SubResource("SpriteFrames_15hkn")
 offset = Vector2(0, 12)
 
-[node name="SnakeBodyCornerDecoBack4" type="Sprite2D" parent="SnakeBodyCornerDecoBack"]
+[node name="SnakeBodyCornerDecoBack4" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
 position = Vector2(25.9998, -65.0001)
 rotation = -1.0472
-texture = ExtResource("15_2fwst")
+sprite_frames = SubResource("SpriteFrames_towqx")
 
-[node name="SnakeBodyCornerDecoBack5" type="Sprite2D" parent="SnakeBodyCornerDecoBack"]
+[node name="SnakeBodyCornerDecoBack5" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
 position = Vector2(9.99981, -52)
 rotation = -0.523598
-texture = ExtResource("16_ese67")
+sprite_frames = SubResource("SpriteFrames_pehkl")
 offset = Vector2(0, -12)
 
-[node name="SnakeBodyCornerDecoBack6" type="Sprite2D" parent="SnakeBodyCornerDecoBack"]
+[node name="SnakeBodyCornerDecoBack6" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
 position = Vector2(2.99981, -51)
 rotation = -0.261799
-texture = ExtResource("16_hpit8")
+sprite_frames = SubResource("SpriteFrames_wigrb")
 offset = Vector2(0.04, -21)
 
-[node name="SnakeBodyCornerDecoBack7" type="Sprite2D" parent="SnakeBodyCornerDecoBack"]
+[node name="SnakeBodyCornerDecoBack7" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
 position = Vector2(-0.000173748, -48)
-texture = ExtResource("17_e7fu4")
+sprite_frames = SubResource("SpriteFrames_tq0ap")
 offset = Vector2(0, -30)
 
 [node name="CornerAnimationPlayer" type="AnimationPlayer" parent="."]

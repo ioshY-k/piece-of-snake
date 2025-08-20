@@ -5,12 +5,13 @@ enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
 enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL}
 @export var is_corner: bool
 @export var sprite: Texture2D
+@export var char_id: int
 const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 
 var character_select
-@onready var snake_body_deco_edge: Sprite2D = $SnakeBodyDecoEdge
-@onready var snake_body_deco_corner1: Sprite2D = $SnakeBodyDecoCorner1
-@onready var snake_body_deco_corner2: Sprite2D = $SnakeBodyDecoCorner2
+@onready var snake_body_deco_edge: AnimatedSprite2D = $SnakeBodyDecoEdge
+@onready var snake_body_deco_corner_front: Node2D = $SnakeBodyCornerFront
+@onready var snake_body_deco_corner_back: Node2D = $SnakeBodyCornerDecoBack
 @onready var corner_animation_player: AnimationPlayer = $CornerAnimationPlayer
 
 func _ready() -> void:
@@ -19,11 +20,17 @@ func _ready() -> void:
 	texture = sprite
 	if is_corner:
 		snake_body_deco_edge.hide()
+		for deco in snake_body_deco_corner_front.get_children():
+			deco.frame = char_id
+		for deco in snake_body_deco_corner_back.get_children():
+			deco.frame = char_id
+		
 		play_corner_deco_anim_tweens()
 		
 	else:
-		snake_body_deco_corner1.hide()
-		snake_body_deco_corner2.hide()
+		snake_body_deco_corner_front.hide()
+		snake_body_deco_corner_back.hide()
+		snake_body_deco_edge.frame = char_id
 		play_edge_deco_anim_tweens()
 
 func play_edge_deco_anim_tweens():

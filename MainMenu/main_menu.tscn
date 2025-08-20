@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=23 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://coepahhdrkhhr" path="res://MainMenu/BackgroundTexture.svg" id="2_3w4mj"]
@@ -7,9 +7,13 @@
 [ext_resource type="Script" uid="uid://do7c0otvtn8cf" path="res://MainMenu/CharacterSelect/character_select_snake_movement.gd" id="5_id3bs"]
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="6_b3er0"]
 [ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="7_qmlj8"]
-[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/GodoticonCorner.svg" id="8_e240q"]
+[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Godoticon/GodoticonCorner.svg" id="8_e240q"]
 [ext_resource type="PackedScene" uid="uid://wm1t2vil6cf3" path="res://MainMenu/CharacterSelect/snake_body_char_select.tscn" id="8_r0x8f"]
-[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/GodoticonEdge.svg" id="9_8n28k"]
+[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdge.svg" id="9_8n28k"]
+[ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="11_qmlj8"]
+[ext_resource type="Texture2D" uid="uid://blke1i7mxvqa4" path="res://Snake/Tail/PythonTail.svg" id="12_e240q"]
+[ext_resource type="Texture2D" uid="uid://cun27qgpp0q2v" path="res://Snake/Body/Sprites/Python/PythonEdge.svg" id="13_dbhad"]
+[ext_resource type="Texture2D" uid="uid://rh01wewcgxxn" path="res://Snake/Body/Sprites/Python/PythonCorner.svg" id="14_5x28t"]
 
 [sub_resource type="Animation" id="Animation_ajn5b"]
 length = 0.001
@@ -220,7 +224,7 @@ progress = 720.0
 z_index = 11
 z_as_relative = false
 rotation = 1.5708
-texture = ExtResource("6_b3er0")
+texture = ExtResource("11_qmlj8")
 
 [node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character1Select/Path2D"]
 position = Vector2(920, 680)
@@ -231,61 +235,61 @@ progress = 80.0
 z_index = 11
 z_as_relative = false
 rotation = 1.5708
-texture = ExtResource("7_qmlj8")
+texture = ExtResource("12_e240q")
 
 [node name="SnakeBody0" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(40, 120)
-sprite = ExtResource("9_8n28k")
+sprite = ExtResource("13_dbhad")
+char_id = 1
 
 [node name="SnakeBody1" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(-40, 120)
-sprite = ExtResource("9_8n28k")
+sprite = ExtResource("13_dbhad")
+char_id = 1
 
 [node name="SnakeBody2" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(-120, 120)
-sprite = ExtResource("9_8n28k")
+sprite = ExtResource("13_dbhad")
+char_id = 1
 
 [node name="SnakeBody3" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(-200, 120)
 rotation = 0.0
 scale = Vector2(-1, 1)
 is_corner = true
-sprite = ExtResource("8_e240q")
+sprite = ExtResource("14_5x28t")
+char_id = 1
 
 [node name="SnakeBody4" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(-200, 40)
 rotation = 0.0
-sprite = ExtResource("9_8n28k")
+sprite = ExtResource("13_dbhad")
+char_id = 1
 
 [node name="SnakeBody5" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(-200, -40)
 scale = Vector2(1, -1)
 is_corner = true
-sprite = ExtResource("8_e240q")
+sprite = ExtResource("14_5x28t")
+char_id = 1
 
 [node name="SnakeBody6" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(-120, -40)
 rotation = 1.5708
-sprite = ExtResource("9_8n28k")
+sprite = ExtResource("13_dbhad")
+char_id = 1
 
 [node name="SnakeBody7" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(-40, -39.9998)
 rotation = -4.71239
-sprite = ExtResource("9_8n28k")
+sprite = ExtResource("13_dbhad")
+char_id = 1
 
 [node name="SnakeBody8" parent="CharacterSelection/Character1Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.11678, 0.313424, 0.426072, 1)
 position = Vector2(40, -40)
 rotation = -4.71239
-sprite = ExtResource("9_8n28k")
+sprite = ExtResource("13_dbhad")
+char_id = 1
 
 [node name="Character1Area" type="Area2D" parent="CharacterSelection"]
 position = Vector2(1200, 520)

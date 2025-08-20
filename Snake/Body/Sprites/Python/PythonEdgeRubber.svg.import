@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpn11muqc4tih"
-path="res://.godot/imported/PythonEdgeDeco.svg-18e9bd7086f5f58813181d2e93b1ca9a.ctex"
+uid="uid://b3bl7kqotdjy3"
+path="res://.godot/imported/PythonEdgeRubber.svg-f43a45e898586fef6c3ceba674131d99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Snake/Body/PythonEdgeDeco.svg"
-dest_files=["res://.godot/imported/PythonEdgeDeco.svg-18e9bd7086f5f58813181d2e93b1ca9a.ctex"]
+source_file="res://Snake/Body/Sprites/Python/PythonEdgeRubber.svg"
+dest_files=["res://.godot/imported/PythonEdgeRubber.svg-f43a45e898586fef6c3ceba674131d99.ctex"]
 
 [params]
 

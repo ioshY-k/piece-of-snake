@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cun27qgpp0q2v"
-path="res://.godot/imported/PythonEdge.svg-556b850b020479c709575b61a4ad3247.ctex"
+uid="uid://cor381dwomr73"
+path="res://.godot/imported/SnakeDeco.svg-de014bef3ee96b46427a8727ee65ac91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Snake/Body/PythonEdge.svg"
-dest_files=["res://.godot/imported/PythonEdge.svg-556b850b020479c709575b61a4ad3247.ctex"]
+source_file="res://Snake/Body/Sprites/Godoticon/SnakeDeco.svg"
+dest_files=["res://.godot/imported/SnakeDeco.svg-de014bef3ee96b46427a8727ee65ac91.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bip1gh8m3iyan" path="res://Test/test_scene.gd" id="1_ia1lp"]
 [ext_resource type="Shader" uid="uid://c23kf1475ne7u" path="res://Shader/invisibility_shader.gdshader" id="2_u5yuk"]
 [ext_resource type="Texture2D" uid="uid://b3r0lvddecr57" path="res://Test/Invisibility_mask.svg" id="3_0s61m"]
-[ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/SnakeDeco.svg" id="4_v6t21"]
+[ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/Sprites/Godoticon/SnakeDeco.svg" id="4_v6t21"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vnkr1"]
 shader = ExtResource("2_u5yuk")

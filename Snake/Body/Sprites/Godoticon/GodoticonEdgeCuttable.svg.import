@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ogtl5ds36hks"
-path="res://.godot/imported/PythonCornerDeco5.svg-3e9e75c8a341de6115554c048a53cd6f.ctex"
+uid="uid://ckjtuv8dyud8g"
+path="res://.godot/imported/GodoticonEdgeCuttable.svg-a8caa167673871f3750a5cf9274c25b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Snake/Body/PythonCornerDeco5.svg"
-dest_files=["res://.godot/imported/PythonCornerDeco5.svg-3e9e75c8a341de6115554c048a53cd6f.ctex"]
+source_file="res://Snake/Body/Sprites/Godoticon/GodoticonEdgeCuttable.svg"
+dest_files=["res://.godot/imported/GodoticonEdgeCuttable.svg-a8caa167673871f3750a5cf9274c25b6.ctex"]
 
 [params]
 
