@@ -2,7 +2,10 @@ class_name RunManager extends Node
 
 var scene_loader
 
-var maps_act1 = [GameConsts.MAP_LIST.WOODS,GameConsts.MAP_LIST.STADIUM,GameConsts.MAP_LIST.RESTAURANT]
+var maps_act1 = [
+	GameConsts.MAP_LIST.STADIUM
+	#GameConsts.MAP_LIST.STADIUM,GameConsts.MAP_LIST.RESTAURANT
+	]
 var maps_act2 = [
 	#GameConsts.MAP_LIST.OFFICE,
 	GameConsts.MAP_LIST.CAVE]
