@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=65 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://coepahhdrkhhr" path="res://MainMenu/BackgroundTexture.svg" id="2_3w4mj"]
@@ -19,8 +19,15 @@
 [ext_resource type="Texture2D" uid="uid://c6o4pcxtvw4ln" path="res://Snake/Body/Sprites/Salamander/SalamanderCorner.svg" id="16_5x28t"]
 [ext_resource type="Texture2D" uid="uid://dv8mgw16jpiaa" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg1.svg" id="16_cqjde"]
 [ext_resource type="Texture2D" uid="uid://bern8n2x7rbkn" path="res://Snake/Tail/SalamanderTail.svg" id="16_gcf2c"]
+[ext_resource type="Texture2D" uid="uid://gqvumevpkifo" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg1.svg" id="16_homfb"]
 [ext_resource type="Texture2D" uid="uid://c075u630qvnr" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg2.svg" id="17_homfb"]
+[ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="17_wbgrs"]
+[ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="18_a07ub"]
 [ext_resource type="Texture2D" uid="uid://dotitaxc5cp8k" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg3.svg" id="18_wbgrs"]
+[ext_resource type="Texture2D" uid="uid://wowrrf3wlvik" path="res://Snake/Head/ChameleonHead.svg" id="22_0sxtl"]
+[ext_resource type="Texture2D" uid="uid://eqlk5a1jv6yt" path="res://Snake/Tail/ChameleonTail.svg" id="26_dhpph"]
+[ext_resource type="Texture2D" uid="uid://dpjirwwc2dah3" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdge.svg" id="26_o1f7t"]
+[ext_resource type="Texture2D" uid="uid://bspgty0xd3c52" path="res://Snake/Body/Sprites/Chameleon/ChameleonCorner.svg" id="27_dhpph"]
 
 [sub_resource type="Animation" id="Animation_ajn5b"]
 length = 0.001
@@ -806,6 +813,138 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_h3385"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_homfb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aoixu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_wbgrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ashh5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_a07ub")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ce477"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_homfb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0aybo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_wbgrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2l4ob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_a07ub")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbnp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_homfb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmlrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_wbgrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t31mw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_a07ub")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3jui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_homfb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwel5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_wbgrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07068"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_a07ub")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_hy30b")
 
@@ -1220,48 +1359,48 @@ progress = 720.0
 z_index = 11
 z_as_relative = false
 rotation = 1.5708
-texture = ExtResource("15_5x28t")
+texture = ExtResource("22_0sxtl")
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head"]
 z_index = -1
 position = Vector2(-20, 40)
 rotation = -1.95119
-sprite_frames = SubResource("SpriteFrames_a07ub")
+sprite_frames = SubResource("SpriteFrames_h3385")
 offset = Vector2(7.5, -5)
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head/Leg2"]
 z_index = -1
 position = Vector2(16, -7)
 rotation = -1.10395
-sprite_frames = SubResource("SpriteFrames_0sxtl")
+sprite_frames = SubResource("SpriteFrames_aoixu")
 offset = Vector2(1, 10)
 
 [node name="Leg3" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head/Leg2/Leg2"]
 z_index = -1
 position = Vector2(-1.03179, 27.9361)
 rotation = 2.55845
-sprite_frames = SubResource("SpriteFrames_eu485")
+sprite_frames = SubResource("SpriteFrames_ashh5")
 
 [node name="Leg3" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head"]
 z_index = -1
 position = Vector2(18, 40)
 rotation = -4.7066
 scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_a07ub")
+sprite_frames = SubResource("SpriteFrames_ce477")
 offset = Vector2(7.5, -5)
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head/Leg3"]
 z_index = -1
 position = Vector2(16, -7)
 rotation = -1.39468
-sprite_frames = SubResource("SpriteFrames_0sxtl")
+sprite_frames = SubResource("SpriteFrames_0aybo")
 offset = Vector2(1, 10)
 
 [node name="Leg3" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head/Leg3/Leg2"]
 z_index = -1
 position = Vector2(2.5212, 27.0042)
 rotation = 2.25819
-sprite_frames = SubResource("SpriteFrames_eu485")
+sprite_frames = SubResource("SpriteFrames_2l4ob")
 
 [node name="LegAnimationPlayer" type="AnimationPlayer" parent="CharacterSelection/Character3Select/Path2D/HeadFollow"]
 root_node = NodePath("../Head")
@@ -1279,40 +1418,40 @@ progress = 80.0
 z_index = 11
 z_as_relative = false
 rotation = 1.5708
-texture = ExtResource("16_gcf2c")
+texture = ExtResource("26_dhpph")
 
 [node name="Leg1" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/TailFollow/Tail"]
 z_index = -1
-sprite_frames = SubResource("SpriteFrames_cqjde")
+sprite_frames = SubResource("SpriteFrames_qbnp5")
 offset = Vector2(7.5, -5)
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/TailFollow/Tail/Leg1"]
 z_index = -1
-sprite_frames = SubResource("SpriteFrames_homfb")
+sprite_frames = SubResource("SpriteFrames_bmlrk")
 offset = Vector2(1, 10)
 
 [node name="Leg3" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/TailFollow/Tail/Leg1/Leg2"]
 z_index = -1
-sprite_frames = SubResource("SpriteFrames_wbgrs")
+sprite_frames = SubResource("SpriteFrames_t31mw")
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/TailFollow/Tail"]
 z_index = -1
 position = Vector2(-12, -34)
 scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_o1f7t")
+sprite_frames = SubResource("SpriteFrames_j3jui")
 offset = Vector2(7.5, -5)
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/TailFollow/Tail/Leg2"]
 z_index = -1
 position = Vector2(16, -7)
-sprite_frames = SubResource("SpriteFrames_dhpph")
+sprite_frames = SubResource("SpriteFrames_cwel5")
 offset = Vector2(1, 10)
 
 [node name="Leg3" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/TailFollow/Tail/Leg2/Leg2"]
 z_index = -1
 position = Vector2(4, 17)
 rotation = -0.416995
-sprite_frames = SubResource("SpriteFrames_c58bg")
+sprite_frames = SubResource("SpriteFrames_07068")
 
 [node name="LegAnimationPlayer" type="AnimationPlayer" parent="CharacterSelection/Character3Select/Path2D/TailFollow"]
 root_node = NodePath("../Tail")
@@ -1324,57 +1463,57 @@ autoplay = "salmander_walk_anim"
 [node name="SnakeBody0" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(120, -40)
 rotation = -3.14159
-sprite = ExtResource("15_dbhad")
+sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody1" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(120, 40)
 scale = Vector2(-1, -1)
 is_corner = true
-sprite = ExtResource("16_5x28t")
+sprite = ExtResource("27_dhpph")
 char_id = 3
 
 [node name="SnakeBody2" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(200, 40)
 rotation = -6.28319
 is_corner = true
-sprite = ExtResource("16_5x28t")
+sprite = ExtResource("27_dhpph")
 char_id = 3
 
 [node name="SnakeBody7" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(200, -40)
 rotation = 0.0
-sprite = ExtResource("15_dbhad")
+sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody8" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(200, -120)
 rotation = 0.0
-sprite = ExtResource("15_dbhad")
+sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody3" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(200, -200)
 rotation = 0.0
-sprite = ExtResource("15_dbhad")
+sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody4" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(200, -280)
 rotation = 0.0
-sprite = ExtResource("15_dbhad")
+sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody5" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(200, -360)
 is_corner = true
-sprite = ExtResource("16_5x28t")
+sprite = ExtResource("27_dhpph")
 char_id = 3
 
 [node name="SnakeBody6" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(120, -360)
 rotation = 4.71239
-sprite = ExtResource("15_dbhad")
+sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="Character3Area" type="Area2D" parent="CharacterSelection"]

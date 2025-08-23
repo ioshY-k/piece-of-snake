@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    width="80"
    height="80"
-   viewBox="0 0 21.166667 21.166667"
    version="1.1"
-   id="svg1"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   id="svg6"
    sodipodi:docname="PythonCornerDeco2.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
   <sodipodi:namedview
-     id="namedview1"
+     id="namedview6"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -22,32 +21,21 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     inkscape:zoom="12.935185"
-     inkscape:cx="28.294918"
-     inkscape:cy="19.133858"
+     inkscape:zoom="9.9713101"
+     inkscape:cx="30.086317"
+     inkscape:cy="41.268399"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs1" />
-  <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-78.205681,-121.92007)">
-    <path
-       style="fill:#285b39;fill-opacity:1;stroke:#285b39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 81.545472,128.49213 1.938023,1.20191 1.592753,-0.32648 0.918277,-0.47489 -1.724735,1.60274 -1.290331,0.20776 -1.567948,-0.68549 -5.870767,-0.40721 0.06979,-1.07492 z"
-       id="path6-2-0"
-       sodipodi:nodetypes="cccccccccc" />
-    <path
-       style="fill:#285b39;fill-opacity:1;stroke:#285b39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 96.019128,128.49213 -1.938023,1.20191 -1.592753,-0.32648 -0.918276,-0.47489 1.724734,1.60274 1.290331,0.20776 1.567949,-0.68549 3.780379,-0.21552 -0.0102,-1.24683 z"
-       id="path6-2-5-3"
-       sodipodi:nodetypes="cccccccccc" />
-  </g>
+     inkscape:current-layer="svg6" />
+  <path
+     style="fill:#285b39;fill-opacity:1;stroke:#285b39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m -0.9859926,13.70678 10.9851521,2.855849 9.0280925,-0.775748 5.205,-1.128378 -9.776185,3.80829 -7.3138921,0.493644 -8.8874921,-1.628788 z"
+     id="path6-9" />
+  <path
+     style="fill:#285b39;fill-opacity:1;stroke:#285b39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m 81.016175,13.70678 -11.321434,2.855849 -9.304466,-0.775748 -5.364332,-1.128378 10.075453,3.80829 7.537789,0.493644 9.159561,-1.628788 z"
+     id="path6-8-8" />
 </svg>

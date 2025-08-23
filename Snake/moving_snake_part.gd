@@ -9,6 +9,8 @@ var current_direction
 var current_snake_speed: float = GameConsts.NORMAL_SPEED
 var base_snake_speed: float = GameConsts.NORMAL_SPEED
 
+@onready var legs = [	$LeftLeg1,$LeftLeg1/LeftLeg2,$LeftLeg1/LeftLeg2/LeftLeg3,
+						$RightLeg1,$RightLeg1/RightLeg2,$RightLeg1/RightLeg2/RightLeg3]
 @onready var leg_animation_player: AnimationPlayer = $LegAnimationPlayer
 @onready var map: Map = get_parent()
 
@@ -75,7 +77,21 @@ func get_turning_tween(direction: int) -> Tween:
 func _set_animation_progress(time: float):
 	leg_animation_player.seek(time, true)
 
+func enable_legs(char_id):
+	$LeftLeg1.show()
+	$RightLeg1.show()
+	match char_id:
+		GameConsts.CHAR_LIST.SALAMANDER:
+			for leg in legs:
+				leg.frame = 0
+		GameConsts.CHAR_LIST.CHAMELEON:
+			for leg in legs:
+				leg.frame = 1
 
+func disable_legs():
+	$LeftLeg1.hide()
+	$RightLeg1.hide()
+	
 #Should never be reached since function is overwritten in Children
 func _on_next_tile_reached():
 	print_debug("The Signal next_tile_reached was not connected to an existing SnakeHead or SnakeTail")

@@ -74,6 +74,17 @@ func _ready() -> void:
 	snake_tail.snake_head = snake_head
 	snake_head.frame = 0 + (RunSettings.current_char * 3) #frames per snakehead
 	snake_tail.frame = 0 + (RunSettings.current_char * 1) #frames per snaketail
+	match RunSettings.current_char:
+		GameConsts.CHAR_LIST.SALAMANDER:
+			snake_head.enable_legs(GameConsts.CHAR_LIST.SALAMANDER)
+			snake_tail.enable_legs(GameConsts.CHAR_LIST.SALAMANDER)
+		GameConsts.CHAR_LIST.CHAMELEON:
+			snake_head.enable_legs(GameConsts.CHAR_LIST.CHAMELEON)
+			snake_tail.enable_legs(GameConsts.CHAR_LIST.CHAMELEON)
+		_:
+			snake_head.disable_legs()
+			snake_tail.disable_legs()
+	
 	spawn_fruit([])
 	
 	SignalBus.round_over.connect(_on_round_over)

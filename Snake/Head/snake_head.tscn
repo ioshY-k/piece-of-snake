@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dadpidbo1my0e"]
+[gd_scene load_steps=28 format=3 uid="uid://dadpidbo1my0e"]
 
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
 [ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="1_v1ci8"]
@@ -11,9 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://byk1u6fsg36vi" path="res://Snake/Head/SalamanderHeadLeft.svg" id="8_2oim5"]
 [ext_resource type="AudioStream" uid="uid://ehxu7o35artm" path="res://MapElements/TeleportElement/TeleportAudio.wav" id="8_n1yu6"]
 [ext_resource type="Texture2D" uid="uid://donwokuw1idq7" path="res://Snake/Head/SalamanderHeadRight.svg" id="9_fu3h7"]
+[ext_resource type="Texture2D" uid="uid://wowrrf3wlvik" path="res://Snake/Head/ChameleonHead.svg" id="10_yfm7b"]
+[ext_resource type="Texture2D" uid="uid://bxmm14l4w6ink" path="res://Snake/Head/ChameleonHeadLeft.svg" id="11_l8o1e"]
 [ext_resource type="Texture2D" uid="uid://dv8mgw16jpiaa" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg1.svg" id="12_62x21"]
+[ext_resource type="Texture2D" uid="uid://cwvki0n4lh835" path="res://Snake/Head/ChameleonHeadRight.svg" id="12_sn1xv"]
 [ext_resource type="Texture2D" uid="uid://c075u630qvnr" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg2.svg" id="13_pkcbe"]
 [ext_resource type="Texture2D" uid="uid://dotitaxc5cp8k" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg3.svg" id="14_ihijh"]
+[ext_resource type="Texture2D" uid="uid://gqvumevpkifo" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg1.svg" id="16_rckui"]
+[ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="18_6gvyu"]
+[ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="20_7y21e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_naox3"]
 animations = [{
@@ -44,6 +50,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_fu3h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yfm7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l8o1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sn1xv")
 }],
 "loop": true,
 "name": &"default",
@@ -55,6 +70,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_62x21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rckui")
 }],
 "loop": true,
 "name": &"default",
@@ -66,6 +84,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("13_pkcbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6gvyu")
 }],
 "loop": true,
 "name": &"default",
@@ -77,6 +98,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("14_ihijh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7y21e")
 }],
 "loop": true,
 "name": &"default",
@@ -88,7 +112,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Leg2/Leg2/Leg3:position")
+tracks/0/path = NodePath("LeftLeg1/LeftLeg2/LeftLeg3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -100,7 +124,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Leg2/Leg2/Leg3:rotation")
+tracks/1/path = NodePath("LeftLeg1/LeftLeg2/LeftLeg3:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -112,7 +136,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Leg2:position")
+tracks/2/path = NodePath("LeftLeg1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -124,7 +148,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Leg2:rotation")
+tracks/3/path = NodePath("LeftLeg1:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -136,7 +160,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Leg2/Leg2:position")
+tracks/4/path = NodePath("LeftLeg1/LeftLeg2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -148,7 +172,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Leg2/Leg2:rotation")
+tracks/5/path = NodePath("LeftLeg1/LeftLeg2:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -160,7 +184,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Leg3:position")
+tracks/6/path = NodePath("RightLeg1:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -172,7 +196,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Leg3:rotation")
+tracks/7/path = NodePath("RightLeg1:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -184,7 +208,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Leg3/Leg2:position")
+tracks/8/path = NodePath("RightLeg1/RightLeg2:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -196,7 +220,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Leg3/Leg2:rotation")
+tracks/9/path = NodePath("RightLeg1/RightLeg2:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -208,7 +232,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Leg3/Leg2/Leg3:position")
+tracks/10/path = NodePath("RightLeg1/RightLeg2/RightLeg3:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -220,7 +244,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Leg3/Leg2/Leg3:rotation")
+tracks/11/path = NodePath("RightLeg1/RightLeg2/RightLeg3:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -237,7 +261,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Leg2:position")
+tracks/0/path = NodePath("LeftLeg1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -249,7 +273,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Leg2:rotation")
+tracks/1/path = NodePath("LeftLeg1:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -261,7 +285,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Leg2/Leg2:position")
+tracks/2/path = NodePath("LeftLeg1/LeftLeg2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -273,7 +297,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Leg2/Leg2:rotation")
+tracks/3/path = NodePath("LeftLeg1/LeftLeg2:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -285,7 +309,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Leg2/Leg2/Leg3:position")
+tracks/4/path = NodePath("LeftLeg1/LeftLeg2/LeftLeg3:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -297,7 +321,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Leg2/Leg2/Leg3:rotation")
+tracks/5/path = NodePath("LeftLeg1/LeftLeg2/LeftLeg3:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -309,7 +333,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Leg3:position")
+tracks/6/path = NodePath("RightLeg1:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -321,7 +345,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Leg3:rotation")
+tracks/7/path = NodePath("RightLeg1:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -333,7 +357,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Leg3/Leg2:position")
+tracks/8/path = NodePath("RightLeg1/RightLeg2:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -345,7 +369,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Leg3/Leg2:rotation")
+tracks/9/path = NodePath("RightLeg1/RightLeg2:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -357,7 +381,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Leg3/Leg2/Leg3:position")
+tracks/10/path = NodePath("RightLeg1/RightLeg2/RightLeg3:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -369,7 +393,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Leg3/Leg2/Leg3:rotation")
+tracks/11/path = NodePath("RightLeg1/RightLeg2/RightLeg3:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -411,29 +435,27 @@ collide_with_areas = true
 [node name="TeleportAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_n1yu6")
 
-[node name="Leg2" type="AnimatedSprite2D" parent="."]
-visible = false
+[node name="LeftLeg1" type="AnimatedSprite2D" parent="."]
 z_index = -1
 position = Vector2(-20, 40)
 rotation = -1.95119
 sprite_frames = SubResource("SpriteFrames_yfm7b")
 offset = Vector2(7.5, -5)
 
-[node name="Leg2" type="AnimatedSprite2D" parent="Leg2"]
+[node name="LeftLeg2" type="AnimatedSprite2D" parent="LeftLeg1"]
 z_index = -1
 position = Vector2(16, -7)
 rotation = -1.10395
 sprite_frames = SubResource("SpriteFrames_l8o1e")
 offset = Vector2(1, 10)
 
-[node name="Leg3" type="AnimatedSprite2D" parent="Leg2/Leg2"]
+[node name="LeftLeg3" type="AnimatedSprite2D" parent="LeftLeg1/LeftLeg2"]
 z_index = -1
 position = Vector2(-1.03179, 27.9361)
 rotation = 2.55845
 sprite_frames = SubResource("SpriteFrames_sn1xv")
 
-[node name="Leg3" type="AnimatedSprite2D" parent="."]
-visible = false
+[node name="RightLeg1" type="AnimatedSprite2D" parent="."]
 z_index = -1
 position = Vector2(18, 40)
 rotation = -4.7066
@@ -441,14 +463,14 @@ scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_yfm7b")
 offset = Vector2(7.5, -5)
 
-[node name="Leg2" type="AnimatedSprite2D" parent="Leg3"]
+[node name="RightLeg2" type="AnimatedSprite2D" parent="RightLeg1"]
 z_index = -1
 position = Vector2(16, -7)
 rotation = -1.39468
 sprite_frames = SubResource("SpriteFrames_l8o1e")
 offset = Vector2(1, 10)
 
-[node name="Leg3" type="AnimatedSprite2D" parent="Leg3/Leg2"]
+[node name="RightLeg3" type="AnimatedSprite2D" parent="RightLeg1/RightLeg2"]
 z_index = -1
 position = Vector2(2.5212, 27.0042)
 rotation = 2.25819

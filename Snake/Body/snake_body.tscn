@@ -1,6 +1,5 @@
-[gd_scene load_steps=64 format=3 uid="uid://dobkpr5ucg8no"]
+[gd_scene load_steps=72 format=3 uid="uid://dobkpr5ucg8no"]
 
-[ext_resource type="Shader" uid="uid://bkx7vquyjt8lc" path="res://Snake/Body/squeeze.gdshader" id="1_2fwst"]
 [ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Godoticon/GodoticonCorner.svg" id="1_3khtg"]
 [ext_resource type="Texture2D" uid="uid://rh01wewcgxxn" path="res://Snake/Body/Sprites/Python/PythonCorner.svg" id="1_r0xmd"]
 [ext_resource type="Texture2D" uid="uid://cun27qgpp0q2v" path="res://Snake/Body/Sprites/Python/PythonEdge.svg" id="2_8jmg2"]
@@ -16,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cj0r2q26mi1bj" path="res://Snake/Body/Sprites/Godoticon/GodoticonRubberCenter.svg" id="9_pnw4c"]
 [ext_resource type="Texture2D" uid="uid://bpn11muqc4tih" path="res://Snake/Body/Sprites/Python/PythonEdgeDeco.svg" id="10_swg5f"]
 [ext_resource type="Texture2D" uid="uid://b3bl7kqotdjy3" path="res://Snake/Body/Sprites/Python/PythonRubber.svg" id="12_egqnd"]
-[ext_resource type="Texture2D" uid="uid://ca3o35mavbuvo" path="res://Snake/Body/Sprites/Python/PythonCornerDeco1.svg" id="12_rpm4a"]
 [ext_resource type="Texture2D" uid="uid://df60u4h843ky6" path="res://Snake/Body/Sprites/Python/PythonRubberStart.svg" id="13_45k87"]
 [ext_resource type="Texture2D" uid="uid://cbq8ip05jjawl" path="res://Snake/Body/Sprites/Python/PythonCornerDeco2.svg" id="13_ese67"]
 [ext_resource type="Texture2D" uid="uid://coivi4lnbt5il" path="res://Snake/Body/Sprites/Python/PythonCornerDeco3.svg" id="14_718ry"]
@@ -24,24 +22,32 @@
 [ext_resource type="Texture2D" uid="uid://btoc6aiqntju2" path="res://Snake/Body/Sprites/Python/PythonCornerDeco4.svg" id="15_2fwst"]
 [ext_resource type="Texture2D" uid="uid://nagaye00ot28" path="res://Snake/Body/Sprites/Python/PythonRubberCenter.svg" id="15_fyeds"]
 [ext_resource type="Texture2D" uid="uid://ogtl5ds36hks" path="res://Snake/Body/Sprites/Python/PythonCornerDeco5.svg" id="16_ese67"]
-[ext_resource type="Texture2D" uid="uid://bcn07mx5byjfq" path="res://Snake/Body/Sprites/Python/PythonCornerDeco6.svg" id="16_hpit8"]
 [ext_resource type="Texture2D" uid="uid://c6o4pcxtvw4ln" path="res://Snake/Body/Sprites/Salamander/SalamanderCorner.svg" id="16_pehkl"]
-[ext_resource type="Texture2D" uid="uid://dnt0xbel1karr" path="res://Snake/Body/Sprites/Python/PythonCornerDeco7.svg" id="17_e7fu4"]
+[ext_resource type="Texture2D" uid="uid://bdg4m20hpayc8" path="res://Snake/Body/Sprites/Python/PythonCornerDeco7.svg" id="17_e7fu4"]
 [ext_resource type="Texture2D" uid="uid://2fgt7347kbmt" path="res://Snake/Body/Sprites/Salamander/SalamanderEdge.svg" id="17_wigrb"]
-[ext_resource type="Texture2D" uid="uid://cor381dwomr73" path="res://Snake/Body/Sprites/Godoticon/SnakeDeco.svg" id="18_fec36"]
 [ext_resource type="Texture2D" uid="uid://wnu2lwpyvtuf" path="res://Snake/Body/Sprites/Salamander/SalamanderRubber.svg" id="18_xftn4"]
 [ext_resource type="Texture2D" uid="uid://c6s0hrehhknhp" path="res://Snake/Body/Sprites/Salamander/SalamanderRubberEnd.svg" id="19_15hkn"]
 [ext_resource type="Texture2D" uid="uid://crk5q542ug2ic" path="res://Snake/Body/Sprites/Salamander/SalamanderRubberStart.svg" id="20_towqx"]
 [ext_resource type="Texture2D" uid="uid://cgabf815xuw5p" path="res://Snake/Body/Sprites/Salamander/SalamanderRubberCenter.svg" id="21_pehkl"]
 [ext_resource type="Texture2D" uid="uid://bspgty0xd3c52" path="res://Snake/Body/Sprites/Chameleon/ChameleonCorner.svg" id="22_towqx"]
-[ext_resource type="Texture2D" uid="uid://bwbi37uu0dba8" path="res://Snake/Body/Sprites/Godoticon/SnakeDecoSingle.svg" id="23_45k87"]
 [ext_resource type="Texture2D" uid="uid://dpjirwwc2dah3" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdge.svg" id="23_pehkl"]
-[ext_resource type="Texture2D" uid="uid://cosegby8vftni" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco1.svg" id="30_j03uc"]
-[ext_resource type="Texture2D" uid="uid://q3l1akbj6ncj" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco2.svg" id="32_hoayf"]
-[ext_resource type="Texture2D" uid="uid://gtsr1ynvh3yk" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco3.svg" id="34_t17hp"]
-[ext_resource type="Texture2D" uid="uid://bgsgtfkvdjrtb" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco4.svg" id="38_re144"]
-[ext_resource type="Texture2D" uid="uid://b77s22eitwp7j" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco5.svg" id="40_oxfxm"]
-[ext_resource type="Texture2D" uid="uid://gnleb1la2mvd" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco6.svg" id="42_bkuq3"]
+[ext_resource type="Texture2D" uid="uid://cg4t76a33038e" path="res://Snake/Body/Sprites/Godoticon/GodotEdgeDeco.svg" id="26_15hkn"]
+[ext_resource type="Texture2D" uid="uid://dcgqbesxba5ay" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco1.svg" id="28_15hkn"]
+[ext_resource type="Texture2D" uid="uid://davhdqla26joo" path="res://Snake/Body/Sprites/Salamander/SalamanderEdgeDeco.svg" id="28_j03uc"]
+[ext_resource type="Texture2D" uid="uid://dlo0pbcaoij6y" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco.svg" id="29_3hmgf"]
+[ext_resource type="Texture2D" uid="uid://dorw1lhh3eldc" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco2.svg" id="29_towqx"]
+[ext_resource type="Texture2D" uid="uid://c533nc6l2tr2q" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco3.svg" id="30_pehkl"]
+[ext_resource type="Texture2D" uid="uid://b1w5j2hfw4yn7" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco4.svg" id="31_wigrb"]
+[ext_resource type="Texture2D" uid="uid://hq6cw4ctfwwi" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco2.svg" id="32_bkuq3"]
+[ext_resource type="Texture2D" uid="uid://c1u63dn06jeth" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco5.svg" id="32_tq0ap"]
+[ext_resource type="Texture2D" uid="uid://c28og01tmmejm" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco6.svg" id="33_0u3ak"]
+[ext_resource type="Texture2D" uid="uid://cflx380ns7ajo" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco7.svg" id="34_pmbl3"]
+[ext_resource type="Texture2D" uid="uid://qhrlb5wnohjr" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco3.svg" id="35_3hmgf"]
+[ext_resource type="Texture2D" uid="uid://di6uyaq3i0ipk" path="res://Snake/Body/Sprites/Salamander/SalamanderCornerDeco.svg" id="36_hoayf"]
+[ext_resource type="Texture2D" uid="uid://dcoami0xjookl" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco4.svg" id="39_bultr"]
+[ext_resource type="Texture2D" uid="uid://dpd8t7ycmptuc" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco5.svg" id="42_bmnuf"]
+[ext_resource type="Texture2D" uid="uid://3i3t6j6s6hgt" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco6.svg" id="44_cmfqk"]
+[ext_resource type="Texture2D" uid="uid://bn0334kuvfdkf" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco7.svg" id="47_moy07"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5mbj"]
 
@@ -75,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_pnw4c")
 }, {
-"duration": 1.0,
+"duration": 2.91,
 "texture": ExtResource("1_r0xmd")
 }, {
 "duration": 1.0,
@@ -165,158 +171,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_fec36")
+"texture": ExtResource("26_15hkn")
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_swg5f")
 }, {
 "duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_81x6j"]
-shader = ExtResource("1_2fwst")
-shader_parameter/squeeze_amount = 1.0
-shader_parameter/falloff = 0.96
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_egqnd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
+"texture": ExtResource("28_j03uc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_rpm4a")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_j03uc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_45k87"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_ese67")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_hoayf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fec36"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_718ry")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_t17hp")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fyeds"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("23_45k87")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_2fwst")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nrf2s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_ese67")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_re144")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_c8jkt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_hpit8")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_oxfxm")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pjfy4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_e7fu4")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_bkuq3")
+"texture": ExtResource("29_3hmgf")
 }],
 "loop": true,
 "name": &"default",
@@ -327,16 +191,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_rpm4a")
+"texture": ExtResource("28_15hkn")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_j03uc")
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -347,7 +211,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("29_towqx")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_ese67")
@@ -356,7 +220,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_hoayf")
+"texture": ExtResource("32_bkuq3")
 }],
 "loop": true,
 "name": &"default",
@@ -367,7 +231,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("30_pehkl")
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_718ry")
@@ -376,7 +240,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_t17hp")
+"texture": ExtResource("35_3hmgf")
 }],
 "loop": true,
 "name": &"default",
@@ -387,16 +251,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_45k87")
+"texture": ExtResource("31_wigrb")
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_2fwst")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("36_hoayf")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("39_bultr")
 }],
 "loop": true,
 "name": &"default",
@@ -407,7 +271,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("32_tq0ap")
 }, {
 "duration": 1.0,
 "texture": ExtResource("16_ese67")
@@ -416,7 +280,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_re144")
+"texture": ExtResource("42_bmnuf")
 }],
 "loop": true,
 "name": &"default",
@@ -427,16 +291,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_hpit8")
+"texture": ExtResource("33_0u3ak")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_oxfxm")
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_cmfqk")
 }],
 "loop": true,
 "name": &"default",
@@ -447,7 +311,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("34_pmbl3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_e7fu4")
@@ -456,7 +320,156 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_bkuq3")
+"texture": ExtResource("47_moy07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0u3ak"]
+load_path = "res://.godot/imported/PythonCornerDeco1.svg-dbde01441bca644d7440a238fc3921fe.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j03uc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_15hkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_0u3ak")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45k87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_towqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ese67")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bkuq3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fec36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_pehkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_718ry")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3hmgf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fyeds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_wigrb")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hoayf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_bultr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrf2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_tq0ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ese67")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_bmnuf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pmbl3"]
+load_path = "res://.godot/imported/PythonCornerDeco6.svg-13415304514542ba657b14133178e4c9.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8jkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_0u3ak")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_pmbl3")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_cmfqk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j03uc"]
+load_path = "res://.godot/imported/PythonCornerDeco7.svg-e817863ebfa9c96d36aa40feaf45b12f.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjfy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_pmbl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_j03uc")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_moy07")
 }],
 "loop": true,
 "name": &"default",
@@ -468,43 +481,43 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront7:position")
+tracks/0/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-32, 0)]
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront7:rotation")
+tracks/1/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack2:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.57079]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront1:position")
+tracks/2/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack3:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -42)]
+"values": [0.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront1:rotation")
+tracks/3/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -516,163 +529,163 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront2:position")
+tracks/4/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack5:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2, -33)]
+"values": [0.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront2:rotation")
+tracks/5/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack6:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.261799]
+"values": [0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront3:position")
+tracks/6/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack7:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -19)]
+"values": [0.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront3:rotation")
+tracks/7/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack1:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.523598]
+"values": [Vector2(-0.101837, -50.0529)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront4:position")
+tracks/8/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack2:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-0.0809263, -39.8872)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront4:rotation")
+tracks/9/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack3:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.523598]
+"values": [Vector2(0.0199827, -27.0271)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront5:position")
+tracks/10/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-11, 0)]
+"values": [Vector2(9.06581e-05, -15.0001)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront5:rotation")
+tracks/11/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack5:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0472]
+"values": [Vector2(-0.0303615, -1.66011)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront6:position")
+tracks/12/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack6:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-20, 0)]
+"values": [Vector2(-0.0303162, 10.8469)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront6:rotation")
+tracks/13/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack7:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.309]
+"values": [Vector2(-0.0267954, 21.3351)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack7:position")
+tracks/14/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront1:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-0.000173748, -48)]
+"values": [Vector2(-115, -79.9996)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack7:rotation")
+tracks/15/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront1:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [-1.57079]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack1:position")
+tracks/16/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront2:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(17.9997, -81.0001)]
+"values": [Vector2(-105, -79.9996)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack1:rotation")
+tracks/17/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront2:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -684,463 +697,463 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack2:position")
+tracks/18/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront3:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(16.9997, -69.0001)]
+"values": [Vector2(-92.0003, -79.9997)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack2:rotation")
+tracks/19/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront3:rotation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.309]
+"values": [-1.57079]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack3:position")
+tracks/20/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(17.9998, -60.0001)]
+"values": [Vector2(-80.0003, -79.9997)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack3:rotation")
+tracks/21/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.0472]
+"values": [-1.57079]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack4:position")
+tracks/22/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront5:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(25.9998, -65.0001)]
+"values": [Vector2(-66.0003, -79.9997)]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack4:rotation")
+tracks/23/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront5:rotation")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.0472]
+"values": [-1.57079]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack5:position")
+tracks/24/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront6:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(9.99981, -52)]
+"values": [Vector2(-54.0003, -79.9998)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack5:rotation")
+tracks/25/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront6:rotation")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.523598]
+"values": [-1.57079]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack6:position")
+tracks/26/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront7:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2.99981, -51)]
+"values": [Vector2(-44.0003, -79.9998)]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack6:rotation")
+tracks/27/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront7:rotation")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.261799]
+"values": [-1.57079]
 }
 
 [sub_resource type="Animation" id="Animation_81x6j"]
 resource_name = "move_tile_anim"
-length = 0.38
-step = 0.01
+length = 1.4
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront1:position")
+tracks/0/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -37), Vector2(0, -117)]
+"values": [Vector2(-0.101783, -35.0529), Vector2(-0.101819, -45.0529), Vector2(-1.00019, -53), Vector2(-2.00022, -62), Vector2(-8.00026, -72), Vector2(-18.0003, -77.9999), Vector2(-27.0003, -79.9999), Vector2(-35.0003, -79.9999)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront1:rotation")
+tracks/1/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack1:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [0.0, 0.0, -1.57079]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront2:position")
+tracks/2/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -28), Vector2(0, -108)]
+"values": [Vector2(-0.080872, -24.8872), Vector2(-0.0809082, -34.8872), Vector2(-0.0809444, -44.8872), Vector2(-1.00019, -53), Vector2(-2.00022, -62), Vector2(-8.00026, -72), Vector2(-18.0003, -77.9999), Vector2(-27.0003, -79.9999)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront2:rotation")
+tracks/3/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack2:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.04),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.261799, 0.0]
+"values": [0.0, 0.0, 0.0, -1.309]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront3:position")
+tracks/4/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack3:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -19), Vector2(0, -99)]
+"values": [Vector2(0.020037, -12.0271), Vector2(0.0200008, -22.0271), Vector2(0.0199646, -32.0271), Vector2(0.0199176, -45.0271), Vector2(-1.00019, -53), Vector2(-2.00022, -62), Vector2(-8.00026, -72), Vector2(-18.0003, -77.9999)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront3:rotation")
+tracks/5/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack3:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.08),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.523598, 0.0]
+"values": [0.0, 0.0, 0.0, 0.0, -1.0472]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront4:position")
+tracks/6/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -6), Vector2(0, -86)]
+"values": [Vector2(0.000144958, -0.000144958), Vector2(0.000108758, -10.0001), Vector2(7.25582e-05, -20.0001), Vector2(2.54983e-05, -33.0001), Vector2(-2.51816e-05, -47.0001), Vector2(-1.00019, -53), Vector2(-2.00022, -62), Vector2(-8.00026, -72)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront4:rotation")
+tracks/7/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.11),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.785398, 0.0]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, -0.785397]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront5:position")
+tracks/8/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack5:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.00531, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-3, 0), Vector2(0, 0), Vector2(0, -77)]
+"values": [Vector2(-0.0303072, 13.3399), Vector2(-0.0303434, 3.33989), Vector2(-0.0303796, -6.66011), Vector2(-0.0304266, -19.6601), Vector2(-0.0304773, -33.6601), Vector2(-0.0305244, -46.6601), Vector2(-1.00019, -53), Vector2(-2.00022, -62)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront5:rotation")
+tracks/9/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack5:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.07, 0.22),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.00531, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.926932, 0.785397, 0.0]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.523598]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront6:position")
+tracks/10/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack6:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.11, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.00531, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-14, 0), Vector2(-1, -1), Vector2(0, -66)]
+"values": [Vector2(-0.0302619, 25.8469), Vector2(-0.0302981, 15.8469), Vector2(-0.0303343, 5.84691), Vector2(-0.0303813, -7.15309), Vector2(-0.030432, -21.1531), Vector2(-0.0304791, -34.1531), Vector2(-0.0305189, -45.1531), Vector2(-1.00019, -53)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront6:rotation")
+tracks/11/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack6:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.00531, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.309, 0.0]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.261799]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront7:position")
+tracks/12/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack7:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.16, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.00531, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-23, 0), Vector2(0, 0), Vector2(0, -57)]
+"values": [Vector2(-0.0267411, 36.3351), Vector2(-0.0267773, 26.3351), Vector2(-0.0268135, 16.3351), Vector2(-0.0268606, 3.33506), Vector2(-0.0269112, -10.6649), Vector2(-0.0269583, -23.6649), Vector2(-0.0269981, -34.6649), Vector2(-0.00016652, -46)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("SnakeBodyCornerFront/SnakeBodyCornerDecoFront7:rotation")
+tracks/13/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack7:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.16, 0.29),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.00531, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.57079, 1.57079, 0.785397, 0.0]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack1:position")
+tracks/14/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront1:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.19, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-0.00013394, -37), Vector2(-0.000290135, -80), Vector2(-37.0003, -79.9999)]
+"values": [Vector2(-35.0003, -79.9999), Vector2(-41.7068, -79.9481), Vector2(-54.7068, -79.9481), Vector2(-67.7068, -80), Vector2(-80.7068, -79.9999), Vector2(-93.7068, -79.9999), Vector2(-103.618, -79.9998), Vector2(-115, -79.9996)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack1:rotation")
+tracks/15/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront1:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.04, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, -1.5708]
+"values": [-1.57079, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack2:position")
+tracks/16/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront2:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.22, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-0.00010136, -28), Vector2(-0.000290871, -80), Vector2(-28.0003, -79.9999)]
+"values": [Vector2(-27.0003, -79.9999), Vector2(-31.7068, -79.9482), Vector2(-44.7068, -79.9481), Vector2(-57.7068, -80), Vector2(-70.7068, -80), Vector2(-83.7068, -79.9999), Vector2(-93.6183, -79.9999), Vector2(-105, -79.9996)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack2:rotation")
+tracks/17/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront2:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, -1.309]
+"values": [-1.309, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack3:position")
+tracks/18/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront3:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-6.97136e-05, -19), Vector2(-0.000291348, -80), Vector2(-19.0003, -79.9999)]
+"values": [Vector2(-18.0003, -77.9999), Vector2(-27.0003, -79.9999), Vector2(-31.7068, -79.9482), Vector2(-44.7068, -80.0001), Vector2(-57.7068, -80), Vector2(-70.7068, -80), Vector2(-80.6183, -79.9999), Vector2(-92.0003, -79.9997)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack3:rotation")
+tracks/19/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront3:rotation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.32, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, -1.0472, -1.0472]
+"values": [-1.0472, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack4:position")
+tracks/20/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(0, 0.32, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-2.09808e-05, -6), Vector2(-0.000248432, -69), Vector2(-6.00029, -80)]
+"values": [Vector2(-8.00026, -72), Vector2(-18.0003, -77.9999), Vector2(-27.0003, -79.9999), Vector2(-32.7068, -80.0001), Vector2(-45.7068, -80.0001), Vector2(-58.7068, -80), Vector2(-68.6183, -80), Vector2(-80.0003, -79.9997)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack4:rotation")
+tracks/21/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0, 0.14, 0.32, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, -0.261799, -0.785398]
+"values": [-0.785397, -1.57079, -1.57079, -1.57079, -1.57079, -1.57079]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack5:position")
+tracks/22/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront5:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1.81e-05, 5), Vector2(-0.000271797, -75)]
+"values": [Vector2(-2.00022, -62), Vector2(-8.00026, -72), Vector2(-18.0003, -77.9999), Vector2(-27.0003, -79.9999), Vector2(-31.7068, -80.0001), Vector2(-44.7068, -80.0001), Vector2(-54.6183, -80), Vector2(-66.0003, -79.9997)]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack5:rotation")
+tracks/23/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront5:rotation")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"times": PackedFloat32Array(0, 0.27, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, -0.655543]
+"values": [-0.523598, -1.57079, -1.57079, -1.57079, -1.57079]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack6:position")
+tracks/24/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront6:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(7.23999e-06, 2), Vector2(-0.000238895, -66)]
+"values": [Vector2(-1.00019, -53), Vector2(-2.00022, -62), Vector2(-8.00026, -72), Vector2(-18.0003, -77.9999), Vector2(-27.0003, -79.9999), Vector2(-32.7068, -80.0001), Vector2(-42.6183, -80.0001), Vector2(-54.0003, -79.9998)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack6:rotation")
+tracks/25/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront6:rotation")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(0, 0.35, 0.38),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, -0.277268]
+"values": [-0.261799, -1.57079, -1.57079, -1.57079]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack7:position")
+tracks/26/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront7:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(8.68798e-05, 24), Vector2(-0.000206339, -57)]
+"values": [Vector2(-0.00016652, -46), Vector2(-1.00019, -53), Vector2(-2.00022, -62), Vector2(-8.00026, -72), Vector2(-18.0003, -77.9999), Vector2(-27.0003, -79.9999), Vector2(-32.6183, -80.0001), Vector2(-44.0003, -79.9998)]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("SnakeBodyCornerDecoBack/SnakeBodyCornerDecoBack7:rotation")
+tracks/27/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront7:rotation")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
-"times": PackedFloat32Array(0, 0.38),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [0.0, -1.57079, -1.57079]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m5mbj"]
@@ -1156,6 +1169,8 @@ z_as_relative = false
 material = SubResource("ShaderMaterial_m5mbj")
 sprite_frames = SubResource("SpriteFrames_krvum")
 animation = &"godot_frames"
+frame = 9
+frame_progress = 0.980163
 script = ExtResource("2_vx0cu")
 
 [node name="SolidElement" parent="." groups=["Snake"] instance=ExtResource("3_2xe0v")]
@@ -1168,92 +1183,99 @@ offset = Vector2(0, 40)
 
 [node name="SnakeBodyCornerFront" type="Node2D" parent="."]
 
-[node name="SnakeBodyCornerDecoFront1" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
-material = SubResource("ShaderMaterial_81x6j")
-position = Vector2(0, -42)
-sprite_frames = SubResource("SpriteFrames_egqnd")
-offset = Vector2(0, 30)
-
-[node name="SnakeBodyCornerDecoFront2" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
-material = SubResource("ShaderMaterial_81x6j")
-position = Vector2(2, -33)
-rotation = 0.261799
-sprite_frames = SubResource("SpriteFrames_45k87")
-offset = Vector2(0, 21)
-
-[node name="SnakeBodyCornerDecoFront3" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
-position = Vector2(0, -19)
-rotation = 0.523598
-sprite_frames = SubResource("SpriteFrames_fec36")
-offset = Vector2(0, 12)
-
-[node name="SnakeBodyCornerDecoFront4" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
-rotation = 0.523598
-sprite_frames = SubResource("SpriteFrames_fyeds")
-
-[node name="SnakeBodyCornerDecoFront5" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
-position = Vector2(-11, 0)
-rotation = 1.0472
-sprite_frames = SubResource("SpriteFrames_nrf2s")
-offset = Vector2(0, -10)
-
-[node name="SnakeBodyCornerDecoFront6" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
-position = Vector2(-20, 0)
-rotation = 1.309
-sprite_frames = SubResource("SpriteFrames_c8jkt")
-offset = Vector2(0, -21)
-
-[node name="SnakeBodyCornerDecoFront7" type="AnimatedSprite2D" parent="SnakeBodyCornerFront"]
-position = Vector2(-32, 0)
-rotation = 1.57079
-sprite_frames = SubResource("SpriteFrames_pjfy4")
-offset = Vector2(0, -30)
-
-[node name="SnakeBodyCornerDecoBack" type="Node2D" parent="."]
+[node name="SnakeBodyCornerDeco" type="Node2D" parent="."]
+texture_filter = 1
 position = Vector2(-80, 0)
 rotation = 1.5708
 
-[node name="SnakeBodyCornerDecoBack1" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
-position = Vector2(17.9997, -81.0001)
-rotation = -1.57079
+[node name="SnakeBodyCornerDecoBack1" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-0.101837, -50.0529)
 sprite_frames = SubResource("SpriteFrames_41br8")
-offset = Vector2(0, 30)
+frame_progress = 0.700468
+offset = Vector2(0.101928, 35.0527)
 
-[node name="SnakeBodyCornerDecoBack2" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
-position = Vector2(16.9997, -69.0001)
-rotation = -1.309
+[node name="SnakeBodyCornerDecoBack2" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-0.0809263, -39.8872)
 sprite_frames = SubResource("SpriteFrames_xftn4")
-offset = Vector2(0, 21)
+frame_progress = 0.836257
+offset = Vector2(0.081017, 24.887)
 
-[node name="SnakeBodyCornerDecoBack3" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
-position = Vector2(17.9998, -60.0001)
-rotation = -1.0472
+[node name="SnakeBodyCornerDecoBack3" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(0.0199827, -27.0271)
 sprite_frames = SubResource("SpriteFrames_15hkn")
-frame = 1
-frame_progress = 0.71796
-offset = Vector2(0, 12)
+frame_progress = 0.590093
+offset = Vector2(-0.0198921, 12.027)
 
-[node name="SnakeBodyCornerDecoBack4" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
-position = Vector2(25.9998, -65.0001)
-rotation = -1.0472
+[node name="SnakeBodyCornerDecoBack4" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(9.06581e-05, -15.0001)
 sprite_frames = SubResource("SpriteFrames_towqx")
+frame_progress = 0.505756
 
-[node name="SnakeBodyCornerDecoBack5" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
-position = Vector2(9.99981, -52)
-rotation = -0.523598
+[node name="SnakeBodyCornerDecoBack5" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-0.0303615, -1.66011)
 sprite_frames = SubResource("SpriteFrames_pehkl")
-offset = Vector2(0, -12)
+frame_progress = 0.470039
+offset = Vector2(0.0304521, -13.34)
 
-[node name="SnakeBodyCornerDecoBack6" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
-position = Vector2(2.99981, -51)
-rotation = -0.261799
+[node name="SnakeBodyCornerDecoBack6" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-0.0303162, 10.8469)
 sprite_frames = SubResource("SpriteFrames_wigrb")
-offset = Vector2(0.04, -21)
+frame_progress = 0.931548
+offset = Vector2(0.0304068, -25.8471)
 
-[node name="SnakeBodyCornerDecoBack7" type="AnimatedSprite2D" parent="SnakeBodyCornerDecoBack"]
-position = Vector2(-0.000173748, -48)
+[node name="SnakeBodyCornerDecoBack7" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-0.0267954, 21.3351)
 sprite_frames = SubResource("SpriteFrames_tq0ap")
-offset = Vector2(0, -30)
+frame_progress = 0.636612
+offset = Vector2(0.0268861, -36.3352)
+
+[node name="SnakeBodyCornerDecoFront1" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-115, -79.9996)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_j03uc")
+offset = Vector2(0.166763, 35.0356)
+
+[node name="SnakeBodyCornerDecoFront2" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-105, -79.9996)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_45k87")
+frame_progress = 0.801128
+offset = Vector2(0.0521067, 24.7068)
+
+[node name="SnakeBodyCornerDecoFront3" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-92.0003, -79.9997)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_fec36")
+frame_progress = 0.480802
+offset = Vector2(0.0520613, 12.1695)
+
+[node name="SnakeBodyCornerDecoFront4" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-80.0003, -79.9997)
+rotation = -1.57079
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_fyeds")
+frame_progress = 0.639739
+
+[node name="SnakeBodyCornerDecoFront5" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-66.0003, -79.9997)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_nrf2s")
+frame_progress = 0.902778
+offset = Vector2(0.0519673, -13.7926)
+
+[node name="SnakeBodyCornerDecoFront6" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-54.0003, -79.9998)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_c8jkt")
+frame_progress = 0.861309
+offset = Vector2(0.0519251, -25.4423)
+
+[node name="SnakeBodyCornerDecoFront7" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
+position = Vector2(-44.0003, -79.9998)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_pjfy4")
+frame_progress = 0.843322
+offset = Vector2(0.0367173, -36.3817)
 
 [node name="CornerAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

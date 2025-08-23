@@ -14,8 +14,7 @@ const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 @onready var solid_element: SolidElement = $SolidElement
 
 @onready var snake_body_deco_edge: AnimatedSprite2D = $SnakeBodyDecoEdge
-@onready var snake_body_deco_corner_front: Node2D = $SnakeBodyCornerFront
-@onready var snake_body_deco_corner_back: Node2D = $SnakeBodyCornerDecoBack
+@onready var snake_body_deco_corner: Node2D = $SnakeBodyCornerDeco
 @onready var corner_animation_player: AnimationPlayer = $CornerAnimationPlayer
 
 var map: Map
@@ -37,14 +36,11 @@ func _ready() -> void:
 	
 	if is_corner:
 		snake_body_deco_edge.hide()
-		for deco in snake_body_deco_corner_front.get_children():
-			deco.frame = RunSettings.current_char
-		for deco in snake_body_deco_corner_back.get_children():
+		for deco in snake_body_deco_corner.get_children():
 			deco.frame = RunSettings.current_char
 		play_corner_deco_anim_tweens()
 	else:
-		snake_body_deco_corner_front.hide()
-		snake_body_deco_corner_back.hide()
+		snake_body_deco_corner.hide()
 		snake_body_deco_edge.frame = RunSettings.current_char
 		play_edge_deco_anim_tweens()
 	
