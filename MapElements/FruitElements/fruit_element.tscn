@@ -16,3 +16,30 @@ shape = SubResource("RectangleShape2D_sii8h")
 
 [node name="FruitElementSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_2sf1h")
+
+[node name="RaycastUp" type="RayCast2D" parent="."]
+rotation = 3.14159
+target_position = Vector2(-0.000399828, 90)
+collision_mask = 1907
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RaycastRight" type="RayCast2D" parent="."]
+rotation = -1.57079
+target_position = Vector2(0.000199914, 90)
+collision_mask = 1907
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RaycastDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 90)
+collision_mask = 1907
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RaycastLeft" type="RayCast2D" parent="."]
+rotation = 1.57079
+target_position = Vector2(-0.000177701, 80)
+collision_mask = 1907
+collide_with_areas = true
+collide_with_bodies = false

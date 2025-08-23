@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=61 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -50,6 +50,9 @@
 [ext_resource type="Texture2D" uid="uid://bg6bbxyxo2e50" path="res://Shop/UpgradeCards/Fuel3.svg" id="44_lmueq"]
 [ext_resource type="Texture2D" uid="uid://bbpwacdc1jvg4" path="res://Shop/UpgradeCards/RubberBand.svg" id="45_iqm1b"]
 [ext_resource type="Texture2D" uid="uid://cy8t72e7rllnq" path="res://Shop/UpgradeCards/SwissKnive.svg" id="46_lmueq"]
+[ext_resource type="Texture2D" uid="uid://b4r50mmtygrm6" path="res://Shop/UpgradeCards/MagicFlute1.svg" id="47_busg3"]
+[ext_resource type="Texture2D" uid="uid://bnuc20d3gxn6" path="res://Shop/UpgradeCards/MagicFlute2.svg" id="48_ckyt6"]
+[ext_resource type="Texture2D" uid="uid://x8ric46mpha" path="res://Shop/UpgradeCards/MagicFlute3.svg" id="49_kn4tv"]
 [ext_resource type="AudioStream" uid="uid://c8dmgwp22cyce" path="res://Shop/Sfx/CardSnap.wav" id="51_dqar4"]
 [ext_resource type="AudioStream" uid="uid://bswqsb1vkijts" path="res://Shop/Sfx/CardSelect.wav" id="52_ea03u"]
 [ext_resource type="AudioStream" uid="uid://b8j31t0jdbxn4" path="res://Shop/Sfx/CardDeselesct.wav" id="53_1kqk4"]
@@ -192,6 +195,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("46_lmueq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_busg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ckyt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_kn4tv")
 }],
 "loop": true,
 "name": &"default",

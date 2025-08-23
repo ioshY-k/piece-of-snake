@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djst8svku4yie"]
+
+[ext_resource type="Script" uid="uid://dg2xkqqq8kptu" path="res://MapModComponents/moving_fruit_component.gd" id="1_17fji"]
+
+[node name="MovingFruitComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_17fji")

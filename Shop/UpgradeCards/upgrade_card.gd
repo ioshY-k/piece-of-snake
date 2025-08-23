@@ -45,7 +45,10 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create [color=#80d984]pressure points in their center[/color].\nPassing through them gives [color=#80d984]short invincibility[/color].",
 	str(GameConsts.UPGRADE_LIST.FUEL_1) : "Collecting fruits while in Hyper Speed [color=ffc875]fills a chunk of the Hyper Speed gauge[/color].",
 	str(GameConsts.UPGRADE_LIST.FUEL_2) : "Collecting fruits while in Hyper Speed [color=ffc875]fills a bigger chunk of the Hyper Speed gauge[/color].",
-	str(GameConsts.UPGRADE_LIST.FUEL_3) : "Collecting fruits while in Hyper Speed [color=ffc875]refills the Hyper Speed gauge completely[/color]."
+	str(GameConsts.UPGRADE_LIST.FUEL_3) : "Collecting fruits while in Hyper Speed [color=ffc875]refills the Hyper Speed gauge completely[/color].",
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you[/color].",
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you for longer[/color].",
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you even longer[/color]."
 	}
 
 var mouse_in: bool = false

@@ -26,9 +26,3 @@ Worklow for adding new upgrade:
 	Add in Level: instantiate_upgrade, destroy_upgrade, is_upgrade_reload_necessary
 	In Upgrade card: Add description, Make sure the frames are in order of GameConst.UPGRADE_LIST
 	Add in Component Parent: packed Component scene
-
-Workflow for Character Select Animation:
-	Set moving_snake_part and snake_body tweens to LINEAR
-	change disco map image to green screen, move solidobject out of the way
-	set full screen
-	record the way the snake should take

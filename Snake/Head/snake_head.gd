@@ -3,6 +3,8 @@ class_name SnakeHead extends MovingSnakePart
 @onready var front_collision_ray: RayCast2D = $FrontCollisionRay
 @onready var right_collision_ray: RayCast2D = $RightCollisionRay
 @onready var left_collision_ray: RayCast2D = $LeftCollisionRay
+@onready var fruit_collect_area: Area2D = $FruitCollectArea
+
 var snake_tail: MovingSnakePart
 
 #when passing special bodyparts
@@ -51,7 +53,9 @@ func _on_next_tile_reached():
 	#reset buffer to unreachable value
 	buffered_input_direction = -10
 	
-	
+	if fruit_collect_area.has_overlapping_areas():
+		for fruit in fruit_collect_area.get_overlapping_areas():
+			fruit.collision_with.emit()
 	
 	if colliding_element != null and colliding_element.get_collision_layer_value(5) and moves:#Teleporter
 		var temp_next_tile = next_tile

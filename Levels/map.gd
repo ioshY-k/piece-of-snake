@@ -17,6 +17,9 @@ var diet_3_component_scene = load("res://UpgradeComponents/diet_3_component.tscn
 var double_fruit_1_component_scene = load("res://UpgradeComponents/double_fruit_1_component.tscn")
 var double_fruit_2_component_scene = load("res://UpgradeComponents/double_fruit_2_component.tscn")
 var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_3_component.tscn")
+var magic_flute_1_component_scene = load("res://UpgradeComponents/magic_flute_1_component.tscn")
+var magic_flute_2_component_scene = load("res://UpgradeComponents/magic_flute_2_component.tscn")
+var magic_flute_3_component_scene = load("res://UpgradeComponents/magic_flute_3_component.tscn")
 var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_component.tscn")
 var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_component.tscn")
 var anchor_component_scene = load("res://UpgradeComponents/anchor_component.tscn")
@@ -31,6 +34,8 @@ var edible_paper_component_scene = load("res://MapModComponents/edible_paper_com
 var laser_component_scene = load("res://MapModComponents/laser_component.tscn")
 var fruit_body_component_scene = load("res://MapModComponents/fruit_body_component.tscn")
 var tetri_fruit_component_scene = load("res://MapModComponents/tetri_fruit_component.tscn")
+var moving_fruit_component_scene = load("res://MapModComponents/moving_fruit_component.tscn")
+var anti_magnet_component_scene = load("res://MapModComponents/anti_magnet_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -237,7 +242,6 @@ func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 	fruit_locations.append(TileHelper.position_to_tile(fruit.position))
 	
 	
-	
 
 #place a new snake body where the head is, add it to the bodypart array, add the new direction to direction array
 func push_snake_directions(direction :int):
@@ -297,6 +301,15 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
 			var double_fruit_3_component = double_fruit_3_component_scene.instantiate()
 			add_child(double_fruit_3_component)
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1:
+			var magic_flute_1_component = magic_flute_1_component_scene.instantiate()
+			add_child(magic_flute_1_component)
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2:
+			var magic_flute_2_component = magic_flute_2_component_scene.instantiate()
+			add_child(magic_flute_2_component)
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3:
+			var magic_flute_3_component = magic_flute_3_component_scene.instantiate()
+			add_child(magic_flute_3_component)
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
 			var edge_wrap_1_component = edge_wrap_1_component_scene.instantiate()
 			add_child(edge_wrap_1_component)
@@ -337,6 +350,12 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.TETRI_FRUIT:
 			var tetri_fruit_component = tetri_fruit_component_scene.instantiate()
 			add_child(tetri_fruit_component)
+		GameConsts.MAP_MODS.MOVING_FRUIT:
+			var moving_fruit_component = moving_fruit_component_scene.instantiate()
+			add_child(moving_fruit_component)
+		GameConsts.MAP_MODS.ANTI_MAGNET:
+			var anti_magnet_component = anti_magnet_component_scene.instantiate()
+			add_child(anti_magnet_component)
 
 func _on_round_over():
 	destroy_current_mapmod()

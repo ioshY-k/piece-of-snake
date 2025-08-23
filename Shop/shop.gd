@@ -54,7 +54,8 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.STEEL_HELMET,
 									GameConsts.UPGRADE_LIST.FUEL_1,
 									GameConsts.UPGRADE_LIST.RUBBER_BAND,
-									GameConsts.UPGRADE_LIST.SWISS_KNIVE,]
+									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
+									GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 @onready var upgrade_overview: Sprite2D = $UpgradeOverview
@@ -67,10 +68,9 @@ var current_purchase_count: int
 func _ready() -> void:
 	if GameConsts.test_mode:
 		purchase_count = 3
-		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.RUBBER_BAND,
-									GameConsts.UPGRADE_LIST.RUBBER_BAND,
-									GameConsts.UPGRADE_LIST.RUBBER_BAND,
-									GameConsts.UPGRADE_LIST.CORNER_PHASING]
+		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,
+									GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
+									GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1]
 	
 	current_purchase_count = purchase_count
 	

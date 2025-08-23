@@ -30,7 +30,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(45)
+	current_upgrades.resize(48)
 	current_upgrades.fill(false)
 	
 	create_new_run()
@@ -55,12 +55,12 @@ func create_new_run():
 	
 	if GameConsts.test_mode:
 		maporder = [GameConsts.MAP_LIST.DISCO,
-					GameConsts.MAP_LIST.DISCO,
-					GameConsts.MAP_LIST.DISCO]
-		mapmodorder = [GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
+					GameConsts.MAP_LIST.CAVE,
+					GameConsts.MAP_LIST.TOMB]
+		mapmodorder = [GameConsts.MAP_MODS.ANTI_MAGNET,
+						GameConsts.MAP_MODS.ANTI_MAGNET,
+						GameConsts.MAP_MODS.ANTI_MAGNET,
+						GameConsts.MAP_MODS.ANTI_MAGNET,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,

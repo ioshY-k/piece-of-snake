@@ -103,7 +103,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(60)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -313,6 +313,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DIET_1,\
 		GameConsts.UPGRADE_LIST.DIET_2,\
 		GameConsts.UPGRADE_LIST.DIET_3,\
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,\
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,\
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
 		GameConsts.UPGRADE_LIST.RUBBER_BAND:
 			current_map.add_upgrade_component(upgrade_id)
 
@@ -337,6 +340,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.snake_tail.find_child("Diet2Component",false,false)
 		GameConsts.UPGRADE_LIST.DIET_3:
 			component = current_map.snake_tail.find_child("Diet3Component",false,false)
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1:
+			component = current_map.find_child("MagicFlute1Component",false,false)
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2:
+			component = current_map.find_child("MagicFlute2Component",false,false)
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3:
+			component = current_map.find_child("MagicFlute3Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
@@ -439,6 +448,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,\
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,\
+		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.STEEL_HELMET,\
@@ -448,6 +460,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.COATING:
 			return true
 		_:
+			print_debug("not determined if upgrade reload necessary for ", GameConsts.UPGRADE_LIST[upgrade_id].value())
 			return false
 
 func disable_map():

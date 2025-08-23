@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck2cdviga6fyn"]
+
+[ext_resource type="Script" uid="uid://wx7hx6huebxp" path="res://UpgradeComponents/magic_flute_2_component.gd" id="1_uys34"]
+
+[node name="MagicFlute2Component" type="Node"]
+script = ExtResource("1_uys34")
