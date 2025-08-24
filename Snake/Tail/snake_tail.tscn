@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://c4ocnud8k5oe4"]
+[gd_scene load_steps=23 format=3 uid="uid://c4ocnud8k5oe4"]
 
 [ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="1_42lf2"]
 [ext_resource type="Texture2D" uid="uid://blke1i7mxvqa4" path="res://Snake/Tail/PythonTail.svg" id="1_d2p80"]
 [ext_resource type="Script" uid="uid://dvg2ys4h7imig" path="res://Snake/Tail/snake_tail.gd" id="2_d2p80"]
 [ext_resource type="Texture2D" uid="uid://bern8n2x7rbkn" path="res://Snake/Tail/SalamanderTail.svg" id="3_016m1"]
 [ext_resource type="Texture2D" uid="uid://eqlk5a1jv6yt" path="res://Snake/Tail/ChameleonTail.svg" id="4_rxqhe"]
+[ext_resource type="Texture2D" uid="uid://do8vru8la3k2v" path="res://Snake/Tail/ElephantTail.svg" id="5_hgmfj"]
 [ext_resource type="Texture2D" uid="uid://dv8mgw16jpiaa" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg1.svg" id="5_j2wxc"]
 [ext_resource type="Texture2D" uid="uid://c075u630qvnr" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg2.svg" id="6_rxqhe"]
 [ext_resource type="Texture2D" uid="uid://dotitaxc5cp8k" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg3.svg" id="7_gcgim"]
@@ -26,6 +27,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_rxqhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hgmfj")
 }],
 "loop": true,
 "name": &"default",

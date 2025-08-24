@@ -62,6 +62,7 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 	var map: Map = MapData.get_map_scene(map_index).instantiate()
 	current_map_index = map_index
 	add_child(map)
+			
 	
 	current_map = map
 	current_map.position = MapData.get_map_data0(map_index)[0]
@@ -92,8 +93,6 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	for active_item_slot in active_item_slots:
 		if active_item_slot.get_child_count() != 1:
 			active_item_slot.refresh_lights()
-			
-	
 	
 	enough_fruits = false
 	fruits_left = fruit_threshold
@@ -430,6 +429,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_1,\
+		GameConsts.UPGRADE_LIST.TIME_STOP_2,\
+		GameConsts.UPGRADE_LIST.TIME_STOP_3,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER,\
 		GameConsts.UPGRADE_LIST.KNOT_SLOWMO,\

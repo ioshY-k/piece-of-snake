@@ -18,7 +18,7 @@ func _spread_sales():
 	for slot_type in slot_types:
 		var is_filled = true
 		for slot in slot_type:
-			if not slot.get_node("Area2D").get_child(-1) is UpgradeCard:
+			if not shop.is_filled(slot):
 				is_filled = false
 		if is_filled:
 			full_categories += 1

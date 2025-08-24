@@ -121,7 +121,7 @@ func _on_got_clicked(upgrade_card: UpgradeCard):
 	
 	if GameConsts.advanced_upgrades.has(upgrade_id):
 		for slot in slots:
-			if slot.get_node("Area2D").get_child(-1) is UpgradeCard and\
+			if is_filled(slot) and\
 			slot.get_node("Area2D").get_child(-1).upgrade_id == upgrade_id -1:
 				slot.get_node("HighlightReplace").visible = true
 				slot.get_node("BuyZone").visible = true
@@ -142,7 +142,7 @@ func _on_got_clicked(upgrade_card: UpgradeCard):
 			GameConsts.UPGRADE_TYPE.SPECIAL:
 				chosen_slots = special_slots
 		for slot in chosen_slots:
-			if slot.get_node("Area2D").get_child(-1) is UpgradeCard:
+			if is_filled(slot):
 				slot.get_node("HighlightReplace").visible = true
 				slot.get_node("BuyZone").visible = true
 				slot.get_node("BuyZone").get_node("Price").text = str(replace_price)
@@ -156,6 +156,12 @@ func _on_let_go():
 		slot.get_node("HighlightReplace").visible = false
 		slot.get_node("HighlightBuy").visible = false
 		slot.get_node("BuyZone").visible = false
+
+func select_random_upgrade(type):
+	upgrade_card_pool.shuffle()
+	for upgrade in upgrade_card_pool:
+		if GameConsts.get_upgrade_type(upgrade) == type:
+			return upgrade
 
 func can_afford(slot):
 	return 	int(slot.get_node("BuyZone").get_node("Price").text) <= fruits_currency and\
@@ -173,8 +179,30 @@ func _on_upgrade_destroyed(upgrade_id: int) -> void:
 		update_upgrade_pool(upgrade_id, false)
 	upgrade_destroyed.emit(upgrade_id)
 
+func equip_item(upgrade_id, slot_type):
+	var no_space: bool = true
+	var free_slot
+	for slot in slot_type:
+		if not is_filled(slot):
+			free_slot = slot
+			no_space = false
+			break
+	if no_space:
+		return
+	var upgrade_card: UpgradeCard = UPGRADE_CARD.instantiate()
+	free_slot.get_node("Area2D").add_child(upgrade_card)
+	upgrade_card.instantiate_upgrade_card(upgrade_id)
+	upgrade_card.is_bought = true
+	upgrade_card.owned_slot_area = free_slot.get_node("Area2D")
+	await get_tree().process_frame
+	upgrade_card._snap_to_slot(free_slot.get_node("Area2D"))
+	update_upgrade_pool(upgrade_id, true)
+	upgrade_bought.emit(upgrade_id)
+	
+	
 
-
+func is_filled(slot):
+	return slot.get_node("Area2D").get_child(-1) is UpgradeCard
 
 func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
 	if bought_not_destroyed:
@@ -186,6 +214,7 @@ func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
 					default_upgrade_card = GameConsts.UPGRADE_LIST.AREA_SIZE_3
 			else:
 				upgrade_card_pool.append(upgrade_id + 1)
+	#called for upgrades with advancements, so that the advancement leaves the pool
 	else:
 		upgrade_card_pool.erase(upgrade_id+1)
 		
@@ -232,8 +261,9 @@ func generate_items(current_round):
 	toggle_upgrade_panel()
 
 func reset_area_and_currency():
-	fruits_currency = 0
-	currency_number_label.text = str(fruits_currency)
+	if RunSettings.current_char != GameConsts.CHAR_LIST.ELEPHANT:
+		fruits_currency = 0
+		currency_number_label.text = str(fruits_currency)
 	
 	var default_upgrade = default_slots[0].get_node("Area2D").get_child(-1)
 	if default_upgrade is UpgradeCard:

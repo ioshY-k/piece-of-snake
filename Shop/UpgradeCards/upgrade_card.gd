@@ -80,12 +80,16 @@ signal got_clicked
 signal let_go
 signal hovered
 
+#globally accessed since salamander start Item is not added to Itemshelf as parent
+@onready var shop: Shop = get_node("/root/MainSceneLoader/RunManager/Shop")
+@onready var item_shelf = get_node("/root/MainSceneLoader/RunManager/Shop/ItemShelf")
+	
 func _ready() -> void:
-	got_clicked.connect(get_parent().get_parent()._on_got_clicked)
-	bought.connect(get_parent().get_parent()._on_upgrade_card_bought)
-	destroyed.connect(get_parent().get_parent()._on_upgrade_destroyed)
-	let_go.connect(get_parent().get_parent()._on_let_go)
-	hovered.connect(get_parent().change_item_description)
+	got_clicked.connect(shop._on_got_clicked)
+	bought.connect(shop._on_upgrade_card_bought)
+	destroyed.connect(shop._on_upgrade_destroyed)
+	let_go.connect(shop._on_let_go)
+	hovered.connect(item_shelf.change_item_description)
 
 func instantiate_upgrade_card(id: int):
 	upgrade_id = id
@@ -159,7 +163,7 @@ func decide_on_let_go():
 	if upgrade_type == get_slot_type(owned_slot_area.get_parent().get_groups()[0]) and\
 	(!is_advanced or (replaced_card != null and replaced_card.upgrade_id == upgrade_id - 1)):
 		
-		if get_parent().get_parent().can_afford(owned_slot_area.get_parent()):
+		if shop.can_afford(owned_slot_area.get_parent()):
 			card_sprite.rotation_degrees = 0
 			_snap_to_slot(owned_slot_area)
 			card_buy_audio.play()

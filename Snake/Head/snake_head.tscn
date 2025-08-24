@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dadpidbo1my0e"]
+[gd_scene load_steps=32 format=3 uid="uid://dadpidbo1my0e"]
 
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
 [ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="1_v1ci8"]
@@ -15,8 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://bxmm14l4w6ink" path="res://Snake/Head/ChameleonHeadLeft.svg" id="11_l8o1e"]
 [ext_resource type="Texture2D" uid="uid://dv8mgw16jpiaa" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg1.svg" id="12_62x21"]
 [ext_resource type="Texture2D" uid="uid://cwvki0n4lh835" path="res://Snake/Head/ChameleonHeadRight.svg" id="12_sn1xv"]
+[ext_resource type="Texture2D" uid="uid://ddpiak6p1mtb7" path="res://Snake/Head/ElephantHead.svg" id="13_fb05v"]
 [ext_resource type="Texture2D" uid="uid://c075u630qvnr" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg2.svg" id="13_pkcbe"]
+[ext_resource type="Texture2D" uid="uid://dxrraubkme0aw" path="res://Snake/Head/ElephantHeadLeft.svg" id="14_fkpg4"]
 [ext_resource type="Texture2D" uid="uid://dotitaxc5cp8k" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg3.svg" id="14_ihijh"]
+[ext_resource type="Texture2D" uid="uid://dg4lrrhdepndi" path="res://Snake/Head/ElephantHeadRight.svg" id="15_nef4a"]
 [ext_resource type="Texture2D" uid="uid://gqvumevpkifo" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg1.svg" id="16_rckui"]
 [ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="18_6gvyu"]
 [ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="20_7y21e"]
@@ -59,6 +62,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_sn1xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fb05v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fkpg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nef4a")
 }],
 "loop": true,
 "name": &"default",

@@ -4,19 +4,23 @@ extends Node2D
 @onready var character_1_select: TileMapLayer = $Character1Select
 @onready var character_2_select: TileMapLayer = $Character2Select
 @onready var character_3_select: TileMapLayer = $Character3Select
+@onready var character_4_select: TileMapLayer = $Character4Select
 
 @onready var character_selects = [	character_0_select,
 									character_1_select,
 									character_2_select,
-									character_3_select]
+									character_3_select,
+									character_4_select]
 var hovering_char_0_select: bool = false
 var hovering_char_1_select: bool = false
 var hovering_char_2_select: bool = false
 var hovering_char_3_select: bool = false
+var hovering_char_4_select: bool = false
 var hovering_char_selects: Array[bool] = [	hovering_char_0_select,
 											hovering_char_1_select,
 											hovering_char_2_select,
-											hovering_char_3_select]
+											hovering_char_3_select,
+											hovering_char_4_select]
 
 const HOVER_SCALE_CHANGE:float = 1.2
 
@@ -54,6 +58,12 @@ func _on_area_3_mouse_entered() -> void:
 
 func _on_area_3_mouse_exited() -> void:
 	char_unhovered(3)
+	
+func _on_area_4_mouse_entered() -> void:
+	char_hovered(4)
+
+func _on_area_4_mouse_exited() -> void:
+	char_unhovered(4)
 
 
 func char_hovered(char_number):

@@ -12,6 +12,7 @@ var maps_act2 = [
 var maps_act3 = [GameConsts.MAP_LIST.DISCO,GameConsts.MAP_LIST.BEACH]
 var maporder = []
 var mapmodorder = []
+var fruit_thresholds = GameConsts.FRUIT_THRESHOLDS
 										
 @onready var retry_button: Button = $RetryButton
 
@@ -33,11 +34,11 @@ func _ready() -> void:
 	current_upgrades.resize(48)
 	current_upgrades.fill(false)
 	
-	create_new_run()
-	
-	shop.initiate_map_preview(maporder)
 	shop.upgrade_bought.connect(_on_upgrade_bought)
 	shop.upgrade_destroyed.connect(_on_upgrade_destroyed)
+	
+	create_new_run()
+	shop.initiate_map_preview(maporder)
 
 #func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("item1"):
@@ -52,6 +53,10 @@ func create_new_run():
 		var mods = GameConsts.MAP_MODS.values()
 		mods.shuffle()
 		mapmodorder.append_array(mods)
+	
+	if RunSettings.current_char == GameConsts.CHAR_LIST.PYTHON:
+		for index in range(fruit_thresholds.size()-1):
+			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
 		maporder = [GameConsts.MAP_LIST.DISCO,
@@ -72,7 +77,11 @@ func create_new_run():
 
 	level = level_scene.instantiate()
 	add_child(level)
-	level.prepare_new_act(maporder[current_act], GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
+	level.prepare_new_act(maporder[current_act], fruit_thresholds[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
+	if RunSettings.current_char == GameConsts.CHAR_LIST.SALAMANDER:
+		var random_active_upgrade: int = shop.select_random_upgrade(GameConsts.UPGRADE_TYPE.ACTIVE)
+		shop.equip_item(random_active_upgrade, shop.active_slots)
+	
 	SignalBus.round_over.connect(_on_round_over)
 
 func _on_upgrade_bought(upgrade: int):
@@ -118,16 +127,13 @@ func _on_round_over():
 		shop.hide_shop()
 		if current_round < 3:
 			current_round += 1
-			level.prepare_new_round(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
+			level.prepare_new_round(fruit_thresholds[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
 		else:
 			SignalBus.act_over.emit()
 			current_act += 1
 			current_round = 0
 			shop.reset_area_and_currency()
-			current_upgrades[0]
-			current_upgrades[1]
-			current_upgrades[2]
-			level.prepare_new_act(maporder[current_act], GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
+			level.prepare_new_act(maporder[current_act], fruit_thresholds[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
 
 
 func _on_retry_button_pressed() -> void:

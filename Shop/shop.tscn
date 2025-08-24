@@ -1018,6 +1018,7 @@ position = Vector2(620, 535)
 texture = ExtResource("24_7hl21")
 
 [node name="ItemShelf" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(1340.59, -350)
 scale = Vector2(1.105, 1.105)
 texture = ExtResource("2_7wam5")
