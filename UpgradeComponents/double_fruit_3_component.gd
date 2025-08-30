@@ -1,25 +1,31 @@
 extends Node
 
-var riping_fruit_scene = load("res://MapElements/FruitElements/riping_fruit_element.tscn")
+var riping_fruit_component_scene = load("res://MapElements/FruitElements/riping_component.tscn")
+var map: Map
+var counter := 0
 
 func _ready() -> void:
-	var fruits: Array[MapElement] = get_parent().find_all_fruits()
-	for fruit in fruits:
-		if fruit.is_riping_fruit:
-			break
-		var pos = fruit.position
-		fruit.queue_free()
-		var riping_fruit = riping_fruit_scene.instantiate()
-		get_parent().add_child(riping_fruit)
-		riping_fruit.position = pos
-		
-	get_parent().fruit_element_scene = riping_fruit_scene
-	var forbidden_tiles : Array[Vector2i] = []
-	get_parent().spawn_fruit(forbidden_tiles)
-	get_parent().spawn_fruit(forbidden_tiles)
+	map = get_parent()
+	#turn present ghost fruits into riping fruits
+	for map_fruit in map.find_all_fruits():
+		if map_fruit.is_in_group("Ghost Fruit") and not map_fruit.is_riping_fruit:
+			var riping_fruit_component = riping_fruit_component_scene.instantiate()
+			map_fruit.add_child(riping_fruit_component)
+	
+	SignalBus.fruit_collected.connect(_on_fruit_collected)
+	SignalBus.ghost_fruit_spawned.connect(turn_ghost_fruit_riping)
+
+func _on_fruit_collected(fruit: FruitElement, real_collection: bool):
+	if real_collection and not fruit.is_in_group("Ghost Fruit"):
+		counter += 1
+		print(counter)
+		if counter % 2 == 0:
+			map.spawn_ghost_fruit([])
+
+func turn_ghost_fruit_riping(fruit):
+	if not fruit.is_riping_fruit:
+		var riping_fruit_component = riping_fruit_component_scene.instantiate()
+		fruit.add_child(riping_fruit_component)
 
 func self_destruct():
-	get_parent().find_all_fruits()[0].queue_free()
-	get_parent().find_all_fruits()[1].queue_free()
-	get_parent().fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
 	queue_free()

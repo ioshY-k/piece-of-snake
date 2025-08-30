@@ -1,10 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnwim1nigr3rc"]
+[gd_scene load_steps=6 format=3 uid="uid://cnwim1nigr3rc"]
 
 [ext_resource type="Texture2D" uid="uid://du6lduv6if6e8" path="res://MapElements/FruitElements/Fruit.svg" id="1_2sf1h"]
 [ext_resource type="Script" uid="uid://bl1y82xek0eew" path="res://MapElements/FruitElements/fruit_element.gd" id="2_2j4xi"]
+[ext_resource type="Texture2D" uid="uid://ojxdabyd8ues" path="res://MapElements/FruitElements/GhostFruit.svg" id="3_2j4xi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sii8h"]
 size = Vector2(60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6vlk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2sf1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2j4xi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="FruitElementArea" type="Area2D" groups=["Fruit"]]
 collision_layer = 2
@@ -14,8 +29,8 @@ script = ExtResource("2_2j4xi")
 [node name="ElementShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sii8h")
 
-[node name="FruitElementSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_2sf1h")
+[node name="FruitElementSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p6vlk")
 
 [node name="RaycastUp" type="RayCast2D" parent="."]
 rotation = 3.14159

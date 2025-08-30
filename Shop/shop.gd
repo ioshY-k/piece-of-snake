@@ -50,6 +50,7 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.PIGGY_BANK,
 									GameConsts.UPGRADE_LIST.SALE,
 									GameConsts.UPGRADE_LIST.DIET_1,
+									GameConsts.UPGRADE_LIST.ANCHOR,
 									GameConsts.UPGRADE_LIST.COATING,
 									GameConsts.UPGRADE_LIST.STEEL_HELMET,
 									GameConsts.UPGRADE_LIST.FUEL_1,
@@ -68,9 +69,9 @@ var current_purchase_count: int
 func _ready() -> void:
 	if GameConsts.test_mode:
 		purchase_count = 3
-		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,
-									GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
-									GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1]
+		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
+									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,
+									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2]
 	
 	current_purchase_count = purchase_count
 	

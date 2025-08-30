@@ -5,6 +5,7 @@ var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
 var snake_head_scene = preload("res://Snake/Head/snake_head.tscn")
 var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
+var ghost_fruit_element_scene = load("res://MapElements/FruitElements/ghost_fruit_element.tscn")
 var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 
 #instantiated upgrade components
@@ -195,12 +196,13 @@ func teleport_to_starting_position():
 
 #connected to signal collision_with in map_element.gd emitted in snake_head.gd when head collides with a head element
 func _on_collision_with(element: MapElement):
-	#on fruit collision, grow once, delete fruit and spawn a new one
+	#on fruit collision, grow once, delete fruit and spawn a new one (if not ghost fruit)
 	if element is FruitElement:
 		element.collected = true
 		snake_tail.tiles_to_grow += 1
 		SignalBus.fruit_collected.emit(element, true)
-		spawn_fruit(fruit_locations)
+		if not element.is_in_group("Ghost Fruit"):
+			spawn_fruit(fruit_locations)
 		fruit_locations.erase(TileHelper.position_to_tile(element.position))
 		element.collected_anim(snake_head.position, TileHelper.tile_to_position(snake_head.next_tile))
 		
@@ -213,13 +215,24 @@ func spawn_teleporter(destination: Vector2) -> Teleporter:
 	return teleporter
 	
 
-#spawn a new fruit in a place with no solid objects, including the snake
-#additional excluded tiles can be handed by forbidden_tiles
+func spawn_ghost_fruit(forbidden_tiles: Array[Vector2i]):
+	#instantiate new ghost fruit
+	var fruit: FruitElement = fruit_element_scene.instantiate()
+	add_child(fruit)
+	fruit.add_to_group("Ghost Fruit")
+	fruit.fruit_element_sprite.frame = 1
+	place_fruit(forbidden_tiles, fruit)
+	SignalBus.ghost_fruit_spawned.emit(fruit)
+
 func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 	#instantiate new fruit
 	var fruit: FruitElement = fruit_element_scene.instantiate()
 	add_child(fruit)
+	place_fruit(forbidden_tiles, fruit)
 	
+#place a new fruit in a place with no solid objects, including the snake
+#additional excluded tiles can be handed by forbidden_tiles
+func place_fruit(forbidden_tiles: Array[Vector2i], fruit: FruitElement):
 	#create a copy of tha array containing all free tiles
 	var currently_free_map_tiles = free_map_tiles.duplicate()
 	

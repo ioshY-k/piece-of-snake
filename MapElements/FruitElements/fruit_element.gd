@@ -9,6 +9,7 @@ var collected = false
 @onready var raycast_right: RayCast2D = $RaycastRight
 @onready var raycast_down: RayCast2D = $RaycastDown
 @onready var raycast_left: RayCast2D = $RaycastLeft
+@onready var fruit_element_sprite: AnimatedSprite2D = $FruitElementSprite
 
 func collected_anim(snakehead_pos: Vector2, fruit_destination_pos: Vector2):
 	set_collision_layer_value(2,false)

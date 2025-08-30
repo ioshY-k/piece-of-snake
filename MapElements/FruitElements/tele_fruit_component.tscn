@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://gkrp8joi0fpp"]
+[gd_scene load_steps=2 format=3 uid="uid://cjhhjyjkn71eu"]
 
-[ext_resource type="Script" uid="uid://1hw4c7s6kfe3" path="res://MapElements/FruitElements/tele_fruit_component.gd" id="1_d3atm"]
+[sub_resource type="GDScript" id="GDScript_4suyn"]
+script/source = "extends Node
+
+var fruit: FruitElement
+
+func _ready() -> void:
+	fruit = get_parent()
+	
+"
 
 [node name="TeleFruitComponent" type="Node"]
-script = ExtResource("1_d3atm")
+script = SubResource("GDScript_4suyn")

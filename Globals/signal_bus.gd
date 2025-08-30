@@ -3,6 +3,7 @@ extends Node
 signal stop_moving
 signal continue_moving
 signal fruit_collected
+signal ghost_fruit_spawned
 signal got_hit
 signal round_started
 signal round_over

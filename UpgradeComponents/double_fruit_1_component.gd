@@ -1,9 +1,18 @@
 extends Node
 
+var map:Map
+var counter := 0
+
 func _ready():
-	var forbidden_tiles : Array[Vector2i] = []
-	get_parent().spawn_fruit(forbidden_tiles)
+	SignalBus.fruit_collected.connect(_on_fruit_collected)
+	map = get_parent()
+
+func _on_fruit_collected(fruit: FruitElement, real_collection: bool):
+	if real_collection and not fruit.is_in_group("Ghost Fruit"):
+		counter += 1
+		print(counter)
+		if counter % 3 == 0:
+			map.spawn_ghost_fruit([])
 
 func self_destruct():
-	get_parent().find_all_fruits()[0].queue_free()
 	queue_free()
