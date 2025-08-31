@@ -18,8 +18,8 @@ func _lower_chance():
 
 func _prevent_growth(_element, _real_collection):
 	var check = randf_range(0,1)
-	if check < no_grow_chance:
-		snake_tail.tiles_to_grow = 0
+	if check < no_grow_chance and snake_tail.tiles_to_grow > 0:
+		snake_tail.tiles_to_grow -= 1
 	no_grow_chance = 1.0
 	change_tail_appearance(no_grow_chance)
 

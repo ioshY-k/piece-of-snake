@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxa4emnqe4jj6"]
+
+[ext_resource type="Texture2D" uid="uid://b1ege3cepjuuj" path="res://Shop/UpgradeCards/PlantSnake/PlantSnakePlant.svg" id="1_lfipd"]
+[ext_resource type="Script" uid="uid://ccx8jaetpdch1" path="res://UpgradeComponents/plant_snake_component.gd" id="2_yx6k5"]
+
+[node name="PlantSnakeComponent" type="Sprite2D"]
+z_index = 16
+texture = ExtResource("1_lfipd")
+script = ExtResource("2_yx6k5")

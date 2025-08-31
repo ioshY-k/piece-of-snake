@@ -13,7 +13,7 @@ func _ready():
 	coat = coat_scene.instantiate()
 	level.current_map.snake_head.add_child(coat)
 	SignalBus.round_started.connect(_apply_coat)
-	SignalBus.got_hit.connect(_coating_used)
+	SignalBus.got_hit_and_punished.connect(_coating_used)
 	SignalBus.round_over.connect(_reset_fruit_punishment)
 	SignalBus.act_over.connect(self_destruct)
 	SignalBus.swiss_knive_synergy.connect(_set_swiss_knive)

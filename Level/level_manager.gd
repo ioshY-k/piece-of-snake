@@ -45,6 +45,8 @@ var fuel_1_component_scene = load("res://UpgradeComponents/fuel_1_component.tscn
 var fuel_2_component_scene = load("res://UpgradeComponents/fuel_2_component.tscn")
 var fuel_3_component_scene = load("res://UpgradeComponents/fuel_3_component.tscn")
 var swiss_knive_component_scene = load("res://UpgradeComponents/swiss_knive_component.tscn")
+var pacman_component_scene = load("res://UpgradeComponents/pacman_component.tscn")
+var shiny_ghost_component_scene = load("res://UpgradeComponents/shiny_ghost_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -128,10 +130,10 @@ func on_snake_got_hit():
 	#don't lose fruit on wall collision while invincible
 	if current_map.invincible_ticks > 0:
 		return
-	
+		
 	if fruit_punishment > 0:
 		hit_audio.play()
-		
+	
 	for punish in range(fruit_punishment):
 		if not enough_fruits:
 			fruits_left += 1
@@ -148,6 +150,7 @@ func on_snake_got_hit():
 				fruits_overload -= 1
 				fruits_left_number_label.text = str(fruits_overload)
 			
+	SignalBus.got_hit_and_punished.emit()
 
 func _process(delta: float) -> void:
 	decide_speed_boost(delta)
@@ -230,6 +233,18 @@ func instantiate_upgrade(upgrade_id: int):
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
 			current_active_item_slot.add_child(fruit_relocator_component)
 			fruit_relocator_component.initiate_active_item(4, slot)
+		GameConsts.UPGRADE_LIST.PACMAN_1:
+			var pacman_component = pacman_component_scene.instantiate()
+			current_active_item_slot.add_child(pacman_component)
+			pacman_component.initiate_active_item(3, slot)
+		GameConsts.UPGRADE_LIST.PACMAN_2:
+			var pacman_component = pacman_component_scene.instantiate()
+			current_active_item_slot.add_child(pacman_component)
+			pacman_component.initiate_active_item(5, slot)
+		GameConsts.UPGRADE_LIST.PACMAN_3:
+			var pacman_component = pacman_component_scene.instantiate()
+			current_active_item_slot.add_child(pacman_component)
+			pacman_component.initiate_active_item(7, slot)
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			var time_stop_1_component = time_stop_1_component_scene.instantiate()
 			current_active_item_slot.add_child(time_stop_1_component)
@@ -285,6 +300,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.MOULTING:
 			var moulting_component = moulting_component_scene.instantiate()
 			add_child(moulting_component)
+		GameConsts.UPGRADE_LIST.SHINY_GHOST:
+			var shiny_ghost_component = shiny_ghost_component_scene.instantiate()
+			add_child(shiny_ghost_component)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1:
 			var crossroad_1_component = crossroad_1_component_scene.instantiate()
 			current_active_item_slot.add_child(crossroad_1_component)
@@ -304,7 +322,7 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,\
-		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
+		GameConsts.UPGRADE_LIST.EDGE_WRAP,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.STEEL_HELMET,\
@@ -315,7 +333,8 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
-		GameConsts.UPGRADE_LIST.RUBBER_BAND:
+		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
+		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			current_map.add_upgrade_component(upgrade_id)
 
 func destroy_upgrade(upgrade_id: int):
@@ -349,8 +368,12 @@ func destroy_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
 			component = active_item_slot_1.find_child("FruitRelocatorComponent", false, false)
+		GameConsts.UPGRADE_LIST.PACMAN_1,\
+		GameConsts.UPGRADE_LIST.PACMAN_2,\
+		GameConsts.UPGRADE_LIST.PACMAN_3:
+			component = active_item_slot_1.find_child("PacmanComponent", false, false)
 			if component == null:
-				component = active_item_slot_2.find_child("FruitRelocatorComponent", false, false)
+				component = active_item_slot_2.find_child("PacmanComponent", false, false)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2:
 			component = active_item_slot_1.find_child("Crossroad1Component", false, false)
@@ -384,8 +407,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("DoubleFruit2Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3:
 			component = current_map.find_child("DoubleFruit3Component",false,false)
-		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
-			component = current_map.find_child("EdgeWrap1Component",false,false)
+		GameConsts.UPGRADE_LIST.EDGE_WRAP:
+			component = current_map.find_child("EdgeWrapComponent",false,false)
 		GameConsts.UPGRADE_LIST.TAIL_CUT:
 			component = current_map.find_child("TailCutComponent",false,false)
 		GameConsts.UPGRADE_LIST.STEEL_HELMET:
@@ -410,6 +433,10 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("RubberBandComponent",false,false)
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE:
 			component = current_map.find_child("SwissKniveComponent",false,false)
+		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
+			component = current_map.snake_tail.find_child("PlantSnakeComponent",false,false)
+		GameConsts.UPGRADE_LIST.SHINY_GHOST:
+			component = find_child("ShinyGhostComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -428,6 +455,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3,\
+		GameConsts.UPGRADE_LIST.PACMAN_1,\
+		GameConsts.UPGRADE_LIST.PACMAN_2,\
+		GameConsts.UPGRADE_LIST.PACMAN_3,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_1,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_2,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_3,\
@@ -438,6 +468,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
+		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
 		GameConsts.UPGRADE_LIST.MOULTING:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
@@ -452,12 +483,13 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
-		GameConsts.UPGRADE_LIST.EDGE_WRAP_1,\
+		GameConsts.UPGRADE_LIST.EDGE_WRAP,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.STEEL_HELMET,\
 		GameConsts.UPGRADE_LIST.CORNER_PHASING,\
 		GameConsts.UPGRADE_LIST.ANCHOR,\
 		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
+		GameConsts.UPGRADE_LIST.PLANT_SNAKE,\
 		GameConsts.UPGRADE_LIST.COATING:
 			return true
 		_:

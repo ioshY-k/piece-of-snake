@@ -5,7 +5,6 @@ var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
 var snake_head_scene = preload("res://Snake/Head/snake_head.tscn")
 var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
-var ghost_fruit_element_scene = load("res://MapElements/FruitElements/ghost_fruit_element.tscn")
 var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 
 #instantiated upgrade components
@@ -21,12 +20,13 @@ var double_fruit_3_component_scene = load("res://UpgradeComponents/double_fruit_
 var magic_flute_1_component_scene = load("res://UpgradeComponents/magic_flute_1_component.tscn")
 var magic_flute_2_component_scene = load("res://UpgradeComponents/magic_flute_2_component.tscn")
 var magic_flute_3_component_scene = load("res://UpgradeComponents/magic_flute_3_component.tscn")
-var edge_wrap_1_component_scene = load("res://UpgradeComponents/edge_wrap_1_component.tscn")
+var edge_wrap_component_scene = load("res://UpgradeComponents/edge_wrap_component.tscn")
 var corner_phasing_scene = load("res://UpgradeComponents/corner_phasing_component.tscn")
 var anchor_component_scene = load("res://UpgradeComponents/anchor_component.tscn")
 var tail_cut_component_scene = load("res://UpgradeComponents/tail_cut_component.tscn")
 var steel_helmet_component_scene = load("res://UpgradeComponents/steel_helmet_component.tscn")
 var rubber_band_component_scene = load("res://UpgradeComponents/rubber_band_component.tscn")
+var plant_snake_component_scene = load("res://UpgradeComponents/plant_snake_component.tscn")
 
 #mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
@@ -215,7 +215,7 @@ func spawn_teleporter(destination: Vector2) -> Teleporter:
 	return teleporter
 	
 
-func spawn_ghost_fruit(forbidden_tiles: Array[Vector2i]):
+func spawn_ghost_fruit(forbidden_tiles: Array[Vector2i]) -> FruitElement:
 	#instantiate new ghost fruit
 	var fruit: FruitElement = fruit_element_scene.instantiate()
 	add_child(fruit)
@@ -223,6 +223,7 @@ func spawn_ghost_fruit(forbidden_tiles: Array[Vector2i]):
 	fruit.fruit_element_sprite.frame = 1
 	place_fruit(forbidden_tiles, fruit)
 	SignalBus.ghost_fruit_spawned.emit(fruit)
+	return fruit
 
 func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 	#instantiate new fruit
@@ -323,9 +324,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3:
 			var magic_flute_3_component = magic_flute_3_component_scene.instantiate()
 			add_child(magic_flute_3_component)
-		GameConsts.UPGRADE_LIST.EDGE_WRAP_1:
-			var edge_wrap_1_component = edge_wrap_1_component_scene.instantiate()
-			add_child(edge_wrap_1_component)
+		GameConsts.UPGRADE_LIST.EDGE_WRAP:
+			var edge_wrap_component = edge_wrap_component_scene.instantiate()
+			add_child(edge_wrap_component)
 		GameConsts.UPGRADE_LIST.TAIL_CUT:
 			var tail_cut_component = tail_cut_component_scene.instantiate()
 			add_child(tail_cut_component)
@@ -341,6 +342,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.RUBBER_BAND:
 			var rubber_band_component = rubber_band_component_scene.instantiate()
 			add_child(rubber_band_component)
+		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
+			var plant_snake_component = plant_snake_component_scene.instantiate()
+			snake_tail.add_child(plant_snake_component)
 
 func apply_mapmod(mapmod: int):
 	print(GameConsts.MAP_MODS.find_key(mapmod))

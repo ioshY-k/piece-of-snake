@@ -31,7 +31,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(48)
+	current_upgrades.resize(53)
 	current_upgrades.fill(false)
 	
 	shop.upgrade_bought.connect(_on_upgrade_bought)
@@ -59,13 +59,13 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.DISCO,
+		maporder = [GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.ANTI_MAGNET,
-						GameConsts.MAP_MODS.ANTI_MAGNET,
-						GameConsts.MAP_MODS.ANTI_MAGNET,
-						GameConsts.MAP_MODS.ANTI_MAGNET,
+		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blxbmaeywgv0t"
-path="res://.godot/imported/EdgeWrap1.svg-e5b77dd65f6f5645b8ac7bff0455e090.ctex"
+uid="uid://kdourpai0vr6"
+path="res://.godot/imported/PlantSnake.svg-1eb8f50bbd4542a783b7813f665dfc17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/UpgradeCards/EdgeWrap1.svg"
-dest_files=["res://.godot/imported/EdgeWrap1.svg-e5b77dd65f6f5645b8ac7bff0455e090.ctex"]
+source_file="res://Shop/UpgradeCards/PlantSnake.svg"
+dest_files=["res://.godot/imported/PlantSnake.svg-1eb8f50bbd4542a783b7813f665dfc17.ctex"]
 
 [params]
 

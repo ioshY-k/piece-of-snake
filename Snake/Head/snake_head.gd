@@ -21,8 +21,10 @@ var hit_signal_muted: bool = false
 var original_direction: int
 
 func _process(delta: float) -> void:
-	#print(moves)
 	buffer_last_input_direction()
+	if fruit_collect_area.has_overlapping_areas():
+		for fruit in fruit_collect_area.get_overlapping_areas():
+			fruit.collision_with.emit()
 
 func _on_next_tile_reached():
 	original_direction = current_direction
@@ -53,9 +55,6 @@ func _on_next_tile_reached():
 	#reset buffer to unreachable value
 	buffered_input_direction = -10
 	
-	if fruit_collect_area.has_overlapping_areas():
-		for fruit in fruit_collect_area.get_overlapping_areas():
-			fruit.collision_with.emit()
 	
 	if colliding_element != null and colliding_element.get_collision_layer_value(5) and moves:#Teleporter
 		var temp_next_tile = next_tile

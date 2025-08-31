@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=65 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cftky2pry7ogo" path="res://Shop/UpgradeCards/DoubleFruit1.svg" id="9_fwh1f"]
 [ext_resource type="Texture2D" uid="uid://cgxj21tbclcbn" path="res://Shop/UpgradeCards/DoubleFruit2.svg" id="10_sbsg3"]
 [ext_resource type="Texture2D" uid="uid://bkhhuacu7xp8d" path="res://Shop/UpgradeCards/DoubleFruit3.svg" id="11_7lrqi"]
-[ext_resource type="Texture2D" uid="uid://blxbmaeywgv0t" path="res://Shop/UpgradeCards/EdgeWrap1.svg" id="12_qgweo"]
-[ext_resource type="Texture2D" uid="uid://c3rtdww4fnxy" path="res://Shop/UpgradeCards/EdgeWrap2.svg" id="13_t1l65"]
+[ext_resource type="Texture2D" uid="uid://blxbmaeywgv0t" path="res://Shop/UpgradeCards/EdgeWrap.svg" id="12_qgweo"]
 [ext_resource type="Texture2D" uid="uid://cefv5gxytj2f1" path="res://Shop/UpgradeCards/FruitRelocator1.svg" id="14_a28kx"]
 [ext_resource type="Texture2D" uid="uid://b424xg4rk0q1" path="res://Shop/UpgradeCards/FruitRelocator2.svg" id="15_0pjoy"]
 [ext_resource type="Texture2D" uid="uid://djcvfpnq64tac" path="res://Shop/UpgradeCards/FruitRelocator3.svg" id="16_ibh7n"]
@@ -53,10 +52,15 @@
 [ext_resource type="Texture2D" uid="uid://b4r50mmtygrm6" path="res://Shop/UpgradeCards/MagicFlute1.svg" id="47_busg3"]
 [ext_resource type="Texture2D" uid="uid://bnuc20d3gxn6" path="res://Shop/UpgradeCards/MagicFlute2.svg" id="48_ckyt6"]
 [ext_resource type="Texture2D" uid="uid://x8ric46mpha" path="res://Shop/UpgradeCards/MagicFlute3.svg" id="49_kn4tv"]
+[ext_resource type="Texture2D" uid="uid://4ltbpcy0alb1" path="res://Shop/UpgradeCards/Pacman1.svg" id="50_k2duo"]
 [ext_resource type="AudioStream" uid="uid://c8dmgwp22cyce" path="res://Shop/Sfx/CardSnap.wav" id="51_dqar4"]
+[ext_resource type="Texture2D" uid="uid://dmnx0w0qohpcc" path="res://Shop/UpgradeCards/Pacman2.svg" id="51_uygd3"]
 [ext_resource type="AudioStream" uid="uid://bswqsb1vkijts" path="res://Shop/Sfx/CardSelect.wav" id="52_ea03u"]
+[ext_resource type="Texture2D" uid="uid://dmj45rd0wwcci" path="res://Shop/UpgradeCards/Pacman3.svg" id="52_n5epb"]
 [ext_resource type="AudioStream" uid="uid://b8j31t0jdbxn4" path="res://Shop/Sfx/CardDeselesct.wav" id="53_1kqk4"]
+[ext_resource type="Texture2D" uid="uid://kdourpai0vr6" path="res://Shop/UpgradeCards/PlantSnake.svg" id="53_uygd3"]
 [ext_resource type="AudioStream" uid="uid://dejdw5oc0tjyw" path="res://Shop/Sfx/CardBuy.wav" id="54_5fd0j"]
+[ext_resource type="Texture2D" uid="uid://br2gk6nyd7rj3" path="res://Shop/UpgradeCards/ShinyGhost.svg" id="54_n5epb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -99,9 +103,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_qgweo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_t1l65")
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_a28kx")
@@ -204,6 +205,21 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("49_kn4tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_k2duo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_uygd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_n5epb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_uygd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_n5epb")
 }],
 "loop": true,
 "name": &"default",

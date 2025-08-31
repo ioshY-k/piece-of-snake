@@ -13,8 +13,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1) : "A [color=ffc875]Ghost Fruit[/color] will appear for every 3 collected fruits.",
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2) : "The longer a Ghost Fruit is [color=ffc875]left uncollected[/color], the more Points it is worth.",
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3) : "A [color=ffc875]Ghost Fruit[/color] will appear for every 2 collected fruits.",
-	str(GameConsts.UPGRADE_LIST.EDGE_WRAP_1) : "When exiting the screen, [color=ffc875]enter on the opposite side[/color].",
-	str(GameConsts.UPGRADE_LIST.EDGE_WRAP_2) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.EDGE_WRAP) : "When exiting the screen, [color=ffc875]enter on the opposite side[/color].",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 2 times.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 5 times.",
@@ -36,7 +35,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 6 times.",
 	str(GameConsts.UPGRADE_LIST.PIGGY_BANK) : "When destroying this Item,\n[color=#4fabf9]lower the Fruit threshold[/color] of the next round by 5",
 	str(GameConsts.UPGRADE_LIST.SWISS_KNIVE) : "[color=#4fabf9]Body Modifications[/color] become [color=#4fabf9]twice as effective[/color]",
-	str(GameConsts.UPGRADE_LIST.SALE) : "For each filled Item category \n[color=#4fabf9]Reduce the cost[/color] of a random Item by 1",
+	str(GameConsts.UPGRADE_LIST.SALE) : "Whenever Item Cards are dealt \n[color=#4fabf9]Reduce the cost[/color] of a random Item by 1 for each filled Item category",
 	str(GameConsts.UPGRADE_LIST.DIET_1) : "Collecting fruits in quick succession makes [color=ffc875]growing less likeley[/color].",
 	str(GameConsts.UPGRADE_LIST.DIET_2) : "[color=ffc875]Don't grow at all[/color] when collecting overstock fruit.",
 	str(GameConsts.UPGRADE_LIST.DIET_3) : "The probability for not growing [color=ffc875]stays high for longer[/color].",
@@ -48,7 +47,14 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.FUEL_3) : "Collecting fruits while in Hyper Speed [color=ffc875]refills the Hyper Speed gauge completely[/color].",
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you[/color].",
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you for longer[/color].",
-	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you even longer[/color]."
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you even longer[/color].",
+	str(GameConsts.UPGRADE_LIST.PACMAN_1) : "[color=#ff9191]Spawn a Ghost Fruit[/color] that moves away from you.\n\nUsable up to 3 times.",
+	str(GameConsts.UPGRADE_LIST.PACMAN_2) : "[color=#ff9191]Spawn a Ghost Fruit[/color] that moves away from you.\n\nUsable up to 5 times.",
+	str(GameConsts.UPGRADE_LIST.PACMAN_3) : "[color=#ff9191]Spawn a Ghost Fruit[/color] that moves away from you.\n\nUsable up to 7 times.",
+	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a Ghost Fruit will [color=#80d984]grow attached to your Tail[/color]",
+	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "Half of the time Ghost Fruits give \n[color=#4fabf9]an additional point[/color]",
+
+
 	}
 
 var mouse_in: bool = false

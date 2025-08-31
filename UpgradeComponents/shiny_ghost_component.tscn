@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://luq6u74keq88"]
+
+[ext_resource type="Script" uid="uid://btf4ggwrypnq" path="res://UpgradeComponents/shiny_ghost_component.gd" id="1_sitlm"]
+
+[node name="ShinyGhostComponent" type="Node"]
+script = ExtResource("1_sitlm")

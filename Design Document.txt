@@ -3,6 +3,7 @@ Z index:
 	Level: 5
 	BodyPart: 10
 	SankeTail: 15
+	TailPLant:16
 	SnakeHead: 20
 	FruitParticles: 25
 	MapmodInfoPanel: 200

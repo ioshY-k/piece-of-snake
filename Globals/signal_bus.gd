@@ -2,9 +2,10 @@ extends Node
 
 signal stop_moving
 signal continue_moving
-signal fruit_collected
+signal fruit_collected(fruit:FruitElement, is_real_collection:bool)
 signal ghost_fruit_spawned
 signal got_hit
+signal got_hit_and_punished #running into solid with not invincibility (actual hit occurs)
 signal round_started
 signal round_over
 signal act_over

@@ -12,6 +12,7 @@ var collected = false
 @onready var fruit_element_sprite: AnimatedSprite2D = $FruitElementSprite
 
 func collected_anim(snakehead_pos: Vector2, fruit_destination_pos: Vector2):
+	await get_tree().process_frame
 	set_collision_layer_value(2,false)
 	var tweenforth = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel(true)
 	tweenforth.tween_property(self, "position", position+(snakehead_pos-position).rotated(deg_to_rad(180)), 0.15)
@@ -53,22 +54,22 @@ func valid_direction_towards_player():
 func valid_direction_awayfrom_player():
 	var horizontal_distance_is_longer = abs(position.x-map.snake_head.position.x) > abs(position.y-map.snake_head.position.y)
 	if horizontal_distance_is_longer:
-		if position.x > map.snake_head.position.x and raycast_right.get_collider() == null:
+		if position.x >= map.snake_head.position.x and raycast_right.get_collider() == null:
 			return TileHelper.DIRECTION.RIGHT
-		if position.x < map.snake_head.position.x and raycast_left.get_collider() == null:
+		if position.x <= map.snake_head.position.x and raycast_left.get_collider() == null:
 			return TileHelper.DIRECTION.LEFT
-		if position.y > map.snake_head.position.y and raycast_down.get_collider() == null:
+		if position.y >= map.snake_head.position.y and raycast_down.get_collider() == null:
 			return TileHelper.DIRECTION.DOWN
-		if position.y < map.snake_head.position.y and raycast_up.get_collider() == null:
+		if position.y <= map.snake_head.position.y and raycast_up.get_collider() == null:
 			return TileHelper.DIRECTION.UP
 	else:
-		if position.y > map.snake_head.position.y and raycast_down.get_collider() == null:
+		if position.y >= map.snake_head.position.y and raycast_down.get_collider() == null:
 			return TileHelper.DIRECTION.DOWN
-		if position.y < map.snake_head.position.y and raycast_up.get_collider() == null:
+		if position.y <= map.snake_head.position.y and raycast_up.get_collider() == null:
 			return TileHelper.DIRECTION.UP
-		if position.x > map.snake_head.position.x and raycast_right.get_collider() == null:
+		if position.x >= map.snake_head.position.x and raycast_right.get_collider() == null:
 			return TileHelper.DIRECTION.RIGHT
-		if position.x < map.snake_head.position.x and raycast_left.get_collider() == null:
+		if position.x <= map.snake_head.position.x and raycast_left.get_collider() == null:
 			return TileHelper.DIRECTION.LEFT
 	return null
 	
@@ -90,10 +91,11 @@ func random_valid_direction():
 		
 var movement_tween: Tween
 func move(move_t):
+	if get_parent().name == "PlantSnakeComponent":
+		return
 	if is_instance_valid(movement_tween):
 		while movement_tween.is_running():
 			await movement_tween.finished
-			print("waiting over!")
 	
 	var direction
 	match move_t:
@@ -123,5 +125,4 @@ func move(move_t):
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)),
 			map.snake_head.current_snake_speed)
 		null:
-			print("no valid direction found")
 			movement_tween.tween_property(self, "position",position,map.snake_head.current_snake_speed)
