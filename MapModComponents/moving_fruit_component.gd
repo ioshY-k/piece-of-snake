@@ -11,9 +11,9 @@ func _move_fruits_by_chance():
 	if randi()%100 < 15 and not currently_moving:
 		currently_moving = true
 		for fruit:FruitElement in get_tree().get_nodes_in_group("Fruit"):
-			fruit.move(fruit.move_type.RANDOM)
-			fruit.move(fruit.move_type.RANDOM)
-			fruit.move(fruit.move_type.RANDOM)
+			fruit.move(fruit.move_type.RANDOM, false)
+			fruit.move(fruit.move_type.RANDOM, false)
+			fruit.move(fruit.move_type.RANDOM, false)
 		await get_tree().create_timer(3).timeout
 		currently_moving = false
 

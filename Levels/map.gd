@@ -27,6 +27,7 @@ var tail_cut_component_scene = load("res://UpgradeComponents/tail_cut_component.
 var steel_helmet_component_scene = load("res://UpgradeComponents/steel_helmet_component.tscn")
 var rubber_band_component_scene = load("res://UpgradeComponents/rubber_band_component.tscn")
 var plant_snake_component_scene = load("res://UpgradeComponents/plant_snake_component.tscn")
+var dance_component_scene = load("res://UpgradeComponents/dance_component.tscn")
 
 #mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
@@ -327,6 +328,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.EDGE_WRAP:
 			var edge_wrap_component = edge_wrap_component_scene.instantiate()
 			add_child(edge_wrap_component)
+		GameConsts.UPGRADE_LIST.DANCE:
+			var dance_component = dance_component_scene.instantiate()
+			add_child(dance_component)
 		GameConsts.UPGRADE_LIST.TAIL_CUT:
 			var tail_cut_component = tail_cut_component_scene.instantiate()
 			add_child(tail_cut_component)

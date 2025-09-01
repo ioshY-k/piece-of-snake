@@ -115,9 +115,7 @@ func _on_next_tile_reached():
 
 func _on_stop_moving():
 	moves = false
-	print("stop moving")
 func _on_continue_moving(current_dir):
-	print(current_dir)
 	moves = true
 	
 func check_upcoming_collision(current_dir, next_dir) -> MapElement:

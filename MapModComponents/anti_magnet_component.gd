@@ -5,7 +5,7 @@ func _ready() -> void:
 
 func _push_fruit_away():
 	for fruit:FruitElement in get_tree().get_nodes_in_group("Fruit"):
-		fruit.move(fruit.move_type.AWAY)
+		fruit.move(fruit.move_type.AWAY, false)
 
 func self_destruct():
 	queue_free()

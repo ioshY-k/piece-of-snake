@@ -1,6 +1,6 @@
 class_name FruitElement extends MapElement
 
-enum move_type {RANDOM,AWAY,TOWARDS}
+enum move_type {UP,RIGHT,DOWN,LEFT,RANDOM,AWAY,TOWARDS}
 
 var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particles.tscn")
 var is_riping_fruit = false
@@ -88,17 +88,42 @@ func random_valid_direction():
 		return valid_directions[randi()%valid_directions.size()]
 	else:
 		return null
-		
+
+var blocked_by_dance: bool = false
 var movement_tween: Tween
-func move(move_t):
+func move(move_t, triggered_by_dance):
 	if get_parent().name == "PlantSnakeComponent":
 		return
 	if is_instance_valid(movement_tween):
 		while movement_tween.is_running():
 			await movement_tween.finished
 	
+	#blocked by dance whenever snake moves while dance upgrade is equipped. triggered by dance, when dance component called move
+	if blocked_by_dance and not triggered_by_dance:
+		return
+	
 	var direction
 	match move_t:
+		move_type.UP:
+			if raycast_up.get_collider() == null:
+				direction = TileHelper.DIRECTION.UP
+			else:
+				direction = null
+		move_type.RIGHT:
+			if raycast_right.get_collider() == null:
+				direction = TileHelper.DIRECTION.RIGHT
+			else:
+				direction = null
+		move_type.DOWN:
+			if raycast_down.get_collider() == null:
+				direction = TileHelper.DIRECTION.DOWN
+			else:
+				direction = null
+		move_type.LEFT:
+			if raycast_left.get_collider() == null:
+				direction = TileHelper.DIRECTION.LEFT
+			else:
+				direction = null
 		move_type.RANDOM:
 			direction = random_valid_direction()
 		move_type.AWAY:
