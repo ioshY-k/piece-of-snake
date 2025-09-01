@@ -24,7 +24,9 @@ func _process(delta: float) -> void:
 	buffer_last_input_direction()
 	if fruit_collect_area.has_overlapping_areas():
 		for fruit in fruit_collect_area.get_overlapping_areas():
-			fruit.collision_with.emit()
+			if not fruit.collected:
+				print("collect through area")
+				fruit.collision_with.emit()
 
 func _on_next_tile_reached():
 	original_direction = current_direction
