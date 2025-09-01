@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtvk72uuhq3p3"]
+
+[ext_resource type="Script" uid="uid://svtxnofxbve8" path="res://UpgradeComponents/dance_component.gd" id="1_38g26"]
+
+[node name="DanceComponent" type="Node"]
+script = ExtResource("1_38g26")

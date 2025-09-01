@@ -97,7 +97,7 @@ func _on_next_tile_reached():
 	print_debug("The Signal next_tile_reached was not connected to an existing SnakeHead or SnakeTail")
 func _on_stop_moving():
 	print_debug("The Signal stop_moving was not connected to an existing SnakeHead or SnakeTail")
-func _on_continue_moving():
+func _on_continue_moving(current_direction):
 	print_debug("The Signal continue_moving was not connected to an existing SnakeHead or SnakeTail")
 func check_moves():
 	print("The Method check_moves was not connected to an existing SnakeHead or SnakeTail")

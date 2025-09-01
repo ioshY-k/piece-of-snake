@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=66 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -60,6 +60,7 @@
 [ext_resource type="AudioStream" uid="uid://b8j31t0jdbxn4" path="res://Shop/Sfx/CardDeselesct.wav" id="53_1kqk4"]
 [ext_resource type="Texture2D" uid="uid://kdourpai0vr6" path="res://Shop/UpgradeCards/PlantSnake.svg" id="53_uygd3"]
 [ext_resource type="AudioStream" uid="uid://dejdw5oc0tjyw" path="res://Shop/Sfx/CardBuy.wav" id="54_5fd0j"]
+[ext_resource type="Texture2D" uid="uid://j0vpfnfrjytu" path="res://Shop/UpgradeCards/Dance.svg" id="54_bim42"]
 [ext_resource type="Texture2D" uid="uid://br2gk6nyd7rj3" path="res://Shop/UpgradeCards/ShinyGhost.svg" id="54_n5epb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
@@ -220,6 +221,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("54_n5epb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bim42")
 }],
 "loop": true,
 "name": &"default",

@@ -160,5 +160,5 @@ func turn_rubber():
 
 func _on_stop_moving():
 	body_moves = false
-func _on_continue_moving():
+func _on_continue_moving(current_direction):
 	body_moves = true

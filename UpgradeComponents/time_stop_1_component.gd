@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		item_deactivated.emit()
 		#uses-1 is the light index for the itembag to go out
 		uses -= 1
-		SignalBus.continue_moving.emit()
+		SignalBus.continue_moving.emit(active_item_slot.get_parent().current_map.snake_head.current_direction)
 
 func _on_next_tile_reached():
 	if button_held:

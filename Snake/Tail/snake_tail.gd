@@ -30,7 +30,7 @@ func _on_next_tile_reached():
 	get_moving_tween(true)
 	get_turning_tween(map.snake_path_directions[0])
 	
-	SignalBus.continue_moving.emit()
+	SignalBus.continue_moving.emit(snake_head.current_direction)
 
 func _on_teleported(teleporter: Teleporter):
 	var destination = teleporter.destination_tile
@@ -41,7 +41,7 @@ func _on_teleported(teleporter: Teleporter):
 
 func _on_stop_moving():
 	pass
-func _on_continue_moving():
+func _on_continue_moving(current_direction):
 	pass
 func check_moves():
 	return snake_head.moves

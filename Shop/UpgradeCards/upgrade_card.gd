@@ -53,6 +53,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.PACMAN_3) : "[color=#ff9191]Spawn a Ghost Fruit[/color] that moves away from you.\n\nUsable up to 7 times.",
 	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a Ghost Fruit will [color=#80d984]grow attached to your Tail[/color]",
 	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "Half of the time Ghost Fruits give \n[color=#4fabf9]an additional point[/color]",
+	str(GameConsts.UPGRADE_LIST.ANCHOR) : "Whenever the snake moves, [color=#d75eff]all fruits move in the opposite direction[/color].\n\nThis movement overrides any other fruit movement.",
 
 
 	}

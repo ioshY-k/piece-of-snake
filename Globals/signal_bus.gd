@@ -1,7 +1,7 @@
 extends Node
 
 signal stop_moving
-signal continue_moving
+signal continue_moving(current_direction: int)
 signal fruit_collected(fruit:FruitElement, is_real_collection:bool)
 signal ghost_fruit_spawned
 signal got_hit
