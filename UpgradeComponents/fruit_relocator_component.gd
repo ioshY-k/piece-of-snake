@@ -41,7 +41,7 @@ func _on_item_activated(_uses):
 				
 	for fruit in fruits:
 		current_map.spawn_fruit(fruit_tiles)
-		current_map.fruit_locations.erase(TileHelper.position_to_tile(fruit.position))
+		current_map.current_fruits.erase(fruit)
 		fruit.queue_free()
 
 func self_destruct():

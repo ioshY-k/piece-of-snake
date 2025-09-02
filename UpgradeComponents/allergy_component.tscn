@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd77y35act3u3"]
+
+[ext_resource type="Script" uid="uid://wxfh1ohpwe22" path="res://UpgradeComponents/allergy_component.gd" id="1_oq452"]
+
+[node name="AllergyComponent" type="Node"]
+script = ExtResource("1_oq452")
+
+[node name="AllergyTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true

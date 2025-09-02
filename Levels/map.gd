@@ -28,6 +28,7 @@ var steel_helmet_component_scene = load("res://UpgradeComponents/steel_helmet_co
 var rubber_band_component_scene = load("res://UpgradeComponents/rubber_band_component.tscn")
 var plant_snake_component_scene = load("res://UpgradeComponents/plant_snake_component.tscn")
 var dance_component_scene = load("res://UpgradeComponents/dance_component.tscn")
+var half_gone_component_scene = load("res://UpgradeComponents/half_gone_component.tscn")
 
 #mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
@@ -49,7 +50,7 @@ var anti_magnet_component_scene = load("res://MapModComponents/anti_magnet_compo
 @export var inbounds_grid_size: Vector2i
 @export var starting_position: Vector2
 var zoom_state: int = 0 #0 by default and +1 for each area size upgrade
-var fruit_locations: Array[Vector2i]
+var current_fruits: Array[FruitElement]
 
 
 #arrays containing Snake data for the tail to follow
@@ -203,8 +204,10 @@ func _on_collision_with(element: MapElement):
 		snake_tail.tiles_to_grow += 1
 		SignalBus.fruit_collected.emit(element, true)
 		if not element.is_in_group("Ghost Fruit"):
-			spawn_fruit(fruit_locations)
-		fruit_locations.erase(TileHelper.position_to_tile(element.position))
+			var fruit_positions: Array = current_fruits.map(
+			func(fruit): return TileHelper.position_to_tile(fruit.position))
+			spawn_fruit(fruit_positions)
+		current_fruits.erase(element)
 		element.collected_anim(snake_head.position, TileHelper.tile_to_position(snake_head.next_tile))
 		
 func spawn_teleporter(destination: Vector2) -> Teleporter:
@@ -226,7 +229,7 @@ func spawn_ghost_fruit(forbidden_tiles: Array[Vector2i]) -> FruitElement:
 	SignalBus.ghost_fruit_spawned.emit(fruit)
 	return fruit
 
-func spawn_fruit(forbidden_tiles: Array[Vector2i]):
+func spawn_fruit(forbidden_tiles: Array):
 	#instantiate new fruit
 	var fruit: FruitElement = fruit_element_scene.instantiate()
 	add_child(fruit)
@@ -234,7 +237,7 @@ func spawn_fruit(forbidden_tiles: Array[Vector2i]):
 	
 #place a new fruit in a place with no solid objects, including the snake
 #additional excluded tiles can be handed by forbidden_tiles
-func place_fruit(forbidden_tiles: Array[Vector2i], fruit: FruitElement):
+func place_fruit(forbidden_tiles: Array, fruit: FruitElement):
 	#create a copy of tha array containing all free tiles
 	var currently_free_map_tiles = free_map_tiles.duplicate()
 	
@@ -254,7 +257,7 @@ func place_fruit(forbidden_tiles: Array[Vector2i], fruit: FruitElement):
 	else:
 		fruit.position = TileHelper.tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
 		
-	fruit_locations.append(TileHelper.position_to_tile(fruit.position))
+	current_fruits.append(fruit)
 	
 	
 
@@ -349,6 +352,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			var plant_snake_component = plant_snake_component_scene.instantiate()
 			snake_tail.add_child(plant_snake_component)
+		GameConsts.UPGRADE_LIST.HALF_GONE:
+			var half_gone_component = half_gone_component_scene.instantiate()
+			add_child(half_gone_component)
 
 func apply_mapmod(mapmod: int):
 	print(GameConsts.MAP_MODS.find_key(mapmod))

@@ -3,7 +3,7 @@ extends Node
 signal stop_moving
 signal continue_moving(current_direction: int)
 signal fruit_collected(fruit:FruitElement, is_real_collection:bool)
-signal ghost_fruit_spawned
+signal ghost_fruit_spawned(fruit)
 signal got_hit
 signal got_hit_and_punished #running into solid with not invincibility (actual hit occurs)
 signal round_started
@@ -19,3 +19,4 @@ signal next_tile_reached
 signal active_item_used
 signal enough_fruits_changed(enough:bool)
 signal swiss_knive_synergy(active:bool)
+signal fruits_left_changed(fruits_left)

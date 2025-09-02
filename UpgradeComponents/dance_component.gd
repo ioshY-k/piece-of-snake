@@ -22,3 +22,6 @@ func _enable_other_movements():
 	just_stopped = true
 	await get_tree().process_frame
 	just_stopped = false
+
+func self_destruct():
+	queue_free()

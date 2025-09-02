@@ -13,7 +13,7 @@ func _set_swiss_knive(state:bool):
 	
 func convert_corner_to_overlap():
 	if map.snake_path_bodyparts[-1].is_corner:
-		map.snake_path_bodyparts[-1].set_overlap(true)
+		map.snake_path_bodyparts[-1].set_overlap(true, false)
 		
 
 func self_destruct():

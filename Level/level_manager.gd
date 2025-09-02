@@ -23,6 +23,7 @@ var fruits_left: int
 var fruits_overload: int
 var fruit_punishment: int = 1
 var enough_fruits: bool = false
+var allergy_mode = false
 
 #Upgrade Components
 var fruit_relocator_component_scene = load("res://UpgradeComponents/fruit_relocator_component.tscn")
@@ -47,6 +48,7 @@ var fuel_3_component_scene = load("res://UpgradeComponents/fuel_3_component.tscn
 var swiss_knive_component_scene = load("res://UpgradeComponents/swiss_knive_component.tscn")
 var pacman_component_scene = load("res://UpgradeComponents/pacman_component.tscn")
 var shiny_ghost_component_scene = load("res://UpgradeComponents/shiny_ghost_component.tscn")
+var allergy_component_scene = load("res://UpgradeComponents/allergy_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -134,10 +136,15 @@ func on_snake_got_hit():
 	if fruit_punishment > 0:
 		hit_audio.play()
 	
+	decrement_points(fruit_punishment)
+	SignalBus.got_hit_and_punished.emit()
+
+func decrement_points(fruit_punishment: int):
 	for punish in range(fruit_punishment):
 		if not enough_fruits:
 			fruits_left += 1
 			fruits_left_number_label.text = str(fruits_left)
+			SignalBus.fruits_left_changed.emit(fruits_left)
 		else:
 			if fruits_overload == 0:
 				enough_fruits = false
@@ -146,20 +153,27 @@ func on_snake_got_hit():
 				fruits_left_number_label.add_theme_color_override("font_color", Color(1,1,1))
 				fruits_left += 1
 				fruits_left_number_label.text = str(fruits_left)
+				SignalBus.fruits_left_changed.emit(fruits_left)
 			else:
 				fruits_overload -= 1
 				fruits_left_number_label.text = str(fruits_overload)
+				SignalBus.fruits_left_changed.emit(fruits_left)
 			
-	SignalBus.got_hit_and_punished.emit()
 
 func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
 func _on_fruit_collected(_collected_fruit, _is_real_collection):
-	
+	eat_fruit_audio.play()
+	if allergy_mode:
+		return
+	increment_points()
+
+func increment_points():
 	if not enough_fruits:
 		fruits_left -= 1
 		fruits_left_number_label.text = str(fruits_left)
+		SignalBus.fruits_left_changed.emit(fruits_left)
 		if fruits_left == 0:
 			enough_fruits = true
 			SignalBus.enough_fruits_changed.emit(true)
@@ -168,7 +182,8 @@ func _on_fruit_collected(_collected_fruit, _is_real_collection):
 	else:
 		fruits_overload += 1
 		fruits_left_number_label.text = str(fruits_overload)
-	eat_fruit_audio.play()
+		SignalBus.fruits_left_changed.emit(fruits_left)
+	
 
 func decide_speed_boost(delta):
 	if Input.is_action_just_released("speed_boost"):
@@ -300,6 +315,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.MOULTING:
 			var moulting_component = moulting_component_scene.instantiate()
 			add_child(moulting_component)
+		GameConsts.UPGRADE_LIST.ALLERGY:
+			var allergy_component = allergy_component_scene.instantiate()
+			add_child(allergy_component)
 		GameConsts.UPGRADE_LIST.SHINY_GHOST:
 			var shiny_ghost_component = shiny_ghost_component_scene.instantiate()
 			add_child(shiny_ghost_component)
@@ -309,8 +327,9 @@ func instantiate_upgrade(upgrade_id: int):
 			crossroad_1_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2:
 			var crossroad_2_component = crossroad_1_component_scene.instantiate()
+			crossroad_2_component.big_crossroad = true
 			current_active_item_slot.add_child(crossroad_2_component)
-			crossroad_2_component.initiate_active_item(2, slot)
+			crossroad_2_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3:
 			var crossroad_3_component = crossroad_1_component_scene.instantiate()
 			crossroad_3_component.big_crossroad = true
@@ -335,6 +354,7 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
 		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
+		GameConsts.UPGRADE_LIST.HALF_GONE,\
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			current_map.add_upgrade_component(upgrade_id)
 
@@ -376,7 +396,8 @@ func destroy_upgrade(upgrade_id: int):
 			if component == null:
 				component = active_item_slot_2.find_child("PacmanComponent", false, false)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
-		GameConsts.UPGRADE_LIST.CROSS_ROAD_2:
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
+		GameConsts.UPGRADE_LIST.CROSS_ROAD_3:
 			component = active_item_slot_1.find_child("Crossroad1Component", false, false)
 			if component == null:
 				component = active_item_slot_2.find_child("Crossroad1Component", false, false)
@@ -428,6 +449,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = get_parent().shop.find_child("SaleComponent",false,false)
 		GameConsts.UPGRADE_LIST.MOULTING:
 			component = find_child("MoultingComponent",false,false)
+		GameConsts.UPGRADE_LIST.ALLERGY:
+			component = find_child("AllergyComponent",false,false)
 		GameConsts.UPGRADE_LIST.CORNER_PHASING:
 			component = current_map.find_child("CornerPhasingComponent",false,false)
 		GameConsts.UPGRADE_LIST.ANCHOR:
@@ -440,6 +463,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.snake_tail.find_child("PlantSnakeComponent",false,false)
 		GameConsts.UPGRADE_LIST.SHINY_GHOST:
 			component = find_child("ShinyGhostComponent",false,false)
+		GameConsts.UPGRADE_LIST.HALF_GONE:
+			component = find_child("HalfGoneComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -472,7 +497,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
 		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
-		GameConsts.UPGRADE_LIST.MOULTING:
+		GameConsts.UPGRADE_LIST.MOULTING,\
+		GameConsts.UPGRADE_LIST.ALLERGY:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
@@ -494,6 +520,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE,\
 		GameConsts.UPGRADE_LIST.DANCE,\
+		GameConsts.UPGRADE_LIST.HALF_GONE,\
 		GameConsts.UPGRADE_LIST.COATING:
 			return true
 		_:

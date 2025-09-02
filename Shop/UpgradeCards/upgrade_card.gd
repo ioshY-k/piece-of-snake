@@ -18,8 +18,8 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 5 times.",
 	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_1) : "Place a [color=#ff9191]permanent Crossroad[/color] on the Map.\n\nBodyparts may [color=#ff9191]overlap[/color] on it 1 time.\n\nUsable up to 1 time.",
-	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_2) : "NO DESCRIPTION YET",
-	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "NO DESCRIPTION YET",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_2) : "Place a [color=#ff9191]permanent 3x3 Crossroad[/color] on the Map.\n\nBodyparts may [color=#ff9191]overlap[/color] on it 1 time.\n\nUsable up to 1 time.",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "Place a [color=#ff9191]permanent 3x3 Crossroad[/color] on the Map.\n\nBodyparts may [color=#ff9191]overlap[/color] on it 1 time.\n\nUsable up to 2 times.",
 	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, [color=#80d984]cut off your tail[/color] when surpassing it",
 	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take [color=#80d984]may be overlapped[/color] 1 time",
 	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "The [color=#4fabf9]timer stops[/color] whenever you surpass your body",
@@ -54,6 +54,8 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a Ghost Fruit will [color=#80d984]grow attached to your Tail[/color]",
 	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "Half of the time Ghost Fruits give \n[color=#4fabf9]an additional point[/color]",
 	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever the snake moves, [color=#d75eff]all fruits move in the opposite direction[/color].\n\nThis movement overrides any other fruit movement.",
+	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, [color=#d75eff]your front half becomes transparent for a set time[/color].\n\nFruits make you grow an additional time.",
+	str(GameConsts.UPGRADE_LIST.ALLERGY) : "Fruits spawn in set time intervals as Ghost Fruits. Eating fruit does not affect your Points.\n\n[color=#d75eff]Get points for every uncollected Fruit on the map[/color].\n\nFruits slowly move towards you.",
 
 
 	}

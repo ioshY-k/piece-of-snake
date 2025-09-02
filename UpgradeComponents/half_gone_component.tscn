@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfcp1wii63dyo"]
+
+[ext_resource type="Script" uid="uid://cptnjclcj1kcg" path="res://UpgradeComponents/half_gone_component.gd" id="1_ad5lq"]
+
+[node name="HalfGoneComponent" type="Node"]
+script = ExtResource("1_ad5lq")
+
+[node name="HalfGoneTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true

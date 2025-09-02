@@ -31,7 +31,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(54)
+	current_upgrades.resize(56)
 	current_upgrades.fill(false)
 	
 	shop.upgrade_bought.connect(_on_upgrade_bought)
@@ -40,9 +40,6 @@ func _ready() -> void:
 	create_new_run()
 	shop.initiate_map_preview(maporder)
 
-#func _process(delta: float) -> void:
-	#if Input.is_action_just_pressed("item1"):
-		#level.current_map.sna
 
 func create_new_run():
 	maporder = [maps_act1[randi()%maps_act1.size()],
@@ -62,11 +59,11 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.MOVING_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
+		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.LASER,

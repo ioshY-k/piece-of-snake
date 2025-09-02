@@ -8,6 +8,7 @@ var is_tetris: bool = false
 var is_rubber: bool = false
 var body_moves: bool = true
 var is_overlap_bodypart: bool = false
+var is_reverted_on_half: bool = false
 var is_overlapped: bool = false
 const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 
@@ -91,12 +92,17 @@ func find_correct_rotation(this_direction: int, next_direction: int):
 				rotation_degrees = 180
 				scale.y = -scale.y
 
-func set_overlap(state):
-	is_overlap_bodypart = true
+#revert_on_backhalf decides wether it is temporarily made overlap by half_gone upgrade
+func set_overlap(state, revert_on_half):
+	is_overlap_bodypart = state
+	is_reverted_on_half = revert_on_half
 
 	solid_element.set_collision_layer_value(6,not state)
 	solid_element.set_collision_layer_value(7,state)
-	self_modulate.a = 0.7
+	if state:
+		self_modulate.a = 0.7
+	else:
+		self_modulate.a = 1.0
 
 func _on_snake_overlaps(called_by_spawned_bodypart: bool):
 	if not is_overlapped:
@@ -144,6 +150,7 @@ func _set_animation_progress(time: float):
 
 func turn_rubber():
 	is_rubber = true
+	is_reverted_on_half = false
 	solid_element.set_collision_layer_value(6,false)
 	solid_element.set_collision_layer_value(11,true)
 	var body_position = map.snake_path_bodyparts.find(self)

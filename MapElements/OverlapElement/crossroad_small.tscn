@@ -12,7 +12,7 @@ script = ExtResource("2_k1bnt")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 128
-collision_mask = 32
+collision_mask = 1120
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_mgvtv")
