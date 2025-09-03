@@ -110,7 +110,7 @@ func _on_snake_overlaps(called_by_spawned_bodypart: bool):
 		if not called_by_spawned_bodypart:
 			SignalBus.overlapped.emit()
 	else:
-		SignalBus.stop_moving.emit()
+		SignalBus.stop_moving.emit(false)
 		SignalBus.got_hit.emit()
 
 var overlap_this_tick = true
@@ -165,7 +165,7 @@ func turn_rubber():
 		if map.snake_path_bodyparts[body_position].is_rubber:
 			frame = 8 + (RunSettings.current_char * 9) #frames per snake
 
-func _on_stop_moving():
+func _on_stop_moving(_tail_moves):
 	body_moves = false
 func _on_continue_moving(current_direction):
 	body_moves = true

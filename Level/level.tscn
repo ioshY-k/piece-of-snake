@@ -44,9 +44,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SpeedBoostBar" parent="." instance=ExtResource("10_8hqpc")]
-offset_left = -931.0
+offset_left = -916.0
 offset_top = 343.0
-offset_right = -358.635
+offset_right = -343.635
 offset_bottom = 477.95
 pivot_offset = Vector2(-28.5714, 60)
 

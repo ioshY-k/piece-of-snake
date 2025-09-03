@@ -23,7 +23,8 @@ var fruits_left: int
 var fruits_overload: int
 var fruit_punishment: int = 1
 var enough_fruits: bool = false
-var allergy_mode = false
+var allergy_mode: bool = false
+var ghost_invasion: bool = false
 
 #Upgrade Components
 var fruit_relocator_component_scene = load("res://UpgradeComponents/fruit_relocator_component.tscn")
@@ -49,6 +50,8 @@ var swiss_knive_component_scene = load("res://UpgradeComponents/swiss_knive_comp
 var pacman_component_scene = load("res://UpgradeComponents/pacman_component.tscn")
 var shiny_ghost_component_scene = load("res://UpgradeComponents/shiny_ghost_component.tscn")
 var allergy_component_scene = load("res://UpgradeComponents/allergy_component.tscn")
+var snek_1_component_scene = load("res://UpgradeComponents/snek_1_component.tscn")
+var snek_2_component_scene = load("res://UpgradeComponents/snek_2_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -163,9 +166,9 @@ func decrement_points(fruit_punishment: int):
 func _process(delta: float) -> void:
 	decide_speed_boost(delta)
 
-func _on_fruit_collected(_collected_fruit, _is_real_collection):
+func _on_fruit_collected(collected_fruit, _is_real_collection):
 	eat_fruit_audio.play()
-	if allergy_mode:
+	if allergy_mode or (ghost_invasion and not collected_fruit.is_in_group("Ghost Fruit")):
 		return
 	increment_points()
 
@@ -192,7 +195,7 @@ func decide_speed_boost(delta):
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 	if Input.is_action_pressed("speed_boost"):
-		if speed_boost_available:
+		if speed_boost_available and speed_boost_bar.value>0:
 			snake_head.current_snake_speed = GameConsts.SPEED_BOOST_SPEED
 			snake_tail.current_snake_speed = GameConsts.SPEED_BOOST_SPEED
 			speed_boost_bar.value -= speed_boost_drain_speed*delta
@@ -276,6 +279,18 @@ func instantiate_upgrade(upgrade_id: int):
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
 			wormhole_component.initiate_active_item(6, slot)
+		GameConsts.UPGRADE_LIST.SNEK_1:
+			var snek_1_component = snek_1_component_scene.instantiate()
+			current_active_item_slot.add_child(snek_1_component)
+			snek_1_component.initiate_active_item(2, slot)
+		GameConsts.UPGRADE_LIST.SNEK_2:
+			var snek_2_component = snek_2_component_scene.instantiate()
+			current_active_item_slot.add_child(snek_2_component)
+			snek_2_component.initiate_active_item(2, slot)
+		GameConsts.UPGRADE_LIST.SNEK_3:
+			var snek_2_component = snek_2_component_scene.instantiate()
+			current_active_item_slot.add_child(snek_2_component)
+			snek_2_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
 			speed_boost_bar.add_child(hyper_speed_1_component)
@@ -395,6 +410,15 @@ func destroy_upgrade(upgrade_id: int):
 			component = active_item_slot_1.find_child("PacmanComponent", false, false)
 			if component == null:
 				component = active_item_slot_2.find_child("PacmanComponent", false, false)
+		GameConsts.UPGRADE_LIST.SNEK_1:
+			component = active_item_slot_1.find_child("Snek1Component", false, false)
+			if component == null:
+				component = active_item_slot_2.find_child("Snek1Component", false, false)
+		GameConsts.UPGRADE_LIST.SNEK_2,\
+		GameConsts.UPGRADE_LIST.SNEK_3:
+			component = active_item_slot_1.find_child("Snek2Component", false, false)
+			if component == null:
+				component = active_item_slot_2.find_child("Snek2Component", false, false)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3:
@@ -495,6 +519,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
+		GameConsts.UPGRADE_LIST.SNEK_1,\
+		GameConsts.UPGRADE_LIST.SNEK_2,\
+		GameConsts.UPGRADE_LIST.SNEK_3,\
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
 		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
 		GameConsts.UPGRADE_LIST.MOULTING,\

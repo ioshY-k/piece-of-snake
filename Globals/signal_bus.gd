@@ -1,9 +1,10 @@
 extends Node
 
-signal stop_moving
+signal stop_moving(tail_still_moves)
 signal continue_moving(current_direction: int)
 signal fruit_collected(fruit:FruitElement, is_real_collection:bool)
 signal ghost_fruit_spawned(fruit)
+signal fruit_spawned(fruit)
 signal got_hit
 signal got_hit_and_punished #running into solid with not invincibility (actual hit occurs)
 signal round_started

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=71 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -64,6 +64,9 @@
 [ext_resource type="Texture2D" uid="uid://br2gk6nyd7rj3" path="res://Shop/UpgradeCards/ShinyGhost.svg" id="54_n5epb"]
 [ext_resource type="Texture2D" uid="uid://dcsowd5gt4548" path="res://Shop/UpgradeCards/HalfGone.svg" id="55_bim42"]
 [ext_resource type="Texture2D" uid="uid://kgjubm5sp1oq" path="res://Shop/UpgradeCards/Allergy.svg" id="56_a0kyf"]
+[ext_resource type="Texture2D" uid="uid://butf0pgwx2hoi" path="res://Shop/UpgradeCards/snek1.svg" id="57_dxsnv"]
+[ext_resource type="Texture2D" uid="uid://d0xrqur6rlske" path="res://Shop/UpgradeCards/snek2.svg" id="58_530hf"]
+[ext_resource type="Texture2D" uid="uid://oq7v5t026pfc" path="res://Shop/UpgradeCards/snek3.svg" id="59_abc6x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -232,6 +235,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("56_a0kyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_dxsnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_530hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_abc6x")
 }],
 "loop": true,
 "name": &"default",

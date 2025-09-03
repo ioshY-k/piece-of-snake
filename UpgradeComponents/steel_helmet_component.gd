@@ -11,7 +11,7 @@ func _ready() -> void:
 func _set_swiss_knive(state:bool):
 	swiss_knive = state
 	
-func _decide_unhittable():
+func _decide_unhittable(_tail_moves):
 	if snake_head.current_snake_speed == GameConsts.SPEED_BOOST_SPEED:
 		if swiss_knive:
 			snake_head.hit_signal_muted = true

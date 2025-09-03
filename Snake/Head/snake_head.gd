@@ -85,7 +85,7 @@ func _on_next_tile_reached():
 			SignalBus.overlapped.emit()
 		elif colliding_element.get_collision_layer_value(1) or\
 			colliding_element.get_collision_layer_value(6): #Solid or Obstacle
-			SignalBus.stop_moving.emit()
+			SignalBus.stop_moving.emit(false)
 			if not hit_signal_muted:
 				SignalBus.got_hit.emit()
 		elif colliding_element.get_collision_layer_value(7) :#Overlap
@@ -115,7 +115,7 @@ func _on_next_tile_reached():
 	get_moving_tween(moves)
 	get_turning_tween(current_direction)
 
-func _on_stop_moving():
+func _on_stop_moving(_tail_moves):
 	moves = false
 func _on_continue_moving(current_dir):
 	moves = true

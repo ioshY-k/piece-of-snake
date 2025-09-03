@@ -21,7 +21,7 @@ func _on_next_tile_reached():
 			pressing_forward = Input.is_action_pressed("move_left")
 		
 	if snake_head.buffered_input_direction == -10 and not pressing_forward:
-		SignalBus.stop_moving.emit()
+		SignalBus.stop_moving.emit(false)
 
 func self_destruct():
 	snake_head.map.get_parent().fruit_punishment /= 2

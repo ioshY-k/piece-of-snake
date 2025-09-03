@@ -6,7 +6,7 @@ signal countdown_reached
 
 func _init(body_count: int) -> void:
 	ticks += body_count
-	SignalBus.tail_grows.connect(_tick_up)
+	SignalBus.tail_grows.connect(_tick_up.bind(false))
 	SignalBus.stop_moving.connect(_tick_up)
 	SignalBus.next_tile_reached.connect(_tick_down)
 	SignalBus.tail_skip.connect(_tick_down)
@@ -16,7 +16,9 @@ func _tick_down():
 	if ticks == 0:
 		countdown_reached.emit()
 	
-func _tick_up():
+func _tick_up(tail_moves):
+	if tail_moves:
+		return
 	ticks += 1
 	if ticks == 0:
 		countdown_reached.emit()

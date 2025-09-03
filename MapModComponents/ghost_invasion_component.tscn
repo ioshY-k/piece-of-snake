@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctadcr7d3li27"]
+
+[ext_resource type="Script" uid="uid://ci6kjql82qqnc" path="res://MapModComponents/ghost_invasion_component.gd" id="1_48ava"]
+
+[node name="GhostInvasionComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_48ava")

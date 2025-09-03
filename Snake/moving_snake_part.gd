@@ -95,7 +95,7 @@ func disable_legs():
 #Should never be reached since function is overwritten in Children
 func _on_next_tile_reached():
 	print_debug("The Signal next_tile_reached was not connected to an existing SnakeHead or SnakeTail")
-func _on_stop_moving():
+func _on_stop_moving(_tail_moves):
 	print_debug("The Signal stop_moving was not connected to an existing SnakeHead or SnakeTail")
 func _on_continue_moving(current_direction):
 	print_debug("The Signal continue_moving was not connected to an existing SnakeHead or SnakeTail")

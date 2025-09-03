@@ -16,7 +16,7 @@ func _fruit_mirror_snake(current_dir):
 		fruit.blocked_by_dance = true
 		fruit.move(opposite_dir, true)
 
-func _enable_other_movements():
+func _enable_other_movements(_tail_moves):
 	for fruit: FruitElement in map.find_all_fruits():
 		fruit.blocked_by_dance = false
 	just_stopped = true

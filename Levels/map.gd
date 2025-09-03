@@ -39,6 +39,7 @@ var fruit_body_component_scene = load("res://MapModComponents/fruit_body_compone
 var tetri_fruit_component_scene = load("res://MapModComponents/tetri_fruit_component.tscn")
 var moving_fruit_component_scene = load("res://MapModComponents/moving_fruit_component.tscn")
 var anti_magnet_component_scene = load("res://MapModComponents/anti_magnet_component.tscn")
+var ghost_invasion_component_scene = load("res://MapModComponents/ghost_invasion_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -234,6 +235,7 @@ func spawn_fruit(forbidden_tiles: Array):
 	var fruit: FruitElement = fruit_element_scene.instantiate()
 	add_child(fruit)
 	place_fruit(forbidden_tiles, fruit)
+	SignalBus.fruit_spawned.emit(fruit)
 	
 #place a new fruit in a place with no solid objects, including the snake
 #additional excluded tiles can be handed by forbidden_tiles
@@ -383,6 +385,9 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.ANTI_MAGNET:
 			var anti_magnet_component = anti_magnet_component_scene.instantiate()
 			add_child(anti_magnet_component)
+		GameConsts.MAP_MODS.GHOST_INVASION:
+			var ghost_invasion_component = ghost_invasion_component_scene.instantiate()
+			add_child(ghost_invasion_component)
 
 func _on_round_over():
 	destroy_current_mapmod()
