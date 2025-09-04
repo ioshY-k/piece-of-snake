@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyxxs1gfcsn5i"]
+
+[ext_resource type="Script" uid="uid://dsbnayc0i1i1p" path="res://UpgradeComponents/catch_component.gd" id="1_270vh"]
+
+[node name="CatchComponent" type="Node"]
+script = ExtResource("1_270vh")

@@ -100,4 +100,4 @@ func _on_stop_moving(_tail_moves):
 func _on_continue_moving(current_direction):
 	print_debug("The Signal continue_moving was not connected to an existing SnakeHead or SnakeTail")
 func check_moves():
-	print("The Method check_moves was not connected to an existing SnakeHead or SnakeTail")
+	print_debug("The Method check_moves was not connected to an existing SnakeHead or SnakeTail")

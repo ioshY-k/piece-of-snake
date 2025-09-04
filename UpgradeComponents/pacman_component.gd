@@ -40,4 +40,3 @@ func _flee():
 func _delete_if_pacmanfruit(fruit: FruitElement, is_real_collection: bool):
 	if fleeing_fruits.find(fruit) != null:
 		fleeing_fruits.erase(fruit)
-	print(fleeing_fruits.size())

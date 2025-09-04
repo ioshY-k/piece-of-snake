@@ -5,6 +5,7 @@ enum move_type {UP,RIGHT,DOWN,LEFT,RANDOM,AWAY,TOWARDS}
 var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particles.tscn")
 var is_riping_fruit = false
 var collected = false
+var diffusable = false
 @onready var raycast_up: RayCast2D = $RaycastUp
 @onready var raycast_right: RayCast2D = $RaycastRight
 @onready var raycast_down: RayCast2D = $RaycastDown

@@ -5,7 +5,6 @@ func _ready() -> void:
 	SignalBus.teleported.connect(_attract_fruits)
 
 func _attract_fruits(_teleporter: Teleporter = null):
-	print("emitted")
 	for fruit:FruitElement in get_tree().get_nodes_in_group("Fruit"):
 		fruit.move(fruit.move_type.TOWARDS, false)
 		fruit.move(fruit.move_type.TOWARDS, false)

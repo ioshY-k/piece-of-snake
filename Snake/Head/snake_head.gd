@@ -25,7 +25,6 @@ func _process(delta: float) -> void:
 	if fruit_collect_area.has_overlapping_areas():
 		for fruit in fruit_collect_area.get_overlapping_areas():
 			if not fruit.collected:
-				print("collect through area")
 				fruit.collision_with.emit()
 
 func _on_next_tile_reached():

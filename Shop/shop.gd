@@ -5,6 +5,10 @@ signal upgrade_destroyed
 signal finished_buying
 signal upgrade_cards_instantiated
 
+var moulted: bool = false
+var reroll_cost_start_number: int = 1
+var reroll_cost_number: int = 1
+
 const UPGRADE_CARD = preload("res://Shop/UpgradeCards/upgrade_card.tscn")
 
 const BASE_PRICE: int = 4
@@ -60,6 +64,7 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.SHINY_GHOST,
 									GameConsts.UPGRADE_LIST.PLANT_SNAKE,
 									GameConsts.UPGRADE_LIST.SNEK_1,
+									GameConsts.UPGRADE_LIST.CATCH,
 									GameConsts.UPGRADE_LIST.POWER_NAP]
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.EDGE_WRAP,
@@ -79,9 +84,11 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 func _ready() -> void:
 	if GameConsts.test_mode:
-		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.POWER_NAP,
-									GameConsts.UPGRADE_LIST.HYPER_SPEED_1,
-									GameConsts.UPGRADE_LIST.HYPER_SPEED_2,]	
+		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.DIFFUSION,
+									GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,
+									GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,
+									GameConsts.UPGRADE_LIST.DIFFUSION,
+									GameConsts.UPGRADE_LIST.PACMAN_1,]	
 	
 	reroll_cost_label.text = str(reroll_cost_number)
 	
@@ -118,9 +125,6 @@ func initiate_map_preview(maporder: Array):
 
 func update_map_preview(current_act):
 	item_shelf.set_map_covering(current_act)
-
-func increment_buys(num:int):
-	print("this is the undefined advantage of moulting upgrade!")
 
 func _on_got_clicked(upgrade_card: UpgradeCard):
 	
@@ -179,8 +183,9 @@ func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
 	fruits_currency -= int(slot.get_node("BuyZone").get_node("Price").text)
 	currency_number_label.text = str(fruits_currency)
 	update_upgrade_pool(upgrade_id, true)
-	deal_area_size.disabled = true
-	deal_new_cards.disabled = true
+	if not moulted:
+		deal_area_size.disabled = true
+		deal_new_cards.disabled = true
 	upgrade_bought.emit(upgrade_id)
 	
 
@@ -276,7 +281,7 @@ func deal_upgrade_cards(offered_upgrades: Array[int]):
 		toggle_upgrade_panel()
 
 func reset_area_and_currency():
-	reroll_cost_number = 1
+	reroll_cost_number = reroll_cost_start_number
 	reroll_cost_label.text = str(reroll_cost_number)
 	if RunSettings.current_char != GameConsts.CHAR_LIST.ELEPHANT:
 		fruits_currency = 0
@@ -336,7 +341,6 @@ func _on_deal_area_size_pressed() -> void:
 			upgrade_card.queue_free()
 	deal_upgrade_cards([default_upgrade_card])
 
-var reroll_cost_number = 1
 func _on_deal_new_cards_pressed() -> void:
 	if fruits_currency >= reroll_cost_number:
 		fruits_currency -= reroll_cost_number

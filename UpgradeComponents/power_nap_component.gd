@@ -12,10 +12,13 @@ func _reload_faster(_tail_moves):
 	if not fast_reload:
 		level.speed_boost_reload_speed *= 3
 		fast_reload = true
-		print("fastened")
 
 func _reload_slower():
 	if fast_reload:
 		level.speed_boost_reload_speed /= 3
 		fast_reload = false
-		print("slowed")
+
+func self_destruct():
+	if fast_reload:
+		level.speed_boost_reload_speed /= 3
+	queue_free()

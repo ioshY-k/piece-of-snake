@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0p2larxbab6r"]
+
+[ext_resource type="Script" uid="uid://c1kwk0jvjtv5j" path="res://UpgradeComponents/diffusion_component.gd" id="1_y5kyf"]
+
+[node name="DiffusionComponent" type="Node"]
+script = ExtResource("1_y5kyf")

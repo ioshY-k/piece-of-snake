@@ -53,6 +53,8 @@ var allergy_component_scene = load("res://UpgradeComponents/allergy_component.ts
 var snek_1_component_scene = load("res://UpgradeComponents/snek_1_component.tscn")
 var snek_2_component_scene = load("res://UpgradeComponents/snek_2_component.tscn")
 var power_nap_component_scene = load("res://UpgradeComponents/power_nap_component.tscn")
+var catch_component_scene = load("res://UpgradeComponents/catch_component.tscn")
+var diffusion_component_scene = load("res://UpgradeComponents/diffusion_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -319,6 +321,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.COATING:
 			var coating_component = coating_component_scene.instantiate()
 			add_child(coating_component)
+		GameConsts.UPGRADE_LIST.DIFFUSION:
+			var diffusion_component = diffusion_component_scene.instantiate()
+			add_child(diffusion_component)
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE:
 			var swiss_knive_component = swiss_knive_component_scene.instantiate()
 			add_child(swiss_knive_component)
@@ -340,6 +345,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.POWER_NAP:
 			var power_nap_component = power_nap_component_scene.instantiate()
 			add_child(power_nap_component)
+		GameConsts.UPGRADE_LIST.CATCH:
+			var catch_component = catch_component_scene.instantiate()
+			add_child(catch_component)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1:
 			var crossroad_1_component = crossroad_1_component_scene.instantiate()
 			current_active_item_slot.add_child(crossroad_1_component)
@@ -471,10 +479,14 @@ func destroy_upgrade(upgrade_id: int):
 			component = find_child("KnotSlowmo",false,false)
 		GameConsts.UPGRADE_LIST.COATING:
 			component = find_child("CoatingComponent",false,false)
+		GameConsts.UPGRADE_LIST.DIFFUSION:
+			component = find_child("DiffusionComponent",false,false)
 		GameConsts.UPGRADE_LIST.PIGGY_BANK:
 			component = find_child("PiggyBankComponent",false,false)
 		GameConsts.UPGRADE_LIST.SALE:
 			component = get_parent().shop.find_child("SaleComponent",false,false)
+		GameConsts.UPGRADE_LIST.SALE:
+			component = find_child("CatchComponent",false,false)
 		GameConsts.UPGRADE_LIST.MOULTING:
 			component = find_child("MoultingComponent",false,false)
 		GameConsts.UPGRADE_LIST.ALLERGY:

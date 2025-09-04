@@ -34,7 +34,6 @@ func _spawn_ghost_fruit():
 func _decrement_points(_fruit, _is_real_collection):
 	level.decrement_points(1)
 	allergy_timer.wait_time = max(1,allergy_timer.wait_time-1)
-	print(allergy_timer.wait_time)
 
 func _increment_points(_fruit):
 	level.increment_points()

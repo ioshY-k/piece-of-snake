@@ -18,7 +18,6 @@ func _ready() -> void:
 func _on_fruit_collected(fruit: FruitElement, real_collection: bool):
 	if real_collection and not fruit.is_in_group("Ghost Fruit"):
 		counter += 1
-		print(counter)
 		if counter % 3 == 0:
 			map.spawn_ghost_fruit([])
 

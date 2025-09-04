@@ -13,7 +13,6 @@ func add_light():
 	item_light.get_child(0).frame = 1
 
 func _on_item_activated(pos):
-	print("light change", pos)
 	item_lights[pos].get_child(0).frame = 0
 	SignalBus.active_item_used.emit()
 
