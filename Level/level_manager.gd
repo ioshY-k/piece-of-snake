@@ -17,7 +17,7 @@ var current_map_index: int
 var active_item_slots: Array[ActiveItemSlot]
 @onready var time_meter: TimeMeter = $TimeMeter
 var speed_boost_drain_speed: int = 230
-var speed_boost_reload_speed: int = 90
+var speed_boost_reload_speed: int = 75
 var speed_boost_available: bool = true
 var fruits_left: int
 var fruits_overload: int
@@ -52,6 +52,7 @@ var shiny_ghost_component_scene = load("res://UpgradeComponents/shiny_ghost_comp
 var allergy_component_scene = load("res://UpgradeComponents/allergy_component.tscn")
 var snek_1_component_scene = load("res://UpgradeComponents/snek_1_component.tscn")
 var snek_2_component_scene = load("res://UpgradeComponents/snek_2_component.tscn")
+var power_nap_component_scene = load("res://UpgradeComponents/power_nap_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -336,6 +337,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.SHINY_GHOST:
 			var shiny_ghost_component = shiny_ghost_component_scene.instantiate()
 			add_child(shiny_ghost_component)
+		GameConsts.UPGRADE_LIST.POWER_NAP:
+			var power_nap_component = power_nap_component_scene.instantiate()
+			add_child(power_nap_component)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1:
 			var crossroad_1_component = crossroad_1_component_scene.instantiate()
 			current_active_item_slot.add_child(crossroad_1_component)
@@ -489,6 +493,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = find_child("ShinyGhostComponent",false,false)
 		GameConsts.UPGRADE_LIST.HALF_GONE:
 			component = find_child("HalfGoneComponent",false,false)
+		GameConsts.UPGRADE_LIST.POWER_NAP:
+			component = find_child("PowerNapComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()

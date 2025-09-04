@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2t1veqqaqnsg"]
+
+[ext_resource type="Script" uid="uid://dgvrfrd6hx4mp" path="res://UpgradeComponents/power_nap_component.gd" id="1_uv711"]
+
+[node name="PowerNapComponent" type="Node"]
+script = ExtResource("1_uv711")

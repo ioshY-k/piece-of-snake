@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=72 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://butf0pgwx2hoi" path="res://Shop/UpgradeCards/snek1.svg" id="57_dxsnv"]
 [ext_resource type="Texture2D" uid="uid://d0xrqur6rlske" path="res://Shop/UpgradeCards/snek2.svg" id="58_530hf"]
 [ext_resource type="Texture2D" uid="uid://oq7v5t026pfc" path="res://Shop/UpgradeCards/snek3.svg" id="59_abc6x"]
+[ext_resource type="Texture2D" uid="uid://uldq0vvhi3m4" path="res://Shop/UpgradeCards/PowerNap.svg" id="60_530hf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -244,6 +245,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("59_abc6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_530hf")
 }],
 "loop": true,
 "name": &"default",

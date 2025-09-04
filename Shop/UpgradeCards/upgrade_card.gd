@@ -56,6 +56,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.SNEK_3) : "Stand still [color=#ff9191]as your body length shrinks at high speed[/color] as long as the button is held down.\n\nAfter a short while grow back to normal size.\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a Ghost Fruit will [color=#80d984]grow attached to your Tail[/color]",
 	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "Half of the time Ghost Fruits give \n[color=#4fabf9]an additional point[/color]",
+	str(GameConsts.UPGRADE_LIST.POWER_NAP) : "While Standing still, the[color=#4fabf9]hyperspeed meter recovers twice as fast[/color]",
 	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever the snake moves, [color=#d75eff]all fruits move in the opposite direction[/color].\n\nThis movement overrides any other fruit movement.",
 	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, [color=#d75eff]your front half becomes transparent for a set time[/color].\n\nFruits make you grow an additional time.",
 	str(GameConsts.UPGRADE_LIST.ALLERGY) : "Fruits spawn in set time intervals as Ghost Fruits. Eating fruit does not affect your Points.\n\n[color=#d75eff]Get points for every uncollected Fruit on the map[/color].\n\nFruits slowly move towards you.",

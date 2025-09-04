@@ -59,7 +59,8 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.PACMAN_1,
 									GameConsts.UPGRADE_LIST.SHINY_GHOST,
 									GameConsts.UPGRADE_LIST.PLANT_SNAKE,
-									GameConsts.UPGRADE_LIST.SNEK_1]
+									GameConsts.UPGRADE_LIST.SNEK_1,
+									GameConsts.UPGRADE_LIST.POWER_NAP]
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.EDGE_WRAP,
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
@@ -78,10 +79,9 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 func _ready() -> void:
 	if GameConsts.test_mode:
-		upgrade_card_pool= [		GameConsts.UPGRADE_LIST.SNEK_1,
-									GameConsts.UPGRADE_LIST.SNEK_2,
-									GameConsts.UPGRADE_LIST.SNEK_2,
-									GameConsts.UPGRADE_LIST.SNEK_1,]	
+		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.POWER_NAP,
+									GameConsts.UPGRADE_LIST.HYPER_SPEED_1,
+									GameConsts.UPGRADE_LIST.HYPER_SPEED_2,]	
 	
 	reroll_cost_label.text = str(reroll_cost_number)
 	
