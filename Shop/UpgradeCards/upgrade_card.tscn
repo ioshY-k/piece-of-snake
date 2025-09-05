@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=79 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -73,6 +73,8 @@
 [ext_resource type="Texture2D" uid="uid://ddnhqor5cbp46" path="res://Shop/UpgradeCards/BigFruit1.svg" id="63_eptdx"]
 [ext_resource type="Texture2D" uid="uid://dbho8mu5wkvcc" path="res://Shop/UpgradeCards/BigFruit2.svg" id="64_byfrd"]
 [ext_resource type="Texture2D" uid="uid://djyyc6n5fs54x" path="res://Shop/UpgradeCards/BigFruit3.svg" id="65_8iwqp"]
+[ext_resource type="Texture2D" uid="uid://bun6ita5yskpg" path="res://Shop/UpgradeCards/Overfed.svg" id="66_8iwqp"]
+[ext_resource type="Texture2D" uid="uid://c1iigpdcuvvpt" path="res://Shop/UpgradeCards/DeadMouse.svg" id="67_jvq0k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -268,6 +270,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("65_8iwqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_8iwqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_jvq0k")
 }],
 "loop": true,
 "name": &"default",

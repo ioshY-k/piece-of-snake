@@ -58,6 +58,7 @@ var diffusion_component_scene = load("res://UpgradeComponents/diffusion_componen
 var big_fruit_1_component_scene = load("res://UpgradeComponents/big_fruit_1_component.tscn")
 var big_fruit_2_component_scene = load("res://UpgradeComponents/big_fruit_2_component.tscn")
 var big_fruit_3_component_scene = load("res://UpgradeComponents/big_fruit_3_component.tscn")
+var overfed_component_scene = load("res://UpgradeComponents/overfed_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -345,6 +346,9 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.SALE:
 			var sale_component = sale_component_scene.instantiate()
 			get_parent().shop.add_child(sale_component)
+		GameConsts.UPGRADE_LIST.OVERFED:
+			var overfed_component = overfed_component_scene.instantiate()
+			get_parent().shop.add_child(overfed_component)
 		GameConsts.UPGRADE_LIST.MOULTING:
 			var moulting_component = moulting_component_scene.instantiate()
 			add_child(moulting_component)
@@ -420,7 +424,7 @@ func destroy_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DIET_3:
 			component = current_map.snake_tail.find_child("Diet3Component",false,false)
 		GameConsts.UPGRADE_LIST.IMMUTABLE:
-			component = find_child("ImmutableComponent",false,false)
+			component = current_map.find_child("ImmutableComponent",false,false)
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1:
 			component = current_map.find_child("MagicFlute1Component",false,false)
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2:
@@ -506,7 +510,9 @@ func destroy_upgrade(upgrade_id: int):
 			component = find_child("PiggyBankComponent",false,false)
 		GameConsts.UPGRADE_LIST.SALE:
 			component = get_parent().shop.find_child("SaleComponent",false,false)
-		GameConsts.UPGRADE_LIST.SALE:
+		GameConsts.UPGRADE_LIST.OVERFED:
+			component = get_parent().shop.find_child("OverfedComponent",false,false)
+		GameConsts.UPGRADE_LIST.CATCH:
 			component = find_child("CatchComponent",false,false)
 		GameConsts.UPGRADE_LIST.MOULTING:
 			component = find_child("MoultingComponent",false,false)
@@ -525,7 +531,7 @@ func destroy_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.SHINY_GHOST:
 			component = find_child("ShinyGhostComponent",false,false)
 		GameConsts.UPGRADE_LIST.HALF_GONE:
-			component = find_child("HalfGoneComponent",false,false)
+			component = current_map.find_child("HalfGoneComponent",false,false)
 		GameConsts.UPGRADE_LIST.POWER_NAP:
 			component = find_child("PowerNapComponent",false,false)
 	
@@ -558,6 +564,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
+		GameConsts.UPGRADE_LIST.SALE,\
+		GameConsts.UPGRADE_LIST.OVERFED,\
 		GameConsts.UPGRADE_LIST.SNEK_1,\
 		GameConsts.UPGRADE_LIST.SNEK_2,\
 		GameConsts.UPGRADE_LIST.SNEK_3,\

@@ -13,7 +13,6 @@ func _ready() -> void:
 	shop.reroll_cost_number = 0
 	shop.reroll_cost_label.text = str(shop.reroll_cost_number)
 	shop.moulted = true
-	shop.deal_area_size.disabled = false
 	shop.deal_new_cards.disabled = false
 
 func self_destruct():

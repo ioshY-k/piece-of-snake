@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btf0r3wrue0sh"]
+
+[ext_resource type="Script" uid="uid://bwkbawgcutfml" path="res://UpgradeComponents/overfed_component.gd" id="1_degef"]
+
+[node name="OverfedComponent" type="Node"]
+script = ExtResource("1_degef")

@@ -75,6 +75,7 @@ var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.DANCE,
 									GameConsts.UPGRADE_LIST.HALF_GONE,
 									GameConsts.UPGRADE_LIST.ALLERGY,
+									GameConsts.UPGRADE_LIST.OVERFED,
 											]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
@@ -85,9 +86,12 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 func _ready() -> void:
 	if GameConsts.test_mode:
-		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.DIFFUSION,
-									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
-									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,]	
+		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.OVERFED,
+									GameConsts.UPGRADE_LIST.OVERFED,
+									GameConsts.UPGRADE_LIST.OVERFED,
+									GameConsts.UPGRADE_LIST.OVERFED,
+									GameConsts.UPGRADE_LIST.HALF_GONE,
+									GameConsts.UPGRADE_LIST.HALF_GONE,]	
 	
 	reroll_cost_label.text = str(reroll_cost_number)
 	
@@ -182,8 +186,8 @@ func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
 	fruits_currency -= int(slot.get_node("BuyZone").get_node("Price").text)
 	currency_number_label.text = str(fruits_currency)
 	update_upgrade_pool(upgrade_id, true)
+	deal_area_size.disabled = true
 	if not moulted:
-		deal_area_size.disabled = true
 		deal_new_cards.disabled = true
 	upgrade_bought.emit(upgrade_id)
 	

@@ -6,9 +6,12 @@ var ghost_fruit_counter_max: int = 5
 var ghost_fruit_counter_current: int = 5
 var halo_scene = load("res://UpgradeComponents/Immutable/immutable_halo.tscn")
 var halo
+var shop: Shop
 
 func _ready() -> void:
 	map = get_parent()
+	shop = get_parent().get_parent().get_parent().shop
+	shop.deal_area_size.position.y += 5000
 	SignalBus.round_started.connect(_reset_counter_and_timer)
 	immutable_timer.timeout.connect(_spawn_ghost_fruit_upto_5)
 	SignalBus.fruit_collected.connect(_prevent_growth_on_5_ghostfruits)
@@ -70,4 +73,6 @@ func _prevent_growth_on_5_ghostfruits(_fruit, _real_collection):
 		map.snake_tail.tiles_to_grow -= 1
 	
 func self_destruct():
+	shop.deal_area_size.position.y -= 5000
+	halo.queue_free()
 	queue_free()
