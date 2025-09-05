@@ -29,6 +29,7 @@ var rubber_band_component_scene = load("res://UpgradeComponents/rubber_band_comp
 var plant_snake_component_scene = load("res://UpgradeComponents/plant_snake_component.tscn")
 var dance_component_scene = load("res://UpgradeComponents/dance_component.tscn")
 var half_gone_component_scene = load("res://UpgradeComponents/half_gone_component.tscn")
+var immutable_component_scene = load("res://UpgradeComponents/immutable_component.tscn")
 
 #mapmods
 var caffeinated_component_scene = load("res://MapModComponents/caffeinated_component.tscn")
@@ -357,6 +358,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.HALF_GONE:
 			var half_gone_component = half_gone_component_scene.instantiate()
 			add_child(half_gone_component)
+		GameConsts.UPGRADE_LIST.IMMUTABLE:
+			var immutable_component = immutable_component_scene.instantiate()
+			add_child(immutable_component)
 
 func apply_mapmod(mapmod: int):
 	print(GameConsts.MAP_MODS.find_key(mapmod))

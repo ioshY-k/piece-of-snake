@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckpos0bqeh0s8"]
+
+[ext_resource type="Texture2D" uid="uid://ccbl34qhm08h" path="res://UpgradeComponents/Immutable/ImmutableHalo0.png" id="1_8lbvw"]
+[ext_resource type="Texture2D" uid="uid://pnmtu0pkc35w" path="res://UpgradeComponents/Immutable/ImmutableHalo1.png" id="2_ks3l4"]
+[ext_resource type="Texture2D" uid="uid://bf0qcu2o2r8wd" path="res://UpgradeComponents/Immutable/ImmutableHalo2.png" id="3_iv51a"]
+[ext_resource type="Texture2D" uid="uid://vef7ke1x7gl6" path="res://UpgradeComponents/Immutable/ImmutableHalo3.png" id="4_2gfvp"]
+[ext_resource type="Texture2D" uid="uid://vjkpce8as1c" path="res://UpgradeComponents/Immutable/ImmutableHalo4.png" id="5_35ixs"]
+[ext_resource type="Texture2D" uid="uid://df5gkhy4gsnik" path="res://UpgradeComponents/Immutable/ImmutableHalo5.png" id="6_3eubp"]
+[ext_resource type="Texture2D" uid="uid://6ltqne3cmi8t" path="res://UpgradeComponents/Immutable/ImmutableHalo6.png" id="7_ks3l4"]
+[ext_resource type="Script" uid="uid://fvvgufhipxhb" path="res://UpgradeComponents/Immutable/immutable_halo.gd" id="8_iv51a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yv1b0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8lbvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ks3l4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iv51a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2gfvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_35ixs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3eubp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ks3l4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_2gfvp"]
+resource_name = "rotate_anim"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_35ixs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3eubp"]
+_data = {
+&"RESET": SubResource("Animation_35ixs"),
+&"rotate_anim": SubResource("Animation_2gfvp")
+}
+
+[node name="ImmutableHalo" type="AnimatedSprite2D"]
+z_index = -1
+rotation = 6.28319
+scale = Vector2(0.24, 0.24)
+sprite_frames = SubResource("SpriteFrames_yv1b0")
+frame = 3
+frame_progress = 0.508844
+script = ExtResource("8_iv51a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3eubp")
+}
+autoplay = "rotate_anim"

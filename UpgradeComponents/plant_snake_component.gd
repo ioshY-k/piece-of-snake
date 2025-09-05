@@ -30,6 +30,7 @@ func _grow_ghost_fruit():
 	current_ghost_fruit.add_to_group("Ghost Fruit")
 	current_ghost_fruit.fruit_element_sprite.frame = 1
 	current_ghost_fruit.position.y = 58
+	map.current_fruits.append(current_ghost_fruit)
 
 func _set_current_ghost_fruit(fruit: FruitElement, is_real_collection):
 	if fruit == current_ghost_fruit:

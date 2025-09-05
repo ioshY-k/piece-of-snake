@@ -382,6 +382,7 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
 		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
 		GameConsts.UPGRADE_LIST.HALF_GONE,\
+		GameConsts.UPGRADE_LIST.IMMUTABLE,\
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			current_map.add_upgrade_component(upgrade_id)
 
@@ -406,6 +407,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.snake_tail.find_child("Diet2Component",false,false)
 		GameConsts.UPGRADE_LIST.DIET_3:
 			component = current_map.snake_tail.find_child("Diet3Component",false,false)
+		GameConsts.UPGRADE_LIST.IMMUTABLE:
+			component = find_child("ImmutableComponent",false,false)
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1:
 			component = current_map.find_child("MagicFlute1Component",false,false)
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2:
@@ -566,6 +569,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE,\
 		GameConsts.UPGRADE_LIST.DANCE,\
 		GameConsts.UPGRADE_LIST.HALF_GONE,\
+		GameConsts.UPGRADE_LIST.IMMUTABLE,\
 		GameConsts.UPGRADE_LIST.COATING:
 			return true
 		_:
