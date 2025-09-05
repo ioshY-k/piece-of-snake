@@ -14,6 +14,7 @@ func _ready():
 	allergy_timer.timeout.connect(_spawn_ghost_fruit)
 	SignalBus.ghost_fruit_spawned.connect(_increment_points)
 	SignalBus.fruit_collected.connect(_decrement_points)
+	SignalBus.round_started.connect(_spawn_3_ghost_fruits)
 
 func _fruit_follows():
 	follow_countdown += 1
@@ -30,10 +31,15 @@ func _delete_all_fruit():
 func _spawn_ghost_fruit():
 	if RunSettings.play_phase:
 		level.current_map.spawn_ghost_fruit([])
+		
+func _spawn_3_ghost_fruits():
+	if RunSettings.play_phase:
+		for i in range(3):
+			level.current_map.spawn_ghost_fruit([])
 
 func _decrement_points(_fruit, _is_real_collection):
 	level.decrement_points(1)
-	allergy_timer.wait_time = max(1,allergy_timer.wait_time-1)
+	allergy_timer.wait_time = max(2.3,allergy_timer.wait_time-1)
 
 func _increment_points(_fruit):
 	level.increment_points()

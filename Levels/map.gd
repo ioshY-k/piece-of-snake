@@ -199,7 +199,7 @@ func teleport_to_starting_position():
 	snake_tail.position = TileHelper.get_next_tile(snake_tail.current_tile, DIRECTION.DOWN) * GameConsts.TILE_SIZE
 
 #connected to signal collision_with in map_element.gd emitted in snake_head.gd when head collides with a head element
-func _on_collision_with(element: MapElement):
+func _on_collision_with(element: MapElement, collect_position: Vector2):
 	#on fruit collision, grow once, delete fruit and spawn a new one (if not ghost fruit)
 	if element is FruitElement:
 		element.collected = true
@@ -210,7 +210,7 @@ func _on_collision_with(element: MapElement):
 			func(fruit): return TileHelper.position_to_tile(fruit.position))
 			spawn_fruit(fruit_positions)
 		current_fruits.erase(element)
-		element.collected_anim(snake_head.position, TileHelper.tile_to_position(snake_head.next_tile))
+		element.collected_anim(collect_position, TileHelper.tile_to_position(snake_head.next_tile))
 		
 func spawn_teleporter(destination: Vector2) -> Teleporter:
 	var teleporter: Teleporter = teleport_element_scene.instantiate()

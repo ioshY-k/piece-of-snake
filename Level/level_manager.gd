@@ -55,6 +55,9 @@ var snek_2_component_scene = load("res://UpgradeComponents/snek_2_component.tscn
 var power_nap_component_scene = load("res://UpgradeComponents/power_nap_component.tscn")
 var catch_component_scene = load("res://UpgradeComponents/catch_component.tscn")
 var diffusion_component_scene = load("res://UpgradeComponents/diffusion_component.tscn")
+var big_fruit_1_component_scene = load("res://UpgradeComponents/big_fruit_1_component.tscn")
+var big_fruit_2_component_scene = load("res://UpgradeComponents/big_fruit_2_component.tscn")
+var big_fruit_3_component_scene = load("res://UpgradeComponents/big_fruit_3_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -312,6 +315,15 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FUEL_3:
 			var fuel_3_component = fuel_3_component_scene.instantiate()
 			speed_boost_bar.add_child(fuel_3_component)
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_1:
+			var big_fruit_1_component = big_fruit_1_component_scene.instantiate()
+			add_child(big_fruit_1_component)
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_2:
+			var big_fruit_2_component = big_fruit_2_component_scene.instantiate()
+			add_child(big_fruit_2_component)
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_3:
+			var big_fruit_3_component = big_fruit_3_component_scene.instantiate()
+			add_child(big_fruit_3_component)
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER:
 			var item_reloader_component = item_reloader_component_scene.instantiate()
 			add_child(item_reloader_component)
@@ -462,6 +474,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = speed_boost_bar.find_child("Fuel2Component",false,false)
 		GameConsts.UPGRADE_LIST.FUEL_3:
 			component = speed_boost_bar.find_child("Fuel3Component",false,false)
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_1:
+			component = speed_boost_bar.find_child("BigFruit1Component",false,false)
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_2:
+			component = speed_boost_bar.find_child("BigFruit2Component",false,false)
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_3:
+			component = speed_boost_bar.find_child("BigFruit3Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1:
 			component = current_map.find_child("DoubleFruit1Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2:
@@ -543,6 +561,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.SNEK_1,\
 		GameConsts.UPGRADE_LIST.SNEK_2,\
 		GameConsts.UPGRADE_LIST.SNEK_3,\
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_1,\
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_2,\
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
 		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
 		GameConsts.UPGRADE_LIST.MOULTING,\

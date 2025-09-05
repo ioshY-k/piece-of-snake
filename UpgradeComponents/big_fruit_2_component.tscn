@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgo5sbl86pt7x"]
+
+[ext_resource type="Script" uid="uid://c40toq518vnqi" path="res://UpgradeComponents/big_fruit_2_component.gd" id="1_vuaun"]
+
+[node name="BigFruit2Component" type="Node"]
+script = ExtResource("1_vuaun")

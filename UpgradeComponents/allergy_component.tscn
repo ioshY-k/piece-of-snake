@@ -6,5 +6,5 @@
 script = ExtResource("1_oq452")
 
 [node name="AllergyTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 6.5
 autostart = true

@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if fruit_collect_area.has_overlapping_areas():
 		for fruit in fruit_collect_area.get_overlapping_areas():
 			if not fruit.collected:
-				fruit.collision_with.emit()
+				fruit.collision_with.emit(fruit, position)
 
 func _on_next_tile_reached():
 	original_direction = current_direction
@@ -90,7 +90,7 @@ func _on_next_tile_reached():
 		elif colliding_element.get_collision_layer_value(7) :#Overlap
 			colliding_element.snake_overlapped.emit()
 		elif colliding_element.get_collision_layer_value(2) :#Fruit
-			colliding_element.collision_with.emit()
+			colliding_element.collision_with.emit(colliding_element, position)
 			
 		if colliding_element.get_collision_layer_value(9): #TailCut
 			cut.emit(colliding_element)

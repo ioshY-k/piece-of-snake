@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds5rvpq03inn6"]
+
+[ext_resource type="Script" uid="uid://dn544udxjywmd" path="res://big_fruit_1_component.gd" id="1_s8sbn"]
+
+[node name="BigFruit1Component" type="Node"]
+script = ExtResource("1_s8sbn")
