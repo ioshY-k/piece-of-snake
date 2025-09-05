@@ -5,6 +5,7 @@ signal continue_moving(current_direction: int)
 signal fruit_collected(fruit:FruitElement, is_real_collection:bool)
 signal ghost_fruit_spawned(fruit)
 signal fruit_spawned(fruit)
+signal diffusion_happened
 signal got_hit
 signal got_hit_and_punished #running into solid with no invincibility (actual hit occurs)
 signal round_started

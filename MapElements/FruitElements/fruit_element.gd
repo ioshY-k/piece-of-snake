@@ -217,12 +217,16 @@ func move(move_t, triggered_by_dance):
 		DIFFUSED_UP:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP)))
+			SignalBus.diffusion_happened.emit()
 		DIFFUSED_RIGHT:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT)))
+			SignalBus.diffusion_happened.emit()
 		DIFFUSED_DOWN:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN)))
+			SignalBus.diffusion_happened.emit()
 		DIFFUSED_LEFT:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)))
+			SignalBus.diffusion_happened.emit()

@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _set_swiss_knive(state:bool):
 	swiss_knive = state
-	if swiss_knive:
+	if swiss_knive and not SignalBus.fruit_collected.connect(prevent_growth):
 		SignalBus.fruit_collected.connect(prevent_growth)
 	else:
 		if SignalBus.fruit_collected.is_connected(prevent_growth):
