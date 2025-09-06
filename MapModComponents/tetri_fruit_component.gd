@@ -33,18 +33,23 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 			tetris.rotation_degrees = 180
 		Vector2i.LEFT:
 			tetris.rotation_degrees = -90
-
+	for tetris_block in tetris.get_children():
+		map.temporary_obstacles.append(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
+	print(map.temporary_obstacles)
+	
 func _check_tail_reached_tetri():
-	print(tetrises.map(func(t): return t.position))
-	print(map.snake_tail.position)
 	for tetris in tetrises:
 		if TileHelper.position_to_tile(tetris.position) == TileHelper.position_to_tile(map.snake_tail.position):
-			print("same position")
+			for tetris_block in tetris.get_children():
+				map.temporary_obstacles.erase(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
 			tetrises.erase(tetris)
 			tetris.queue_free()
+	print(map.temporary_obstacles)
 
 func self_destruct():
 	for tetris in tetrises:
+		for tetris_block in tetris.get_children():
+			map.temporary_obstacles.erase(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
 		if is_instance_valid(tetris):
 			tetris.queue_free()
 	queue_free()

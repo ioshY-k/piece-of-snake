@@ -237,13 +237,17 @@ func spawn_fruit(forbidden_tiles: Array):
 	add_child(fruit)
 	place_fruit(forbidden_tiles, fruit)
 	SignalBus.fruit_spawned.emit(fruit)
-	
+
+var temporary_obstacles:Array = []
 #place a new fruit in a place with no solid objects, including the snake
 #additional excluded tiles can be handed by forbidden_tiles
 func place_fruit(forbidden_tiles: Array, fruit: FruitElement):
 	#create a copy of tha array containing all free tiles
-	var currently_free_map_tiles = free_map_tiles.duplicate()
-	
+	var currently_free_map_tiles: Array = free_map_tiles.duplicate()
+	print(currently_free_map_tiles)
+	currently_free_map_tiles = currently_free_map_tiles.filter(func(e): return not temporary_obstacles.has(e))
+	print(temporary_obstacles)
+	print(currently_free_map_tiles)
 	#erase every tile from that array that is occupied by snake + the tile snake will now occupie (current fruit tile)
 	for snake_part in get_tree().get_nodes_in_group("Snake"):
 		var snakepartpos = snake_part.position
