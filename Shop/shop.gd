@@ -1,6 +1,6 @@
 class_name Shop extends CanvasLayer
 
-signal upgrade_bought
+
 signal upgrade_destroyed
 signal finished_buying
 signal upgrade_cards_instantiated
@@ -87,10 +87,7 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [			GameConsts.UPGRADE_LIST.OVERFED,
-									GameConsts.UPGRADE_LIST.OVERFED,
-									GameConsts.UPGRADE_LIST.OVERFED,
-									GameConsts.UPGRADE_LIST.OVERFED,
-									GameConsts.UPGRADE_LIST.HALF_GONE,
+									GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
 									GameConsts.UPGRADE_LIST.HALF_GONE,]	
 	
 	reroll_cost_label.text = str(reroll_cost_number)
@@ -159,9 +156,10 @@ func _on_got_clicked(upgrade_card: UpgradeCard):
 				chosen_slots = special_slots
 		for slot in chosen_slots:
 			if is_filled(slot):
-				slot.get_node("HighlightReplace").visible = true
-				slot.get_node("BuyZone").visible = true
-				slot.get_node("BuyZone").get_node("Price").text = str(replace_price)
+				if slot.get_node("Area2D").get_child(-1).card_sprite.frame != GameConsts.UPGRADE_LIST.DEAD_MOUSE:
+					slot.get_node("HighlightReplace").visible = true
+					slot.get_node("BuyZone").visible = true
+					slot.get_node("BuyZone").get_node("Price").text = str(replace_price)
 			else:
 				slot.get_node("HighlightBuy").visible = true
 				slot.get_node("BuyZone").visible = true
@@ -180,6 +178,9 @@ func select_random_upgrade(type):
 			return upgrade
 
 func can_afford(slot):
+	if slot.get_node("Area2D").get_child(-1) is UpgradeCard and\
+	slot.get_node("Area2D").get_child(-1).card_sprite.frame == GameConsts.UPGRADE_LIST.DEAD_MOUSE:
+		return false
 	return 	int(slot.get_node("BuyZone").get_node("Price").text) <= fruits_currency
 
 func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
@@ -189,7 +190,7 @@ func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
 	deal_area_size.disabled = true
 	if not moulted:
 		deal_new_cards.disabled = true
-	upgrade_bought.emit(upgrade_id)
+	SignalBus.upgrade_bought.emit(upgrade_id)
 	
 
 func _on_upgrade_destroyed(upgrade_id: int) -> void:
@@ -215,7 +216,7 @@ func equip_item(upgrade_id, slot_type):
 	await get_tree().process_frame
 	upgrade_card._snap_to_slot(free_slot.get_node("Area2D"))
 	update_upgrade_pool(upgrade_id, true)
-	upgrade_bought.emit(upgrade_id)
+	SignalBus.upgrade_bought.emit(upgrade_id)
 	
 	
 
@@ -254,12 +255,26 @@ func _on_continue_next_round_pressed() -> void:
 func generate_items(current_round):
 	upgrade_card_pool.shuffle()
 	special_upgrade_card_pool.shuffle()
-	var offered_upgrades: Array[int]
+	var offered_upgrades: Array[int] = []
 	
 	if current_round == 3:
-		offered_upgrades = [upgrade_card_pool[0],upgrade_card_pool[1],special_upgrade_card_pool[0]]
+		var advanced_upgrades: Array[int] = []
+		for upgrade_id in range(run_manager.current_upgrades.size()):
+			if run_manager.current_upgrades[upgrade_id] and GameConsts.upgrades_with_advancement.has(upgrade_id) and\
+			not(upgrade_id == 0 or upgrade_id == 1):
+				advanced_upgrades.append(upgrade_id+1)
+			advanced_upgrades.shuffle()
+		
+		for i in range(2):
+			if advanced_upgrades.size() > 0:
+				offered_upgrades.append(advanced_upgrades.pop_front())
+			else:
+				offered_upgrades.append(upgrade_card_pool[i])
+		offered_upgrades.append(special_upgrade_card_pool[0])
 	else:
-		offered_upgrades = [upgrade_card_pool[0],upgrade_card_pool[1],upgrade_card_pool[2]]
+		offered_upgrades.append(upgrade_card_pool[0])
+		offered_upgrades.append(upgrade_card_pool[1])
+		offered_upgrades.append(upgrade_card_pool[2])
 	deal_upgrade_cards(offered_upgrades)
 	
 func deal_upgrade_cards(offered_upgrades: Array[int]):

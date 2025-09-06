@@ -2,7 +2,7 @@ extends Node
 
 signal stop_moving(tail_still_moves)
 signal continue_moving(current_direction: int)
-signal fruit_collected(fruit:FruitElement, is_real_collection:bool)
+signal fruit_collected(fruit: FruitElement, is_real_collection:bool)
 signal ghost_fruit_spawned(fruit)
 signal fruit_spawned(fruit)
 signal diffusion_happened
@@ -19,6 +19,7 @@ signal tail_skip
 signal pre_next_tile_reached
 signal next_tile_reached
 signal active_item_used
+signal upgrade_bought(upgrade_id: int)
 signal enough_fruits_changed(enough:bool)
 signal swiss_knive_synergy(active:bool)
 signal fruits_left_changed(fruits_left)

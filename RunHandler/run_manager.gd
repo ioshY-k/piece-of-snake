@@ -34,7 +34,7 @@ func _ready() -> void:
 	current_upgrades.resize(66)
 	current_upgrades.fill(false)
 	
-	shop.upgrade_bought.connect(_on_upgrade_bought)
+	SignalBus.upgrade_bought.connect(_on_upgrade_bought)
 	shop.upgrade_destroyed.connect(_on_upgrade_destroyed)
 	
 	create_new_run()
@@ -59,10 +59,10 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.MOVING_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
+		mapmodorder = [GameConsts.MAP_MODS.GHOST_INVASION,
+						GameConsts.MAP_MODS.GHOST_INVASION,
+						GameConsts.MAP_MODS.GHOST_INVASION,
+						GameConsts.MAP_MODS.GHOST_INVASION,
 						GameConsts.MAP_MODS.GHOST_INVASION,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,

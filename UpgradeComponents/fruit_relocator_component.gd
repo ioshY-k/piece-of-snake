@@ -22,7 +22,10 @@ func _on_item_activated(_uses):
 	current_map = active_item_slot.get_parent().current_map
 	var fruits: Array[MapElement] = current_map.find_all_fruits()
 	var fruit_tiles: Array[Vector2i] = []
+	var ghost_fruit_partition: int = 0
 	for fruit in fruits:
+		if fruit.is_in_group("Ghost Fruit"):
+			ghost_fruit_partition += 1
 		fruit_tiles.append(TileHelper.position_to_tile(fruit.position))
 	
 	var surrounding_fruit_tiles: Array[Vector2i] =[]
@@ -38,9 +41,12 @@ func _on_item_activated(_uses):
 	
 	fruit_tiles.append_array(surrounding_fruit_tiles)
 	
-				
 	for fruit in fruits:
-		current_map.spawn_fruit(fruit_tiles)
+		if ghost_fruit_partition > 0:
+			current_map.spawn_ghost_fruit(fruit_tiles)
+			ghost_fruit_partition -= 1
+		else:
+			current_map.spawn_fruit(fruit_tiles)
 		current_map.current_fruits.erase(fruit)
 		fruit.queue_free()
 

@@ -565,6 +565,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3,\
 		GameConsts.UPGRADE_LIST.SALE,\
+		GameConsts.UPGRADE_LIST.PIGGY_BANK,\
 		GameConsts.UPGRADE_LIST.OVERFED,\
 		GameConsts.UPGRADE_LIST.SNEK_1,\
 		GameConsts.UPGRADE_LIST.SNEK_2,\
@@ -602,7 +603,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.COATING:
 			return true
 		_:
-			print_debug("not determined if upgrade reload necessary for ", GameConsts.UPGRADE_LIST[upgrade_id].value())
+			print_debug("not determined if upgrade reload necessary for ", upgrade_id)
 			return false
 
 func disable_map():
