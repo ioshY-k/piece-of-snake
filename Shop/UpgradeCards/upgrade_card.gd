@@ -65,9 +65,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever the snake moves, [color=#d75eff]all fruits move in the opposite direction[/color].\n\nThis movement overrides any other fruit movement.",
 	str(GameConsts.UPGRADE_LIST.OVERFED) : "Fill every empty Itemslot with dead mice, which can't be replaced. [color=#d75eff]Buying Area Size also destroys a dead mouse for a random Item[/color].",
 	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, [color=#d75eff]your front half becomes transparent for a set time[/color].\n\nFruits make you grow an additional time.",
-	str(GameConsts.UPGRADE_LIST.ALLERGY) : "Fruits spawn in set time intervals as Ghost Fruits. Eating fruit does not affect your Points.\n\n[color=#d75eff]Get points for every uncollected Fruit on the map[/color].\n\nFruits slowly move towards you.",
-
-
+	str(GameConsts.UPGRADE_LIST.ALLERGY) : "Ghost Fruits spawn over time. Eating them does not affect your Points, but makes them spawn faster.\n\n[color=#d75eff]Get points for every uncollected Fruit on the map[/color].\n\nFruits move towards you.",
 	}
 
 var mouse_in: bool = false

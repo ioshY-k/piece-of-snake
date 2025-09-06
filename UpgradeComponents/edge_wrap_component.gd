@@ -35,11 +35,15 @@ func place_teleporters():
 		teleporter.rotation_degrees = 180
 		teleporter.position = TileHelper.tile_to_position(Vector2i(x,upper_left_corner.y))
 		teleporter.destination_tile = Vector2i(x,lower_right_corner.y)
+		if not map.free_map_tiles.has(TileHelper.get_next_tile(teleporter.destination_tile, TileHelper.DIRECTION.UP)):
+			teleporter.cpu_particles_2d.color = Color(0.93, 0.344, 0.354, 0.322)
 		teleporters.append(teleporter)
 		teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
 		teleporter.position = TileHelper.tile_to_position(Vector2i(x,lower_right_corner.y))
 		teleporter.destination_tile = Vector2i(x,upper_left_corner.y)
+		if not map.free_map_tiles.has(TileHelper.get_next_tile(teleporter.destination_tile, TileHelper.DIRECTION.DOWN)):
+			teleporter.cpu_particles_2d.color = Color(0.93, 0.344, 0.354, 0.322)
 		teleporters.append(teleporter)
 	for y in range(upper_left_corner.y+1, lower_right_corner.y):
 		var teleporter: Teleporter = teleport_element_scene.instantiate()
@@ -47,12 +51,16 @@ func place_teleporters():
 		teleporter.rotation_degrees = 90
 		teleporter.position = TileHelper.tile_to_position(Vector2i(upper_left_corner.x,y))
 		teleporter.destination_tile = Vector2i(lower_right_corner.x,y)
+		if not map.free_map_tiles.has(TileHelper.get_next_tile(teleporter.destination_tile, TileHelper.DIRECTION.LEFT)):
+			teleporter.cpu_particles_2d.color = Color(0.93, 0.344, 0.354, 0.322)
 		teleporters.append(teleporter)
 		teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
 		teleporter.rotation_degrees = -90
 		teleporter.position = TileHelper.tile_to_position(Vector2i(lower_right_corner.x,y))
 		teleporter.destination_tile = Vector2i(upper_left_corner.x,y)
+		if not map.free_map_tiles.has(TileHelper.get_next_tile(teleporter.destination_tile, TileHelper.DIRECTION.RIGHT)):
+			teleporter.cpu_particles_2d.color = Color(0.93, 0.344, 0.354, 0.322)
 		teleporters.append(teleporter)
 		
 

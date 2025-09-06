@@ -10,7 +10,7 @@ func _ready() -> void:
 	SignalBus.fruit_collected.connect(_prevent_growth)
 
 func _prevent_growth(fruit, _is_real_collection):
-	if not fruit.is_in_group("Ghost Fruit"):
+	if fruit != null and not fruit.is_in_group("Ghost Fruit"):
 		_spawn_ghost_fruits()
 		if map.snake_tail.tiles_to_grow > 0:
 			map.snake_tail.tiles_to_grow -= 1

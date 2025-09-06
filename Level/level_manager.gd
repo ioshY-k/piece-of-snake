@@ -176,8 +176,11 @@ func _process(delta: float) -> void:
 
 func _on_fruit_collected(collected_fruit, _is_real_collection):
 	eat_fruit_audio.play()
-	if allergy_mode or (ghost_invasion and not collected_fruit.is_in_group("Ghost Fruit")):
+	if allergy_mode:
 		return
+	if ghost_invasion and collected_fruit != null:
+		if not collected_fruit.is_in_group("Ghost Fruit"):
+			return
 	increment_points()
 
 func increment_points():

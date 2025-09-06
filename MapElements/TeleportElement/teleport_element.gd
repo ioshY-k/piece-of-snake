@@ -1,5 +1,6 @@
 class_name Teleporter extends Area2D
 
+@onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 @export var destination_tile: Vector2i
 var one_use = false
 var map:Map

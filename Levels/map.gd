@@ -158,7 +158,8 @@ func find_free_map_tiles() -> Array[Vector2i]:
 				map_tiles.append(Vector2i(x,y))
 	
 	#creates an array containing every position of static solid elements
-	var solid_element_positions = get_tree().get_nodes_in_group("Static Solid Element").map(
+	var solid_element_positions = get_tree().get_nodes_in_group("Static Solid Element").filter(
+	func(solid_elem): return not solid_elem.is_in_group("Wall")).map(
 	func(solid_elem): return TileHelper.position_to_tile(solid_elem.position))
 	
 	#subtract all elements from the grid array that have solid elements
