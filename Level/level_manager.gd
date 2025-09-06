@@ -66,6 +66,7 @@ var overfed_component_scene = load("res://UpgradeComponents/overfed_component.ts
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
+	SignalBus.next_tile_reached.connect(_fix_stuck_speed_boost_bar)
 	SignalBus.fruit_collected.connect(_on_fruit_collected)
 
 #called by run_manager at the start of a run and on new act
@@ -220,6 +221,11 @@ func _on_speed_boost_bar_value_changed(full: bool) -> void:
 		snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
+
+#current fix for bug where speed boost never becomes available again
+func _fix_stuck_speed_boost_bar():
+	if speed_boost_available == false and speed_boost_bar.value == speed_boost_bar.max_value:
+		speed_boost_available = true
 
 func set_fruit_threshold(current_act: int, current_round: int):
 	fruits_left_number_label.text = str(GameConsts.FRUIT_THRESHOLDS[current_act*4 + current_round])

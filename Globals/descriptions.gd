@@ -9,5 +9,5 @@ var mapmod_descriptions:Dictionary = {
 	str(GameConsts.MAP_MODS.TETRI_FRUIT) : "Collected Fruits form a shape inside your body",
 	str(GameConsts.MAP_MODS.MOVING_FRUIT) : "Fruits occasionally move around",
 	str(GameConsts.MAP_MODS.ANTI_MAGNET) : "Stopping in place causes fruits to move away from you",
-	str(GameConsts.MAP_MODS.GHOST_INVASION) : "Normal Fruits dont give Points and dont cause growth. For every normal Fruit you collect, spawn 1 - 2 Ghost Fruits"
+	str(GameConsts.MAP_MODS.GHOST_INVASION) : "Normal Fruits dont give Points and cause 1 less growth. For every collected normal Fruit, spawn Ghost Fruits"
 }

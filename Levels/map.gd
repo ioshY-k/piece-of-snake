@@ -105,6 +105,12 @@ func _ready() -> void:
 
 var invincibility_expired: bool = false
 func _on_next_tile_reached():
+	print(current_fruits.size())
+	var counter = 0
+	for fruit in current_fruits:
+		if fruit.is_in_group("Ghost Fruit"):
+			counter += 1
+	print(counter , " Ghosts")
 	if invincible_ticks > 0:
 		snake_head.right_collision_ray.set_collision_mask_value(6,false)
 		snake_head.left_collision_ray.set_collision_mask_value(6,false)
@@ -244,10 +250,7 @@ var temporary_obstacles:Array = []
 func place_fruit(forbidden_tiles: Array, fruit: FruitElement):
 	#create a copy of tha array containing all free tiles
 	var currently_free_map_tiles: Array = free_map_tiles.duplicate()
-	print(currently_free_map_tiles)
 	currently_free_map_tiles = currently_free_map_tiles.filter(func(e): return not temporary_obstacles.has(e))
-	print(temporary_obstacles)
-	print(currently_free_map_tiles)
 	#erase every tile from that array that is occupied by snake + the tile snake will now occupie (current fruit tile)
 	for snake_part in get_tree().get_nodes_in_group("Snake"):
 		var snakepartpos = snake_part.position
@@ -398,7 +401,14 @@ func apply_mapmod(mapmod: int):
 			add_child(ghost_invasion_component)
 
 func _on_round_over():
+	cleanup_ghost_fruits()
 	destroy_current_mapmod()
+
+func cleanup_ghost_fruits():
+	for fruit in current_fruits.duplicate():
+		if fruit.is_in_group("Ghost Fruit"):
+			current_fruits.erase(fruit)
+			fruit.queue_free()
 
 func destroy_current_mapmod():
 	var current_mod = get_tree().get_first_node_in_group("MapMod")
