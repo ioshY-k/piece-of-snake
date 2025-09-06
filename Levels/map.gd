@@ -5,7 +5,6 @@ var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
 var snake_head_scene = preload("res://Snake/Head/snake_head.tscn")
 var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
-var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 
 #instantiated upgrade components
 var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
@@ -217,14 +216,6 @@ func _on_collision_with(element: MapElement, collect_position: Vector2):
 			spawn_fruit(fruit_positions)
 		current_fruits.erase(element)
 		element.collected_anim(collect_position, TileHelper.tile_to_position(snake_head.next_tile))
-		
-func spawn_teleporter(destination: Vector2) -> Teleporter:
-	var teleporter: Teleporter = teleport_element_scene.instantiate()
-	add_child(teleporter)
-	teleporter.position = TileHelper.tile_to_position( TileHelper.get_next_tile(snake_head.next_tile, snake_head.current_direction))
-	teleporter.rotation = snake_head.get_orientation(snake_head.current_direction, 0.0) + (PI)
-	teleporter.destination_tile = TileHelper.position_to_tile(to_local(destination))
-	return teleporter
 	
 
 func spawn_ghost_fruit(forbidden_tiles: Array[Vector2i]) -> FruitElement:

@@ -10,6 +10,7 @@ var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particl
 var is_riping_fruit = false
 var collected = false
 var diffusable = false
+var moves = false
 var big = false
 @onready var raycast_up: RayCast2D = $RaycastUp
 @onready var raycast_right: RayCast2D = $RaycastRight
@@ -195,20 +196,25 @@ func move(move_t, triggered_by_dance):
 			direction = valid_direction_towards_player()
 		
 	movement_tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	movement_tween.finished.connect(_moving_done)
 	match direction:
 		TileHelper.DIRECTION.UP:
+			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP)),
 			map.snake_head.current_snake_speed)
 		TileHelper.DIRECTION.RIGHT:
+			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT)),
 			map.snake_head.current_snake_speed)
 		TileHelper.DIRECTION.DOWN:
+			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN)),
 			map.snake_head.current_snake_speed)
 		TileHelper.DIRECTION.LEFT:
+			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)),
 			map.snake_head.current_snake_speed)
@@ -230,3 +236,6 @@ func move(move_t, triggered_by_dance):
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)))
 			SignalBus.diffusion_happened.emit()
+
+func _moving_done():
+	moves = false

@@ -4,10 +4,12 @@ signal item_deactivated
 var button_held: bool = false
 
 const TILE_SELECT_CURSOR = preload("res://UpgradeComponents/WormHole/tile_select_cursor.tscn")
+var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
+
 var tile_select_cursor: Sprite2D
 
 var current_teleporters: Array[Teleporter] = []
-var current_map
+var current_map: Map
 
 func _ready() -> void:
 	super._ready()
@@ -42,7 +44,14 @@ func _on_item_activated(_uses):
 	
 
 func _on_item_deactivated():
-	var new_teleporter: Teleporter = current_map.spawn_teleporter(tile_select_cursor.global_position)
+	
+	var new_teleporter: Teleporter = teleport_element_scene.instantiate()
+	new_teleporter.one_use = true
+	current_map.add_child(new_teleporter)
+	new_teleporter.position = TileHelper.tile_to_position( TileHelper.get_next_tile(current_map.snake_head.next_tile, current_map.snake_head.current_direction))
+	new_teleporter.rotation_degrees = current_map.snake_head.get_orientation(current_map.snake_head.current_direction, 0.0) + 180
+	new_teleporter.destination_tile = TileHelper.position_to_tile(current_map.to_local(tile_select_cursor.global_position))
+	
 	current_teleporters.append(new_teleporter)
 	current_map.process_mode = Node.PROCESS_MODE_INHERIT
 	active_item_slot.get_parent().time_meter.continue_timer()
