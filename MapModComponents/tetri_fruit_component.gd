@@ -8,12 +8,12 @@ var constellations: Array = [
 								preload("res://MapModComponents/TetriConstellations/tetri_constellation_5.tscn")
 							]
 var map: Map
-var countdowns: Array[TailCountdown]
 var tetrises: Array[Node2D]
 
 func _ready() -> void:
 	map = get_parent()
 	SignalBus.fruit_collected.connect(_on_fruit_collected)
+	SignalBus.next_tile_reached.connect(_check_tail_reached_tetri)
 
 func _on_fruit_collected(_element, _is_real_collection: bool):
 	if not _is_real_collection:
@@ -33,14 +33,15 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 			tetris.rotation_degrees = 180
 		Vector2i.LEFT:
 			tetris.rotation_degrees = -90
-	var countdown = TailCountdown.new(map.snake_path_bodyparts.size())
-	countdowns.append(countdown)
-	countdown.countdown_reached.connect(_on_kill_countdown_reached.bind(tetris))
 
-func _on_kill_countdown_reached(tetris):
-	if is_instance_valid(tetris):
-		countdowns.pop_front()
-		tetris.queue_free()
+func _check_tail_reached_tetri():
+	print(tetrises.map(func(t): return t.position))
+	print(map.snake_tail.position)
+	for tetris in tetrises:
+		if TileHelper.position_to_tile(tetris.position) == TileHelper.position_to_tile(map.snake_tail.position):
+			print("same position")
+			tetrises.erase(tetris)
+			tetris.queue_free()
 
 func self_destruct():
 	for tetris in tetrises:

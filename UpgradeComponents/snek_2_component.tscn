@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bm7wc8bx7cdr6"]
 
-[ext_resource type="Script" uid="uid://cbvivnsu01tsc" path="res://snek_2_component.gd" id="1_mw52h"]
+[ext_resource type="Script" uid="uid://cbvivnsu01tsc" path="res://UpgradeComponents/snek_2_component.gd" id="1_mw52h"]
 
 [node name="Snek2Component" type="Node2D"]
 script = ExtResource("1_mw52h")

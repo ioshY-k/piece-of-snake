@@ -3,13 +3,14 @@ class_name RunManager extends Node
 var scene_loader
 
 var maps_act1 = [
-	GameConsts.MAP_LIST.STADIUM
-	#GameConsts.MAP_LIST.STADIUM,GameConsts.MAP_LIST.RESTAURANT
+	GameConsts.MAP_LIST.STADIUM,
+	GameConsts.MAP_LIST.WOODS,
+	GameConsts.MAP_LIST.RESTAURANT
 	]
 var maps_act2 = [
 	#GameConsts.MAP_LIST.OFFICE,
 	GameConsts.MAP_LIST.CAVE]
-var maps_act3 = [GameConsts.MAP_LIST.DISCO,GameConsts.MAP_LIST.BEACH]
+var maps_act3 = [GameConsts.MAP_LIST.DISCO,GameConsts.MAP_LIST.BEACH, GameConsts.MAP_LIST.TOMB]
 var maporder = []
 var mapmodorder = []
 var fruit_thresholds = GameConsts.FRUIT_THRESHOLDS
@@ -59,10 +60,10 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.GHOST_INVASION,
-						GameConsts.MAP_MODS.GHOST_INVASION,
-						GameConsts.MAP_MODS.GHOST_INVASION,
-						GameConsts.MAP_MODS.GHOST_INVASION,
+		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.GHOST_INVASION,
 						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.LASER,

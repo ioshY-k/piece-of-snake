@@ -87,7 +87,7 @@ const COLLISION_IFRAMES: int = 4
 
 var node_being_dragged: Node = null
 
-var test_mode = false
+var test_mode = true
 
 func get_upgrade_type(upgrade_id: int):
 	

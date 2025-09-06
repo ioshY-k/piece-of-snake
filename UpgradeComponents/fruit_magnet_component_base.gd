@@ -8,7 +8,7 @@ var fruits_this_tick: Array[FruitElement] = []
 func _on_next_tile_reached():
 	for fruit in fruits_this_tick:
 		if not fruit.collected:
-			fruit.collision_with.emit()
+			fruit.collision_with.emit(fruit, get_parent().position)
 	fruits_this_tick = []
 
 

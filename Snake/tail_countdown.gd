@@ -22,3 +22,4 @@ func _tick_up(tail_moves):
 	ticks += 1
 	if ticks == 0:
 		countdown_reached.emit()
+		
