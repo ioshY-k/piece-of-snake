@@ -22,7 +22,7 @@ func _prevent_growth(_element, _real_collection):
 	if check < no_grow_chance and snake_tail.tiles_to_grow > 0:
 		snake_tail.tiles_to_grow -= 1
 		var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH, get_parent().snake_head)
+		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH)
 		snake_tail.get_parent().add_child(effect_trigger_text)
 	no_grow_chance = 1.0
 	change_tail_appearance(no_grow_chance)

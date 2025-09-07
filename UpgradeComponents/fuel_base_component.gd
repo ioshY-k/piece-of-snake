@@ -2,6 +2,7 @@ class_name FuelBaseComponent extends Node
 
 var speed_boost_bar: SpeedBoostBar
 var level:LevelManager
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
 
 func _ready() -> void:
 	speed_boost_bar = get_parent()

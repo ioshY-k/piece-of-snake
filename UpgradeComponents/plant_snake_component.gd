@@ -4,6 +4,8 @@ var swiss_knive = false
 var current_ghost_fruit = null
 var map: Map
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
+
 func _ready() -> void:
 	map = get_parent().get_parent()
 	SignalBus.got_hit_and_punished.connect(_grow_ghost_fruit)
@@ -21,6 +23,9 @@ func _set_swiss_knive(state:bool):
 func prevent_growth(fruit, is_real_collection):
 	if randi()%2 == 0 and fruit != null and fruit.is_in_group("Ghost Fruit") and map.snake_tail.tiles_to_grow > 0:
 		map.snake_tail.tiles_to_grow -= 1
+		var growth_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH)
+		map.add_child(growth_effect_trigger_text)
 	
 func _grow_ghost_fruit():
 	if current_ghost_fruit != null:

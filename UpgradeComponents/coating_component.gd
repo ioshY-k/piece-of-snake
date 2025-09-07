@@ -7,6 +7,7 @@ var coatings_left: int = 0
 var max_times_coated: int = 1
 var coat_scene = load("res://UpgradeComponents/coating.tscn")
 var coat: Sprite2D
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
 
 func _ready():
 	level = get_parent()
@@ -39,6 +40,9 @@ func _reset_fruit_punishment():
 func _coating_used():
 	if coatings_left > 0:
 		coatings_left -= 1
+		var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.SHIELDED)
+		get_parent().current_map.add_child(effect_trigger_text)
 		if coatings_left == 0:
 			level.fruit_punishment = initial_fruit_punishment
 			coat.hide()

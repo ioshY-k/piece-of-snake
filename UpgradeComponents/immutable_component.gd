@@ -7,6 +7,8 @@ var ghost_fruit_counter_current: int = 5
 var halo_scene = load("res://UpgradeComponents/Immutable/immutable_halo.tscn")
 var halo
 var shop: Shop
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
+
 
 func _ready() -> void:
 	map = get_parent()
@@ -71,6 +73,9 @@ func _prevent_growth_on_5_ghostfruits(_fruit, _real_collection):
 	#if there are 5 ghost fruits on the map
 	if map.current_fruits.filter(func(f): return f.is_in_group("Ghost Fruit")).size() == ghost_fruit_counter_max:
 		map.snake_tail.tiles_to_grow -= 1
+		var growth_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH)
+		map.add_child(growth_effect_trigger_text)
 	
 func self_destruct():
 	shop.deal_area_size.position.y -= 5000

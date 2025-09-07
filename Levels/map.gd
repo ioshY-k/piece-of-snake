@@ -70,6 +70,9 @@ signal initialized
 #making sure the level catches the signal before the map does, since map gives iframes
 signal snake_got_hit
 
+var effect_trigger_occupied: bool = false
+signal effect_trigger_freed
+
 func _ready() -> void:
 	#change the seed for randomness
 	randomize()
