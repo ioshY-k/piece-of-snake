@@ -104,12 +104,10 @@ func _ready() -> void:
 
 var invincibility_expired: bool = false
 func _on_next_tile_reached():
-	print(current_fruits.size())
 	var counter = 0
 	for fruit in current_fruits:
 		if fruit.is_in_group("Ghost Fruit"):
 			counter += 1
-	print(counter , " Ghosts")
 	if invincible_ticks > 0:
 		snake_head.right_collision_ray.set_collision_mask_value(6,false)
 		snake_head.left_collision_ray.set_collision_mask_value(6,false)

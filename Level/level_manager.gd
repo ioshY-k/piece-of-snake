@@ -264,11 +264,11 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
 			current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.initiate_active_item(3, slot)
+			fruit_relocator_component.initiate_active_item(4, slot)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
 			current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.initiate_active_item(4, slot)
+			fruit_relocator_component.initiate_active_item(6, slot)
 		GameConsts.UPGRADE_LIST.PACMAN_1:
 			var pacman_component = pacman_component_scene.instantiate()
 			current_active_item_slot.add_child(pacman_component)
@@ -506,11 +506,11 @@ func destroy_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.FUEL_3:
 			component = speed_boost_bar.find_child("Fuel3Component",false,false)
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_1:
-			component = speed_boost_bar.find_child("BigFruit1Component",false,false)
+			component = find_child("BigFruit1Component",false,false)
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_2:
-			component = speed_boost_bar.find_child("BigFruit2Component",false,false)
+			component = find_child("BigFruit2Component",false,false)
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_3:
-			component = speed_boost_bar.find_child("BigFruit3Component",false,false)
+			component = find_child("BigFruit3Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1:
 			component = current_map.find_child("DoubleFruit1Component",false,false)
 		GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2:

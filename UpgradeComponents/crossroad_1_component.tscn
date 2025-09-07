@@ -1,10 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://css8il5oca6t5"]
+[gd_scene load_steps=6 format=3 uid="uid://css8il5oca6t5"]
 
 [ext_resource type="Script" uid="uid://c5ba48kch2iyq" path="res://UpgradeComponents/crossroad_1_component.gd" id="1_cyt8u"]
 [ext_resource type="Texture2D" uid="uid://dfd1wa1lmrpfu" path="res://Shop/UpgradeCards/CrossRoad1.svg" id="2_cyt8u"]
+[ext_resource type="Texture2D" uid="uid://dl004d0kqy5ap" path="res://Shop/UpgradeCards/CrossRoad2.svg" id="3_lexfk"]
+[ext_resource type="Texture2D" uid="uid://dvkpes85sokfm" path="res://Shop/UpgradeCards/CrossRoad3.svg" id="4_uo8ww"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyv2p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cyt8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lexfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uo8ww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Crossroad1Component" type="Node2D"]
 script = ExtResource("1_cyt8u")
 
-[node name="ActiveItemUI" type="Sprite2D" parent="."]
-texture = ExtResource("2_cyt8u")
+[node name="ActiveItemUI" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iyv2p")

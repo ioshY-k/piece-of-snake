@@ -1,13 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm7wc8bx7cdr6"]
+[gd_scene load_steps=5 format=3 uid="uid://bm7wc8bx7cdr6"]
 
 [ext_resource type="Script" uid="uid://cbvivnsu01tsc" path="res://UpgradeComponents/snek_2_component.gd" id="1_mw52h"]
-[ext_resource type="Texture2D" uid="uid://butf0pgwx2hoi" path="res://Shop/UpgradeCards/snek1.svg" id="2_maqja"]
+[ext_resource type="Texture2D" uid="uid://d0xrqur6rlske" path="res://Shop/UpgradeCards/snek2.svg" id="2_63evr"]
+[ext_resource type="Texture2D" uid="uid://oq7v5t026pfc" path="res://Shop/UpgradeCards/snek3.svg" id="3_2f5jj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ka4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_63evr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2f5jj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Snek2Component" type="Node2D"]
 script = ExtResource("1_mw52h")
 
-[node name="ActiveItemUI" type="Sprite2D" parent="."]
-texture = ExtResource("2_maqja")
+[node name="ActiveItemUI" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8ka4q")
 
 [node name="GrowBackCountDown" type="Timer" parent="."]
 wait_time = 5.0

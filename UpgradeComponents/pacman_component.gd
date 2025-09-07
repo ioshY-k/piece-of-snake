@@ -2,6 +2,7 @@ extends ActiveItemBase
 
 var current_map: Map
 var fleeing_fruits: Array[FruitElement]
+@onready var active_item_ui: AnimatedSprite2D = $ActiveItemUI
 
 func _ready() -> void:
 	super._ready()
@@ -14,6 +15,15 @@ func _ready() -> void:
 	SignalBus.fruit_collected.connect(_delete_if_pacmanfruit)
 	item_activated.connect(_on_item_activated)
 	item_activated.connect(active_item_slot._on_item_activated.bind())
+	SignalBus.round_started.connect(_set_UI)
+
+func _set_UI():
+	if uses == 1:
+		active_item_ui.frame = 3
+	elif uses == 1:
+		active_item_ui.frame = 5
+	elif uses == 2:
+		active_item_ui.frame = 7
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed(active_item_button) and uses > 0 and not shop_phase:

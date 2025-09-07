@@ -5,6 +5,7 @@ var button_held: bool = false
 
 const TILE_SELECT_CURSOR = preload("res://UpgradeComponents/WormHole/tile_select_cursor.tscn")
 var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
+@onready var active_item_ui: AnimatedSprite2D = $ActiveItemUI
 
 var tile_select_cursor: Sprite2D
 
@@ -19,6 +20,15 @@ func _ready() -> void:
 	item_deactivated.connect(_on_item_deactivated)
 	item_activated.connect(active_item_slot._on_item_activated.bind())
 	SignalBus.teleport_finished.connect(_on_teleport_finished)
+	SignalBus.round_started.connect(_set_UI)
+
+func _set_UI():
+	if uses == 2:
+		active_item_ui.frame = 0
+	elif uses == 4:
+		active_item_ui.frame = 1
+	elif uses == 6:
+		active_item_ui.frame = 2
 
 
 func _process(delta: float) -> void:

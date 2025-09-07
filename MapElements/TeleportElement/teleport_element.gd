@@ -12,6 +12,5 @@ func _ready() -> void:
 
 func _check_if_destroyed():
 	if TileHelper.position_to_tile(map.snake_tail.position) == TileHelper.position_to_tile(position):
-		print("tele finished")
 		SignalBus.teleport_finished.emit(self)
 	

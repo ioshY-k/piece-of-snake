@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bddpknwvilhya"]
+
+[ext_resource type="Script" uid="uid://bxchg7qdl0mkg" path="res://MapElements/SolidElements/temporary_solid_element.gd" id="1_hfg8w"]
+
+[node name="TemporarySolidElement" type="Node2D"]
+script = ExtResource("1_hfg8w")

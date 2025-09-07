@@ -18,7 +18,6 @@ func _set_swiss_knive(state:bool):
 			SignalBus.diffusion_happened.disconnect(_move_all_fruits)
 
 func _move_all_fruits():
-	print("moves all fruits")
 	for fruit in map.current_fruits:
 		fruit.move(fruit.move_type.TOWARDS, false)
 

@@ -18,6 +18,7 @@ func _ready() -> void:
 	grow_back_count_down.timeout.connect(_grow_back)
 
 
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed(active_item_button) and uses > 0 and not shop_phase:
 		button_held = true

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://hixfgaohjlws"]
 
 [ext_resource type="Script" uid="uid://sejev6e3vcp1" path="res://UpgradeComponents/time_stop_2_component.gd" id="1_dmmt0"]
-[ext_resource type="Texture2D" uid="uid://7a4e3l6e3ots" path="res://Shop/UpgradeCards/TimeStop1.svg" id="2_4b6ji"]
+[ext_resource type="Texture2D" uid="uid://dqcdhkgpyjnv" path="res://Shop/UpgradeCards/TimeStop2.svg" id="2_dmmt0"]
 
 [node name="TimeStop2Component" type="Node2D"]
 script = ExtResource("1_dmmt0")
 
 [node name="ActiveItemUI" type="Sprite2D" parent="."]
-texture = ExtResource("2_4b6ji")
+texture = ExtResource("2_dmmt0")

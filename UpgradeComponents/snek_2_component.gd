@@ -6,6 +6,7 @@ var button_held: bool = false
 var level: LevelManager
 @onready var grow_back_count_down: Timer = $GrowBackCountDown
 var tiles_to_grow_back = 0
+@onready var active_item_ui: AnimatedSprite2D = $ActiveItemUI
 
 func _ready() -> void:
 	super._ready()
@@ -16,6 +17,13 @@ func _ready() -> void:
 	item_activated.connect(active_item_slot._on_item_activated.bind())
 	SignalBus.pre_next_tile_reached.connect(_on_next_tile_reached)
 	grow_back_count_down.timeout.connect(_grow_back)
+	SignalBus.round_started.connect(_set_UI)
+
+func _set_UI():
+	if uses == 2:
+		active_item_ui.frame = 0
+	elif uses == 3:
+		active_item_ui.frame = 1
 
 
 func _process(delta: float) -> void:

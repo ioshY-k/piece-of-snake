@@ -35,7 +35,6 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 			tetris.rotation_degrees = -90
 	for tetris_block in tetris.get_children():
 		map.temporary_obstacles.append(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
-	print(map.temporary_obstacles)
 	
 func _check_tail_reached_tetri():
 	for tetris in tetrises:
@@ -44,7 +43,6 @@ func _check_tail_reached_tetri():
 				map.temporary_obstacles.erase(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
 			tetrises.erase(tetris)
 			tetris.queue_free()
-	print(map.temporary_obstacles)
 
 func self_destruct():
 	for tetris in tetrises:
