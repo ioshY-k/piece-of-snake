@@ -6,7 +6,7 @@ var one_use = false
 var map:Map
 
 func _ready() -> void:
-	map = get_parent()
+	map = get_node("/root/MainSceneLoader/RunManager/Level/Map")
 	if one_use:
 		SignalBus.next_tile_reached.connect(_check_if_destroyed)
 

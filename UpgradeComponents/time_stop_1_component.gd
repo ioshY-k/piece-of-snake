@@ -2,11 +2,12 @@ extends ActiveItemBase
 
 signal item_deactivated
 var button_held: bool = false
-var next_tile_reached_emitted_this_frame: bool = false
+var level:LevelManager
 
 func _ready() -> void:
 	super._ready()
 	active_item_slot = get_parent()
+	level = active_item_slot.get_parent()
 	show_behind_parent = true
 	item_deactivated.connect(_on_item_deactivated)
 	item_activated.connect(active_item_slot._on_item_activated.bind())
@@ -22,7 +23,7 @@ func _process(delta: float) -> void:
 		item_deactivated.emit()
 		#uses-1 is the light index for the itembag to go out
 		uses -= 1
-		SignalBus.continue_moving.emit(active_item_slot.get_parent().current_map.snake_head.current_direction)
+		SignalBus.continue_moving.emit(level.current_map.snake_head.current_direction)
 
 func _on_next_tile_reached():
 	if button_held:

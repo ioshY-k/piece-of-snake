@@ -2,7 +2,6 @@ extends ActiveItemBase
 
 signal item_deactivated
 var button_held: bool = false
-var next_tile_reached_emitted_this_frame: bool = false
 
 var level: LevelManager
 @onready var grow_back_count_down: Timer = $GrowBackCountDown

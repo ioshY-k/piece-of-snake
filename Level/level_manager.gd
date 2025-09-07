@@ -35,6 +35,8 @@ var area_size_1_component_scene = load("res://UpgradeComponents/area_size_1_comp
 var area_size_2_component_scene = load("res://UpgradeComponents/area_size_2_component.tscn")
 var area_size_3_component_scene = load("res://UpgradeComponents/area_size_3_component.tscn")
 var time_stop_1_component_scene = load("res://UpgradeComponents/time_stop_1_component.tscn")
+var time_stop_2_component_scene = load("res://UpgradeComponents/time_stop_2_component.tscn")
+var time_stop_3_component_scene = load("res://UpgradeComponents/time_stop_3_component.tscn")
 var item_reloader_component_scene = load("res://UpgradeComponents/item_reloader_component.tscn")
 var knot_slowmo_component_scene = load("res://UpgradeComponents/knot_slowmo.tscn")
 var coating_component_scene = load("res://UpgradeComponents/coating_component.tscn")
@@ -283,6 +285,14 @@ func instantiate_upgrade(upgrade_id: int):
 			var time_stop_1_component = time_stop_1_component_scene.instantiate()
 			current_active_item_slot.add_child(time_stop_1_component)
 			time_stop_1_component.initiate_active_item(3, slot)
+		GameConsts.UPGRADE_LIST.TIME_STOP_2:
+			var time_stop_2_component = time_stop_2_component_scene.instantiate()
+			current_active_item_slot.add_child(time_stop_2_component)
+			time_stop_2_component.initiate_active_item(3, slot)
+		GameConsts.UPGRADE_LIST.TIME_STOP_3:
+			var time_stop_3_component = time_stop_3_component_scene.instantiate()
+			current_active_item_slot.add_child(time_stop_3_component)
+			time_stop_3_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_1:
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
@@ -469,6 +479,14 @@ func destroy_upgrade(upgrade_id: int):
 			component = active_item_slot_1.find_child("TimeStop1Component",false,false)
 			if component == null:
 				component = active_item_slot_2.find_child("TimeStop1Component", false, false)
+		GameConsts.UPGRADE_LIST.TIME_STOP_2:
+			component = active_item_slot_1.find_child("TimeStop2Component",false,false)
+			if component == null:
+				component = active_item_slot_2.find_child("TimeStop2Component", false, false)
+		GameConsts.UPGRADE_LIST.TIME_STOP_3:
+			component = active_item_slot_1.find_child("TimeStop3Component",false,false)
+			if component == null:
+				component = active_item_slot_2.find_child("TimeStop3Component", false, false)
 		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_2,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_3:
