@@ -4,6 +4,7 @@ var snake_tail: SnakeTail
 
 var decrease_step_size: float
 var no_grow_chance: float = 0.0
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
 
 func _ready() -> void:
 	modulate.a = no_grow_chance
@@ -20,6 +21,9 @@ func _prevent_growth(_element, _real_collection):
 	var check = randf_range(0,1)
 	if check < no_grow_chance and snake_tail.tiles_to_grow > 0:
 		snake_tail.tiles_to_grow -= 1
+		var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH, get_parent().snake_head)
+		snake_tail.get_parent().add_child(effect_trigger_text)
 	no_grow_chance = 1.0
 	change_tail_appearance(no_grow_chance)
 

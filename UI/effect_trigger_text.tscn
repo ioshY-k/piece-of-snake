@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjhlmr2cqsntn"]
+
+[ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="1_4nta7"]
+[ext_resource type="Script" uid="uid://2lu4uxflwxh8" path="res://UI/effect_trigger_text.gd" id="2_u4g2y"]
+
+[node name="EffectTrigger" type="Node2D"]
+z_index = 100
+script = ExtResource("2_u4g2y")
+
+[node name="Container" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -320.0
+offset_top = -80.0
+offset_right = 320.0
+offset_bottom = 80.0
+
+[node name="EffectTriggerText" type="RichTextLabel" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.565248, 0.793591, 0.991283, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/normal_font = ExtResource("1_4nta7")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "BONUS [img=30]res://Shop/UI/EffectTriggerFruitSymbol.svg[/img]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

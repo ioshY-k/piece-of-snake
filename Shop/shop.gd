@@ -87,9 +87,9 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
-									GameConsts.UPGRADE_LIST.CATCH,
-									GameConsts.UPGRADE_LIST.PLANT_SNAKE,]	
+									GameConsts.UPGRADE_LIST.DIET_1,
+									GameConsts.UPGRADE_LIST.DIET_2,
+									GameConsts.UPGRADE_LIST.DIET_3,]	
 	
 	reroll_cost_label.text = str(reroll_cost_number)
 	
