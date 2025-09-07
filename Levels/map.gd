@@ -61,7 +61,8 @@ var snake_path_bodyparts: Array[SnakeBody]
 
 #array containing constantly free tiles for fruits to spawn in
 var free_map_tiles: Array[Vector2i]
-
+#array containing tiles that fruit will move toward so that no two fruits land on the same space
+var temp_occupied_maptiles: Array[Vector2i]
 var invincible_ticks = 0
 
 #making sure map initializes before snake
@@ -144,8 +145,12 @@ func _on_next_tile_reached():
 		for obstacle in find_child("ObstacleElements").get_children():
 			if not obstacle is Area2D:
 				obstacle.modulate.a = 1
-		
+	delayed_occupied_space_cleanup()
 	
+
+func delayed_occupied_space_cleanup():
+	await get_tree().process_frame
+	temp_occupied_maptiles = []
 
 #returns an array of valid positions for fruits to spawn in
 func find_free_map_tiles() -> Array[Vector2i]:

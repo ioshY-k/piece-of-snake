@@ -6,6 +6,7 @@ const DIFFUSED_RIGHT: int = -2
 const DIFFUSED_DOWN: int = -3
 const DIFFUSED_LEFT: int = -4
 
+var temporary_solid_element_scene = load("res://MapElements/SolidElements/temporary_solid_element.tscn")
 var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particles.tscn")
 var is_riping_fruit = false
 var collected = false
@@ -199,25 +200,45 @@ func move(move_t, triggered_by_dance):
 	movement_tween.finished.connect(_moving_done)
 	match direction:
 		TileHelper.DIRECTION.UP:
+			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP)):
+				print("moving on other fruit prevented")
+				movement_tween.kill()
+				return
 			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP)),
 			map.snake_head.current_snake_speed)
+			map.temp_occupied_maptiles.append(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP))
 		TileHelper.DIRECTION.RIGHT:
+			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT)):
+				print("moving on other fruit prevented")
+				movement_tween.kill()
+				return
 			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT)),
 			map.snake_head.current_snake_speed)
+			map.temp_occupied_maptiles.append(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT))
 		TileHelper.DIRECTION.DOWN:
+			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN)):
+				print("moving on other fruit prevented")
+				movement_tween.kill()
+				return
 			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN)),
 			map.snake_head.current_snake_speed)
+			map.temp_occupied_maptiles.append(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN))
 		TileHelper.DIRECTION.LEFT:
+			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)):
+				print("moving on other fruit prevented")
+				movement_tween.kill()
+				return
 			moves = true
 			movement_tween.tween_property(self, "position",
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)),
 			map.snake_head.current_snake_speed)
+			map.temp_occupied_maptiles.append(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT))
 		null:
 			movement_tween.tween_property(self, "position",position,map.snake_head.current_snake_speed)
 		DIFFUSED_UP:
