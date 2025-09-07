@@ -81,8 +81,8 @@ var upgrades_with_advancement: Array[int] = [	UPGRADE_LIST.AREA_SIZE_1, UPGRADE_
 												UPGRADE_LIST.BIG_FRUIT_1, UPGRADE_LIST.BIG_FRUIT_2]
 
 
-var FRUIT_THRESHOLDS: Array [int] = [6,6,6,6, 7,7,7,7, 8,8,8,8]
-const ROUND_TIME_SEC: int = 63
+var FRUIT_THRESHOLDS: Array [int] = [8,8,8,8, 9,9,9,9, 10,10,10,10]
+const ROUND_TIME_SEC: int = 73
 const COLLISION_IFRAMES: int = 4
 
 var node_being_dragged: Node = null

@@ -552,7 +552,7 @@ func destroy_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.RUBBER_BAND:
 			component = current_map.find_child("RubberBandComponent",false,false)
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE:
-			component = current_map.find_child("SwissKniveComponent",false,false)
+			component = find_child("SwissKniveComponent",false,false)
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			component = current_map.snake_tail.find_child("PlantSnakeComponent",false,false)
 		GameConsts.UPGRADE_LIST.SHINY_GHOST:

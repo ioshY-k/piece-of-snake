@@ -5,7 +5,7 @@ var map:Map
 var snake_tail:SnakeTail
 var already_cut: bool = false
 
-var cuttable_area = 3
+var cuttable_area = 4
 
 func _ready() -> void:
 	map = get_parent()
@@ -20,7 +20,7 @@ func _set_swiss_knive(state:bool):
 	if swiss_knive:
 		cuttable_area = 6
 	else:
-		cuttable_area = 3
+		cuttable_area = 4
 
 func _cuttable_tail_hit(colliding_element):
 	var body_parts:Array[SnakeBody] = map.snake_path_bodyparts

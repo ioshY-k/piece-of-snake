@@ -34,7 +34,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 4 times.",
 	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 6 times.",
 	str(GameConsts.UPGRADE_LIST.PIGGY_BANK) : "When destroying this Item,\n[color=#4fabf9]lower the Fruit threshold[/color] of the next round by 5",
-	str(GameConsts.UPGRADE_LIST.SWISS_KNIVE) : "[color=#4fabf9]Body Modifications[/color] become [color=#4fabf9]twice as effective[/color]",
+	str(GameConsts.UPGRADE_LIST.SWISS_KNIVE) : "Body Modifications become [color=#4fabf9]more effective[/color].\n\n[color=#4fabf9]Changes will be marked in blue in their description once bought[/color]",
 	str(GameConsts.UPGRADE_LIST.SALE) : "Whenever Item Cards are dealt \n[color=#4fabf9]Reduce the cost[/color] of a random Item by 1 for each filled Item category",
 	str(GameConsts.UPGRADE_LIST.DIET_1) : "Collecting fruits in quick succession makes [color=ffc875]growing less likeley[/color].",
 	str(GameConsts.UPGRADE_LIST.DIET_2) : "[color=ffc875]Probability lowers half as fast[/color] when collecting overstock fruit.",
@@ -67,6 +67,16 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, [color=#d75eff]your front half becomes transparent for a set time[/color].\n\nFruits make you grow an additional time.",
 	str(GameConsts.UPGRADE_LIST.ALLERGY) : "Ghost Fruits spawn over time. Eating them does not affect your Points, but makes them spawn faster.\n\n[color=#d75eff]Get points for every uncollected Fruit on the map[/color].\n\nFruits move towards you.",
 	}
+
+var swiss_knive_upgrade_descriptions = {
+	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, [color=#80d984]cut off your tail[/color] when surpassing it.\n\n[color=#4fabf9]Cuttable tailpart is bigger[/color]",
+	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take [color=#80d984]may be overlapped[/color] 1 time.\n\n[color=#4fabf9]NO SWISS KNIVE EFFECT - Suggestions are welcome:)[/color]",
+	str(GameConsts.UPGRADE_LIST.COATING) : "[color=#80d984]Prevent[/color] the [color=#4fabf9]first two times[/color] [color=#80d984]losing fruit[/color] per round.",
+	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "[color=#80d984]Don't get hit[/color] when running into walls [color=#80d984]with Hyper Speed[/color].\n\n[color=#4fabf9]Your body also counts[/color]",
+	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create [color=#80d984]pressure points in their center[/color].\nPassing through them gives [color=#4fabf9]longer invincibility[/color]",
+	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a Ghost Fruit will [color=#80d984]grow attached to your Tail[/color].\n\n[color=#4fabf9]All Ghost Fruits won't cause growth half the time[/color]",
+	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, [color=#80d984]automatically gets collected[/color]\n\n[color=#4fabf9]When Diffusion happens, all Fruits move towards you[/color]",
+}
 
 var mouse_in: bool = false
 var is_dragging: bool = false

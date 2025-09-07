@@ -6,7 +6,6 @@ const DIFFUSED_RIGHT: int = -2
 const DIFFUSED_DOWN: int = -3
 const DIFFUSED_LEFT: int = -4
 
-var temporary_solid_element_scene = load("res://MapElements/SolidElements/temporary_solid_element.tscn")
 var particle_scene = load("res://MapElements/FruitElements/fruit_collect_particles.tscn")
 var is_riping_fruit = false
 var collected = false
