@@ -101,13 +101,15 @@ func _on_round_over():
 		var shelf_tween:Tween = shop.show_shop()
 		await shelf_tween.finished
 		await get_tree().create_timer(0.5).timeout
+		var particle_speed := 0.3
 		shop.fruit_count_particle.emitting = true
 		while level.fruits_overload > 0:
 			level.fruits_overload -= 1
 			shop.fruit_count_particle.position = Vector2(300,85)
-			var tween = create_tween().tween_property(shop.fruit_count_particle, "global_position", shop.currency_number_label.global_position + Vector2(100,150), 0.27)
+			var tween = create_tween().tween_property(shop.fruit_count_particle, "global_position", shop.currency_number_label.global_position + Vector2(100,150), max(0.08,particle_speed))
 			await tween.finished
 			shop.fruits_currency += 1
+			particle_speed -= 0.015
 			var currency_label_tween = create_tween()
 			currency_label_tween.tween_property(shop.currency_number_label, "scale", Vector2(1.6,1.6), 0.06)
 			currency_label_tween.tween_property(shop.currency_number_label, "scale", Vector2(1,1), 0.06)
