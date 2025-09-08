@@ -586,6 +586,8 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.TIME_STOP_2,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_3,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
+		GameConsts.UPGRADE_LIST.WORMHOLE_2,\
+		GameConsts.UPGRADE_LIST.WORMHOLE_3,\
 		GameConsts.UPGRADE_LIST.ITEM_RELOADER,\
 		GameConsts.UPGRADE_LIST.KNOT_SLOWMO,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
@@ -603,6 +605,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
 		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
 		GameConsts.UPGRADE_LIST.MOULTING,\
+		GameConsts.UPGRADE_LIST.POWER_NAP,\
+		GameConsts.UPGRADE_LIST.CATCH,\
+		GameConsts.UPGRADE_LIST.DIFFUSION,\
 		GameConsts.UPGRADE_LIST.ALLERGY:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\

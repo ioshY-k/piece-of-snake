@@ -36,9 +36,6 @@ func _on_item_activated(_uses):
 	var ghost_fruit: FruitElement = current_map.spawn_ghost_fruit([])
 	fleeing_fruits.append(ghost_fruit)
 
-func self_destruct():
-	active_item_slot.remove_lights()
-	queue_free()
 
 var counter: int = 0
 func _flee():
@@ -50,3 +47,7 @@ func _flee():
 func _delete_if_pacmanfruit(fruit: FruitElement, is_real_collection: bool):
 	if fleeing_fruits.find(fruit) != null:
 		fleeing_fruits.erase(fruit)
+
+func self_destruct():
+	active_item_slot.remove_lights()
+	queue_free()

@@ -1029,10 +1029,10 @@ script = ExtResource("23_qix85")
 position = Vector2(-480.172, 533.937)
 
 [node name="Itemslot2" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-480.172, 805.43)
+position = Vector2(-480.172, 766.516)
 
 [node name="Itemslot3" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-480.172, 1076.92)
+position = Vector2(-480.172, 1013.57)
 
 [node name="CurrencySymbol" type="Sprite2D" parent="ItemShelf"]
 position = Vector2(-380.624, 398.19)
@@ -1069,32 +1069,71 @@ position = Vector2(17.5656, 901.357)
 scale = Vector2(0.934879, 0.902998)
 texture = ExtResource("25_kcery")
 
-[node name="UpgradeInfoText" type="RichTextLabel" parent="ItemShelf/UpgradeInfo"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -503.5
-offset_top = -696.0
-offset_right = -87.5
-offset_bottom = -67.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemShelf/UpgradeInfo"]
+offset_left = -213.0
+offset_top = -317.0
+offset_right = 213.0
+offset_bottom = 402.0
+size_flags_stretch_ratio = 1.06
+
+[node name="UpgradeInfoText" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
 theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("9_0a76l")
 theme_override_fonts/bold_font = ExtResource("26_qix85")
 theme_override_font_sizes/bold_italics_font_size = 40
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/mono_font_size = 40
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 37
 theme_override_font_sizes/bold_font_size = 160
 bbcode_enabled = true
 text = "Uncover more area.
 
 This Upgrade is lost upon entering the next act."
+fit_content = true
 autowrap_mode = 2
 vertical_alignment = 1
+
+[node name="SeperationLine" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 60.02)
+layout_mode = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("9_0a76l")
+theme_override_fonts/bold_font = ExtResource("26_qix85")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 160
+bbcode_enabled = true
+text = "_____________________________"
+fit_content = true
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="ToolTipText" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 237.305)
+layout_mode = 2
+theme_override_constants/outline_size = 16
+theme_override_constants/line_separation = -5
+theme_override_fonts/normal_font = ExtResource("9_0a76l")
+theme_override_fonts/bold_font = ExtResource("26_qix85")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 160
+bbcode_enabled = true
+text = "wefwe
+wefwe
+wefwef
+
+ewfef"
+fit_content = true
+autowrap_mode = 2
 
 [node name="MapmodInfo" type="Sprite2D" parent="ItemShelf"]
 position = Vector2(417.566, 399.095)
@@ -1153,19 +1192,19 @@ sprite_frames = SubResource("SpriteFrames_j4x6u")
 texture = ExtResource("36_fkwd4")
 
 [node name="DealAreaSize" type="Button" parent="ItemShelf"]
-offset_left = 325.258
-offset_top = 552.941
-offset_right = 498.258
-offset_bottom = 620.941
+offset_left = -353.475
+offset_top = 1212.67
+offset_right = -180.475
+offset_bottom = 1280.67
 theme_override_font_sizes/font_size = 21
 text = "Deal
 Area Space Card"
 
 [node name="DealNewCards" type="Button" parent="ItemShelf"]
-offset_left = 325.258
-offset_top = 736.652
-offset_right = 498.258
-offset_bottom = 804.652
+offset_left = -578.814
+offset_top = 1212.67
+offset_right = -405.814
+offset_bottom = 1280.67
 theme_override_font_sizes/font_size = 21
 text = "Deal
 3 new Cards"

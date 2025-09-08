@@ -31,7 +31,10 @@ func change_item_description(upgrade_card: UpgradeCard):
 			return
 		if upgrade_info_tween != null and upgrade_info_tween.is_running():
 			upgrade_info_tween.stop()
-		upgrade_info.get_node("UpgradeInfoText").text = upgrade_card.upgrade_description
+		upgrade_info.get_node("VBoxContainer/UpgradeInfoText").text = upgrade_card.upgrade_description
+		upgrade_info.get_node("VBoxContainer/ToolTipText").text = ""
+		for keyword_description in upgrade_card.keyword_descriptions:
+			upgrade_info.get_node("VBoxContainer/ToolTipText").text += keyword_description
 		upgrade_info.show()
 		upgrade_info.scale = Vector2(0.1,0.1)
 		upgrade_info.global_position = upgrade_card.global_position

@@ -25,7 +25,7 @@ func _decide_unhittable(_tail_moves):
 			snake_head.hit_signal_muted = true
 			var shield1_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 			shield1_effect_trigger_text.initialize(shield1_effect_trigger_text.EFFECTS.SHIELDED)
-			snake_head.ge_parent().add_child(shield1_effect_trigger_text)
+			snake_head.get_parent().add_child(shield1_effect_trigger_text)
 			await get_tree().process_frame
 			snake_head.hit_signal_muted = false
 		

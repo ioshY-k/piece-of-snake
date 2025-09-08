@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xoe8ljy1s42i"
-path="res://.godot/imported/EffectTriggerNoGrowthSymbol.svg-8a788cb91be23a05850c53299711b8e2.ctex"
+uid="uid://dvp73gwpvai8s"
+path="res://.godot/imported/KeywordHollowSymbol.svg-05e3871616e4c38aeb4c4ef40be03038.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/UI/EffectTriggerNoGrowthSymbol.svg"
-dest_files=["res://.godot/imported/EffectTriggerNoGrowthSymbol.svg-8a788cb91be23a05850c53299711b8e2.ctex"]
+source_file="res://Shop/UI/KeywordHollowSymbol.svg"
+dest_files=["res://.godot/imported/KeywordHollowSymbol.svg-05e3871616e4c38aeb4c4ef40be03038.ctex"]
 
 [params]
 

@@ -23,10 +23,12 @@ func _spread_sales():
 		if is_filled:
 			full_categories += 1
 	
-	var upgrade_cards: Array[UpgradeCard]
-	for upgrade_card in shop.get_node("ItemShelf").get_children():
-		if upgrade_card is UpgradeCard:
-			upgrade_cards.append(upgrade_card)
+	var upgrade_cards: Array[UpgradeCard] = []
+	for i in range(3):
+		if shop.get_node("ItemShelf").get_child(-i) is UpgradeCard:
+			upgrade_cards.append(shop.get_node("ItemShelf").get_child(-i))
+		else:
+			print("either area or bug")
 	
 	for sale in range(full_categories):
 		upgrade_cards.shuffle()
@@ -38,3 +40,6 @@ func _spread_sales():
 				upgrade_card.sale_number.text = str(sale_label)
 				upgrade_card.sale_number.get_parent().show()
 				break
+
+func self_destruct():
+	queue_free()

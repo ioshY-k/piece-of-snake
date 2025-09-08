@@ -109,15 +109,15 @@
      transform="translate(-4.6423731,18.916972)">
     <path
        id="path8"
-       style="fill:#90cafc;fill-opacity:1;stroke:#000000;stroke-width:13.2;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.997998"
+       style="fill:#5fedd1;fill-opacity:1;stroke:#000000;stroke-width:13.2;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.997998"
        d="M 150.94375,65.311058 C 149.0208,102.80503 116.20848,131.20402 77.655401,128.74195 39.102325,126.27994 9.4077578,93.889187 11.330733,56.395229 12.826875,27.223355 36.784517,5.8862231 62.517342,10.614409 c 7.341033,1.348834 18.930851,11.855478 18.930851,11.855478 0,0 12.934547,-8.955556 22.458527,-9.518167 29.3072,-1.73129 48.60451,21.796412 47.03703,52.359338 z"
        sodipodi:nodetypes="sssscss" />
     <g
        id="path9"
-       style="opacity:1;fill:#90cafc;fill-opacity:1;stroke:#000000;stroke-width:0.859204;stroke-dasharray:none;stroke-opacity:0.997998"
+       style="opacity:1;fill:#5fedd1;fill-opacity:1;stroke:#000000;stroke-width:0.859204;stroke-dasharray:none;stroke-opacity:0.997998"
        transform="matrix(6.6717973,0,0,11.564225,-42.792669,-146.41608)">
       <path
-         style="baseline-shift:baseline;display:inline;overflow:visible;fill:#90cafc;fill-opacity:1;stroke:#000000;stroke-width:0.859204;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.997998;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+         style="baseline-shift:baseline;display:inline;overflow:visible;fill:#5fedd1;fill-opacity:1;stroke:#000000;stroke-width:0.859204;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.997998;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
          d="m 16.794207,11.454907 c -0.225446,0 -0.440981,0.07486 -0.498047,0.292969 -0.05733,0.218995 -0.290098,0.777837 0.03089,0.747517 0,0 1.205652,-0.03938 1.428092,1.109905 0.127967,0.661127 0.158623,1.097556 0.158203,1.357422 -4.2e-4,0.259866 -0.01953,0.300781 -0.01953,0.300781 -0.06161,0.218513 0.06631,0.445441 0.285157,0.505859 0.217887,0.06035 1.156889,-0.06729 1.217337,-0.285156 0,0 0.04831,-0.199145 0.04883,-0.521484 5.21e-4,-0.32234 -0.03558,-0.80954 -0.171875,-1.513672 -0.30604,-1.581236 -2.479056,-1.994141 -2.479056,-1.994141 z"
          id="path4"
          sodipodi:nodetypes="scccscccsccs" />

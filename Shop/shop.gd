@@ -66,16 +66,17 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.SNEK_1,
 									GameConsts.UPGRADE_LIST.BIG_FRUIT_1,
 									GameConsts.UPGRADE_LIST.CATCH,
-									GameConsts.UPGRADE_LIST.POWER_NAP]
+									GameConsts.UPGRADE_LIST.POWER_NAP
+									]
 var special_upgrade_card_pool: Array[int] = [
-									GameConsts.UPGRADE_LIST.EDGE_WRAP,
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
 									GameConsts.UPGRADE_LIST.MOULTING,
-									GameConsts.UPGRADE_LIST.ANCHOR,
+									GameConsts.UPGRADE_LIST.EDGE_WRAP,
 									GameConsts.UPGRADE_LIST.DANCE,
 									GameConsts.UPGRADE_LIST.HALF_GONE,
 									GameConsts.UPGRADE_LIST.ALLERGY,
 									GameConsts.UPGRADE_LIST.OVERFED,
+									GameConsts.UPGRADE_LIST.ANCHOR
 											]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
@@ -87,9 +88,14 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
-									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2,
-									GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3,]	
+									GameConsts.UPGRADE_LIST.EDGE_WRAP,
+									GameConsts.UPGRADE_LIST.EDGE_WRAP,
+									GameConsts.UPGRADE_LIST.EDGE_WRAP,
+									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
+									GameConsts.UPGRADE_LIST.SALE,
+									
+									]
+									
 	
 	reroll_cost_label.text = str(reroll_cost_number)
 	
@@ -131,7 +137,7 @@ func _on_got_clicked(upgrade_card: UpgradeCard):
 	
 	var upgrade_id = upgrade_card.upgrade_id
 	var buy_price = upgrade_card.price
-	var replace_price = buy_price - 1
+	var replace_price = max(0,buy_price - 1)
 	
 	if GameConsts.advanced_upgrades.has(upgrade_id):
 		for slot in slots:
@@ -227,6 +233,7 @@ func is_filled(slot):
 func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
 	if bought_not_destroyed:
 		upgrade_card_pool.erase(upgrade_id)
+		special_upgrade_card_pool.erase(upgrade_id)
 		if GameConsts.upgrades_with_advancement.has(upgrade_id):
 			if upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_1:
 				default_upgrade_card = GameConsts.UPGRADE_LIST.AREA_SIZE_2

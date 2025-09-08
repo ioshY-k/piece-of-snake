@@ -18,14 +18,14 @@ offset_bottom = 80.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.565248, 0.793591, 0.991283, 1)
+theme_override_colors/default_color = Color(0.6512, 0.658827, 0.88, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/shadow_offset_y = 0
 theme_override_fonts/normal_font = ExtResource("1_4nta7")
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
-text = "BONUS [img=30]res://Shop/UI/EffectTriggerFruitSymbol.svg[/img]"
+text = "HOLLOW [img=30]res://Shop/UI/EffectTriggerFruitSymbol.svg[/img]"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

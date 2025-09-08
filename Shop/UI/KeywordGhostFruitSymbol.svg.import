@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjwaf7hl8ejhv"
-path="res://.godot/imported/EffectTriggerFruitSymbol.svg-be1129edb659641753e77360f4afca1d.ctex"
+uid="uid://cg0khhowx4pno"
+path="res://.godot/imported/KeywordGhostFruitSymbol.svg-61010d80de8eb6ae5d8458e6d9a57887.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/UI/EffectTriggerFruitSymbol.svg"
-dest_files=["res://.godot/imported/EffectTriggerFruitSymbol.svg-be1129edb659641753e77360f4afca1d.ctex"]
+source_file="res://Shop/UI/KeywordGhostFruitSymbol.svg"
+dest_files=["res://.godot/imported/KeywordGhostFruitSymbol.svg-61010d80de8eb6ae5d8458e6d9a57887.ctex"]
 
 [params]
 

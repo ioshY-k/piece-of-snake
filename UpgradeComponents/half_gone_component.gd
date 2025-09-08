@@ -3,6 +3,7 @@ extends Node
 var map:Map
 var is_half_gone: bool = false
 @onready var half_gone_timer: Timer = $HalfGoneTimer
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
 
 func _ready() -> void:
 	map = get_parent()
@@ -14,6 +15,9 @@ func _additional_grow(fruit, real_collection):
 	is_half_gone = true
 	half_gone_timer.start()
 	map.snake_tail.tiles_to_grow += 1
+	var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+	effect_trigger_text.initialize(effect_trigger_text.EFFECTS.DENSE)
+	get_parent().get_parent().current_map.add_child(effect_trigger_text)
 
 func _make_transparent():
 	if not map.snake_path_bodyparts[-1].is_overlap_bodypart and is_half_gone:

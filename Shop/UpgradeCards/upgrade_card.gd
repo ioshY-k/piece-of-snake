@@ -1,81 +1,100 @@
 class_name UpgradeCard extends Control
 
+const GHOST_FRUIT_KEYWORD: String = "[color=#b9c1eb]Ghost Fruit[/color] [img=40]res://Shop/UI/KeywordGhostFruitSymbol.svg[/img]"
+const TASTY_KEYWORD: String = "[color=#5fedd1]Tasty[/color] [img=40]res://Shop/UI/KeywordTastySymbol.svg[/img]"
+const ADVANCEMENT_KEYWORD: String = "[color=#fff87d]Advancement[/color][img=40]res://Shop/UI/KeywordAdvancementSymbol.svg[/img]"
+const HOLLOW_KEYWORD: String = "[color=#eb72d8]Hollow[/color] [img=40]res://Shop/UI/KeywordHollowSymbol.svg[/img]"
+const DENSE_KEYWORD: String = "[color=#ab3076]Dense[/color] [img=40]res://Shop/UI/KeywordDenseSymbol.svg[/img]"
+const PHASING_KEYWORD: String = "[color=#d1ff94]Phasing[/color] [img=40]res://Shop/UI/KeywordPhasingSymbol.svg[/img]"
+const SHIELDED_KEYWORD: String = "[color=#e0b798]Shielded[/color] [img=40]res://Shop/UI/EffectTriggerShieldedSymbol.svg[/img]"
+
 var upgrade_descriptions = {
-	str(GameConsts.UPGRADE_LIST.AREA_SIZE_1) : "Uncover [color=9e9e9e]more area.[/color]\n\nThis Upgrade is lost upon reaching the next act.",
-	str(GameConsts.UPGRADE_LIST.AREA_SIZE_2) : "Uncover [color=9e9e9e]even more area.[/color]\n\nThis Upgrade is lost upon reaching the next act.",
-	str(GameConsts.UPGRADE_LIST.AREA_SIZE_3) : "Uncover the [color=9e9e9e]maximum amount of area.[/color]\n\nThis Upgrade is lost upon reaching the next act.",
-	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1) : "[color=ffc875]Attract fruit[/color] in front of you.",
-	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2) : "Attract fruit in a [color=ffc875]radius around you[/color].",
-	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3) : "Attract fruit in a [color=ffc875]larger radius[/color].",
-	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_1) : "Gain a [color=ffc875]larger Hyper Speed Meter[/color].",
-	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_2) : "The Hyper Speed Meter [color=ffc875]refills faster[/color].",
-	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_3) : "You can use Hyperspeed [color=ffc875]before it completely filled up[/color].",
-	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1) : "A [color=ffc875]Ghost Fruit[/color] will appear for every 3 collected fruits.",
-	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2) : "The longer a Ghost Fruit is [color=ffc875]left uncollected[/color], the more Points it is worth.",
-	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3) : "A [color=ffc875]Ghost Fruit[/color] will appear for every 2 collected fruits.",
-	str(GameConsts.UPGRADE_LIST.EDGE_WRAP) : "When exiting the screen, [color=#d75eff]enter on the opposite side[/color].",
-	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 2 times.",
-	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 4 times.",
-	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3) : "All fruits [color=#ff9191]change their position[/color].\n\nUsable up to 6 times.",
-	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_1) : "Place a [color=#ff9191]permanent Crossroad[/color] on the Map.\n\nBodyparts may [color=#ff9191]overlap[/color] on it 1 time.\n\nUsable up to 1 time.",
-	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_2) : "Place a [color=#ff9191]permanent 3x3 Crossroad[/color] on the Map.\n\nBodyparts may [color=#ff9191]overlap[/color] on it 1 time.\n\nUsable up to 1 time.",
-	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "Place a [color=#ff9191]permanent 3x3 Crossroad[/color] on the Map.\n\nBodyparts may [color=#ff9191]overlap[/color] on it 1 time.\n\nUsable up to 2 times.",
-	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, [color=#80d984]cut off your tail[/color] when surpassing it",
-	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take [color=#80d984]may be overlapped[/color] 1 time",
-	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "The [color=#4fabf9]timer stops[/color] whenever you surpass your body",
-	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit threshold, [color=#4fabf9]all Active Items get refilled[/color]",
-	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "Within the first 25 seconds, [color=#d75eff]5 Ghost Fruits will spawn[/color]. If exactly 5 Ghost Fruits are on the map, eating causes 1 less growth.\n\n[color=#d75eff]You can't buy area upgrades[/color].",
-	str(GameConsts.UPGRADE_LIST.MOULTING) : "Remove every Body Modification.\n\nBuying an Item doesn't lock you out of Rerolls.\n\n[color=#d75eff]Set the Reroll cost to 0[/color]\n[color=#d75eff]Reroll cost starts at 0[/color]",
-	str(GameConsts.UPGRADE_LIST.ANCHOR) : "[color=#d75eff]No longer auto move forward[/color] and become invincible while standing still.\n\n[color=#d75eff]Loose double the fruits[/color] when hitting an obstacle",
-	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "[color=#ff9191]Stop moving[/color] for as long as the button is held down.\n\nBecome invincible while standing still.\n\nUsable up to 3 times.",
-	str(GameConsts.UPGRADE_LIST.TIME_STOP_2) : "Holding any direction while holding the button down [color=#ff9191]Reverses your movement[/color] up to 7 steps\n\nUsable up to 3 times.",
-	str(GameConsts.UPGRADE_LIST.TIME_STOP_3) : "Holding any direction while holding the button down [color=#ff9191]Reverses your movement[/color] an unlimited amount\n\nUsable up to 3 times.",
-	str(GameConsts.UPGRADE_LIST.WORMHOLE_1) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 2 times.",
-	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 4 times.",
-	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "[color=#ff9191]Create a Portal[/color] in front of you and [color=#ff9191]choose its destination tile[/color].\n\nThe Portal disappears after it is used.\n\nUsable up to 6 times.",
-	str(GameConsts.UPGRADE_LIST.PIGGY_BANK) : "When destroying this Item,\n[color=#4fabf9]lower the Fruit threshold[/color] of the next round by 5",
-	str(GameConsts.UPGRADE_LIST.SWISS_KNIVE) : "Body Modifications become [color=#4fabf9]more effective[/color].\n\n[color=#4fabf9]Changes will be marked in blue in their description once bought[/color]",
-	str(GameConsts.UPGRADE_LIST.SALE) : "Whenever Item Cards are dealt \n[color=#4fabf9]Reduce the cost[/color] of a random Item by 1 for each filled Item category",
-	str(GameConsts.UPGRADE_LIST.DIET_1) : "Collecting fruits in quick succession makes [color=ffc875]growing less likeley[/color].",
-	str(GameConsts.UPGRADE_LIST.DIET_2) : "[color=ffc875]Probability lowers half as fast[/color] when collecting overstock fruit.",
-	str(GameConsts.UPGRADE_LIST.DIET_3) : "The probability [color=ffc875]lowers slower[/color] and still lowers half as fast when collecting overstock fruit.",
-	str(GameConsts.UPGRADE_LIST.COATING) : "[color=#80d984]Prevent[/color] the first time [color=#80d984]losing fruit[/color] per round",
-	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "[color=#80d984]Don't get hit[/color] when running into walls [color=#80d984]with Hyper Speed[/color].\nYour body doesn't count.",
-	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create [color=#80d984]pressure points in their center[/color].\nPassing through them gives [color=#80d984]short invincibility[/color].",
-	str(GameConsts.UPGRADE_LIST.FUEL_1) : "[color=ffc875]Collecting a fruit while in Hyperspeed[/color] has a 3 in 4 chance to grant an additional point and fill the gauge, as long as your Hyperspeed gauge is more than half empty.",
-	str(GameConsts.UPGRADE_LIST.FUEL_2) : "[color=ffc875]Collecting a fruit while in Hyperspeed[/color] has a 3 in 4 chance to grant an additional point, no growth and fill the gauge, as long as your Hyperspeed gauge is more than half empty.",
-	str(GameConsts.UPGRADE_LIST.FUEL_3) : "[color=ffc875]Collecting a fruit while in Hyperspeed[/color] always grants an additional point, no growth, and fill the gauge, as long as your Hyperspeed gauge is more than half empty.",
-	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you[/color].",
-	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you for longer[/color].",
-	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : "Using Active Items and Teleporters cause fruits to [color=ffc875]move toward you even longer[/color].",
-	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_1) : "Spawning fruits have a 30% chance [color=ffc875]to grow[/color]. Grown fruits won't move, except moving towards you",
-	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_2) : "Spawning fruits have a 60% chance [color=ffc875]to grow[/color]. Grown fruits won't move, except moving towards you",
-	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_3) : "Spawning fruits have a 60% chance [color=ffc875]to grow even more[/color]. Grown fruits won't move, except moving towards you",
-	str(GameConsts.UPGRADE_LIST.PACMAN_1) : "[color=#ff9191]Spawn a Ghost Fruit[/color] that moves away from you.\n\nUsable up to 3 times.",
-	str(GameConsts.UPGRADE_LIST.PACMAN_2) : "[color=#ff9191]Spawn a Ghost Fruit[/color] that moves away from you.\n\nUsable up to 5 times.",
-	str(GameConsts.UPGRADE_LIST.PACMAN_3) : "[color=#ff9191]Spawn a Ghost Fruit[/color] that moves away from you.\n\nUsable up to 7 times.",
-	str(GameConsts.UPGRADE_LIST.SNEK_1) : "Stand still [color=#ff9191]as your body length shrinks[/color] as long as the button is held down.\n\nAfter a short while grow back to normal size.\n\nUsable up to 2 time2.",
-	str(GameConsts.UPGRADE_LIST.SNEK_2) : "Stand still [color=#ff9191]as your body length shrinks at high speed[/color] as long as the button is held down.\n\nAfter a short while grow back to normal size.\n\nUsable up to 2 time.",
-	str(GameConsts.UPGRADE_LIST.SNEK_3) : "Stand still [color=#ff9191]as your body length shrinks at high speed[/color] as long as the button is held down.\n\nAfter a short while grow back to normal size.\n\nUsable up to 3 times.",
-	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a Ghost Fruit will [color=#80d984]grow attached to your Tail[/color]",
-	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, [color=#80d984]automatically gets collected[/color]",
-	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "Half of the time Ghost Fruits give \n[color=#4fabf9]an additional point[/color]",
-	str(GameConsts.UPGRADE_LIST.POWER_NAP) : "While Standing still, the[color=#4fabf9]hyperspeed meter recovers twice as fast[/color]",
-	str(GameConsts.UPGRADE_LIST.CATCH) : "Collecting Fruits [color=#4fabf9]while they are moving[/color] grants a 1 in 2 chance for them to give an additional point",
-	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever the snake moves, [color=#d75eff]all fruits move in the opposite direction[/color].\n\nThis movement overrides any other fruit movement.",
-	str(GameConsts.UPGRADE_LIST.OVERFED) : "Fill every empty Itemslot with dead mice, which can't be replaced. [color=#d75eff]Buying Area Size also destroys a dead mouse for a random Item[/color].",
-	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, [color=#d75eff]your front half becomes transparent for a set time[/color].\n\nFruits make you grow an additional time.",
-	str(GameConsts.UPGRADE_LIST.ALLERGY) : "Ghost Fruits spawn over time. Eating them does not affect your Points, but makes them spawn faster.\n\n[color=#d75eff]Get points for every uncollected Fruit on the map[/color].\n\nFruits move towards you.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_1) : "Uncover more area for your map.\n\nThis card is lost upon reaching the next map.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_2) : ADVANCEMENT_KEYWORD+". Uncover even more area for your map.\n\nThis card is lost upon reaching the next map.",
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_3) : ADVANCEMENT_KEYWORD+". Uncover the maximum amount of area.\n\nThis Upgrade is lost upon reaching the next map.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1) : "Attract fruit in front of you.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2) : ADVANCEMENT_KEYWORD+". Attract fruit in a radius around you.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3) : ADVANCEMENT_KEYWORD+". Attract fruit in a larger radius.",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_1) : "Gain a larger Sprint Meter.",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_2) : ADVANCEMENT_KEYWORD+". The Sprint Meter refills faster.",
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_3) : ADVANCEMENT_KEYWORD+". The Sprint Meter is always usable, even before it filled up.",
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1) : "Every 3 collected Fruits a " + GHOST_FRUIT_KEYWORD + " will appear.",
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2) : ADVANCEMENT_KEYWORD+". The longer a " + GHOST_FRUIT_KEYWORD + " is left uncollected, the more " + TASTY_KEYWORD + " it becomes.",
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3) : ADVANCEMENT_KEYWORD+". A " + GHOST_FRUIT_KEYWORD + " will appear for every 2 collected fruits.",
+	str(GameConsts.UPGRADE_LIST.EDGE_WRAP) : "When exiting the screen, enter on the opposite side.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1) : "All Fruits change their position.\n\nUsable up to 2 times.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : ADVANCEMENT_KEYWORD+". All fruits change their position.\n\nUsable up to 4 times.",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3) : ADVANCEMENT_KEYWORD+". All fruits change their position.\n\nUsable up to 6 times.",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_1) : "Place a persisting Crossroad below your Head.\n\nBodyparts on top of it are "+PHASING_KEYWORD+".\n\nUsable up to 1 time.",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_2) : ADVANCEMENT_KEYWORD+". Place a persisting 3x3 Crossroad below your Head.\n\nBodyparts on top of it are "+PHASING_KEYWORD+".\n\nUsable up to 1 time.",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : ADVANCEMENT_KEYWORD+". Place a persisting 3x3 Crossroad below your Head.\n\nBodyparts on top of it are "+PHASING_KEYWORD+".\n\nUsable up to 2 times.",
+	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round you can cut off your tail by surpassing it",
+	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take are "+PHASING_KEYWORD+".",
+	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "The timer stops whenever you surpass your body",
+	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit requirement, all active Items get refilled",
+	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "Within the first 25 seconds, 5 "+ GHOST_FRUIT_KEYWORD +" will spawn. If exactly 5 "+ GHOST_FRUIT_KEYWORD +" all Fruits become "+ HOLLOW_KEYWORD +".\n\nYou can't be dealt map space cards.",
+	str(GameConsts.UPGRADE_LIST.MOULTING) : "Remove every Body Modification.\n\nBuying a card doesn't lock you out Rerolls.\n\nSet the Reroll cost to 0\nReroll cost starts at 0",
+	str(GameConsts.UPGRADE_LIST.ANCHOR) : "No longer auto move forward and become invincible while standing still.\n\nLose 2 Points when hitting an obstacle",
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "Stop moving for as long as the button is held down.\n\nBecome invincible while standing still.\n\nUsable up to 3 times.",
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_2) : ADVANCEMENT_KEYWORD+". Holding any direction while stopping rewinds your steps up to 7 steps\n\nUsable up to 3 times.",
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_3) : ADVANCEMENT_KEYWORD+". Holding any direction while stopping rewinds your steps an unlimited amount\n\nUsable up to 3 times.",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_1) : "Create a Teleporter in front of you and choose its destination tile.\n\nThe Teleporter disappears after it is used.\n\nUsable up to 2 times.",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : ADVANCEMENT_KEYWORD+". Create a Teleporter in front of you and choose its destination tile.\n\nThe Teleporter disappears after it is used.\n\nUsable up to 4 times.",
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : ADVANCEMENT_KEYWORD+". Create a Teleporter in front of you and choose its destination tile.\n\nThe Teleporter disappears after it is used.\n\nUsable up to 6 times.",
+	str(GameConsts.UPGRADE_LIST.PIGGY_BANK) : "When destroying this Item, lower the Fruit requirement for the next round by 5",
+	str(GameConsts.UPGRADE_LIST.SWISS_KNIVE) : "Body Modifications become more effective.\n\nChanges will be marked in blue in their description once bought",
+	str(GameConsts.UPGRADE_LIST.SALE) : "Whenever cards are dealt \nReduce the cost of a random card by 1 for each filled card category",
+	str(GameConsts.UPGRADE_LIST.DIET_1) : "Fruits are likeley to be "+HOLLOW_KEYWORD+", when collected in quick succession.",
+	str(GameConsts.UPGRADE_LIST.DIET_2) : ADVANCEMENT_KEYWORD+". Probability for "+HOLLOW_KEYWORD+" lowers half as fast when collecting Fruits beyond the requirement.",
+	str(GameConsts.UPGRADE_LIST.DIET_3) : ADVANCEMENT_KEYWORD+". Probabilities for "+HOLLOW_KEYWORD+" lower slower.",
+	str(GameConsts.UPGRADE_LIST.COATING) : "Become "+SHIELDED_KEYWORD+" for your first hit.",
+	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "Become "+SHIELDED_KEYWORD+" while sprinting.\n\nDoes not work when running into your own body.",
+	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create pressure points in their center.\nPassing through them gives short invincibility.",
+	str(GameConsts.UPGRADE_LIST.FUEL_1) : "Collecting Fruits while sprinting completely fill the Sprint Meter, as long as your Sprint Meter is more than half empty.\n\nFruits collected this way have a 3 in 4 chance to be "+TASTY_KEYWORD+".",
+	str(GameConsts.UPGRADE_LIST.FUEL_2) : ADVANCEMENT_KEYWORD+". Fruits collected this way also have a 3 in 4 chance to be "+HOLLOW_KEYWORD+".",
+	str(GameConsts.UPGRADE_LIST.FUEL_3) : ADVANCEMENT_KEYWORD+". The chances for the Fruit becoming "+TASTY_KEYWORD+" and "+HOLLOW_KEYWORD+" are 100%",
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1) : "Using Active Items and Teleporters cause fruits to move toward you.",
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2) : ADVANCEMENT_KEYWORD+". Using Active Items and Teleporters cause fruits to move toward you for longer.",
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : ADVANCEMENT_KEYWORD+". Using Active Items and Teleporters cause fruits to move toward you even longer.",
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_1) : "Spawning fruits have a 30% chance to grow. Grown fruits won't move, except moving towards you",
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_2) : ADVANCEMENT_KEYWORD+". Spawning fruits have a 60% chance to grow. Grown fruits won't move, except moving towards you",
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_3) : ADVANCEMENT_KEYWORD+". Spawning fruits have a 60% chance to grow even more. Grown fruits won't move, except moving towards you",
+	str(GameConsts.UPGRADE_LIST.PACMAN_1) : "Spawn a "+GHOST_FRUIT_KEYWORD+" that moves away from you.\n\nUsable up to 3 times.",
+	str(GameConsts.UPGRADE_LIST.PACMAN_2) : ADVANCEMENT_KEYWORD+". Spawn a "+GHOST_FRUIT_KEYWORD+" that moves away from you.\n\nUsable up to 5 times.",
+	str(GameConsts.UPGRADE_LIST.PACMAN_3) : ADVANCEMENT_KEYWORD+". Spawn a "+GHOST_FRUIT_KEYWORD+" that moves away from you.\n\nUsable up to 7 times.",
+	str(GameConsts.UPGRADE_LIST.SNEK_1) : "Stand still as your body length shrinks as long as the button is held down.\n\nAfter a short while grow back to normal size.\n\nUsable up to 2 times.",
+	str(GameConsts.UPGRADE_LIST.SNEK_2) : ADVANCEMENT_KEYWORD+". Shrinking happens at sprint speed\n\nUsable up to 2 time.",
+	str(GameConsts.UPGRADE_LIST.SNEK_3) : ADVANCEMENT_KEYWORD+". Shrinking happens at sprint speed\n\nUsable up to 3 times.",
+	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail",
+	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, automatically gets collected",
+	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "Half of the time "+GHOST_FRUIT_KEYWORD+" are "+ TASTY_KEYWORD +".",
+	str(GameConsts.UPGRADE_LIST.POWER_NAP) : "While Standing still, your Sprint Meter refills twice as fast",
+	str(GameConsts.UPGRADE_LIST.CATCH) : "Moving Fruits have a 1 in 2 chance to be " + TASTY_KEYWORD + ".",
+	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever you move, all Fruits move in the opposite direction.\n\nThis movement overrides any other Fruit movement.",
+	str(GameConsts.UPGRADE_LIST.OVERFED) : "Fill every empty Card slot with dead mice, which can't be replaced. Buying map space cards destroys a dead mouse for a random Item.",
+	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, your front half becomes "+PHASING_KEYWORD+" for a set time.\n\nAll Fruits are "+DENSE_KEYWORD+".",
+	str(GameConsts.UPGRADE_LIST.ALLERGY) : GHOST_FRUIT_KEYWORD+ " spawn over time. Eating them does not affect your Points, but makes them spawn faster.\n\nGet points for every uncollected Fruit on the map.\n\nFruits move towards you.",
 	}
 
 var swiss_knive_upgrade_descriptions = {
-	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, [color=#80d984]cut off your tail[/color] when surpassing it.\n\n[color=#4fabf9]Cuttable tailpart is bigger[/color]",
-	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take [color=#80d984]may be overlapped[/color] 1 time.\n\n[color=#4fabf9]NO SWISS KNIVE EFFECT - Suggestions are welcome:)[/color]",
-	str(GameConsts.UPGRADE_LIST.COATING) : "[color=#80d984]Prevent[/color] the [color=#4fabf9]first two times[/color] [color=#80d984]losing fruit[/color] per round.",
-	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "[color=#80d984]Don't get hit[/color] when running into walls [color=#80d984]with Hyper Speed[/color].\n\n[color=#4fabf9]Your body also counts[/color]",
-	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create [color=#80d984]pressure points in their center[/color].\nPassing through them gives [color=#4fabf9]longer invincibility[/color]",
-	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a Ghost Fruit will [color=#80d984]grow attached to your Tail[/color].\n\n[color=#4fabf9]All Ghost Fruits won't cause growth half the time[/color]",
-	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, [color=#80d984]automatically gets collected[/color]\n\n[color=#4fabf9]When Diffusion happens, all Fruits move towards you[/color]",
+	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, cut off your tail when surpassing it.\n\n[color=#4fabf9]Cuttable tailpart is bigger[/color]",
+	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take are "+PHASING_KEYWORD+".\n\n[color=#4fabf9]NO SWISS KNIVE EFFECT - Suggestions are welcome:)[/color]",
+	str(GameConsts.UPGRADE_LIST.COATING) : "Become "+SHIELDED_KEYWORD+" for your first [color=#4fabf9]and second[/color] hit.",
+	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "Become "+SHIELDED_KEYWORD+" while sprinting.\n\n[color=#4fabf9]Does also work when running into your own body.[/color]",
+	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create pressure points in their center.\nPassing through them gives [color=#4fabf9]longer invincibility[/color]",
+	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail\n\n[color=#4fabf9]All "+GHOST_FRUIT_KEYWORD+" are "+HOLLOW_KEYWORD+".[/color]",
+	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, automatically gets collected\n\n[color=#4fabf9]When Diffusion happens, all Fruits move towards you[/color]",
+}
+
+var tooltip_descriptions = {
+	str(GameConsts.KEYWORDS.ADVAMCEMENT): ADVANCEMENT_KEYWORD + "\nKeep the effects of the card you are replacing.\n\n",
+	str(GameConsts.KEYWORDS.TASTY): TASTY_KEYWORD + "\nTasty fruits give an additional point when collected.\n\n",
+	str(GameConsts.KEYWORDS.DENSE): DENSE_KEYWORD + "\nDense fruits make you grow an additional time when collected.\n\n",
+	str(GameConsts.KEYWORDS.HOLLOW): HOLLOW_KEYWORD + "\nHollow fruits make you grow one less when collected.\n\n",
+	str(GameConsts.KEYWORDS.SHIELDED): SHIELDED_KEYWORD + "\nDon't lose points when running into an obstacle.\n\n",
+	str(GameConsts.KEYWORDS.GHOST_FRUIT): GHOST_FRUIT_KEYWORD + "\nA type of Fruit that does not cause another fruit to spawn.\n\n",
+	str(GameConsts.KEYWORDS.PHASING): PHASING_KEYWORD + "\nPhasing Bodyparts are allowed to be overlapped once.\n\n"
+	
 }
 
 var mouse_in: bool = false
@@ -91,6 +110,7 @@ var is_dragging: bool = false
 @onready var card_buy_audio: AudioStreamPlayer = $CardBuyAudio
 
 var upgrade_description: String
+var keyword_descriptions: Array[String]
 var upgrade_type: int
 var is_advanced: bool
 var has_advancements: bool
@@ -122,6 +142,69 @@ func instantiate_upgrade_card(id: int):
 	upgrade_id = id
 	card_sprite.frame = id
 	upgrade_description = upgrade_descriptions[str(id)]
+	if id == GameConsts.UPGRADE_LIST.AREA_SIZE_2 or\
+	id == GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3 or\
+	id == GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3 or\
+	id == GameConsts.UPGRADE_LIST.HYPER_SPEED_2 or\
+	id == GameConsts.UPGRADE_LIST.HYPER_SPEED_3 or\
+	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2 or\
+	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3 or\
+	id == GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2 or\
+	id == GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3 or\
+	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_2 or\
+	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_3 or\
+	id == GameConsts.UPGRADE_LIST.TIME_STOP_2 or\
+	id == GameConsts.UPGRADE_LIST.TIME_STOP_3 or\
+	id == GameConsts.UPGRADE_LIST.WORMHOLE_2 or\
+	id == GameConsts.UPGRADE_LIST.WORMHOLE_3 or\
+	id == GameConsts.UPGRADE_LIST.DIET_2 or\
+	id == GameConsts.UPGRADE_LIST.DIET_3 or\
+	id == GameConsts.UPGRADE_LIST.FUEL_2 or\
+	id == GameConsts.UPGRADE_LIST.FUEL_3 or\
+	id == GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2 or\
+	id == GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3 or\
+	id == GameConsts.UPGRADE_LIST.PACMAN_2 or\
+	id == GameConsts.UPGRADE_LIST.PACMAN_3 or\
+	id == GameConsts.UPGRADE_LIST.SNEK_2 or\
+	id == GameConsts.UPGRADE_LIST.SNEK_3 or\
+	id == GameConsts.UPGRADE_LIST.BIG_FRUIT_2 or\
+	id == GameConsts.UPGRADE_LIST.BIG_FRUIT_3:
+		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.ADVAMCEMENT)])
+	if id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1 or\
+	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2 or\
+	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3 or\
+	id == GameConsts.UPGRADE_LIST.PACMAN_1 or\
+	id == GameConsts.UPGRADE_LIST.PACMAN_2 or\
+	id == GameConsts.UPGRADE_LIST.PACMAN_3 or\
+	id == GameConsts.UPGRADE_LIST.PLANT_SNAKE or\
+	id == GameConsts.UPGRADE_LIST.IMMUTABLE or\
+	id == GameConsts.UPGRADE_LIST.SHINY_GHOST:
+		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.GHOST_FRUIT)])
+	if id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2 or\
+	id == GameConsts.UPGRADE_LIST.CATCH or\
+	id == GameConsts.UPGRADE_LIST.FUEL_1 or\
+	id == GameConsts.UPGRADE_LIST.FUEL_3 or\
+	id == GameConsts.UPGRADE_LIST.ALLERGY or\
+	id == GameConsts.UPGRADE_LIST.SHINY_GHOST:
+		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.TASTY)])
+	if id == GameConsts.UPGRADE_LIST.CROSS_ROAD_1 or\
+	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_2 or\
+	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_3 or\
+	id == GameConsts.UPGRADE_LIST.HALF_GONE or\
+	id == GameConsts.UPGRADE_LIST.CORNER_PHASING:
+		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.PHASING)])
+	if id == GameConsts.UPGRADE_LIST.IMMUTABLE or\
+	id == GameConsts.UPGRADE_LIST.FUEL_2 or\
+	id == GameConsts.UPGRADE_LIST.FUEL_3 or\
+	id == GameConsts.UPGRADE_LIST.DIET_1 or\
+	id == GameConsts.UPGRADE_LIST.DIET_2 or\
+	id == GameConsts.UPGRADE_LIST.DIET_3:
+		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.HOLLOW)])
+	if id == GameConsts.UPGRADE_LIST.HALF_GONE:
+		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.DENSE)])
+	if id == GameConsts.UPGRADE_LIST.STEEL_HELMET or\
+	id == GameConsts.UPGRADE_LIST.COATING:
+		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.SHIELDED)])
 	is_advanced = GameConsts.advanced_upgrades.has(upgrade_id)
 	has_advancements = GameConsts.upgrades_with_advancement.has(upgrade_id)
 	upgrade_type = GameConsts.get_upgrade_type(id)

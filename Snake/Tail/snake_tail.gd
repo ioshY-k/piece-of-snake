@@ -29,7 +29,7 @@ func _on_next_tile_reached():
 		current_direction = map.pop_snake_directions()
 		next_tile = TileHelper.get_next_tile(current_tile, current_direction)
 	#otherwise stand still and grow
-	elif snake_head.moves:
+	elif snake_head.moves and tiles_to_grow > 0:
 		tiles_to_grow -= 1
 		SignalBus.tail_grows.emit()
 

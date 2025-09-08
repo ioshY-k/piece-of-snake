@@ -71,7 +71,7 @@ func _spawn_ghost_fruit_upto_5():
 	
 func _prevent_growth_on_5_ghostfruits(_fruit, _real_collection):
 	#if there are 5 ghost fruits on the map
-	if map.current_fruits.filter(func(f): return f.is_in_group("Ghost Fruit")).size() == ghost_fruit_counter_max:
+	if map.current_fruits.filter(func(f): return f.is_in_group("Ghost Fruit")).size() == ghost_fruit_counter_max and map.snake_tail.tiles_to_grow > 0:
 		map.snake_tail.tiles_to_grow -= 1
 		var growth_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH)

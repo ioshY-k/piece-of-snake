@@ -9,7 +9,10 @@ func _ready() -> void:
 	place_teleporters()
 		
 func place_teleporters():
+	#so that area size first removes the surrounding tiles
+	await get_tree().process_frame
 	var map: Map = get_parent()
+	
 	var map_data_array
 	match map.zoom_state:
 		0:
