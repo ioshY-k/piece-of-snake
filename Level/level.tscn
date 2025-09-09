@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cydw70e7incnh" path="res://Snake/Sfx/EatFruitAudio.wav" id="10_vx8ih"]
 
 [node name="Level" type="Node2D"]
-z_index = 5
+z_index = 40
 z_as_relative = false
 script = ExtResource("1_vx8ih")
 

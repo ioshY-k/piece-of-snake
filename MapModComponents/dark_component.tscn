@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2abc23wwfb1i"]
+
+[ext_resource type="Script" uid="uid://63s8vkw5ibdl" path="res://MapModComponents/dark_component.gd" id="1_a035x"]
+
+[node name="DarkComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_a035x")

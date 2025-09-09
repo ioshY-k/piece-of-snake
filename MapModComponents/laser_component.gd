@@ -17,7 +17,7 @@ func spawn_laser():
 		current_laser.position = TileHelper.tile_to_position(Vector2i(map.inbounds_grid_size.x/2, (randi()%(map.inbounds_grid_size.y-2))+1)) 
 	else:
 		current_laser.rotation_degrees = 90
-		current_laser.position = TileHelper.tile_to_position(Vector2i((randi()%(map.inbounds_grid_size.x-2))+1, map.grid_size.y/2)) 
+		current_laser.position = TileHelper.tile_to_position(Vector2i((randi()%(map.inbounds_grid_size.x-2))+1, map.inbounds_grid_size.y/2)) 
 
 func self_destruct():
 	queue_free()

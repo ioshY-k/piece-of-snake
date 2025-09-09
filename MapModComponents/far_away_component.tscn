@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxvt0elgmskjh"]
+
+[ext_resource type="Script" uid="uid://c5ohix2jysv8l" path="res://MapModComponents/far_away_component.gd" id="1_s8l1q"]
+
+[node name="FarAwayComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_s8l1q")

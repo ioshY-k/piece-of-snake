@@ -40,6 +40,8 @@ var tetri_fruit_component_scene = load("res://MapModComponents/tetri_fruit_compo
 var moving_fruit_component_scene = load("res://MapModComponents/moving_fruit_component.tscn")
 var anti_magnet_component_scene = load("res://MapModComponents/anti_magnet_component.tscn")
 var ghost_invasion_component_scene = load("res://MapModComponents/ghost_invasion_component.tscn")
+var far_away_component_scene = load("res://MapModComponents/far_away_component.tscn")
+var dark_component_scene = load("res://MapModComponents/dark_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -242,6 +244,7 @@ func spawn_fruit(forbidden_tiles: Array):
 	place_fruit(forbidden_tiles, fruit)
 	SignalBus.fruit_spawned.emit(fruit)
 
+#tetrifruit count as temporary obstacles, as well as close spaces around snake, when far away component is active
 var temporary_obstacles:Array = []
 #place a new fruit in a place with no solid objects, including the snake
 #additional excluded tiles can be handed by forbidden_tiles
@@ -397,6 +400,12 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.GHOST_INVASION:
 			var ghost_invasion_component = ghost_invasion_component_scene.instantiate()
 			add_child(ghost_invasion_component)
+		GameConsts.MAP_MODS.FAR_AWAY:
+			var far_away_component = far_away_component_scene.instantiate()
+			add_child(far_away_component)
+		GameConsts.MAP_MODS.DARK:
+			var dark_component = dark_component_scene.instantiate()
+			add_child(dark_component)
 
 func _on_round_over():
 	cleanup_ghost_fruits()

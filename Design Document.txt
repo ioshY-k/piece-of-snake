@@ -1,11 +1,13 @@
 Z index:
 	Map: 0
-	Level: 5
 	BodyPart: 10
 	SankeTail: 15
 	TailPLant:16
 	SnakeHead: 20
+	Darkness: 23
+	Fruit: 25
 	FruitParticles: 25
+	Level: 40
 	MapmodInfoPanel: 200
 
 Z index Shop Canvas Layer:

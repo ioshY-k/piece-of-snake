@@ -22,6 +22,8 @@ animations = [{
 }]
 
 [node name="FruitElementArea" type="Area2D" groups=["Fruit"]]
+z_index = 25
+z_as_relative = false
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("2_2j4xi")
