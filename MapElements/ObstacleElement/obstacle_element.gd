@@ -1,20 +1,32 @@
-class_name ObstacleElement extends Sprite2D
+class_name ObstacleElement extends AnimatedSprite2D
 
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP,DISAPPEAR,APPEAR}
 
 var tween: Tween
 
+@export var loops: bool
+@export var signal_id: int
 @export var path: Array[int]
 
-func _on_tween_finished(_loop):
+signal walk_path
+
+func _on_tween_step_finished(_loop):
 	tween.pause()
 	await SignalBus.next_tile_reached
-	tween.play()
-
+	if tween != null:
+		tween.play()
 
 func _ready() -> void:
+	#if it is a looping animation, start the endless loop, else only walk the path on signal emission
+	walk_path.connect(_walk_path)
+	if loops:
+		_walk_path()
+
+func _walk_path():
 	await SignalBus.next_tile_reached
-	tween = self.create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT).set_loops()
+	tween = self.create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if loops:
+		tween.set_loops()
 	for index in len(path):
 		var next_pos = position
 		var index_stepper = index
@@ -33,7 +45,12 @@ func _ready() -> void:
 			tween.tween_callback(_set_particles.bind(true))
 			tween.set_parallel(false)
 		
-	tween.step_finished.connect(_on_tween_finished.bind())
+	tween.step_finished.connect(_on_tween_step_finished.bind())
+	tween.finished.connect(_kill)
+
+func _kill():
+	tween.kill()
+	tween = null
 
 func _set_particles(state: bool):
 	for child in get_children():

@@ -10,7 +10,8 @@ func _ready() -> void:
 	map.snake_tail.base_snake_speed /= 1.2
 	map.snake_tail.current_snake_speed /= 1.2
 	for obstacle in map.obstacle_elements.get_children(false):
-		obstacle.tween.set_speed_scale(1.2)
+		if obstacle.tween != null:
+			obstacle.tween.set_speed_scale(1.2)
 
 func self_destruct():
 	map.snake_head.base_snake_speed *= 1.2
@@ -18,5 +19,6 @@ func self_destruct():
 	map.snake_tail.base_snake_speed *= 1.2
 	map.snake_tail.current_snake_speed *= 1.2
 	for obstacle in map.obstacle_elements.get_children(false):
-		obstacle.tween.set_speed_scale(1)
+		if obstacle.tween != null:
+			obstacle.tween.set_speed_scale(1)
 	queue_free()

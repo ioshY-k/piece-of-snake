@@ -8,7 +8,7 @@ var maps_act1 = [
 	GameConsts.MAP_LIST.RESTAURANT
 	]
 var maps_act2 = [
-	#GameConsts.MAP_LIST.OFFICE,
+	GameConsts.MAP_LIST.OFFICE,
 	GameConsts.MAP_LIST.CAVE]
 var maps_act3 = [GameConsts.MAP_LIST.DISCO,GameConsts.MAP_LIST.BEACH, GameConsts.MAP_LIST.TOMB]
 var maporder = []
@@ -57,12 +57,12 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.WOODS,
+		maporder = [GameConsts.MAP_LIST.OFFICE,
 					GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.DARK,
-						GameConsts.MAP_MODS.CAFFEINATED,
-						GameConsts.MAP_MODS.CAFFEINATED,
+		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.CAFFEINATED,

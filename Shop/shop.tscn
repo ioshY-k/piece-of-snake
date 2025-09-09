@@ -1014,7 +1014,7 @@ text = "Your Upgrades"
 [node name="Divider" type="Sprite2D" parent="."]
 z_index = 4
 z_as_relative = false
-position = Vector2(620, 535)
+position = Vector2(610, 530)
 texture = ExtResource("24_7hl21")
 
 [node name="ItemShelf" type="Sprite2D" parent="."]

@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://2prhasopicbn"]
+[gd_scene load_steps=4 format=3 uid="uid://2prhasopicbn"]
 
 [ext_resource type="Texture2D" uid="uid://codp8w4vxnfx4" path="res://MapElements/ObstacleElement/Obstacle.svg" id="1_uq2r3"]
 [ext_resource type="Script" uid="uid://wdhaxjf7gg2h" path="res://MapElements/ObstacleElement/obstacle_element.gd" id="2_4s714"]
 
-[node name="ObstacleElement" type="Sprite2D"]
-texture = ExtResource("1_uq2r3")
+[sub_resource type="SpriteFrames" id="SpriteFrames_quthm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uq2r3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ObstacleElement" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_quthm")
 script = ExtResource("2_4s714")
 path = Array[int]([4])

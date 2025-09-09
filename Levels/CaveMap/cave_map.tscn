@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hbdvemiqt5xd"]
+[gd_scene load_steps=8 format=3 uid="uid://hbdvemiqt5xd"]
 
 [ext_resource type="Texture2D" uid="uid://weag2pxvsgq4" path="res://Levels/CaveMap/CaveMap.svg" id="1_50oai"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_mdymt"]
@@ -6,6 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://2prhasopicbn" path="res://MapElements/ObstacleElement/obstacle_element.tscn" id="4_s8r7k"]
 [ext_resource type="Texture2D" uid="uid://fyjc4k3sr1mq" path="res://Levels/CaveMap/CaveMapBoulder.svg" id="5_mfk4o"]
 [ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="6_mfk4o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfk4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mfk4o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -617,22 +628,27 @@ position = Vector2(0, 1280)
 
 [node name="ObstacleElement" parent="ObstacleElements" instance=ExtResource("4_s8r7k")]
 position = Vector2(960, 320)
-texture = ExtResource("5_mfk4o")
+sprite_frames = SubResource("SpriteFrames_mfk4o")
 offset = Vector2(40, 40)
+loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4])
 
 [node name="ObstacleElement2" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
 position = Vector2(960, 400)
+loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
 [node name="ObstacleElement3" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
 position = Vector2(1040, 400)
+loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
 [node name="ObstacleElement4" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
 position = Vector2(1040, 480)
+loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
 [node name="ObstacleElement5" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
 position = Vector2(960, 480)
+loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])

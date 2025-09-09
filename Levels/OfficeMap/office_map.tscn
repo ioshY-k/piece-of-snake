@@ -1,14 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5mlenp041rga"]
+[gd_scene load_steps=14 format=3 uid="uid://b5mlenp041rga"]
 
 [ext_resource type="Texture2D" uid="uid://ds5363e62qki2" path="res://Levels/OfficeMap/OfficeMap.svg" id="1_ta381"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_jw1gu"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="2_sfsn6"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_jw1gu"]
 [ext_resource type="PackedScene" uid="uid://2prhasopicbn" path="res://MapElements/ObstacleElement/obstacle_element.tscn" id="5_ffyae"]
-[ext_resource type="Script" uid="uid://cw17l4fwdrmct" path="res://Levels/OfficeMap/door_duration_setter.gd" id="5_v0ial"]
+[ext_resource type="Script" uid="uid://b74bootbdnfao" path="res://Levels/OfficeMap/office_obstacle_element_manager.gd" id="5_v0ial"]
 [ext_resource type="Texture2D" uid="uid://bxh1e3n0oiku5" path="res://Levels/OfficeMap/OfficeMapDoor.svg" id="6_qiay7"]
 [ext_resource type="PackedScene" uid="uid://bx41eoxlwhwu6" path="res://MapElements/ObstacleElement/wall_obstacle_hitbox_element.tscn" id="7_ffyae"]
+[ext_resource type="Texture2D" uid="uid://bbxebxn04plfk" path="res://Levels/OfficeMap/OfficeMapDoorPreview3.svg" id="8_har54"]
 [ext_resource type="Texture2D" uid="uid://b53ksgmrlln7o" path="res://Levels/OfficeMap/OfficeMapWalls.svg" id="8_qiay7"]
+[ext_resource type="Texture2D" uid="uid://cjfxat7wh1e0x" path="res://Levels/OfficeMap/OfficeMapDoorPreview2.svg" id="9_pmm2k"]
+[ext_resource type="Texture2D" uid="uid://drsl83l07f33u" path="res://Levels/OfficeMap/OfficeMapDoorPreview1.svg" id="10_gg168"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0ial"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qiay7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_har54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pmm2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gg168")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qiay7")
+}],
+"loop": false,
+"name": &"DoorClosePreviewAnim",
+"speed": 2.5
+}]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -842,162 +868,171 @@ position = Vector2(1440, 80)
 
 [node name="ObstacleElements" type="Node2D" parent="."]
 script = ExtResource("5_v0ial")
-duration = 4
 
 [node name="ObstacleElement" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
 position = Vector2(240, 560)
 rotation = -1.57079
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([0, 4, 4, 2, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40)
+path = Array[int]([4, 4, 4, 0, 4, 4, 4, 4, 4, 2])
 
 [node name="ObstacleElement4" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(240, 480)
-path = Array[int]([4, 4, 2, 4, 4, 0])
+position = Vector2(240, 560)
+path = Array[int]([4, 4, 0, 4, 4, 4, 4, 4, 2, 4])
 
 [node name="ObstacleElement3" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
 position = Vector2(160, 320)
 rotation = -4.71238
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([2, 4, 4, 0, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+path = Array[int]([4, 4, 4, 2, 4, 4, 4, 4, 4, 0])
 
 [node name="ObstacleElement2" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(240, 400)
-path = Array[int]([4, 4, 0, 4, 4, 2])
+position = Vector2(240, 320)
+path = Array[int]([4, 4, 2, 4, 4, 4, 4, 4, 0, 4])
 
 [node name="ObstacleElement5" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
 position = Vector2(1040, 560)
 rotation = -1.57079
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([0, 4, 4, 2, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 1
+path = Array[int]([4, 4, 4, 0, 4, 4, 4, 4, 4, 2])
 
 [node name="ObstacleElement6" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(1040, 480)
-path = Array[int]([4, 4, 2, 4, 4, 0])
+position = Vector2(1040, 560)
+signal_id = 1
+path = Array[int]([4, 4, 0, 4, 4, 4, 4, 4, 2, 4])
 
 [node name="ObstacleElement7" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
 position = Vector2(960, 320)
 rotation = -4.71238
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([2, 4, 4, 0, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 1
+path = Array[int]([4, 4, 4, 2, 4, 4, 4, 4, 4, 0])
 
 [node name="ObstacleElement8" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(1040, 400)
-path = Array[int]([4, 4, 0, 4, 4, 2])
+position = Vector2(1040, 320)
+signal_id = 1
+path = Array[int]([4, 4, 2, 4, 4, 4, 4, 4, 0, 4])
+
+[node name="ObstacleElement9" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
+position = Vector2(1200, 400)
+rotation = -1.57079
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 2
+path = Array[int]([4, 4, 4, 0, 4, 4, 4, 4, 4, 2])
+
+[node name="ObstacleElement10" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
+position = Vector2(1200, 400)
+signal_id = 2
+path = Array[int]([4, 4, 0, 4, 4, 4, 4, 4, 2, 4])
+
+[node name="ObstacleElement11" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
+position = Vector2(1120, 160)
+rotation = -4.71238
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 2
+path = Array[int]([4, 4, 4, 2, 4, 4, 4, 4, 4, 0])
+
+[node name="ObstacleElement12" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
+position = Vector2(1200, 160)
+signal_id = 2
+path = Array[int]([4, 4, 2, 4, 4, 4, 4, 4, 0, 4])
 
 [node name="ObstacleElement13" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(720, 1040)
+position = Vector2(720, 1120)
 rotation = -1.57079
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([2, 4, 4, 0, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 3
+path = Array[int]([4, 4, 4, 0, 4, 4, 4, 4, 4, 2])
 
 [node name="ObstacleElement14" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
 position = Vector2(720, 1120)
-path = Array[int]([4, 4, 0, 4, 4, 2])
+signal_id = 3
+path = Array[int]([4, 4, 0, 4, 4, 4, 4, 4, 2, 4])
 
 [node name="ObstacleElement15" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(640, 960)
+position = Vector2(640, 880)
 rotation = -4.71238
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([0, 4, 4, 2, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 3
+path = Array[int]([4, 4, 4, 2, 4, 4, 4, 4, 4, 0])
 
 [node name="ObstacleElement16" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
 position = Vector2(720, 880)
-path = Array[int]([4, 4, 2, 4, 4, 0])
+signal_id = 3
+path = Array[int]([4, 4, 2, 4, 4, 4, 4, 4, 0, 4])
 
 [node name="ObstacleElement17" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(720, 1040)
+position = Vector2(1200, 1040)
 rotation = -1.57079
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([2, 4, 4, 0, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 4
+path = Array[int]([4, 4, 4, 0, 4, 4, 4, 4, 4, 2])
 
 [node name="ObstacleElement18" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(720, 1120)
-path = Array[int]([4, 4, 0, 4, 4, 2])
+position = Vector2(1200, 1040)
+signal_id = 4
+path = Array[int]([4, 4, 0, 4, 4, 4, 4, 4, 2, 4])
 
 [node name="ObstacleElement19" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(640, 960)
+position = Vector2(1120, 800)
 rotation = -4.71238
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([0, 4, 4, 2, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 4
+path = Array[int]([4, 4, 4, 2, 4, 4, 4, 4, 4, 0])
 
 [node name="ObstacleElement20" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(720, 880)
-path = Array[int]([4, 4, 2, 4, 4, 0])
-
-[node name="ObstacleElement25" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(1200, 960)
-rotation = -1.57079
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([2, 4, 4, 0, 4, 4])
-
-[node name="ObstacleElement26" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(1200, 1040)
-path = Array[int]([4, 4, 0, 4, 4, 2])
-
-[node name="ObstacleElement27" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(1120, 880)
-rotation = -4.71238
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([0, 4, 4, 2, 4, 4])
-
-[node name="ObstacleElement28" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
 position = Vector2(1200, 800)
-path = Array[int]([4, 4, 2, 4, 4, 0])
-
-[node name="ObstacleElement29" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(1200, 320)
-rotation = -1.57079
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([2, 4, 4, 0, 4, 4])
-
-[node name="ObstacleElement30" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(1200, 400)
-path = Array[int]([4, 4, 0, 4, 4, 2])
-
-[node name="ObstacleElement31" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
-position = Vector2(1120, 240)
-rotation = -4.71238
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([0, 4, 4, 2, 4, 4])
-
-[node name="ObstacleElement32" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(1200, 160)
-path = Array[int]([4, 4, 2, 4, 4, 0])
+signal_id = 4
+path = Array[int]([4, 4, 2, 4, 4, 4, 4, 4, 0, 4])
 
 [node name="ObstacleElement21" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
 position = Vector2(240, 800)
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([1, 4, 4, 3, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 5
+path = Array[int]([4, 4, 4, 1, 4, 4, 4, 4, 4, 3])
 
 [node name="ObstacleElement22" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(320, 800)
+position = Vector2(240, 800)
 rotation = 1.5708
-path = Array[int]([4, 4, 3, 4, 4, 1])
+signal_id = 5
+path = Array[int]([4, 4, 1, 4, 4, 4, 4, 4, 3, 4])
 
 [node name="ObstacleElement23" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
 position = Vector2(480, 720)
 rotation = -3.14159
-texture = ExtResource("6_qiay7")
-offset = Vector2(0, -40.0565)
-path = Array[int]([3, 4, 4, 1, 4, 4])
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 5
+path = Array[int]([4, 4, 4, 3, 4, 4, 4, 4, 4, 1])
 
 [node name="ObstacleElement24" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
-position = Vector2(400, 800)
+position = Vector2(480, 800)
 rotation = 1.5708
-path = Array[int]([4, 4, 1, 4, 4, 3])
+signal_id = 5
+path = Array[int]([4, 4, 3, 4, 4, 4, 4, 4, 1, 4])
 
 [node name="OfficeWalls" type="Sprite2D" parent="."]
 position = Vector2(720, 640)
