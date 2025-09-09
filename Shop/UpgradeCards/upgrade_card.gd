@@ -21,7 +21,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1) : "Every 3 collected Fruits a " + GHOST_FRUIT_KEYWORD + " will appear.",
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2) : ADVANCEMENT_KEYWORD+". The longer a " + GHOST_FRUIT_KEYWORD + " is left uncollected, the more " + TASTY_KEYWORD + " it becomes.",
 	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3) : ADVANCEMENT_KEYWORD+". A " + GHOST_FRUIT_KEYWORD + " will appear for every 2 collected fruits.",
-	str(GameConsts.UPGRADE_LIST.EDGE_WRAP) : "When exiting the screen, enter on the opposite side.",
+	str(GameConsts.UPGRADE_LIST.EDGE_WRAP) : "When exiting the screen, enter on the opposite side.\n\nYou can't use other Teleporters",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1) : "All Fruits change their position.\n\nUsable up to 2 times.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : ADVANCEMENT_KEYWORD+". All fruits change their position.\n\nUsable up to 4 times.",
 	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3) : ADVANCEMENT_KEYWORD+". All fruits change their position.\n\nUsable up to 6 times.",

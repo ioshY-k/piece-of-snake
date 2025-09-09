@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://chv1vnh0rec6p" path="res://MapModComponents/Dark/darkness_banisher.gd" id="1_hlj32"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hlj32"]
-radius = 120.0
+radius = 160.0
 height = 400.0
 
 [node name="DarknessBanisher" type="Area2D"]

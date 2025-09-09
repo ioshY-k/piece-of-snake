@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=48 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://Shop/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://Shop/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://r0qu0vrb4gvn" path="res://Shop/MapPreviews/RestaurantPreview.png" id="34_e7gtn"]
 [ext_resource type="Texture2D" uid="uid://rx18i741y3kr" path="res://Shop/MapPreviews/TombPreview_Ebene 1.png" id="35_ljcx5"]
 [ext_resource type="Texture2D" uid="uid://dqfsjapxy66a5" path="res://Shop/MapPreviews/Covering.svg" id="36_fkwd4"]
+[ext_resource type="Texture2D" uid="uid://docauo7ft5yqi" path="res://Shop/MapPreviews/TrainPreview.png" id="38_v001g"]
 [ext_resource type="AudioStream" uid="uid://x0jm6gfjswja" path="res://Shop/Sfx/CardDeal.wav" id="40_12c50"]
 [ext_resource type="AudioStream" uid="uid://c1jyabebv6bq2" path="res://UI/ButtonPress.wav" id="41_cug3m"]
 
@@ -71,6 +72,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("35_ljcx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_v001g")
 }],
 "loop": true,
 "name": &"default",
@@ -103,6 +107,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("35_ljcx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_v001g")
 }],
 "loop": true,
 "name": &"default",
@@ -135,6 +142,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("35_ljcx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_v001g")
 }],
 "loop": true,
 "name": &"default",

@@ -62,6 +62,8 @@ func _on_next_tile_reached():
 		var temp_position = position
 		var temp_teleporter = colliding_element
 		
+		print(temp_teleporter.name, " ", temp_teleporter.is_in_group("Edge Wrap Teleporter"))
+		
 		position = TileHelper.tile_to_position(colliding_element.destination_tile)
 		next_tile = TileHelper.get_next_tile(colliding_element.destination_tile, current_direction)
 		colliding_element = check_upcoming_collision(original_direction, current_direction)

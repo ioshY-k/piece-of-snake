@@ -2,11 +2,16 @@ extends Node
 
 var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 var teleporters: Array[Teleporter] = []
+var map:Map
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	map = get_parent()
 	SignalBus.round_started.connect(place_teleporters)
 	place_teleporters()
+	for teleporter in map.get_node("TeleportElements").get_children():
+		if not teleporter.is_in_group("Edge Wrap Teleporter"):
+			teleporter.process_mode = Node.PROCESS_MODE_DISABLED
 		
 func place_teleporters():
 	#so that area size first removes the surrounding tiles
@@ -35,6 +40,7 @@ func place_teleporters():
 	for x in range(upper_left_corner.x+1, lower_right_corner.x):
 		var teleporter: Teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
+		teleporter.add_to_group("Edge Wrap Teleporter")
 		teleporter.rotation_degrees = 180
 		teleporter.position = TileHelper.tile_to_position(Vector2i(x,upper_left_corner.y))
 		teleporter.destination_tile = Vector2i(x,lower_right_corner.y)
@@ -43,6 +49,7 @@ func place_teleporters():
 		teleporters.append(teleporter)
 		teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
+		teleporter.add_to_group("Edge Wrap Teleporter")
 		teleporter.position = TileHelper.tile_to_position(Vector2i(x,lower_right_corner.y))
 		teleporter.destination_tile = Vector2i(x,upper_left_corner.y)
 		if not map.free_map_tiles.has(TileHelper.get_next_tile(teleporter.destination_tile, TileHelper.DIRECTION.DOWN)):
@@ -51,6 +58,7 @@ func place_teleporters():
 	for y in range(upper_left_corner.y+1, lower_right_corner.y):
 		var teleporter: Teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
+		teleporter.add_to_group("Edge Wrap Teleporter")
 		teleporter.rotation_degrees = 90
 		teleporter.position = TileHelper.tile_to_position(Vector2i(upper_left_corner.x,y))
 		teleporter.destination_tile = Vector2i(lower_right_corner.x,y)
@@ -59,13 +67,20 @@ func place_teleporters():
 		teleporters.append(teleporter)
 		teleporter = teleport_element_scene.instantiate()
 		get_parent().add_child(teleporter)
+		teleporter.add_to_group("Edge Wrap Teleporter")
 		teleporter.rotation_degrees = -90
 		teleporter.position = TileHelper.tile_to_position(Vector2i(lower_right_corner.x,y))
 		teleporter.destination_tile = Vector2i(upper_left_corner.x,y)
 		if not map.free_map_tiles.has(TileHelper.get_next_tile(teleporter.destination_tile, TileHelper.DIRECTION.RIGHT)):
 			teleporter.cpu_particles_2d.color = Color(0.93, 0.344, 0.354, 0.322)
 		teleporters.append(teleporter)
+	await get_tree().process_frame
 		
 
 func self_destruct():
+	for teleporter in map.get_node("TeleportElements").get_children():
+		if not teleporter.is_in_group("Edge Wrap Teleporter"):
+			teleporter.process_mode = Node.PROCESS_MODE_INHERIT
+	for teleporter in teleporters:
+		teleporter.queue_free()
 	queue_free()
