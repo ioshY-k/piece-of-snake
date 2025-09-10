@@ -9,6 +9,7 @@ var tween: Tween
 @export var path: Array[int]
 
 signal walk_path
+signal path_walked
 
 func _on_tween_step_finished(_loop):
 	tween.pause()
@@ -44,6 +45,7 @@ func _walk_path():
 			tween.tween_property(self, "scale", Vector2(1.0,1.0), GameConsts.NORMAL_SPEED)
 			tween.tween_callback(_set_particles.bind(true))
 			tween.set_parallel(false)
+
 		
 	tween.step_finished.connect(_on_tween_step_finished.bind())
 	tween.finished.connect(_kill)
@@ -51,8 +53,10 @@ func _walk_path():
 func _kill():
 	tween.kill()
 	tween = null
+	path_walked.emit()
 
 func _set_particles(state: bool):
 	for child in get_children():
 		if child is CPUParticles2D:
+			print(state)
 			child.emitting = state

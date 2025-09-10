@@ -23,6 +23,9 @@ func call_obstacle_movements():
 		for obstacle in obstacles.filter(func(o): return o.signal_id == 5):
 			obstacle.walk_path.emit()
 			if obstacle is AnimatedSprite2D: obstacle.play("DoorClosePreviewAnim")
+		for obstacle in obstacles.filter(func(o): return o.signal_id == 6):
+			obstacle.walk_path.emit()
+			if obstacle is AnimatedSprite2D: obstacle.play("DoorClosePreviewAnim")
 	if tick_counter % 70 == 34:
 		for obstacle in obstacles.filter(func(o): return o.signal_id == 1):
 			obstacle.walk_path.emit()
@@ -45,6 +48,9 @@ func call_obstacle_movements():
 			obstacle.walk_path.emit()
 			if obstacle is AnimatedSprite2D: obstacle.play("DoorClosePreviewAnim")
 		for obstacle in obstacles.filter(func(o): return o.signal_id == 5):
+			obstacle.walk_path.emit()
+			if obstacle is AnimatedSprite2D: obstacle.play("DoorClosePreviewAnim")
+		for obstacle in obstacles.filter(func(o): return o.signal_id == 6):
 			obstacle.walk_path.emit()
 			if obstacle is AnimatedSprite2D: obstacle.play("DoorClosePreviewAnim")
 	if tick_counter % 70 == 65:

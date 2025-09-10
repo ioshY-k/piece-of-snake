@@ -118,6 +118,7 @@ item2={
 2d_physics/layer_10="Iframe Bodypart"
 2d_physics/layer_11="Rubber Element"
 2d_physics/layer_12="Darkness"
+2d_physics/layer_13="Togglable Obstacle"
 
 [rendering]
 

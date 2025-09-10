@@ -32,7 +32,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take are "+PHASING_KEYWORD+".",
 	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "The timer stops whenever you surpass your body",
 	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit requirement, all active Items get refilled",
-	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "Within the first 25 seconds, 5 "+ GHOST_FRUIT_KEYWORD +" will spawn. If exactly 5 "+ GHOST_FRUIT_KEYWORD +" all Fruits become "+ HOLLOW_KEYWORD +".\n\nYou can't be dealt map space cards.",
+	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "Within the first 25 seconds, 5 "+ GHOST_FRUIT_KEYWORD +" will spawn. If exactly 5 "+ GHOST_FRUIT_KEYWORD +" are on the map, all Fruits become "+ HOLLOW_KEYWORD +".\n\nYou can't be dealt map space cards.",
 	str(GameConsts.UPGRADE_LIST.MOULTING) : "Remove every Body Modification.\n\nBuying a card doesn't lock you out Rerolls.\n\nSet the Reroll cost to 0\nReroll cost starts at 0",
 	str(GameConsts.UPGRADE_LIST.ANCHOR) : "No longer auto move forward and become invincible while standing still.\n\nLose 2 Points when hitting an obstacle",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "Stop moving for as long as the button is held down.\n\nBecome invincible while standing still.\n\nUsable up to 3 times.",

@@ -2,6 +2,7 @@ extends Node
 
 var level: LevelManager
 var map:Map
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
 
 func _ready() -> void:
 	level = get_parent().get_parent()
@@ -14,6 +15,9 @@ func _prevent_growth(fruit, _is_real_collection):
 		_spawn_ghost_fruits()
 		if map.snake_tail.tiles_to_grow > 0:
 			map.snake_tail.tiles_to_grow -= 1
+			var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+			effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH)
+			map.add_child(effect_trigger_text)
 
 func _spawn_ghost_fruits():
 	map.spawn_ghost_fruit([])

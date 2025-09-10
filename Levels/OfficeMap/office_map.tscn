@@ -59,12 +59,6 @@ position = Vector2(400, 200)
 [node name="SolidElementArea4" parent="SolidElements" instance=ExtResource("2_sfsn6")]
 position = Vector2(480, 200)
 
-[node name="SolidElementArea5" parent="SolidElements" instance=ExtResource("2_sfsn6")]
-position = Vector2(560, 200)
-
-[node name="SolidElementArea6" parent="SolidElements" instance=ExtResource("2_sfsn6")]
-position = Vector2(640, 200)
-
 [node name="SolidElementArea7" parent="SolidElements" instance=ExtResource("2_sfsn6")]
 position = Vector2(720, 200)
 
@@ -94,18 +88,6 @@ position = Vector2(560, 760)
 
 [node name="SolidElementArea16" parent="SolidElements" instance=ExtResource("2_sfsn6")]
 position = Vector2(640, 760)
-
-[node name="SolidElementArea17" parent="SolidElements" instance=ExtResource("2_sfsn6")]
-position = Vector2(720, 760)
-
-[node name="SolidElementArea18" parent="SolidElements" instance=ExtResource("2_sfsn6")]
-position = Vector2(800, 760)
-
-[node name="SolidElementArea19" parent="SolidElements" instance=ExtResource("2_sfsn6")]
-position = Vector2(880, 760)
-
-[node name="SolidElementArea20" parent="SolidElements" instance=ExtResource("2_sfsn6")]
-position = Vector2(960, 760)
 
 [node name="SolidElementArea21" parent="SolidElements" instance=ExtResource("2_sfsn6")]
 position = Vector2(200, 240)
@@ -1032,6 +1014,35 @@ path = Array[int]([4, 4, 4, 3, 4, 4, 4, 4, 4, 1])
 position = Vector2(480, 800)
 rotation = 1.5708
 signal_id = 5
+path = Array[int]([4, 4, 3, 4, 4, 4, 4, 4, 1, 4])
+
+[node name="ObstacleElement25" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
+position = Vector2(480, 240)
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 6
+path = Array[int]([4, 4, 4, 1, 4, 4, 4, 4, 4, 3])
+
+[node name="ObstacleElement26" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
+position = Vector2(480, 240)
+rotation = 1.5708
+signal_id = 6
+path = Array[int]([4, 4, 1, 4, 4, 4, 4, 4, 3, 4])
+
+[node name="ObstacleElement27" parent="ObstacleElements" instance=ExtResource("5_ffyae")]
+position = Vector2(720, 160)
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_v0ial")
+animation = &"DoorClosePreviewAnim"
+offset = Vector2(40, -40.056)
+signal_id = 6
+path = Array[int]([4, 4, 4, 3, 4, 4, 4, 4, 4, 1])
+
+[node name="ObstacleElement28" parent="ObstacleElements" instance=ExtResource("7_ffyae")]
+position = Vector2(720, 240)
+rotation = 1.5708
+signal_id = 6
 path = Array[int]([4, 4, 3, 4, 4, 4, 4, 4, 1, 4])
 
 [node name="OfficeWalls" type="Sprite2D" parent="."]

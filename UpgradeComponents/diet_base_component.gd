@@ -12,14 +12,17 @@ func _ready() -> void:
 	SignalBus.fruit_collected.connect(_prevent_growth)
 	SignalBus.next_tile_reached.connect(_lower_chance)
 
+func _process(delta: float) -> void:
+	print(no_grow_chance)
+
 func _lower_chance():
 	if no_grow_chance > 0.0:
 		no_grow_chance = max(0.0, no_grow_chance - decrease_step_size)
 	change_tail_appearance(no_grow_chance)
 
-func _prevent_growth(_element, _real_collection):
+func _prevent_growth(_element, real_collection):
 	var check = randf_range(0,1)
-	if check < no_grow_chance and snake_tail.tiles_to_grow > 0:
+	if check < no_grow_chance and snake_tail.tiles_to_grow > 0 and real_collection:
 		snake_tail.tiles_to_grow -= 1
 		var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH)

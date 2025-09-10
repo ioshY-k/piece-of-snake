@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="82.834633"
-   height="85.669342"
-   viewBox="0 0 21.916663 22.666681"
+   width="155.54373"
+   height="160.03854"
+   viewBox="0 0 41.154278 42.343534"
    version="1.1"
    id="svg1"
-   sodipodi:docname="BeachMapWater.svg"
+   sodipodi:docname="TrainHeadlight.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="6.016667"
-     inkscape:cx="64.321327"
-     inkscape:cy="80.858722"
+     inkscape:zoom="3.0083335"
+     inkscape:cx="71.966755"
+     inkscape:cy="27.756231"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -36,8 +36,8 @@
     <inkscape:grid
        id="grid1"
        units="px"
-       originx="-148.16669"
-       originy="-198.46027"
+       originx="-127.50161"
+       originy="-176.58044"
        spacingx="21.166667"
        spacingy="21.166667"
        empcolor="#0099e5"
@@ -109,55 +109,38 @@
      id="layer5"
      inkscape:label="Street"
      style="display:inline"
-     transform="translate(-148.16669,-198.46026)" />
+     transform="translate(-127.50161,-176.58043)" />
   <g
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="Walkway"
      style="display:inline"
-     transform="translate(-148.16669,-198.46026)" />
+     transform="translate(-127.50161,-176.58043)" />
   <g
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="Sand"
-     transform="translate(-148.16669,-198.46026)" />
+     transform="translate(-127.50161,-176.58043)" />
   <g
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="Waterponds"
-     transform="translate(-148.16669,-198.46026)">
-    <rect
-       style="fill:#7676d4;fill-opacity:1;stroke:#2f2f29;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       id="rect1"
-       width="21.166664"
-       height="21.16666"
-       x="148.16669"
-       y="199.21027" />
+     transform="translate(-127.50161,-176.58043)">
     <path
-       style="fill:#ddddff;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 169.33335,199.21026 -1e-5,21.16666 -5.86335,2e-5 c 0,0 1.24643,-1.81566 0.99798,-3.0665 -0.27867,-1.40293 -2.35388,-2.7655 -2.4182,-3.90957 -0.0988,-1.75708 1.77191,-3.15739 1.69941,-4.87758 -0.0591,-1.40109 -1.59935,-2.44454 -1.71358,-3.84221 -0.15356,-1.87898 1.4344,-5.47082 1.4344,-5.47082 z"
-       id="path1"
-       sodipodi:nodetypes="cccssaacc" />
-    <path
-       style="fill:#6363b6;fill-opacity:0;stroke:#dcd1ff;stroke-width:0.87236;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 156.04782,206.94023 c 0,0 2.19185,1.88995 2.2379,3.1873 0.0607,1.71021 -2.58572,2.68993 -2.64479,4.40019 -0.0471,1.36425 1.8625,3.64712 1.8625,3.64712"
-       id="path92-4-2"
-       sodipodi:nodetypes="caac" />
-    <path
-       style="fill:#6363b6;fill-opacity:0;stroke:#dcd1ff;stroke-width:0.87236;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 150.66283,200.43207 c 0,0 2.19185,1.88995 2.2379,3.1873 0.0607,1.71021 -2.58572,2.68993 -2.64479,4.40019 -0.0471,1.36425 1.8625,3.64712 1.8625,3.64712"
-       id="path92-4-2-3"
-       sodipodi:nodetypes="caac" />
+       id="rect4"
+       style="fill:#abad64;fill-opacity:0.476109;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0;paint-order:fill markers stroke"
+       d="m 166.52171,186.16699 c 0.98804,0.41171 1.88046,3.28108 1.93218,7.35562 l 0.0261,2.05792 c -0.82073,4.07808 -1.61799,-1.83969 0.1759,3.62953 v 0 c 0,0 -1.03862,6.76631 -1.93218,7.35562 l -9.78812,6.45542 -27.50179,5.89266 c -1.04664,0.22426 -1.93219,-3.28075 -1.93219,-7.35562 v -6.45542 c 0,-4.07487 0.86179,-7.35562 1.93219,-7.35562 -1.0704,0 -1.93219,-3.28075 -1.93219,-7.35563 v -6.45542 c 0,-4.07487 0.86179,-7.35562 1.93219,-7.35562 l 26.53434,5.18906 z"
+       sodipodi:nodetypes="sssssscssscssscs" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="Stones"
-     transform="translate(-148.16669,-198.46026)" />
+     transform="translate(-127.50161,-176.58043)" />
   <g
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="Fence"
      style="display:inline"
-     transform="translate(-148.16669,-198.46026)" />
+     transform="translate(-127.50161,-176.58043)" />
 </svg>

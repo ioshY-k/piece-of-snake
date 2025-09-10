@@ -9,6 +9,7 @@ var tween: Tween
 @export var path: Array[int]
 
 signal walk_path
+signal path_walked
 
 func _on_tween_step_finished(_loop):
 	tween.pause()
@@ -49,6 +50,8 @@ func _walk_path():
 func _kill():
 	tween.kill()
 	tween = null
+	path_walked.emit()
+	
 	
 func _set_collision(state: bool):
 	await tween.step_finished

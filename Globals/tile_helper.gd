@@ -2,9 +2,14 @@ extends Node
 
 const TILE_SIZE = 80
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP,DISAPPEAR,APPEAR}
+var calls_per_frame: int = 0
+
+func _process(delta: float) -> void:
+	calls_per_frame = 0
 
 #calculates the tile vector to the left/right/top/bottom of a given field
 func get_next_tile(current_tile: Vector2i, direction) -> Vector2i:
+	calls_per_frame += 1
 	match direction:
 		DIRECTION.UP:
 			return Vector2i(current_tile.x, current_tile.y-1)

@@ -67,9 +67,9 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.TRAIN,
 					GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.TRAIN]
-		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
+		mapmodorder = [GameConsts.MAP_MODS.FAR_AWAY,
+						GameConsts.MAP_MODS.FAR_AWAY,
+						GameConsts.MAP_MODS.FAR_AWAY,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.CAFFEINATED,

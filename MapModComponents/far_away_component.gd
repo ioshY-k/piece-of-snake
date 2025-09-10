@@ -37,9 +37,9 @@ func _extra_point(_fruit, is_real_collection):
 		dense_trigger_text.initialize(dense_trigger_text.EFFECTS.DENSE)
 		map.add_child(dense_trigger_text)
 		SignalBus.fruit_collected.emit(null, false)
-		var tast_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		tast_trigger_text.initialize(tast_trigger_text.EFFECTS.BONUS_FRUIT)
-		map.add_child(tast_trigger_text)
+		var tasty_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+		tasty_trigger_text.initialize(tasty_trigger_text.EFFECTS.BONUS_FRUIT)
+		map.add_child(tasty_trigger_text)
 	fruit_counter += 1
 
 func self_destruct():
