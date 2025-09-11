@@ -4,12 +4,19 @@ signal count_down_finished
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var count_down_panel: Node2D = $CountDownPanel
 @onready var mod_info: Label = $CountDownPanel/CountdownPanelFG/ModInfo
+@onready var map_preview: MapPreview = $CountDownPanel/MapPreview
+
 var colors = [Color(0.907, 0.511, 0.662), Color(0.331, 0.682, 0.978), Color(0.127, 0.752, 0.689), Color(0.903, 0.748, 0.233), Color(0.485, 0.479, 0.945)]
 var level:LevelManager
 
 func _ready() -> void:
 	level = get_parent()
 	level.time_meter.stop_timer()
+	
+	map_preview.set_map_covering(level.get_parent().current_act)
+	for i in range(3):
+		map_preview.set_map_preview(i, level.get_parent().maporder[i])
+	map_preview.set_round_indicators(level.get_parent().current_act, level.get_parent().current_round)
 	count_down_panel.visible = false
 	position = Vector2(300,0)
 	var color = colors[randi()%colors.size()]

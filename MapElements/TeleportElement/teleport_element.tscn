@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvyaocdswofuq"]
+[gd_scene load_steps=6 format=3 uid="uid://cvyaocdswofuq"]
 
 [ext_resource type="Script" uid="uid://bileqo436ye10" path="res://MapElements/TeleportElement/teleport_element.gd" id="1_tbl2d"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="2_yfbfk"]
+[ext_resource type="PackedScene" uid="uid://xstmapmgd2ie" path="res://UpgradeComponents/WormHole/teleporter_encasing.tscn" id="3_v8qe8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8bw1"]
 size = Vector2(40, 70)
@@ -18,11 +19,6 @@ script = ExtResource("1_tbl2d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_v8bw1")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(1, 0, 0, 1)
-texture = ExtResource("2_yfbfk")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, -35)
@@ -42,3 +38,5 @@ scale_amount_min = 0.0
 scale_amount_max = 0.8
 scale_amount_curve = SubResource("Curve_yfbfk")
 color = Color(0.93, 0.89652, 0.7626, 0.321569)
+
+[node name="TeleporterEncasing" parent="." instance=ExtResource("3_v8qe8")]

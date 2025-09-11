@@ -25,6 +25,7 @@ var fruit_punishment: int = 1
 var enough_fruits: bool = false
 var allergy_mode: bool = false
 var ghost_invasion: bool = false
+var round_count_down: RoundCountDown
 
 #Upgrade Components
 var fruit_relocator_component_scene = load("res://UpgradeComponents/fruit_relocator_component.tscn")
@@ -118,14 +119,14 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_number_label.add_theme_color_override("font_color", Color(1, 1, 1))
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
-	if GameConsts.test_mode and get_parent().current_round == 0:
+	if GameConsts.test_mode:
 		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
-	var round_count_down: RoundCountDown = round_count_down_scene.instantiate()
+	round_count_down = round_count_down_scene.instantiate()
 	add_child(round_count_down)
 	round_count_down.change_text(Descriptions.mapmod_descriptions[str(mapmod)])
 	await round_count_down.count_down_finished

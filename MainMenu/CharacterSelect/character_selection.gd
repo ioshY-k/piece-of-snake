@@ -22,6 +22,17 @@ var hovering_char_selects: Array[bool] = [	hovering_char_0_select,
 											hovering_char_3_select,
 											hovering_char_4_select]
 
+var char_descriptions:Dictionary = {
+	str(GameConsts.CHAR_LIST.GODOT) : "Placeholder character with no special abilities",
+	str(GameConsts.CHAR_LIST.PYTHON) : "The fruit requirement for every round has 1 less fruit\n\n(recommended for the first run)",
+	str(GameConsts.CHAR_LIST.SALAMANDER) : "Start with a random active Item",
+	str(GameConsts.CHAR_LIST.ELEPHANT) : "Carry over your Currency from one map to the next",
+	str(GameConsts.CHAR_LIST.CHAMELEON) : "Gain an additional multi colored Upgrade slot (not implemented yet)",
+	
+}
+@onready var label: Label = $"../CharacterInfo/Label"
+
+
 const HOVER_SCALE_CHANGE:float = 1.2
 
 var menu_snake_speed: float = 0.06
@@ -72,6 +83,8 @@ func char_hovered(char_number):
 	hovering_char_selects[char_number] = true
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(character_selects[char_number],"scale",Vector2(HOVER_SCALE_CHANGE,HOVER_SCALE_CHANGE),0.3)
+	label.text = char_descriptions[str(char_number)]
+	
 	
 
 func char_unhovered(char_number):
@@ -81,5 +94,5 @@ func char_unhovered(char_number):
 	
 
 func click_animation(char_number):
-	if not character_selects[char_number].snake_anim_plays:
+	if char_number != -1 and not character_selects[char_number].snake_anim_plays:
 			character_selects[char_number].play_snake_anim()

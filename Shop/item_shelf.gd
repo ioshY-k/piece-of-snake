@@ -6,7 +6,7 @@ class_name ItemShelf extends Sprite2D
 
 @onready var upgrade_info: Sprite2D = $UpgradeInfo
 var current_description_id: int
-@onready var map_preview: Sprite2D = $MapPreview
+@onready var map_preview: MapPreview = $MapPreview
 @onready var mapmod_info: Sprite2D = $MapmodInfo
 
 
@@ -57,9 +57,3 @@ func hide_mapmod_description():
 	mapmod_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	mapmod_info_tween.tween_property(mapmod_info, "position", Vector2(417.566,399.095), 0.6)
 	mapmod_info_tween.tween_property(mapmod_info, "scale", Vector2(0.1,0.1), 1)
-
-func set_map_preview(preview_index: int, map: int):
-	map_preview.get_child(preview_index).frame = map
-
-func set_map_covering(preview_index: int):
-	map_preview.get_child(preview_index).get_node("Covering").hide()

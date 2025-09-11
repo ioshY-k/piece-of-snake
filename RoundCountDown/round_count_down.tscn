@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fb2hhu3hvjml"]
+[gd_scene load_steps=13 format=3 uid="uid://fb2hhu3hvjml"]
 
 [ext_resource type="Script" uid="uid://dr2jn8qf7cehb" path="res://RoundCountDown/round_count_down.gd" id="1_rra43"]
 [ext_resource type="Texture2D" uid="uid://comm7jvphnn1i" path="res://RoundCountDown/CountDownPanelBG.svg" id="2_e5j6p"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="5_t8ktn"]
 [ext_resource type="Texture2D" uid="uid://ql6k0e8jmva5" path="res://RoundCountDown/CountDownBarMask.svg" id="6_iqts5"]
 [ext_resource type="Texture2D" uid="uid://dmaqm1j6k78oy" path="res://RoundCountDown/CountDownBar.svg" id="7_8f1uk"]
+[ext_resource type="PackedScene" uid="uid://bs0m1mtsyjoc8" path="res://Shop/MapPreviews/map_preview.tscn" id="9_b8ha1"]
 
 [sub_resource type="Animation" id="Animation_27i3i"]
 length = 0.001
@@ -253,6 +254,10 @@ texture = ExtResource("6_iqts5")
 [node name="CountDownBar" type="Sprite2D" parent="CountDownPanel/CountDownBarMask"]
 position = Vector2(-74, 10)
 texture = ExtResource("7_8f1uk")
+
+[node name="MapPreview" parent="CountDownPanel" instance=ExtResource("9_b8ha1")]
+position = Vector2(0, 331)
+scale = Vector2(0.695, 0.695)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

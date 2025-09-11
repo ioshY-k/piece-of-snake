@@ -9,8 +9,11 @@ func _ready() -> void:
 	map = get_node("/root/MainSceneLoader/RunManager/Level/Map")
 	if one_use:
 		SignalBus.next_tile_reached.connect(_check_if_destroyed)
+	else:
+		$TeleporterEncasing.queue_free()
 
 func _check_if_destroyed():
 	if TileHelper.position_to_tile(map.snake_tail.position) == TileHelper.position_to_tile(position):
 		SignalBus.teleport_finished.emit(self)
+		queue_free()
 	

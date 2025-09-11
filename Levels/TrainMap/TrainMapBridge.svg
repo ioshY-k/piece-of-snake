@@ -9,8 +9,12 @@
    id="svg1"
    sodipodi:docname="TrainMapBridge.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:export-filename="TrainMapBridge.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -24,9 +28,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="0.75208337"
-     inkscape:cx="739.27974"
-     inkscape:cy="600.33238"
+     inkscape:zoom="4.254426"
+     inkscape:cx="855.34453"
+     inkscape:cy="596.20264"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -52,6 +56,26 @@
   </sodipodi:namedview>
   <defs
      id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#1b2457;stop-opacity:0.55000001;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#0a1557;stop-opacity:0;"
+         offset="0.42163801"
+         id="stop4" />
+      <stop
+         style="stop-color:#0a1557;stop-opacity:0;"
+         offset="0.58240646"
+         id="stop1" />
+      <stop
+         style="stop-color:#1b2457;stop-opacity:0.55000001;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
     <inkscape:path-effect
        effect="spiro"
        id="path-effect46"
@@ -193,6 +217,42 @@
        id="path-effect45-45-2"
        is_visible="true"
        lpeversion="1" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="83.774048"
+       y1="184.00245"
+       x2="232.83336"
+       y2="184.00245"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2797861,0,0,1,-43.8742,-1.7749627)" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter17"
+       x="-0.29301676"
+       y="-0.26135606"
+       width="1.5860335"
+       height="1.5227121">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="10.328338"
+         id="feGaussianBlur17" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter17-1"
+       x="-0.29301676"
+       y="-0.26135606"
+       width="1.5860335"
+       height="1.5227121">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="10.328338"
+         id="feGaussianBlur17-7" />
+    </filter>
   </defs>
   <rect
      style="fill:#cac9a5;fill-opacity:1;stroke:#f2eee6;stroke-width:0.400287;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
@@ -1034,4 +1094,23 @@
      cy="201.6275"
      rx="2.8583794"
      ry="4.2655811" />
+  <path
+     id="rect1"
+     style="fill:url(#linearGradient2);stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+     d="m 105.76001,0.27349311 0.15217,63.22650489 -42.283705,0.402739 -0.01888,65.087453 h 42.150415 v 82.74931 l -42.150422,-0.31407 -0.241581,63.74125 42.392003,0.4 v 84.26665 h 105.98 v -84.46665 l 42.34676,1.78966 0.0452,-65.48966 h -42.39201 l -1e-5,-82.67649 H 253.8904 V 63.499996 l -42.3026,2e-6 0.15217,-63.22650489 z"
+     sodipodi:nodetypes="ccccccccccccccccccccc" />
+  <ellipse
+     style="opacity:1;mix-blend-mode:normal;fill:#ffffe2;fill-opacity:0.72508216;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;filter:url(#filter17)"
+     id="path17"
+     cx="158.85001"
+     cy="95.25"
+     rx="42.297939"
+     ry="47.421917" />
+  <ellipse
+     style="mix-blend-mode:normal;fill:#ffffe2;fill-opacity:0.725082;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;filter:url(#filter17-1)"
+     id="path17-1"
+     cx="159.89682"
+     cy="244.61176"
+     rx="42.297939"
+     ry="47.421917" />
 </svg>

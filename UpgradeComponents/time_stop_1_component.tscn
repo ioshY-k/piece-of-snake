@@ -8,3 +8,7 @@ script = ExtResource("1_q2m2l")
 
 [node name="ActiveItemUI" type="Sprite2D" parent="."]
 texture = ExtResource("2_q2m2l")
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=71 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://coepahhdrkhhr" path="res://MainMenu/BackgroundTexture.svg" id="2_3w4mj"]
@@ -31,6 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://ddpiak6p1mtb7" path="res://Snake/Head/ElephantHead.svg" id="29_bmlrk"]
 [ext_resource type="Texture2D" uid="uid://cylor60les28q" path="res://Snake/Body/Sprites/Elephant/ElephantEdge.svg" id="29_c58bg"]
 [ext_resource type="Texture2D" uid="uid://do8vru8la3k2v" path="res://Snake/Tail/ElephantTail.svg" id="30_t31mw"]
+[ext_resource type="Texture2D" uid="uid://4wvixiopwjjg" path="res://Shop/UI/UpgradeInfo.svg" id="32_j3jui"]
+[ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="33_cwel5"]
 
 [sub_resource type="Animation" id="Animation_ajn5b"]
 length = 0.001
@@ -671,10 +673,10 @@ script = ExtResource("1_hy30b")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.77, 0.77, 0.77, 1)
-offset_left = -106.0
-offset_top = -42.0
-offset_right = 2636.0
-offset_bottom = 1690.0
+offset_left = -556.0
+offset_top = -492.0
+offset_right = 2186.0
+offset_bottom = 1240.0
 texture = ExtResource("2_3w4mj")
 stretch_mode = 1
 
@@ -1329,6 +1331,20 @@ position = Vector2(1200, 520)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character4Area"]
 polygon = PackedVector2Array(320, -400, -400, -400, -400, -480, 320, -480)
+
+[node name="CharacterInfo" type="Sprite2D" parent="."]
+position = Vector2(560, 360)
+scale = Vector2(0.620288, 0.620288)
+texture = ExtResource("32_j3jui")
+
+[node name="Label" type="Label" parent="CharacterInfo"]
+offset_left = -202.0
+offset_top = -292.0
+offset_right = 202.0
+offset_bottom = 266.0
+theme_override_fonts/font = ExtResource("33_cwel5")
+theme_override_font_sizes/font_size = 51
+autowrap_mode = 2
 
 [connection signal="pressed" from="NewRun" to="." method="_on_new_run_pressed"]
 [connection signal="mouse_entered" from="CharacterSelection/Character0Area" to="CharacterSelection" method="_on_area_0_mouse_entered"]

@@ -64,12 +64,12 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.TRAIN,
-					GameConsts.MAP_LIST.CAVE,
-					GameConsts.MAP_LIST.TRAIN]
-		mapmodorder = [GameConsts.MAP_MODS.FAR_AWAY,
-						GameConsts.MAP_MODS.FAR_AWAY,
-						GameConsts.MAP_MODS.FAR_AWAY,
+		maporder = [GameConsts.MAP_LIST.RESTAURANT,
+					GameConsts.MAP_LIST.DISCO,
+					GameConsts.MAP_LIST.TOMB]
+		mapmodorder = [GameConsts.MAP_MODS.LASER,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.MOVING_FRUIT,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.CAFFEINATED,
@@ -104,7 +104,7 @@ func _on_round_over():
 	else:
 		level.disable_map()
 		
-		shop.update_map_preview(current_act)
+		shop.update_map_preview(current_act, current_round)
 		var shelf_tween:Tween = shop.show_shop()
 		await shelf_tween.finished
 		await get_tree().create_timer(0.5).timeout
@@ -125,8 +125,8 @@ func _on_round_over():
 			fruit_payout_audio.play()
 		shop.fruit_count_particle.emitting = false
 		await get_tree().create_timer(0.5).timeout
-		
-		shop.generate_items(current_round)
+		if not (current_act == 2 and current_round == 3):
+			shop.generate_items(current_round)
 		
 		await shop.finished_buying
 		

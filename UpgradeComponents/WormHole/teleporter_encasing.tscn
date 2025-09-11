@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://xstmapmgd2ie"]
+
+[ext_resource type="Texture2D" uid="uid://db2bok1jpg01i" path="res://MapElements/ObstacleElement/WarningShape.svg" id="1_hjaqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugqc5"]
+size = Vector2(80, 80)
+
+[node name="TeleporterEncasing" type="Area2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -2.5)
+scale = Vector2(0.733333, 2.88095)
+texture = ExtResource("1_hjaqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ugqc5")

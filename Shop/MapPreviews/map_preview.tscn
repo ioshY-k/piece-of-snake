@@ -1,0 +1,188 @@
+[gd_scene load_steps=22 format=3 uid="uid://bs0m1mtsyjoc8"]
+
+[ext_resource type="Texture2D" uid="uid://b4plst0mdel4p" path="res://Shop/UI/MapPreview.svg" id="1_s2gmj"]
+[ext_resource type="Texture2D" uid="uid://m1vtyl4oq3m2" path="res://Shop/MapPreviews/WoodsPreview.png" id="2_8wgow"]
+[ext_resource type="Script" uid="uid://g2myrugqegl7" path="res://Shop/MapPreviews/map_preview.gd" id="2_foyxi"]
+[ext_resource type="Texture2D" uid="uid://bpwmwtdrgfcrq" path="res://Shop/MapPreviews/StadiumPreview.png" id="3_foyxi"]
+[ext_resource type="Texture2D" uid="uid://c34nbgcv0661t" path="res://Shop/MapPreviews/OfficePreview.png" id="4_ev52b"]
+[ext_resource type="Texture2D" uid="uid://d1hsmnh3wvrk1" path="res://Shop/MapPreviews/CavePreview.png" id="5_xkdc6"]
+[ext_resource type="Texture2D" uid="uid://b4068c28qurgg" path="res://Shop/MapPreviews/DiscoPreview.png" id="6_uvmiw"]
+[ext_resource type="Texture2D" uid="uid://id2dwak6pey3" path="res://Shop/MapPreviews/BeachPreview.png" id="7_g2gh4"]
+[ext_resource type="Texture2D" uid="uid://r0qu0vrb4gvn" path="res://Shop/MapPreviews/RestaurantPreview.png" id="8_c61bu"]
+[ext_resource type="Texture2D" uid="uid://rx18i741y3kr" path="res://Shop/MapPreviews/TombPreview_Ebene 1.png" id="9_ccneb"]
+[ext_resource type="Texture2D" uid="uid://docauo7ft5yqi" path="res://Shop/MapPreviews/TrainPreview.png" id="10_lr1rt"]
+[ext_resource type="Texture2D" uid="uid://dqfsjapxy66a5" path="res://Shop/MapPreviews/Covering.svg" id="11_r24e1"]
+[ext_resource type="Texture2D" uid="uid://dm1iv0q4277oe" path="res://Shop/UI/MapPreviewRoundIndicator0.svg" id="13_g2gh4"]
+[ext_resource type="Texture2D" uid="uid://b67420ygkffgr" path="res://Shop/UI/MapPreviewRoundIndicator1.svg" id="14_c61bu"]
+[ext_resource type="Texture2D" uid="uid://708ndqr42sax" path="res://Shop/UI/MapPreviewRoundIndicator2.svg" id="15_ccneb"]
+[ext_resource type="Texture2D" uid="uid://bbx2g0l4lrnxi" path="res://Shop/UI/MapPreviewRoundIndicator3.svg" id="16_lr1rt"]
+[ext_resource type="Texture2D" uid="uid://cgfq1oo4iaosl" path="res://Shop/UI/MapPreviewRoundIndicator4.svg" id="17_r24e1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irsui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8wgow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_foyxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ev52b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xkdc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uvmiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g2gh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c61bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ccneb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lr1rt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s56ni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_g2gh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c61bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ccneb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lr1rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_r24e1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mw48v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8wgow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_foyxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ev52b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xkdc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uvmiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g2gh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c61bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ccneb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lr1rt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4x6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8wgow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_foyxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ev52b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xkdc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uvmiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g2gh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c61bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ccneb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lr1rt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MapPreview" type="Sprite2D"]
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("1_s2gmj")
+script = ExtResource("2_foyxi")
+
+[node name="Preview1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-499.794, -51.8311)
+sprite_frames = SubResource("SpriteFrames_irsui")
+
+[node name="Covering" type="Sprite2D" parent="Preview1"]
+texture = ExtResource("11_r24e1")
+
+[node name="RoundIndicator" type="AnimatedSprite2D" parent="Preview1"]
+position = Vector2(0, 183.477)
+sprite_frames = SubResource("SpriteFrames_s56ni")
+frame_progress = 0.885486
+
+[node name="Preview2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -51.8311)
+sprite_frames = SubResource("SpriteFrames_mw48v")
+
+[node name="Covering" type="Sprite2D" parent="Preview2"]
+texture = ExtResource("11_r24e1")
+
+[node name="RoundIndicator" type="AnimatedSprite2D" parent="Preview2"]
+position = Vector2(0, 183.477)
+sprite_frames = SubResource("SpriteFrames_s56ni")
+frame_progress = 0.496581
+
+[node name="Preview3" type="AnimatedSprite2D" parent="."]
+position = Vector2(499.794, -51.8311)
+sprite_frames = SubResource("SpriteFrames_j4x6u")
+
+[node name="Covering" type="Sprite2D" parent="Preview3"]
+texture = ExtResource("11_r24e1")
+
+[node name="RoundIndicator" type="AnimatedSprite2D" parent="Preview3"]
+position = Vector2(0, 183.477)
+sprite_frames = SubResource("SpriteFrames_s56ni")
+frame_progress = 0.178039

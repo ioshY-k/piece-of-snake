@@ -1,7 +1,7 @@
 extends Node
 
 
-const SPEED_BOOST_SPEED = 0.15
+const SPEED_BOOST_SPEED = 0.19
 const NORMAL_SPEED = 0.38
 const TILE_SIZE = 80
 

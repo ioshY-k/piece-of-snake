@@ -88,11 +88,10 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.DIET_1,
-									GameConsts.UPGRADE_LIST.DIET_1,
-									GameConsts.UPGRADE_LIST.DIET_1,
-									GameConsts.UPGRADE_LIST.HALF_GONE,
-									GameConsts.UPGRADE_LIST.SALE,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,
+									GameConsts.UPGRADE_LIST.TIME_STOP_2,
+									GameConsts.UPGRADE_LIST.TIME_STOP_3,
+									GameConsts.UPGRADE_LIST.TIME_STOP_1,
 									
 									]
 									
@@ -128,10 +127,11 @@ func initiate_map_preview(maporder: Array):
 		print_debug("not 3 maps or 3 previews")
 		return
 	for index in range(len(maporder)):
-		item_shelf.set_map_preview(index, maporder[index])
+		item_shelf.map_preview.set_map_preview(index, maporder[index])
 
-func update_map_preview(current_act):
-	item_shelf.set_map_covering(current_act)
+func update_map_preview(current_act, current_round):
+	item_shelf.map_preview.set_map_covering(current_act)
+	item_shelf.map_preview.set_round_indicators(current_act, current_round)
 
 func _on_got_clicked(upgrade_card: UpgradeCard):
 	
@@ -325,6 +325,8 @@ func show_shop() -> Tween:
 	if run_manager.current_round == 3:
 		deal_area_size.hide()
 		deal_area_size.disabled = true
+		if run_manager.current_act == 2:
+			$EndScreen.show()
 	else:
 		deal_area_size.show()
 		deal_area_size.disabled = false

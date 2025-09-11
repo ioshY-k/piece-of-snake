@@ -3,9 +3,13 @@ extends Node
 var swiss_knive = false
 var snake_head:SnakeHead
 const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
+const STEEL_HELMET_EFFECT = preload("res://UpgradeComponents/SteelHelmet/steel_helmet_effect.tscn")
+var effect
 
 func _ready() -> void:
 	snake_head = get_parent()
+	effect = STEEL_HELMET_EFFECT.instantiate()
+	snake_head.add_child(effect)
 	SignalBus.stop_moving.connect(_decide_unhittable)
 	SignalBus.swiss_knive_synergy.connect(_set_swiss_knive)
 
@@ -31,4 +35,5 @@ func _decide_unhittable(_tail_moves):
 		
 	
 func self_destruct():
+	effect.queue_free()
 	queue_free()

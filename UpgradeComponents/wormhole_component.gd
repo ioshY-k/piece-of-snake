@@ -4,11 +4,10 @@ signal item_deactivated
 var button_held: bool = false
 
 const TILE_SELECT_CURSOR = preload("res://UpgradeComponents/WormHole/tile_select_cursor.tscn")
-var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
+const teleport_element_scene = preload("res://MapElements/TeleportElement/teleport_element.tscn")
 @onready var active_item_ui: AnimatedSprite2D = $ActiveItemUI
 
 var tile_select_cursor: Sprite2D
-
 var current_teleporters: Array[Teleporter] = []
 var current_map: Map
 
@@ -54,7 +53,6 @@ func _on_item_activated(_uses):
 	
 
 func _on_item_deactivated():
-	
 	var new_teleporter: Teleporter = teleport_element_scene.instantiate()
 	new_teleporter.one_use = true
 	current_map.add_child(new_teleporter)
@@ -71,7 +69,6 @@ func _on_teleport_finished(teleporter: Teleporter):
 	for tele in current_teleporters:
 		if tele == teleporter:
 			current_teleporters.erase(tele)
-			teleporter.queue_free()
 
 func self_destruct():
 	active_item_slot.remove_lights()

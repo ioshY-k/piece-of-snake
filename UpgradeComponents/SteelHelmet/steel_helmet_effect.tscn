@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6sepj13sryt"]
+
+[ext_resource type="Texture2D" uid="uid://kmybkx8hqc8o" path="res://UpgradeComponents/SteelHelmet/SteelHelmetEffect.svg" id="1_6uci8"]
+[ext_resource type="Script" uid="uid://difdm6rvdqaps" path="res://UpgradeComponents/SteelHelmet/steel_helmet_effect.gd" id="2_8fpt1"]
+
+[node name="SteelHelmetEffect" type="Sprite2D"]
+texture = ExtResource("1_6uci8")
+script = ExtResource("2_8fpt1")

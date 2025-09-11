@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1s7hvwpr4ypw"]
+
+[ext_resource type="Script" uid="uid://b7ua2hptjcste" path="res://Shop/intro_screen.gd" id="1_dxbwh"]
+[ext_resource type="Texture2D" uid="uid://cwnjcx6ftuj6u" path="res://Shop/UI/EndScreen.svg" id="2_327ov"]
+[ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="3_7odqc"]
+
+[node name="IntroScreen" type="Node2D"]
+z_index = 100
+z_as_relative = false
+position = Vector2(99, -17)
+script = ExtResource("1_dxbwh")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 245.0
+offset_top = 59.0
+offset_right = 1436.0
+offset_bottom = 1020.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+self_modulate = Color(0.946752, 0.620538, 0.931282, 1)
+position = Vector2(590, 475)
+scale = Vector2(0.965, 1)
+texture = ExtResource("2_327ov")
+
+[node name="Label" type="Label" parent="Panel/Sprite2D"]
+offset_left = -499.269
+offset_top = -448.5
+offset_right = 494.731
+offset_bottom = -259.5
+theme_override_colors/font_color = Color(0.510363, 0.416394, 0.48456, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("3_7odqc")
+theme_override_font_sizes/font_size = 171
+text = "WELCOME!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/Sprite2D"]
+offset_left = -569.736
+offset_top = -271.5
+offset_right = 564.264
+offset_bottom = 293.5
+theme_override_colors/font_color = Color(0.289229, 0.22629, 0.272145, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7odqc")
+theme_override_font_sizes/font_size = 46
+text = "No.3: There are multiple ways to help with development  the game:
+
+1. Report any bugs, glitches or gameplay errors in my discord channel or per mail (of course this also includes every type of constructive personal feedback)
+2. Record your gameplay for me to review it (no shame!)
+3. After every run - successfull or not - save the generated code and post it on my Discord or send it to me per Mail (Data is everything!)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Panel/Sprite2D"]
+offset_left = -174.917
+offset_top = 317.5
+offset_right = 164.083
+offset_bottom = 421.5
+theme_override_fonts/font = ExtResource("3_7odqc")
+theme_override_font_sizes/font_size = 86
+text = "Continue"
+
+[connection signal="pressed" from="Panel/Sprite2D/ContinueButton" to="." method="_on_continue_button_pressed"]
