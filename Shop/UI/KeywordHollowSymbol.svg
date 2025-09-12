@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="72.160263"
-   height="86.80629"
-   viewBox="0 0 19.092402 22.967496"
+   width="42.848801"
+   height="39.527973"
+   viewBox="0 0 11.337078 10.458442"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="4.543042"
-     inkscape:cx="9.3549652"
-     inkscape:cy="41.932256"
+     inkscape:zoom="18.172168"
+     inkscape:cx="21.653993"
+     inkscape:cy="5.9156398"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -34,38 +34,6 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
-    <inkscape:path-effect
-       effect="mirror_symmetry"
-       start_point="31.866303,16.04147"
-       end_point="25.861483,38.576616"
-       center_point="28.863893,27.309043"
-       id="path-effect1"
-       is_visible="true"
-       lpeversion="1.2"
-       lpesatellites=""
-       mode="free"
-       discard_orig_path="false"
-       fuse_paths="true"
-       oposite_fuse="true"
-       split_items="false"
-       split_open="false"
-       link_styles="false" />
-    <inkscape:path-effect
-       effect="mirror_symmetry"
-       start_point="78.834964,153.88734"
-       end_point="81.39749,17.536666"
-       center_point="80.116227,85.712003"
-       id="path-effect6"
-       is_visible="true"
-       lpeversion="1.2"
-       lpesatellites=""
-       mode="free"
-       discard_orig_path="false"
-       fuse_paths="true"
-       oposite_fuse="true"
-       split_items="false"
-       split_open="false"
-       link_styles="false" />
     <inkscape:path-effect
        effect="spiro"
        id="path-effect9"
@@ -133,19 +101,51 @@
        id="path-effect8-3"
        is_visible="true"
        lpeversion="1" />
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="82.096362,153.88734"
+       end_point="81.39749,17.536666"
+       center_point="81.746926,85.712003"
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       mode="free"
+       discard_orig_path="false"
+       fuse_paths="true"
+       oposite_fuse="true"
+       split_items="false"
+       split_open="false"
+       link_styles="false" />
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="31.866303,16.04147"
+       end_point="25.861483,38.576616"
+       center_point="28.863893,27.309043"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       mode="free"
+       discard_orig_path="false"
+       fuse_paths="true"
+       oposite_fuse="true"
+       split_items="false"
+       split_open="false"
+       link_styles="false" />
   </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-76.079873,-46.435111)">
+     transform="translate(-75.755799,-55.932139)">
     <g
        id="g6"
-       transform="matrix(1.0305476,-0.25874248,0.28645618,0.93084546,48.222054,39.868106)"
+       transform="matrix(0.48325797,-0.1010819,0.13432881,0.36364971,63.710297,53.905849)"
        style="fill:#eb73e0;fill-opacity:1;stroke:#000000;stroke-opacity:1">
       <path
          d="m 27.763672,17.148437 c -0.308957,-0.004 -0.62112,0.03862 -0.9375,0.158204 -1.220566,0.07049 -2.133621,1.627263 -1.138672,2.552734 4.728636,1.266234 2.113478,9.029544 0.394531,12.412109 -0.730737,1.250694 -2.242227,1.395712 -3.662109,1.986328 -1.068786,0.439907 -1.332926,2.073065 -0.25,2.66211 1.225058,0.496515 2.485363,0.992102 3.779297,1.330078 1.290544,0.350696 2.629763,0.547657 3.939453,0.726562 1.232446,0.02792 1.815599,-1.520189 1.107422,-2.433593 -0.937727,-1.218836 -2.177949,-2.096447 -2.189453,-3.544922 0.192131,-3.789408 1.7878,-11.826886 6.519531,-10.572266 1.323539,-0.307676 1.304902,-2.110801 0.28125,-2.779297 -0.859702,-1.044635 -2.261415,-0.992665 -3.392578,-1.521484 -0.273664,-0.0984 -0.550428,-0.19074 -0.830078,-0.277344 -0.285665,-0.06403 -0.573031,-0.121057 -0.859375,-0.171875 -0.933239,-0.07812 -1.834849,-0.515446 -2.761719,-0.527344 z"
-         style="fill:#eb73e0;stroke:#000000;stroke-width:1.17172;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1;stroke-opacity:1"
+         style="fill:#eb73e0;fill-opacity:1;stroke:#000000;stroke-width:1.17172;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          id="path1"
          sodipodi:nodetypes="cccccccccccc"
          inkscape:path-effect="#path-effect1"

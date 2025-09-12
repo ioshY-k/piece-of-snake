@@ -1,6 +1,7 @@
 class_name RunManager extends Node
 
 var scene_loader
+@onready var game_over_screen: Node2D = $GameOverScreen
 
 var maps_act1 = [
 	GameConsts.MAP_LIST.STADIUM,
@@ -22,8 +23,6 @@ var maporder = []
 var mapmodorder = []
 var fruit_thresholds = GameConsts.FRUIT_THRESHOLDS
 										
-@onready var retry_button: Button = $RetryButton
-
 var current_round: int = 0
 var current_act: int = 0
 
@@ -64,7 +63,7 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.RESTAURANT,
+		maporder = [GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.DISCO,
 					GameConsts.MAP_LIST.TOMB]
 		mapmodorder = [GameConsts.MAP_MODS.LASER,
@@ -99,10 +98,10 @@ func _on_upgrade_destroyed(upgrade: int):
 	
 	
 func _on_round_over():
+	level.disable_map()
 	if level.fruits_left > 0:
-		scene_loader.change_scene("MAIN_MENU")
+		game_over_screen.show()
 	else:
-		level.disable_map()
 		
 		shop.update_map_preview(current_act, current_round)
 		var shelf_tween:Tween = shop.show_shop()
@@ -141,11 +140,3 @@ func _on_round_over():
 			current_round = 0
 			shop.reset_area_and_currency()
 			level.prepare_new_act(maporder[current_act], fruit_thresholds[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
-
-
-func _on_retry_button_pressed() -> void:
-	for child in get_children():
-		if child.name == "Level":
-			return
-		
-	create_new_run()

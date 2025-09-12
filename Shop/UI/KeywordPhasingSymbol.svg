@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="578.23022"
-   height="583.58301"
-   viewBox="0 0 152.99007 154.40633"
+   width="79.935356"
+   height="77.589546"
+   viewBox="0 0 21.149562 20.5289"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="KeywordPhasableSymbol.svg"
+   sodipodi:docname="KeywordPhasingSymbol.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.80310395"
-     inkscape:cx="516.12248"
-     inkscape:cy="348.02469"
+     inkscape:zoom="1.1357605"
+     inkscape:cx="10.125374"
+     inkscape:cy="-216.15473"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -122,21 +122,21 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-4.6423731,18.916972)">
+     transform="translate(-70.924813,-46.810581)">
     <rect
-       style="fill:#d1ff93;fill-opacity:1;stroke:#000000;stroke-width:13.6484;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.997998;paint-order:fill markers stroke"
+       style="fill:#c1ff8d;fill-opacity:1;stroke:#000000;stroke-width:1.89704;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.997998;paint-order:fill markers stroke"
        id="rect1-1"
-       width="29.26935"
-       height="148.00519"
-       x="70.118896"
-       y="-127.94635"
-       rx="14.634675"
-       ry="21.434273"
+       width="4.0682464"
+       height="20.571743"
+       x="81.715416"
+       y="-64.632957"
+       rx="2.0341232"
+       ry="2.9792223"
        transform="matrix(0.37208062,0.92820042,-0.92623208,0.37695376,0,0)" />
     <path
        id="rect1"
-       style="fill:#d1ff93;stroke:#000000;stroke-width:13.6054;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.997998;paint-order:fill markers stroke"
-       d="m 80.452733,-9.970748 c -13.551862,0 -23.448672,17.8637128 -24.782054,31.349819 2.448601,6.06346 3.41653,9.137671 10.390373,17.285048 l -0.698871,61.965101 c -0.146772,13.01352 6.836518,23.49159 15.32878,23.49159 8.492263,0 15.32878,-10.47724 15.32878,-23.49159 V 39.545609 C 97.172658,32.149599 104.66247,29.74181 105.46826,22.077942 104.80175,8.5424796 94.004595,-9.970748 80.452733,-9.970748 Z"
+       style="fill:#c1ff8d;stroke:#000000;stroke-width:1.89106;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.997998;paint-order:fill markers stroke;fill-opacity:1"
+       d="m 81.354092,47.756111 c -1.883619,0 -3.259211,2.482938 -3.444542,4.357418 0.34034,0.84278 0.474875,1.270076 1.444193,2.402507 l -0.09714,8.612739 c -0.0204,1.808793 0.950231,3.265176 2.130599,3.265176 1.180369,0 2.130599,-1.456267 2.130599,-3.265176 v -8.490218 c 0.160248,-1.027996 1.201282,-1.362663 1.313282,-2.42789 -0.09264,-1.88134 -1.593374,-4.454556 -3.476993,-4.454556 z"
        sodipodi:nodetypes="sscssscss" />
   </g>
 </svg>

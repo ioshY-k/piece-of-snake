@@ -1,23 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgp8h4pee15v4"]
+[gd_scene load_steps=5 format=3 uid="uid://dgp8h4pee15v4"]
 
 [ext_resource type="Script" uid="uid://cth0nydpljyal" path="res://RunHandler/run_manager.gd" id="1_ondx6"]
 [ext_resource type="PackedScene" uid="uid://l38062djgpxk" path="res://Shop/shop.tscn" id="2_kmd66"]
 [ext_resource type="AudioStream" uid="uid://c0im0hy83l5hp" path="res://Shop/Sfx/FruitPayoutAudio.wav" id="3_vxqjj"]
+[ext_resource type="PackedScene" uid="uid://bmkm46lh1ld4s" path="res://Shop/gameover_screen.tscn" id="4_2j2p4"]
 
 [node name="RunManager" type="Node"]
 script = ExtResource("1_ondx6")
 
-[node name="RetryButton" type="Button" parent="."]
-custom_minimum_size = Vector2(500, 500)
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 161
-text = "Retry"
+[node name="GameOverScreen" parent="." instance=ExtResource("4_2j2p4")]
+visible = false
+z_index = 1000
+z_as_relative = false
+position = Vector2(378, -12)
+scale = Vector2(1.07, 1.07)
 
 [node name="Shop" parent="." instance=ExtResource("2_kmd66")]
 unique_name_in_owner = true
 
 [node name="FruitPayoutAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_vxqjj")
-
-[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

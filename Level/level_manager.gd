@@ -120,7 +120,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode:
-		time_meter.initiate_time_bar(1)
+		time_meter.initiate_time_bar(60)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	

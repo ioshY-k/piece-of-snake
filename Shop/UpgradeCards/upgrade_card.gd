@@ -51,8 +51,8 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "Become "+SHIELDED_KEYWORD+" while sprinting.\n\nDoes not work when running into your own body.",
 	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create pressure points in their center.\nPassing through them gives short invincibility.",
 	str(GameConsts.UPGRADE_LIST.FUEL_1) : "Collecting Fruits while sprinting completely fills the Sprint Meter, as long as your Sprint Meter is more than half empty.\n\nFruits collected this way have a 3 in 4 chance to be "+TASTY_KEYWORD+".",
-	str(GameConsts.UPGRADE_LIST.FUEL_2) : ADVANCEMENT_KEYWORD+". Collecting Fruits while sprinting completely fills the Sprint Meter, as long as your Sprint Meter is more than half empty.\n\nFruits collected this way also have a 3 in 4 chance to be "+HOLLOW_KEYWORD+".",
-	str(GameConsts.UPGRADE_LIST.FUEL_3) : ADVANCEMENT_KEYWORD+". Collecting Fruits while sprinting completely fills the Sprint Meter, as long as your Sprint Meter is more than half empty.\n\nThe chances for the Fruit becoming "+TASTY_KEYWORD+" and "+HOLLOW_KEYWORD+" are 100%",
+	str(GameConsts.UPGRADE_LIST.FUEL_2) : ADVANCEMENT_KEYWORD+".\n\nFruits collected this way also have a 3 in 4 chance to be "+HOLLOW_KEYWORD+".",
+	str(GameConsts.UPGRADE_LIST.FUEL_3) : ADVANCEMENT_KEYWORD+".\n\nThe chances for the Fruit becoming "+TASTY_KEYWORD+" and "+HOLLOW_KEYWORD+" are 100%",
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1) : "Using Active Items and Teleporters cause fruits to move toward you.",
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2) : ADVANCEMENT_KEYWORD+". Using Active Items and Teleporters cause fruits to move toward you for longer.",
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : ADVANCEMENT_KEYWORD+". Using Active Items and Teleporters cause fruits to move toward you even longer.",
@@ -75,6 +75,83 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, your front half becomes "+PHASING_KEYWORD+" for a set time.\n\nAll Fruits are "+DENSE_KEYWORD+".",
 	str(GameConsts.UPGRADE_LIST.ALLERGY) : GHOST_FRUIT_KEYWORD+ " spawn over time. Eating them does not affect your Points, but makes them spawn faster.\n\nGet points for every uncollected Fruit on the map.\n\nFruits move towards you.",
 	}
+
+var upgrade_names = {
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_1) : "MAP SPACE 1",  
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_2) : "MAP SPACE 2",  
+	str(GameConsts.UPGRADE_LIST.AREA_SIZE_3) : "MAP SPACE 3",  
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1) : "MAGNET 1",  
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2) : "MAGNET 2",  
+	str(GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3) : "MAGNET 3",  
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_1) : "SPRINTER 1",  
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_2) : "SPRINTER 2",  
+	str(GameConsts.UPGRADE_LIST.HYPER_SPEED_3) : "SPRINTER 3",  
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1) : "ECHO FRUIT 1",   
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2) : "ECHO FRUIT 2",
+	str(GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3) : "ECHO FRUIT 3",
+	str(GameConsts.UPGRADE_LIST.EDGE_WRAP) : "THE CHEATER",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1) : "BLENDER 1",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2) : "BLENDER 2",
+	str(GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3) : "BLENDER 3",
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_1) : "CROSSING 1",   
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_2) : "CROSSING 2",  
+	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : "CROSSING 3",
+	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "CAUDAL AUTONOMY",  
+	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "CORNER PHASING",  
+	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "KNOT",  
+	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "RELOAD",  
+	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "THE IMMUTABLE",  
+	str(GameConsts.UPGRADE_LIST.MOULTING) : "THE MOULTING",  
+	str(GameConsts.UPGRADE_LIST.ANCHOR) : "THE ANCHOR",  
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "TIME STOP 1",  
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_2) : "TIME STOP 2",  
+	str(GameConsts.UPGRADE_LIST.TIME_STOP_3) : "TIME STOP 3",  
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_1) : "WORM HOLE 1",  
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_2) : "WORM HOLE 2",  
+	str(GameConsts.UPGRADE_LIST.WORMHOLE_3) : "WORM HOLE 3",  
+	str(GameConsts.UPGRADE_LIST.PIGGY_BANK) : "PIGGY BANK",  
+	str(GameConsts.UPGRADE_LIST.SWISS_KNIVE) : "SWISS KNIVE",  
+	str(GameConsts.UPGRADE_LIST.SALE) : "SALE",  
+	str(GameConsts.UPGRADE_LIST.DIET_1) : "DIET 1",  
+	str(GameConsts.UPGRADE_LIST.DIET_2) : "DIET 2",  
+	str(GameConsts.UPGRADE_LIST.DIET_3) : "DIET 3",  
+	str(GameConsts.UPGRADE_LIST.COATING) : "COATING",  
+	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "LOCOMOTIVE",  
+	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "RUBBER BAND",  
+	str(GameConsts.UPGRADE_LIST.FUEL_1) : "FUEL 1",  
+	str(GameConsts.UPGRADE_LIST.FUEL_2) : "FUEL 2",  
+	str(GameConsts.UPGRADE_LIST.FUEL_3) : "FUEL 3",  
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1) : "MAGIC FLUTE 1",  
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2) : "MAGIC FLUTE 2",  
+	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : "MAGIC FLUTE 3",  
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_1) : "FERTILIZER 1",  
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_2) : "FERTILIZER 2",  
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_3) : "FERTILIZER 3",  
+	str(GameConsts.UPGRADE_LIST.PACMAN_1) : "PAC SNAKE 1",  
+	str(GameConsts.UPGRADE_LIST.PACMAN_2) : "PAC SNAKE 2",  
+	str(GameConsts.UPGRADE_LIST.PACMAN_3) : "PAC SNAKE 3",  
+	str(GameConsts.UPGRADE_LIST.SNEK_1) : "SNEK 1",  
+	str(GameConsts.UPGRADE_LIST.SNEK_2) : "SNEK 2",  
+	str(GameConsts.UPGRADE_LIST.SNEK_3) : "SNEK 3",  
+	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "PLANT SNAKE",  
+	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "DIFFUSION",  
+	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "SHINY GHOST",  
+	str(GameConsts.UPGRADE_LIST.POWER_NAP) : "POWER NAP",  
+	str(GameConsts.UPGRADE_LIST.CATCH) : "CATCH",  
+	str(GameConsts.UPGRADE_LIST.DANCE) : "THE DANCE", 
+	str(GameConsts.UPGRADE_LIST.OVERFED) : "THE OVERFED",
+	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "THE HALF EMPTY",
+	str(GameConsts.UPGRADE_LIST.ALLERGY) : "THE ALLERGY"
+	}
+
+var font_colors = {
+	str(GameConsts.UPGRADE_TYPE.DEFAULT) : Color(0.59, 0.59, 0.59),
+	str(GameConsts.UPGRADE_TYPE.PASSIVE) : Color(0.88, 0.662, 0.484),
+	str(GameConsts.UPGRADE_TYPE.BODYMOD) : Color(0.435, 0.82, 0.454),
+	str(GameConsts.UPGRADE_TYPE.SYNERGY) : Color(0.333, 0.72, 0.9),
+	str(GameConsts.UPGRADE_TYPE.ACTIVE) : Color(0.81, 0.405, 0.412),
+	str(GameConsts.UPGRADE_TYPE.SPECIAL) : Color(0.707, 0.538, 0.96)
+}
 
 var swiss_knive_upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, cut off your tail when surpassing it.\n\n[color=#4fabf9]Cuttable tailpart is bigger[/color]",
@@ -110,6 +187,8 @@ var is_dragging: bool = false
 @onready var card_buy_audio: AudioStreamPlayer = $CardBuyAudio
 
 var upgrade_description: String
+var upgrade_name: String
+var font_color: Color
 var keyword_descriptions: Array[String]
 var upgrade_type: int
 var is_advanced: bool
@@ -142,6 +221,8 @@ func instantiate_upgrade_card(id: int):
 	upgrade_id = id
 	card_sprite.frame = id
 	upgrade_description = upgrade_descriptions[str(id)]
+	upgrade_name = upgrade_names[str(id)]
+	font_color = font_colors[str(GameConsts.get_upgrade_type(id))]
 	if id == GameConsts.UPGRADE_LIST.AREA_SIZE_2 or\
 	id == GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3 or\
 	id == GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3 or\

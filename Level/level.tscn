@@ -108,55 +108,65 @@ stream = ExtResource("9_t2u7g")
 stream = ExtResource("10_vx8ih")
 
 [node name="LeftClickSymbol" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-836, -279)
 scale = Vector2(0.43, 0.416349)
 texture = ExtResource("11_uqeto")
 
 [node name="LeftClickSymbol2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-611, -279)
 scale = Vector2(-0.43, 0.416)
 texture = ExtResource("11_uqeto")
 
 [node name="SpacebarSymbol" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-833.317, 268)
 scale = Vector2(0.213638, 0.213638)
 texture = ExtResource("12_luomk")
 
 [node name="ShiftSymbol" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-602.317, 270)
 scale = Vector2(0.204, 0.204)
 texture = ExtResource("13_k8npl")
 
 [node name="DashSymbol" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-719.317, 264)
 rotation = -0.232129
 scale = Vector2(0.099, 0.099)
 texture = ExtResource("14_am3y4")
 
 [node name="WasdSymbol" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-724.828, 103.172)
 scale = Vector2(0.29831, 0.29831)
 texture = ExtResource("15_l5n2q")
 
 [node name="ArrowSymbol" type="Sprite2D" parent="."]
-position = Vector2(-722.828, 15.1721)
+modulate = Color(1, 1, 1, 0.592157)
+position = Vector2(-722.828, 8)
 scale = Vector2(0.0771242, 0.0771242)
 texture = ExtResource("16_cv6tn")
 
 [node name="ArrowSymbol2" type="Sprite2D" parent="."]
-position = Vector2(-616.828, 129.172)
+modulate = Color(1, 1, 1, 0.592157)
+position = Vector2(-603, 129.172)
 rotation = 1.57079
 scale = Vector2(0.0771242, 0.0771242)
 texture = ExtResource("16_cv6tn")
 
 [node name="ArrowSymbol3" type="Sprite2D" parent="."]
-position = Vector2(-832.828, 125.172)
+modulate = Color(1, 1, 1, 0.592157)
+position = Vector2(-847, 125.172)
 rotation = 4.71238
 scale = Vector2(0.0771242, 0.0771242)
 texture = ExtResource("16_cv6tn")
 
 [node name="ArrowSymbol4" type="Sprite2D" parent="."]
-position = Vector2(-726.828, 173.172)
+modulate = Color(1, 1, 1, 0.592157)
+position = Vector2(-726.828, 191)
 rotation = 3.14159
 scale = Vector2(0.0771242, 0.0771242)
 texture = ExtResource("16_cv6tn")

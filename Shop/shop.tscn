@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=41 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://Shop/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://b0f2hue0j32ip" path="res://Shop/Slots/UpgradeSlotSpecial.png" id="2_2vn1y"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bx11chgwwvqj2" path="res://Shop/UI/HighlightReplace.png" id="6_dcjh5"]
 [ext_resource type="Texture2D" uid="uid://cc3lpmpfxdowe" path="res://Shop/Symbols/SymbolActive.svg" id="6_n3cld"]
 [ext_resource type="Texture2D" uid="uid://cixdb6y2jjm17" path="res://Shop/UI/HighlightBuy.png" id="7_i0r2g"]
-[ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="8_21fih"]
 [ext_resource type="Texture2D" uid="uid://ga8gt3rtdqat" path="res://Shop/Slots/BuyZone.png" id="8_xtrhb"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="9_0a76l"]
 [ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://Shop/UI/FruitSymbol.svg" id="10_7hl21"]
@@ -30,7 +29,13 @@
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="27_fpme6"]
 [ext_resource type="Texture2D" uid="uid://jcvukqga3igs" path="res://Shop/UI/MapmodInfo.svg" id="28_6exio"]
 [ext_resource type="PackedScene" uid="uid://bs0m1mtsyjoc8" path="res://Shop/MapPreviews/map_preview.tscn" id="29_m3qfn"]
+[ext_resource type="Texture2D" uid="uid://b3tfulqktu4dm" path="res://Shop/Slottypes/SlotTypeBodymod.png" id="33_jykkx"]
 [ext_resource type="PackedScene" uid="uid://8hfpxbbs5ejs" path="res://Shop/end_screen.tscn" id="33_m3qfn"]
+[ext_resource type="Texture2D" uid="uid://8ob8i1lcfscf" path="res://Shop/Slottypes/SlotTypeSynergy.png" id="34_2rn4p"]
+[ext_resource type="Texture2D" uid="uid://bx8nrjt1buh0i" path="res://Shop/Slottypes/SlotTypeActive.png" id="35_doc8j"]
+[ext_resource type="Texture2D" uid="uid://d321vlqgj2u63" path="res://Shop/Slottypes/SlotTypeSpecial.png" id="36_y2q02"]
+[ext_resource type="Texture2D" uid="uid://b5mbkf6mg1oat" path="res://Shop/Slottypes/SlotTypeDefault.png" id="37_v001g"]
+[ext_resource type="Texture2D" uid="uid://b01ruv64lpkgs" path="res://Shop/Slottypes/SlotTypePassive.png" id="38_3rb3p"]
 [ext_resource type="AudioStream" uid="uid://x0jm6gfjswja" path="res://Shop/Sfx/CardDeal.wav" id="40_12c50"]
 [ext_resource type="AudioStream" uid="uid://c1jyabebv6bq2" path="res://UI/ButtonPress.wav" id="41_cug3m"]
 
@@ -53,12 +58,13 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 50.0
-offset_top = 381.0
-offset_right = 130.0
-offset_bottom = 461.0
+offset_left = 45.0
+offset_top = 395.0
+offset_right = 125.0
+offset_bottom = 475.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial"]
 position = Vector2(40, 40)
@@ -118,12 +124,13 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 275.0
-offset_top = 381.0
-offset_right = 355.0
-offset_bottom = 461.0
+offset_left = 270.0
+offset_top = 395.0
+offset_right = 350.0
+offset_bottom = 475.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1"]
 position = Vector2(40, 40)
@@ -183,12 +190,13 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -25.0
-offset_top = 201.0
-offset_right = 55.0
-offset_bottom = 281.0
+offset_left = -35.0
+offset_top = 195.0
+offset_right = 45.0
+offset_bottom = 275.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1"]
 position = Vector2(40, 40)
@@ -248,12 +256,13 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 125.0
-offset_top = 201.0
-offset_right = 205.0
-offset_bottom = 281.0
+offset_left = 115.0
+offset_top = 195.0
+offset_right = 195.0
+offset_bottom = 275.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2"]
 position = Vector2(40, 40)
@@ -313,12 +322,13 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 170.0
-offset_top = 21.0
-offset_right = 250.0
-offset_bottom = 101.0
+offset_left = 165.0
+offset_top = -5.0
+offset_right = 245.0
+offset_bottom = 75.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
 position = Vector2(40, 40)
@@ -378,12 +388,13 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -70.0
-offset_top = 21.0
-offset_right = 10.0
-offset_bottom = 101.0
+offset_left = -75.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 75.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SlotSprite" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
 position = Vector2(40, 40)
@@ -444,9 +455,9 @@ custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -175.0
-offset_top = -339.0
+offset_top = -405.0
 offset_right = -95.0
-offset_bottom = -259.0
+offset_bottom = -325.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
@@ -509,9 +520,9 @@ custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -25.0
-offset_top = -339.0
+offset_top = -405.0
 offset_right = 55.0
-offset_bottom = -259.0
+offset_bottom = -325.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
@@ -574,9 +585,9 @@ custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 125.0
-offset_top = -339.0
+offset_top = -405.0
 offset_right = 205.0
-offset_bottom = -259.0
+offset_bottom = -325.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
@@ -639,9 +650,9 @@ custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 275.0
-offset_top = -339.0
+offset_top = -405.0
 offset_right = 355.0
-offset_bottom = -259.0
+offset_bottom = -325.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
@@ -703,10 +714,10 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -110.0
-offset_top = -159.0
-offset_right = -30.0
-offset_bottom = -79.0
+offset_left = -115.0
+offset_top = -205.0
+offset_right = -35.0
+offset_bottom = -125.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
@@ -768,10 +779,10 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 50.0
-offset_top = -159.0
-offset_right = 130.0
-offset_bottom = -79.0
+offset_left = 45.0
+offset_top = -205.0
+offset_right = 125.0
+offset_bottom = -125.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
@@ -833,10 +844,10 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 210.0
-offset_top = -159.0
-offset_right = 290.0
-offset_bottom = -79.0
+offset_left = 205.0
+offset_top = -205.0
+offset_right = 285.0
+offset_bottom = -125.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 
@@ -893,19 +904,35 @@ position = Vector2(31.125, 0)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
-[node name="YourUpgrades" type="Label" parent="UpgradeOverview"]
-offset_left = -190.0
-offset_top = -500.0
-offset_right = 378.0
-offset_bottom = -399.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("8_21fih")
-theme_override_font_sizes/font_size = 81
-text = "Your Upgrades"
+[node name="SlotTypeBodymod" type="Sprite2D" parent="UpgradeOverview"]
+position = Vector2(85, -265)
+scale = Vector2(0.35, 0.28)
+texture = ExtResource("33_jykkx")
+
+[node name="SlotTypeSynergy" type="Sprite2D" parent="UpgradeOverview"]
+position = Vector2(85, -65)
+scale = Vector2(0.35, 0.28)
+texture = ExtResource("34_2rn4p")
+
+[node name="SlotTypeActive" type="Sprite2D" parent="UpgradeOverview"]
+position = Vector2(85, 135)
+scale = Vector2(0.35, 0.28)
+texture = ExtResource("35_doc8j")
+
+[node name="SlotTypeSpecial" type="Sprite2D" parent="UpgradeOverview"]
+position = Vector2(85, 335)
+scale = Vector2(0.35, 0.28)
+texture = ExtResource("36_y2q02")
+
+[node name="SlotTypeDefault" type="Sprite2D" parent="UpgradeOverview"]
+position = Vector2(305, 335)
+scale = Vector2(0.35, 0.28)
+texture = ExtResource("37_v001g")
+
+[node name="SlotTypePassive" type="Sprite2D" parent="UpgradeOverview"]
+position = Vector2(85, -465)
+scale = Vector2(0.35, 0.28)
+texture = ExtResource("38_3rb3p")
 
 [node name="Divider" type="Sprite2D" parent="."]
 z_index = 4
@@ -967,10 +994,47 @@ texture = ExtResource("25_kcery")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ItemShelf/UpgradeInfo"]
 offset_left = -213.0
-offset_top = -317.0
+offset_top = -360.0
 offset_right = 213.0
 offset_bottom = 402.0
 size_flags_stretch_ratio = 1.06
+
+[node name="UpgradeName" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.70656, 0.5376, 0.96, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("9_0a76l")
+theme_override_fonts/bold_font = ExtResource("26_qix85")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 62
+theme_override_font_sizes/bold_font_size = 160
+bbcode_enabled = true
+text = "The Dance"
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("9_0a76l")
+theme_override_fonts/bold_font = ExtResource("26_qix85")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 37
+theme_override_font_sizes/bold_font_size = 160
+bbcode_enabled = true
+text = "[img]res://Shop/UI/ItemnameUnderline.svg[/img]"
+fit_content = true
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UpgradeInfoText" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
 clip_contents = false
@@ -981,7 +1045,7 @@ theme_override_fonts/bold_font = ExtResource("26_qix85")
 theme_override_font_sizes/bold_italics_font_size = 40
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/mono_font_size = 40
-theme_override_font_sizes/normal_font_size = 37
+theme_override_font_sizes/normal_font_size = 29
 theme_override_font_sizes/bold_font_size = 160
 bbcode_enabled = true
 text = "Uncover more area.
@@ -1020,20 +1084,16 @@ theme_override_fonts/bold_font = ExtResource("26_qix85")
 theme_override_font_sizes/bold_italics_font_size = 40
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/mono_font_size = 40
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 23
 theme_override_font_sizes/bold_font_size = 160
 bbcode_enabled = true
-text = "wefwe
-wefwe
-wefwef
-
-ewfef"
+text = "test"
 fit_content = true
 autowrap_mode = 2
 
 [node name="MapmodInfo" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(417.566, 399.095)
-scale = Vector2(0.1, 0.1)
+position = Vector2(325.258, 588.235)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("28_6exio")
 
 [node name="MapmodInfoText" type="RichTextLabel" parent="ItemShelf/MapmodInfo"]
@@ -1075,9 +1135,9 @@ text = "Deal
 Map Space Card"
 
 [node name="DealNewCards" type="Button" parent="ItemShelf"]
-offset_left = -578.814
+offset_left = -532.661
 offset_top = 1212.67
-offset_right = -405.814
+offset_right = -359.661
 offset_bottom = 1280.67
 theme_override_font_sizes/font_size = 21
 text = "Deal
@@ -1085,12 +1145,17 @@ text = "Deal
 
 [node name="RerollCost" type="Label" parent="ItemShelf/DealNewCards"]
 layout_mode = 0
-offset_left = -47.9638
-offset_top = -13.5747
-offset_right = -7.9638
-offset_bottom = 77.4253
+offset_left = -95.023
+offset_top = -12.67
+offset_right = -55.023
+offset_bottom = 78.33
 theme_override_font_sizes/font_size = 66
 text = "6"
+
+[node name="FruitSymbol" type="Sprite2D" parent="ItemShelf/DealNewCards"]
+position = Vector2(-30.77, 36.1985)
+scale = Vector2(0.0776309, 0.0776309)
+texture = ExtResource("10_7hl21")
 
 [node name="FruitCountParticle" type="CPUParticles2D" parent="."]
 modulate = Color(0.963333, 1, 0.45, 0.878431)

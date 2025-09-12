@@ -9,7 +9,6 @@ var current_description_id: int
 @onready var map_preview: MapPreview = $MapPreview
 @onready var mapmod_info: Sprite2D = $MapmodInfo
 
-
 var mapmod_descriptions = {
 	str(GameConsts.MAP_MODS.CAFFEINATED) : "Move Faster than usual",
 	str(GameConsts.MAP_MODS.TAILVIRUS) : "Your Tail surrounds an aura, which steals fruit on contact",
@@ -33,6 +32,8 @@ func change_item_description(upgrade_card: UpgradeCard):
 			return
 		if upgrade_info_tween != null and upgrade_info_tween.is_running():
 			upgrade_info_tween.stop()
+		upgrade_info.get_node("VBoxContainer/UpgradeName").text = upgrade_card.upgrade_name
+		upgrade_info.get_node("VBoxContainer/UpgradeName").add_theme_color_override("default_color", upgrade_card.font_color)
 		upgrade_info.get_node("VBoxContainer/UpgradeInfoText").text = upgrade_card.upgrade_description
 		upgrade_info.get_node("VBoxContainer/ToolTipText").text = ""
 		for keyword_description in upgrade_card.keyword_descriptions:
@@ -49,11 +50,9 @@ func change_item_description(upgrade_card: UpgradeCard):
 var mapmod_info_tween:Tween
 func show_mapmod_description(upcoming_mapmod: int):
 	mapmod_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	mapmod_info_tween.tween_property(mapmod_info, "position", Vector2(318.018,609.955), 0.6)
 	mapmod_info_tween.tween_property(mapmod_info, "scale", Vector2(1,1), 1)
 	mapmod_info.get_node("MapmodInfoText").text = mapmod_descriptions[str(upcoming_mapmod)]
 	
 func hide_mapmod_description():
 	mapmod_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	mapmod_info_tween.tween_property(mapmod_info, "position", Vector2(417.566,399.095), 0.6)
-	mapmod_info_tween.tween_property(mapmod_info, "scale", Vector2(0.1,0.1), 1)
+	mapmod_info_tween.tween_property(mapmod_info, "scale", Vector2(0,0), 1)

@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://8hfpxbbs5ejs"]
+[gd_scene load_steps=4 format=3 uid="uid://bmkm46lh1ld4s"]
 
-[ext_resource type="Script" uid="uid://dy7dnspqu521k" path="res://Shop/end_screen.gd" id="1_ujgts"]
-[ext_resource type="Texture2D" uid="uid://cwnjcx6ftuj6u" path="res://Shop/UI/EndScreen.svg" id="2_nevbr"]
-[ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="3_dmy2n"]
+[ext_resource type="Script" uid="uid://dy7dnspqu521k" path="res://Shop/end_screen.gd" id="1_y0fao"]
+[ext_resource type="Texture2D" uid="uid://cwnjcx6ftuj6u" path="res://Shop/UI/EndScreen.svg" id="2_kxi88"]
+[ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="3_1xltf"]
 
 [node name="GameOverScreen" type="Node2D"]
-script = ExtResource("1_ujgts")
+script = ExtResource("1_y0fao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-57, 6)
 scale = Vector2(0.965, 1)
-texture = ExtResource("2_nevbr")
+texture = ExtResource("2_kxi88")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -553.0
@@ -20,9 +20,9 @@ offset_bottom = -257.0
 theme_override_colors/font_color = Color(0.451264, 0.683796, 0.431672, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("3_dmy2n")
+theme_override_fonts/font = ExtResource("3_1xltf")
 theme_override_font_sizes/font_size = 171
-text = "CONGRATS!"
+text = "GAME OVER"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -32,9 +32,9 @@ offset_right = 455.0
 offset_bottom = 173.0
 theme_override_colors/font_color = Color(0.29805, 0.477258, 0.283443, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_dmy2n")
+theme_override_fonts/font = ExtResource("3_1xltf")
 theme_override_font_sizes/font_size = 61
-text = "Thank you for crushing this early alpha version of \"Piece of Snake\". 
+text = "Thank you for playing this early alpha version of \"Piece of Snake\". 
 
 Collecting run data will help improving the game, so consider positong the Code below at our Discord Server or via Email."
 horizontal_alignment = 1
@@ -45,7 +45,7 @@ offset_left = -499.0
 offset_top = 344.0
 offset_right = -160.0
 offset_bottom = 448.0
-theme_override_fonts/font = ExtResource("3_dmy2n")
+theme_override_fonts/font = ExtResource("3_1xltf")
 theme_override_font_sizes/font_size = 86
 text = "New Run"
 
@@ -54,7 +54,7 @@ offset_left = 51.0
 offset_top = 344.0
 offset_right = 390.0
 offset_bottom = 448.0
-theme_override_fonts/font = ExtResource("3_dmy2n")
+theme_override_fonts/font = ExtResource("3_1xltf")
 theme_override_font_sizes/font_size = 86
 text = "Quit"
 
