@@ -13,8 +13,8 @@ func _ready() -> void:
 func _prevent_growth(fruit, _is_real_collection):
 	if fruit != null and not fruit.is_in_group("Ghost Fruit"):
 		_spawn_ghost_fruits()
-		if map.snake_tail.tiles_to_grow > 0:
-			map.snake_tail.tiles_to_grow -= 1
+		if map.snake_tail.tiles_to_grow > 1:
+			map.snake_tail.tiles_to_grow -= 2
 			var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 			effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH)
 			map.add_child(effect_trigger_text)

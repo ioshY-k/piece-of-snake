@@ -18,7 +18,6 @@ var fruits_currency: int
 @onready var currency_number_label: Label = $ItemShelf/CurrencySymbol/CurrencyNumber
 @onready var fruit_count_particle: CPUParticles2D = $FruitCountParticle
 
-@onready var deal_area_size: Button = $ItemShelf/DealAreaSize
 @onready var deal_new_cards: Button = $ItemShelf/DealNewCards
 @onready var reroll_cost_label: Label = $ItemShelf/DealNewCards/RerollCost
 
@@ -66,6 +65,7 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.SNEK_1,
 									GameConsts.UPGRADE_LIST.BIG_FRUIT_1,
 									GameConsts.UPGRADE_LIST.CATCH,
+									GameConsts.UPGRADE_LIST.DIFFUSION,
 									GameConsts.UPGRADE_LIST.POWER_NAP
 									]
 var special_upgrade_card_pool: Array[int] = [
@@ -88,9 +88,9 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.IMMUTABLE,
-									GameConsts.UPGRADE_LIST.HALF_GONE,
-									GameConsts.UPGRADE_LIST.COATING,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,
 									
 									]
 									
@@ -190,12 +190,15 @@ func can_afford(slot):
 	return 	int(slot.get_node("BuyZone").get_node("Price").text) <= fruits_currency
 
 func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
+	var upgrade_id_string = ""
+	if upgrade_id < 10:
+		upgrade_id_string += "0"
+	upgrade_id_string += str(upgrade_id)
+	RunHistoryCodeManager.buys[-1] += "b" + upgrade_id_string
+	
 	fruits_currency -= int(slot.get_node("BuyZone").get_node("Price").text)
 	currency_number_label.text = str(fruits_currency)
 	update_upgrade_pool(upgrade_id, true)
-	deal_area_size.disabled = true
-	if not moulted:
-		deal_new_cards.disabled = true
 	SignalBus.upgrade_bought.emit(upgrade_id)
 	
 
@@ -254,10 +257,18 @@ func _on_continue_next_round_pressed() -> void:
 	await  shelf_tween.finished
 	for upgrade_card in get_tree().get_nodes_in_group("UpgradeCard"):
 		if not upgrade_card.is_bought:
+			
+			var upgrade_id_string = ""
+			if upgrade_card.upgrade_id < 10:
+				upgrade_id_string += "0"
+			upgrade_id_string += str(upgrade_card.upgrade_id)
+			RunHistoryCodeManager.buys[-1] += "s" + upgrade_id_string
+			
 			upgrade_card.queue_free()
-	deal_area_size.disabled = false
-	deal_new_cards.disabled = false
 	finished_buying.emit()
+	
+	RunHistoryCodeManager.buys.append("")
+	print("buys: " , RunHistoryCodeManager.buys)
 
 func generate_items(current_round):
 	upgrade_card_pool.shuffle()
@@ -283,7 +294,19 @@ func generate_items(current_round):
 		offered_upgrades.append(upgrade_card_pool[1])
 		offered_upgrades.append(upgrade_card_pool[2])
 	deal_upgrade_cards(offered_upgrades)
-	
+	first_deal = false
+	reroll_cost_label.show()
+	deal_new_cards.disabled = false
+
+func generate_mapspace_item():
+	for upgrade_card in get_node("ItemShelf").get_children():
+		if upgrade_card is UpgradeCard:
+			upgrade_card.queue_free()
+	deal_upgrade_cards([default_upgrade_card])
+	first_deal = true
+	reroll_cost_label.hide()
+	deal_new_cards.disabled = false
+
 func deal_upgrade_cards(offered_upgrades: Array[int]):
 	var itemcounter: int = 0
 	var card_tween: Tween
@@ -321,14 +344,15 @@ func reset_area_and_currency():
 func show_shop() -> Tween:
 	$ItemShelf.show()
 	upgrade_info.hide()
+	deal_new_cards.disabled = true
 	if run_manager.current_round == 3:
-		deal_area_size.hide()
-		deal_area_size.disabled = true
 		if run_manager.current_act == 2:
+			RunHistoryCodeManager.generate_code()
+			RunHistoryCodeManager.codestring += "Y"
+			var datetime = Time.get_datetime_dict_from_system()
+			RunHistoryCodeManager.codestring += str(datetime.day)
+			RunHistoryCodeManager.codestring += str(datetime.hour)
 			$EndScreen.show()
-	else:
-		deal_area_size.show()
-		deal_area_size.disabled = false
 	$ItemShelf.rotation_degrees = -180
 	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	shelf_tween.tween_property($ItemShelf, "rotation_degrees", 0, 0.8)
@@ -361,20 +385,30 @@ func _on_continue_next_round_mouse_entered() -> void:
 func _on_continue_next_round_mouse_exited() -> void:
 	item_shelf.hide_mapmod_description()
 
-
-func _on_deal_area_size_pressed() -> void:
-	for upgrade_card in get_node("ItemShelf").get_children():
-		if upgrade_card is UpgradeCard:
-			upgrade_card.queue_free()
-	deal_upgrade_cards([default_upgrade_card])
-
+var first_deal: bool = true
 func _on_deal_new_cards_pressed() -> void:
-	if fruits_currency >= reroll_cost_number:
+	if GameConsts.test_mode:
+		reroll_cost_number = 0
+		reroll_cost_label.text = str(reroll_cost_number)
+	
+	if first_deal:
+		for upgrade_card in get_node("ItemShelf").get_children():
+			if upgrade_card is UpgradeCard:
+				upgrade_card.queue_free()
+		generate_items(run_manager.current_round)
+	elif fruits_currency >= reroll_cost_number:
 		fruits_currency -= reroll_cost_number
 		currency_number_label.text = str(fruits_currency)
 		reroll_cost_number += 1
 		reroll_cost_label.text = str(reroll_cost_number)
 		for upgrade_card in get_node("ItemShelf").get_children():
 			if upgrade_card is UpgradeCard:
+				var upgrade_id_string = ""
+				if upgrade_card.upgrade_id < 10:
+					upgrade_id_string += "0"
+				upgrade_id_string += str(upgrade_card.upgrade_id)
+				RunHistoryCodeManager.buys[-1] += "s" + upgrade_id_string
 				upgrade_card.queue_free()
 		generate_items(run_manager.current_round)
+	else:
+		print_debug("not enough money to reroll")

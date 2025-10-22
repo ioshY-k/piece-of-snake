@@ -23,12 +23,12 @@ TileHelper="*res://Globals/tile_helper.gd"
 MapData="*res://Globals/map_data.gd"
 Descriptions="*res://Globals/descriptions.gd"
 RunSettings="*res://Globals/run_settings.gd"
+RunHistoryCodeManager="*res://History/run_history_code_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"

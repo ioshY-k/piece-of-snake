@@ -14,15 +14,15 @@ func _ready() -> void:
 
 func _set_swiss_knive(state:bool):
 	swiss_knive = state
-	if swiss_knive and not SignalBus.fruit_collected.connect(prevent_growth):
+	if swiss_knive and not SignalBus.fruit_collected.is_connected(prevent_growth):
 		SignalBus.fruit_collected.connect(prevent_growth)
 	else:
 		if SignalBus.fruit_collected.is_connected(prevent_growth):
 			SignalBus.fruit_collected.disconnect(prevent_growth)
 
 func prevent_growth(fruit, is_real_collection):
-	if randi()%2 == 0 and fruit != null and fruit.is_in_group("Ghost Fruit") and map.snake_tail.tiles_to_grow > 0:
-		map.snake_tail.tiles_to_grow -= 1
+	if randi()%100 <= 33 and fruit != null and fruit.is_in_group("Ghost Fruit") and map.snake_tail.tiles_to_grow > 1:
+		map.snake_tail.tiles_to_grow -= 2
 		var growth_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH)
 		map.add_child(growth_effect_trigger_text)
@@ -38,7 +38,7 @@ func _grow_ghost_fruit():
 	map.current_fruits.append(current_ghost_fruit)
 
 func _set_current_ghost_fruit(fruit: FruitElement, is_real_collection):
-	if fruit == current_ghost_fruit:
+	if fruit == current_ghost_fruit and is_real_collection:
 		var current_position = fruit.global_position
 		fruit.get_parent().remove_child(fruit)
 		map.add_child(fruit)

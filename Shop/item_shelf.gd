@@ -19,7 +19,7 @@ var mapmod_descriptions = {
 	str(GameConsts.MAP_MODS.MOVING_FRUIT) : "Fruits occasionally move around",
 	str(GameConsts.MAP_MODS.ANTI_MAGNET) : "Stopping in place causes fruits to move away from you",
 	str(GameConsts.MAP_MODS.GHOST_INVASION) : "Normal Fruits dont give Points and cause 1 less growth. For every collected normal Fruit, spawn Ghost Fruits",
-	str(GameConsts.MAP_MODS.FAR_AWAY) : "Every second Fruit gives additional points and growth. Fruits tend to spawn far away",
+	str(GameConsts.MAP_MODS.FAR_AWAY) : "Fruits tend to spawn far away",
 	str(GameConsts.MAP_MODS.DARK) : "Darkness blocks the view and must be chased away"
 }
 	

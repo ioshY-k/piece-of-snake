@@ -1125,15 +1125,6 @@ vertical_alignment = 1
 [node name="MapPreview" parent="ItemShelf" instance=ExtResource("29_m3qfn")]
 position = Vector2(0, 400.905)
 
-[node name="DealAreaSize" type="Button" parent="ItemShelf"]
-offset_left = -353.475
-offset_top = 1212.67
-offset_right = -180.475
-offset_bottom = 1280.67
-theme_override_font_sizes/font_size = 21
-text = "Deal
-Map Space Card"
-
 [node name="DealNewCards" type="Button" parent="ItemShelf"]
 offset_left = -532.661
 offset_top = 1212.67
@@ -1191,5 +1182,4 @@ scale = Vector2(1.09118, 1.09118)
 [connection signal="mouse_entered" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_mouse_entered"]
 [connection signal="mouse_exited" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_mouse_exited"]
 [connection signal="pressed" from="ItemShelf/ContinueNextRound" to="." method="_on_continue_next_round_pressed"]
-[connection signal="pressed" from="ItemShelf/DealAreaSize" to="." method="_on_deal_area_size_pressed"]
 [connection signal="pressed" from="ItemShelf/DealNewCards" to="." method="_on_deal_new_cards_pressed"]

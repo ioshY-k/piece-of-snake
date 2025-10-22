@@ -36,7 +36,7 @@ theme_override_fonts/font = ExtResource("3_1xltf")
 theme_override_font_sizes/font_size = 61
 text = "Thank you for playing this early alpha version of \"Piece of Snake\". 
 
-Collecting run data will help improving the game, so consider positong the Code below at our Discord Server or via Email."
+Collecting run data will help improving the game, so consider posting the Code below at our Discord Server or via Email."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -57,6 +57,15 @@ offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("3_1xltf")
 theme_override_font_sizes/font_size = 86
 text = "Quit"
+
+[node name="Code" type="TextEdit" parent="."]
+offset_left = -606.0
+offset_top = 226.0
+offset_right = 486.0
+offset_bottom = 303.0
+theme_override_constants/line_spacing = -1
+theme_override_font_sizes/font_size = 20
+wrap_mode = 1
 
 [connection signal="pressed" from="NewRunButton" to="." method="_on_new_run_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

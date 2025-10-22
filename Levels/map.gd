@@ -75,6 +75,8 @@ signal snake_got_hit
 var effect_trigger_occupied: bool = false
 signal effect_trigger_freed
 
+var caffeinated: bool = false
+
 func _ready() -> void:
 	#change the seed for randomness
 	randomize()
@@ -217,7 +219,7 @@ func _on_collision_with(element: MapElement, collect_position: Vector2):
 	#on fruit collision, grow once, delete fruit and spawn a new one (if not ghost fruit)
 	if element is FruitElement:
 		element.collected = true
-		snake_tail.tiles_to_grow += 1
+		snake_tail.tiles_to_grow += 2
 		SignalBus.fruit_collected.emit(element, true)
 		if not element.is_in_group("Ghost Fruit"):
 			var fruit_positions: Array = current_fruits.map(

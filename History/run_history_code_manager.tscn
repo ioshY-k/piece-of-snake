@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4j05r4wn87ne"]
-
-[ext_resource type="Script" uid="uid://c4r7bjyyvl4kb" path="res://History/run_history_code_manager.gd" id="1_ed0xx"]
-
-[node name="RunHistoryCodeManager" type="Node"]
-script = ExtResource("1_ed0xx")

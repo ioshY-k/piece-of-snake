@@ -52,11 +52,38 @@ func create_new_run():
 	maporder = [maps_act1[randi()%maps_act1.size()],
 				maps_act2[randi()%maps_act2.size()],
 				maps_act3[randi()%maps_act3.size()]]
-	
+	for map in maporder:
+		match map:
+			GameConsts.MAP_LIST.WOODS:
+				RunHistoryCodeManager.maps.append("W")
+			GameConsts.MAP_LIST.STADIUM:
+				RunHistoryCodeManager.maps.append("S")
+			GameConsts.MAP_LIST.RESTAURANT:
+				RunHistoryCodeManager.maps.append("R")
+			GameConsts.MAP_LIST.OFFICE:
+				RunHistoryCodeManager.maps.append("O")
+			GameConsts.MAP_LIST.TRAIN:
+				RunHistoryCodeManager.maps.append("T")
+			GameConsts.MAP_LIST.CAVE:
+				RunHistoryCodeManager.maps.append("C")
+			GameConsts.MAP_LIST.DISCO:
+				RunHistoryCodeManager.maps.append("D")
+			GameConsts.MAP_LIST.TOMB:
+				RunHistoryCodeManager.maps.append("G")
+			GameConsts.MAP_LIST.BEACH:
+				RunHistoryCodeManager.maps.append("B")
 	for i in range(3):
 		var mods = GameConsts.MAP_MODS.values()
 		mods.shuffle()
 		mapmodorder.append_array(mods)
+	for mod in mapmodorder:
+		var modstring = ""
+		if mod < 10:
+			modstring += "0"
+		modstring += str(mod)
+		RunHistoryCodeManager.mapmods.append(modstring)
+	print(RunHistoryCodeManager.mapmods)
+	print(RunHistoryCodeManager.maps)
 	
 	if RunSettings.current_char == GameConsts.CHAR_LIST.PYTHON:
 		for index in range(fruit_thresholds.size()-1):
@@ -66,9 +93,9 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.DISCO,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.TETRI_FRUIT,
-						GameConsts.MAP_MODS.MOVING_FRUIT,
+		mapmodorder = [GameConsts.MAP_MODS.GHOST_INVASION,
+						GameConsts.MAP_MODS.CAFFEINATED,
+						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.CAFFEINATED,
@@ -100,8 +127,14 @@ func _on_upgrade_destroyed(upgrade: int):
 func _on_round_over():
 	level.disable_map()
 	if level.fruits_left > 0:
+		RunHistoryCodeManager.bonus_fruits.append(str(level.fruits_left) + "X")
+		RunHistoryCodeManager.generate_code()
+		var datetime = Time.get_datetime_dict_from_system()
+		RunHistoryCodeManager.codestring += str(datetime.day)
+		RunHistoryCodeManager.codestring += str(datetime.hour)
 		game_over_screen.show()
 	else:
+		RunHistoryCodeManager.bonus_fruits.append(str(level.fruits_overload))
 		
 		shop.update_map_preview(current_act, current_round)
 		var shelf_tween:Tween = shop.show_shop()
@@ -124,8 +157,13 @@ func _on_round_over():
 			fruit_payout_audio.play()
 		shop.fruit_count_particle.emitting = false
 		await get_tree().create_timer(0.5).timeout
-		if not (current_act == 2 and current_round == 3):
+		if (current_act == 2 and current_round == 3):
+			#goal or act 4 reached
+			pass
+		elif (current_round == 3):
 			shop.generate_items(current_round)
+		else:
+			shop.generate_mapspace_item()
 		
 		await shop.finished_buying
 		
@@ -140,3 +178,5 @@ func _on_round_over():
 			current_round = 0
 			shop.reset_area_and_currency()
 			level.prepare_new_act(maporder[current_act], fruit_thresholds[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
+		RunHistoryCodeManager.current_act = current_act
+		RunHistoryCodeManager.current_round = current_round

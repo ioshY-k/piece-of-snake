@@ -26,6 +26,8 @@ func _ready() -> void:
 func _walk_path():
 	await SignalBus.next_tile_reached
 	tween = self.create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if get_parent().get_parent().caffeinated:
+		tween.set_speed_scale(1.2)
 	if loops:
 		tween.set_loops()
 	for index in len(path):

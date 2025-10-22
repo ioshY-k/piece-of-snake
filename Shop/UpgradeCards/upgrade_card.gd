@@ -67,9 +67,9 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.SNEK_3) : ADVANCEMENT_KEYWORD+". Shrinking happens at sprint speed\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail",
 	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, automatically gets collected",
-	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "Half of the time "+GHOST_FRUIT_KEYWORD+" are "+ TASTY_KEYWORD +".",
+	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "1 in 3 times "+GHOST_FRUIT_KEYWORD+" are "+ TASTY_KEYWORD +".",
 	str(GameConsts.UPGRADE_LIST.POWER_NAP) : "While Standing still, your Sprint Meter refills twice as fast",
-	str(GameConsts.UPGRADE_LIST.CATCH) : "Moving Fruits have a 1 in 2 chance to be " + TASTY_KEYWORD + ".",
+	str(GameConsts.UPGRADE_LIST.CATCH) : "Moving Fruits have a 1 in 3 chance to be " + TASTY_KEYWORD + ".",
 	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever you move, all Fruits move in the opposite direction.\n\nThis movement overrides any other Fruit movement.",
 	str(GameConsts.UPGRADE_LIST.OVERFED) : "Fill every empty Card slot with dead mice, which can't be replaced. Buying map space cards destroys a dead mouse for a random Item.",
 	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, your front half becomes "+PHASING_KEYWORD+" for a set time.\n\nAll Fruits are "+DENSE_KEYWORD+".",
@@ -159,14 +159,14 @@ var swiss_knive_upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.COATING) : "Become "+SHIELDED_KEYWORD+" for your first [color=#4fabf9]and second[/color] hit.",
 	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "Become "+SHIELDED_KEYWORD+" while sprinting.\n\n[color=#4fabf9]Does also work when running into your own body.[/color]",
 	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create pressure points in their center.\nPassing through them gives [color=#4fabf9]longer invincibility[/color]",
-	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail\n\n[color=#4fabf9]All "+GHOST_FRUIT_KEYWORD+" are "+HOLLOW_KEYWORD+".[/color]",
+	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail\n\n[color=#4fabf9]1 in 3 times "+GHOST_FRUIT_KEYWORD+" are "+HOLLOW_KEYWORD+".[/color]",
 	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, automatically gets collected\n\n[color=#4fabf9]When Diffusion happens, all Fruits move towards you[/color]",
 }
 
 var tooltip_descriptions = {
 	str(GameConsts.KEYWORDS.ADVAMCEMENT): ADVANCEMENT_KEYWORD + "\nKeep the effects of the card you are replacing.\n\n",
 	str(GameConsts.KEYWORDS.TASTY): TASTY_KEYWORD + "\nTasty fruits give an additional point when collected.\n\n",
-	str(GameConsts.KEYWORDS.DENSE): DENSE_KEYWORD + "\nDense fruits make you grow an additional time when collected.\n\n",
+	str(GameConsts.KEYWORDS.DENSE): DENSE_KEYWORD + "\nDense fruits make you grow more when collected.\n\n",
 	str(GameConsts.KEYWORDS.HOLLOW): HOLLOW_KEYWORD + "\nHollow fruits make you grow one less when collected.\n\n",
 	str(GameConsts.KEYWORDS.SHIELDED): SHIELDED_KEYWORD + "\nDon't lose points when running into an obstacle.\n\n",
 	str(GameConsts.KEYWORDS.GHOST_FRUIT): GHOST_FRUIT_KEYWORD + "\nA type of Fruit that does not cause another fruit to spawn.\n\n",

@@ -41,7 +41,8 @@ var counter: int = 0
 func _flee():
 	if counter % 2 == 0:
 		for ghost_fruit in fleeing_fruits:
-			ghost_fruit.move(ghost_fruit.move_type.AWAY, false)
+			if is_instance_valid(ghost_fruit):
+				ghost_fruit.move(ghost_fruit.move_type.AWAY, false)
 	counter += 1
 
 func _delete_if_pacmanfruit(fruit: FruitElement, is_real_collection: bool):
