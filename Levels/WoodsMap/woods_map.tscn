@@ -1,9 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://83pqpwtuppyt"]
+[gd_scene load_steps=19 format=3 uid="uid://83pqpwtuppyt"]
 
 [ext_resource type="Texture2D" uid="uid://lshghrulnhsv" path="res://Levels/WoodsMap/WoodsMap.svg" id="1_qpv76"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_1lku0"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="2_pbvse"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="3_1lku0"]
+[ext_resource type="Texture2D" uid="uid://dpjelnofbvdk0" path="res://Levels/WoodsMap/WoodsShadow.svg" id="5_4wwhg"]
+[ext_resource type="Script" uid="uid://brbfjt0qs3t7u" path="res://Levels/WoodsMap/woods_shadow.gd" id="6_kron4"]
+[ext_resource type="PackedScene" uid="uid://7i23obmdlsqy" path="res://Levels/WoodsMap/dragonfly.tscn" id="7_ghhkh"]
+[ext_resource type="Texture2D" uid="uid://cegpvetddhxu6" path="res://Levels/WoodsMap/WoodsStump.svg" id="7_kron4"]
+[ext_resource type="Texture2D" uid="uid://c7lycuo5hgapx" path="res://Levels/WoodsMap/WoodsFallenTree.svg" id="8_jcjq0"]
+[ext_resource type="Texture2D" uid="uid://cutkb0xjwek0n" path="res://Levels/WoodsMap/WoodsStumpSmall.svg" id="8_piet2"]
+[ext_resource type="Texture2D" uid="uid://byliwrw1lpsrq" path="res://Levels/WoodsMap/WoodsFallenTreeSmall.svg" id="9_jiu5s"]
+[ext_resource type="Texture2D" uid="uid://dvu75gjkfomgo" path="res://Levels/WoodsMap/WoodsShrooms.svg" id="9_kv02n"]
+[ext_resource type="Texture2D" uid="uid://crh56e52i3ur4" path="res://Levels/WoodsMap/WoodsStompMushroom.svg" id="9_yk71d"]
+[ext_resource type="Texture2D" uid="uid://fu5bbgy2j2t5" path="res://Levels/WoodsMap/WoodsFallenTreeSmall2.svg" id="11_piet2"]
+[ext_resource type="PackedScene" uid="uid://biliiwnosj8db" path="res://Levels/bouncing_deco.tscn" id="12_i1ocd"]
+
+[sub_resource type="Animation" id="Animation_4wwhg"]
+resource_name = "shadow_move_anim"
+length = 25.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WoodsShadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 7, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(720, 560), Vector2(743, 559), Vector2(725, 511), Vector2(731, 527), Vector2(713, 513)]
+}
+
+[sub_resource type="Animation" id="Animation_kron4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WoodsShadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720, 560)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jcjq0"]
+_data = {
+&"RESET": SubResource("Animation_kron4"),
+&"shadow_move_anim": SubResource("Animation_4wwhg")
+}
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -635,3 +685,140 @@ position = Vector2(1360, 80)
 position = Vector2(1360, 0)
 
 [node name="ObstacleElements" type="Node2D" parent="."]
+
+[node name="WoodsShadow" type="Sprite2D" parent="."]
+modulate = Color(0.3, 0.3, 0.3, 0.290196)
+z_index = 35
+z_as_relative = false
+position = Vector2(720, 560)
+texture = ExtResource("5_4wwhg")
+script = ExtResource("6_kron4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WoodsShadow"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_jcjq0")
+}
+
+[node name="BigStump" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(934, 276)
+texture = ExtResource("7_kron4")
+
+[node name="Stump" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1279, 967.5)
+texture = ExtResource("8_piet2")
+
+[node name="Stump2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(319, 565)
+texture = ExtResource("8_piet2")
+
+[node name="Stump3" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1280, 1039.5)
+texture = ExtResource("8_piet2")
+
+[node name="Shroom" type="Sprite2D" parent="Stump3"]
+position = Vector2(20, -86.5)
+texture = ExtResource("9_yk71d")
+
+[node name="FallenTree" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(211, 865)
+texture = ExtResource("8_jcjq0")
+
+[node name="FallenTree2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(330, 320)
+texture = ExtResource("9_jiu5s")
+
+[node name="Shrooms1" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(115, 123)
+texture = ExtResource("9_kv02n")
+
+[node name="BouncingDeco" parent="Shrooms1" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-53, -127)
+animation = "GrowInverse"
+scaling = 0.7
+
+[node name="BouncingDeco2" parent="Shrooms1" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(59, -113)
+
+[node name="BouncingDeco3" parent="Shrooms1" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-63, -67)
+scaling = 1.3
+
+[node name="BouncingDeco4" parent="Shrooms1" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(30, -32)
+animation = "GrowInverse"
+scaling = 0.6
+
+[node name="BouncingDeco5" parent="Shrooms1" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-35, 18)
+scaling = 0.4
+
+[node name="Shrooms2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(998, 848)
+texture = ExtResource("9_kv02n")
+
+[node name="BouncingDeco" parent="Shrooms2" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-53, -127)
+animation = "GrowInverse"
+scaling = 0.7
+
+[node name="BouncingDeco2" parent="Shrooms2" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(59, -113)
+
+[node name="BouncingDeco3" parent="Shrooms2" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-63, -67)
+scaling = 1.3
+
+[node name="BouncingDeco4" parent="Shrooms2" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(30, -32)
+animation = "GrowInverse"
+scaling = 0.6
+
+[node name="BouncingDeco5" parent="Shrooms2" instance=ExtResource("12_i1ocd")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-35, 18)
+scaling = 0.4
+
+[node name="FallenTree3" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(915, 908)
+texture = ExtResource("11_piet2")
+offset = Vector2(135, 63)
+
+[node name="Dragonfly" parent="FallenTree3" instance=ExtResource("7_ghhkh")]

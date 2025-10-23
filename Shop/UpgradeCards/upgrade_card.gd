@@ -30,7 +30,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.CROSS_ROAD_3) : ADVANCEMENT_KEYWORD+". Place a persisting 3x3 Crossroad where your Head is.\n\nBodyparts on top of it are "+PHASING_KEYWORD+".\n\nUsable up to 2 times.",
 	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round you can cut off your tail by surpassing it",
 	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take are "+PHASING_KEYWORD+".",
-	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "The timer stops whenever you surpass your body",
+	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "Gain time whenever you surpass your body",
 	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit requirement, all active Items get refilled",
 	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "Within the first 25 seconds, 5 "+ GHOST_FRUIT_KEYWORD +" will spawn. If exactly 5 "+ GHOST_FRUIT_KEYWORD +" are on the map, all Fruits become "+ HOLLOW_KEYWORD +".\n\nYou can't be dealt map space cards.",
 	str(GameConsts.UPGRADE_LIST.MOULTING) : "Remove every Body Modification.\n\nBuying a card doesn't lock you out Rerolls.\n\nSet the Reroll cost to 0\nReroll cost starts at 0",

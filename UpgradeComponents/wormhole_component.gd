@@ -56,9 +56,14 @@ func _on_item_deactivated():
 	var new_teleporter: Teleporter = teleport_element_scene.instantiate()
 	new_teleporter.one_use = true
 	current_map.add_child(new_teleporter)
-	new_teleporter.position = TileHelper.tile_to_position( TileHelper.get_next_tile(current_map.snake_head.next_tile, current_map.snake_head.current_direction))
+	var teleporter_tile = TileHelper.get_next_tile(current_map.snake_head.next_tile, current_map.snake_head.current_direction)
+	new_teleporter.position = TileHelper.tile_to_position(teleporter_tile)
 	new_teleporter.rotation_degrees = current_map.snake_head.get_orientation(current_map.snake_head.current_direction, 0.0) + 180
 	new_teleporter.destination_tile = TileHelper.position_to_tile(current_map.to_local(tile_select_cursor.global_position))
+	
+	print(current_map.temporary_obstacles)
+	print(current_map.temporary_obstacles.size())
+	current_map.temporary_obstacles.append(teleporter_tile)
 	
 	current_teleporters.append(new_teleporter)
 	current_map.process_mode = Node.PROCESS_MODE_INHERIT
@@ -69,6 +74,9 @@ func _on_teleport_finished(teleporter: Teleporter):
 	for tele in current_teleporters:
 		if tele == teleporter:
 			current_teleporters.erase(tele)
+			print(current_map.temporary_obstacles)
+			print(current_map.temporary_obstacles.size())
+			current_map.temporary_obstacles.erase(TileHelper.position_to_tile(tele.position))
 
 func self_destruct():
 	active_item_slot.remove_lights()

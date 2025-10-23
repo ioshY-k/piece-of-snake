@@ -448,7 +448,7 @@ collision_mask = 1395
 collide_with_areas = true
 
 [node name="FruitCollectArea" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 8192
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FruitCollectArea"]

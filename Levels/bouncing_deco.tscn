@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://biliiwnosj8db"]
+
+[ext_resource type="Script" uid="uid://bk2tmh8ht5d6w" path="res://Levels/bouncing_deco.gd" id="1_yw55l"]
+[ext_resource type="Texture2D" uid="uid://qk2ete32124m" path="res://Levels/WoodsMap/WoodsShroomSpore.svg" id="2_kn514"]
+
+[sub_resource type="Animation" id="Animation_ojdvs"]
+resource_name = "Grow"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2.1, 2.1)]
+}
+
+[sub_resource type="Animation" id="Animation_kn514"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c2gv2"]
+_data = {
+&"Grow": SubResource("Animation_ojdvs"),
+&"RESET": SubResource("Animation_kn514")
+}
+
+[node name="BouncingDeco" type="Sprite2D"]
+script = ExtResource("1_yw55l")
+deco_sprite = ExtResource("2_kn514")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c2gv2")
+}

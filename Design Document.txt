@@ -7,6 +7,8 @@ Z index:
 	Darkness: 23
 	Fruit: 25
 	FruitParticles: 25
+	ForegroundMapDeco: 30
+	Shadoweffect: 35
 	Level: 40
 	MapmodInfoPanel: 200
 

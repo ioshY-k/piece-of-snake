@@ -5,7 +5,7 @@
 [node name="TetriConstellation1" type="Node2D"]
 
 [node name="SnakeBody4" parent="." instance=ExtResource("1_qdxnt")]
-position = Vector2(80, 160)
+position = Vector2(160, 80)
 
 [node name="SnakeBody3" parent="." instance=ExtResource("1_qdxnt")]
 position = Vector2(-160, 80)

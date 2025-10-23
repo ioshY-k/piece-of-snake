@@ -4,8 +4,7 @@ var constellations: Array = [
 								preload("res://MapModComponents/TetriConstellations/tetri_constellation_1.tscn"),
 								preload("res://MapModComponents/TetriConstellations/tetri_constellation_2.tscn"),
 								preload("res://MapModComponents/TetriConstellations/tetri_constellation_3.tscn"),
-								preload("res://MapModComponents/TetriConstellations/tetri_constellation_4.tscn"),
-								preload("res://MapModComponents/TetriConstellations/tetri_constellation_5.tscn")
+								preload("res://MapModComponents/TetriConstellations/tetri_constellation_4.tscn")
 							]
 var map: Map
 var tetrises: Array[Node2D]

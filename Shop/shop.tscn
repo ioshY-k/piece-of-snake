@@ -1126,11 +1126,11 @@ vertical_alignment = 1
 position = Vector2(0, 400.905)
 
 [node name="DealNewCards" type="Button" parent="ItemShelf"]
-offset_left = -532.661
-offset_top = 1212.67
-offset_right = -359.661
-offset_bottom = 1280.67
-theme_override_font_sizes/font_size = 21
+offset_left = -533.0
+offset_top = 1198.0
+offset_right = -259.0
+offset_bottom = 1280.0
+theme_override_font_sizes/font_size = 29
 text = "Deal
 3 new Cards"
 
