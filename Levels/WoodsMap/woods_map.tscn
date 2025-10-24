@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://83pqpwtuppyt"]
+[gd_scene load_steps=20 format=3 uid="uid://83pqpwtuppyt"]
 
 [ext_resource type="Texture2D" uid="uid://lshghrulnhsv" path="res://Levels/WoodsMap/WoodsMap.svg" id="1_qpv76"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_1lku0"]
@@ -10,11 +10,27 @@
 [ext_resource type="Texture2D" uid="uid://cegpvetddhxu6" path="res://Levels/WoodsMap/WoodsStump.svg" id="7_kron4"]
 [ext_resource type="Texture2D" uid="uid://c7lycuo5hgapx" path="res://Levels/WoodsMap/WoodsFallenTree.svg" id="8_jcjq0"]
 [ext_resource type="Texture2D" uid="uid://cutkb0xjwek0n" path="res://Levels/WoodsMap/WoodsStumpSmall.svg" id="8_piet2"]
+[ext_resource type="Texture2D" uid="uid://bapjubc8s24i2" path="res://Levels/WoodsMap/WoodsStumpSmallVines.svg" id="9_gdw1h"]
 [ext_resource type="Texture2D" uid="uid://byliwrw1lpsrq" path="res://Levels/WoodsMap/WoodsFallenTreeSmall.svg" id="9_jiu5s"]
 [ext_resource type="Texture2D" uid="uid://dvu75gjkfomgo" path="res://Levels/WoodsMap/WoodsShrooms.svg" id="9_kv02n"]
 [ext_resource type="Texture2D" uid="uid://crh56e52i3ur4" path="res://Levels/WoodsMap/WoodsStompMushroom.svg" id="9_yk71d"]
 [ext_resource type="Texture2D" uid="uid://fu5bbgy2j2t5" path="res://Levels/WoodsMap/WoodsFallenTreeSmall2.svg" id="11_piet2"]
 [ext_resource type="PackedScene" uid="uid://biliiwnosj8db" path="res://Levels/bouncing_deco.tscn" id="12_i1ocd"]
+
+[sub_resource type="Animation" id="Animation_kron4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WoodsShadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720, 560)]
+}
 
 [sub_resource type="Animation" id="Animation_4wwhg"]
 resource_name = "shadow_move_anim"
@@ -32,21 +48,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(720, 560), Vector2(743, 559), Vector2(725, 511), Vector2(731, 527), Vector2(713, 513)]
-}
-
-[sub_resource type="Animation" id="Animation_kron4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WoodsShadow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(720, 560)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jcjq0"]
@@ -716,7 +717,7 @@ texture = ExtResource("8_piet2")
 z_index = 30
 z_as_relative = false
 position = Vector2(319, 565)
-texture = ExtResource("8_piet2")
+texture = ExtResource("9_gdw1h")
 
 [node name="Stump3" type="Sprite2D" parent="."]
 z_index = 30

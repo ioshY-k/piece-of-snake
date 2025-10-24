@@ -1,9 +1,8 @@
 extends Sprite2D
 
 @export var deco_sprite: Texture2D
-@export_enum("Grow","GrowInverse", "Dance", "Hop") var animation: String = "Grow"
+@export_enum("Grow","GrowInverse", "Dance", "DanceInverse", "Hop") var animation: String = "Grow"
 @export var scaling: float = 1.0
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	texture = deco_sprite
@@ -25,6 +24,18 @@ func create_animation():
 			tween.tween_property(self, "scale", scale - Vector2(0.2,0.2), 0.63)
 			tween.tween_property(self, "scale", scale + Vector2(0.2,0.2), 0.63)
 			tween.tween_property(self, "scale", scale + Vector2(0.2,0.2), 0.63)
+		"Dance":
+			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self, "rotation", rotation + 0.15, 0.63)
+			tween.tween_property(self, "rotation", rotation + 0.15, 0.63)
+			tween.tween_property(self, "rotation", rotation - 0.15, 0.63)
+			tween.tween_property(self, "rotation", rotation - 0.15, 0.63)
+		"DanceInverse":
+			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self, "rotation", rotation - 0.15, 0.63)
+			tween.tween_property(self, "rotation", rotation - 0.15, 0.63)
+			tween.tween_property(self, "rotation", rotation + 0.15, 0.63)
+			tween.tween_property(self, "rotation", rotation + 0.15, 0.63)
 			
 	tween.step_finished.connect(func(_steps):
 		tween.pause()

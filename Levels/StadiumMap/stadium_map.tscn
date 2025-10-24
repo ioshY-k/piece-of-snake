@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvockf2xpvd74"]
+[gd_scene load_steps=20 format=3 uid="uid://dvockf2xpvd74"]
 
 [ext_resource type="Texture2D" uid="uid://dq41ytbc0v4x6" path="res://Levels/StadiumMap/StadiumMap.svg" id="1_xjxdb"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="2_8jajk"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_yugwk"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="3_yugwk"]
+[ext_resource type="Texture2D" uid="uid://cnvy0vjvnssao" path="res://Levels/StadiumMap/StadiumWallLeft.svg" id="5_yugwk"]
+[ext_resource type="Texture2D" uid="uid://ccxd6kvtrehqa" path="res://Levels/StadiumMap/StadiumWallCenter.svg" id="6_w4jnw"]
+[ext_resource type="Texture2D" uid="uid://bojfrncxs4m0f" path="res://Levels/StadiumMap/StadiumWallRight.svg" id="7_hvuha"]
+[ext_resource type="Texture2D" uid="uid://cstl82yepmgvj" path="res://Levels/StadiumMap/StadiumGoal.svg" id="8_7x80k"]
+[ext_resource type="Texture2D" uid="uid://nj7pknrri8c" path="res://Levels/StadiumMap/StadiumLightCone3.svg" id="9_dao24"]
+[ext_resource type="Texture2D" uid="uid://bfcdqd688yqcy" path="res://Levels/StadiumMap/StadiumFlag.svg" id="9_m37vj"]
+[ext_resource type="Texture2D" uid="uid://dgl5m2js06a7o" path="res://Levels/StadiumMap/StadiumLight.svg" id="9_owuxa"]
+[ext_resource type="Texture2D" uid="uid://csekv5wogx6qa" path="res://Levels/StadiumMap/StadiumLightBack.svg" id="10_4t27u"]
+[ext_resource type="Script" uid="uid://ccdcdoo40fckk" path="res://Levels/StadiumMap/light_1.gd" id="10_u8fbc"]
+[ext_resource type="Script" uid="uid://bk2tmh8ht5d6w" path="res://Levels/bouncing_deco.gd" id="10_vnd3r"]
+[ext_resource type="Texture2D" uid="uid://r5r3nm200slb" path="res://Levels/StadiumMap/StadiumLightCone4.png" id="11_1f6nr"]
+[ext_resource type="Texture2D" uid="uid://cuor4emwi85yn" path="res://Levels/StadiumMap/StadiumSeats.svg" id="11_4t27u"]
+[ext_resource type="Texture2D" uid="uid://cyfjr7iq2vmbp" path="res://Levels/StadiumMap/StadiumLightCone.png" id="15_m37vj"]
+[ext_resource type="Texture2D" uid="uid://cf4qaqr40iyga" path="res://Levels/StadiumMap/StadiumLightCone2.png" id="16_vnd3r"]
+[ext_resource type="Texture2D" uid="uid://k2fvj60ikio0" path="res://Levels/StadiumMap/StadiumNightfilter.svg" id="17_oyysv"]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -884,3 +899,176 @@ position = Vector2(1360, 160)
 position = Vector2(1360, 80)
 
 [node name="ObstacleElements" type="Node2D" parent="."]
+
+[node name="WallLeft" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(238, 587)
+texture = ExtResource("5_yugwk")
+
+[node name="WallCenter1" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(679, 908)
+texture = ExtResource("6_w4jnw")
+
+[node name="WallCenter2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(678, 267)
+texture = ExtResource("6_w4jnw")
+
+[node name="WallRight" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1118, 588)
+texture = ExtResource("7_hvuha")
+
+[node name="Goal1" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(243, 587)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_7x80k")
+
+[node name="Goal2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1123, 587)
+texture = ExtResource("8_7x80k")
+
+[node name="Flag1" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1072, 368)
+texture = ExtResource("9_m37vj")
+offset = Vector2(17, -44)
+script = ExtResource("10_vnd3r")
+deco_sprite = ExtResource("9_m37vj")
+animation = "Dance"
+
+[node name="Flag2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(288, 368)
+texture = ExtResource("9_m37vj")
+offset = Vector2(17, -44)
+script = ExtResource("10_vnd3r")
+deco_sprite = ExtResource("9_m37vj")
+animation = "DanceInverse"
+
+[node name="Flag3" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(287, 834)
+texture = ExtResource("9_m37vj")
+offset = Vector2(17, -44)
+script = ExtResource("10_vnd3r")
+deco_sprite = ExtResource("9_m37vj")
+animation = "Dance"
+
+[node name="Flag4" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1073, 834)
+texture = ExtResource("9_m37vj")
+offset = Vector2(17, -44)
+script = ExtResource("10_vnd3r")
+deco_sprite = ExtResource("9_m37vj")
+animation = "DanceInverse"
+
+[node name="Light3" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(92, 1003)
+texture = ExtResource("9_dao24")
+offset = Vector2(250, -222)
+script = ExtResource("10_u8fbc")
+top_border = 6
+right_border = 10
+bottom_border = 12
+left_border = 2
+default_light_field = Vector2i(6, 9)
+switch_x = true
+switch_y = true
+
+[node name="Light4" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1281, 1002)
+texture = ExtResource("11_1f6nr")
+offset = Vector2(-263, -220)
+script = ExtResource("10_u8fbc")
+top_border = 6
+right_border = 15
+bottom_border = 12
+left_border = 8
+default_light_field = Vector2i(11, 9)
+switch_y = true
+
+[node name="LightPole1" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1282, -25)
+texture = ExtResource("9_owuxa")
+offset = Vector2(-245, 315)
+
+[node name="LightPole2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(325, 288)
+scale = Vector2(-1, 1)
+texture = ExtResource("9_owuxa")
+
+[node name="LightPole3" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1040, 819)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_4t27u")
+
+[node name="LightPole4" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(321, 818)
+texture = ExtResource("10_4t27u")
+
+[node name="Seats" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(681, 580)
+texture = ExtResource("11_4t27u")
+
+[node name="Light1" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1282, -24)
+texture = ExtResource("15_m37vj")
+offset = Vector2(-245, 314)
+script = ExtResource("10_u8fbc")
+top_border = 3
+right_border = 15
+bottom_border = 9
+left_border = 7
+default_light_field = Vector2i(11, 6)
+
+[node name="Light2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(80, -26)
+texture = ExtResource("16_vnd3r")
+offset = Vector2(260, 316)
+script = ExtResource("10_u8fbc")
+top_border = 3
+right_border = 10
+bottom_border = 9
+left_border = 2
+default_light_field = Vector2i(6, 6)
+switch_x = true
+
+[node name="Night" type="Sprite2D" parent="."]
+self_modulate = Color(0.52, 0.52, 0.52, 0.168627)
+z_index = 30
+z_as_relative = false
+position = Vector2(681, 580)
+texture = ExtResource("17_oyysv")
