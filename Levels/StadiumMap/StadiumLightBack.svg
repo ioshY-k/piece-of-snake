@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="152.62247mm"
-   height="184.73535mm"
-   viewBox="0 0 152.62247 184.73535"
+   width="26.390238mm"
+   height="71.250015mm"
+   viewBox="0 0 26.390238 71.250015"
    version="1.1"
    id="svg1"
    sodipodi:docname="StadiumLightBack.svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.6275884"
-     inkscape:cx="253.44246"
-     inkscape:cy="271.26023"
+     inkscape:zoom="3.2551768"
+     inkscape:cx="118.88755"
+     inkscape:cy="212.12365"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -139,9 +139,13 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-63.530299,-39.415099)">
+     transform="translate(-63.813776,-172.97678)">
     <path
-       style="fill:#bfb7a3;fill-opacity:0;stroke:#45423b;stroke-width:1.9;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 72.427218,244.2267 c -0.06768,-0.002 -0.142629,-0.021 -0.220141,-0.0529 l -3.420463,-1.32824 0.01343,-0.003 c -0.228501,-0.0413 -0.514803,-0.23539 -0.709,-0.49649 l -2.015898,-2.71078 c -0.242764,-0.32641 -0.247027,-0.63007 -0.0093,-0.6809 l 8.861475,-1.89457 v -4.27225 h -8.082194 c -0.682139,0 -1.231449,-0.28998 -1.231449,-0.65008 v -3.4045 -6.46935 -3.40449 c 0,-0.3601 0.54931,-0.6498 1.231449,-0.6498 h 18.70377 c 0.682139,0 1.231449,0.2897 1.231449,0.6498 v 3.40449 6.46935 3.4045 c 0,0.3601 -0.54931,0.65008 -1.231449,0.65008 h -8.720914 v 3.86578 l 6.751526,-1.44336 c 0.08874,-0.019 0.19863,1e-5 0.313676,0.0483 l 5.17e-4,2.6e-4 3.391523,1.32743 h 5.17e-4 c 0.09162,0.0152 0.192372,0.0555 0.293522,0.11512 v 2.8e-4 h 5.17e-4 5.17e-4 5.16e-4 5.17e-4 c 0.152256,0.0899 0.303777,0.22399 0.42168,0.38246 l 2.016414,2.71077 c 0.242761,0.3264 0.246463,0.63007 0.0088,0.6809 l -17.514175,3.74404 c -0.02712,0.006 -0.05658,0.008 -0.08733,0.007 z"
+       style="fill:#292724;fill-opacity:0.375844;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="path10" />
+    <path
+       style="fill:#bfb7a3;fill-opacity:0;stroke:#25241f;stroke-width:3.6;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="m 71.864556,201.09664 h -6.25078 V 222.2633 H 86.78044 v -21.16666 h -5.42396"
        id="path277-82" />
     <rect
@@ -185,15 +189,20 @@
        style="fill:#bfb7a3;fill-opacity:1;stroke:#45423b;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="M 75.878004,204.01001 V 183.38349"
        id="path278-1" />
+    <path
+       id="rect279-4-1"
+       style="fill:#2e2c28;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 72.427257,172.97683 c -0.06768,0.004 -0.142592,0.0396 -0.220104,0.10008 l -3.420329,2.51618 1.852118,0.90687 -1.007949,2.56767 c -0.242756,0.61832 -0.247097,1.19359 -0.0094,1.28987 l 15.748288,6.37793 -1.476364,3.23145 3.391644,-2.51512 5.01e-4,-2e-5 c 0.09162,-0.0287 0.192341,-0.10519 0.293491,-0.21813 4.33e-4,-4.9e-4 9.85e-4,-6.6e-4 0.0016,-5.7e-4 l 5.18e-4,-2e-5 c 0.152256,-0.17036 0.303684,-0.4239 0.421587,-0.72407 l 2.016407,-5.13536 c 0.242761,-0.61832 0.246578,-1.19357 0.0089,-1.28985 l -17.514055,-7.0932 c -0.02712,-0.0111 -0.05652,-0.0154 -0.08727,-0.0132 z"
+       sodipodi:nodetypes="ccccccccccscccccccc" />
     <rect
        style="fill:#45423b;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-       id="rect279"
-       width="19.831398"
-       height="7.9105172"
-       x="135.03716"
-       y="127.64629"
-       rx="0.46319577"
-       ry="1.1983742"
-       transform="rotate(24.440328)" />
+       id="rect279-4"
+       width="19.821539"
+       height="7.9149041"
+       x="-147.72882"
+       y="-144.79279"
+       rx="0.46296546"
+       ry="1.1990386"
+       transform="matrix(-0.92686817,-0.37538698,0.36546216,-0.9308262,0,0)" />
   </g>
 </svg>

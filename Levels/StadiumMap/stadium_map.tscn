@@ -1,14 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://dvockf2xpvd74"]
+[gd_scene load_steps=21 format=3 uid="uid://dvockf2xpvd74"]
 
 [ext_resource type="Texture2D" uid="uid://dq41ytbc0v4x6" path="res://Levels/StadiumMap/StadiumMap.svg" id="1_xjxdb"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="2_8jajk"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_yugwk"]
+[ext_resource type="Texture2D" uid="uid://ejc6llnaj7eg" path="res://Levels/StadiumMap/StadiumWalkPath.svg" id="3_vnd3r"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="3_yugwk"]
 [ext_resource type="Texture2D" uid="uid://cnvy0vjvnssao" path="res://Levels/StadiumMap/StadiumWallLeft.svg" id="5_yugwk"]
 [ext_resource type="Texture2D" uid="uid://ccxd6kvtrehqa" path="res://Levels/StadiumMap/StadiumWallCenter.svg" id="6_w4jnw"]
 [ext_resource type="Texture2D" uid="uid://bojfrncxs4m0f" path="res://Levels/StadiumMap/StadiumWallRight.svg" id="7_hvuha"]
 [ext_resource type="Texture2D" uid="uid://cstl82yepmgvj" path="res://Levels/StadiumMap/StadiumGoal.svg" id="8_7x80k"]
-[ext_resource type="Texture2D" uid="uid://nj7pknrri8c" path="res://Levels/StadiumMap/StadiumLightCone3.svg" id="9_dao24"]
 [ext_resource type="Texture2D" uid="uid://bfcdqd688yqcy" path="res://Levels/StadiumMap/StadiumFlag.svg" id="9_m37vj"]
 [ext_resource type="Texture2D" uid="uid://dgl5m2js06a7o" path="res://Levels/StadiumMap/StadiumLight.svg" id="9_owuxa"]
 [ext_resource type="Texture2D" uid="uid://csekv5wogx6qa" path="res://Levels/StadiumMap/StadiumLightBack.svg" id="10_4t27u"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bk2tmh8ht5d6w" path="res://Levels/bouncing_deco.gd" id="10_vnd3r"]
 [ext_resource type="Texture2D" uid="uid://r5r3nm200slb" path="res://Levels/StadiumMap/StadiumLightCone4.png" id="11_1f6nr"]
 [ext_resource type="Texture2D" uid="uid://cuor4emwi85yn" path="res://Levels/StadiumMap/StadiumSeats.svg" id="11_4t27u"]
+[ext_resource type="Texture2D" uid="uid://576vxbe1txur" path="res://Levels/StadiumMap/StadiumLightCone3.png" id="11_m37vj"]
 [ext_resource type="Texture2D" uid="uid://cyfjr7iq2vmbp" path="res://Levels/StadiumMap/StadiumLightCone.png" id="15_m37vj"]
 [ext_resource type="Texture2D" uid="uid://cf4qaqr40iyga" path="res://Levels/StadiumMap/StadiumLightCone2.png" id="16_vnd3r"]
 [ext_resource type="Texture2D" uid="uid://k2fvj60ikio0" path="res://Levels/StadiumMap/StadiumNightfilter.svg" id="17_oyysv"]
@@ -28,6 +29,11 @@ script = ExtResource("2_yugwk")
 grid_size = Vector2i(18, 16)
 inbounds_grid_size = Vector2i(14, 12)
 starting_position = Vector2(8, 8)
+
+[node name="WalkPath" type="Sprite2D" parent="."]
+self_modulate = Color(0.93, 1, 0.9475, 1)
+position = Vector2(679, 601)
+texture = ExtResource("3_vnd3r")
 
 [node name="SolidElements" type="Node2D" parent="."]
 
@@ -903,38 +909,38 @@ position = Vector2(1360, 80)
 [node name="WallLeft" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(238, 587)
+position = Vector2(238, 597)
 texture = ExtResource("5_yugwk")
 
 [node name="WallCenter1" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(679, 908)
+position = Vector2(679, 916)
 texture = ExtResource("6_w4jnw")
 
 [node name="WallCenter2" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(678, 267)
+position = Vector2(678, 275)
 texture = ExtResource("6_w4jnw")
 
 [node name="WallRight" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(1118, 588)
+position = Vector2(1120, 598)
 texture = ExtResource("7_hvuha")
 
 [node name="Goal1" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(243, 587)
+position = Vector2(243, 599.5)
 scale = Vector2(-1, 1)
 texture = ExtResource("8_7x80k")
 
 [node name="Goal2" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(1123, 587)
+position = Vector2(1123, 599.5)
 texture = ExtResource("8_7x80k")
 
 [node name="Flag1" type="Sprite2D" parent="."]
@@ -978,10 +984,11 @@ deco_sprite = ExtResource("9_m37vj")
 animation = "DanceInverse"
 
 [node name="Light3" type="Sprite2D" parent="."]
+self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
 z_index = 30
 z_as_relative = false
 position = Vector2(92, 1003)
-texture = ExtResource("9_dao24")
+texture = ExtResource("11_m37vj")
 offset = Vector2(250, -222)
 script = ExtResource("10_u8fbc")
 top_border = 6
@@ -993,6 +1000,7 @@ switch_x = true
 switch_y = true
 
 [node name="Light4" type="Sprite2D" parent="."]
+self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
 z_index = 30
 z_as_relative = false
 position = Vector2(1281, 1002)
@@ -1009,28 +1017,27 @@ switch_y = true
 [node name="LightPole1" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(1282, -25)
+position = Vector2(1280, 71)
 texture = ExtResource("9_owuxa")
-offset = Vector2(-245, 315)
 
 [node name="LightPole2" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(325, 288)
+position = Vector2(81, 71)
 scale = Vector2(-1, 1)
 texture = ExtResource("9_owuxa")
 
 [node name="LightPole3" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(1040, 819)
+position = Vector2(1276, 1107)
 scale = Vector2(-1, 1)
 texture = ExtResource("10_4t27u")
 
 [node name="LightPole4" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
-position = Vector2(321, 818)
+position = Vector2(83, 1109)
 texture = ExtResource("10_4t27u")
 
 [node name="Seats" type="Sprite2D" parent="."]
@@ -1040,6 +1047,7 @@ position = Vector2(681, 580)
 texture = ExtResource("11_4t27u")
 
 [node name="Light1" type="Sprite2D" parent="."]
+self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
 z_index = 30
 z_as_relative = false
 position = Vector2(1282, -24)
@@ -1053,6 +1061,7 @@ left_border = 7
 default_light_field = Vector2i(11, 6)
 
 [node name="Light2" type="Sprite2D" parent="."]
+self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
 z_index = 30
 z_as_relative = false
 position = Vector2(80, -26)

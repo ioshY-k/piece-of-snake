@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2.3017576"
-     inkscape:cx="-145.10651"
-     inkscape:cy="-100.57532"
+     inkscape:zoom="4.6035152"
+     inkscape:cx="-58.650833"
+     inkscape:cy="6.1909213"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -146,38 +146,38 @@
     <rect
        style="fill:#e6ed6a;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
        id="rect1"
-       width="10.635877"
-       height="6.1156411"
-       x="134.48869"
-       y="175.96004"
-       ry="1.5413405" />
+       width="7.4660516"
+       height="4.6111312"
+       x="134.43182"
+       y="181.78706"
+       ry="1.162155" />
     <path
-       style="fill:#1a2643;fill-opacity:0;stroke:#3f331c;stroke-width:1.859;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
-       d="m 135.20011,175.612 v 23.07038"
+       style="fill:#1a2643;fill-opacity:0;stroke:#3f331c;stroke-width:1.35245;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 134.93122,181.52464 v 17.39484"
        id="path1" />
     <rect
        style="fill:#edbe6a;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
        id="rect2"
-       width="2.6116936"
-       height="2.8272741"
-       x="136.18895"
-       y="176.22787"
-       ry="0.67963177" />
+       width="1.8333269"
+       height="2.1317358"
+       x="135.62535"
+       y="181.98901"
+       ry="0.51243544" />
     <rect
        style="fill:#edbe6a;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
        id="rect2-5"
-       width="2.6116936"
-       height="2.8272741"
-       x="138.80061"
-       y="179.05516"
-       ry="0.67963177" />
+       width="1.8333269"
+       height="2.1317358"
+       x="137.45866"
+       y="184.12076"
+       ry="0.51243544" />
     <rect
        style="fill:#edbe6a;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
        id="rect2-52"
-       width="2.6116936"
-       height="2.8272741"
-       x="141.41234"
-       y="176.22787"
-       ry="0.67963177" />
+       width="1.8333269"
+       height="2.1317358"
+       x="139.29201"
+       y="181.98901"
+       ry="0.51243544" />
   </g>
 </svg>

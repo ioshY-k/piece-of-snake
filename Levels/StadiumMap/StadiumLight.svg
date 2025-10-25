@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="152.62247mm"
-   height="184.73535mm"
-   viewBox="0 0 152.62247 184.73535"
+   width="26.595371mm"
+   height="69.138695mm"
+   viewBox="0 0 26.595371 69.138694"
    version="1.1"
    id="svg1"
    sodipodi:docname="StadiumLight.svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="3.2551768"
-     inkscape:cx="390.60858"
-     inkscape:cy="127.02843"
+     inkscape:zoom="4.6035152"
+     inkscape:cx="16.074673"
+     inkscape:cy="212.98941"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -123,9 +123,17 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-63.530299,-39.415099)">
+     transform="translate(-190.5574,-40.400739)">
     <path
-       style="fill:#bfb7a3;fill-opacity:0;stroke:#45423b;stroke-width:1.9;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 208.33452,109.53934 c 0.0677,-0.002 0.14263,-0.021 0.22014,-0.0529 l 3.42047,-1.32824 -0.0134,-0.003 c 0.2285,-0.0413 0.5148,-0.23539 0.709,-0.49649 l 2.01586,-2.71078 c 0.24277,-0.32641 0.24703,-0.63007 0.009,-0.6809 l -8.86147,-1.89457 v -4.272251 h 8.08219 c 0.68214,0 1.23145,-0.28998 1.23145,-0.65008 v -3.4045 -6.46935 -3.40449 c 0,-0.3601 -0.54931,-0.6498 -1.23145,-0.6498 h -18.70377 c -0.68214,0 -1.23145,0.2897 -1.23145,0.6498 v 3.40449 6.46935 3.4045 c 0,0.3601 0.54931,0.65008 1.23145,0.65008 h 8.72092 v 3.865781 l -6.75153,-1.44336 c -0.0887,-0.019 -0.19863,10e-6 -0.31367,0.0483 l -5.2e-4,2.6e-4 -3.39152,1.32743 h -5.2e-4 c -0.0916,0.0152 -0.19237,0.0555 -0.29352,0.11512 v 2.8e-4 h -5.2e-4 -5.2e-4 -5.1e-4 -5.2e-4 c -0.15226,0.0899 -0.30378,0.22399 -0.42168,0.38246 l -2.01641,2.71077 c -0.24277,0.3264 -0.24647,0.63007 -0.009,0.6809 l 17.51417,3.74404 c 0.0271,0.006 0.0566,0.008 0.0873,0.007 z"
+       style="fill:#292724;fill-opacity:0.375844;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="path10" />
+    <path
+       id="rect279-4-1"
+       style="fill:#2e2c28;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 194.08711,40.412175 c -0.0525,0.02262 -0.0913,0.07824 -0.11593,0.159985 l -1.05351,3.414774 1.97177,0.463083 0.82677,2.863793 c 0.19907,0.689637 0.56578,1.272012 0.82255,1.305698 l 17.00886,2.231322 0.8702,3.659717 1.16019,-3.448302 4e-4,-1.59e-4 c 0.0566,-0.05349 0.0899,-0.157712 0.10008,-0.298884 5e-5,-5.97e-4 3.7e-4,-9.15e-4 9.7e-4,-0.0015 l 4.1e-4,-1.6e-4 c 0.0151,-0.212856 -0.024,-0.509501 -0.1206,-0.844308 l -1.65314,-5.727747 c -0.19906,-0.689636 -0.56619,-1.271851 -0.82294,-1.305537 l -18.91606,-2.481659 c -0.0294,-0.0039 -0.0562,-3.98e-4 -0.08,0.0099 z" />
+    <path
+       style="fill:#bfb7a3;fill-opacity:0;stroke:#21201d;stroke-width:3.9;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="m 200.28689,66.118792 -6.25078,-10e-7 v 21.166668 h 21.16666 V 66.118791 l -5.42396,10e-7"
        id="path277-8" />
     <rect
@@ -172,36 +180,36 @@
     <rect
        style="fill:#45423b;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="rect279-4"
-       width="19.831398"
-       height="7.9105172"
-       x="-216.86433"
-       y="36.221958"
-       rx="0.46319577"
-       ry="1.1983742"
-       transform="rotate(-155.55967)" />
+       width="20.012754"
+       height="8.5526505"
+       x="-208.47993"
+       y="-28.756119"
+       rx="0.46743163"
+       ry="1.2956517"
+       transform="matrix(-0.99150308,-0.13008325,-0.27732216,-0.96077699,0,0)" />
     <ellipse
        style="fill:#dddbbe;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="path280"
-       cx="202.20039"
-       cy="-30.078865"
-       rx="2.3802764"
-       ry="2.0481706"
-       transform="rotate(21.567394)" />
+       cx="186.42241"
+       cy="35.393784"
+       rx="2.3504119"
+       ry="2.2550793"
+       transform="matrix(0.99679102,0.08004792,0.31752938,0.94824843,0,0)" />
     <ellipse
        style="fill:#dddbbe;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="path280-9"
-       cx="208.22206"
-       cy="-29.619896"
-       rx="2.3802764"
-       ry="2.0481706"
-       transform="rotate(21.567394)" />
+       cx="192.36852"
+       cy="35.899117"
+       rx="2.3504119"
+       ry="2.2550793"
+       transform="matrix(0.99679102,0.08004792,0.31752938,0.94824843,0,0)" />
     <ellipse
        style="fill:#dddbbe;fill-opacity:1;stroke:#45423b;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="path280-7"
-       cx="214.51476"
-       cy="-29.447578"
-       rx="2.3802764"
-       ry="2.0481706"
-       transform="rotate(21.567394)" />
+       cx="198.58228"
+       cy="36.088844"
+       rx="2.3504119"
+       ry="2.2550793"
+       transform="matrix(0.99679102,0.08004792,0.31752938,0.94824843,0,0)" />
   </g>
 </svg>

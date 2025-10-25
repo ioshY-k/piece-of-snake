@@ -3,8 +3,8 @@
 
 <svg
    width="85.818016mm"
-   height="7.424408mm"
-   viewBox="0 0 85.818017 7.4244078"
+   height="12.252234mm"
+   viewBox="0 0 85.818017 12.252234"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.6275884"
-     inkscape:cx="38.400372"
-     inkscape:cy="-123.8028"
+     inkscape:zoom="4.6035152"
+     inkscape:cx="161.3984"
+     inkscape:cy="35.516338"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -85,12 +85,36 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect7-16-7"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0.95502343,0,1 @ F,0,0,1,0,1.2217174,0,1 @ F,0,0,1,0,1.0177507,0,1 @ F,0,0,1,0,0.90342753,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
   </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-94.873364,-181.23621)">
+    <path
+       style="fill:#252420;fill-opacity:0.311328;stroke:#412c01;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 150.82444,77.242265 82.30878,0.182485 a 1.165618,1.165618 46.473161 0 1 1.16162,1.222948 l -0.24635,5.002454 a 1.0691039,1.0691039 136.40965 0 1 -1.06781,1.016519 h -82.57354 a 0.86003407,0.86003407 46.409591 0 1 -0.859,-0.902334 l 0.27431,-5.570321 a 1.0009853,1.0009853 136.47311 0 1 1.00199,-0.951751 z"
+       id="path5-5-8"
+       inkscape:path-effect="#path-effect7-16-7"
+       inkscape:original-d="m 149.86942,77.240148 84.48551,0.187311 -0.3565,7.239212 h -84.49472 z"
+       transform="matrix(1,0,0.0154825,-1,-54.858247,270.73071)" />
     <path
        style="fill:#565249;fill-opacity:1;stroke:#412c01;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;paint-order:fill markers stroke"
        d="m 96.138184,188.38596 0.13124,-6.48026 -1.39606,4.35025 z"

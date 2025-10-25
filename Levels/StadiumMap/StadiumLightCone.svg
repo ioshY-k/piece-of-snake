@@ -27,7 +27,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.6275884"
-     inkscape:cx="360.34909"
+     inkscape:cx="360.04189"
      inkscape:cy="395.98464"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
@@ -109,13 +109,13 @@
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
        id="filter1-8-1-2"
-       x="-0.089964426"
-       y="-0.082481643"
-       width="1.1799289"
-       height="1.1649633">
+       x="-0.032387192"
+       y="-0.02969339"
+       width="1.0647744"
+       height="1.0593868">
       <feGaussianBlur
          inkscape:collect="always"
-         stdDeviation="3.873845"
+         stdDeviation="1.3945842"
          id="feGaussianBlur1-9-1-5" />
     </filter>
     <inkscape:path-effect
