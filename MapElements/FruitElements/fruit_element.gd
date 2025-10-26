@@ -17,17 +17,19 @@ var big = false
 @onready var raycast_down: RayCast2D = $RaycastDown
 @onready var raycast_left: RayCast2D = $RaycastLeft
 @onready var fruit_element_sprite: AnimatedSprite2D = $FruitElementSprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func collected_anim(snakehead_pos: Vector2, fruit_destination_pos: Vector2):
 	await get_tree().process_frame
 	set_collision_layer_value(2,false)
+	animation_player.play("Collect")
 	var tweenforth = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).set_parallel(true)
-	tweenforth.tween_property(self, "position", position+(snakehead_pos-position).rotated(deg_to_rad(180)), 0.15)
-	tweenforth.tween_property(self, "scale", Vector2(1.5,1.5), 0.15)
+	tweenforth.tween_property(self, "position", position+(snakehead_pos-position).rotated(deg_to_rad(180)), 0.4)
+	tweenforth.tween_property(self, "scale", Vector2(1.5,1.5), 0.4)
 	await tweenforth.finished
 	var tweenback = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN).set_parallel(true)
-	tweenback.tween_property(self, "position", snakehead_pos, 0.1)
-	tweenback.tween_property(self, "scale", Vector2.ZERO, 0.1)
+	tweenback.tween_property(self, "position", snakehead_pos, 0.2)
+	tweenback.tween_property(self, "scale", Vector2.ZERO, 0.2)
 	await tweenback.finished
 	var particles: CPUParticles2D = particle_scene.instantiate()
 	get_parent().add_child(particles)
