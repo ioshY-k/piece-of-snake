@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="52.995216mm"
+   height="62.671928mm"
+   viewBox="0 0 52.995216 62.671928"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="ButtonBluePressed.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="4.6035151"
+     inkscape:cx="98.403065"
+     inkscape:cy="128.05432"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-53.645304,-88.758621)">
+    <path
+       id="path1-1"
+       style="fill:#919eab;stroke:#454545;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.846212;paint-order:fill markers stroke"
+       d="M 80.142912,98.435335 C 69.611564,98.43539 60.079904,104.6721 55.86274,114.32222 l -1.224614,0.87545 -0.992822,9.73527 v 0.93431 h 0.01654 c 0.503145,14.26172 12.210481,25.56331 26.481071,25.5633 14.270587,0 25.977925,-11.30159 26.481065,-25.5633 0.011,-0.31132 0.0165,-0.6228 0.0165,-0.93431 -1e-5,-0.31151 -0.006,-0.62299 -0.0165,-0.93431 l -0.94413,-8.68542 -1.25677,-0.99099 C 100.20592,104.6721 90.674259,98.435392 80.142912,98.435335 Z"
+       sodipodi:nodetypes="ccccccssccccc" />
+    <circle
+       style="fill:#ccdef1;fill-opacity:1;stroke:#454545;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.846212;paint-order:fill markers stroke"
+       id="path1"
+       cx="80.142853"
+       cy="122.38296"
+       r="26.497536" />
+    <path
+       style="fill:#919eab;fill-opacity:0;stroke:#ffffff;stroke-width:2.789;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 60.403658,117.17983 c 0,0 2.074709,-14.54745 16.600852,-14.8989"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

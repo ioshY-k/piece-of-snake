@@ -5,11 +5,12 @@ Z index:
 	TailPLant:16
 	SnakeHead: 20
 	Darkness: 23
-	Fruit: 25
-	FruitParticles: 25
-	ForegroundMapDeco: 30
-	Shadoweffect: 35
-	Level: 40
+	Fruit: 25-50
+	FruitParticles: 25-50
+	ForegroundMapDeco: 25-50
+	Shadow/Fog: 50
+	UFO: 50
+	Level: 100
 	MapmodInfoPanel: 200
 
 Z index Shop Canvas Layer:

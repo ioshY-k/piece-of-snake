@@ -21,8 +21,8 @@ func _set_swiss_knive(state:bool):
 			SignalBus.fruit_collected.disconnect(prevent_growth)
 
 func prevent_growth(fruit, is_real_collection):
-	if randi()%100 <= 33 and fruit != null and fruit.is_in_group("Ghost Fruit") and map.snake_tail.tiles_to_grow > 1:
-		map.snake_tail.tiles_to_grow -= 2
+	if randi()%100 <= 33 and fruit != null and fruit.is_in_group("Ghost Fruit") and map.snake_tail.tiles_to_grow >= RunSettings.fruit_growth:
+		map.snake_tail.tiles_to_grow -= RunSettings.fruit_growth
 		var growth_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH)
 		map.add_child(growth_effect_trigger_text)

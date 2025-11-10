@@ -62,5 +62,4 @@ func move_light():
 	else:
 		light_target = Vector2(1,1)
 		snake_inside = false
-		print("inside light")
 	

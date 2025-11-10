@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4hoaxemc7x81"]
+
+[ext_resource type="Script" uid="uid://d188wm6dcanuh" path="res://MainMenu/wandering_snakes_background.gd" id="1_qrbcl"]
+
+[node name="WanderingSnakesBackground" type="Node2D"]
+script = ExtResource("1_qrbcl")

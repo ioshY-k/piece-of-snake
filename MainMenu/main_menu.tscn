@@ -1,10 +1,10 @@
-[gd_scene load_steps=71 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=104 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
-[ext_resource type="Texture2D" uid="uid://coepahhdrkhhr" path="res://MainMenu/BackgroundTexture.svg" id="2_3w4mj"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
 [ext_resource type="Script" uid="uid://bxtwe3vmh1r3t" path="res://MainMenu/CharacterSelect/character_selection.gd" id="3_ajn5b"]
 [ext_resource type="Script" uid="uid://do7c0otvtn8cf" path="res://MainMenu/CharacterSelect/character_select_snake_movement.gd" id="5_id3bs"]
+[ext_resource type="FontFile" uid="uid://gocqippkw1ds" path="res://Fonts/Odin Rounded - Bold.otf" id="6_ashh5"]
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="6_b3er0"]
 [ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="7_qmlj8"]
 [ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Godoticon/GodoticonCorner.svg" id="8_e240q"]
@@ -31,47 +31,25 @@
 [ext_resource type="Texture2D" uid="uid://ddpiak6p1mtb7" path="res://Snake/Head/ElephantHead.svg" id="29_bmlrk"]
 [ext_resource type="Texture2D" uid="uid://cylor60les28q" path="res://Snake/Body/Sprites/Elephant/ElephantEdge.svg" id="29_c58bg"]
 [ext_resource type="Texture2D" uid="uid://do8vru8la3k2v" path="res://Snake/Tail/ElephantTail.svg" id="30_t31mw"]
-[ext_resource type="Texture2D" uid="uid://4wvixiopwjjg" path="res://Shop/UI/UpgradeInfo.svg" id="32_j3jui"]
+[ext_resource type="Texture2D" uid="uid://chbjrh02lc2sb" path="res://MainMenu/CharacterSelectBG.png" id="31_bh756"]
+[ext_resource type="Texture2D" uid="uid://c5rrcknlgrnt4" path="res://MainMenu/CharacterInfo.svg" id="32_bh756"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="33_cwel5"]
-
-[sub_resource type="Animation" id="Animation_ajn5b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-556, -492)]
-}
-
-[sub_resource type="Animation" id="Animation_5de1l"]
-resource_name = "background_scroll_anim"
-length = 10.0
-loop_mode = 1
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-106, -42), Vector2(-556, -492)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_po2gx"]
-_data = {
-&"RESET": SubResource("Animation_ajn5b"),
-&"background_scroll_anim": SubResource("Animation_5de1l")
-}
+[ext_resource type="Texture2D" uid="uid://6f6gnkek4p1g" path="res://MainMenu/MainMenuBachground.svg" id="38_ce477"]
+[ext_resource type="Texture2D" uid="uid://bpvwpmgpogfo2" path="res://Shop/UpgradeCards/Anchor.svg" id="39_12kcr"]
+[ext_resource type="PackedScene" uid="uid://b4hoaxemc7x81" path="res://MainMenu/wandering_snakes_background.tscn" id="39_ce477"]
+[ext_resource type="Texture2D" uid="uid://cvskf4rlgc7j8" path="res://Shop/UpgradeCards/Catch.svg" id="40_bh756"]
+[ext_resource type="Texture2D" uid="uid://blxbmaeywgv0t" path="res://Shop/UpgradeCards/EdgeWrap.svg" id="41_r7e3w"]
+[ext_resource type="Texture2D" uid="uid://dkl1bses52k5x" path="res://Shop/UpgradeCards/PiggyBank.svg" id="42_w8io1"]
+[ext_resource type="Texture2D" uid="uid://kdourpai0vr6" path="res://Shop/UpgradeCards/PlantSnake.svg" id="43_r03wj"]
+[ext_resource type="Texture2D" uid="uid://uldq0vvhi3m4" path="res://Shop/UpgradeCards/PowerNap.svg" id="44_hg2b4"]
+[ext_resource type="Texture2D" uid="uid://bbpwacdc1jvg4" path="res://Shop/UpgradeCards/RubberBand.svg" id="45_fi7gv"]
+[ext_resource type="Texture2D" uid="uid://br2gk6nyd7rj3" path="res://Shop/UpgradeCards/ShinyGhost.svg" id="46_bqfl2"]
+[ext_resource type="PackedScene" uid="uid://bc2jtreq5e56n" path="res://Shop/UpgradeCards/upgrade_card.tscn" id="46_wclgf"]
+[ext_resource type="Texture2D" uid="uid://ihytxj6bny85" path="res://MainMenu/PlayButtonSlot.svg" id="47_2384g"]
+[ext_resource type="Texture2D" uid="uid://cnyoy2hjcisf2" path="res://Shop/UpgradeCards/snek1.png" id="47_g521o"]
+[ext_resource type="Texture2D" uid="uid://7a4e3l6e3ots" path="res://Shop/UpgradeCards/TimeStop1.svg" id="48_ib2n2"]
+[ext_resource type="Texture2D" uid="uid://c7obdob4kbeny" path="res://MainMenu/GameLogo.png" id="49_12kcr"]
+[ext_resource type="Texture2D" uid="uid://43j8mxxjuxa4" path="res://MainMenu/WanderingFruit.png" id="50_bh756"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x28t"]
 texture = ExtResource("3_5de1l")
@@ -90,6 +68,12 @@ texture_region_size = Vector2i(80, 80)
 [sub_resource type="TileSet" id="TileSet_gcf2c"]
 tile_size = Vector2i(80, 80)
 sources/0 = SubResource("TileSetAtlasSource_5x28t")
+
+[sub_resource type="Curve2D" id="Curve2D_qbnp5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1160, 120, 0, 0, 0, 0, 360, 120)
+}
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_t5loh"]
 _data = {
@@ -662,42 +646,311 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Curve2D" id="Curve2D_qbnp5"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1160, 120, 0, 0, 0, 0, 360, 120)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wclgf"]
+size = Vector2(174, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh756"]
+size = Vector2(219, 518)
+
+[sub_resource type="Curve" id="Curve_ce477"]
+_data = [Vector2(0.0010225, 0.116387), 0.0, 0.0, 0, 0, Vector2(0.205521, 0.995965), 0.0, 0.0, 0, 0, Vector2(0.461145, 0.0599008), 0.0, 0.0, 0, 0, Vector2(0.712679, 0.987896), 0.0, 0.0, 0, 0, Vector2(0.913088, 0.0639355), 0.0962437, 0.0962437, 0, 0, Vector2(1, 0.0477964), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_0aybo"]
+_data = [Vector2(0.313906, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Animation" id="Animation_w8io1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1486, 371)]
 }
-point_count = 2
+
+[sub_resource type="Animation" id="Animation_r7e3w"]
+resource_name = "Shift"
+length = 5.0
+loop_mode = 2
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1486, 371), Vector2(1486, 428)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r03wj"]
+_data = {
+&"RESET": SubResource("Animation_w8io1"),
+&"Shift": SubResource("Animation_r7e3w")
+}
+
+[sub_resource type="Animation" id="Animation_r03wj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1761, 496)]
+}
+
+[sub_resource type="Animation" id="Animation_bh756"]
+resource_name = "Shift"
+length = 4.5
+loop_mode = 2
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1761, 496), Vector2(1761, 440)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hg2b4"]
+_data = {
+&"RESET": SubResource("Animation_r03wj"),
+&"Shift": SubResource("Animation_bh756")
+}
+
+[sub_resource type="Animation" id="Animation_fi7gv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(417, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_hg2b4"]
+resource_name = "Shift"
+length = 6.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(417, 370), Vector2(417, 260)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqfl2"]
+_data = {
+&"RESET": SubResource("Animation_fi7gv"),
+&"Shift": SubResource("Animation_hg2b4")
+}
+
+[sub_resource type="Animation" id="Animation_ib2n2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(684, 915)]
+}
+
+[sub_resource type="Animation" id="Animation_g521o"]
+resource_name = "Shift"
+length = 4.7
+loop_mode = 2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(684, 915), Vector2(684, 992)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbxrr"]
+_data = {
+&"RESET": SubResource("Animation_ib2n2"),
+&"Shift": SubResource("Animation_g521o")
+}
+
+[sub_resource type="Animation" id="Animation_0aybo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-253, -115)]
+}
+
+[sub_resource type="Animation" id="Animation_ce477"]
+resource_name = "Shift"
+length = 15.0
+loop_mode = 2
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-253, -115), Vector2(-253, -694)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2l4ob"]
+_data = {
+&"RESET": SubResource("Animation_0aybo"),
+&"Shift": SubResource("Animation_ce477")
+}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_hy30b")
 
-[node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.77, 0.77, 0.77, 1)
-offset_left = -556.0
-offset_top = -492.0
-offset_right = 2186.0
-offset_bottom = 1240.0
-texture = ExtResource("2_3w4mj")
-stretch_mode = 1
-
-[node name="NewRun" type="Button" parent="."]
-offset_left = 300.0
-offset_top = 700.0
-offset_right = 921.0
-offset_bottom = 901.0
-theme_override_font_sizes/font_size = 141
-text = "New Run"
-
-[node name="BackgroundScroll" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_po2gx")
-}
-autoplay = "background_scroll_anim"
-
 [node name="CharacterSelection" type="Node2D" parent="."]
+position = Vector2(-739, 2)
 script = ExtResource("3_ajn5b")
 
+[node name="Character4Select" type="TileMapLayer" parent="CharacterSelection"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(1200, 40)
+tile_map_data = PackedByteArray("AAD7/wAAAAABAAIAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAMAAAA=")
+tile_set = SubResource("TileSet_gcf2c")
+script = ExtResource("5_id3bs")
+
+[node name="Path2D" type="Path2D" parent="CharacterSelection/Character4Select"]
+position = Vector2(-800, -79.9995)
+curve = SubResource("Curve2D_qbnp5")
+
+[node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character4Select/Path2D"]
+position = Vector2(439.998, 120)
+rotation = 3.14159
+progress = 720.0
+
+[node name="Head" type="Sprite2D" parent="CharacterSelection/Character4Select/Path2D/HeadFollow"]
+z_index = 11
+z_as_relative = false
+rotation = 1.5708
+texture = ExtResource("29_bmlrk")
+
+[node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character4Select/Path2D"]
+position = Vector2(1080, 120)
+rotation = 3.14159
+progress = 80.0
+
+[node name="Tail" type="Sprite2D" parent="CharacterSelection/Character4Select/Path2D/TailFollow"]
+z_index = 11
+z_as_relative = false
+rotation = 1.5708
+texture = ExtResource("30_t31mw")
+
+[node name="SnakeBody0" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(280, 40.0005)
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody1" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(200, 40.0005)
+rotation = 1.57079
+scale = Vector2(-1, -1)
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody2" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(120, 40.0005)
+rotation = -7.85397
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody7" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(40, 40.0005)
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody8" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-40, 40.0005)
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody3" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-120, 40.0005)
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody4" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-200, 40.0005)
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody5" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-280, 40.0005)
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="SnakeBody6" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-360, 40.0005)
+rotation = 4.71239
+sprite = ExtResource("29_c58bg")
+char_id = 4
+
+[node name="Character4Area" type="Area2D" parent="CharacterSelection"]
+position = Vector2(1200, 520)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character4Area"]
+polygon = PackedVector2Array(320, -400, -400, -400, -400, -480, 320, -480)
+
 [node name="Character0Select" type="TileMapLayer" parent="CharacterSelection"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1120, 600)
 tile_map_data = PackedByteArray("AAD9////AAABAAIAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAACAAAAAAAAAAAAAAAAAAMAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAMAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
@@ -785,6 +1038,7 @@ position = Vector2(1120, 600)
 polygon = PackedVector2Array(400, 79.9998, 0, 79.9998, 0, -0.000244141, -240, -0.000244141, -240, -80.0002, 80, -80.0002, 80, -0.000244141, 400, -0.000244141)
 
 [node name="Character1Select" type="TileMapLayer" parent="CharacterSelection"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1040, 520)
 tile_map_data = PackedByteArray("AAAAAAEAAAABAAMAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAMAAAD9/wAAAAACAAEAAAD9/wEAAAAAAAMAAAD9////AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
@@ -876,6 +1130,7 @@ position = Vector2(1200, 520)
 polygon = PackedVector2Array(-320, -0.000244141, -320, 79.9998, -80, 79.9998, -80, 160, -400, 160, -400, -80.0002, -80, -80.0002, -80, -0.000244141)
 
 [node name="Character2Select" type="TileMapLayer" parent="CharacterSelection"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1280, 520)
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAIAAAD//wAAAAAAAAMAAAAAAAAAAAACAAIAAAD/////AAACAAAAAAD+////AAAAAAMAAAD+//7/AAACAAAAAAD9//7/AAABAAAAAAD8//7/AAABAAAAAAD7//7/AAABAAIAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
@@ -1062,6 +1317,7 @@ position = Vector2(1200, 520)
 polygon = PackedVector2Array(160, 79.9998, 0, 79.9998, 0, -0.000244141, -80, -0.000244141, -80, -80.0002, -320, -80.0002, -320, -160, 0, -160, 0, -80.0002, 160, -80.0002)
 
 [node name="Character3Select" type="TileMapLayer" parent="CharacterSelection"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1280, 520)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAIAAAABAAAAAAAAAAMAAAACAAAAAAACAAIAAAACAP//AAACAAEAAAACAP7/AAACAAEAAAACAP3/AAACAAEAAAACAPz/AAACAAEAAAABAPv/AAABAAIAAAACAPv/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
@@ -1245,108 +1501,426 @@ position = Vector2(1200, 520)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character3Area"]
 polygon = PackedVector2Array(160, 79.9998, 160, -80, 240, -80, 240, -320, 160, -320, 160, -400, 320, -400, 320, 80)
 
-[node name="Character4Select" type="TileMapLayer" parent="CharacterSelection"]
-position = Vector2(1200, 40)
-tile_map_data = PackedByteArray("AAD7/wAAAAABAAIAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAMAAAA=")
-tile_set = SubResource("TileSet_gcf2c")
-script = ExtResource("5_id3bs")
-
-[node name="Path2D" type="Path2D" parent="CharacterSelection/Character4Select"]
-position = Vector2(-800, -79.9995)
-curve = SubResource("Curve2D_qbnp5")
-
-[node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character4Select/Path2D"]
-position = Vector2(439.998, 120)
-rotation = 3.14159
-progress = 720.0
-
-[node name="Head" type="Sprite2D" parent="CharacterSelection/Character4Select/Path2D/HeadFollow"]
-z_index = 11
-z_as_relative = false
-rotation = 1.5708
-texture = ExtResource("29_bmlrk")
-
-[node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character4Select/Path2D"]
-position = Vector2(1080, 120)
-rotation = 3.14159
-progress = 80.0
-
-[node name="Tail" type="Sprite2D" parent="CharacterSelection/Character4Select/Path2D/TailFollow"]
-z_index = 11
-z_as_relative = false
-rotation = 1.5708
-texture = ExtResource("30_t31mw")
-
-[node name="SnakeBody0" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(280, 40.0005)
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody1" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(200, 40.0005)
-rotation = 1.57079
-scale = Vector2(-1, -1)
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody2" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(120, 40.0005)
-rotation = -7.85397
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody7" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(40, 40.0005)
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody8" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-40, 40.0005)
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody3" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-120, 40.0005)
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody4" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-200, 40.0005)
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody5" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-280, 40.0005)
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="SnakeBody6" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-360, 40.0005)
-rotation = 4.71239
-sprite = ExtResource("29_c58bg")
-char_id = 4
-
-[node name="Character4Area" type="Area2D" parent="CharacterSelection"]
-position = Vector2(1200, 520)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character4Area"]
-polygon = PackedVector2Array(320, -400, -400, -400, -400, -480, 320, -480)
+[node name="BG" type="Sprite2D" parent="CharacterSelection"]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(1152, 374)
+scale = Vector2(1.03056, 0.899057)
+texture = ExtResource("31_bh756")
 
 [node name="CharacterInfo" type="Sprite2D" parent="."]
-position = Vector2(560, 360)
+position = Vector2(393, 908)
 scale = Vector2(0.620288, 0.620288)
-texture = ExtResource("32_j3jui")
+texture = ExtResource("32_bh756")
 
 [node name="Label" type="Label" parent="CharacterInfo"]
-offset_left = -202.0
-offset_top = -292.0
-offset_right = 202.0
-offset_bottom = 266.0
+offset_left = -437.0
+offset_top = -143.0
+offset_right = 453.0
+offset_bottom = 143.0
 theme_override_fonts/font = ExtResource("33_cwel5")
 theme_override_font_sizes/font_size = 51
 autowrap_mode = 2
 
-[connection signal="pressed" from="NewRun" to="." method="_on_new_run_pressed"]
+[node name="EasySlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
+z_index = 1
+position = Vector2(1104, 1236.5)
+texture = ExtResource("47_2384g")
+
+[node name="EasyArea" type="Area2D" parent="EasySlot"]
+position = Vector2(-5, 67)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EasySlot/EasyArea"]
+position = Vector2(5, -2.5)
+shape = SubResource("RectangleShape2D_wclgf")
+
+[node name="EasyRun" type="Label" parent="EasySlot"]
+offset_left = -75.0
+offset_top = -232.5
+offset_right = 75.0
+offset_bottom = -183.5
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 41
+text = "Easy Run"
+
+[node name="EasyRunText" type="Label" parent="EasySlot"]
+offset_left = -90.0
+offset_top = -150.5
+offset_right = 89.915
+offset_bottom = 74.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 29
+text = "A simple mode with standard rules, suited for beginners!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EasySlotArea" type="Area2D" parent="EasySlot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EasySlot/EasySlotArea"]
+position = Vector2(0.5, -8.5)
+shape = SubResource("RectangleShape2D_bh756")
+
+[node name="NormalSlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
+z_index = 1
+position = Vector2(1345, 1236.5)
+texture = ExtResource("47_2384g")
+
+[node name="NormalArea" type="Area2D" parent="NormalSlot"]
+position = Vector2(-5, 67)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalSlot/NormalArea"]
+position = Vector2(5, -2.5)
+shape = SubResource("RectangleShape2D_wclgf")
+
+[node name="EasyRun" type="Label" parent="NormalSlot"]
+offset_left = -81.0
+offset_top = -230.5
+offset_right = 82.0
+offset_bottom = -181.5
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 36
+text = "Normal Run"
+
+[node name="EasyRunText" type="Label" parent="NormalSlot"]
+offset_left = -87.0
+offset_top = -150.5
+offset_right = 89.31
+offset_bottom = 74.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 29
+text = "Recommended mode, prepare for map modificators!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NormalSlotArea" type="Area2D" parent="NormalSlot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalSlot/NormalSlotArea"]
+position = Vector2(0.5, -8.5)
+shape = SubResource("RectangleShape2D_bh756")
+
+[node name="HardSlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
+z_index = 1
+position = Vector2(1582.5, 1236.5)
+texture = ExtResource("47_2384g")
+
+[node name="HardArea" type="Area2D" parent="HardSlot"]
+position = Vector2(-5, 67)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HardSlot/HardArea"]
+position = Vector2(5, -2.5)
+shape = SubResource("RectangleShape2D_wclgf")
+
+[node name="EasyRun" type="Label" parent="HardSlot"]
+offset_left = -75.0
+offset_top = -232.5
+offset_right = 75.0
+offset_bottom = -183.5
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 41
+text = "Hard Run"
+
+[node name="EasyRunText" type="Label" parent="HardSlot"]
+offset_left = -87.0
+offset_top = -150.5
+offset_right = 89.31
+offset_bottom = 74.5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 29
+text = "Growing twice as fast makes for challenging
+decisions!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HardSlotArea" type="Area2D" parent="HardSlot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HardSlot/HardSlotArea"]
+position = Vector2(0.5, -8.5)
+shape = SubResource("RectangleShape2D_bh756")
+
+[node name="CardParticles" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("39_12kcr")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("40_bh756")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("41_r7e3w")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("42_w8io1")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("43_r03wj")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("44_hg2b4")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("45_fi7gv")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D8" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("46_bqfl2")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D9" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("47_g521o")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="CPUParticles2D10" type="CPUParticles2D" parent="CardParticles"]
+position = Vector2(920, -65)
+amount = 2
+texture = ExtResource("48_ib2n2")
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(1080, 1)
+direction = Vector2(0, 1)
+spread = 47.67
+gravity = Vector2(0, 5)
+initial_velocity_min = 11.11
+initial_velocity_max = 48.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = SubResource("Curve_ce477")
+scale_curve_y = SubResource("Curve_0aybo")
+color = Color(1, 1, 1, 0.231373)
+
+[node name="WanderingSnakesBackground" parent="." instance=ExtResource("39_ce477")]
+
+[node name="WanderingFruit" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(1486, 371)
+texture = ExtResource("50_bh756")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WanderingFruit"]
+libraries = {
+&"": SubResource("AnimationLibrary_r03wj")
+}
+autoplay = "Shift"
+
+[node name="WanderingFruit2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(1761, 496)
+rotation = -0.232129
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("50_bh756")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WanderingFruit2"]
+libraries = {
+&"": SubResource("AnimationLibrary_hg2b4")
+}
+autoplay = "Shift"
+
+[node name="WanderingFruit3" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(417, 370)
+rotation = -0.277507
+scale = Vector2(1.24, 1.24)
+texture = ExtResource("50_bh756")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WanderingFruit3"]
+libraries = {
+&"": SubResource("AnimationLibrary_bqfl2")
+}
+autoplay = "Shift"
+
+[node name="WanderingFruit4" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(684, 915)
+rotation = 0.0401426
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("50_bh756")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WanderingFruit4"]
+libraries = {
+&"": SubResource("AnimationLibrary_cbxrr")
+}
+autoplay = "Shift"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -253.0
+offset_top = -115.0
+offset_right = 2162.0
+offset_bottom = 1741.0
+texture = ExtResource("38_ce477")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_2l4ob")
+}
+autoplay = "Shift"
+
+[node name="PlayButton" parent="." instance=ExtResource("46_wclgf")]
+offset_left = 1249.0
+offset_top = 529.0
+offset_right = 1449.0
+offset_bottom = 719.0
+is_play_button = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(1345, 234)
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("49_12kcr")
+
+[connection signal="mouse_entered" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_exited"]
 [connection signal="mouse_entered" from="CharacterSelection/Character0Area" to="CharacterSelection" method="_on_area_0_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character0Area" to="CharacterSelection" method="_on_area_0_mouse_exited"]
 [connection signal="mouse_entered" from="CharacterSelection/Character1Area" to="CharacterSelection" method="_on_area_1_mouse_entered"]
@@ -1355,5 +1929,9 @@ autowrap_mode = 2
 [connection signal="mouse_exited" from="CharacterSelection/Character2Area" to="CharacterSelection" method="_on_area_2_mouse_exited"]
 [connection signal="mouse_entered" from="CharacterSelection/Character3Area" to="CharacterSelection" method="_on_area_3_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character3Area" to="CharacterSelection" method="_on_area_3_mouse_exited"]
-[connection signal="mouse_entered" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_entered"]
-[connection signal="mouse_exited" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_exited"]
+[connection signal="mouse_entered" from="EasySlot/EasySlotArea" to="." method="_on_easy_slot_area_mouse_entered"]
+[connection signal="mouse_exited" from="EasySlot/EasySlotArea" to="." method="_on_easy_slot_area_mouse_exited"]
+[connection signal="mouse_entered" from="NormalSlot/NormalSlotArea" to="." method="_on_normal_slot_area_mouse_entered"]
+[connection signal="mouse_exited" from="NormalSlot/NormalSlotArea" to="." method="_on_normal_slot_area_mouse_exited"]
+[connection signal="mouse_entered" from="HardSlot/HardSlotArea" to="." method="_on_hard_slot_area_mouse_entered"]
+[connection signal="mouse_exited" from="HardSlot/HardSlotArea" to="." method="_on_hard_slot_area_mouse_exited"]

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1081.3062"
+   height="469.75415"
+   viewBox="0 0 286.09558 124.28912"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="GameLogo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.1357605"
+     inkscape:cx="369.79627"
+     inkscape:cy="-3.0816356"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="-363.58929"
+       y="231.60139"
+       width="939.37952"
+       height="229.49187"
+       id="rect3" />
+    <rect
+       x="-379.77649"
+       y="109.57486"
+       width="994.88989"
+       height="310.04703"
+       id="rect2" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(116.32646,39.364837)">
+    <rect
+       style="fill:#525972;fill-opacity:1;stroke:#212532;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
+       id="rect1-8-8"
+       width="286.09558"
+       height="116.55327"
+       x="-116.32646"
+       y="-31.62899"
+       ry="13.50724"
+       rx="106.18612" />
+    <rect
+       style="fill:#8f9bc7;fill-opacity:1;stroke:#212532;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
+       id="rect1-8-8-6"
+       width="230.86002"
+       height="44.336605"
+       x="-89.004105"
+       y="21.835234"
+       ry="5.138124"
+       rx="85.685104" />
+    <path
+       id="path2"
+       style="fill:#364472;stroke:#212532;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
+       d="m 20.739318,-39.364837 c -9.446217,0 -17.051156,3.390774 -17.051156,7.602607 v 9.737156 c 0,4.211833 7.604939,2.743206 17.051156,2.743206 h 11.838037 c 9.446216,0 17.051155,1.468627 17.051155,-2.743206 v -9.737156 c 0,-4.211833 -7.604939,-7.602607 -17.051155,-7.602607 z"
+       sodipodi:nodetypes="sssssssss" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.677546,-42.830322)"
+       id="text2"
+       style="font-weight:bold;font-size:96px;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi Bold';text-align:center;letter-spacing:4.52px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect2);fill:#364472;fill-opacity:1;stroke:#171512;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"><tspan
+         x="-102.90203"
+         y="200.17629"
+         id="tspan4"><tspan
+           style="fill:#1b2138"
+           id="tspan1">PIECE OF</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.677546,-42.830322)"
+       id="text3"
+       style="font-weight:bold;font-size:160px;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi Bold';text-align:center;letter-spacing:4.52px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect3);fill:#1b2138;fill-opacity:1;stroke:#171512;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"><tspan
+         x="-237.91691"
+         y="382.60502"
+         id="tspan6"><tspan
+           style="fill:#06060a"
+           id="tspan5">S N A K E</tspan></tspan></text>
+  </g>
+</svg>

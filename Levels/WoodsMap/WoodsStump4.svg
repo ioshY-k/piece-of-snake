@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="94.757469mm"
+   height="106.63983mm"
+   viewBox="0 0 94.757469 106.63983"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="WoodsStump4.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.2740407"
+     inkscape:cx="98.94282"
+     inkscape:cy="113.67431"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect205"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,8.0960736,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect204"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,7.2830812,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect201"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,1,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,2.8301379,0,1 @ F,0,0,1,0,5.0309004,0,1 @ F,0,0,1,0,2.2665793,0,1 @ F,0,0,1,0,0.64888175,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1-6"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect2-1"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-97.074463,-82.459994)">
+    <path
+       id="path4"
+       style="display:inline;fill:#413214;fill-opacity:0.353943;stroke:#3f321d;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="M 123.48784 104.89997 L 119.81209 102.30943 C 119.78687 102.43789 119.77385 102.57098 119.77385 102.70682 L 119.77385 107.82899 C 119.43517 110.66906 117.03085 112.85711 114.09668 112.85711 L 102.393 112.85711 C 100.90801 112.857 99.704177 114.06084 99.704277 115.54583 L 97.838757 122.94745 C 97.811957 123.09994 97.797933 123.25699 97.797933 123.41718 L 97.797933 124.583 L 101.51605 124.583 C 101.51609 124.52115 101.51605 124.4593 101.51605 124.39749 C 105.25195 124.38449 110.90163 124.43806 114.74315 124.36596 C 114.80765 124.3652 114.8721 124.36318 114.93642 124.35718 C 119.4776 123.99345 123.07377 120.3789 123.40877 115.83315 C 123.41277 115.77335 123.41552 115.71333 123.41652 115.65332 C 123.45922 113.07943 123.4528 110.52999 123.4465 107.999 C 123.44744 107.9866 123.4486 107.9743 123.4496 107.9618 C 123.4536 107.902 123.45687 107.84197 123.45787 107.78196 C 123.47385 106.81804 123.4831 105.85738 123.48784 104.89997 z " />
+    <path
+       id="path1-43"
+       style="display:inline;fill:#412c01;fill-opacity:1;stroke:#3f321d;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="M 121.70552 103.61684 L 118.67676 101.54772 C 117.68 103.21296 115.85721 104.32194 113.76543 104.32894 L 100.61068 104.37287 C 99.1257 104.37276 97.921846 105.57659 97.921956 107.06159 L 97.921956 114.46321 C 97.975521 115.13434 97.985132 115.36367 97.9757 115.38873 L 97.975183 115.38925 L 97.975183 115.38977 L 97.974666 115.39028 L 97.97415 115.39028 L 97.973633 115.39028 L 97.973116 115.39028 L 97.972599 115.38977 L 97.972083 115.38925 C 97.952099 115.36467 97.894878 114.94016 97.883199 114.92158 L 97.882682 114.92106 L 97.882166 114.92106 L 97.882166 114.92158 L 97.881649 114.9221 L 97.881649 114.92261 C 97.881294 114.92442 97.881132 114.92794 97.881132 114.93295 L 97.881132 154.62045 C 97.923732 156.21324 98.079821 156.81996 99.182861 156.80429 C 100.46672 156.86019 100.21864 154.42477 100.2443 152.67741 C 100.2383 150.13743 100.23526 147.59469 100.23396 145.05049 C 100.26736 144.89858 100.28512 144.80606 100.28512 144.80606 C 100.26352 135.85254 100.28215 126.86581 100.27375 117.89401 C 100.27376 117.89315 100.27374 117.89087 100.27375 117.88987 C 100.27375 117.88387 100.27376 117.87799 100.27375 117.87179 C 100.27775 117.23091 100.27995 116.59278 100.27995 115.95666 C 104.01584 115.94366 110.56935 115.90936 114.41087 115.83728 C 114.47537 115.83651 114.53982 115.83402 114.60414 115.82902 C 119.14532 115.46529 121.34261 109.86068 121.67761 105.31493 C 121.68161 105.25513 121.68488 105.19511 121.68588 105.1351 C 121.69429 104.62809 121.70054 104.122 121.70552 103.61684 z " />
+    <path
+       id="path8"
+       style="display:inline;fill:#412c01;stroke:#3f321d;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="M 101.40805 104.37028 L 100.61068 104.37339 C 99.1257 104.37328 97.921846 105.57711 97.921956 107.06211 L 97.921956 114.46373 C 97.975516 115.13486 97.98514 115.36419 97.9757 115.38925 L 97.975183 115.38977 L 97.975183 115.39028 L 97.974666 115.3908 L 97.97415 115.3908 L 97.973633 115.3908 L 97.973116 115.3908 L 97.972599 115.39028 L 97.972083 115.38977 C 97.952103 115.36517 97.894879 114.94017 97.883199 114.92158 L 97.882682 114.92158 L 97.882166 114.92158 L 97.882166 114.9221 L 97.882166 114.92261 L 97.881649 114.92313 C 97.881295 114.92513 97.881132 114.92816 97.881132 114.93346 L 97.881132 124.43056 L 100.27582 124.53908 C 100.27602 122.3238 100.27582 120.1087 100.27375 117.89452 C 100.27376 117.89366 100.27374 117.89139 100.27375 117.89039 C 100.27375 117.88439 100.27376 117.8785 100.27375 117.8723 C 100.27775 117.23142 100.27995 116.59329 100.27995 115.95717 C 100.6325 115.95617 101.00996 115.95404 101.40805 115.95304 L 101.40805 115.95252 L 101.40805 104.37028 z " />
+    <path
+       d="M 107.3084,115.91898 V 104.3507 l -4.40025,0.0145 v 11.58068 c 1.36911,-0.007 2.88238,-0.0156 4.40025,-0.0269 z"
+       style="display:inline;fill:#412c01;stroke:#3f321d;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="path133" />
+    <path
+       d="m 111.89262,115.87506 v -11.53987 l -2.1854,0.007 v 11.5564 c 0.75255,-0.007 1.48701,-0.0151 2.1854,-0.0238 z"
+       style="display:inline;fill:#412c01;stroke:#3f321d;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="path130" />
+    <path
+       d="m 112.74166,115.86421 v -11.5316 l -0.84904,0.003 v 11.53987 c 0.28972,-0.004 0.57309,-0.007 0.84904,-0.0109 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#8f6102;fill-opacity:0.450717;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path129" />
+    <path
+       d="m 113.59174,115.85129 v -11.52178 l -0.85008,0.003 v 11.5316 c 0.29233,-0.004 0.57622,-0.009 0.85008,-0.0129 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#8f6102;fill-opacity:0.450717;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path128" />
+    <path
+       d="m 108.50833,115.90968 v -11.56312 l -1.19993,0.004 v 11.56828 c 0.40049,-0.003 0.80139,-0.006 1.19993,-0.009 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#8f6102;fill-opacity:0.450717;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path132" />
+    <path
+       d="m 109.70722,115.89883 v -11.5564 l -1.19889,0.004 v 11.56312 c 0.40272,-0.003 0.80343,-0.007 1.19889,-0.0108 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#8f6102;fill-opacity:0.450717;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path131" />
+    <path
+       d="m 102.15833,115.94947 v -11.58172 l -0.75034,0.003 v 11.58224 c 0.24282,-9.9e-4 0.49336,-0.002 0.75034,-0.003 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#8f6102;fill-opacity:0.450717;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path135" />
+    <path
+       d="m 102.90815,115.94585 v -11.58068 l -0.74982,0.003 v 11.58172 c 0.24431,-10e-4 0.49458,-0.002 0.74982,-0.004 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#8f6102;fill-opacity:0.450717;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path134" />
+  </g>
+</svg>

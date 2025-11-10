@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cwl6vyqop8det" path="res://Shop/UI/ArrowSymbol.png" id="16_cv6tn"]
 
 [node name="Level" type="Node2D"]
-z_index = 40
+z_index = 100
 z_as_relative = false
 script = ExtResource("1_vx8ih")
 

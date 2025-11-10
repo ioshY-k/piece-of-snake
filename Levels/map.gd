@@ -42,6 +42,7 @@ var anti_magnet_component_scene = load("res://MapModComponents/anti_magnet_compo
 var ghost_invasion_component_scene = load("res://MapModComponents/ghost_invasion_component.tscn")
 var far_away_component_scene = load("res://MapModComponents/far_away_component.tscn")
 var dark_component_scene = load("res://MapModComponents/dark_component.tscn")
+var ufo_component_scene = load("res://MapModComponents/ufo_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -219,7 +220,7 @@ func _on_collision_with(element: MapElement, collect_position: Vector2):
 	#on fruit collision, grow once, delete fruit and spawn a new one (if not ghost fruit)
 	if element is FruitElement:
 		element.collected = true
-		snake_tail.tiles_to_grow += 2
+		snake_tail.tiles_to_grow += RunSettings.fruit_growth
 		SignalBus.fruit_collected.emit(element, true)
 		if not element.is_in_group("Ghost Fruit"):
 			var fruit_positions: Array = current_fruits.map(
@@ -269,7 +270,9 @@ func place_fruit(forbidden_tiles: Array, fruit: FruitElement):
 		fruit.position = TileHelper.tile_to_position(free_map_tiles_without_forbidden[randi() % currently_free_map_tiles.size()])
 	else:
 		fruit.position = TileHelper.tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
-		
+	
+	fruit.z_index =  24 + TileHelper.position_to_tile(fruit.position).y
+	print(fruit.z_index)
 	current_fruits.append(fruit)
 	
 	
@@ -373,6 +376,8 @@ func add_upgrade_component(upgrade: int):
 			add_child(immutable_component)
 
 func apply_mapmod(mapmod: int):
+	if not RunSettings.mapmods_enabled:
+		return
 	print(GameConsts.MAP_MODS.find_key(mapmod))
 	match mapmod:
 		GameConsts.MAP_MODS.CAFFEINATED:
@@ -408,6 +413,9 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.DARK:
 			var dark_component = dark_component_scene.instantiate()
 			add_child(dark_component)
+		GameConsts.MAP_MODS.UFO:
+			var ufo_component = ufo_component_scene.instantiate()
+			add_child(ufo_component)
 
 func _on_round_over():
 	cleanup_ghost_fruits()
@@ -420,6 +428,8 @@ func cleanup_ghost_fruits():
 			fruit.queue_free()
 
 func destroy_current_mapmod():
+	if not RunSettings.mapmods_enabled:
+		return
 	var current_mod = get_tree().get_first_node_in_group("MapMod")
 	if current_mod == null:
 		print_debug("mapmod could not be found and thus was not destroyed")

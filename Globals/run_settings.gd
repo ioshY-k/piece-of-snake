@@ -2,7 +2,8 @@ extends Node
 
 var current_char = GameConsts.CHAR_LIST.GODOT
 
-var current_difficulty = 0
+var fruit_growth = 1
+var mapmods_enabled = true
 
 var shop_phase
 var play_phase

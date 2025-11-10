@@ -37,13 +37,13 @@ func get_orientation(direction: int, current_rotation: float) -> float:
 			else:
 				return 0
 		DIRECTION.RIGHT:
-			if current_rotation == 360:
+			if round(current_rotation) == 360:
 				rotation_degrees = 0
 			return 90
 		DIRECTION.DOWN:
 			return 180
 		DIRECTION.LEFT:
-			if current_rotation == 0:
+			if round(current_rotation) == 0:
 				rotation_degrees = 360
 			return 270
 		_:

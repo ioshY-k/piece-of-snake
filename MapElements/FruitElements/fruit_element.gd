@@ -19,6 +19,7 @@ var big = false
 @onready var fruit_element_sprite: AnimatedSprite2D = $FruitElementSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 func collected_anim(snakehead_pos: Vector2, fruit_destination_pos: Vector2):
 	await get_tree().process_frame
 	set_collision_layer_value(2,false)
@@ -150,7 +151,7 @@ func move(move_t, triggered_by_dance):
 	
 	if collected:
 		return
-	if big and move_t != move_type.TOWARDS:
+	if big:
 		return
 	#blocked by dance whenever snake moves while dance upgrade is equipped. triggered by dance, when dance component called move
 	if blocked_by_dance and not triggered_by_dance:

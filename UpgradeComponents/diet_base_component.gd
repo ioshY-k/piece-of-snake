@@ -22,8 +22,8 @@ func _lower_chance():
 
 func _prevent_growth(_element, real_collection):
 	var check = randf_range(0,1)
-	if check < no_grow_chance and snake_tail.tiles_to_grow > 1 and real_collection:
-		snake_tail.tiles_to_grow -= 2
+	if check < no_grow_chance and snake_tail.tiles_to_grow >= RunSettings.fruit_growth and real_collection:
+		snake_tail.tiles_to_grow -= RunSettings.fruit_growth
 		var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH)
 		snake_tail.get_parent().add_child(effect_trigger_text)

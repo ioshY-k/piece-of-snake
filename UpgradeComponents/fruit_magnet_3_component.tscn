@@ -117,66 +117,6 @@ shape = SubResource("RectangleShape2D_bpa51")
 [node name="Indicator" type="Sprite2D" parent="MagnetField9"]
 texture = ExtResource("2_4r76w")
 
-[node name="MagnetField10" type="Area2D" parent="."]
-position = Vector2(240, 0)
-collision_layer = 0
-collision_mask = 2
-metadata/_edit_vertical_guides_ = [-710.0]
-
-[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField10"]
-shape = SubResource("RectangleShape2D_bpa51")
-
-[node name="Indicator" type="Sprite2D" parent="MagnetField10"]
-texture = ExtResource("2_4r76w")
-
-[node name="MagnetField11" type="Area2D" parent="."]
-position = Vector2(-240, 0)
-collision_layer = 0
-collision_mask = 2
-metadata/_edit_vertical_guides_ = [-710.0]
-
-[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField11"]
-shape = SubResource("RectangleShape2D_bpa51")
-
-[node name="Indicator" type="Sprite2D" parent="MagnetField11"]
-texture = ExtResource("2_4r76w")
-
-[node name="MagnetField12" type="Area2D" parent="."]
-position = Vector2(-160, 80)
-collision_layer = 0
-collision_mask = 2
-metadata/_edit_vertical_guides_ = [-710.0]
-
-[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField12"]
-shape = SubResource("RectangleShape2D_bpa51")
-
-[node name="Indicator" type="Sprite2D" parent="MagnetField12"]
-texture = ExtResource("2_4r76w")
-
-[node name="MagnetField13" type="Area2D" parent="."]
-position = Vector2(160, 80)
-collision_layer = 0
-collision_mask = 2
-metadata/_edit_vertical_guides_ = [-710.0]
-
-[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField13"]
-shape = SubResource("RectangleShape2D_bpa51")
-
-[node name="Indicator" type="Sprite2D" parent="MagnetField13"]
-texture = ExtResource("2_4r76w")
-
-[node name="MagnetField14" type="Area2D" parent="."]
-position = Vector2(0, -240)
-collision_layer = 0
-collision_mask = 2
-metadata/_edit_vertical_guides_ = [-710.0]
-
-[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField14"]
-shape = SubResource("RectangleShape2D_bpa51")
-
-[node name="Indicator" type="Sprite2D" parent="MagnetField14"]
-texture = ExtResource("2_4r76w")
-
 [node name="MagnetField15" type="Area2D" parent="."]
 position = Vector2(0, -80)
 collision_layer = 0
@@ -211,28 +151,4 @@ metadata/_edit_vertical_guides_ = [-710.0]
 shape = SubResource("RectangleShape2D_bpa51")
 
 [node name="Indicator" type="Sprite2D" parent="MagnetField17"]
-texture = ExtResource("2_4r76w")
-
-[node name="MagnetField18" type="Area2D" parent="."]
-position = Vector2(-80, 80)
-collision_layer = 0
-collision_mask = 2
-metadata/_edit_vertical_guides_ = [-710.0]
-
-[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField18"]
-shape = SubResource("RectangleShape2D_bpa51")
-
-[node name="Indicator" type="Sprite2D" parent="MagnetField18"]
-texture = ExtResource("2_4r76w")
-
-[node name="MagnetField19" type="Area2D" parent="."]
-position = Vector2(80, 80)
-collision_layer = 0
-collision_mask = 2
-metadata/_edit_vertical_guides_ = [-710.0]
-
-[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField19"]
-shape = SubResource("RectangleShape2D_bpa51")
-
-[node name="Indicator" type="Sprite2D" parent="MagnetField19"]
 texture = ExtResource("2_4r76w")

@@ -11,6 +11,7 @@ var mapmod_descriptions:Dictionary = {
 	str(GameConsts.MAP_MODS.ANTI_MAGNET) : "Stopping in place causes fruits to move away from you",
 	str(GameConsts.MAP_MODS.GHOST_INVASION) : "Normal Fruits dont give Points and cause 1 less growth. For every collected normal Fruit, spawn Ghost Fruits",
 	str(GameConsts.MAP_MODS.FAR_AWAY) : "Fruits tend to spawn far away",
-	str(GameConsts.MAP_MODS.DARK) : "Darkness blocks the view and must be chased away"
+	str(GameConsts.MAP_MODS.DARK) : "Darkness blocks the view and must be chased away",
+	str(GameConsts.MAP_MODS.UFO) : "UFOs are blocking your view"
 	
 }

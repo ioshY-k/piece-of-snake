@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be275ce8qlgdp"]
+
+[ext_resource type="Script" uid="uid://6jbitf5nya0g" path="res://MapModComponents/ufo_component.gd" id="1_r0ggy"]
+
+[node name="UfoComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_r0ggy")

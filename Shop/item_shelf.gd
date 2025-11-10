@@ -20,7 +20,8 @@ var mapmod_descriptions = {
 	str(GameConsts.MAP_MODS.ANTI_MAGNET) : "Stopping in place causes fruits to move away from you",
 	str(GameConsts.MAP_MODS.GHOST_INVASION) : "Normal Fruits dont give Points and cause 1 less growth. For every collected normal Fruit, spawn Ghost Fruits",
 	str(GameConsts.MAP_MODS.FAR_AWAY) : "Fruits tend to spawn far away",
-	str(GameConsts.MAP_MODS.DARK) : "Darkness blocks the view and must be chased away"
+	str(GameConsts.MAP_MODS.DARK) : "Darkness blocks the view and must be chased away",
+	str(GameConsts.MAP_MODS.UFO) : "UFOs are blocking your view"
 }
 	
 
@@ -49,10 +50,14 @@ func change_item_description(upgrade_card: UpgradeCard):
 
 var mapmod_info_tween:Tween
 func show_mapmod_description(upcoming_mapmod: int):
+	if not RunSettings.mapmods_enabled:
+		return
 	mapmod_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	mapmod_info_tween.tween_property(mapmod_info, "scale", Vector2(1,1), 1)
 	mapmod_info.get_node("MapmodInfoText").text = mapmod_descriptions[str(upcoming_mapmod)]
 	
 func hide_mapmod_description():
+	if not RunSettings.mapmods_enabled:
+		return
 	mapmod_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	mapmod_info_tween.tween_property(mapmod_info, "scale", Vector2(0,0), 1)

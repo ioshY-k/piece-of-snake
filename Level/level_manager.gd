@@ -120,7 +120,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(4)
+		time_meter.initiate_time_bar(60)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
 	
@@ -128,7 +128,10 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
 	round_count_down = round_count_down_scene.instantiate()
 	add_child(round_count_down)
-	round_count_down.change_text(Descriptions.mapmod_descriptions[str(mapmod)])
+	if RunSettings.mapmods_enabled:
+		round_count_down.change_text(Descriptions.mapmod_descriptions[str(mapmod)])
+	else:
+		round_count_down.change_text("collect enough fruits before the timer runs out!")
 	await round_count_down.count_down_finished
 	
 	SignalBus.round_started.emit()
@@ -297,15 +300,15 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.WORMHOLE_1:
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
-			wormhole_component.initiate_active_item(2, slot)
+			wormhole_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_2:
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
-			wormhole_component.initiate_active_item(4, slot)
+			wormhole_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_3:
 			var wormhole_component = wormhole_component_scene.instantiate()
 			current_active_item_slot.add_child(wormhole_component)
-			wormhole_component.initiate_active_item(6, slot)
+			wormhole_component.initiate_active_item(4, slot)
 		GameConsts.UPGRADE_LIST.SNEK_1:
 			var snek_1_component = snek_1_component_scene.instantiate()
 			current_active_item_slot.add_child(snek_1_component)

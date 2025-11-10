@@ -1,25 +1,27 @@
-[gd_scene load_steps=21 format=3 uid="uid://dvockf2xpvd74"]
+[gd_scene load_steps=23 format=3 uid="uid://dvockf2xpvd74"]
 
 [ext_resource type="Texture2D" uid="uid://dq41ytbc0v4x6" path="res://Levels/StadiumMap/StadiumMap.svg" id="1_xjxdb"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="2_8jajk"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_yugwk"]
 [ext_resource type="Texture2D" uid="uid://ejc6llnaj7eg" path="res://Levels/StadiumMap/StadiumWalkPath.svg" id="3_vnd3r"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="3_yugwk"]
-[ext_resource type="Texture2D" uid="uid://cnvy0vjvnssao" path="res://Levels/StadiumMap/StadiumWallLeft.svg" id="5_yugwk"]
+[ext_resource type="Texture2D" uid="uid://cw4cwcn2hi2n7" path="res://Levels/StadiumMap/StadiumWallLeft1.svg" id="6_chftg"]
 [ext_resource type="Texture2D" uid="uid://ccxd6kvtrehqa" path="res://Levels/StadiumMap/StadiumWallCenter.svg" id="6_w4jnw"]
-[ext_resource type="Texture2D" uid="uid://bojfrncxs4m0f" path="res://Levels/StadiumMap/StadiumWallRight.svg" id="7_hvuha"]
+[ext_resource type="Texture2D" uid="uid://6aft1jyp5niu" path="res://Levels/StadiumMap/StadiumWallLeft2.svg" id="7_4x4y3"]
 [ext_resource type="Texture2D" uid="uid://cstl82yepmgvj" path="res://Levels/StadiumMap/StadiumGoal.svg" id="8_7x80k"]
+[ext_resource type="Texture2D" uid="uid://buoe2o5mfgwee" path="res://Levels/StadiumMap/StadiumWallRight1.svg" id="9_kb1ct"]
 [ext_resource type="Texture2D" uid="uid://bfcdqd688yqcy" path="res://Levels/StadiumMap/StadiumFlag.svg" id="9_m37vj"]
 [ext_resource type="Texture2D" uid="uid://dgl5m2js06a7o" path="res://Levels/StadiumMap/StadiumLight.svg" id="9_owuxa"]
 [ext_resource type="Texture2D" uid="uid://csekv5wogx6qa" path="res://Levels/StadiumMap/StadiumLightBack.svg" id="10_4t27u"]
 [ext_resource type="Script" uid="uid://ccdcdoo40fckk" path="res://Levels/StadiumMap/light_1.gd" id="10_u8fbc"]
 [ext_resource type="Script" uid="uid://bk2tmh8ht5d6w" path="res://Levels/bouncing_deco.gd" id="10_vnd3r"]
+[ext_resource type="Texture2D" uid="uid://d2pr22o8qwyf2" path="res://Levels/StadiumMap/StadiumWallRight2.svg" id="10_ykqp4"]
 [ext_resource type="Texture2D" uid="uid://r5r3nm200slb" path="res://Levels/StadiumMap/StadiumLightCone4.png" id="11_1f6nr"]
-[ext_resource type="Texture2D" uid="uid://cuor4emwi85yn" path="res://Levels/StadiumMap/StadiumSeats.svg" id="11_4t27u"]
 [ext_resource type="Texture2D" uid="uid://576vxbe1txur" path="res://Levels/StadiumMap/StadiumLightCone3.png" id="11_m37vj"]
 [ext_resource type="Texture2D" uid="uid://cyfjr7iq2vmbp" path="res://Levels/StadiumMap/StadiumLightCone.png" id="15_m37vj"]
 [ext_resource type="Texture2D" uid="uid://cf4qaqr40iyga" path="res://Levels/StadiumMap/StadiumLightCone2.png" id="16_vnd3r"]
 [ext_resource type="Texture2D" uid="uid://k2fvj60ikio0" path="res://Levels/StadiumMap/StadiumNightfilter.svg" id="17_oyysv"]
+[ext_resource type="Texture2D" uid="uid://degg5unix0osx" path="res://Levels/StadiumMap/StadiumSeat.svg" id="17_vnd3r"]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -906,45 +908,57 @@ position = Vector2(1360, 80)
 
 [node name="ObstacleElements" type="Node2D" parent="."]
 
-[node name="WallLeft" type="Sprite2D" parent="."]
-z_index = 30
+[node name="WallLeft1" type="Sprite2D" parent="."]
+z_index = 28
 z_as_relative = false
 position = Vector2(238, 597)
-texture = ExtResource("5_yugwk")
+texture = ExtResource("6_chftg")
+
+[node name="WallLeft2" type="Sprite2D" parent="."]
+z_index = 36
+z_as_relative = false
+position = Vector2(238, 597)
+texture = ExtResource("7_4x4y3")
 
 [node name="WallCenter1" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 36
 z_as_relative = false
 position = Vector2(679, 916)
 texture = ExtResource("6_w4jnw")
 
 [node name="WallCenter2" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 28
 z_as_relative = false
 position = Vector2(678, 275)
 texture = ExtResource("6_w4jnw")
 
-[node name="WallRight" type="Sprite2D" parent="."]
-z_index = 30
+[node name="WallRight1" type="Sprite2D" parent="."]
+z_index = 28
 z_as_relative = false
 position = Vector2(1120, 598)
-texture = ExtResource("7_hvuha")
+texture = ExtResource("9_kb1ct")
+
+[node name="WallRight2" type="Sprite2D" parent="."]
+z_index = 36
+z_as_relative = false
+position = Vector2(1120, 598)
+texture = ExtResource("10_ykqp4")
 
 [node name="Goal1" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 33
 z_as_relative = false
 position = Vector2(243, 599.5)
 scale = Vector2(-1, 1)
 texture = ExtResource("8_7x80k")
 
 [node name="Goal2" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 33
 z_as_relative = false
 position = Vector2(1123, 599.5)
 texture = ExtResource("8_7x80k")
 
 [node name="Flag1" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 29
 z_as_relative = false
 position = Vector2(1072, 368)
 texture = ExtResource("9_m37vj")
@@ -954,7 +968,7 @@ deco_sprite = ExtResource("9_m37vj")
 animation = "Dance"
 
 [node name="Flag2" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 29
 z_as_relative = false
 position = Vector2(288, 368)
 texture = ExtResource("9_m37vj")
@@ -964,7 +978,7 @@ deco_sprite = ExtResource("9_m37vj")
 animation = "DanceInverse"
 
 [node name="Flag3" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 35
 z_as_relative = false
 position = Vector2(287, 834)
 texture = ExtResource("9_m37vj")
@@ -974,7 +988,7 @@ deco_sprite = ExtResource("9_m37vj")
 animation = "Dance"
 
 [node name="Flag4" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 35
 z_as_relative = false
 position = Vector2(1073, 834)
 texture = ExtResource("9_m37vj")
@@ -985,7 +999,7 @@ animation = "DanceInverse"
 
 [node name="Light3" type="Sprite2D" parent="."]
 self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
-z_index = 30
+z_index = 50
 z_as_relative = false
 position = Vector2(92, 1003)
 texture = ExtResource("11_m37vj")
@@ -1001,7 +1015,7 @@ switch_y = true
 
 [node name="Light4" type="Sprite2D" parent="."]
 self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
-z_index = 30
+z_index = 50
 z_as_relative = false
 position = Vector2(1281, 1002)
 texture = ExtResource("11_1f6nr")
@@ -1015,40 +1029,255 @@ default_light_field = Vector2i(11, 9)
 switch_y = true
 
 [node name="LightPole1" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 26
 z_as_relative = false
 position = Vector2(1280, 71)
 texture = ExtResource("9_owuxa")
 
 [node name="LightPole2" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 26
 z_as_relative = false
 position = Vector2(81, 71)
 scale = Vector2(-1, 1)
 texture = ExtResource("9_owuxa")
 
 [node name="LightPole3" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 39
 z_as_relative = false
 position = Vector2(1276, 1107)
 scale = Vector2(-1, 1)
 texture = ExtResource("10_4t27u")
 
 [node name="LightPole4" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 39
 z_as_relative = false
 position = Vector2(83, 1109)
 texture = ExtResource("10_4t27u")
 
-[node name="Seats" type="Sprite2D" parent="."]
-z_index = 30
+[node name="SeatRow" type="Node2D" parent="."]
+z_index = 25
 z_as_relative = false
-position = Vector2(681, 580)
-texture = ExtResource("11_4t27u")
+
+[node name="Seat1" type="Sprite2D" parent="SeatRow"]
+position = Vector2(320, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat2" type="Sprite2D" parent="SeatRow"]
+position = Vector2(400, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat3" type="Sprite2D" parent="SeatRow"]
+position = Vector2(480, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat4" type="Sprite2D" parent="SeatRow"]
+position = Vector2(560, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat5" type="Sprite2D" parent="SeatRow"]
+position = Vector2(800, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat6" type="Sprite2D" parent="SeatRow"]
+position = Vector2(880, 20)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat7" type="Sprite2D" parent="SeatRow"]
+position = Vector2(961, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat8" type="Sprite2D" parent="SeatRow"]
+position = Vector2(1041, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="SeatRow2" type="Node2D" parent="."]
+z_index = 26
+z_as_relative = false
+position = Vector2(0, 80)
+
+[node name="Seat1" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(320, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat2" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(400, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat3" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(480, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat4" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(560, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat5" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(800, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat6" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(880, 20)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat7" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(961, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat8" type="Sprite2D" parent="SeatRow2"]
+position = Vector2(1041, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="SeatRow3" type="Node2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(0, 160)
+
+[node name="Seat1" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(320, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat2" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(400, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat3" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(480, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat4" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(560, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat5" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(800, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat6" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(880, 20)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat7" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(961, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat8" type="Sprite2D" parent="SeatRow3"]
+position = Vector2(1041, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="SeatRow4" type="Node2D" parent="."]
+z_index = 37
+z_as_relative = false
+position = Vector2(0, 960)
+
+[node name="Seat1" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(320, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat2" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(400, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat3" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(480, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat4" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(560, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat5" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(800, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat6" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(880, 20)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat7" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(961, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat8" type="Sprite2D" parent="SeatRow4"]
+position = Vector2(1041, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="SeatRow5" type="Node2D" parent="."]
+z_index = 38
+z_as_relative = false
+position = Vector2(0, 1040)
+
+[node name="Seat1" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(320, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat2" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(400, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat3" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(480, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat4" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(560, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat5" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(800, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat6" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(880, 20)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat7" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(961, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat8" type="Sprite2D" parent="SeatRow5"]
+position = Vector2(1041, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="SeatRow6" type="Node2D" parent="."]
+z_index = 39
+z_as_relative = false
+position = Vector2(0, 1120)
+
+[node name="Seat1" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(320, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat2" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(400, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat3" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(480, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat4" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(560, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat5" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(800, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat6" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(880, 20)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat7" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(961, 21)
+texture = ExtResource("17_vnd3r")
+
+[node name="Seat8" type="Sprite2D" parent="SeatRow6"]
+position = Vector2(1041, 21)
+texture = ExtResource("17_vnd3r")
 
 [node name="Light1" type="Sprite2D" parent="."]
 self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
-z_index = 30
+z_index = 50
 z_as_relative = false
 position = Vector2(1282, -24)
 texture = ExtResource("15_m37vj")
@@ -1062,7 +1291,7 @@ default_light_field = Vector2i(11, 6)
 
 [node name="Light2" type="Sprite2D" parent="."]
 self_modulate = Color(0.92048, 0.96, 0.7776, 0.666667)
-z_index = 30
+z_index = 50
 z_as_relative = false
 position = Vector2(80, -26)
 texture = ExtResource("16_vnd3r")
@@ -1077,7 +1306,7 @@ switch_x = true
 
 [node name="Night" type="Sprite2D" parent="."]
 self_modulate = Color(0.52, 0.52, 0.52, 0.168627)
-z_index = 30
+z_index = 50
 z_as_relative = false
 position = Vector2(681, 580)
 texture = ExtResource("17_oyysv")

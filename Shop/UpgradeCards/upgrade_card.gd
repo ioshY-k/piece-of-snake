@@ -56,9 +56,9 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1) : "Using Active Items and Teleporters cause fruits to move toward you.",
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2) : ADVANCEMENT_KEYWORD+". Using Active Items and Teleporters cause fruits to move toward you for longer.",
 	str(GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3) : ADVANCEMENT_KEYWORD+". Using Active Items and Teleporters cause fruits to move toward you even longer.",
-	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_1) : "Spawning fruits have a 30% chance to grow. Grown fruits won't move, except moving towards you",
-	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_2) : ADVANCEMENT_KEYWORD+". Spawning fruits have a 60% chance to grow. Grown fruits won't move, except moving towards you",
-	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_3) : ADVANCEMENT_KEYWORD+". Spawning fruits have a 60% chance to grow even more. Grown fruits won't move, except moving towards you",
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_1) : "Spawning fruits have a 30% chance to become big. Fruits grown that way can't move anymore.",
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_2) : ADVANCEMENT_KEYWORD+". Spawning fruits have a 60% chance to become big. Fruits grown that way can't move anymore.",
+	str(GameConsts.UPGRADE_LIST.BIG_FRUIT_3) : ADVANCEMENT_KEYWORD+". Spawning fruits have a 60% chance to become big even more. Fruits grown that way can't move anymore.",
 	str(GameConsts.UPGRADE_LIST.PACMAN_1) : "Spawn a "+GHOST_FRUIT_KEYWORD+" that moves away from you.\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.PACMAN_2) : ADVANCEMENT_KEYWORD+". Spawn a "+GHOST_FRUIT_KEYWORD+" that moves away from you.\n\nUsable up to 5 times.",
 	str(GameConsts.UPGRADE_LIST.PACMAN_3) : ADVANCEMENT_KEYWORD+". Spawn a "+GHOST_FRUIT_KEYWORD+" that moves away from you.\n\nUsable up to 7 times.",
@@ -186,6 +186,8 @@ var is_dragging: bool = false
 @onready var card_deselect_audio: AudioStreamPlayer = $CardDeselectAudio
 @onready var card_buy_audio: AudioStreamPlayer = $CardBuyAudio
 
+@export var is_play_button = false
+
 var upgrade_description: String
 var upgrade_name: String
 var font_color: Color
@@ -206,16 +208,40 @@ signal got_clicked
 signal let_go
 signal hovered
 
-#globally accessed since salamander start Item is not added to Itemshelf as parent
-@onready var shop: Shop = get_node("/root/MainSceneLoader/RunManager/Shop")
-@onready var item_shelf = get_node("/root/MainSceneLoader/RunManager/Shop/ItemShelf")
+var shop: Shop
+var item_shelf
 	
 func _ready() -> void:
+	if is_play_button:
+		let_go.connect(play_hovered_mode)
+		return
+	#globally accessed since salamander start Item is not added to Itemshelf as parent
+	shop = get_node("/root/MainSceneLoader/RunManager/Shop")
+	item_shelf = get_node("/root/MainSceneLoader/RunManager/Shop/ItemShelf")
+	
 	got_clicked.connect(shop._on_got_clicked)
 	bought.connect(shop._on_upgrade_card_bought)
 	destroyed.connect(shop._on_upgrade_destroyed)
 	let_go.connect(shop._on_let_go)
 	hovered.connect(item_shelf.change_item_description)
+
+func turn_into_playbutton():
+	card_sprite.play("play_button_anim")
+
+func play_hovered_mode():
+	if card_area.get_overlapping_areas().is_empty():
+		print("empty")
+		return
+	
+	var play_area: Area2D = card_area.get_overlapping_areas()[0]
+	match play_area.name:
+		"EasyArea":
+			get_parent()._on_easy_run_pressed()
+		"NormalArea":
+			get_parent()._on_normal_run_pressed()
+		"HardArea":
+			get_parent()._on_hard_run_pressed()
+	
 
 func instantiate_upgrade_card(id: int):
 	upgrade_id = id
@@ -420,7 +446,7 @@ func get_slot_type(group) -> int:
 		"Slot Special":
 			return GameConsts.UPGRADE_TYPE.SPECIAL
 		_:
-			print_debug("No Slot Type is matching with card type")
+			print_debug("No Slot Type is matching with card type (maybe it is the play button?)")
 			return -1
 
 func calculate_price():

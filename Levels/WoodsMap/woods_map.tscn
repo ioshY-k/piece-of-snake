@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://83pqpwtuppyt"]
+[gd_scene load_steps=27 format=3 uid="uid://83pqpwtuppyt"]
 
 [ext_resource type="Texture2D" uid="uid://lshghrulnhsv" path="res://Levels/WoodsMap/WoodsMap.svg" id="1_qpv76"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_1lku0"]
@@ -6,16 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="3_1lku0"]
 [ext_resource type="Texture2D" uid="uid://diiqv3jfd82f7" path="res://Levels/WoodsMap/WoodsShadow.png" id="5_gdw1h"]
 [ext_resource type="Script" uid="uid://brbfjt0qs3t7u" path="res://Levels/WoodsMap/woods_shadow.gd" id="6_kron4"]
+[ext_resource type="Texture2D" uid="uid://c3mb0kdm34u2" path="res://Levels/WoodsMap/WoodsStumpShadow.svg" id="7_558am"]
 [ext_resource type="PackedScene" uid="uid://7i23obmdlsqy" path="res://Levels/WoodsMap/dragonfly.tscn" id="7_ghhkh"]
-[ext_resource type="Texture2D" uid="uid://cegpvetddhxu6" path="res://Levels/WoodsMap/WoodsStump.svg" id="7_kron4"]
-[ext_resource type="Texture2D" uid="uid://c7lycuo5hgapx" path="res://Levels/WoodsMap/WoodsFallenTree.svg" id="8_jcjq0"]
+[ext_resource type="Texture2D" uid="uid://hvnlhtaq0dde" path="res://Levels/WoodsMap/WoodsStump1.svg" id="7_udpgi"]
 [ext_resource type="Texture2D" uid="uid://cutkb0xjwek0n" path="res://Levels/WoodsMap/WoodsStumpSmall.svg" id="8_piet2"]
+[ext_resource type="Texture2D" uid="uid://byhfkhblmqlgd" path="res://Levels/WoodsMap/WoodsStump2.svg" id="8_wy0ts"]
 [ext_resource type="Texture2D" uid="uid://bapjubc8s24i2" path="res://Levels/WoodsMap/WoodsStumpSmallVines.svg" id="9_gdw1h"]
 [ext_resource type="Texture2D" uid="uid://byliwrw1lpsrq" path="res://Levels/WoodsMap/WoodsFallenTreeSmall.svg" id="9_jiu5s"]
 [ext_resource type="Texture2D" uid="uid://dvu75gjkfomgo" path="res://Levels/WoodsMap/WoodsShrooms.svg" id="9_kv02n"]
+[ext_resource type="Texture2D" uid="uid://dt54e621iku3r" path="res://Levels/WoodsMap/WoodsStump3.svg" id="9_ws3xd"]
 [ext_resource type="Texture2D" uid="uid://crh56e52i3ur4" path="res://Levels/WoodsMap/WoodsStompMushroom.svg" id="9_yk71d"]
+[ext_resource type="Texture2D" uid="uid://bleq4chbk1xi1" path="res://Levels/WoodsMap/WoodsStump4.svg" id="10_558am"]
+[ext_resource type="Texture2D" uid="uid://bnairldd5fbco" path="res://Levels/WoodsMap/WoodsFallenTree1.svg" id="11_2k71p"]
+[ext_resource type="Texture2D" uid="uid://0l3rnexvl1cu" path="res://Levels/WoodsMap/WoodsStump5.svg" id="11_is1i8"]
 [ext_resource type="Texture2D" uid="uid://fu5bbgy2j2t5" path="res://Levels/WoodsMap/WoodsFallenTreeSmall2.svg" id="11_piet2"]
 [ext_resource type="PackedScene" uid="uid://biliiwnosj8db" path="res://Levels/bouncing_deco.tscn" id="12_i1ocd"]
+[ext_resource type="Texture2D" uid="uid://dgth0fie1usk1" path="res://Levels/WoodsMap/WoodsFallenTree2.svg" id="12_udpgi"]
+[ext_resource type="Texture2D" uid="uid://bgskgtb1s1sjk" path="res://Levels/WoodsMap/WoodsFallenTree3.svg" id="13_wy0ts"]
 
 [sub_resource type="Animation" id="Animation_kron4"]
 length = 0.001
@@ -689,7 +696,7 @@ position = Vector2(1360, 0)
 
 [node name="WoodsShadow" type="Sprite2D" parent="."]
 modulate = Color(0.3, 0.3, 0.3, 0.290196)
-z_index = 35
+z_index = 50
 z_as_relative = false
 position = Vector2(720, 560)
 texture = ExtResource("5_gdw1h")
@@ -701,26 +708,64 @@ libraries = {
 &"": SubResource("AnimationLibrary_jcjq0")
 }
 
-[node name="BigStump" type="Sprite2D" parent="."]
+[node name="WoodsShadow2" type="Sprite2D" parent="."]
+z_index = 29
+z_as_relative = false
+position = Vector2(921.75, 280.75)
+scale = Vector2(0.973186, 0.982759)
+texture = ExtResource("7_558am")
+script = ExtResource("6_kron4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WoodsShadow2"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_jcjq0")
+}
+
+[node name="BigStump1" type="Sprite2D" parent="."]
 z_index = 30
 z_as_relative = false
 position = Vector2(934, 276)
-texture = ExtResource("7_kron4")
+texture = ExtResource("7_udpgi")
+
+[node name="BigStump2" type="Sprite2D" parent="."]
+z_index = 29
+z_as_relative = false
+position = Vector2(934, 276)
+texture = ExtResource("8_wy0ts")
+
+[node name="BigStump3" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(934, 276)
+texture = ExtResource("9_ws3xd")
+
+[node name="BigStump4" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(934, 276)
+texture = ExtResource("10_558am")
+
+[node name="BigStump5" type="Sprite2D" parent="."]
+z_index = 26
+z_as_relative = false
+position = Vector2(934, 276)
+texture = ExtResource("11_is1i8")
 
 [node name="Stump" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 37
 z_as_relative = false
 position = Vector2(1279, 967.5)
 texture = ExtResource("8_piet2")
 
 [node name="Stump2" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 32
 z_as_relative = false
 position = Vector2(319, 565)
 texture = ExtResource("9_gdw1h")
 
 [node name="Stump3" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 38
 z_as_relative = false
 position = Vector2(1280, 1039.5)
 texture = ExtResource("8_piet2")
@@ -729,11 +774,23 @@ texture = ExtResource("8_piet2")
 position = Vector2(20, -86.5)
 texture = ExtResource("9_yk71d")
 
-[node name="FallenTree" type="Sprite2D" parent="."]
-z_index = 30
+[node name="BigFallenTree1" type="Sprite2D" parent="."]
+z_index = 35
 z_as_relative = false
 position = Vector2(211, 865)
-texture = ExtResource("8_jcjq0")
+texture = ExtResource("11_2k71p")
+
+[node name="BigFallenTree2" type="Sprite2D" parent="."]
+z_index = 34
+z_as_relative = false
+position = Vector2(211, 865)
+texture = ExtResource("12_udpgi")
+
+[node name="BigFallenTree3" type="Sprite2D" parent="."]
+z_index = 37
+z_as_relative = false
+position = Vector2(211, 865)
+texture = ExtResource("13_wy0ts")
 
 [node name="FallenTree2" type="Sprite2D" parent="."]
 z_index = 30
@@ -742,7 +799,7 @@ position = Vector2(330, 320)
 texture = ExtResource("9_jiu5s")
 
 [node name="Shrooms1" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 26
 z_as_relative = false
 position = Vector2(115, 123)
 texture = ExtResource("9_kv02n")
@@ -779,7 +836,7 @@ position = Vector2(-35, 18)
 scaling = 0.4
 
 [node name="Shrooms2" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 35
 z_as_relative = false
 position = Vector2(998, 848)
 texture = ExtResource("9_kv02n")
@@ -816,10 +873,11 @@ position = Vector2(-35, 18)
 scaling = 0.4
 
 [node name="FallenTree3" type="Sprite2D" parent="."]
-z_index = 30
+z_index = 37
 z_as_relative = false
 position = Vector2(915, 908)
 texture = ExtResource("11_piet2")
 offset = Vector2(135, 63)
 
 [node name="Dragonfly" parent="FallenTree3" instance=ExtResource("7_ghhkh")]
+z_index = 49

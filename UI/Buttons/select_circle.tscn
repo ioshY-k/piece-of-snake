@@ -1,0 +1,191 @@
+[gd_scene load_steps=31 format=3 uid="uid://drall41avckpg"]
+
+[ext_resource type="Texture2D" uid="uid://bh1g1wjh6owc1" path="res://UI/Buttons/SelectCircleAppear1.svg" id="1_hoc5c"]
+[ext_resource type="Texture2D" uid="uid://ms7aqs1bmkb2" path="res://UI/Buttons/SelectCircleAppear2.svg" id="2_3gik6"]
+[ext_resource type="Texture2D" uid="uid://dd33tdn2ig7fh" path="res://UI/Buttons/SelectCircleAppear3.svg" id="3_nlwbh"]
+[ext_resource type="Texture2D" uid="uid://bp7rc7h3utsg1" path="res://UI/Buttons/SelectCircleAppear4.svg" id="4_7twvc"]
+[ext_resource type="Texture2D" uid="uid://db145nthcvf0p" path="res://UI/Buttons/SelectCircleAppear5.svg" id="5_ch7q3"]
+[ext_resource type="Texture2D" uid="uid://bgx547a6epqq3" path="res://UI/Buttons/SelectCircleAppear6.svg" id="6_iwwue"]
+[ext_resource type="Texture2D" uid="uid://c064aib1potep" path="res://UI/Buttons/SelectCircleAppear7.svg" id="7_i8xpj"]
+[ext_resource type="Texture2D" uid="uid://bai8e1kp07p60" path="res://UI/Buttons/SelectCircleAppear8.svg" id="8_ujt6u"]
+[ext_resource type="Texture2D" uid="uid://db0m7i5ppju1a" path="res://UI/Buttons/SelectCircleAppear9.svg" id="9_uyb07"]
+[ext_resource type="Texture2D" uid="uid://dvb3he578eocr" path="res://UI/Buttons/SelectCircleAppear10.svg" id="10_v3ojg"]
+[ext_resource type="Texture2D" uid="uid://3fo3wx2rvvn3" path="res://UI/Buttons/SelectCircleAppear11.svg" id="11_kwt8w"]
+[ext_resource type="Texture2D" uid="uid://begevayged1sb" path="res://UI/Buttons/SelectCircleAppear12.svg" id="12_1l8og"]
+[ext_resource type="Texture2D" uid="uid://cvh8bhqqlwe0q" path="res://UI/Buttons/SelectCircleAppear13.svg" id="13_3nfb4"]
+[ext_resource type="Texture2D" uid="uid://brjchkbjn3tbv" path="res://UI/Buttons/SelectCircleAppear14.svg" id="14_f48q6"]
+[ext_resource type="Texture2D" uid="uid://cpwinikf87hmh" path="res://UI/Buttons/SelectCircleAppear15.svg" id="15_ei4m6"]
+[ext_resource type="Texture2D" uid="uid://bynkwd3b3g8nm" path="res://UI/Buttons/SelectCircleAppear16.svg" id="16_3p7i2"]
+[ext_resource type="Texture2D" uid="uid://cuh01eutx8ht3" path="res://UI/Buttons/SelectCircleAppear17.svg" id="17_sqqpc"]
+[ext_resource type="Texture2D" uid="uid://drp3e88lyrovb" path="res://UI/Buttons/SelectCircleAppear18.svg" id="18_ls3jp"]
+[ext_resource type="Texture2D" uid="uid://h6pb4hxcf3av" path="res://UI/Buttons/SelectCircleAppear19.svg" id="19_3t8sn"]
+[ext_resource type="Texture2D" uid="uid://ca2gnxq064n8x" path="res://UI/Buttons/SelectCircleAppear20.svg" id="20_pb3ut"]
+[ext_resource type="Texture2D" uid="uid://dawxnxplcbgow" path="res://UI/Buttons/SelectCircleAppear21.svg" id="21_da5yx"]
+[ext_resource type="Texture2D" uid="uid://csl0dyu0l7par" path="res://UI/Buttons/SelectCircleAppear22.svg" id="22_gvwfy"]
+[ext_resource type="Texture2D" uid="uid://di87bymskyeap" path="res://UI/Buttons/SelectCircleAppear.svg" id="23_pne42"]
+[ext_resource type="Script" uid="uid://77k5j2q7f68s" path="res://UI/Buttons/select_circle.gd" id="24_pe7nn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mue1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hoc5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3gik6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nlwbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7twvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ch7q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iwwue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i8xpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ujt6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uyb07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v3ojg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kwt8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1l8og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3nfb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f48q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ei4m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3p7i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sqqpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ls3jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3t8sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pb3ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_da5yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_gvwfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_pne42")
+}],
+"loop": false,
+"name": &"Appear",
+"speed": 55.0
+}]
+
+[sub_resource type="Animation" id="Animation_cs6ad"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7bpih"]
+resource_name = "Spin"
+length = 9.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_ncqvp"]
+resource_name = "Spin_in"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.659754, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_eabc7"]
+resource_name = "Spin_out"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [-6.28319, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4huke"]
+_data = {
+&"RESET": SubResource("Animation_cs6ad"),
+&"Spin": SubResource("Animation_7bpih"),
+&"Spin_in": SubResource("Animation_ncqvp"),
+&"Spin_out": SubResource("Animation_eabc7")
+}
+
+[node name="SelectCircle" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mue1l")
+animation = &"Appear"
+script = ExtResource("24_pe7nn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4huke")
+}
