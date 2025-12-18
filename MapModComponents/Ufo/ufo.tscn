@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtnvqg6aqr677"]
 
-[ext_resource type="Script" uid="uid://i1yva6lcskhx" path="res://ufo.gd" id="1_ulxou"]
+[ext_resource type="Script" path="res://ufo.gd" id="1_ulxou"]
 [ext_resource type="Texture2D" uid="uid://d6cmltuwg61h" path="res://MapModComponents/Ufo/Ufo.svg" id="2_4tkqo"]
 [ext_resource type="Texture2D" uid="uid://dd1tb3sum7jbe" path="res://MapModComponents/Ufo/UfoShadow.svg" id="3_urfb8"]
 
@@ -91,7 +91,7 @@ _data = {
 }
 
 [node name="Ufo" type="Node2D"]
-z_index = 50
+z_index = 60
 z_as_relative = false
 script = ExtResource("1_ulxou")
 

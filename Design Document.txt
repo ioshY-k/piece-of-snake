@@ -8,8 +8,9 @@ Z index:
 	Fruit: 25-50
 	FruitParticles: 25-50
 	ForegroundMapDeco: 25-50
-	Shadow/Fog: 50
-	UFO: 50
+	CoverCeiling: 55
+	Shadow/Fog: 60
+	UFO: 60
 	Level: 100
 	MapmodInfoPanel: 200
 

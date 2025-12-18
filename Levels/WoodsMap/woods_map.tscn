@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://83pqpwtuppyt"]
+[gd_scene load_steps=29 format=3 uid="uid://83pqpwtuppyt"]
 
 [ext_resource type="Texture2D" uid="uid://lshghrulnhsv" path="res://Levels/WoodsMap/WoodsMap.svg" id="1_qpv76"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_1lku0"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://biliiwnosj8db" path="res://Levels/bouncing_deco.tscn" id="12_i1ocd"]
 [ext_resource type="Texture2D" uid="uid://dgth0fie1usk1" path="res://Levels/WoodsMap/WoodsFallenTree2.svg" id="12_udpgi"]
 [ext_resource type="Texture2D" uid="uid://bgskgtb1s1sjk" path="res://Levels/WoodsMap/WoodsFallenTree3.svg" id="13_wy0ts"]
+[ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="24_tajmh"]
+[ext_resource type="Texture2D" uid="uid://bnrx847xbepwd" path="res://Levels/WoodsMap/WoodsStumpTop.svg" id="25_lha3p"]
 
 [sub_resource type="Animation" id="Animation_kron4"]
 length = 0.001
@@ -696,7 +698,7 @@ position = Vector2(1360, 0)
 
 [node name="WoodsShadow" type="Sprite2D" parent="."]
 modulate = Color(0.3, 0.3, 0.3, 0.290196)
-z_index = 50
+z_index = 60
 z_as_relative = false
 position = Vector2(720, 560)
 texture = ExtResource("5_gdw1h")
@@ -881,3 +883,14 @@ offset = Vector2(135, 63)
 
 [node name="Dragonfly" parent="FallenTree3" instance=ExtResource("7_ghhkh")]
 z_index = 49
+
+[node name="CoverCeiling" parent="." instance=ExtResource("24_tajmh")]
+position = Vector2(924, 244)
+texture = ExtResource("25_lha3p")
+sprite = ExtResource("25_lha3p")
+
+[node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
+position = Vector2(36, -4)
+polygon = PackedVector2Array(120, 280, 120, 200, 200, 200, 200, -120, 120, -120, 120, -200, -200, -200, -200, -120, -280, -120, -280, 200, -200, 200, -200, 280, -80, 280)
+
+[editable path="CoverCeiling"]
