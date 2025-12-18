@@ -28,6 +28,8 @@ static func new_snakebody(this_direction, next_direction) -> SnakeBody:
 	return snake_body
 
 func _ready() -> void:
+	material = material.duplicate()
+	snake_body_deco_edge.material = snake_body_deco_edge.material.duplicate()
 	if is_tetris:
 		map = get_parent().get_parent()
 		frame = 2 + (RunSettings.current_char * 9) #frames per snake
@@ -169,3 +171,45 @@ func _on_stop_moving(_tail_moves):
 	body_moves = false
 func _on_continue_moving(current_direction):
 	body_moves = true
+
+func disappear_shader():
+	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_method(func(value):
+		material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
+	if is_corner:
+		hide_deco_corner_in_order()
+	else:
+		tween.tween_method(func(value):
+			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
+		
+func appear_shader():
+	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_method(func(value):
+		material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
+	if is_corner:
+		show_deco_corner_in_order()
+	else:
+		tween.tween_method(func(value):
+			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
+
+func show_deco_corner_in_order():
+	if snake_body_deco_corner.get_children().size() != 14:
+		print_debug("Showing is not synced since there are no longer 14 deco pieces on snake body! Adjust number in timer below")
+		
+	var reverse_deco: Array = snake_body_deco_corner.get_children()
+	reverse_deco.reverse()
+	for deco in reverse_deco:
+		deco.hide()
+	for deco in reverse_deco:
+		deco.show()
+		await get_tree().create_timer(map.snake_head.current_snake_speed / 14)
+	
+	
+func hide_deco_corner_in_order():
+	if snake_body_deco_corner.get_children().size() != 14:
+		print_debug("Showing is not synced since there are no longer 14 deco pieces on snake body! Adjust number in timer below")
+		var reverse_deco: Array = snake_body_deco_corner.get_children()
+		#reverse_deco.reverse()
+		for deco in reverse_deco:
+			deco.hide()
+			await get_tree().create_timer(map.snake_head.current_snake_speed / 14)

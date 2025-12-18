@@ -13,6 +13,7 @@ signal rubber
 
 var colliding_element: MapElement
 var buffered_input_direction: int = -10
+var second_buffered_input_direction: int = -10
 var moves: bool = true
 var push_overlap_bodypart: bool = false
 var hit_signal_muted: bool = false
@@ -54,7 +55,11 @@ func _on_next_tile_reached():
 	SignalBus.pre_next_tile_reached.emit()
 	
 	#reset buffer to unreachable value
-	buffered_input_direction = -10
+	if second_buffered_input_direction != -10:
+		buffered_input_direction = second_buffered_input_direction
+		second_buffered_input_direction = -10
+	else:
+		buffered_input_direction = -10
 	
 	
 	if colliding_element != null and colliding_element.get_collision_layer_value(5) and moves:#Teleporter
@@ -168,13 +173,25 @@ func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 func buffer_last_input_direction():
 	var current_input_direction = buffered_input_direction
 	if Input.is_action_just_pressed("move_up"):
-		buffered_input_direction = DIRECTION.UP
+		if buffered_input_direction == -10:
+			buffered_input_direction = DIRECTION.UP
+		else:
+			second_buffered_input_direction = DIRECTION.UP
 	if Input.is_action_just_pressed("move_right"):
-		buffered_input_direction = DIRECTION.RIGHT
+		if buffered_input_direction == -10:
+			buffered_input_direction = DIRECTION.RIGHT
+		else:
+			second_buffered_input_direction = DIRECTION.RIGHT
 	if Input.is_action_just_pressed("move_down"):
-		buffered_input_direction = DIRECTION.DOWN
+		if buffered_input_direction == -10:
+			buffered_input_direction = DIRECTION.DOWN
+		else:
+			second_buffered_input_direction = DIRECTION.DOWN
 	if Input.is_action_just_pressed("move_left"):
-		buffered_input_direction = DIRECTION.LEFT
+		if buffered_input_direction == -10:
+			buffered_input_direction = DIRECTION.LEFT
+		else:
+			second_buffered_input_direction = DIRECTION.LEFT
 	if current_input_direction != buffered_input_direction or buffered_input_direction == -10:
 		determine_frame_from_orientation(buffered_input_direction)
 

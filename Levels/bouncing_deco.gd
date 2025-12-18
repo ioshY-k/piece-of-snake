@@ -38,6 +38,7 @@ func create_animation():
 			tween.tween_property(self, "rotation", rotation + 0.15, 0.63)
 			
 	tween.step_finished.connect(func(_steps):
-		tween.pause()
-		await SignalBus.next_tile_reached
-		tween.play())
+		if is_instance_valid(tween):
+			tween.pause()
+			await SignalBus.next_tile_reached
+			tween.play())

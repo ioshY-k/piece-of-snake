@@ -8,9 +8,13 @@ var decreasing_menu_snake_speed: float
 @onready var head_follow: PathFollow2D = $Path2D/HeadFollow
 @export var has_front_legs: bool
 @export var has_back_legs: bool
+
+var mask: Sprite2D
+
 var bodyparts: Array
 
 func _ready() -> void:
+	mask = $"Path2D/HeadFollow/Head/Mask"
 	decreasing_menu_snake_speed = get_parent().menu_snake_speed
 	
 	for child in get_children():
@@ -22,6 +26,7 @@ func play_snake_anim():
 	for i in bodyparts.size()+1:
 		if i < bodyparts.size():
 			bodyparts[i].hide()
+			bodyparts[(i-1)%bodyparts.size()].modulate.a = 0.0
 			show_bodypart_later(bodyparts[i], decreasing_menu_snake_speed * 2)
 		next_tile_reached.emit()
 		var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).set_parallel()

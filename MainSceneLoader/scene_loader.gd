@@ -6,8 +6,8 @@ const INTRO_SCREEN = preload("res://Shop/intro_screen.tscn")
 
 func _ready() -> void:
 	change_scene("MAIN_MENU")
-	var intro = INTRO_SCREEN.instantiate()
-	add_child(intro)
+	#var intro = INTRO_SCREEN.instantiate()
+	#add_child(intro)
 	
 
 func change_scene(scene: String):

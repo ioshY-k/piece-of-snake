@@ -285,6 +285,7 @@ func push_snake_bodyparts(tile: Vector2i, direction: int, push_overlap_bodypart:
 	var newest_snake_body = SnakeBody.new_snakebody(snake_path_directions[-1], direction)
 	add_child(newest_snake_body)
 	newest_snake_body.position = tile * GameConsts.TILE_SIZE
+	newest_snake_body.appear_shader()
 	snake_path_bodyparts.push_back(newest_snake_body)
 	if push_overlap_bodypart:
 		newest_snake_body._on_snake_overlaps(true)
@@ -299,6 +300,7 @@ func pop_snake_bodyparts():
 	if snake_path_bodyparts.size()==0:
 		get_tree().quit()
 	unload_solidElement(snake_path_bodyparts[0])
+	snake_path_bodyparts[0].disappear_shader()
 	
 #called for moving objects like snake tail or moving obstacles so that no collision is anticipated
 func unload_solidElement(obj: Node):

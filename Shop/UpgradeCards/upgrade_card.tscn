@@ -326,7 +326,8 @@ script = ExtResource("1_1v4fj")
 [node name="CardSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(100, 100)
 sprite_frames = SubResource("SpriteFrames_222e7")
-animation = &"play_button_anim"
+frame = 4
+frame_progress = 0.424902
 
 [node name="CardShadow" type="Sprite2D" parent="CardSprite"]
 modulate = Color(0, 0, 0, 0.635294)

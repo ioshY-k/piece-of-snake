@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=105 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="18_a07ub"]
 [ext_resource type="Texture2D" uid="uid://dotitaxc5cp8k" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg3.svg" id="18_wbgrs"]
 [ext_resource type="Texture2D" uid="uid://wowrrf3wlvik" path="res://Snake/Head/ChameleonHead.svg" id="22_0sxtl"]
+[ext_resource type="Texture2D" uid="uid://b0433wblrdl5g" path="res://Snake/Head/BodyMask.svg" id="25_r7e3w"]
 [ext_resource type="Texture2D" uid="uid://eqlk5a1jv6yt" path="res://Snake/Tail/ChameleonTail.svg" id="26_dhpph"]
 [ext_resource type="Texture2D" uid="uid://dpjirwwc2dah3" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdge.svg" id="26_o1f7t"]
 [ext_resource type="Texture2D" uid="uid://bspgty0xd3c52" path="res://Snake/Body/Sprites/Chameleon/ChameleonCorner.svg" id="27_dhpph"]
@@ -883,6 +884,10 @@ z_as_relative = false
 rotation = 1.5708
 texture = ExtResource("29_bmlrk")
 
+[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character4Select/Path2D/HeadFollow/Head"]
+clip_children = 1
+texture = ExtResource("25_r7e3w")
+
 [node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character4Select/Path2D"]
 position = Vector2(1080, 120)
 rotation = 3.14159
@@ -971,6 +976,10 @@ z_as_relative = false
 rotation = 1.5708
 texture = ExtResource("6_b3er0")
 
+[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character0Select/Path2D/HeadFollow/Head"]
+clip_children = 1
+texture = ExtResource("25_r7e3w")
+
 [node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character0Select/Path2D"]
 position = Vector2(1400, 600)
 rotation = 3.14159
@@ -1057,6 +1066,10 @@ z_index = 11
 z_as_relative = false
 rotation = 1.5708
 texture = ExtResource("11_qmlj8")
+
+[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character1Select/Path2D/HeadFollow/Head"]
+clip_children = 1
+texture = ExtResource("25_r7e3w")
 
 [node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character1Select/Path2D"]
 position = Vector2(920, 680)
@@ -1152,6 +1165,10 @@ z_index = 11
 z_as_relative = false
 rotation = 1.5708
 texture = ExtResource("15_5x28t")
+
+[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character2Select/Path2D/HeadFollow/Head"]
+clip_children = 1
+texture = ExtResource("25_r7e3w")
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character2Select/Path2D/HeadFollow/Head"]
 z_index = -1
@@ -1339,6 +1356,10 @@ z_index = 11
 z_as_relative = false
 rotation = 1.5708
 texture = ExtResource("22_0sxtl")
+
+[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head"]
+clip_children = 1
+texture = ExtResource("25_r7e3w")
 
 [node name="Leg2" type="AnimatedSprite2D" parent="CharacterSelection/Character3Select/Path2D/HeadFollow/Head"]
 z_index = -1
