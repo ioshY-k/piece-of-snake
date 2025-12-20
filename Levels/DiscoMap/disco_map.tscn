@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6tckelkkh80g"]
+[gd_scene load_steps=8 format=3 uid="uid://c6tckelkkh80g"]
 
 [ext_resource type="Texture2D" uid="uid://g1atm2moh6xf" path="res://Levels/DiscoMap/DiscoMap.svg" id="1_mlqc1"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_1krxf"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_5c730"]
 [ext_resource type="PackedScene" uid="uid://cvyaocdswofuq" path="res://MapElements/TeleportElement/teleport_element.tscn" id="3_8f0s6"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="4_c7qdi"]
+[ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="6_c7qdi"]
+[ext_resource type="Texture2D" uid="uid://vqh0qfrgj180" path="res://Levels/DiscoMap/DiscoCeiling.svg" id="7_expxy"]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -832,3 +834,14 @@ position = Vector2(400, 1360)
 position = Vector2(320, 1360)
 
 [node name="ObstacleElements" type="Node2D" parent="."]
+
+[node name="CoverCeiling" parent="." groups=["Spinning Ceiling"] instance=ExtResource("6_c7qdi")]
+position = Vector2(720, 640)
+texture = ExtResource("7_expxy")
+sprite = ExtResource("7_expxy")
+
+[node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
+scale = Vector2(1.1582, 1.1582)
+polygon = PackedVector2Array(-40, -280, -160, -240, -240, -160, -280, -40, -280, 40, -240, 160, -160, 240, -40, 280, 40, 280, 160, 240, 240, 160, 280, 40, 280, -40, 240, -160, 160, -240, 40, -280)
+
+[editable path="CoverCeiling"]

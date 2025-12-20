@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bfcdqd688yqcy" path="res://Levels/StadiumMap/StadiumFlag.svg" id="9_m37vj"]
 [ext_resource type="Texture2D" uid="uid://dgl5m2js06a7o" path="res://Levels/StadiumMap/StadiumLight.svg" id="9_owuxa"]
 [ext_resource type="Texture2D" uid="uid://csekv5wogx6qa" path="res://Levels/StadiumMap/StadiumLightBack.svg" id="10_4t27u"]
-[ext_resource type="Script" uid="uid://ccdcdoo40fckk" path="res://Levels/StadiumMap/light_1.gd" id="10_u8fbc"]
+[ext_resource type="Script" path="res://Levels/StadiumMap/light_1.gd" id="10_u8fbc"]
 [ext_resource type="Script" uid="uid://bk2tmh8ht5d6w" path="res://Levels/bouncing_deco.gd" id="10_vnd3r"]
 [ext_resource type="Texture2D" uid="uid://d2pr22o8qwyf2" path="res://Levels/StadiumMap/StadiumWallRight2.svg" id="10_ykqp4"]
 [ext_resource type="Texture2D" uid="uid://r5r3nm200slb" path="res://Levels/StadiumMap/StadiumLightCone4.png" id="11_1f6nr"]

@@ -88,11 +88,11 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,
+									GameConsts.UPGRADE_LIST.ALLERGY,
+									GameConsts.UPGRADE_LIST.ALLERGY,
+									GameConsts.UPGRADE_LIST.ALLERGY,
+									GameConsts.UPGRADE_LIST.ALLERGY,
+									GameConsts.UPGRADE_LIST.ALLERGY,
 									]
 									
 	

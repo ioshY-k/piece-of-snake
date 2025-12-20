@@ -32,4 +32,5 @@ Worklow for adding new upgrade:
 	In RunManager: resize current_upgrade array
 	Add in Level: instantiate_upgrade, destroy_upgrade, is_upgrade_reload_necessary
 	In Upgrade card: Add description, Make sure the frames are in order of GameConst.UPGRADE_LIST
+	In Upgrade card: add tooltip text
 	Add in Component Parent: packed Component scene

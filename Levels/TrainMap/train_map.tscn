@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dhf4trfl7kprx"]
+[gd_scene load_steps=23 format=3 uid="uid://dhf4trfl7kprx"]
 
 [ext_resource type="Texture2D" uid="uid://dbmnic3piame1" path="res://Levels/TrainMap/TrainMap.svg" id="1_ipgus"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_fkbrw"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="10_q3fa0"]
 [ext_resource type="Script" uid="uid://cfxaspaqj3akq" path="res://MapElements/ObstacleElement/obstacle_disabler.gd" id="12_hslk7"]
 [ext_resource type="Texture2D" uid="uid://oneg5gkw7e6" path="res://Levels/TrainMap/TrainMapBridge.png" id="14_rdnci"]
+[ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="16_mmild"]
+[ext_resource type="Texture2D" uid="uid://sj42hxclgf48" path="res://Levels/TrainMap/TrainMapCeiling.svg" id="17_0tmrk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6p4ef"]
 animations = [{
@@ -2260,9 +2262,19 @@ script = ExtResource("12_hslk7")
 position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_o5p86")
 
+[node name="CoverCeiling" parent="." instance=ExtResource("16_mmild")]
+position = Vector2(560, 640)
+texture = ExtResource("17_0tmrk")
+sprite = ExtResource("17_0tmrk")
+
+[node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
+polygon = PackedVector2Array(280, -760, -280, -760, -280, 760, 280, 760)
+
 [connection signal="area_entered" from="ObstacleDisabler" to="ObstacleDisabler" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler2" to="ObstacleDisabler2" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler3" to="ObstacleDisabler3" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler4" to="ObstacleDisabler4" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler5" to="ObstacleDisabler5" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler6" to="ObstacleDisabler6" method="_on_area_entered"]
+
+[editable path="CoverCeiling"]

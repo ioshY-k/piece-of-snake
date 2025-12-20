@@ -143,4 +143,4 @@ func get_upgrade_type(upgrade_id: int):
 
 func _ready() -> void:
 	if test_mode:
-		FRUIT_THRESHOLDS = [0,0,0,0, 0,0,0,0, 0,0,0,0]
+		FRUIT_THRESHOLDS = [0,4,5,6, 0,0,0,0, 0,0,0,0]

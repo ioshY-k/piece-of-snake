@@ -18,9 +18,9 @@ func _ready():
 
 func _fruit_follows():
 	follow_countdown += 1
-	#if follow_countdown%2 == 0:
 	for fruit:FruitElement in level.current_map.find_all_fruits():
-		fruit.move(fruit.move_type.TOWARDS,false)
+		if randi() %3 == 0:
+			fruit.move(fruit.move_type.TOWARDS,false)
 
 func _delete_all_fruit():
 	for fruit in level.current_map.find_all_fruits():

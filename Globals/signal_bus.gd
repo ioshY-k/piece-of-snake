@@ -19,6 +19,7 @@ signal tail_skip
 signal pre_next_tile_reached
 signal next_tile_reached
 signal active_item_used
+signal price_calculated(upgrade_card: UpgradeCard)
 signal upgrade_bought(upgrade_id: int)
 signal enough_fruits_changed(enough:bool)
 signal swiss_knive_synergy(active:bool)

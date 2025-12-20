@@ -203,7 +203,6 @@ func move(move_t, triggered_by_dance):
 	match direction:
 		TileHelper.DIRECTION.UP:
 			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP)):
-				print("moving on other fruit prevented")
 				movement_tween.kill()
 				return
 			moves = true
@@ -211,9 +210,9 @@ func move(move_t, triggered_by_dance):
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP)),
 			map.snake_head.current_snake_speed)
 			map.temp_occupied_maptiles.append(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP))
+			z_index -= 1
 		TileHelper.DIRECTION.RIGHT:
 			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT)):
-				print("moving on other fruit prevented")
 				movement_tween.kill()
 				return
 			moves = true
@@ -223,7 +222,6 @@ func move(move_t, triggered_by_dance):
 			map.temp_occupied_maptiles.append(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT))
 		TileHelper.DIRECTION.DOWN:
 			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN)):
-				print("moving on other fruit prevented")
 				movement_tween.kill()
 				return
 			moves = true
@@ -231,9 +229,9 @@ func move(move_t, triggered_by_dance):
 			TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN)),
 			map.snake_head.current_snake_speed)
 			map.temp_occupied_maptiles.append(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN))
+			z_index += 1
 		TileHelper.DIRECTION.LEFT:
 			if map.temp_occupied_maptiles.has(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)):
-				print("moving on other fruit prevented")
 				movement_tween.kill()
 				return
 			moves = true

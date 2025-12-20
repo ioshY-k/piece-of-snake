@@ -272,7 +272,6 @@ func place_fruit(forbidden_tiles: Array, fruit: FruitElement):
 		fruit.position = TileHelper.tile_to_position(currently_free_map_tiles[randi() % currently_free_map_tiles.size()])
 	
 	fruit.z_index =  24 + TileHelper.position_to_tile(fruit.position).y
-	print(fruit.z_index)
 	current_fruits.append(fruit)
 	
 	

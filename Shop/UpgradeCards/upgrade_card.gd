@@ -32,8 +32,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take are "+PHASING_KEYWORD+".",
 	str(GameConsts.UPGRADE_LIST.KNOT_SLOWMO) : "Gain time whenever you surpass your body",
 	str(GameConsts.UPGRADE_LIST.ITEM_RELOADER) : "When reaching the fruit requirement, all active Items get refilled",
-	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "Within the first 25 seconds, 5 "+ GHOST_FRUIT_KEYWORD +" will spawn. If exactly 5 "+ GHOST_FRUIT_KEYWORD +" are on the map, all Fruits become "+ HOLLOW_KEYWORD +".\n\nYou can't be dealt map space cards.",
-	str(GameConsts.UPGRADE_LIST.MOULTING) : "Remove every Body Modification.\n\nBuying a card doesn't lock you out Rerolls.\n\nSet the Reroll cost to 0\nReroll cost starts at 0",
+	str(GameConsts.UPGRADE_LIST.IMMUTABLE) : "Every round, 5 "+ GHOST_FRUIT_KEYWORD +" will spawn. If exactly 5 "+ GHOST_FRUIT_KEYWORD +" are on the map, all Fruits become "+ HOLLOW_KEYWORD +".\n\nmap space cards are more costly",
 	str(GameConsts.UPGRADE_LIST.ANCHOR) : "No longer auto move forward and become invincible while standing still.\n\nLose 2 Points when hitting an obstacle",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_1) : "Stop moving for as long as the button is held down (max. 10s).\n\nBecome invincible while standing still.\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.TIME_STOP_2) : ADVANCEMENT_KEYWORD+". Holding any direction while stopping rewinds your steps up to 7 steps\n\nUsable up to 3 times.",
@@ -73,7 +72,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever you move, all Fruits move in the opposite direction.\n\nThis movement overrides any other Fruit movement.",
 	str(GameConsts.UPGRADE_LIST.OVERFED) : "Fill every empty Card slot with dead mice, which can't be replaced. Buying map space cards destroys a dead mouse for a random Item.",
 	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, your front half becomes "+PHASING_KEYWORD+" for a set time.\n\nAll Fruits are "+DENSE_KEYWORD+".",
-	str(GameConsts.UPGRADE_LIST.ALLERGY) : GHOST_FRUIT_KEYWORD+ " spawn over time. Eating them does not affect your Points, but makes them spawn faster.\n\nGet points for every uncollected Fruit on the map.\n\nFruits move towards you.",
+	str(GameConsts.UPGRADE_LIST.ALLERGY) : GHOST_FRUIT_KEYWORD + " spawn over time.\n\nGet points for every uncollected Fruit on the map instead of collected fruits.\n\nFruits move towards you.",
 	}
 
 var upgrade_names = {
@@ -285,13 +284,13 @@ func instantiate_upgrade_card(id: int):
 	id == GameConsts.UPGRADE_LIST.PACMAN_3 or\
 	id == GameConsts.UPGRADE_LIST.PLANT_SNAKE or\
 	id == GameConsts.UPGRADE_LIST.IMMUTABLE or\
+	id == GameConsts.UPGRADE_LIST.ALLERGY or\
 	id == GameConsts.UPGRADE_LIST.SHINY_GHOST:
 		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.GHOST_FRUIT)])
 	if id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2 or\
 	id == GameConsts.UPGRADE_LIST.CATCH or\
 	id == GameConsts.UPGRADE_LIST.FUEL_1 or\
 	id == GameConsts.UPGRADE_LIST.FUEL_3 or\
-	id == GameConsts.UPGRADE_LIST.ALLERGY or\
 	id == GameConsts.UPGRADE_LIST.SHINY_GHOST:
 		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.TASTY)])
 	if id == GameConsts.UPGRADE_LIST.CROSS_ROAD_1 or\
@@ -316,6 +315,7 @@ func instantiate_upgrade_card(id: int):
 	has_advancements = GameConsts.upgrades_with_advancement.has(upgrade_id)
 	upgrade_type = GameConsts.get_upgrade_type(id)
 	price = calculate_price()
+	SignalBus.price_calculated.emit(self)
 
 	
 

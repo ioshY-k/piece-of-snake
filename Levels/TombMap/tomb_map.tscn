@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://edeeeuho4uhe"]
+[gd_scene load_steps=7 format=3 uid="uid://edeeeuho4uhe"]
 
 [ext_resource type="Texture2D" uid="uid://bkv44frr1a0vj" path="res://Levels/TombMap/TombMap.svg" id="1_yu3m4"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_i1wbd"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_i1wbd"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="4_l0dqh"]
+[ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="5_1dc8j"]
+[ext_resource type="Texture2D" uid="uid://bvitnk43kfmyi" path="res://Levels/TombMap/TombCeiling.svg" id="6_373td"]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -858,3 +860,13 @@ position = Vector2(240, 1440)
 position = Vector2(160, 1440)
 
 [node name="ObstacleElements" type="Node2D" parent="."]
+
+[node name="CoverCeiling" parent="." instance=ExtResource("5_1dc8j")]
+position = Vector2(305, 679)
+texture = ExtResource("6_373td")
+sprite = ExtResource("6_373td")
+
+[node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
+polygon = PackedVector2Array(375, -319, -425, -319, -425, 321, 375, 321)
+
+[editable path="CoverCeiling"]

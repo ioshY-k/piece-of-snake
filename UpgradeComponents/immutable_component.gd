@@ -19,6 +19,8 @@ func _ready() -> void:
 	SignalBus.got_hit.connect(set_halo_frame)
 	SignalBus.fruit_collected.connect(set_halo_frame)
 	SignalBus.ghost_fruit_spawned.connect(set_halo_frame)
+	SignalBus.price_calculated.connect(modify_upgrade_cost)
+	SignalBus.round_over.connect(func(): halo.frame = 0)
 	halo = halo_scene.instantiate()
 	map.snake_head.add_child(halo)
 	halo.position.y = 36.83
@@ -75,7 +77,13 @@ func _prevent_growth_on_5_ghostfruits(_fruit, _real_collection):
 		var growth_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH)
 		map.add_child(growth_effect_trigger_text)
-	
+
+func modify_upgrade_cost(upgrade_card: UpgradeCard):
+	if upgrade_card.upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_1 or\
+	upgrade_card.upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_2 or\
+	upgrade_card.upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_3:
+		upgrade_card.price = upgrade_card.price * 3
+
 func self_destruct():
 	halo.queue_free()
 	queue_free()
