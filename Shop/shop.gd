@@ -62,6 +62,7 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.PACMAN_1,
 									GameConsts.UPGRADE_LIST.SHINY_GHOST,
 									GameConsts.UPGRADE_LIST.PLANT_SNAKE,
+									GameConsts.UPGRADE_LIST.HEAD_LIGHT,
 									GameConsts.UPGRADE_LIST.SNEK_1,
 									GameConsts.UPGRADE_LIST.BIG_FRUIT_1,
 									GameConsts.UPGRADE_LIST.CATCH,
@@ -88,11 +89,11 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.ALLERGY,
-									GameConsts.UPGRADE_LIST.ALLERGY,
-									GameConsts.UPGRADE_LIST.ALLERGY,
-									GameConsts.UPGRADE_LIST.ALLERGY,
-									GameConsts.UPGRADE_LIST.ALLERGY,
+									GameConsts.UPGRADE_LIST.HEAD_LIGHT,
+									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
+									GameConsts.UPGRADE_LIST.PIGGY_BANK,
+									GameConsts.UPGRADE_LIST.HEAD_LIGHT,
+									GameConsts.UPGRADE_LIST.HEAD_LIGHT,
 									]
 									
 	

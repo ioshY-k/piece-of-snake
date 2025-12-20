@@ -1,5 +1,7 @@
 class_name SnakeHead extends MovingSnakePart
 
+
+
 @onready var front_collision_ray: RayCast2D = $FrontCollisionRay
 @onready var right_collision_ray: RayCast2D = $RightCollisionRay
 @onready var left_collision_ray: RayCast2D = $LeftCollisionRay

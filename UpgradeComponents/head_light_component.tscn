@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwmc2uym2vjrr"]
+
+[ext_resource type="Texture2D" uid="uid://da7a0j163otjs" path="res://UpgradeComponents/Headlight/Headlight.png" id="1_7g17r"]
+[ext_resource type="Script" uid="uid://b2ytog51bnqeo" path="res://UpgradeComponents/head_light_component.gd" id="1_kobhq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7g17r"]
+radius = 1848.96
+
+[node name="HeadLightComponent" type="Sprite2D"]
+scale = Vector2(1.61, 1.73)
+texture = ExtResource("1_7g17r")
+offset = Vector2(4, -282)
+script = ExtResource("1_kobhq")
+
+[node name="Area2DDefault" type="Area2D" parent="."]
+collision_layer = 16384
+collision_mask = 2048
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2DDefault"]
+polygon = PackedVector2Array(0, -1, -14, -1, -160, -560, 160, -560, 13, 0)
+
+[node name="Area2DSwissKnive" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DSwissKnive"]
+shape = SubResource("CircleShape2D_7g17r")

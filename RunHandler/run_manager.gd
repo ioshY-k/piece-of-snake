@@ -38,7 +38,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(66)
+	current_upgrades.resize(67)
 	current_upgrades.fill(false)
 	
 	SignalBus.upgrade_bought.connect(_on_upgrade_bought)
@@ -93,8 +93,8 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.TOMB,
 					GameConsts.MAP_LIST.DISCO,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.UFO,
-						GameConsts.MAP_MODS.UFO,
+		mapmodorder = [GameConsts.MAP_MODS.DARK,
+						GameConsts.MAP_MODS.DARK,
 						GameConsts.MAP_MODS.UFO,
 						GameConsts.MAP_MODS.UFO,
 						GameConsts.MAP_MODS.UFO,

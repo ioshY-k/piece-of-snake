@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgthcqdygfvms"]
 
 [ext_resource type="Texture2D" uid="uid://bfopv5823uwdo" path="res://MainMenu/WanderingSnakeHead.svg" id="1_4l4pl"]
-[ext_resource type="Script" uid="uid://bsjvlchc6aa1" path="res://MainMenu/wandering_snake_head.gd" id="2_bov3k"]
+[ext_resource type="Script" path="res://MainMenu/wandering_snake_head.gd" id="2_bov3k"]
 [ext_resource type="Texture2D" uid="uid://cfe3k6utrvj0y" path="res://MainMenu/WanderingSnakeBodyParticle.svg" id="3_wpvn5"]
 
 [sub_resource type="Curve" id="Curve_45wq7"]

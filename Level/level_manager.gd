@@ -422,6 +422,7 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
 		GameConsts.UPGRADE_LIST.HALF_GONE,\
 		GameConsts.UPGRADE_LIST.IMMUTABLE,\
+		GameConsts.UPGRADE_LIST.HEAD_LIGHT,\
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			current_map.add_upgrade_component(upgrade_id)
 
@@ -559,6 +560,8 @@ func destroy_upgrade(upgrade_id: int):
 			component = find_child("SwissKniveComponent",false,false)
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			component = current_map.snake_tail.find_child("PlantSnakeComponent",false,false)
+		GameConsts.UPGRADE_LIST.HEAD_LIGHT:
+			component = current_map.snake_head.find_child("HeadLightComponent",false,false)
 		GameConsts.UPGRADE_LIST.SHINY_GHOST:
 			component = find_child("ShinyGhostComponent",false,false)
 		GameConsts.UPGRADE_LIST.HALF_GONE:
@@ -633,6 +636,7 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.ANCHOR,\
 		GameConsts.UPGRADE_LIST.RUBBER_BAND,\
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE,\
+		GameConsts.UPGRADE_LIST.HEAD_LIGHT,\
 		GameConsts.UPGRADE_LIST.DANCE,\
 		GameConsts.UPGRADE_LIST.HALF_GONE,\
 		GameConsts.UPGRADE_LIST.IMMUTABLE,\

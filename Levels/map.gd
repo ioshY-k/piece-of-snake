@@ -26,6 +26,7 @@ var tail_cut_component_scene = load("res://UpgradeComponents/tail_cut_component.
 var steel_helmet_component_scene = load("res://UpgradeComponents/steel_helmet_component.tscn")
 var rubber_band_component_scene = load("res://UpgradeComponents/rubber_band_component.tscn")
 var plant_snake_component_scene = load("res://UpgradeComponents/plant_snake_component.tscn")
+var head_light_component_scene = load("res://UpgradeComponents/head_light_component.tscn")
 var dance_component_scene = load("res://UpgradeComponents/dance_component.tscn")
 var half_gone_component_scene = load("res://UpgradeComponents/half_gone_component.tscn")
 var immutable_component_scene = load("res://UpgradeComponents/immutable_component.tscn")
@@ -369,6 +370,9 @@ func add_upgrade_component(upgrade: int):
 		GameConsts.UPGRADE_LIST.PLANT_SNAKE:
 			var plant_snake_component = plant_snake_component_scene.instantiate()
 			snake_tail.add_child(plant_snake_component)
+		GameConsts.UPGRADE_LIST.HEAD_LIGHT:
+			var head_light_component = head_light_component_scene.instantiate()
+			snake_head.add_child(head_light_component)
 		GameConsts.UPGRADE_LIST.HALF_GONE:
 			var half_gone_component = half_gone_component_scene.instantiate()
 			add_child(half_gone_component)

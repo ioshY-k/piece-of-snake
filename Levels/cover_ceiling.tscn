@@ -9,7 +9,7 @@ script = ExtResource("1_awkve")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 8192
+collision_mask = 24576
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(28, -47, -31, -37, -38, 14, 28, 33)

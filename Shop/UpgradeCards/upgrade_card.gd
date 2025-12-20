@@ -65,6 +65,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.SNEK_2) : ADVANCEMENT_KEYWORD+". Shrinking happens at sprint speed\n\nUsable up to 2 time.",
 	str(GameConsts.UPGRADE_LIST.SNEK_3) : ADVANCEMENT_KEYWORD+". Shrinking happens at sprint speed\n\nUsable up to 3 times.",
 	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail",
+	str(GameConsts.UPGRADE_LIST.HEAD_LIGHT) : "Makes Ceilings transparent when looked at.",
 	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, automatically gets collected",
 	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "1 in 3 times "+GHOST_FRUIT_KEYWORD+" are "+ TASTY_KEYWORD +".",
 	str(GameConsts.UPGRADE_LIST.POWER_NAP) : "While Standing still, your Sprint Meter refills twice as fast",
@@ -133,6 +134,7 @@ var upgrade_names = {
 	str(GameConsts.UPGRADE_LIST.SNEK_2) : "SNEK 2",  
 	str(GameConsts.UPGRADE_LIST.SNEK_3) : "SNEK 3",  
 	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "PLANT SNAKE",  
+	str(GameConsts.UPGRADE_LIST.HEAD_LIGHT) : "HEAD LIGHT",  
 	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "DIFFUSION",  
 	str(GameConsts.UPGRADE_LIST.SHINY_GHOST) : "SHINY GHOST",  
 	str(GameConsts.UPGRADE_LIST.POWER_NAP) : "POWER NAP",  
@@ -156,9 +158,10 @@ var swiss_knive_upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.TAIL_CUT) : "One time per round, cut off your tail when surpassing it.\n\n[color=#4fabf9]Cuttable tailpart is bigger[/color]",
 	str(GameConsts.UPGRADE_LIST.CORNER_PHASING) : "Corners you take are "+PHASING_KEYWORD+".\n\n[color=#4fabf9]NO SWISS KNIVE EFFECT - Suggestions are welcome:)[/color]",
 	str(GameConsts.UPGRADE_LIST.COATING) : "Become "+SHIELDED_KEYWORD+" for your first [color=#4fabf9]and second[/color] hit.",
-	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "Become "+SHIELDED_KEYWORD+" while sprinting.\n\n[color=#4fabf9]Does also work when running into your own body.[/color]",
+	str(GameConsts.UPGRADE_LIST.STEEL_HELMET) : "Become "+SHIELDED_KEYWORD+" while sprinting.\n\n[color=#4fabf9]Does also work when running into your own body[/color].",
 	str(GameConsts.UPGRADE_LIST.RUBBER_BAND) : "Long straights create pressure points in their center.\nPassing through them gives [color=#4fabf9]longer invincibility[/color]",
-	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail\n\n[color=#4fabf9]1 in 3 times "+GHOST_FRUIT_KEYWORD+" are "+HOLLOW_KEYWORD+".[/color]",
+	str(GameConsts.UPGRADE_LIST.PLANT_SNAKE) : "Whenever you get hit, a "+GHOST_FRUIT_KEYWORD+" will grow attached to your Tail\n\n[color=#4fabf9]1 in 3 times "+GHOST_FRUIT_KEYWORD+" are "+HOLLOW_KEYWORD+"[/color].",
+	str(GameConsts.UPGRADE_LIST.HEAD_LIGHT) : "Makes Ceilings transparent [color=#4fabf9]at any time[/color].",
 	str(GameConsts.UPGRADE_LIST.DIFFUSION) : "Every fruit that would move onto your body, automatically gets collected\n\n[color=#4fabf9]When Diffusion happens, all Fruits move towards you[/color]",
 }
 
