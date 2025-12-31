@@ -837,6 +837,7 @@ position = Vector2(320, 1360)
 
 [node name="CoverCeiling" parent="." groups=["Spinning Ceiling"] instance=ExtResource("6_c7qdi")]
 position = Vector2(720, 640)
+rotation = 3.38736
 texture = ExtResource("7_expxy")
 sprite = ExtResource("7_expxy")
 

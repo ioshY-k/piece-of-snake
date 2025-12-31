@@ -13,7 +13,7 @@ config_version=5
 config/name="Piece of Snake"
 run/main_scene="uid://ksb5uvudebln"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://du6lduv6if6e8"
 
 [autoload]
 
@@ -24,6 +24,7 @@ MapData="*res://Globals/map_data.gd"
 Descriptions="*res://Globals/descriptions.gd"
 RunSettings="*res://Globals/run_settings.gd"
 RunHistoryCodeManager="*res://History/run_history_code_manager.gd"
+GlobalSettings="*res://Globals/global_settings.gd"
 
 [display]
 

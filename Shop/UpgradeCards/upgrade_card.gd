@@ -72,7 +72,7 @@ var upgrade_descriptions = {
 	str(GameConsts.UPGRADE_LIST.CATCH) : "Moving Fruits have a 1 in 3 chance to be " + TASTY_KEYWORD + ".",
 	str(GameConsts.UPGRADE_LIST.DANCE) : "Whenever you move, all Fruits move in the opposite direction.\n\nThis movement overrides any other Fruit movement.",
 	str(GameConsts.UPGRADE_LIST.OVERFED) : "Fill every empty Card slot with dead mice, which can't be replaced. Buying map space cards destroys a dead mouse for a random Item.",
-	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, your front half becomes "+PHASING_KEYWORD+" for a set time.\n\nAll Fruits are "+DENSE_KEYWORD+".",
+	str(GameConsts.UPGRADE_LIST.HALF_GONE) : "After collecting a fruit, your front half becomes "+PHASING_KEYWORD+".\n\nAll Fruits are "+DENSE_KEYWORD+".",
 	str(GameConsts.UPGRADE_LIST.ALLERGY) : GHOST_FRUIT_KEYWORD + " spawn over time.\n\nGet points for every uncollected Fruit on the map instead of collected fruits.\n\nFruits move towards you.",
 	}
 
@@ -183,6 +183,7 @@ var is_dragging: bool = false
 @onready var card_area: Area2D = $CardArea
 @onready var sale_number: Label = $CardSprite/SaleTag/SaleNumber
 @export var upgrade_id: int
+@onready var upgrade_id_string: String
 @onready var card_snap_audio: AudioStreamPlayer = $CardSnapAudio
 @onready var card_select_audio: AudioStreamPlayer = $CardSelectAudio
 @onready var card_deselect_audio: AudioStreamPlayer = $CardDeselectAudio
@@ -246,74 +247,81 @@ func play_hovered_mode():
 	
 
 func instantiate_upgrade_card(id: int):
+	
+	var file_string = FileAccess.get_file_as_string("res://Data/Piece of Snake Data.json")
+	var json_data
+	if file_string != null:
+		json_data = JSON.parse_string(file_string)
+	else:
+		push_warning("json data could not be loaded from res://Data/Piece of Snake Data.json")
+	
+	var card_data = json_data.get("Upgrade Cards")
+	var keyword_data = json_data.get("Keywords")
+	
+	for name in GameConsts.UPGRADE_LIST.keys():
+		if GameConsts.UPGRADE_LIST[name] == id:
+			upgrade_id_string = name
+	
+	match GlobalSettings.language:
+		GlobalSettings.languages.ENGLISH:
+			upgrade_name = card_data[upgrade_id_string]["NAME_ENG"]
+			upgrade_description = card_data[upgrade_id_string]["DESC_ENG"].format({
+				"GHOST_FRUIT_KEYWORD": keyword_data["GHOST_FRUIT_KEYWORD"]["NAME_ENG"],
+				"TASTY_KEYWORD": keyword_data["TASTY_KEYWORD"]["NAME_ENG"],
+				"ADVANCEMENT_KEYWORD": keyword_data["ADVANCEMENT_KEYWORD"]["NAME_ENG"],
+				"HOLLOW_KEYWORD": keyword_data["HOLLOW_KEYWORD"]["NAME_ENG"],
+				"DENSE_KEYWORD": keyword_data["DENSE_KEYWORD"]["NAME_ENG"],
+				"PHASING_KEYWORD": keyword_data["PHASING_KEYWORD"]["NAME_ENG"],
+				"SHIELDED_KEYWORD": keyword_data["SHIELDED_KEYWORD"]["NAME_ENG"]
+			})
+			if card_data[upgrade_id_string]["DESC_ENG"].contains("{ADVANCEMENT_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["ADVANCEMENT_KEYWORD"]["NAME_GER"] + " " + keyword_data["ADVANCEMENT_KEYWORD"]["DESC_ENG"])
+			if card_data[upgrade_id_string]["DESC_ENG"].contains("{GHOST_FRUIT_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["GHOST_FRUIT_KEYWORD"]["NAME_GER"] + " " + keyword_data["GHOST_FRUIT_KEYWORD"]["DESC_ENG"])
+			if card_data[upgrade_id_string]["DESC_ENG"].contains("{TASTY_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["TASTY_KEYWORD"]["NAME_GER"] + " " + keyword_data["TASTY_KEYWORD"]["DESC_ENG"])
+			if card_data[upgrade_id_string]["DESC_ENG"].contains("{PHASING_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["PHASING_KEYWORD"]["NAME_GER"] + " " + keyword_data["PHASING_KEYWORD"]["DESC_ENG"])
+			if card_data[upgrade_id_string]["DESC_ENG"].contains("{HOLLOW_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["HOLLOW_KEYWORD"]["NAME_GER"] + " " + keyword_data["HOLLOW_KEYWORD"]["DESC_ENG"])
+			if card_data[upgrade_id_string]["DESC_ENG"].contains("{DENSE_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["DENSE_KEYWORD"]["NAME_GER"] + " " + keyword_data["DENSE_KEYWORD"]["DESC_ENG"])
+			if card_data[upgrade_id_string]["DESC_ENG"].contains("{SHIELDED_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["SHIELDED_KEYWORD"]["NAME_GER"] + " " + keyword_data["SHIELDED_KEYWORD"]["DESC_ENG"])
+				
+		GlobalSettings.languages.GERMAN:
+			upgrade_name = card_data[upgrade_id_string]["NAME_GER"]
+			upgrade_description = card_data[upgrade_id_string]["DESC_GER"].format({
+				"GHOST_FRUIT_KEYWORD": keyword_data["GHOST_FRUIT_KEYWORD"]["NAME_GER"],
+				"TASTY_KEYWORD": keyword_data["TASTY_KEYWORD"]["NAME_GER"],
+				"ADVANCEMENT_KEYWORD": keyword_data["ADVANCEMENT_KEYWORD"]["NAME_GER"],
+				"HOLLOW_KEYWORD": keyword_data["HOLLOW_KEYWORD"]["NAME_GER"],
+				"DENSE_KEYWORD": keyword_data["DENSE_KEYWORD"]["NAME_GER"],
+				"PHASING_KEYWORD": keyword_data["PHASING_KEYWORD"]["NAME_GER"],
+				"SHIELDED_KEYWORD": keyword_data["SHIELDED_KEYWORD"]["NAME_GER"]
+			})
+			if card_data[upgrade_id_string]["DESC_GER"].contains("{ADVANCEMENT_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["ADVANCEMENT_KEYWORD"]["NAME_GER"] + " " + keyword_data["ADVANCEMENT_KEYWORD"]["DESC_GER"])
+			if card_data[upgrade_id_string]["DESC_GER"].contains("{GHOST_FRUIT_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["GHOST_FRUIT_KEYWORD"]["NAME_GER"] + " " + keyword_data["GHOST_FRUIT_KEYWORD"]["DESC_GER"])
+			if card_data[upgrade_id_string]["DESC_GER"].contains("{TASTY_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["TASTY_KEYWORD"]["NAME_GER"] + " " + keyword_data["TASTY_KEYWORD"]["DESC_GER"])
+			if card_data[upgrade_id_string]["DESC_GER"].contains("{PHASING_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["PHASING_KEYWORD"]["NAME_GER"] + " " + keyword_data["PHASING_KEYWORD"]["DESC_GER"])
+			if card_data[upgrade_id_string]["DESC_GER"].contains("{HOLLOW_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["HOLLOW_KEYWORD"]["NAME_GER"] + " " + keyword_data["HOLLOW_KEYWORD"]["DESC_GER"])
+			if card_data[upgrade_id_string]["DESC_GER"].contains("{DENSE_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["DENSE_KEYWORD"]["NAME_GER"] + " " + keyword_data["DENSE_KEYWORD"]["DESC_GER"])
+			if card_data[upgrade_id_string]["DESC_GER"].contains("{SHIELDED_KEYWORD}"):
+				keyword_descriptions.append(keyword_data["SHIELDED_KEYWORD"]["NAME_GER"] + " " + keyword_data["SHIELDED_KEYWORD"]["DESC_GER"])
+	
 	upgrade_id = id
 	card_sprite.frame = id
-	upgrade_description = upgrade_descriptions[str(id)]
-	upgrade_name = upgrade_names[str(id)]
 	font_color = font_colors[str(GameConsts.get_upgrade_type(id))]
-	if id == GameConsts.UPGRADE_LIST.AREA_SIZE_2 or\
-	id == GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3 or\
-	id == GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3 or\
-	id == GameConsts.UPGRADE_LIST.HYPER_SPEED_2 or\
-	id == GameConsts.UPGRADE_LIST.HYPER_SPEED_3 or\
-	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2 or\
-	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3 or\
-	id == GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2 or\
-	id == GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3 or\
-	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_2 or\
-	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_3 or\
-	id == GameConsts.UPGRADE_LIST.TIME_STOP_2 or\
-	id == GameConsts.UPGRADE_LIST.TIME_STOP_3 or\
-	id == GameConsts.UPGRADE_LIST.WORMHOLE_2 or\
-	id == GameConsts.UPGRADE_LIST.WORMHOLE_3 or\
-	id == GameConsts.UPGRADE_LIST.DIET_2 or\
-	id == GameConsts.UPGRADE_LIST.DIET_3 or\
-	id == GameConsts.UPGRADE_LIST.FUEL_2 or\
-	id == GameConsts.UPGRADE_LIST.FUEL_3 or\
-	id == GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2 or\
-	id == GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3 or\
-	id == GameConsts.UPGRADE_LIST.PACMAN_2 or\
-	id == GameConsts.UPGRADE_LIST.PACMAN_3 or\
-	id == GameConsts.UPGRADE_LIST.SNEK_2 or\
-	id == GameConsts.UPGRADE_LIST.SNEK_3 or\
-	id == GameConsts.UPGRADE_LIST.BIG_FRUIT_2 or\
-	id == GameConsts.UPGRADE_LIST.BIG_FRUIT_3:
-		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.ADVAMCEMENT)])
-	if id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1 or\
-	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2 or\
-	id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_3 or\
-	id == GameConsts.UPGRADE_LIST.PACMAN_1 or\
-	id == GameConsts.UPGRADE_LIST.PACMAN_2 or\
-	id == GameConsts.UPGRADE_LIST.PACMAN_3 or\
-	id == GameConsts.UPGRADE_LIST.PLANT_SNAKE or\
-	id == GameConsts.UPGRADE_LIST.IMMUTABLE or\
-	id == GameConsts.UPGRADE_LIST.ALLERGY or\
-	id == GameConsts.UPGRADE_LIST.SHINY_GHOST:
-		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.GHOST_FRUIT)])
-	if id == GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_2 or\
-	id == GameConsts.UPGRADE_LIST.CATCH or\
-	id == GameConsts.UPGRADE_LIST.FUEL_1 or\
-	id == GameConsts.UPGRADE_LIST.FUEL_3 or\
-	id == GameConsts.UPGRADE_LIST.SHINY_GHOST:
-		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.TASTY)])
-	if id == GameConsts.UPGRADE_LIST.CROSS_ROAD_1 or\
-	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_2 or\
-	id == GameConsts.UPGRADE_LIST.CROSS_ROAD_3 or\
-	id == GameConsts.UPGRADE_LIST.HALF_GONE or\
-	id == GameConsts.UPGRADE_LIST.CORNER_PHASING:
-		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.PHASING)])
-	if id == GameConsts.UPGRADE_LIST.IMMUTABLE or\
-	id == GameConsts.UPGRADE_LIST.FUEL_2 or\
-	id == GameConsts.UPGRADE_LIST.FUEL_3 or\
-	id == GameConsts.UPGRADE_LIST.DIET_1 or\
-	id == GameConsts.UPGRADE_LIST.DIET_2 or\
-	id == GameConsts.UPGRADE_LIST.DIET_3:
-		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.HOLLOW)])
-	if id == GameConsts.UPGRADE_LIST.HALF_GONE:
-		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.DENSE)])
-	if id == GameConsts.UPGRADE_LIST.STEEL_HELMET or\
-	id == GameConsts.UPGRADE_LIST.COATING:
-		keyword_descriptions.append(tooltip_descriptions[str(GameConsts.KEYWORDS.SHIELDED)])
+	
+	
+
+
 	is_advanced = GameConsts.advanced_upgrades.has(upgrade_id)
 	has_advancements = GameConsts.upgrades_with_advancement.has(upgrade_id)
 	upgrade_type = GameConsts.get_upgrade_type(id)
