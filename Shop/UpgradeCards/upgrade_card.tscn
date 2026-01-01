@@ -63,7 +63,7 @@
 [ext_resource type="AudioStream" uid="uid://dejdw5oc0tjyw" path="res://Shop/Sfx/CardBuy.wav" id="54_5fd0j"]
 [ext_resource type="Texture2D" uid="uid://j0vpfnfrjytu" path="res://Shop/UpgradeCards/Dance.svg" id="54_bim42"]
 [ext_resource type="Texture2D" uid="uid://br2gk6nyd7rj3" path="res://Shop/UpgradeCards/ShinyGhost.svg" id="54_n5epb"]
-[ext_resource type="Texture2D" uid="uid://dcsowd5gt4548" path="res://Shop/UpgradeCards/HalfGone.svg" id="55_bim42"]
+[ext_resource type="Texture2D" uid="uid://dcsowd5gt4548" path="res://MainMenu/BannerIcons/HalfGone.svg" id="55_bim42"]
 [ext_resource type="Texture2D" uid="uid://kgjubm5sp1oq" path="res://Shop/UpgradeCards/Allergy.svg" id="56_a0kyf"]
 [ext_resource type="Texture2D" uid="uid://butf0pgwx2hoi" path="res://Shop/UpgradeCards/snek1.svg" id="57_dxsnv"]
 [ext_resource type="Texture2D" uid="uid://d0xrqur6rlske" path="res://Shop/UpgradeCards/snek2.svg" id="58_530hf"]

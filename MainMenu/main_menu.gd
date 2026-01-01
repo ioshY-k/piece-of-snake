@@ -109,11 +109,10 @@ func _on_normal_slot_area_mouse_exited() -> void:
 func _on_hard_slot_area_mouse_exited() -> void:
 	slot_descend(hard_slot)
 
-
 func _on_show_banners_mouse_entered() -> void:
-	slot_rise_to(easy_slot, 632)
-	slot_rise_to(normal_slot, 632)
-	slot_rise_to(hard_slot, 632)
+	slot_rise_to(easy_slot, 560)
+	slot_rise_to(normal_slot, 560)
+	slot_rise_to(hard_slot, 560)
 
 func _on_show_banners_mouse_exited() -> void:
 	slot_descend(easy_slot)

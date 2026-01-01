@@ -1,16 +1,407 @@
-[gd_scene load_steps=4 format=3 uid="uid://bch88i4suqn2b"]
+[gd_scene load_steps=44 format=3 uid="uid://bch88i4suqn2b"]
 
 [ext_resource type="Texture2D" uid="uid://dt3q2q1g6sbof" path="res://iconsmallempty.svg" id="1_acffj"]
-[ext_resource type="Texture2D" uid="uid://ykbrj4o7lc4d" path="res://iconsmall.svg" id="2_qs6y8"]
+[ext_resource type="Script" uid="uid://becuvmmrb2qvh" path="res://MainMenu/banners.gd" id="1_g5m2a"]
+[ext_resource type="Texture2D" uid="uid://bscj8ypmn4ie1" path="res://MainMenu/BannerIcons/char1.svg" id="2_4kmik"]
+[ext_resource type="Texture2D" uid="uid://cyvqa6amoqqou" path="res://MainMenu/BannerIcons/char2.svg" id="4_f7qn8"]
+[ext_resource type="Texture2D" uid="uid://c2vev4msk7gy2" path="res://MainMenu/BannerIcons/char3.svg" id="5_t2788"]
+[ext_resource type="Texture2D" uid="uid://pwmc42ude4b3" path="res://MainMenu/BannerIcons/char4.svg" id="6_j2py0"]
+[ext_resource type="Texture2D" uid="uid://6vt6i1phyukh" path="res://MainMenu/BannerIcons/char5.svg" id="7_mc8tx"]
+[ext_resource type="Texture2D" uid="uid://ga8a1c2us0lg" path="res://MainMenu/BannerIcons/ImmutableIcon.svg" id="8_adwsk"]
+[ext_resource type="Texture2D" uid="uid://btwr4rsfj6oda" path="res://MainMenu/BannerIcons/MoultingIcon.svg" id="9_1pvhc"]
+[ext_resource type="Texture2D" uid="uid://c6hiu6rjakhmk" path="res://MainMenu/BannerIcons/EdgeWrapIcon.svg" id="10_wmv6u"]
+[ext_resource type="Texture2D" uid="uid://cirhfoh3pkude" path="res://MainMenu/BannerIcons/AnchorIcon.svg" id="11_y2oq7"]
+[ext_resource type="Texture2D" uid="uid://b5g0ygr1quk7b" path="res://MainMenu/BannerIcons/OverfedIcon.svg" id="12_csedy"]
+[ext_resource type="Texture2D" uid="uid://mx5aw54dq66c" path="res://MainMenu/DanceIcon.svg" id="13_4ctgt"]
+[ext_resource type="Texture2D" uid="uid://ch7aueqfdbobf" path="res://MainMenu/BannerIcons/AllergyIcon.svg" id="14_1i4po"]
+[ext_resource type="Texture2D" uid="uid://dxmjhipkt7qcp" path="res://MainMenu/BannerIcons/BeachIcon.svg" id="15_41hiw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ok5k"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhy3h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_acffj")
+"texture": ExtResource("2_4kmik")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_qs6y8")
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1j6lk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f7qn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vw022"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t2788")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n40xb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j2py0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rghsw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mc8tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwaw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4kmik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kl84t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4kmik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lxgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4kmik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2v3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_adwsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ep5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1pvhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iffr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_wmv6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3wph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_y2oq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mgng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_csedy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uiue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4ctgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbdd5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_1i4po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pj3qw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4kmik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxqx8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75ocx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jrvvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmyop"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcol2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qrrq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uv7u0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sll7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygrie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph6d6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_voox1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36afm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_41hiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
 }],
 "loop": true,
 "name": &"default",
@@ -23,227 +414,228 @@ offset_top = 171.5
 offset_right = -30.0
 offset_bottom = 211.5
 columns = 4
+script = ExtResource("1_g5m2a")
 
-[node name="CharContainer1" type="PanelContainer" parent="."]
+[node name="CharContainer1" type="PanelContainer" parent="." groups=["GODOT"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer1"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_vhy3h")
 offset = Vector2(15, 15)
 
 [node name="CharContainer2" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer2"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer2" groups=["PYTHON"]]
+sprite_frames = SubResource("SpriteFrames_1j6lk")
 offset = Vector2(15, 15)
 
-[node name="CharContainer3" type="PanelContainer" parent="."]
+[node name="CharContainer3" type="PanelContainer" parent="." groups=["SALAMANDER"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer3"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_vw022")
 offset = Vector2(15, 15)
 
-[node name="CharContainer4" type="PanelContainer" parent="."]
+[node name="CharContainer4" type="PanelContainer" parent="." groups=["CHAMELEON"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer4"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_n40xb")
 offset = Vector2(15, 15)
 
-[node name="CharContainer5" type="PanelContainer" parent="."]
+[node name="CharContainer5" type="PanelContainer" parent="." groups=["ELEPHANT"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer5"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_rghsw")
 offset = Vector2(15, 15)
 
-[node name="CharContainer6" type="PanelContainer" parent="."]
+[node name="CharContainer6" type="PanelContainer" parent="." groups=["CHAR6"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer6"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_dwaw6")
 offset = Vector2(15, 15)
 
-[node name="CharContainer7" type="PanelContainer" parent="."]
+[node name="CharContainer7" type="PanelContainer" parent="." groups=["CHAR7"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer7"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_kl84t")
 offset = Vector2(15, 15)
 
-[node name="CharContainer8" type="PanelContainer" parent="."]
+[node name="CharContainer8" type="PanelContainer" parent="." groups=["CHAR8"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer8"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_6lxgt")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer1" type="PanelContainer" parent="."]
+[node name="ItemContainer1" type="PanelContainer" parent="." groups=["IMMUTABLE"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer1"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_l2v3e")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer2" type="PanelContainer" parent="."]
+[node name="ItemContainer2" type="PanelContainer" parent="." groups=["MOULTING"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer2"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_8ep5l")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer3" type="PanelContainer" parent="."]
+[node name="ItemContainer3" type="PanelContainer" parent="." groups=["EDGE_WRAP"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer3"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_iffr3")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer4" type="PanelContainer" parent="."]
+[node name="ItemContainer4" type="PanelContainer" parent="." groups=["ANCHOR"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer4"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_r3wph")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer5" type="PanelContainer" parent="."]
+[node name="ItemContainer5" type="PanelContainer" parent="." groups=["OVERFED"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer5"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_7mgng")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer6" type="PanelContainer" parent="."]
+[node name="ItemContainer6" type="PanelContainer" parent="." groups=["DANCE"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer6"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_5uiue")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer7" type="PanelContainer" parent="."]
+[node name="ItemContainer7" type="PanelContainer" parent="." groups=["ALLERGY"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer7"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_jbdd5")
 offset = Vector2(15, 15)
 
-[node name="ItemContainer8" type="PanelContainer" parent="."]
+[node name="ItemContainer8" type="PanelContainer" parent="." groups=["ITEM8"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer8"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_pj3qw")
 offset = Vector2(15, 15)
 
-[node name="MapContainer1" type="PanelContainer" parent="."]
+[node name="MapContainer1" type="PanelContainer" parent="." groups=["WOODS"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer1"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_gxqx8")
 offset = Vector2(15, 15)
 
-[node name="MapContainer2" type="PanelContainer" parent="."]
+[node name="MapContainer2" type="PanelContainer" parent="." groups=["STADIUM"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer2"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_75ocx")
 offset = Vector2(15, 15)
 
-[node name="MapContainer3" type="PanelContainer" parent="."]
+[node name="MapContainer3" type="PanelContainer" parent="." groups=["RESTAURANT"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer3"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_jrvvn")
 offset = Vector2(15, 15)
 
-[node name="MapContainer4" type="PanelContainer" parent="."]
+[node name="MapContainer4" type="PanelContainer" parent="." groups=["MAP4"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer4"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_lmyop")
 offset = Vector2(15, 15)
 
-[node name="MapContainer5" type="PanelContainer" parent="."]
+[node name="MapContainer5" type="PanelContainer" parent="." groups=["OFFICE"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer5"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_jcol2")
 offset = Vector2(15, 15)
 
-[node name="MapContainer6" type="PanelContainer" parent="."]
+[node name="MapContainer6" type="PanelContainer" parent="." groups=["CAVE"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer6"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_2qrrq")
 offset = Vector2(15, 15)
 
-[node name="MapContainer7" type="PanelContainer" parent="."]
+[node name="MapContainer7" type="PanelContainer" parent="." groups=["TRAIN"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer7"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_uv7u0")
 offset = Vector2(15, 15)
 
-[node name="MapContainer8" type="PanelContainer" parent="."]
+[node name="MapContainer8" type="PanelContainer" parent="." groups=["MAP8"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer8"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_sll7n")
 offset = Vector2(15, 15)
 
-[node name="MapContainer9" type="PanelContainer" parent="."]
+[node name="MapContainer9" type="PanelContainer" parent="." groups=["TOMB"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer9"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_ygrie")
 offset = Vector2(15, 15)
 
-[node name="MapContainer10" type="PanelContainer" parent="."]
+[node name="MapContainer10" type="PanelContainer" parent="." groups=["BEACH"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer10"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_ph6d6")
 offset = Vector2(15, 15)
 
-[node name="MapContainer11" type="PanelContainer" parent="."]
+[node name="MapContainer11" type="PanelContainer" parent="." groups=["DISCO"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer11"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_voox1")
 offset = Vector2(15, 15)
 
-[node name="MapContainer12" type="PanelContainer" parent="."]
+[node name="MapContainer12" type="PanelContainer" parent="." groups=["MAP12"]]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer12"]
-sprite_frames = SubResource("SpriteFrames_7ok5k")
+sprite_frames = SubResource("SpriteFrames_36afm")
 offset = Vector2(15, 15)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcsowd5gt4548"
-path="res://.godot/imported/HalfGone.svg-f76c19adbf150caa32483cdd6a90978e.ctex"
+uid="uid://dxmjhipkt7qcp"
+path="res://.godot/imported/BeachIcon.svg-45eb8d5beff1042c2149a6973f008c9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/UpgradeCards/HalfGone.svg"
-dest_files=["res://.godot/imported/HalfGone.svg-f76c19adbf150caa32483cdd6a90978e.ctex"]
+source_file="res://MainMenu/BannerIcons/BeachIcon.svg"
+dest_files=["res://.godot/imported/BeachIcon.svg-45eb8d5beff1042c2149a6973f008c9c.ctex"]
 
 [params]
 

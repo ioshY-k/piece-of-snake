@@ -1547,6 +1547,7 @@ autowrap_mode = 2
 z_index = 1
 position = Vector2(1104, 1236.5)
 texture = ExtResource("47_2384g")
+offset = Vector2(0, 311.685)
 
 [node name="EasyArea" type="Area2D" parent="EasySlot"]
 position = Vector2(-5, 67)
@@ -1586,11 +1587,17 @@ position = Vector2(0.5, -8.5)
 shape = SubResource("RectangleShape2D_bh756")
 
 [node name="BannersGridContainer" parent="EasySlot" instance=ExtResource("37_w8io1")]
+offset_left = -84.0
+offset_top = 210.5
+offset_right = 48.0
+offset_bottom = 444.5
+scale = Vector2(1.285, 1.285)
 
 [node name="NormalSlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
 z_index = 1
 position = Vector2(1345, 1236.5)
 texture = ExtResource("47_2384g")
+offset = Vector2(0, 311.685)
 
 [node name="NormalArea" type="Area2D" parent="NormalSlot"]
 position = Vector2(-5, 67)
@@ -1630,11 +1637,18 @@ position = Vector2(0.5, -8.5)
 shape = SubResource("RectangleShape2D_bh756")
 
 [node name="BannersGridContainer" parent="NormalSlot" instance=ExtResource("37_w8io1")]
+offset_left = -84.0
+offset_top = 210.5
+offset_right = 48.0
+offset_bottom = 444.5
+scale = Vector2(1.285, 1.285)
+gamemode = 1
 
 [node name="HardSlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
 z_index = 1
 position = Vector2(1582.5, 1236.5)
 texture = ExtResource("47_2384g")
+offset = Vector2(0, 311.685)
 
 [node name="HardArea" type="Area2D" parent="HardSlot"]
 position = Vector2(-5, 67)
@@ -1675,6 +1689,12 @@ position = Vector2(0.5, -8.5)
 shape = SubResource("RectangleShape2D_bh756")
 
 [node name="BannersGridContainer" parent="HardSlot" instance=ExtResource("37_w8io1")]
+offset_left = -84.0
+offset_top = 210.5
+offset_right = 48.0
+offset_bottom = 444.5
+scale = Vector2(1.285, 1.285)
+gamemode = 2
 
 [node name="CardParticles" type="Node2D" parent="."]
 
