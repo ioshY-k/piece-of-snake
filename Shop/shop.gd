@@ -72,12 +72,12 @@ var upgrade_card_pool: Array[int] = [
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
 									GameConsts.UPGRADE_LIST.MOULTING,
-									GameConsts.UPGRADE_LIST.EDGE_WRAP,
-									GameConsts.UPGRADE_LIST.DANCE,
-									GameConsts.UPGRADE_LIST.HALF_GONE,
-									GameConsts.UPGRADE_LIST.ALLERGY,
-									GameConsts.UPGRADE_LIST.OVERFED,
-									GameConsts.UPGRADE_LIST.ANCHOR
+									#GameConsts.UPGRADE_LIST.EDGE_WRAP,
+									#GameConsts.UPGRADE_LIST.DANCE,
+									#GameConsts.UPGRADE_LIST.HALF_GONE,
+									#GameConsts.UPGRADE_LIST.ALLERGY,
+									#GameConsts.UPGRADE_LIST.OVERFED,
+									#GameConsts.UPGRADE_LIST.ANCHOR
 											]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 

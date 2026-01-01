@@ -159,7 +159,8 @@ func _on_round_over():
 		await get_tree().create_timer(0.5).timeout
 		if (current_act == 2 and current_round == 3):
 			#goal or act 4 reached
-			pass
+			update_masteries()
+			GlobalSettings.save_masteries()
 		elif (current_round == 3):
 			shop.generate_items(current_round)
 		else:
@@ -180,3 +181,50 @@ func _on_round_over():
 			level.prepare_new_act(maporder[current_act], fruit_thresholds[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
 		RunHistoryCodeManager.current_act = current_act
 		RunHistoryCodeManager.current_round = current_round
+
+func update_masteries():
+	var gamemode
+	var character
+	var special_upgrade
+	var map1
+	var map2
+	var map3
+	
+	match RunSettings.gamemode:
+		GameConsts.GAMEMODES.EASY:
+			gamemode = "EASY"
+		GameConsts.GAMEMODES.NORMAL:
+			gamemode = "NORMAL"
+		GameConsts.GAMEMODES.HARD:
+			gamemode = "HARD"
+		GameConsts.GAMEMODES.ASCENSION:
+			gamemode = "ASCENSION"
+	match RunSettings.current_char:
+		GameConsts.CHAR_LIST.GODOT:
+			character = "GODOT"
+		GameConsts.CHAR_LIST.PYTHON:
+			character = "PYTHON"
+		GameConsts.CHAR_LIST.SALAMANDER:
+			character = "SALAMANDER"
+		GameConsts.CHAR_LIST.CHAMELEON:
+			character = "CHAMELEON"
+		GameConsts.CHAR_LIST.ELEPHANT:
+			character = "ELEPHANT"
+	if shop.is_filled(shop.special_slots[0]):
+		special_upgrade = shop.special_slots[0].get_node("Area2D").get_child(-1).upgrade_id_string
+		
+	for name in GameConsts.MAP_LIST.keys():
+		if GameConsts.MAP_LIST[name] == maporder[0]:
+			map1 = name
+		if GameConsts.MAP_LIST[name] == maporder[1]:
+			map2 = name
+		if GameConsts.MAP_LIST[name] == maporder[2]:
+			map3 = name
+	
+	GlobalSettings.masteries[gamemode][character] = true
+	GlobalSettings.masteries[gamemode][special_upgrade] = true
+	GlobalSettings.masteries[gamemode][map1] = true
+	GlobalSettings.masteries[gamemode][map2] = true
+	GlobalSettings.masteries[gamemode][map3] = true
+	
+	

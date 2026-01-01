@@ -192,6 +192,14 @@
 	  "DESC_GER": "Jede Runde erscheinen 5 {GHOST_FRUIT_KEYWORD}. Solange sich genau 5 {GHOST_FRUIT_KEYWORD} auf der Karte befinden, sind alle Früchte {HOLLOW_KEYWORD}.\n\nKartenvergrösserungen sind teurer.",
 	  "SWISSDESC_GER": null
 	},
+	"MOULTING": {
+	  "NAME_ENG": "THE MOULTING",
+	  "DESC_ENG": "Must be reworked.",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "DIE HÄUTUNG",
+	  "DESC_GER": "Muss überarbeitet werden.",
+	  "SWISSDESC_GER": null
+	},
 	"ANCHOR": {
 	  "NAME_ENG": "THE ANCHOR",
 	  "DESC_ENG": "No longer auto move forward and become invincible while standing still.\n\nLose 2 Points when hitting an obstacle",

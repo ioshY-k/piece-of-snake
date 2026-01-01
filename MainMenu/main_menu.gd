@@ -35,6 +35,7 @@ func create_run() -> void:
 
 
 func _on_easy_run_pressed() -> void:
+	RunSettings.gamemode = GameConsts.GAMEMODES.EASY
 	easy_slot_area.queue_free()
 	normal_slot_area.queue_free()
 	hard_slot_area.queue_free()
@@ -50,6 +51,7 @@ func _on_easy_run_pressed() -> void:
 
 
 func _on_normal_run_pressed() -> void:
+	RunSettings.gamemode = GameConsts.GAMEMODES.NORMAL
 	easy_slot_area.queue_free()
 	normal_slot_area.queue_free()
 	hard_slot_area.queue_free()
@@ -65,6 +67,7 @@ func _on_normal_run_pressed() -> void:
 
 
 func _on_hard_run_pressed() -> void:
+	RunSettings.gamemode = GameConsts.GAMEMODES.HARD
 	easy_slot_area.queue_free()
 	normal_slot_area.queue_free()
 	hard_slot_area.queue_free()
@@ -104,4 +107,15 @@ func _on_normal_slot_area_mouse_exited() -> void:
 	slot_descend(normal_slot)
 
 func _on_hard_slot_area_mouse_exited() -> void:
+	slot_descend(hard_slot)
+
+
+func _on_show_banners_mouse_entered() -> void:
+	slot_rise_to(easy_slot, 632)
+	slot_rise_to(normal_slot, 632)
+	slot_rise_to(hard_slot, 632)
+
+func _on_show_banners_mouse_exited() -> void:
+	slot_descend(easy_slot)
+	slot_descend(normal_slot)
 	slot_descend(hard_slot)

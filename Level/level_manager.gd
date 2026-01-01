@@ -119,7 +119,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_number_label.add_theme_color_override("font_color", Color(1, 1, 1))
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
-	if GameConsts.test_mode and get_parent().current_round == 0:
+	if GameConsts.test_mode:
 		time_meter.initiate_time_bar(3)
 	else:
 		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)

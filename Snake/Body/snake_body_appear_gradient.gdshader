@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float mask_height; 
+uniform float mask_height;
 
 void vertex() {
 	// Called for every vertex the material is visible on.

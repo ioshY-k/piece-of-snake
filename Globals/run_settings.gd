@@ -2,6 +2,7 @@ extends Node
 
 var current_char = GameConsts.CHAR_LIST.GODOT
 
+var gamemode = GameConsts.GAMEMODES.NORMAL
 var fruit_growth = 1
 var mapmods_enabled = true
 

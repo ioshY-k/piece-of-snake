@@ -1,0 +1,249 @@
+[gd_scene load_steps=4 format=3 uid="uid://bch88i4suqn2b"]
+
+[ext_resource type="Texture2D" uid="uid://dt3q2q1g6sbof" path="res://iconsmallempty.svg" id="1_acffj"]
+[ext_resource type="Texture2D" uid="uid://ykbrj4o7lc4d" path="res://iconsmall.svg" id="2_qs6y8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ok5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_acffj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qs6y8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BannersGridContainer" type="GridContainer"]
+offset_left = -70.0
+offset_top = 171.5
+offset_right = -30.0
+offset_bottom = 211.5
+columns = 4
+
+[node name="CharContainer1" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer1"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="CharContainer2" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer2"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="CharContainer3" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer3"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="CharContainer4" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer4"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="CharContainer5" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer5"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="CharContainer6" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer6"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="CharContainer7" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer7"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="CharContainer8" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CharContainer8"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer1" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer1"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer2" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer2"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer3" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer3"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer4" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer4"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer5" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer5"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer6" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer6"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer7" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer7"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="ItemContainer8" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ItemContainer8"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer1" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer1"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer2" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer2"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer3" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer3"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer4" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer4"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer5" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer5"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer6" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer6"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer7" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer7"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer8" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer8"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer9" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer9"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer10" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer10"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer11" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer11"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
+
+[node name="MapContainer12" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MapContainer12"]
+sprite_frames = SubResource("SpriteFrames_7ok5k")
+offset = Vector2(15, 15)
