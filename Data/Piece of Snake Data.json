@@ -3,392 +3,522 @@
 	"AREA_SIZE_1": {
 	  "NAME_ENG": "MAP SPACE 1",
 	  "DESC_ENG": "Uncover more area for your map.\n\nThis card is lost upon reaching the next map.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KARTENVERGRÖSSERUNG 1",
-	  "DESC_GER": "Decke mehr von deiner Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren."
+	  "DESC_GER": "Decke mehr von deiner Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren.",
+	  "SWISSDESC_GER": null
 	},
 	"AREA_SIZE_2": {
 	  "NAME_ENG": "MAP SPACE 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Uncover even more area for your map.\n\nThis card is lost upon reaching the next map.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KARTENVERGRÖSSERUNG 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Decke noch mehr von deiner Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Decke noch mehr von deiner Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren.",
+	  "SWISSDESC_GER": null
 	},
 	"AREA_SIZE_3": {
 	  "NAME_ENG": "MAP SPACE 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Uncover the maximum amount of area.\n\nThis Upgrade is lost upon reaching the next map.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KARTENVERGRÖSSERUNG 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Decke die maximale Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Decke die maximale Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren.",
+	  "SWISSDESC_GER": null
 	},
 	"FRUIT_MAGNET_1": {
 	  "NAME_ENG": "MAGNET 1",
 	  "DESC_ENG": "Attract fruit in front of you.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MAGNET 1",
-	  "DESC_GER": "Ziehe Früchte vor dir an."
+	  "DESC_GER": "Ziehe Früchte vor dir an.",
+	  "SWISSDESC_GER": null
 	},
 	"FRUIT_MAGNET_2": {
 	  "NAME_ENG": "MAGNET 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Attract fruit in a radius around you.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MAGNET 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Ziehe Früchte um dich herum an."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Ziehe Früchte um dich herum an.",
+	  "SWISSDESC_GER": null
 	},
 	"FRUIT_MAGNET_3": {
 	  "NAME_ENG": "MAGNET 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Attract fruit in a larger radius.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MAGNET 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Ziehe Früchte in einem größeren Radius an."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Ziehe Früchte in einem größeren Radius an.",
+	  "SWISSDESC_GER": null
 	},
 	"HYPER_SPEED_1": {
 	  "NAME_ENG": "SPRINTER 1",
 	  "DESC_ENG": "Gain a larger Sprint Meter.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SPRINTER 1",
-	  "DESC_GER": "Erhalte eine längere Sprint Leiste."
+	  "DESC_GER": "Erhalte eine längere Sprint Leiste.",
+	  "SWISSDESC_GER": null
 	},
 	"HYPER_SPEED_2": {
 	  "NAME_ENG": "SPRINTER 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. The Sprint Meter refills faster.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SPRINTER 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Sprintleiste füllt sich schneller."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Sprintleiste füllt sich schneller.",
+	  "SWISSDESC_GER": null
 	},
 	"HYPER_SPEED_3": {
 	  "NAME_ENG": "SPRINTER 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. The Sprint Meter is always usable, even before it filled up.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SPRINTER 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Sprintleiste ist immer nutzbar, auch wenn sie nicht voll ist."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Sprintleiste ist immer nutzbar, auch wenn sie nicht voll ist.",
+	  "SWISSDESC_GER": null
 	},
 	"DOUBLE_FRUIT_1": {
 	  "NAME_ENG": "ECHO FRUIT 1",
 	  "DESC_ENG": "Every 3 collected Fruits a {GHOST_FRUIT_KEYWORD} will appear.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ECHO FRUCHT 1",
-	  "DESC_GER": "Alle 3 Früchte taucht eine {GHOST_FRUIT_KEYWORD} auf."
+	  "DESC_GER": "Alle 3 Früchte taucht eine {GHOST_FRUIT_KEYWORD} auf.",
+	  "SWISSDESC_GER": null
 	},
 	"DOUBLE_FRUIT_2": {
 	  "NAME_ENG": "ECHO FRUIT 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD} The longer a {GHOST_FRUIT_KEYWORD} is left uncollected, the more {TASTY_KEYWORD} it becomes.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ECHO FRUCHT 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Je länger eine {GHOST_FRUIT_KEYWORD} liegen bleibt, desto mehr {TASTY_KEYWORD} wird sie."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Je länger eine {GHOST_FRUIT_KEYWORD} liegen bleibt, desto mehr {TASTY_KEYWORD} wird sie.",
+	  "SWISSDESC_GER": null
 	},
 	"DOUBLE_FRUIT_3": {
 	  "NAME_ENG": "ECHO FRUIT 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. A {GHOST_FRUIT_KEYWORD} will appear for every 2 collected fruits.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ECHO FRUCHT 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle 2 Früchte taucht eine {GHOST_FRUIT_KEYWORD} auf."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle 2 Früchte taucht eine {GHOST_FRUIT_KEYWORD} auf.",
+	  "SWISSDESC_GER": null
 	},
 	"EDGE_WRAP": {
 	  "NAME_ENG": "THE CHEATER",
 	  "DESC_ENG": "When exiting the screen, enter on the opposite side.\n\nYou can't use other Teleporters",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DER SCHUMMLER",
-	  "DESC_GER": "Wenn du den Bildschirm verlässt, tauchst du auf der anderen Seite wieder auf.\n\nDu kannst keine anderen Teleporter mehr nutzen."
+	  "DESC_GER": "Wenn du den Bildschirm verlässt, tauchst du auf der anderen Seite wieder auf.\n\nDu kannst keine anderen Teleporter mehr nutzen.",
+	  "SWISSDESC_GER": null
 	},
 	"FRUIT_RELOCATOR_1": {
 	  "NAME_ENG": "BLENDER 1",
 	  "DESC_ENG": "All Fruits change their position.\n\nUsable up to 2 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MIXER 1",
-	  "DESC_GER": "Alle Früchte ändern ihre Position\n\n2 Mal einsetzbar."
+	  "DESC_GER": "Alle Früchte ändern ihre Position\n\n2 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"FRUIT_RELOCATOR_2": {
 	  "NAME_ENG": "BLENDER 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. All fruits change their position.\n\nUsable up to 4 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MIXER 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n4 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n4 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"FRUIT_RELOCATOR_3": {
 	  "NAME_ENG": "BLENDER 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. All fruits change their position.\n\nUsable up to 6 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MIXER 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n6 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n6 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"CROSS_ROAD_1": {
 	  "NAME_ENG": "CROSSING 1",
 	  "DESC_ENG": "Place a persisting Crossroad where your Head is.\n\nBodyparts on top of it are {PHASING_KEYWORD}.\n\nUsable up to 1 time.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KREUZUNG 1",
-	  "DESC_GER": "Platziere eine permanente Kreuzung, wo sich dein Kopf gerade befindet.\n\nKörperteile auf dieser Kreuzung sind {PHASING_KEYWORD}.\n\n1 Mal einsetzbar."
+	  "DESC_GER": "Platziere eine permanente Kreuzung, wo sich dein Kopf gerade befindet.\n\nKörperteile auf dieser Kreuzung sind {PHASING_KEYWORD}.\n\n1 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"CROSS_ROAD_2": {
 	  "NAME_ENG": "CROSSING 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Place a persisting 3x3 Crossroad where your Head is.\n\nBodyparts on top of it are {PHASING_KEYWORD}.\n\nUsable up to 1 time.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KREUZUNG 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Platziere eine permanente 3x3 Kreuzung, wo sich dein Kopf gerade befindet.\n\nKörperteile auf dieser Kreuzung sind {PHASING_KEYWORD}.\n\n1 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Platziere eine permanente 3x3 Kreuzung, wo sich dein Kopf gerade befindet.\n\nKörperteile auf dieser Kreuzung sind {PHASING_KEYWORD}.\n\n1 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"CROSS_ROAD_3": {
 	  "NAME_ENG": "CROSSING 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Place a persisting 3x3 Crossroad where your Head is.\n\nBodyparts on top of it are {PHASING_KEYWORD}.\n\nUsable up to 2 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KREUZUNG 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}.  Platziere eine permanente 3x3 Kreuzung, wo sich dein Kopf gerade befindet.\n\nKörperteile auf dieser Kreuzung sind {PHASING_KEYWORD}.\n\n2 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}.  Platziere eine permanente 3x3 Kreuzung, wo sich dein Kopf gerade befindet.\n\nKörperteile auf dieser Kreuzung sind {PHASING_KEYWORD}.\n\n2 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"TAIL_CUT": {
 	  "NAME_ENG": "CAUDAL AUTONOMY",
 	  "DESC_ENG": "One time per round you can cut off your tail by surpassing it",
+	  "SWISSDESC_ENG": "One time per round, cut off your tail when surpassing it.\n\n[color=#4fabf9]Cuttable tailpart is bigger[/color]",
 	  "NAME_GER": "CAUDALE AUTONOMIE",
-	  "DESC_GER": "Ein Mal pro Runde kannst du einen Schwanz abscheiden, indem du ihn überquerst."
+	  "DESC_GER": "Ein Mal pro Runde kannst du einen Schwanz abscheiden, indem du ihn überquerst.",
+	  "SWISSDESC_GER": "Ein Mal pro Runde kannst du einen Schwanz abscheiden, indem du ihn überquerst.\n\n[color=#4fabf9]Der schneidbare Bereich ist länger.[/color]"
 	},
 	"CORNER_PHASING": {
 	  "NAME_ENG": "CORNER PHASING",
 	  "DESC_ENG": "Corners you take are {PHASING_KEYWORD}.",
+	  "SWISSDESC_ENG": "Corners you take are {PHASING_KEYWORD}.\n\n[color=#4fabf9]NO SWISS KNIVE EFFECT - Suggestions are welcome:)[/color]",
 	  "NAME_GER": "KURVE SCHNEIDEN",
-	  "DESC_GER": "Kurven, die du nimmst, werden {PHASING_KEYWORD}."
+	  "DESC_GER": "Kurven, die du nimmst, werden {PHASING_KEYWORD}.",
+	  "SWISSDESC_GER": "Kurven, die du nimmst, werden {PHASING_KEYWORD}.\n\n[color=#4fabf9]KEIN SCHWEIZER MESSER EFFEKT- Vorschläge gern gesehen :)[/color]"
 	},
 	"KNOT_SLOWMO": {
 	  "NAME_ENG": "KNOT",
 	  "DESC_ENG": "Gain time whenever you surpass your body",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KNOTEN",
-	  "DESC_GER": "Erhalte mehr Zeit, immer wenn du deinen Körper überquerst."
+	  "DESC_GER": "Erhalte mehr Zeit, immer wenn du deinen Körper überquerst.",
+	  "SWISSDESC_GER": null
 	},
 	"ITEM_RELOADER": {
 	  "NAME_ENG": "RELOAD",
 	  "DESC_ENG": "When reaching the fruit requirement, all active Items get refilled",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "NACHLADEN",
-	  "DESC_GER": "Wenn du die Früchte-Anforderung erreichst, laden sich alle aktiven Items auf."
+	  "DESC_GER": "Wenn du die Früchte-Anforderung erreichst, laden sich alle aktiven Items auf.",
+	  "SWISSDESC_GER": null
 	},
 	"IMMUTABLE": {
 	  "NAME_ENG": "THE IMMUTABLE",
 	  "DESC_ENG": "Every round, 5 {GHOST_FRUIT_KEYWORD} will spawn. As long as exactly 5 {GHOST_FRUIT_KEYWORD} are on the map, all Fruits become {HOLLOW_KEYWORD}.\n\nmap space cards are more costly",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DER UNVERÄNDERLICHE",
-	  "DESC_GER": "Jede Runde erscheinen 5 {GHOST_FRUIT_KEYWORD}. Solange sich genau 5 {GHOST_FRUIT_KEYWORD} auf der Karte befinden, sind alle Früchte {HOLLOW_KEYWORD}.\n\nKartenvergrösserungen sind teurer."
+	  "DESC_GER": "Jede Runde erscheinen 5 {GHOST_FRUIT_KEYWORD}. Solange sich genau 5 {GHOST_FRUIT_KEYWORD} auf der Karte befinden, sind alle Früchte {HOLLOW_KEYWORD}.\n\nKartenvergrösserungen sind teurer.",
+	  "SWISSDESC_GER": null
 	},
 	"ANCHOR": {
 	  "NAME_ENG": "THE ANCHOR",
 	  "DESC_ENG": "No longer auto move forward and become invincible while standing still.\n\nLose 2 Points when hitting an obstacle",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DER ANKER",
-	  "DESC_GER": "Bewege dich nicht mehr automatisch nach vorn und werde unverwundbar, solange du still stehst..\n\nVerliere 2 Punkte, immer wenn du gegen ein Hindernis fährst."
+	  "DESC_GER": "Bewege dich nicht mehr automatisch nach vorn und werde unverwundbar, solange du still stehst..\n\nVerliere 2 Punkte, immer wenn du gegen ein Hindernis fährst.",
+	  "SWISSDESC_GER": null
 	},
 	"TIME_STOP_1": {
 	  "NAME_ENG": "TIME STOP 1",
 	  "DESC_ENG": "Stop moving for as long as the button is held down (max. 10s).\n\nBecome invincible while standing still.\n\nUsable up to 3 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ZEIT STOPPER 1",
-	  "DESC_GER": "Halte still, solange der Knopf gefrückt bleibt (max. 10s).\n\nWerde unverwundbar, solange du stehen bleibst.\n\n3 Mal einsetzbar."
+	  "DESC_GER": "Halte still, solange der Knopf gefrückt bleibt (max. 10s).\n\nWerde unverwundbar, solange du stehen bleibst.\n\n3 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"TIME_STOP_2": {
 	  "NAME_ENG": "TIME STOP 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Holding any direction while stopping rewinds your steps up to 7 steps\n\nUsable up to 3 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ZEIT STOPPER 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Mache bis zu 7 Bewegungsschritte Rückgängig, wenn du beim Still halten eine beliebige Richtung gedrückthältst. \n\n3 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Mache bis zu 7 Bewegungsschritte Rückgängig, wenn du beim Still halten eine beliebige Richtung gedrückthältst. \n\n3 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"TIME_STOP_3": {
 	  "NAME_ENG": "TIME STOP 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Holding any direction while stopping rewinds your steps an unlimited amount\n\nUsable up to 3 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ZEIT STOPPER 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Mache beliebig viele Bewegungsschritte Rückgängig, wenn du beim Still halten eine beliebige Richtung gedrückthältst. \n\n3 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Mache beliebig viele Bewegungsschritte Rückgängig, wenn du beim Still halten eine beliebige Richtung gedrückthältst. \n\n3 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"WORMHOLE_1": {
 	  "NAME_ENG": "WORM HOLE 1",
 	  "DESC_ENG": "Create a Teleporter in front of you and choose its destination tile.\n\nThe Teleporter disappears after it is used.\n\nUsable up to 2 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "WURMLOCH 1",
-	  "DESC_GER": "Platziere einen Teleporter vor dir und bestimme sein Ziel.\n\nDer Teleporter verschwindet nach Benutzung.\n\n2 Mal einsetzbar."
+	  "DESC_GER": "Platziere einen Teleporter vor dir und bestimme sein Ziel.\n\nDer Teleporter verschwindet nach Benutzung.\n\n2 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"WORMHOLE_2": {
 	  "NAME_ENG": "WORM HOLE 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Create a Teleporter in front of you and choose its destination tile.\n\nThe Teleporter disappears after it is used.\n\nUsable up to 4 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "WURMLOCH 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Platziere einen Teleporter vor dir und bestimme sein Ziel.\n\nDer Teleporter verschwindet nach Benutzung.\n\n4 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Platziere einen Teleporter vor dir und bestimme sein Ziel.\n\nDer Teleporter verschwindet nach Benutzung.\n\n4 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"WORMHOLE_3": {
 	  "NAME_ENG": "WORM HOLE 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Create a Teleporter in front of you and choose its destination tile.\n\nThe Teleporter disappears after it is used.\n\nUsable up to 6 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "WURMLOCH 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Platziere einen Teleporter vor dir und bestimme sein Ziel.\n\nDer Teleporter verschwindet nach Benutzung.\n\n4 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Platziere einen Teleporter vor dir und bestimme sein Ziel.\n\nDer Teleporter verschwindet nach Benutzung.\n\n4 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"PIGGY_BANK": {
 	  "NAME_ENG": "PIGGY BANK",
 	  "DESC_ENG": "When destroying this Item, lower the Fruit requirement for the next round by 5",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SPARSCHWEIN",
-	  "DESC_GER": "Wenn dieses Item zerstört wird, ist die nächste Frucht-Anforderung um 5 Punkte niedriger."
+	  "DESC_GER": "Wenn dieses Item zerstört wird, ist die nächste Frucht-Anforderung um 5 Punkte niedriger.",
+	  "SWISSDESC_GER": null
 	},
 	"SWISS_KNIVE": {
 	  "NAME_ENG": "SWISS KNIVE",
 	  "DESC_ENG": "Body Modifications become more effective.\n\nChanges will be marked in blue in their description once bought",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SCHWEIZER MESSER",
-	  "DESC_GER": "Körpermodifikationen werden effektiver.\n\nDie Änderungen erscheinen nach dem Kauf in der Beschreibung in blau."
+	  "DESC_GER": "Körpermodifikationen werden effektiver.\n\nDie Änderungen erscheinen nach dem Kauf in der Beschreibung in blau.",
+	  "SWISSDESC_GER": null
 	},
 	"SALE": {
 	  "NAME_ENG": "SALE",
 	  "DESC_ENG": "Whenever cards are dealt \nReduce the cost of a random card by 1 for each filled card category",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SALE",
-	  "DESC_GER": "Immer wenn Karten ausgeteilt werden, wird für jede deiner vollen Kartenkategorien ein Kartenpreis um 1 reduziert."
+	  "DESC_GER": "Immer wenn Karten ausgeteilt werden, wird für jede deiner vollen Kartenkategorien ein Kartenpreis um 1 reduziert.",
+	  "SWISSDESC_GER": null
 	},
 	"DIET_1": {
 	  "NAME_ENG": "DIET 1",
 	  "DESC_ENG": "Fruits are likeley to be {HOLLOW_KEYWORD}, when collected in quick succession.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DIÄT 1",
-	  "DESC_GER": "Früchte, die schnell hintereinander eingesammelt werden, haben eine hohe Wahrscheinlichkeit, {HOLLOW_KEYWORD} zu sein."
+	  "DESC_GER": "Früchte, die schnell hintereinander eingesammelt werden, haben eine hohe Wahrscheinlichkeit, {HOLLOW_KEYWORD} zu sein.",
+	  "SWISSDESC_GER": null
 	},
 	"DIET_2": {
 	  "NAME_ENG": "DIET 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Probability for {HOLLOW_KEYWORD} lowers half as fast when collecting Fruits beyond the requirement.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DIÄT 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Wahrscheinlichteit für {HOLLOW_KEYWORD} sinkt nur noch halb so schnell, wenn du die Frucht-Anforderung bereits erfüllt hast."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Wahrscheinlichteit für {HOLLOW_KEYWORD} sinkt nur noch halb so schnell, wenn du die Frucht-Anforderung bereits erfüllt hast.",
+	  "SWISSDESC_GER": null
 	},
 	"DIET_3": {
 	  "NAME_ENG": "DIET 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Probabilities for {HOLLOW_KEYWORD} lower slower.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DIÄT 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Wahrscheinlichkeit für {HOLLOW_KEYWORD} sinkt langsamer."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Wahrscheinlichkeit für {HOLLOW_KEYWORD} sinkt langsamer.",
+	  "SWISSDESC_GER": null
 	},
 	"COATING": {
 	  "NAME_ENG": "COATING",
 	  "DESC_ENG": "Become {SHIELDED_KEYWORD} for your first hit.",
+	  "SWISSDESC_ENG": "Become {SHIELDED_KEYWORD}for your first [color=#4fabf9]and second[/color] hit.",
 	  "NAME_GER": "BESCHICHTUNG",
-	  "DESC_GER": "Bei deinem ersten Treffer bist du {SHIELDED_KEYWORD}."
+	  "DESC_GER": "Bei deinem ersten Treffer bist du {SHIELDED_KEYWORD}.",
+	  "SWISSDESC_GER": "Bei deinem ersten [color=#4fabf9]und zweiten[/color] Treffer bist du {SHIELDED_KEYWORD}."
 	},
 	"STEEL_HELMET": {
 	  "NAME_ENG": "LOCOMOTIVE",
 	  "DESC_ENG": "Become {SHIELDED_KEYWORD} while sprinting.\n\nDoes not work when running into your own body.",
+	  "SWISSDESC_ENG": "Become {SHIELDED_KEYWORD} while sprinting.\n\n[color=#4fabf9]Does also work when running into your own body[/color].",
 	  "NAME_GER": "LOKOMOTIVE",
-	  "DESC_GER": "Du bist {SHIELDED_KEYWORD} währent du sprintest.\n\nFunktioniert nicht, wenn du in deinen eigenen Körper fährst."
+	  "DESC_GER": "Du bist {SHIELDED_KEYWORD} währent du sprintest.\n\nFunktioniert nicht, wenn du in deinen eigenen Körper fährst.",
+	  "SWISSDESC_GER": "Du bist {SHIELDED_KEYWORD} währent du sprintest.\n\n[color=#4fabf9]Funktioniert auch, wenn du in deinen eigenen Körper fährst[/color]."
 	},
 	"RUBBER_BAND": {
 	  "NAME_ENG": "RUBBER BAND",
 	  "DESC_ENG": "Long straights create pressure points in their center.\nPassing through them gives short invincibility.",
+	  "SWISSDESC_ENG": "Long straights create pressure points in their center.\nPassing through them gives [color=#4fabf9]longer invincibility[/color]",
 	  "NAME_GER": "GUMMIBAND",
-	  "DESC_GER": "Lange gerade erzeugen dünne körperstellen in ihrer Mitte.\nDu erhältst kurze Unverwundbarkeit, wenn du sie überquerst."
+	  "DESC_GER": "Lange gerade erzeugen dünne körperstellen in ihrer Mitte.\nDu erhältst kurze Unverwundbarkeit, wenn du sie überquerst.",
+	  "SWISSDESC_GER": "Lange gerade erzeugen dünne körperstellen in ihrer Mitte.\nDu erhältst [color=#4fabf9]längere Unverwundbarkeit[/color], wenn du sie überquerst."
 	},
 	"FUEL_1": {
 	  "NAME_ENG": "FUEL 1",
 	  "DESC_ENG": "Collecting Fruits while sprinting completely fills the Sprint Meter, as long as your Sprint Meter is more than half empty.\n\nFruits collected this way have a 3 in 4 chance to be {TASTY_KEYWORD}.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SPRIT 1",
-	  "DESC_GER": "Früchte während des Sprintens einzusammeln, füllt die Sprintleiste komplett, solange sie sich vorher unter der Hälfte befand.\n\nFrüchte, die auf diese Weise eingesammelt werden, sind in 3 von 4 Fällen {TASTY_KEYWORD}."
+	  "DESC_GER": "Früchte während des Sprintens einzusammeln, füllt die Sprintleiste komplett, solange sie sich vorher unter der Hälfte befand.\n\nFrüchte, die auf diese Weise eingesammelt werden, sind in 3 von 4 Fällen {TASTY_KEYWORD}.",
+	  "SWISSDESC_GER": null
 	},
 	"FUEL_2": {
 	  "NAME_ENG": "FUEL 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Fruits collected this way also have a 3 in 4 chance to be {HOLLOW_KEYWORD}.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SPRIT 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Früchte, die auf diese Weise eingesammelt werden, sind ebenfalls in 3 von 4 Fällen {HOLLOW_KEYWORD}."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Früchte, die auf diese Weise eingesammelt werden, sind ebenfalls in 3 von 4 Fällen {HOLLOW_KEYWORD}.",
+	  "SWISSDESC_GER": null
 	},
 	"FUEL_3": {
 	  "NAME_ENG": "FUEL 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. The chances for the Fruit becoming {TASTY_KEYWORD} and {HOLLOW_KEYWORD} are 100%",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SPRIT 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Chance für eine Frucht,  {TASTY_KEYWORD} und {HOLLOW_KEYWORD} zu sein, liegt bei 100%."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Die Chance für eine Frucht,  {TASTY_KEYWORD} und {HOLLOW_KEYWORD} zu sein, liegt bei 100%.",
+	  "SWISSDESC_GER": null
 	},
 	"MAGIC_FLUTE_1": {
 	  "NAME_ENG": "MAGIC FLUTE 1",
 	  "DESC_ENG": "Using Active Items and Teleporters cause fruits to move toward you.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ZAUBERFLÖTE 1",
-	  "DESC_GER": "Immer wenn du ein aktives Item oder einen Teleporter nutzt, bewegen sich alle Früchte in deine Richtung"
+	  "DESC_GER": "Immer wenn du ein aktives Item oder einen Teleporter nutzt, bewegen sich alle Früchte in deine Richtung",
+	  "SWISSDESC_GER": null
 	},
 	"MAGIC_FLUTE_2": {
 	  "NAME_ENG": "MAGIC FLUTE 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Using Active Items and Teleporters cause fruits to move toward you for longer.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ZAUBERFLÖTE 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Immer wenn du ein aktives Item oder einen Teleporter nutzt, bewegen sich alle Früchte länger in deine Richtung"
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Immer wenn du ein aktives Item oder einen Teleporter nutzt, bewegen sich alle Früchte länger in deine Richtung",
+	  "SWISSDESC_GER": null
 	},
 	"MAGIC_FLUTE_3": {
 	  "NAME_ENG": "MAGIC FLUTE 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Using Active Items and Teleporters cause fruits to move toward you even longer.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "ZAUBERFLÖTE 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Immer wenn du ein aktives Item oder einen Teleporter nutzt, bewegen sich alle Früchte noch länger in deine Richtung"
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Immer wenn du ein aktives Item oder einen Teleporter nutzt, bewegen sich alle Früchte noch länger in deine Richtung",
+	  "SWISSDESC_GER": null
 	},
 	"BIG_FRUIT_1": {
 	  "NAME_ENG": "FERTILIZER 1",
 	  "DESC_ENG": "Spawning fruits have a 1 in 3 chance to become big. Fruits grown that way can't move anymore.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DÜNGER 1",
-	  "DESC_GER": "Erscheinende Früchte sind in 1 von 3 Fällen größer als üblich. Auf diese Weise gewachsene Früchte können sich nicht mehr bewegen."
+	  "DESC_GER": "Erscheinende Früchte sind in 1 von 3 Fällen größer als üblich. Auf diese Weise gewachsene Früchte können sich nicht mehr bewegen.",
+	  "SWISSDESC_GER": null
 	},
 	"BIG_FRUIT_2": {
 	  "NAME_ENG": "FERTILIZER 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Spawning fruits have a 2 in 3 chance to become big. Fruits grown that way can't move anymore.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DÜNGER 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Erscheinende Früchte sind in 2 von 3 Fällen größer als üblich. Auf diese Weise gewachsene Früchte können sich nicht mehr bewegen."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Erscheinende Früchte sind in 2 von 3 Fällen größer als üblich. Auf diese Weise gewachsene Früchte können sich nicht mehr bewegen.",
+	  "SWISSDESC_GER": null
 	},
 	"BIG_FRUIT_3": {
 	  "NAME_ENG": "FERTILIZER 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Spawning fruits have a 2 in 3 chance to become even bigger. Fruits grown that way can't move anymore.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DÜNGER 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}.  Erscheinende Früchte sind in 2 von 3 Fällen noch größer als üblich. Auf diese Weise gewachsene Früchte können sich nicht mehr bewegen."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}.  Erscheinende Früchte sind in 2 von 3 Fällen noch größer als üblich. Auf diese Weise gewachsene Früchte können sich nicht mehr bewegen.",
+	  "SWISSDESC_GER": null
 	},
 	"PACMAN_1": {
 	  "NAME_ENG": "PAC SNAKE 1",
 	  "DESC_ENG": "Spawn a {GHOST_FRUIT_KEYWORD} that moves away from you.\n\nUsable up to 3 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "PAC SCHLANGE 1",
-	  "DESC_GER": "Lasse eine {GHOST_FRUIT_KEYWORD} erscheinen, die sich von dir weg bewegt.\n\n3 Mal einsetzbar."
+	  "DESC_GER": "Lasse eine {GHOST_FRUIT_KEYWORD} erscheinen, die sich von dir weg bewegt.\n\n3 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"PACMAN_2": {
 	  "NAME_ENG": "PAC SNAKE 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Spawn a {GHOST_FRUIT_KEYWORD} that moves away from you.\n\nUsable up to 5 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "PAC SCHLANGE 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Lasse eine {GHOST_FRUIT_KEYWORD} erscheinen, die sich von dir weg bewegt.\n\n5 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Lasse eine {GHOST_FRUIT_KEYWORD} erscheinen, die sich von dir weg bewegt.\n\n5 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"PACMAN_3": {
 	  "NAME_ENG": "PAC SNAKE 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Spawn a {GHOST_FRUIT_KEYWORD} that moves away from you.\n\nUsable up to 7 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "PAC SCHLANGE 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Lasse eine {GHOST_FRUIT_KEYWORD} erscheinen, die sich von dir weg bewegt.\n\n7 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Lasse eine {GHOST_FRUIT_KEYWORD} erscheinen, die sich von dir weg bewegt.\n\n7 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"SNEK_1": {
 	  "NAME_ENG": "SNEK 1",
 	  "DESC_ENG": "Stand still as your body length shrinks as long as the button is held down.\n\nAfter a short while grow back to normal size.\n\nUsable up to 2 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SCHLANGI 1",
-	  "DESC_GER": "Solange der Knopf gedrückt ist, hältsst du still und schrumpfst dabei.\n\nNach einer Weile wächst du wieder zu normaler größe heran.\n\n2 Mal einsetzbar."
+	  "DESC_GER": "Solange der Knopf gedrückt ist, hältsst du still und schrumpfst dabei.\n\nNach einer Weile wächst du wieder zu normaler größe heran.\n\n2 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"SNEK_2": {
 	  "NAME_ENG": "SNEK 2",
 	  "DESC_ENG": "{GHOST_FRUIT_KEYWORD} erscheinen mit der Zeit.\n\nErhalte Punkte für jede nicht eingesammelte Frucht am Ende der Runde, anstatt für eingesammelte.\n\nFrüchte bewegen sich in deine Richtung.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SCHLANGI 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schrumpfen geschieht in Sprint-Geschwindigkeit.\n\n2 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schrumpfen geschieht in Sprint-Geschwindigkeit.\n\n2 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"SNEK_3": {
 	  "NAME_ENG": "SNEK 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Shrinking happens at sprint speed\n\nUsable up to 3 times.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SCHLANGI 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schrumpfen geschieht in Sprint-Geschwindigkeit.\n\n2 Mal einsetzbar."
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schrumpfen geschieht in Sprint-Geschwindigkeit.\n\n2 Mal einsetzbar.",
+	  "SWISSDESC_GER": null
 	},
 	"PLANT_SNAKE": {
 	  "NAME_ENG": "PLANT SNAKE",
 	  "DESC_ENG": "Whenever you get hit, a {GHOST_FRUIT_KEYWORD} will grow attached to your Tail.",
+	  "SWISSDESC_ENG": "Whenever you get hit, a {GHOST_FRUIT_KEYWORD} will grow attached to your Tail\n\n[color=#4fabf9]1 in 3 times {GHOST_FRUIT_KEYWORD} are {HOLLOW_KEYWORD}[/color].",
 	  "NAME_GER": "SCHLINGPFLANZE",
-	  "DESC_GER": "Immer wenn du getroffen wirst, wächst an deinem Schwanzende eine {GHOST_FRUIT_KEYWORD}."
+	  "DESC_GER": "Immer wenn du getroffen wirst, wächst an deinem Schwanzende eine {GHOST_FRUIT_KEYWORD}.",
+	  "SWISSDESC_GER": "Immer wenn du getroffen wirst, wächst an deinem Schwanzende eine {GHOST_FRUIT_KEYWORD}.\n\n[color=#4fabf9]In 1 von 3 Fällen sind {GHOST_FRUIT_KEYWORD} {HOLLOW_KEYWORD}[/color]"
 	},
 	"HEAD_LIGHT": {
 	  "NAME_ENG": "HEAD LIGHT",
 	  "DESC_ENG": "Makes Ceilings transparent when looked at their direction.",
+	  "SWISSDESC_ENG": "Makes Ceilings transparent [color=#4fabf9]at any time[/color].",
 	  "NAME_GER": "SCHEINWERFER",
-	  "DESC_GER": "Abdeckungen verschwinden, sobald du in ihre Richtung schaust."
+	  "DESC_GER": "Abdeckungen verschwinden, sobald du in ihre Richtung schaust.",
+	  "SWISSDESC_GER": "Abdeckungen verschwinden [color=#4fabf9]für immer[/color]."
 	},
 	"DIFFUSION": {
 	  "NAME_ENG": "DIFFUSION",
 	  "DESC_ENG": "Every fruit that would move onto your body, automatically gets collected",
+	  "SWISSDESC_ENG": "Every fruit that would move onto your body, automatically gets collected\n\n[color=#4fabf9]When Diffusion happens, all Fruits move towards you[/color]",
 	  "NAME_GER": "DIFFUSION",
-	  "DESC_GER": "Jede Frucht, die sich auf deinen Körper bewegen würde, wird automatisch eingesammelt."
+	  "DESC_GER": "Jede Frucht, die sich auf deinen Körper bewegen würde, wird automatisch eingesammelt.",
+	  "SWISSDESC_GER": "Jede Frucht, die sich auf deinen Körper bewegen würde, wird automatisch eingesammelt.\n\n[color=#4fabf9]Wenn Diffusion passiert, bewegen sich alle Früchte in deine Richtung.[/color]"
 	},
 	"SHINY_GHOST": {
 	  "NAME_ENG": "SHINY GHOST",
 	  "DESC_ENG": "1 in 3 times {GHOST_FRUIT_KEYWORD} are {TASTY_KEYWORD}.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "GLITZERGEIST",
-	  "DESC_GER": "In 1 von 3 Fällen sind {GHOST_FRUIT_KEYWORD} {TASTY_KEYWORD}."
+	  "DESC_GER": "In 1 von 3 Fällen sind {GHOST_FRUIT_KEYWORD} {TASTY_KEYWORD}.",
+	  "SWISSDESC_GER": null
 	},
 	"POWER_NAP": {
 	  "NAME_ENG": "POWER NAP",
 	  "DESC_ENG": "While Standing still, your Sprint Meter refills twice as fast",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "POWER NICKERCHEN",
-	  "DESC_GER": "Während du still hältst, füllt sich deine Sprintleiste doppelt so schnell"
+	  "DESC_GER": "Während du still hältst, füllt sich deine Sprintleiste doppelt so schnell",
+	  "SWISSDESC_GER": null
 	},
 	"CATCH": {
 	  "NAME_ENG": "CATCH",
 	  "DESC_ENG": "Moving Fruits have a 1 in 3 chance to be {TASTY_KEYWORD}.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "FANG",
-	  "DESC_GER": "Während sie sich bewegen, sind Früchte in 1 von 3 Fällen {TASTY_KEYWORD}."
+	  "DESC_GER": "Während sie sich bewegen, sind Früchte in 1 von 3 Fällen {TASTY_KEYWORD}.",
+	  "SWISSDESC_GER": null
 	},
 	"DANCE": {
 	  "NAME_ENG": "THE DANCE",
 	  "DESC_ENG": "Whenever you move, all Fruits move in the opposite direction.\n\nThis movement overrides any other Fruit movement.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DER TANZ",
-	  "DESC_GER": "Bit jeder deiner Bewegungen bewegen sich alle Früchte in die entgegengesetze Richtung.\n\nDiese Bewegung überschreibt alle anderen Frucht-Bewegungen."
+	  "DESC_GER": "Bit jeder deiner Bewegungen bewegen sich alle Früchte in die entgegengesetze Richtung.\n\nDiese Bewegung überschreibt alle anderen Frucht-Bewegungen.",
+	  "SWISSDESC_GER": null
 	},
 	"OVERFED": {
 	  "NAME_ENG": "THE OVERFED",
 	  "DESC_ENG": "Fill every empty Card slot with dead mice, which can't be replaced. Buying map space cards destroys a dead mouse for a random Item.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DER ÜBERFUTTERTE",
-	  "DESC_GER": "Fülle jeden deiner leeren Itemslots mit toten Mäusen, welche nicht ersetzt werden können. Beim Kauf einer Kartenvergrößerung wird eine tote Maus durch ein zufälliges Item ersetzt."
+	  "DESC_GER": "Fülle jeden deiner leeren Itemslots mit toten Mäusen, welche nicht ersetzt werden können. Beim Kauf einer Kartenvergrößerung wird eine tote Maus durch ein zufälliges Item ersetzt.",
+	  "SWISSDESC_GER": null
 	},
 	"HALF_GONE": {
 	  "NAME_ENG": "THE HALF EMPTY",
 	  "DESC_ENG": "After collecting a fruit, your front half becomes {PHASING_KEYWORD}.\n\nAll Fruits are {DENSE_KEYWORD}.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DER HALB LEERE",
-	  "DESC_GER": "Nach dem EInsammeln einer Frucht wird die vordere Hälfte deines Körpers {PHASING_KEYWORD}.\n\nalle Früchte sind {DENSE_KEYWORD}."
+	  "DESC_GER": "Nach dem EInsammeln einer Frucht wird die vordere Hälfte deines Körpers {PHASING_KEYWORD}.\n\nalle Früchte sind {DENSE_KEYWORD}.",
+	  "SWISSDESC_GER": null
 	},
 	"ALLERGY": {
 	  "NAME_ENG": "THE ALLERGY",
 	  "DESC_ENG": "{GHOST_FRUIT_KEYWORD} spawn over time.\n\nGet points for every uncollected Fruit on the map instead of collected fruits.\n\nFruits move towards you.",
+	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DIE ALLERGIE",
-	  "DESC_GER": "{GHOST_FRUIT_KEYWORD} spawn over time.\n\nGet points for every uncollected Fruit on the map instead of collected fruits.\n\nFruits move towards you."
+	  "DESC_GER": "{GHOST_FRUIT_KEYWORD} spawn over time.\n\nGet points for every uncollected Fruit on the map instead of collected fruits.\n\nFruits move towards you.",
+	  "SWISSDESC_GER": null
 	}
   },
   "Keywords": {
