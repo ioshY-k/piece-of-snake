@@ -16,13 +16,11 @@ func _ready() -> void:
 		tween.loop_finished.connect(func(_loop): rotation_degrees = 0)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("in")
 	var tween:Tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(self, "modulate:a", 0.1, 0.4)
 
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	print("out")
 	var tween:Tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate:a", 1, 0.4).set_trans(Tween.TRANS_LINEAR)

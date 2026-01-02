@@ -66,7 +66,6 @@ func turn_into_playbutton():
 
 func play_hovered_mode():
 	if card_area.get_overlapping_areas().is_empty():
-		print("empty")
 		return
 	
 	var play_area: Area2D = card_area.get_overlapping_areas()[0]
@@ -177,6 +176,10 @@ func decide_on_let_go():
 		card_snap_audio.play()
 		return
 	if card_area.get_overlapping_areas().is_empty():
+		var start_position = global_position
+		var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+		var direction = ((get_viewport().get_visible_rect().size*0.5)-global_position).normalized()
+		tween.tween_property(self, "global_position", global_position + direction*200, 0.2)
 		return
 	owned_slot_area = card_area.get_overlapping_areas()[0]
 	
@@ -204,6 +207,11 @@ func decide_on_let_go():
 			is_bought = true
 			sale_number.get_parent().hide()
 			bought.emit(upgrade_id, owned_slot_area.get_parent())
+	elif not is_play_button:
+		var start_position = global_position
+		var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+		var direction = ((get_viewport().get_visible_rect().size*0.5)-global_position).normalized()
+		tween.tween_property(self, "global_position", global_position + direction*250, 0.2)
 
 var current_goal_scale: Vector2 = Vector2(1.2,1.2)
 var scale_tween: Tween

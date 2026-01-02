@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dobkpr5ucg8no"]
+[gd_scene load_steps=89 format=3 uid="uid://dobkpr5ucg8no"]
 
 [ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Godoticon/GodoticonCorner.svg" id="1_3khtg"]
 [ext_resource type="Texture2D" uid="uid://rh01wewcgxxn" path="res://Snake/Body/Sprites/Python/PythonCorner.svg" id="1_r0xmd"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://c1u63dn06jeth" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco5.svg" id="32_tq0ap"]
 [ext_resource type="Texture2D" uid="uid://c28og01tmmejm" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco6.svg" id="33_0u3ak"]
 [ext_resource type="Texture2D" uid="uid://ce4q171cm3a3r" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco1.svg" id="33_j2s5s"]
+[ext_resource type="Texture2D" uid="uid://b51co2g1ccwns" path="res://UpgradeComponents/Diffusion/EdgeHoles.svg" id="34_52di7"]
 [ext_resource type="Texture2D" uid="uid://cflx380ns7ajo" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco7.svg" id="34_pmbl3"]
 [ext_resource type="Texture2D" uid="uid://qhrlb5wnohjr" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco3.svg" id="35_3hmgf"]
 [ext_resource type="Texture2D" uid="uid://di6uyaq3i0ipk" path="res://Snake/Body/Sprites/Salamander/SalamanderCornerDeco.svg" id="36_hoayf"]
@@ -55,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://3i3t6j6s6hgt" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco6.svg" id="44_cmfqk"]
 [ext_resource type="Texture2D" uid="uid://cymdsxj387ixg" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco4.svg" id="45_uwu44"]
 [ext_resource type="Texture2D" uid="uid://bn0334kuvfdkf" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco7.svg" id="47_moy07"]
+[ext_resource type="Texture2D" uid="uid://bhaj12eon1evl" path="res://UpgradeComponents/Diffusion/CornerHoles.svg" id="49_wkua3"]
 [ext_resource type="Texture2D" uid="uid://cyq7ehja2s4g6" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco6.svg" id="51_52di7"]
 [ext_resource type="Texture2D" uid="uid://doglw7dag23r0" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco7.svg" id="55_wkua3"]
 
@@ -232,6 +234,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkua3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_52di7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_41br8"]
 animations = [{
 "frames": [{
@@ -318,6 +331,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("45_uwu44")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8j7tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_wkua3")
 }],
 "loop": true,
 "name": &"default",
@@ -1249,6 +1273,92 @@ _data = {
 &"move_tile_anim": SubResource("Animation_81x6j")
 }
 
+[sub_resource type="Animation" id="Animation_wkua3"]
+resource_name = "suck_anim"
+length = 0.38
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnakeBodyDecoEdge/EdgeDiffusionHole:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.07, 0.1, 0.14, 0.18, 0.21, 0.25, 0.28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4/CornerDiffusionHoleBack:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.07, 0.1, 0.14, 0.18, 0.21, 0.25, 0.28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4/CornerDiffusionHoleFront:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.07, 0.1, 0.14, 0.18, 0.21, 0.25, 0.28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8j7tw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnakeBodyDecoEdge/EdgeDiffusionHole:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4/CornerDiffusionHoleBack:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4/CornerDiffusionHoleFront:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vh5ly"]
+_data = {
+&"RESET": SubResource("Animation_8j7tw"),
+&"suck_anim": SubResource("Animation_wkua3")
+}
+
 [node name="SnakeBody" type="AnimatedSprite2D" groups=["Snake"]]
 clip_children = 2
 z_index = 10
@@ -1267,6 +1377,11 @@ collision_mask = 96
 [node name="SnakeBodyDecoEdge" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_uwu44")
 sprite_frames = SubResource("SpriteFrames_0u3ak")
+offset = Vector2(0, 40)
+
+[node name="EdgeDiffusionHole" type="AnimatedSprite2D" parent="SnakeBodyDecoEdge"]
+modulate = Color(0.236816, 0.236816, 0.236816, 1)
+sprite_frames = SubResource("SpriteFrames_wkua3")
 offset = Vector2(0, 40)
 
 [node name="SnakeBodyCornerFront" type="Node2D" parent="."]
@@ -1299,6 +1414,10 @@ offset = Vector2(-0.0198921, 12.027)
 position = Vector2(9.06581e-05, -15.0001)
 sprite_frames = SubResource("SpriteFrames_towqx")
 frame_progress = 0.505756
+
+[node name="CornerDiffusionHoleBack" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4"]
+modulate = Color(0.236816, 0.236816, 0.236816, 1)
+sprite_frames = SubResource("SpriteFrames_8j7tw")
 
 [node name="SnakeBodyCornerDecoBack5" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
 position = Vector2(-0.0303615, -1.66011)
@@ -1344,6 +1463,10 @@ rotation = -1.57079
 sprite_frames = SubResource("SpriteFrames_fyeds")
 frame_progress = 0.639739
 
+[node name="CornerDiffusionHoleFront" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4"]
+modulate = Color(0.236816, 0.236816, 0.236816, 1)
+sprite_frames = SubResource("SpriteFrames_8j7tw")
+
 [node name="SnakeBodyCornerDecoFront5" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco"]
 position = Vector2(-66.0003, -79.9997)
 rotation = -1.57079
@@ -1370,3 +1493,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_m5mbj")
 }
 autoplay = "move_tile_anim"
+
+[node name="HoleAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vh5ly")
+}

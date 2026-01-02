@@ -10,7 +10,7 @@ func _add_a_point(fruit: FruitElement, is_real_collection):
 		if randi()%100 <= 33:
 			SignalBus.fruit_collected.emit(null, false)
 			var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-			effect_trigger_text.initialize(effect_trigger_text.EFFECTS.BONUS_FRUIT)
+			effect_trigger_text.initialize(effect_trigger_text.EFFECTS.BONUS_FRUIT, null)
 			get_parent().current_map.add_child(effect_trigger_text)
 			
 

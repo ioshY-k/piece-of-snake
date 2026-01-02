@@ -158,12 +158,14 @@ func move(move_t, triggered_by_dance):
 		return
 	
 	var direction
+	var diffusing_bodypart: SnakeBody = null
 	match move_t:
 		move_type.UP:
 			if raycast_up.get_collider() == null:
 				direction = TileHelper.DIRECTION.UP
 			else:
-				if diffusable and raycast_up.get_collider().get_parent().is_in_group("Snake"):
+				if diffusable and raycast_up.get_collider().get_parent() is SnakeBody:
+					diffusing_bodypart = raycast_up.get_collider().get_parent()
 					direction = DIFFUSED_UP
 				else:
 					direction = null
@@ -171,7 +173,8 @@ func move(move_t, triggered_by_dance):
 			if raycast_right.get_collider() == null:
 				direction = TileHelper.DIRECTION.RIGHT
 			else:
-				if diffusable and raycast_right.get_collider().get_parent().is_in_group("Snake"):
+				if diffusable and raycast_right.get_collider().get_parent() is SnakeBody:
+					diffusing_bodypart = raycast_right.get_collider().get_parent()
 					direction = DIFFUSED_RIGHT
 				else:
 					direction = null
@@ -179,7 +182,8 @@ func move(move_t, triggered_by_dance):
 			if raycast_down.get_collider() == null:
 				direction = TileHelper.DIRECTION.DOWN
 			else:
-				if diffusable and raycast_down.get_collider().get_parent().is_in_group("Snake"):
+				if diffusable and raycast_down.get_collider().get_parent() is SnakeBody:
+					diffusing_bodypart = raycast_down.get_collider().get_parent()
 					direction = DIFFUSED_DOWN
 				else:
 					direction = null
@@ -187,7 +191,8 @@ func move(move_t, triggered_by_dance):
 			if raycast_left.get_collider() == null:
 				direction = TileHelper.DIRECTION.LEFT
 			else:
-				if diffusable and raycast_left.get_collider().get_parent().is_in_group("Snake"):
+				if diffusable and raycast_left.get_collider().get_parent() is SnakeBody:
+					diffusing_bodypart = raycast_left.get_collider().get_parent()
 					direction = DIFFUSED_LEFT
 				else:
 					direction = null
@@ -244,19 +249,19 @@ func move(move_t, triggered_by_dance):
 		DIFFUSED_UP:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.UP)))
-			SignalBus.diffusion_happened.emit()
+			SignalBus.diffusion_happened.emit(diffusing_bodypart)
 		DIFFUSED_RIGHT:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.RIGHT)))
-			SignalBus.diffusion_happened.emit()
+			SignalBus.diffusion_happened.emit(diffusing_bodypart)
 		DIFFUSED_DOWN:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.DOWN)))
-			SignalBus.diffusion_happened.emit()
+			SignalBus.diffusion_happened.emit(diffusing_bodypart)
 		DIFFUSED_LEFT:
 			movement_tween.kill()
 			collision_with.emit(self, TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(position),TileHelper.DIRECTION.LEFT)))
-			SignalBus.diffusion_happened.emit()
+			SignalBus.diffusion_happened.emit(diffusing_bodypart)
 
 func _moving_done():
 	moves = false

@@ -18,6 +18,8 @@ const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 @onready var snake_body_deco_corner: Node2D = $SnakeBodyCornerDeco
 @onready var corner_animation_player: AnimationPlayer = $CornerAnimationPlayer
 
+@onready var hole_animation_player: AnimationPlayer = $HoleAnimationPlayer
+
 var map: Map
 var snake_head: SnakeHead
 

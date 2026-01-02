@@ -41,7 +41,7 @@ func _coating_used():
 	if coatings_left > 0:
 		coatings_left -= 1
 		var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.SHIELDED)
+		effect_trigger_text.initialize(effect_trigger_text.EFFECTS.SHIELDED, null)
 		get_parent().current_map.add_child(effect_trigger_text)
 		if coatings_left == 0:
 			level.fruit_punishment = initial_fruit_punishment

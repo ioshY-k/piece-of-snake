@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjhlmr2cqsntn"]
+[gd_scene load_steps=6 format=3 uid="uid://bjhlmr2cqsntn"]
 
 [ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="1_4nta7"]
+[ext_resource type="Texture2D" uid="uid://xm8e44ncpvtk" path="res://Shop/UI/EffectTriggerBG.svg" id="2_lpuyw"]
 [ext_resource type="Script" uid="uid://2lu4uxflwxh8" path="res://UI/effect_trigger_text.gd" id="2_u4g2y"]
+[ext_resource type="Texture2D" uid="uid://bunvyj2fmw1gf" path="res://Shop/UI/EffectTriggerParticles.svg" id="4_lpuyw"]
+
+[sub_resource type="Curve" id="Curve_u4g2y"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.355228, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="EffectTrigger" type="Node2D"]
 z_index = 100
@@ -9,10 +15,23 @@ script = ExtResource("2_u4g2y")
 
 [node name="Container" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -320.0
-offset_top = -80.0
-offset_right = 320.0
-offset_bottom = 80.0
+offset_left = -80.0
+offset_top = -20.0
+offset_right = 80.0
+offset_bottom = 20.0
+
+[node name="Shadow" type="Sprite2D" parent="Container"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-4.92063, -11.6358)
+rotation = 0.00174533
+scale = Vector2(1.06282, 1.23876)
+texture = ExtResource("2_lpuyw")
+offset = Vector2(80.07, 16.805)
+
+[node name="BackGround" type="Sprite2D" parent="Container"]
+self_modulate = Color(0.949638, 0.671582, 0.896325, 1)
+texture = ExtResource("2_lpuyw")
+offset = Vector2(80.07, 16.805)
 
 [node name="EffectTriggerText" type="RichTextLabel" parent="Container"]
 layout_mode = 2
@@ -25,6 +44,26 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_fonts/normal_font = ExtResource("1_4nta7")
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
+text = "sdfsdfsdfsdfsdf"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 16
+texture = ExtResource("4_lpuyw")
+lifetime = 0.29
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 30.53
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 382.07
+initial_velocity_max = 599.05
+scale_amount_min = 0.7
+scale_amount_curve = SubResource("Curve_u4g2y")

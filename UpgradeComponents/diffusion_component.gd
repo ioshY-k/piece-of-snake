@@ -2,12 +2,14 @@ extends Node
 
 var map:Map
 var swiss_knive
+const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
 
 func _ready():
 	map = get_parent().current_map
 	SignalBus.fruit_spawned.connect(_make_diffusable)
 	SignalBus.ghost_fruit_spawned.connect(_make_diffusable)
 	SignalBus.swiss_knive_synergy.connect(_set_swiss_knive)
+	SignalBus.diffusion_happened.connect(_diffuse_animation)
 
 func _set_swiss_knive(state:bool):
 	swiss_knive = state
@@ -17,9 +19,16 @@ func _set_swiss_knive(state:bool):
 		if SignalBus.diffusion_happened.is_connected(_move_all_fruits):
 			SignalBus.diffusion_happened.disconnect(_move_all_fruits)
 
-func _move_all_fruits():
+func _move_all_fruits(_diffusing_bodypart):
 	for fruit in map.current_fruits:
 		fruit.move(fruit.move_type.TOWARDS, false)
+
+func _diffuse_animation(diffusing_body: SnakeBody):
+	diffusing_body.hole_animation_player.play("suck_anim")
+	var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
+	effect_trigger_text.initialize(effect_trigger_text.EFFECTS.DIFFUSION, diffusing_body.position)
+	map.add_child(effect_trigger_text)
+	
 
 func _make_diffusable(fruit: FruitElement):
 	fruit.diffusable = true

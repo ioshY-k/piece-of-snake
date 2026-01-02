@@ -35,11 +35,11 @@ func _extra_point(_fruit, is_real_collection):
 	#if fruit_counter%2 == 0:
 		#map.snake_tail.tiles_to_grow += 1
 		#var dense_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		#dense_trigger_text.initialize(dense_trigger_text.EFFECTS.DENSE)
+		#dense_trigger_text.initialize(dense_trigger_text.EFFECTS.DENSE, null)
 		#map.add_child(dense_trigger_text)
 		#SignalBus.fruit_collected.emit(null, false)
 		#var tasty_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		#tasty_trigger_text.initialize(tasty_trigger_text.EFFECTS.BONUS_FRUIT)
+		#tasty_trigger_text.initialize(tasty_trigger_text.EFFECTS.BONUS_FRUIT, null)
 		#map.add_child(tasty_trigger_text)
 	#fruit_counter += 1
 

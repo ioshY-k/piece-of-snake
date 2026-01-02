@@ -21,14 +21,14 @@ func _decide_unhittable(_tail_moves):
 		if swiss_knive:
 			snake_head.hit_signal_muted = true
 			var shield2_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-			shield2_effect_trigger_text.initialize(shield2_effect_trigger_text.EFFECTS.SHIELDED)
+			shield2_effect_trigger_text.initialize(shield2_effect_trigger_text.EFFECTS.SHIELDED, null)
 			snake_head.get_parent().add_child(shield2_effect_trigger_text)
 			await get_tree().process_frame
 			snake_head.hit_signal_muted = false
 		elif snake_head.colliding_element != null and not snake_head.colliding_element.get_groups().has("Snake"):
 			snake_head.hit_signal_muted = true
 			var shield1_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-			shield1_effect_trigger_text.initialize(shield1_effect_trigger_text.EFFECTS.SHIELDED)
+			shield1_effect_trigger_text.initialize(shield1_effect_trigger_text.EFFECTS.SHIELDED, null)
 			snake_head.get_parent().add_child(shield1_effect_trigger_text)
 			await get_tree().process_frame
 			snake_head.hit_signal_muted = false

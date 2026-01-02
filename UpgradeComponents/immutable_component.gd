@@ -75,7 +75,7 @@ func _prevent_growth_on_5_ghostfruits(_fruit, _real_collection):
 	if map.current_fruits.filter(func(f): return f.is_in_group("Ghost Fruit")).size() == ghost_fruit_counter_max and map.snake_tail.tiles_to_grow >= RunSettings.fruit_growth:
 		map.snake_tail.tiles_to_grow -= RunSettings.fruit_growth
 		var growth_effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH)
+		growth_effect_trigger_text.initialize(growth_effect_trigger_text.EFFECTS.NO_GROWTH, null)
 		map.add_child(growth_effect_trigger_text)
 
 func modify_upgrade_cost(upgrade_card: UpgradeCard):

@@ -14,12 +14,12 @@ func _on_this_fruit_collected(collected_fruit: FruitElement, _is_real_collection
 	if riped and collected_fruit == get_parent():
 		SignalBus.fruit_collected.emit(null, false)
 		var effect1_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		effect1_trigger_text.initialize(effect1_trigger_text.EFFECTS.BONUS_FRUIT)
+		effect1_trigger_text.initialize(effect1_trigger_text.EFFECTS.BONUS_FRUIT, null)
 		get_parent().get_parent().add_child(effect1_trigger_text)
 	if very_riped and collected_fruit == get_parent():
 		SignalBus.fruit_collected.emit(null, false)
 		var effect2_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-		effect2_trigger_text.initialize(effect2_trigger_text.EFFECTS.BONUS_FRUIT)
+		effect2_trigger_text.initialize(effect2_trigger_text.EFFECTS.BONUS_FRUIT, null)
 		get_parent().get_parent().add_child(effect2_trigger_text)
 		
 func _on_other_fruit_collected(collected_fruit: FruitElement, _is_real_collection: bool):

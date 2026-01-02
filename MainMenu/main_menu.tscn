@@ -1975,6 +1975,9 @@ offset_bottom = 1050.0
 theme_override_font_sizes/font_size = 31
 text = "Show Banners"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(961, 541)
+
 [connection signal="mouse_entered" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_exited"]
 [connection signal="mouse_entered" from="CharacterSelection/Character0Area" to="CharacterSelection" method="_on_area_0_mouse_entered"]

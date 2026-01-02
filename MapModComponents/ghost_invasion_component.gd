@@ -16,7 +16,7 @@ func _prevent_growth(fruit, _is_real_collection):
 		if map.snake_tail.tiles_to_grow > RunSettings.fruit_growth-1:
 			map.snake_tail.tiles_to_grow -= RunSettings.fruit_growth
 			var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
-			effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH)
+			effect_trigger_text.initialize(effect_trigger_text.EFFECTS.NO_GROWTH, null)
 			map.add_child(effect_trigger_text)
 
 func _spawn_ghost_fruits():
