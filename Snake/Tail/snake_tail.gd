@@ -34,6 +34,7 @@ func _on_next_tile_reached():
 		SignalBus.tail_grows.emit()
 
 	get_moving_tween(true)
+	print(map.snake_path_directions[0])
 	get_turning_tween(map.snake_path_directions[0])
 	
 	SignalBus.continue_moving.emit(snake_head.current_direction)

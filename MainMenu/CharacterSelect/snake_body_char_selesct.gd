@@ -2,7 +2,7 @@ class_name SnakeBodyCharSelect extends Sprite2D
 
 
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
-enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL}
+enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL, CORNER_RU, CORNER_RD, CORNER_LD, CORNER_LU}
 @export var is_corner: bool
 @export var sprite: Texture2D
 @export var char_id: int

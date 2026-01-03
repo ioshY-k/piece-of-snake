@@ -44,6 +44,7 @@ var ghost_invasion_component_scene = load("res://MapModComponents/ghost_invasion
 var far_away_component_scene = load("res://MapModComponents/far_away_component.tscn")
 var dark_component_scene = load("res://MapModComponents/dark_component.tscn")
 var ufo_component_scene = load("res://MapModComponents/ufo_component.tscn")
+var head_swap_component_scene = load("res://MapModComponents/head_swap_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -78,6 +79,7 @@ var effect_trigger_occupied: bool = false
 signal effect_trigger_freed
 
 var caffeinated: bool = false
+var diffusing: bool = false
 
 func _ready() -> void:
 	#change the seed for randomness
@@ -282,7 +284,7 @@ func push_snake_directions(direction :int):
 	snake_path_directions.push_back(direction)
 
 func push_snake_bodyparts(tile: Vector2i, direction: int, push_overlap_bodypart: bool):
-	var newest_snake_body = SnakeBody.new_snakebody(snake_path_directions[-1], direction)
+	var newest_snake_body = SnakeBody.new_snakebody(snake_path_directions, direction)
 	add_child(newest_snake_body)
 	newest_snake_body.position = tile * GameConsts.TILE_SIZE
 	newest_snake_body.appear_shader()
@@ -421,6 +423,9 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.UFO:
 			var ufo_component = ufo_component_scene.instantiate()
 			add_child(ufo_component)
+		GameConsts.MAP_MODS.HEAD_SWAP:
+			var head_swap_component = head_swap_component_scene.instantiate()
+			add_child(head_swap_component)
 
 func _on_round_over():
 	cleanup_ghost_fruits()

@@ -47,7 +47,7 @@ func get_orientation(direction: int, current_rotation: float) -> float:
 				rotation_degrees = 360
 			return 270
 		_:
-			return 0
+			return current_rotation
 
 var moving_tween: Tween
 func get_moving_tween(moves: bool) -> Tween:

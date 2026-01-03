@@ -62,7 +62,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5mbj"]
 shader = ExtResource("1_uwu44")
-shader_parameter/mask_height = 0.0
+shader_parameter/mask_height = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_krvum"]
 animations = [{
@@ -1273,6 +1273,45 @@ _data = {
 &"move_tile_anim": SubResource("Animation_81x6j")
 }
 
+[sub_resource type="Animation" id="Animation_8j7tw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnakeBodyDecoEdge/EdgeDiffusionHole:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4/CornerDiffusionHoleBack:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4/CornerDiffusionHoleFront:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.236816, 0.236816, 0.236816, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_wkua3"]
 resource_name = "suck_anim"
 length = 0.38
@@ -1314,45 +1353,6 @@ tracks/2/keys = {
 "values": [Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.236816, 0.236816, 0.236816, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_8j7tw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SnakeBodyDecoEdge/EdgeDiffusionHole:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.236816, 0.236816, 0.236816, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4/CornerDiffusionHoleBack:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.236816, 0.236816, 0.236816, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4/CornerDiffusionHoleFront:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.236816, 0.236816, 0.236816, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vh5ly"]
 _data = {
 &"RESET": SubResource("Animation_8j7tw"),
@@ -1380,6 +1380,7 @@ sprite_frames = SubResource("SpriteFrames_0u3ak")
 offset = Vector2(0, 40)
 
 [node name="EdgeDiffusionHole" type="AnimatedSprite2D" parent="SnakeBodyDecoEdge"]
+visible = false
 modulate = Color(0.236816, 0.236816, 0.236816, 1)
 sprite_frames = SubResource("SpriteFrames_wkua3")
 offset = Vector2(0, 40)
@@ -1416,6 +1417,7 @@ sprite_frames = SubResource("SpriteFrames_towqx")
 frame_progress = 0.505756
 
 [node name="CornerDiffusionHoleBack" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4"]
+visible = false
 modulate = Color(0.236816, 0.236816, 0.236816, 1)
 sprite_frames = SubResource("SpriteFrames_8j7tw")
 
@@ -1464,6 +1466,7 @@ sprite_frames = SubResource("SpriteFrames_fyeds")
 frame_progress = 0.639739
 
 [node name="CornerDiffusionHoleFront" type="AnimatedSprite2D" parent="SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4"]
+visible = false
 modulate = Color(0.236816, 0.236816, 0.236816, 1)
 sprite_frames = SubResource("SpriteFrames_8j7tw")
 

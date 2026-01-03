@@ -26,6 +26,23 @@ func get_next_tile(current_tile: Vector2i, direction) -> Vector2i:
 		_:
 			return Vector2i.ZERO
 
+func get_opposite(direction):
+	match direction:
+		DIRECTION.UP:
+			return DIRECTION.DOWN
+		DIRECTION.RIGHT:
+			return DIRECTION.LEFT
+		DIRECTION.DOWN:
+			return DIRECTION.UP
+		DIRECTION.LEFT:
+			return DIRECTION.RIGHT
+		DIRECTION.STOP,\
+		DIRECTION.DISAPPEAR,\
+		DIRECTION.APPEAR:
+			return DIRECTION.STOP
+		_:
+			return 
+
 #converts a tile vector to it's actual position
 func tile_to_position(tile: Vector2i) -> Vector2:
 	return tile * TILE_SIZE

@@ -51,6 +51,11 @@ func _on_next_tile_reached():
 		colliding_element = check_upcoming_collision(current_direction, DIRECTION.LEFT)
 		current_direction = DIRECTION.LEFT
 	else:
+		var index = -2
+		while current_direction == 4:
+			print_debug("theres 4 as current direction. should only happen in headswap mode")
+			current_direction = map.snake_path_directions[index]
+			index -= 1
 		next_tile = TileHelper.get_next_tile(current_tile, current_direction)
 		colliding_element = check_upcoming_collision(current_direction, current_direction)
 	
@@ -105,7 +110,8 @@ func _on_next_tile_reached():
 			cut.emit(colliding_element)
 		if colliding_element.get_collision_layer_value(11): #Rubber
 			rubber.emit()
-		
+	
+	
 	
 	if not moves:
 		next_tile = current_tile
@@ -166,9 +172,11 @@ func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 				DIRECTION.LEFT:
 					return front_collision_ray.get_collider()
 	print_debug("no direction found")
+	print(current_dir, next_dir)
 	return null
 
 
+@onready var input_direction_audio: AudioStreamPlayer = $InputDirectionAudio
 
 
 #region helper functions
@@ -179,21 +187,25 @@ func buffer_last_input_direction():
 			buffered_input_direction = DIRECTION.UP
 		else:
 			second_buffered_input_direction = DIRECTION.UP
+		input_direction_audio.play()
 	if Input.is_action_just_pressed("move_right"):
 		if buffered_input_direction == -10:
 			buffered_input_direction = DIRECTION.RIGHT
 		else:
 			second_buffered_input_direction = DIRECTION.RIGHT
+		input_direction_audio.play()
 	if Input.is_action_just_pressed("move_down"):
 		if buffered_input_direction == -10:
 			buffered_input_direction = DIRECTION.DOWN
 		else:
 			second_buffered_input_direction = DIRECTION.DOWN
+		input_direction_audio.play()
 	if Input.is_action_just_pressed("move_left"):
 		if buffered_input_direction == -10:
 			buffered_input_direction = DIRECTION.LEFT
 		else:
 			second_buffered_input_direction = DIRECTION.LEFT
+		input_direction_audio.play()
 	if current_input_direction != buffered_input_direction or buffered_input_direction == -10:
 		determine_frame_from_orientation(buffered_input_direction)
 

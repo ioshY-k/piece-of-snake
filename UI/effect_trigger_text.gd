@@ -7,6 +7,7 @@ var effect_position = null
 @onready var map: Map = get_parent()
 @onready var back_ground: Sprite2D = $Container/BackGround
 @onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
+@onready var trigger_text_audio: AudioStreamPlayer = $TriggerTextAudio
 
 
 func _ready():
@@ -17,6 +18,7 @@ func _ready():
 		effect_position = map.snake_head.position
 	position = effect_position
 	map.effect_trigger_occupied = true
+	trigger_text_audio.play()
 	match _effect:
 		EFFECTS.BONUS_FRUIT:
 			effect_trigger_text.text = "TASTY [img=30]res://Shop/UI/KeywordTastySymbol.svg[/img]"

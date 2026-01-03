@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjhlmr2cqsntn"]
+[gd_scene load_steps=7 format=3 uid="uid://bjhlmr2cqsntn"]
 
 [ext_resource type="FontFile" uid="uid://cew2jv4a2p2sd" path="res://Fonts/BRLNSB.TTF" id="1_4nta7"]
 [ext_resource type="Texture2D" uid="uid://xm8e44ncpvtk" path="res://Shop/UI/EffectTriggerBG.svg" id="2_lpuyw"]
 [ext_resource type="Script" uid="uid://2lu4uxflwxh8" path="res://UI/effect_trigger_text.gd" id="2_u4g2y"]
 [ext_resource type="Texture2D" uid="uid://bunvyj2fmw1gf" path="res://Shop/UI/EffectTriggerParticles.svg" id="4_lpuyw"]
+[ext_resource type="AudioStream" uid="uid://ccg7t5bl650i0" path="res://UI/TriggerTextAppear.wav" id="5_rcoa4"]
 
 [sub_resource type="Curve" id="Curve_u4g2y"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.355228, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -67,3 +68,6 @@ initial_velocity_min = 382.07
 initial_velocity_max = 599.05
 scale_amount_min = 0.7
 scale_amount_curve = SubResource("Curve_u4g2y")
+
+[node name="TriggerTextAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rcoa4")

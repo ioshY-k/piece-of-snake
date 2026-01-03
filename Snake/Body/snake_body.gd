@@ -2,8 +2,10 @@ class_name SnakeBody extends AnimatedSprite2D
 
 
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
-enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL}
+enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL, CORNER_RU, CORNER_RD, CORNER_LD, CORNER_LU}
+var body_type: int
 var is_corner: bool
+var orientation: int
 var is_tetris: bool = false
 var is_rubber: bool = false
 var body_moves: bool = true
@@ -23,9 +25,9 @@ const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 var map: Map
 var snake_head: SnakeHead
 
-static func new_snakebody(this_direction, next_direction) -> SnakeBody:
+static func new_snakebody(snake_path, next_direction) -> SnakeBody:
 	var snake_body: SnakeBody = snake_body_scene.instantiate()
-	snake_body.find_correct_rotation(this_direction, next_direction)
+	snake_body.find_correct_rotation(snake_path, next_direction)
 	
 	return snake_body
 
@@ -49,52 +51,120 @@ func _ready() -> void:
 		snake_body_deco_edge.frame = RunSettings.current_char
 		play_edge_deco_anim_tweens()
 	
+	if map.diffusing:
+		$SnakeBodyDecoEdge/EdgeDiffusionHole.show()
+		$SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4/CornerDiffusionHoleBack.show()
+		$SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4/CornerDiffusionHoleFront.show()
+	
 	SignalBus.stop_moving.connect(_on_stop_moving)
 	SignalBus.continue_moving.connect(_on_continue_moving)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
 	solid_element.snake_overlapped.connect(_on_snake_overlaps.bind(false))
 	
 	
-func find_correct_rotation(this_direction: int, next_direction: int):
+func find_correct_rotation(snake_path, next_direction: int):
+	var this_direction:int
+	var temp_snake_path = snake_path.duplicate()
+	#happens only when head and tail swap
+	while temp_snake_path[-1] == 4:
+		temp_snake_path.pop_back()
+	this_direction = temp_snake_path[-1]
 	if this_direction == next_direction:
 		is_corner = false
 		frame = 1 + (RunSettings.current_char * 9) #frames per snake
 		match this_direction:
 			DIRECTION.UP:
 				rotation_degrees = 0
-				
+				body_type = BODY_TYPE.STRAIGHT_U
 			DIRECTION.RIGHT:
 				rotation_degrees = 90
-				
+				body_type = BODY_TYPE.STRAIGHT_R
 			DIRECTION.DOWN:
 				rotation_degrees = 180
-				
+				body_type = BODY_TYPE.STRAIGHT_D
 			DIRECTION.LEFT:
 				rotation_degrees = 270
+				body_type = BODY_TYPE.STRAIGHT_L
 	else:
 		is_corner = true
 		frame = 0 + (RunSettings.current_char * 9) #frames per snake
 		match [this_direction ,next_direction]:
 			[2,1]:
 				rotation_degrees = 90
+				body_type = BODY_TYPE.CORNER_DR
 			[3,2]:
 				rotation_degrees = 180
+				body_type = BODY_TYPE.CORNER_LD
 			[0,3]:
 				rotation_degrees = 270
+				body_type = BODY_TYPE.CORNER_UL
 			[1,0]:
 				rotation_degrees = 0
+				body_type = BODY_TYPE.CORNER_RU
 			[0,1]:
 				rotation_degrees = 270
 				scale.y = -scale.y
+				body_type = BODY_TYPE.CORNER_UR
 			[1,2]:
 				rotation_degrees = 180
 				scale.x = -scale.x
+				body_type = BODY_TYPE.CORNER_RD
 			[2,3]:
 				rotation_degrees = 90
 				scale.y = -scale.y
+				body_type = BODY_TYPE.CORNER_DL
 			[3,0]:
 				rotation_degrees = 180
 				scale.y = -scale.y
+				body_type = BODY_TYPE.CORNER_LU
+
+func flip_rotation():
+	match body_type:
+		BODY_TYPE.STRAIGHT_U:
+			body_type = BODY_TYPE.STRAIGHT_D
+			rotation_degrees += 180
+		BODY_TYPE.STRAIGHT_R:
+			body_type = BODY_TYPE.STRAIGHT_L
+			rotation_degrees += 180
+		BODY_TYPE.STRAIGHT_D:
+			body_type = BODY_TYPE.STRAIGHT_U
+			rotation_degrees += 180
+		BODY_TYPE.STRAIGHT_L:
+			body_type = BODY_TYPE.STRAIGHT_R
+			rotation_degrees += 180
+		BODY_TYPE.CORNER_DR:
+			scale.x = -scale.x
+			rotation_degrees -= 90
+			body_type = BODY_TYPE.CORNER_LU
+		BODY_TYPE.CORNER_LD:
+			scale.x = -scale.x
+			rotation_degrees -= 90
+			body_type = BODY_TYPE.CORNER_UR
+		BODY_TYPE.CORNER_UL:
+			scale.x = -scale.x
+			rotation_degrees -= 90
+			body_type = BODY_TYPE.CORNER_RD
+		BODY_TYPE.CORNER_RU:
+			scale.x = -scale.x
+			rotation_degrees -= 90
+			body_type = BODY_TYPE.CORNER_DL
+		BODY_TYPE.CORNER_UR:
+			scale.x = -scale.x
+			rotation_degrees += 90
+			body_type = BODY_TYPE.CORNER_LD
+		BODY_TYPE.CORNER_LU:
+			scale.x = -scale.x
+			rotation_degrees += 90
+			body_type = BODY_TYPE.CORNER_DR
+		BODY_TYPE.CORNER_DL:
+			scale.x = -scale.x
+			rotation_degrees += 90
+			body_type = BODY_TYPE.CORNER_RU
+		BODY_TYPE.CORNER_RD:
+			scale.x = -scale.x
+			rotation_degrees += 90
+			body_type = BODY_TYPE.CORNER_UL
+		
 
 #revert_on_backhalf decides wether it is temporarily made overlap by half_gone upgrade
 func set_overlap(state, revert_on_half):

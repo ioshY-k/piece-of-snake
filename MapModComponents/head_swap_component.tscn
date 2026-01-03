@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cayej4w5cio5d"]
+
+[ext_resource type="Script" uid="uid://wgmyjxy7g2an" path="res://MapModComponents/head_swap_component.gd" id="1_dutxd"]
+
+[node name="HeadSwapComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_dutxd")

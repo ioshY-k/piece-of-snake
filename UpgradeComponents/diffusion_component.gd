@@ -6,6 +6,7 @@ const EFFECT_TRIGGER_TEXT = preload("res://UI/effect_trigger_text.tscn")
 
 func _ready():
 	map = get_parent().current_map
+	map.diffusing = true
 	SignalBus.fruit_spawned.connect(_make_diffusable)
 	SignalBus.ghost_fruit_spawned.connect(_make_diffusable)
 	SignalBus.swiss_knive_synergy.connect(_set_swiss_knive)
@@ -36,4 +37,5 @@ func _make_diffusable(fruit: FruitElement):
 func self_destruct():
 	for fruit:FruitElement in map.find_all_fruits():
 		fruit.diffusable = false
+	map.diffusing = false
 	queue_free()
