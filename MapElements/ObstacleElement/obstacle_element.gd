@@ -26,8 +26,12 @@ func _ready() -> void:
 func _walk_path():
 	await SignalBus.next_tile_reached
 	tween = self.create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	if get_parent().get_parent().caffeinated:
-		tween.set_speed_scale(1.2)
+	if RunSettings.current_char == GameConsts.CHAR_LIST.GODOT and get_parent().get_parent().caffeinated:
+		tween.set_speed_scale(1.2*1.4)
+	elif get_parent().get_parent().caffeinated:
+			tween.set_speed_scale(1.2)
+	elif RunSettings.current_char == GameConsts.CHAR_LIST.GODOT:
+			tween.set_speed_scale(1.4)
 	if loops:
 		tween.set_loops()
 	for index in len(path):
@@ -60,5 +64,4 @@ func _kill():
 func _set_particles(state: bool):
 	for child in get_children():
 		if child is CPUParticles2D:
-			print(state)
 			child.emitting = state

@@ -57,6 +57,7 @@ var head_swap_component_scene = load("res://MapModComponents/head_swap_component
 @export var starting_position: Vector2
 var zoom_state: int = 0 #0 by default and +1 for each area size upgrade
 var current_fruits: Array[FruitElement]
+var current_mapmod: int
 
 
 #arrays containing Snake data for the tail to follow
@@ -390,42 +391,55 @@ func apply_mapmod(mapmod: int):
 		GameConsts.MAP_MODS.CAFFEINATED:
 			var caffeinated_component = caffeinated_component_scene.instantiate()
 			add_child(caffeinated_component)
+			current_mapmod = GameConsts.MAP_MODS.CAFFEINATED
 		GameConsts.MAP_MODS.TAILVIRUS:
 			var tailvirus_component = tailvirus_component_scene.instantiate()
 			snake_tail.add_child(tailvirus_component)
+			current_mapmod = GameConsts.MAP_MODS.TAILVIRUS
 		GameConsts.MAP_MODS.EDIBLE_PAPER:
 			var edible_paper_component = edible_paper_component_scene.instantiate()
 			add_child(edible_paper_component)
+			current_mapmod = GameConsts.MAP_MODS.EDIBLE_PAPER
 		GameConsts.MAP_MODS.LASER:
 			var laser_component = laser_component_scene.instantiate()
 			add_child(laser_component)
+			current_mapmod = GameConsts.MAP_MODS.LASER
 		GameConsts.MAP_MODS.FRUIT_BODY:
 			var fruit_body_component = fruit_body_component_scene.instantiate()
 			add_child(fruit_body_component)
+			current_mapmod = GameConsts.MAP_MODS.FRUIT_BODY
 		GameConsts.MAP_MODS.TETRI_FRUIT:
 			var tetri_fruit_component = tetri_fruit_component_scene.instantiate()
 			add_child(tetri_fruit_component)
+			current_mapmod = GameConsts.MAP_MODS.TETRI_FRUIT
 		GameConsts.MAP_MODS.MOVING_FRUIT:
 			var moving_fruit_component = moving_fruit_component_scene.instantiate()
 			add_child(moving_fruit_component)
+			current_mapmod = GameConsts.MAP_MODS.MOVING_FRUIT
 		GameConsts.MAP_MODS.ANTI_MAGNET:
 			var anti_magnet_component = anti_magnet_component_scene.instantiate()
 			add_child(anti_magnet_component)
+			current_mapmod = GameConsts.MAP_MODS.ANTI_MAGNET
 		GameConsts.MAP_MODS.GHOST_INVASION:
 			var ghost_invasion_component = ghost_invasion_component_scene.instantiate()
 			add_child(ghost_invasion_component)
+			current_mapmod = GameConsts.MAP_MODS.GHOST_INVASION
 		GameConsts.MAP_MODS.FAR_AWAY:
 			var far_away_component = far_away_component_scene.instantiate()
 			add_child(far_away_component)
+			current_mapmod = GameConsts.MAP_MODS.FAR_AWAY
 		GameConsts.MAP_MODS.DARK:
 			var dark_component = dark_component_scene.instantiate()
 			add_child(dark_component)
+			current_mapmod = GameConsts.MAP_MODS.DARK
 		GameConsts.MAP_MODS.UFO:
 			var ufo_component = ufo_component_scene.instantiate()
 			add_child(ufo_component)
+			current_mapmod = GameConsts.MAP_MODS.UFO
 		GameConsts.MAP_MODS.HEAD_SWAP:
 			var head_swap_component = head_swap_component_scene.instantiate()
 			add_child(head_swap_component)
+			current_mapmod = GameConsts.MAP_MODS.HEAD_SWAP
 
 func _on_round_over():
 	cleanup_ghost_fruits()

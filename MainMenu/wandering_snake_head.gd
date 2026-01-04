@@ -22,7 +22,6 @@ func spawn(pos):
 func despawn():
 	despawning = true
 	await get_tree().create_timer(15).timeout
-	print("plop")
 	queue_free()
 	
 
@@ -59,7 +58,6 @@ func move_in_random_direction():
 	
 	await tween.finished
 	if position.x > 1920 or position.x < 0 or position.y > 1080 or position.y < 0:
-		print("despawn")
 		despawn()
 	if not despawning:
 		move_in_random_direction()

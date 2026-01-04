@@ -30,7 +30,18 @@ func _process(delta: float) -> void:
 			if not fruit.collected:
 				fruit.collision_with.emit(fruit, position)
 
+
+var last_call_time: int = 0
 func _on_next_tile_reached():
+	
+	var now = Time.get_ticks_msec()
+
+	if last_call_time != 0:
+		var elapsed_ms = now - last_call_time
+		print("Zeit seit letztem Aufruf: ", elapsed_ms, " ms (", elapsed_ms / 1000.0, " s)")
+		
+	last_call_time = now
+	
 	original_direction = current_direction
 	current_tile = next_tile
 	
@@ -172,7 +183,6 @@ func check_upcoming_collision(current_dir, next_dir) -> MapElement:
 				DIRECTION.LEFT:
 					return front_collision_ray.get_collider()
 	print_debug("no direction found")
-	print(current_dir, next_dir)
 	return null
 
 

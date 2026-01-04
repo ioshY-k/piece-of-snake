@@ -3,15 +3,20 @@ extends Node
 var map: Map
 var head:SnakeHead
 var tail:SnakeTail
+var is_twohead_ability: bool = false
+
+func instantiate_as_twohead_ability():
+	is_twohead_ability = true
 
 func _ready() -> void:
 	map = get_parent()
 	head = map.snake_head
 	tail = map.snake_tail
-	SignalBus.fruit_collected.connect(swap_head)
+	if RunSettings.current_char != GameConsts.CHAR_LIST.TWOHEAD or is_twohead_ability:
+		SignalBus.fruit_collected.connect(swap_head)
 
 func swap_head(_element, is_real_collection):
-	if not is_real_collection:
+	if not is_real_collection or (is_twohead_ability and map.current_mapmod == GameConsts.MAP_MODS.HEAD_SWAP):
 		return
 	await SignalBus.next_tile_reached
 	

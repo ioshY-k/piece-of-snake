@@ -88,6 +88,7 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 	
 	if RunSettings.current_char == GameConsts.CHAR_LIST.TWOHEAD:
 		var headswap = current_map.head_swap_component_scene.instantiate()
+		headswap.instantiate_as_twohead_ability()
 		headswap.remove_from_group("MapMod")
 		current_map.add_child(headswap)
 	
@@ -110,6 +111,9 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	
 	snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
 	snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
+	if RunSettings.current_char == GameConsts.CHAR_LIST.GODOT:
+		snake_head.current_snake_speed /= 1.4
+		snake_tail.current_snake_speed /= 1.4
 	speed_boost_bar.value  = speed_boost_bar.max_value
 	
 	for active_item_slot in active_item_slots:
@@ -124,9 +128,9 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
+		time_meter.initiate_time_bar(3)
 	else:
-		time_meter.initiate_time_bar(GameConsts.ROUND_TIME_SEC)
+		time_meter.initiate_time_bar(5)
 	
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")

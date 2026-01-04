@@ -27,7 +27,7 @@ var hovering_char_selects: Array[bool] = [	hovering_char_0_select,
 											hovering_char_5_select]
 
 var char_descriptions:Dictionary = {
-	str(GameConsts.CHAR_LIST.GODOT) : "Placeholder character with no special abilities",
+	str(GameConsts.CHAR_LIST.GODOT) : "Faster than the others.",
 	str(GameConsts.CHAR_LIST.PYTHON) : "The fruit requirement for every round has 1 less fruit\n\n(recommended for the first run)",
 	str(GameConsts.CHAR_LIST.SALAMANDER) : "Start with a random active Item",
 	str(GameConsts.CHAR_LIST.ELEPHANT) : "Carry over your Currency from one map to the next",
