@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=114 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
@@ -34,7 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://do8vru8la3k2v" path="res://Snake/Tail/ElephantTail.svg" id="30_t31mw"]
 [ext_resource type="Texture2D" uid="uid://chbjrh02lc2sb" path="res://MainMenu/CharacterSelectBG.png" id="31_bh756"]
 [ext_resource type="Texture2D" uid="uid://c5rrcknlgrnt4" path="res://MainMenu/CharacterInfo.svg" id="32_bh756"]
+[ext_resource type="Texture2D" uid="uid://cip3d8wpqfnt" path="res://Snake/Head/TwoheadHead.svg" id="32_hg2b4"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="33_cwel5"]
+[ext_resource type="Texture2D" uid="uid://boqwqs3dimyaa" path="res://Snake/Tail/TwoheadTail.svg" id="33_fi7gv"]
+[ext_resource type="Texture2D" uid="uid://khnfjxhlfodo" path="res://Snake/Body/Sprites/Twohead/TwoheadEdge.svg" id="34_bqfl2"]
+[ext_resource type="Texture2D" uid="uid://sqbl7il81wfd" path="res://Snake/Body/Sprites/Twohead/TwoheadCorner.svg" id="35_g521o"]
 [ext_resource type="PackedScene" uid="uid://bch88i4suqn2b" path="res://MainMenu/banners.tscn" id="37_w8io1"]
 [ext_resource type="Texture2D" uid="uid://6f6gnkek4p1g" path="res://MainMenu/MainMenuBachground.svg" id="38_ce477"]
 [ext_resource type="Texture2D" uid="uid://bpvwpmgpogfo2" path="res://Shop/UpgradeCards/Anchor.svg" id="39_12kcr"]
@@ -210,299 +214,11 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_7d5ul"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Leg1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Leg1:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Leg1/Leg2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Leg1/Leg2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Leg1/Leg2/Leg3:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Leg1/Leg2/Leg3:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Leg2:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-12, -34)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Leg2:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Leg2/Leg2:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, -7)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Leg2/Leg2:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Leg2/Leg2/Leg3:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(4, 17)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Leg2/Leg2/Leg3:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.416995]
-}
 
 [sub_resource type="Animation" id="Animation_xk7qb"]
 resource_name = "salmander_walk_anim"
 length = 0.5
 step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Leg1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(21, -37), Vector2(21, -37), Vector2(21, -37), Vector2(21, -37)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Leg1:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.969676, 0.0, 0.969676]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Leg1/Leg2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, -7), Vector2(16, -7), Vector2(16, -7), Vector2(16, -7)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Leg1/Leg2:rotation")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.940275, 0.0, -0.940275]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Leg1/Leg2/Leg3:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(4, 17), Vector2(0.758924, 19.75), Vector2(4, 17), Vector2(0.758924, 19.75)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Leg1/Leg2/Leg3:rotation")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-0.416995, -0.809357, -0.416995, -0.809357]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Leg2:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-21, -35), Vector2(-21, -35), Vector2(-21, -35), Vector2(-21, -35)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Leg2:rotation")
-tracks/7/interp = 2
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-0.905453, 0.0, -0.905453, 0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Leg2/Leg2:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, -7), Vector2(16, -7), Vector2(16, -7), Vector2(16, -7)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Leg2/Leg2:rotation")
-tracks/9/interp = 2
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-0.989163, 0.0, -0.989163, 0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Leg2/Leg2/Leg3:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.0437512, 18.8035), Vector2(4, 17), Vector2(0.0437512, 18.8035), Vector2(4, 17)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Leg2/Leg2/Leg3:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [-0.72132, -0.416995, -0.72132, -0.416995]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8pog0"]
 _data = {
@@ -512,7 +228,7 @@ _data = {
 
 [sub_resource type="Curve2D" id="Curve2D_homfb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1000, 440, 0, 0, 0, 0, 1000, 600, 0, 0, 0, 0, 1080, 600, 0, 0, 0, 0, 1080, 200, 0, 0, 0, 0, 920, 200)
+"points": PackedVector2Array(0, 0, 0, 0, 999, 438, 0, 0, 0, 0, 999, 598, 0, 0, 0, 0, 1079, 598, 0, 0, 0, 0, 1079, 198, 0, 0, 0, 0, 919, 198)
 }
 point_count = 5
 
@@ -647,6 +363,85 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqfl2"]
+texture = ExtResource("3_5de1l")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g521o"]
+tile_size = Vector2i(80, 80)
+sources/0 = SubResource("TileSetAtlasSource_bqfl2")
+
+[sub_resource type="GDScript" id="GDScript_ib2n2"]
+script/source = "extends TileMapLayer
+
+signal next_tile_reached
+var snake_anim_plays: bool = false
+var decreasing_menu_snake_speed: float
+
+@onready var tail_follow: PathFollow2D = $Path2D/TailFollow
+@onready var head_follow: PathFollow2D = $Path2D/HeadFollow
+@export var has_front_legs: bool
+@export var has_back_legs: bool
+
+var mask: Sprite2D
+
+var bodyparts: Array
+
+func _ready() -> void:
+	mask = $\"Path2D/HeadFollow/Head/Mask\"
+	decreasing_menu_snake_speed = get_parent().menu_snake_speed
+	
+	for child in get_children():
+		if child.get_groups().has(\"Snake\"):
+			bodyparts.append(child)
+
+func play_snake_anim():
+	snake_anim_plays = true
+	for i in bodyparts.size()+1:
+		if i < bodyparts.size():
+			bodyparts[i].hide()
+			bodyparts[(i-1)%bodyparts.size()].modulate.a = 0.0
+			show_bodypart_later(bodyparts[i], decreasing_menu_snake_speed * 2)
+		next_tile_reached.emit()
+		var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).set_parallel()
+		tween.tween_property(tail_follow, \"progress\", tail_follow.progress+80,decreasing_menu_snake_speed)
+		tween.tween_property(head_follow, \"progress\", head_follow.progress+80,decreasing_menu_snake_speed)
+		if has_front_legs:
+			tween.tween_method(_set_animation_progress, 0.0, head_follow.get_node(\"LegAnimationPlayer\").current_animation_length, decreasing_menu_snake_speed).set_trans(Tween.TRANS_LINEAR)
+		if has_back_legs:
+			tween.tween_method(_set_animation_progress, 0.0, tail_follow.get_node(\"LegAnimationPlayer\").current_animation_length, decreasing_menu_snake_speed).set_trans(Tween.TRANS_LINEAR)
+		decreasing_menu_snake_speed += 0.014
+		await tween.finished
+	decreasing_menu_snake_speed = get_parent().menu_snake_speed
+	snake_anim_plays = false
+
+func show_bodypart_later(part: Node, delay_time: float) -> void:
+	await get_tree().create_timer(delay_time).timeout
+	part.show()
+
+func _set_animation_progress(time: float):
+	if has_front_legs:
+		head_follow.get_node(\"LegAnimationPlayer\").seek(time, true)
+	if has_back_legs:
+		tail_follow.get_node(\"LegAnimationPlayer\").seek(time, true)
+"
+
+[sub_resource type="Curve2D" id="Curve2D_cbxrr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 519, 198, 0, 0, 0, 0, 679, 198, 0, 0, 0, 0, 679, 358, 0, 0, 0, 0, 759, 358, 0, 0, 0, 0, 759, 198, 0, 0, 0, 0, 999, 198)
+}
+point_count = 6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wclgf"]
 size = Vector2(174, 161)
@@ -1348,7 +1143,7 @@ position = Vector2(-880, -560)
 curve = SubResource("Curve2D_homfb")
 
 [node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character3Select/Path2D"]
-position = Vector2(1000, 200)
+position = Vector2(999, 198)
 rotation = 3.14159
 progress = 720.0
 
@@ -1411,7 +1206,7 @@ libraries = {
 autoplay = "salamander_walk_anim"
 
 [node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character3Select/Path2D"]
-position = Vector2(1000, 520)
+position = Vector2(999, 518)
 rotation = 1.5708
 progress = 80.0
 
@@ -1522,6 +1317,103 @@ position = Vector2(1200, 520)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character3Area"]
 polygon = PackedVector2Array(160, 79.9998, 160, -80, 240, -80, 240, -320, 160, -320, 160, -400, 320, -400, 320, 80)
+
+[node name="Character5Select" type="TileMapLayer" parent="CharacterSelection"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(1280, 520)
+tile_map_data = PackedByteArray("AAABAP//AAAAAAIAAAABAAAAAAAAAAMAAAACAAAAAAACAAIAAAACAP//AAACAAEAAAACAP7/AAACAAEAAAACAP3/AAACAAEAAAACAPz/AAACAAEAAAABAPv/AAABAAIAAAACAPv/AAACAAAAAAA=")
+tile_set = SubResource("TileSet_g521o")
+script = SubResource("GDScript_ib2n2")
+
+[node name="Path2D" type="Path2D" parent="CharacterSelection/Character5Select"]
+position = Vector2(-880, -560)
+curve = SubResource("Curve2D_cbxrr")
+
+[node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character5Select/Path2D"]
+position = Vector2(919.002, 198)
+progress = 720.0
+
+[node name="Head" type="Sprite2D" parent="CharacterSelection/Character5Select/Path2D/HeadFollow"]
+z_index = 11
+z_as_relative = false
+rotation = 1.5708
+texture = ExtResource("32_hg2b4")
+
+[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character5Select/Path2D/HeadFollow/Head"]
+clip_children = 1
+texture = ExtResource("25_r7e3w")
+
+[node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character5Select/Path2D"]
+position = Vector2(599, 198)
+progress = 80.0
+
+[node name="Tail" type="Sprite2D" parent="CharacterSelection/Character5Select/Path2D/TailFollow"]
+z_index = 11
+z_as_relative = false
+rotation = 1.5708
+texture = ExtResource("33_fi7gv")
+
+[node name="SnakeBody0" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-281, -362)
+rotation = 1.5708
+sprite = ExtResource("34_bqfl2")
+char_id = 5
+
+[node name="SnakeBody1" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-201, -362)
+sprite = ExtResource("35_g521o")
+char_id = 5
+
+[node name="SnakeBody2" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-201, -282)
+rotation = -3.14159
+sprite = ExtResource("34_bqfl2")
+char_id = 5
+
+[node name="SnakeBody3" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-201, -202)
+rotation = 1.5708
+sprite = ExtResource("35_g521o")
+char_id = 5
+
+[node name="SnakeBody4" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-121, -202)
+rotation = 0.0
+sprite = ExtResource("35_g521o")
+char_id = 5
+
+[node name="SnakeBody5" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-121, -282)
+rotation = 0.0
+sprite = ExtResource("34_bqfl2")
+char_id = 5
+
+[node name="SnakeBody6" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-121, -362)
+scale = Vector2(1, -1)
+texture = ExtResource("35_g521o")
+sprite = ExtResource("35_g521o")
+char_id = 5
+
+[node name="SnakeBody7" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(-41, -362)
+rotation = 1.5708
+texture = ExtResource("34_bqfl2")
+sprite = ExtResource("34_bqfl2")
+char_id = 5
+
+[node name="SnakeBody8" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
+position = Vector2(39, -362)
+rotation = 1.5708
+texture = ExtResource("34_bqfl2")
+sprite = ExtResource("34_bqfl2")
+char_id = 5
+
+[node name="Character5Area" type="Area2D" parent="CharacterSelection"]
+position = Vector2(1200, 520)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character5Area"]
+polygon = PackedVector2Array(-161, -162, -161, -322, -241, -322, -241, -402, 159, -402, 159, -322, -1, -322, -1, -162)
 
 [node name="BG" type="Sprite2D" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0.501961)
@@ -1988,6 +1880,8 @@ position = Vector2(961, 541)
 [connection signal="mouse_exited" from="CharacterSelection/Character2Area" to="CharacterSelection" method="_on_area_2_mouse_exited"]
 [connection signal="mouse_entered" from="CharacterSelection/Character3Area" to="CharacterSelection" method="_on_area_3_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character3Area" to="CharacterSelection" method="_on_area_3_mouse_exited"]
+[connection signal="mouse_entered" from="CharacterSelection/Character5Area" to="CharacterSelection" method="_on_area_5_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterSelection/Character5Area" to="CharacterSelection" method="_on_area_5_mouse_exited"]
 [connection signal="mouse_entered" from="EasySlot/EasySlotArea" to="." method="_on_easy_slot_area_mouse_entered"]
 [connection signal="mouse_exited" from="EasySlot/EasySlotArea" to="." method="_on_easy_slot_area_mouse_exited"]
 [connection signal="mouse_entered" from="NormalSlot/NormalSlotArea" to="." method="_on_normal_slot_area_mouse_entered"]

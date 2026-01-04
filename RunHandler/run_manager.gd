@@ -93,7 +93,7 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.HEAD_SWAP,
+		mapmodorder = [GameConsts.MAP_MODS.FRUIT_BODY,
 						GameConsts.MAP_MODS.FRUIT_BODY,
 						GameConsts.MAP_MODS.HEAD_SWAP,
 						GameConsts.MAP_MODS.HEAD_SWAP,

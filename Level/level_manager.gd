@@ -80,12 +80,16 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 	var map: Map = MapData.get_map_scene(map_index).instantiate()
 	current_map_index = map_index
 	add_child(map)
-			
 	
 	current_map = map
 	current_map.position = MapData.get_map_data0(map_index)[0]
 	current_map.scale = MapData.get_map_data0(map_index)[1]
 	disable_map()
+	
+	if RunSettings.current_char == GameConsts.CHAR_LIST.TWOHEAD:
+		var headswap = current_map.head_swap_component_scene.instantiate()
+		headswap.remove_from_group("MapMod")
+		current_map.add_child(headswap)
 	
 	snake_head = $Map/SnakeHead
 	snake_tail = $Map/SnakeTail

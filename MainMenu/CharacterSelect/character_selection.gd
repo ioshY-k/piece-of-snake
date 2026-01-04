@@ -5,22 +5,26 @@ extends Node2D
 @onready var character_2_select: TileMapLayer = $Character2Select
 @onready var character_3_select: TileMapLayer = $Character3Select
 @onready var character_4_select: TileMapLayer = $Character4Select
+@onready var character_5_select: TileMapLayer = $Character5Select
 
 @onready var character_selects = [	character_0_select,
 									character_1_select,
 									character_2_select,
 									character_3_select,
-									character_4_select]
+									character_4_select,
+									character_5_select]
 var hovering_char_0_select: bool = false
 var hovering_char_1_select: bool = false
 var hovering_char_2_select: bool = false
 var hovering_char_3_select: bool = false
 var hovering_char_4_select: bool = false
+var hovering_char_5_select: bool = false
 var hovering_char_selects: Array[bool] = [	hovering_char_0_select,
 											hovering_char_1_select,
 											hovering_char_2_select,
 											hovering_char_3_select,
-											hovering_char_4_select]
+											hovering_char_4_select,
+											hovering_char_5_select]
 
 var char_descriptions:Dictionary = {
 	str(GameConsts.CHAR_LIST.GODOT) : "Placeholder character with no special abilities",
@@ -28,6 +32,7 @@ var char_descriptions:Dictionary = {
 	str(GameConsts.CHAR_LIST.SALAMANDER) : "Start with a random active Item",
 	str(GameConsts.CHAR_LIST.ELEPHANT) : "Carry over your Currency from one map to the next",
 	str(GameConsts.CHAR_LIST.CHAMELEON) : "Gain an additional multi colored Upgrade slot (not implemented yet)",
+	str(GameConsts.CHAR_LIST.TWOHEAD) : "Switch directions everytime they collect a fruit",
 	
 }
 @onready var label: Label = $"../CharacterInfo/Label"
@@ -75,6 +80,12 @@ func _on_area_4_mouse_entered() -> void:
 
 func _on_area_4_mouse_exited() -> void:
 	char_unhovered(4)
+
+func _on_area_5_mouse_entered() -> void:
+	char_hovered(5)
+
+func _on_area_5_mouse_exited() -> void:
+	char_unhovered(5)
 
 
 func char_hovered(char_number):

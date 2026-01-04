@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dadpidbo1my0e"]
+[gd_scene load_steps=36 format=3 uid="uid://dadpidbo1my0e"]
 
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
 [ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="1_v1ci8"]
@@ -20,9 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://dxrraubkme0aw" path="res://Snake/Head/ElephantHeadLeft.svg" id="14_fkpg4"]
 [ext_resource type="Texture2D" uid="uid://dotitaxc5cp8k" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg3.svg" id="14_ihijh"]
 [ext_resource type="Texture2D" uid="uid://dg4lrrhdepndi" path="res://Snake/Head/ElephantHeadRight.svg" id="15_nef4a"]
+[ext_resource type="Texture2D" uid="uid://cip3d8wpqfnt" path="res://Snake/Head/TwoheadHead.svg" id="16_1o31d"]
 [ext_resource type="Texture2D" uid="uid://gqvumevpkifo" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg1.svg" id="16_rckui"]
+[ext_resource type="Texture2D" uid="uid://bvdht7ts7fixg" path="res://Snake/Head/TwoheadHeadLeft.svg" id="17_wu5vt"]
 [ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="18_6gvyu"]
 [ext_resource type="AudioStream" uid="uid://deh61p1gbowcu" path="res://Snake/Sfx/ControlInputAudio.wav" id="18_fkpg4"]
+[ext_resource type="Texture2D" uid="uid://rjsn23p0eu8i" path="res://Snake/Head/TwoheadHeadRight.svg" id="18_rc105"]
 [ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="20_7y21e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_naox3"]
@@ -72,6 +75,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_nef4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1o31d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wu5vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rc105")
 }],
 "loop": true,
 "name": &"default",
