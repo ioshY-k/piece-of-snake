@@ -56,6 +56,9 @@ func _ready() -> void:
 		$SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4/CornerDiffusionHoleBack.show()
 		$SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4/CornerDiffusionHoleFront.show()
 	
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CENTIPEDE:
+		clip_children = CanvasItem.CLIP_CHILDREN_DISABLED
+	
 	SignalBus.stop_moving.connect(_on_stop_moving)
 	SignalBus.continue_moving.connect(_on_continue_moving)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)

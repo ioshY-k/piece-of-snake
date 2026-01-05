@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dadpidbo1my0e"]
+[gd_scene load_steps=42 format=3 uid="uid://dadpidbo1my0e"]
 
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
 [ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="1_v1ci8"]
@@ -26,7 +26,13 @@
 [ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="18_6gvyu"]
 [ext_resource type="AudioStream" uid="uid://deh61p1gbowcu" path="res://Snake/Sfx/ControlInputAudio.wav" id="18_fkpg4"]
 [ext_resource type="Texture2D" uid="uid://rjsn23p0eu8i" path="res://Snake/Head/TwoheadHeadRight.svg" id="18_rc105"]
+[ext_resource type="Texture2D" uid="uid://cfl68eu4wdxp8" path="res://Snake/Head/RetroHead.svg" id="19_f5tie"]
 [ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="20_7y21e"]
+[ext_resource type="Texture2D" uid="uid://bxqq6hky7iglt" path="res://Snake/Head/RetroHeadLeft.svg" id="20_o513c"]
+[ext_resource type="Texture2D" uid="uid://d38d51mxsval7" path="res://Snake/Head/RetroHeadRight.svg" id="21_55bls"]
+[ext_resource type="Texture2D" uid="uid://b6frh331lojjo" path="res://Snake/Head/CentipedeHead.svg" id="22_ydbpe"]
+[ext_resource type="Texture2D" uid="uid://bdo851t4ohvji" path="res://Snake/Head/CentipedeHeadLeft.svg" id="23_0fthv"]
+[ext_resource type="Texture2D" uid="uid://brfh5pqv870qe" path="res://Snake/Head/CentipedeHeadRight.svg" id="24_ynhfq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_naox3"]
 animations = [{
@@ -84,6 +90,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_rc105")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_f5tie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_o513c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_55bls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ydbpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0fthv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ynhfq")
 }],
 "loop": true,
 "name": &"default",

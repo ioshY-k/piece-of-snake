@@ -3,15 +3,23 @@ extends Node
 var teleport_element_scene = load("res://MapElements/TeleportElement/teleport_element.tscn")
 var teleporters: Array[Teleporter] = []
 var map:Map
+var is_retro_ability: bool = false
+
+func instantiate_as_retro_ability():
+	is_retro_ability = true
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	map = get_parent()
-	SignalBus.round_started.connect(place_teleporters)
-	place_teleporters()
-	for teleporter in map.get_node("TeleportElements").get_children():
-		if not teleporter.is_in_group("Edge Wrap Teleporter"):
-			teleporter.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	if not RunSettings.current_char == GameConsts.CHAR_LIST.RETRO or (RunSettings.current_char == GameConsts.CHAR_LIST.RETRO and is_retro_ability):
+		SignalBus.round_started.connect(place_teleporters)
+		place_teleporters()
+	
+	if not is_retro_ability:
+		for teleporter in map.get_node("TeleportElements").get_children():
+			if not teleporter.is_in_group("Edge Wrap Teleporter"):
+				teleporter.disable()
 		
 func place_teleporters():
 	#so that area size first removes the surrounding tiles
@@ -80,7 +88,8 @@ func place_teleporters():
 func self_destruct():
 	for teleporter in map.get_node("TeleportElements").get_children():
 		if not teleporter.is_in_group("Edge Wrap Teleporter"):
-			teleporter.process_mode = Node.PROCESS_MODE_INHERIT
-	for teleporter in teleporters:
-		teleporter.queue_free()
+			teleporter.enable()
+	if RunSettings.current_char != GameConsts.CHAR_LIST.RETRO:
+		for teleporter in teleporters:
+			teleporter.queue_free()
 	queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=114 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
@@ -39,19 +39,12 @@
 [ext_resource type="Texture2D" uid="uid://boqwqs3dimyaa" path="res://Snake/Tail/TwoheadTail.svg" id="33_fi7gv"]
 [ext_resource type="Texture2D" uid="uid://khnfjxhlfodo" path="res://Snake/Body/Sprites/Twohead/TwoheadEdge.svg" id="34_bqfl2"]
 [ext_resource type="Texture2D" uid="uid://sqbl7il81wfd" path="res://Snake/Body/Sprites/Twohead/TwoheadCorner.svg" id="35_g521o"]
-[ext_resource type="Texture2D" uid="uid://cfl68eu4wdxp8" path="res://Snake/Head/RetroHead.svg" id="36_cbxrr"]
-[ext_resource type="Texture2D" uid="uid://xojdee4mu1p7" path="res://Snake/Tail/RetroTail.svg" id="37_7npx2"]
 [ext_resource type="PackedScene" uid="uid://bch88i4suqn2b" path="res://MainMenu/banners.tscn" id="37_w8io1"]
 [ext_resource type="Texture2D" uid="uid://6f6gnkek4p1g" path="res://MainMenu/MainMenuBachground.svg" id="38_ce477"]
-[ext_resource type="Texture2D" uid="uid://cu8ignm4lf8fn" path="res://Snake/Body/Sprites/Retro/RetroBody.svg" id="38_uuldf"]
 [ext_resource type="Texture2D" uid="uid://bpvwpmgpogfo2" path="res://Shop/UpgradeCards/Anchor.svg" id="39_12kcr"]
-[ext_resource type="Texture2D" uid="uid://b6frh331lojjo" path="res://Snake/Head/CentipedeHead.svg" id="39_67l25"]
 [ext_resource type="PackedScene" uid="uid://b4hoaxemc7x81" path="res://MainMenu/wandering_snakes_background.tscn" id="39_ce477"]
 [ext_resource type="Texture2D" uid="uid://cvskf4rlgc7j8" path="res://Shop/UpgradeCards/Catch.svg" id="40_bh756"]
-[ext_resource type="Texture2D" uid="uid://carx8odv71g11" path="res://Snake/Tail/CentipedeTail.svg" id="40_ohsmc"]
-[ext_resource type="Texture2D" uid="uid://fmrt4cfnf0x3" path="res://Snake/Body/Sprites/Centipede/CentipedeEdge.svg" id="41_dx3h0"]
 [ext_resource type="Texture2D" uid="uid://blxbmaeywgv0t" path="res://Shop/UpgradeCards/EdgeWrap.svg" id="41_r7e3w"]
-[ext_resource type="Texture2D" uid="uid://djr0isdrr7oa7" path="res://Snake/Body/Sprites/Centipede/CentipedeCorner.svg" id="42_aslwg"]
 [ext_resource type="Texture2D" uid="uid://dkl1bses52k5x" path="res://Shop/UpgradeCards/PiggyBank.svg" id="42_w8io1"]
 [ext_resource type="Texture2D" uid="uid://kdourpai0vr6" path="res://Shop/UpgradeCards/PlantSnake.svg" id="43_r03wj"]
 [ext_resource type="Texture2D" uid="uid://uldq0vvhi3m4" path="res://Shop/UpgradeCards/PowerNap.svg" id="44_hg2b4"]
@@ -389,21 +382,64 @@ texture_region_size = Vector2i(80, 80)
 tile_size = Vector2i(80, 80)
 sources/0 = SubResource("TileSetAtlasSource_bqfl2")
 
+[sub_resource type="GDScript" id="GDScript_ib2n2"]
+script/source = "extends TileMapLayer
+
+signal next_tile_reached
+var snake_anim_plays: bool = false
+var decreasing_menu_snake_speed: float
+
+@onready var tail_follow: PathFollow2D = $Path2D/TailFollow
+@onready var head_follow: PathFollow2D = $Path2D/HeadFollow
+@export var has_front_legs: bool
+@export var has_back_legs: bool
+
+var mask: Sprite2D
+
+var bodyparts: Array
+
+func _ready() -> void:
+	mask = $\"Path2D/HeadFollow/Head/Mask\"
+	decreasing_menu_snake_speed = get_parent().menu_snake_speed
+	
+	for child in get_children():
+		if child.get_groups().has(\"Snake\"):
+			bodyparts.append(child)
+
+func play_snake_anim():
+	snake_anim_plays = true
+	for i in bodyparts.size()+1:
+		if i < bodyparts.size():
+			bodyparts[i].hide()
+			bodyparts[(i-1)%bodyparts.size()].modulate.a = 0.0
+			show_bodypart_later(bodyparts[i], decreasing_menu_snake_speed * 2)
+		next_tile_reached.emit()
+		var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).set_parallel()
+		tween.tween_property(tail_follow, \"progress\", tail_follow.progress+80,decreasing_menu_snake_speed)
+		tween.tween_property(head_follow, \"progress\", head_follow.progress+80,decreasing_menu_snake_speed)
+		if has_front_legs:
+			tween.tween_method(_set_animation_progress, 0.0, head_follow.get_node(\"LegAnimationPlayer\").current_animation_length, decreasing_menu_snake_speed).set_trans(Tween.TRANS_LINEAR)
+		if has_back_legs:
+			tween.tween_method(_set_animation_progress, 0.0, tail_follow.get_node(\"LegAnimationPlayer\").current_animation_length, decreasing_menu_snake_speed).set_trans(Tween.TRANS_LINEAR)
+		decreasing_menu_snake_speed += 0.014
+		await tween.finished
+	decreasing_menu_snake_speed = get_parent().menu_snake_speed
+	snake_anim_plays = false
+
+func show_bodypart_later(part: Node, delay_time: float) -> void:
+	await get_tree().create_timer(delay_time).timeout
+	part.show()
+
+func _set_animation_progress(time: float):
+	if has_front_legs:
+		head_follow.get_node(\"LegAnimationPlayer\").seek(time, true)
+	if has_back_legs:
+		tail_follow.get_node(\"LegAnimationPlayer\").seek(time, true)
+"
+
 [sub_resource type="Curve2D" id="Curve2D_cbxrr"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 519, 198, 0, 0, 0, 0, 679, 198, 0, 0, 0, 0, 679, 358, 0, 0, 0, 0, 759, 358, 0, 0, 0, 0, 759, 198, 0, 0, 0, 0, 999, 198)
-}
-point_count = 6
-
-[sub_resource type="Curve2D" id="Curve2D_bqfl2"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1420, 300, 0, 0, 0, 0, 1260, 300, 0, 0, 0, 0, 1260, 380, 0, 0, 0, 0, 1420, 380, 0, 0, 0, 0, 1420, 220, 0, 0, 0, 0, 1180, 220)
-}
-point_count = 6
-
-[sub_resource type="Curve2D" id="Curve2D_gsnqn"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1260, 540, 0, 0, 0, 0, 1260, 220, 0, 0, 0, 0, 1340, 220, 0, 0, 0, 0, 1340, 380, 0, 0, 0, 0, 1420, 380, 0, 0, 0, 0, 1420, 220)
 }
 point_count = 6
 
@@ -624,13 +660,13 @@ script = ExtResource("3_ajn5b")
 
 [node name="Character4Select" type="TileMapLayer" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1199, 78)
+position = Vector2(1200, 40)
 tile_map_data = PackedByteArray("AAD7/wAAAAABAAIAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAMAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
 script = ExtResource("5_id3bs")
 
 [node name="Path2D" type="Path2D" parent="CharacterSelection/Character4Select"]
-position = Vector2(-800, -120)
+position = Vector2(-800, -79.9995)
 curve = SubResource("Curve2D_qbnp5")
 
 [node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character4Select/Path2D"]
@@ -660,50 +696,50 @@ rotation = 1.5708
 texture = ExtResource("30_t31mw")
 
 [node name="SnakeBody0" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(280, 0.000453949)
+position = Vector2(280, 40.0005)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody1" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(200, 0.000453949)
+position = Vector2(200, 40.0005)
 rotation = 1.57079
 scale = Vector2(-1, -1)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody2" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(120, 0.000453949)
+position = Vector2(120, 40.0005)
 rotation = -7.85397
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody7" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(40, 0.000453949)
+position = Vector2(40, 40.0005)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody8" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-40, 0.000453949)
+position = Vector2(-40, 40.0005)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody3" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-120, 0.000453949)
+position = Vector2(-120, 40.0005)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody4" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-200, 0.000453949)
+position = Vector2(-200, 40.0005)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody5" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-280, 0.000453949)
+position = Vector2(-280, 40.0005)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
 [node name="SnakeBody6" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-360, 0.000453949)
+position = Vector2(-360, 40.0005)
 rotation = 4.71239
 sprite = ExtResource("29_c58bg")
 char_id = 4
@@ -1095,7 +1131,7 @@ polygon = PackedVector2Array(160, 79.9998, 0, 79.9998, 0, -0.000244141, -80, -0.
 
 [node name="Character3Select" type="TileMapLayer" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1439, 338)
+position = Vector2(1280, 520)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAIAAAABAAAAAAAAAAMAAAACAAAAAAACAAIAAAACAP//AAACAAEAAAACAP7/AAACAAEAAAACAP3/AAACAAEAAAACAPz/AAACAAEAAAABAPv/AAABAAIAAAACAPv/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
 script = ExtResource("5_id3bs")
@@ -1103,7 +1139,7 @@ has_front_legs = true
 has_back_legs = true
 
 [node name="Path2D" type="Path2D" parent="CharacterSelection/Character3Select"]
-position = Vector2(-1039, -380)
+position = Vector2(-880, -560)
 curve = SubResource("Curve2D_homfb")
 
 [node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character3Select/Path2D"]
@@ -1221,57 +1257,57 @@ libraries = {
 autoplay = "salmander_walk_anim"
 
 [node name="SnakeBody0" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-39, 140)
+position = Vector2(120, -40)
 rotation = -3.14159
 sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody1" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-39, 220)
+position = Vector2(120, 40)
 scale = Vector2(-1, -1)
 is_corner = true
 sprite = ExtResource("27_dhpph")
 char_id = 3
 
 [node name="SnakeBody2" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(41, 220)
+position = Vector2(200, 40)
 rotation = -6.28319
 is_corner = true
 sprite = ExtResource("27_dhpph")
 char_id = 3
 
 [node name="SnakeBody7" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(41, 140)
+position = Vector2(200, -40)
 rotation = 0.0
 sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody8" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(41, 60.0002)
+position = Vector2(200, -120)
 rotation = 0.0
 sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody3" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(41, -19.9998)
+position = Vector2(200, -200)
 rotation = 0.0
 sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody4" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(41, -99.9998)
+position = Vector2(200, -280)
 rotation = 0.0
 sprite = ExtResource("26_o1f7t")
 char_id = 3
 
 [node name="SnakeBody5" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(41, -180)
+position = Vector2(200, -360)
 is_corner = true
 sprite = ExtResource("27_dhpph")
 char_id = 3
 
 [node name="SnakeBody6" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-39, -180)
+position = Vector2(120, -360)
 rotation = 4.71239
 sprite = ExtResource("26_o1f7t")
 char_id = 3
@@ -1284,13 +1320,13 @@ polygon = PackedVector2Array(160, 79.9998, 160, -80, 240, -80, 240, -320, 160, -
 
 [node name="Character5Select" type="TileMapLayer" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1059, 238)
+position = Vector2(1280, 520)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAIAAAABAAAAAAAAAAMAAAACAAAAAAACAAIAAAACAP//AAACAAEAAAACAP7/AAACAAEAAAACAP3/AAACAAEAAAACAPz/AAACAAEAAAABAPv/AAABAAIAAAACAPv/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_g521o")
-script = ExtResource("5_id3bs")
+script = SubResource("GDScript_ib2n2")
 
 [node name="Path2D" type="Path2D" parent="CharacterSelection/Character5Select"]
-position = Vector2(-659, -278)
+position = Vector2(-880, -560)
 curve = SubResource("Curve2D_cbxrr")
 
 [node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character5Select/Path2D"]
@@ -1318,56 +1354,56 @@ rotation = 1.5708
 texture = ExtResource("33_fi7gv")
 
 [node name="SnakeBody0" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-60, -79.9998)
+position = Vector2(-281, -362)
 rotation = 1.5708
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody1" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(20, -79.9998)
+position = Vector2(-201, -362)
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody2" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(20, 0.000244141)
+position = Vector2(-201, -282)
 rotation = -3.14159
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody3" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(20, 80.0002)
+position = Vector2(-201, -202)
 rotation = 1.5708
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody4" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(100, 80.0002)
+position = Vector2(-121, -202)
 rotation = 0.0
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody5" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(100, 0.000244141)
+position = Vector2(-121, -282)
 rotation = 0.0
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody6" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(100, -79.9998)
+position = Vector2(-121, -362)
 scale = Vector2(1, -1)
 texture = ExtResource("35_g521o")
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody7" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(180, -79.9998)
+position = Vector2(-41, -362)
 rotation = 1.5708
 texture = ExtResource("34_bqfl2")
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody8" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(260, -79.9998)
+position = Vector2(39, -362)
 rotation = 1.5708
 texture = ExtResource("34_bqfl2")
 sprite = ExtResource("34_bqfl2")
@@ -1378,208 +1414,6 @@ position = Vector2(1200, 520)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character5Area"]
 polygon = PackedVector2Array(-161, -162, -161, -322, -241, -322, -241, -402, 159, -402, 159, -322, -1, -322, -1, -162)
-
-[node name="Character6Select" type="TileMapLayer" parent="CharacterSelection"]
-position = Vector2(1319, 318)
-script = ExtResource("5_id3bs")
-
-[node name="Path2D" type="Path2D" parent="CharacterSelection/Character6Select"]
-position = Vector2(-1340, -300)
-curve = SubResource("Curve2D_bqfl2")
-
-[node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character6Select/Path2D"]
-position = Vector2(1260, 220)
-rotation = 3.14159
-progress = 720.0
-
-[node name="Head" type="Sprite2D" parent="CharacterSelection/Character6Select/Path2D/HeadFollow"]
-z_index = 11
-z_as_relative = false
-rotation = 1.5708
-texture = ExtResource("36_cbxrr")
-
-[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character6Select/Path2D/HeadFollow/Head"]
-clip_children = 1
-texture = ExtResource("25_r7e3w")
-
-[node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character6Select/Path2D"]
-position = Vector2(1340, 300)
-rotation = 3.14159
-progress = 80.0
-
-[node name="Tail" type="Sprite2D" parent="CharacterSelection/Character6Select/Path2D/TailFollow"]
-z_index = 11
-z_as_relative = false
-rotation = 1.5708
-texture = ExtResource("37_7npx2")
-
-[node name="SnakeBody0" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(0, 0.000244141)
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody1" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-80, 0.000244141)
-rotation = -3.14159
-texture = ExtResource("27_dhpph")
-is_corner = true
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody2" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-80, 80.0002)
-rotation = 1.5708
-texture = ExtResource("27_dhpph")
-is_corner = true
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody3" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(0, 80.0002)
-rotation = 1.5708
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody4" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(80, 80.0002)
-rotation = 0.0
-texture = ExtResource("27_dhpph")
-is_corner = true
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody5" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(80, 0.000244141)
-rotation = 0.0
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody6" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(80, -79.9998)
-texture = ExtResource("27_dhpph")
-is_corner = true
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody7" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(0, -79.9998)
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="SnakeBody8" parent="CharacterSelection/Character6Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-80, -79.9998)
-sprite = ExtResource("38_uuldf")
-char_id = 6
-
-[node name="Character6Area" type="Area2D" parent="CharacterSelection"]
-position = Vector2(1319, 318)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character6Area"]
-polygon = PackedVector2Array(-120, 120, -120, -120, 120, -120, 120, 120)
-
-[node name="Character7Select" type="TileMapLayer" parent="CharacterSelection"]
-position = Vector2(919, 238)
-script = ExtResource("5_id3bs")
-
-[node name="Path2D" type="Path2D" parent="CharacterSelection/Character7Select"]
-position = Vector2(-1340, -300)
-curve = SubResource("Curve2D_gsnqn")
-
-[node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character7Select/Path2D"]
-position = Vector2(1420, 300)
-rotation = -1.5708
-progress = 720.0
-
-[node name="Head" type="Sprite2D" parent="CharacterSelection/Character7Select/Path2D/HeadFollow"]
-z_index = 11
-z_as_relative = false
-rotation = 1.5708
-texture = ExtResource("39_67l25")
-
-[node name="Mask" type="Sprite2D" parent="CharacterSelection/Character7Select/Path2D/HeadFollow/Head"]
-clip_children = 1
-texture = ExtResource("25_r7e3w")
-
-[node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character7Select/Path2D"]
-position = Vector2(1260, 460.003)
-rotation = -1.5708
-progress = 80.0
-
-[node name="Tail" type="Sprite2D" parent="CharacterSelection/Character7Select/Path2D/TailFollow"]
-z_index = 11
-z_as_relative = false
-rotation = 1.5708
-texture = ExtResource("40_ohsmc")
-
-[node name="SnakeBody0" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-position = Vector2(-80, 160)
-rotation = 0.0
-texture = ExtResource("41_dx3h0")
-sprite = ExtResource("41_dx3h0")
-char_id = 7
-
-[node name="SnakeBody1" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-position = Vector2(-80, 80)
-rotation = 0.0
-texture = ExtResource("41_dx3h0")
-sprite = ExtResource("41_dx3h0")
-char_id = 7
-
-[node name="SnakeBody2" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-position = Vector2(-80, 0)
-rotation = 0.0
-texture = ExtResource("41_dx3h0")
-sprite = ExtResource("41_dx3h0")
-char_id = 7
-
-[node name="SnakeBody3" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-position = Vector2(-80, -80)
-scale = Vector2(1, -1)
-texture = ExtResource("42_aslwg")
-sprite = ExtResource("42_aslwg")
-char_id = 7
-
-[node name="SnakeBody4" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-position = Vector2(0, -80)
-rotation = 0.0
-scale = Vector2(1, -1)
-texture = ExtResource("42_aslwg")
-sprite = ExtResource("42_aslwg")
-char_id = 7
-
-[node name="SnakeBody5" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-rotation = -3.14159
-texture = ExtResource("41_dx3h0")
-sprite = ExtResource("41_dx3h0")
-char_id = 7
-
-[node name="SnakeBody6" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-position = Vector2(0, 80)
-rotation = 1.5708
-texture = ExtResource("42_aslwg")
-sprite = ExtResource("42_aslwg")
-char_id = 7
-
-[node name="SnakeBody7" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
-position = Vector2(80, 80)
-rotation = 0.0
-texture = ExtResource("42_aslwg")
-sprite = ExtResource("42_aslwg")
-char_id = 7
-
-[node name="Character7Area" type="Area2D" parent="CharacterSelection"]
-position = Vector2(1319, 318)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterSelection/Character7Area"]
-polygon = PackedVector2Array(-280, -120, -280, 40, -440, 40, -440, 120, -520, 120, -520, -200, -360, -200, -360, -120)
 
 [node name="BG" type="Sprite2D" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0.501961)
@@ -2048,10 +1882,6 @@ position = Vector2(961, 541)
 [connection signal="mouse_exited" from="CharacterSelection/Character3Area" to="CharacterSelection" method="_on_area_3_mouse_exited"]
 [connection signal="mouse_entered" from="CharacterSelection/Character5Area" to="CharacterSelection" method="_on_area_5_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character5Area" to="CharacterSelection" method="_on_area_5_mouse_exited"]
-[connection signal="mouse_entered" from="CharacterSelection/Character6Area" to="CharacterSelection" method="_on_area_6_mouse_entered"]
-[connection signal="mouse_exited" from="CharacterSelection/Character6Area" to="CharacterSelection" method="_on_area_6_mouse_exited"]
-[connection signal="mouse_entered" from="CharacterSelection/Character7Area" to="CharacterSelection" method="_on_area_7_mouse_entered"]
-[connection signal="mouse_exited" from="CharacterSelection/Character7Area" to="CharacterSelection" method="_on_area_7_mouse_exited"]
 [connection signal="mouse_entered" from="EasySlot/EasySlotArea" to="." method="_on_easy_slot_area_mouse_entered"]
 [connection signal="mouse_exited" from="EasySlot/EasySlotArea" to="." method="_on_easy_slot_area_mouse_exited"]
 [connection signal="mouse_entered" from="NormalSlot/NormalSlotArea" to="." method="_on_normal_slot_area_mouse_entered"]

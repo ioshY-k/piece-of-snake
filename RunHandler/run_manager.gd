@@ -90,11 +90,11 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.CAVE,
+		maporder = [GameConsts.MAP_LIST.TRAIN,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.FRUIT_BODY,
-						GameConsts.MAP_MODS.CAFFEINATED,
+		mapmodorder = [GameConsts.MAP_MODS.UFO,
+						GameConsts.MAP_MODS.UFO,
 						GameConsts.MAP_MODS.HEAD_SWAP,
 						GameConsts.MAP_MODS.HEAD_SWAP,
 						GameConsts.MAP_MODS.HEAD_SWAP,
@@ -132,7 +132,7 @@ func _on_round_over():
 		var datetime = Time.get_datetime_dict_from_system()
 		RunHistoryCodeManager.codestring += str(datetime.day)
 		RunHistoryCodeManager.codestring += str(datetime.hour)
-		game_over_screen.show()
+		game_over()
 	else:
 		RunHistoryCodeManager.bonus_fruits.append(str(level.fruits_overload))
 		
@@ -227,4 +227,5 @@ func update_masteries():
 	GlobalSettings.masteries[gamemode][map2] = true
 	GlobalSettings.masteries[gamemode][map3] = true
 	
-	
+func game_over():
+	game_over_screen.show()

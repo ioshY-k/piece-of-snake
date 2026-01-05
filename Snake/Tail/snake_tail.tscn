@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4ocnud8k5oe4"]
+[gd_scene load_steps=26 format=3 uid="uid://c4ocnud8k5oe4"]
 
 [ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="1_42lf2"]
 [ext_resource type="Texture2D" uid="uid://blke1i7mxvqa4" path="res://Snake/Tail/PythonTail.svg" id="1_d2p80"]
@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dv8mgw16jpiaa" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg1.svg" id="5_j2wxc"]
 [ext_resource type="Texture2D" uid="uid://c075u630qvnr" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg2.svg" id="6_rxqhe"]
 [ext_resource type="Texture2D" uid="uid://boqwqs3dimyaa" path="res://Snake/Tail/TwoheadTail.svg" id="6_xk7qb"]
+[ext_resource type="Texture2D" uid="uid://xojdee4mu1p7" path="res://Snake/Tail/RetroTail.svg" id="7_7d5ul"]
 [ext_resource type="Texture2D" uid="uid://dotitaxc5cp8k" path="res://Snake/Body/Sprites/Salamander/SalamanderLeg3.svg" id="7_gcgim"]
 [ext_resource type="Texture2D" uid="uid://gqvumevpkifo" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg1.svg" id="7_i358e"]
+[ext_resource type="Texture2D" uid="uid://carx8odv71g11" path="res://Snake/Tail/CentipedeTail.svg" id="8_8pog0"]
 [ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="9_hgmfj"]
 [ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="11_xk7qb"]
 
@@ -34,6 +36,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_xk7qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7d5ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8pog0")
 }],
 "loop": true,
 "name": &"default",

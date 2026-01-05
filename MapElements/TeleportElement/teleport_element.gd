@@ -17,3 +17,10 @@ func _check_if_destroyed():
 		SignalBus.teleport_finished.emit(self)
 		queue_free()
 	
+func disable():
+	cpu_particles_2d.hide()
+	process_mode = Node.PROCESS_MODE_DISABLED
+	
+func enable():
+	cpu_particles_2d.show()
+	process_mode = Node.PROCESS_MODE_INHERIT

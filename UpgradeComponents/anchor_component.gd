@@ -4,8 +4,6 @@ var snake_head: SnakeHead
 
 func _ready() -> void:
 	snake_head = get_parent()
-	
-	snake_head.map.get_parent().fruit_punishment *= 2
 	SignalBus.pre_next_tile_reached.connect(_on_next_tile_reached)
 
 func _on_next_tile_reached():
@@ -24,5 +22,4 @@ func _on_next_tile_reached():
 		SignalBus.stop_moving.emit(false)
 
 func self_destruct():
-	snake_head.map.get_parent().fruit_punishment /= 2
 	queue_free()

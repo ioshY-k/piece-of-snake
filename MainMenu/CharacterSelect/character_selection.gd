@@ -6,25 +6,33 @@ extends Node2D
 @onready var character_3_select: TileMapLayer = $Character3Select
 @onready var character_4_select: TileMapLayer = $Character4Select
 @onready var character_5_select: TileMapLayer = $Character5Select
+@onready var character_6_select: TileMapLayer = $Character6Select
+@onready var character_7_select: TileMapLayer = $Character7Select
 
 @onready var character_selects = [	character_0_select,
 									character_1_select,
 									character_2_select,
 									character_3_select,
 									character_4_select,
-									character_5_select]
+									character_5_select,
+									character_6_select,
+									character_7_select]
 var hovering_char_0_select: bool = false
 var hovering_char_1_select: bool = false
 var hovering_char_2_select: bool = false
 var hovering_char_3_select: bool = false
 var hovering_char_4_select: bool = false
 var hovering_char_5_select: bool = false
+var hovering_char_6_select: bool = false
+var hovering_char_7_select: bool = false
 var hovering_char_selects: Array[bool] = [	hovering_char_0_select,
 											hovering_char_1_select,
 											hovering_char_2_select,
 											hovering_char_3_select,
 											hovering_char_4_select,
-											hovering_char_5_select]
+											hovering_char_5_select,
+											hovering_char_6_select,
+											hovering_char_7_select]
 
 var char_descriptions:Dictionary = {
 	str(GameConsts.CHAR_LIST.GODOT) : "Faster than the others.",
@@ -33,6 +41,8 @@ var char_descriptions:Dictionary = {
 	str(GameConsts.CHAR_LIST.ELEPHANT) : "Carry over your Currency from one map to the next",
 	str(GameConsts.CHAR_LIST.CHAMELEON) : "Gain an additional multi colored Upgrade slot (not implemented yet)",
 	str(GameConsts.CHAR_LIST.TWOHEAD) : "Switch directions everytime they collect a fruit",
+	str(GameConsts.CHAR_LIST.RETRO) : "When exiting the screen, enter at the opposite side. On hit you lose the game.",
+	str(GameConsts.CHAR_LIST.CENTIPEDE) : "If no direction is held, you won't move forward.",
 	
 }
 @onready var label: Label = $"../CharacterInfo/Label"
@@ -87,6 +97,17 @@ func _on_area_5_mouse_entered() -> void:
 func _on_area_5_mouse_exited() -> void:
 	char_unhovered(5)
 
+func _on_area_6_mouse_entered() -> void:
+	char_hovered(6)
+
+func _on_area_6_mouse_exited() -> void:
+	char_unhovered(6)
+	
+func _on_area_7_mouse_entered() -> void:
+	char_hovered(7)
+
+func _on_area_7_mouse_exited() -> void:
+	char_unhovered(7)
 
 func char_hovered(char_number):
 	for char_select in hovering_char_selects:

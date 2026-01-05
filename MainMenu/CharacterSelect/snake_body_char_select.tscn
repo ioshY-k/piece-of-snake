@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://wm1t2vil6cf3"]
+[gd_scene load_steps=63 format=3 uid="uid://wm1t2vil6cf3"]
 
 [ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdge.svg" id="1_bvreb"]
 [ext_resource type="Script" uid="uid://d3jsbv4fevho1" path="res://MainMenu/CharacterSelect/snake_body_char_selesct.gd" id="3_3vutc"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://coivi4lnbt5il" path="res://Snake/Body/Sprites/Python/PythonCornerDeco3.svg" id="8_fqqh2"]
 [ext_resource type="Texture2D" uid="uid://rwv5twyug4vd" path="res://Snake/Body/Sprites/Twohead/TwoheadEdgeDeco.svg" id="8_ifccg"]
 [ext_resource type="Texture2D" uid="uid://ce4q171cm3a3r" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco1.svg" id="9_1ry8j"]
+[ext_resource type="Texture2D" uid="uid://dm1jvfxu35edw" path="res://Snake/Body/Sprites/Centipede/CentipedeEdgeDeco.svg" id="9_6kqv6"]
 [ext_resource type="Texture2D" uid="uid://b1w5j2hfw4yn7" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco4.svg" id="9_74jyd"]
 [ext_resource type="Texture2D" uid="uid://btoc6aiqntju2" path="res://Snake/Body/Sprites/Python/PythonCornerDeco4.svg" id="10_4agko"]
 [ext_resource type="Texture2D" uid="uid://c1u63dn06jeth" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco5.svg" id="10_fqqh2"]
@@ -23,18 +24,24 @@
 [ext_resource type="Texture2D" uid="uid://ogtl5ds36hks" path="res://Snake/Body/Sprites/Python/PythonCornerDeco5.svg" id="11_ng0u8"]
 [ext_resource type="Texture2D" uid="uid://cflx380ns7ajo" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco7.svg" id="12_ng0u8"]
 [ext_resource type="Texture2D" uid="uid://di6uyaq3i0ipk" path="res://Snake/Body/Sprites/Salamander/SalamanderCornerDeco.svg" id="13_4agko"]
+[ext_resource type="Texture2D" uid="uid://rfdy8dcan36e" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco1.svg" id="13_7c4mv"]
 [ext_resource type="Texture2D" uid="uid://bt1qfyl7tpv13" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco2.svg" id="13_8uups"]
 [ext_resource type="Texture2D" uid="uid://bdg4m20hpayc8" path="res://Snake/Body/Sprites/Python/PythonCornerDeco7.svg" id="13_po6n4"]
 [ext_resource type="Texture2D" uid="uid://qhrlb5wnohjr" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco3.svg" id="14_lyed7"]
 [ext_resource type="Texture2D" uid="uid://bi83rui4wv04f" path="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco2.svg" id="15_s05ry"]
 [ext_resource type="Texture2D" uid="uid://dcoami0xjookl" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco4.svg" id="18_egwse"]
+[ext_resource type="Texture2D" uid="uid://bvlwk1vvj4b4y" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco2.svg" id="19_vhjhm"]
 [ext_resource type="Texture2D" uid="uid://cymdsxj387ixg" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco4.svg" id="21_lx60m"]
 [ext_resource type="Texture2D" uid="uid://dpd8t7ycmptuc" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco5.svg" id="21_wod30"]
 [ext_resource type="Texture2D" uid="uid://3i3t6j6s6hgt" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco6.svg" id="23_fkg3s"]
+[ext_resource type="Texture2D" uid="uid://b60hho23elbnp" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco3.svg" id="23_ie8xo"]
 [ext_resource type="Texture2D" uid="uid://bn0334kuvfdkf" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco7.svg" id="26_1ry8j"]
 [ext_resource type="Texture2D" uid="uid://cyq7ehja2s4g6" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco6.svg" id="27_s05ry"]
+[ext_resource type="Texture2D" uid="uid://b6p27yux38ejy" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco4.svg" id="29_xkymc"]
 [ext_resource type="Texture2D" uid="uid://bofigr8h18sce" path="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco6.svg" id="30_ifccg"]
 [ext_resource type="Texture2D" uid="uid://doglw7dag23r0" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco7.svg" id="31_ifccg"]
+[ext_resource type="Texture2D" uid="uid://d0xtfm83p3nel" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco5.svg" id="33_k2hvb"]
+[ext_resource type="Texture2D" uid="uid://dg6ov8448pt5j" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco6.svg" id="38_fnk1d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5mbj"]
 
@@ -58,6 +65,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_ifccg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6kqv6")
 }],
 "loop": true,
 "name": &"default",
@@ -89,6 +102,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7c4mv")
 }],
 "loop": true,
 "name": &"default",
@@ -115,6 +134,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_s05ry")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vhjhm")
 }],
 "loop": true,
 "name": &"default",
@@ -141,6 +166,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ie8xo")
 }],
 "loop": true,
 "name": &"default",
@@ -167,6 +198,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xkymc")
 }],
 "loop": true,
 "name": &"default",
@@ -193,6 +230,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_k2hvb")
 }],
 "loop": true,
 "name": &"default",
@@ -219,6 +262,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("30_ifccg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_fnk1d")
 }],
 "loop": true,
 "name": &"default",
@@ -242,6 +291,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_ifccg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -271,6 +326,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7c4mv")
 }],
 "loop": true,
 "name": &"default",
@@ -297,6 +358,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_s05ry")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vhjhm")
 }],
 "loop": true,
 "name": &"default",
@@ -323,6 +390,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ie8xo")
 }],
 "loop": true,
 "name": &"default",
@@ -349,6 +422,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xkymc")
 }],
 "loop": true,
 "name": &"default",
@@ -375,6 +454,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_k2hvb")
 }],
 "loop": true,
 "name": &"default",
@@ -401,6 +486,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("30_ifccg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_fnk1d")
 }],
 "loop": true,
 "name": &"default",
@@ -424,6 +515,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("31_ifccg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null

@@ -91,6 +91,13 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 		headswap.instantiate_as_twohead_ability()
 		headswap.remove_from_group("MapMod")
 		current_map.add_child(headswap)
+	if RunSettings.current_char == GameConsts.CHAR_LIST.RETRO:
+		var edge_wrap = current_map.edge_wrap_component_scene.instantiate()
+		edge_wrap.instantiate_as_retro_ability()
+		current_map.add_child(edge_wrap)
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CENTIPEDE:
+		var anchor = current_map.anchor_component_scene.instantiate()
+		current_map.snake_head.add_child(anchor)
 	
 	snake_head = $Map/SnakeHead
 	snake_tail = $Map/SnakeTail
@@ -128,9 +135,9 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(3)
+		time_meter.initiate_time_bar(10)
 	else:
-		time_meter.initiate_time_bar(5)
+		time_meter.initiate_time_bar(50)
 	
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
@@ -160,6 +167,8 @@ func on_snake_got_hit():
 		
 	if fruit_punishment > 0:
 		hit_audio.play()
+		if RunSettings.current_char == GameConsts.CHAR_LIST.RETRO:
+			get_parent().game_over()
 	
 	decrement_points(fruit_punishment)
 	SignalBus.got_hit_and_punished.emit()
