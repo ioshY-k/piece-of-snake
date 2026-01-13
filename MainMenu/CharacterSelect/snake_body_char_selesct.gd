@@ -28,6 +28,12 @@ func _ready() -> void:
 		snake_body_deco_corner.hide()
 		snake_body_deco_edge.frame = char_id
 		play_edge_deco_anim_tweens()
+		
+	hide_body_behind_end()
+
+func hide_body_behind_end():
+	if name == "SnakeBody0" or name == "SnakeBody8":
+		hide()
 
 func play_edge_deco_anim_tweens():
 	await character_select.next_tile_reached

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://wm1t2vil6cf3"]
+[gd_scene load_steps=60 format=3 uid="uid://wm1t2vil6cf3"]
 
 [ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdge.svg" id="1_bvreb"]
 [ext_resource type="Script" uid="uid://d3jsbv4fevho1" path="res://MainMenu/CharacterSelect/snake_body_char_selesct.gd" id="3_3vutc"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://c533nc6l2tr2q" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco3.svg" id="8_4lq34"]
 [ext_resource type="Texture2D" uid="uid://coivi4lnbt5il" path="res://Snake/Body/Sprites/Python/PythonCornerDeco3.svg" id="8_fqqh2"]
 [ext_resource type="Texture2D" uid="uid://rwv5twyug4vd" path="res://Snake/Body/Sprites/Twohead/TwoheadEdgeDeco.svg" id="8_ifccg"]
-[ext_resource type="Texture2D" uid="uid://ce4q171cm3a3r" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco1.svg" id="9_1ry8j"]
 [ext_resource type="Texture2D" uid="uid://dm1jvfxu35edw" path="res://Snake/Body/Sprites/Centipede/CentipedeEdgeDeco.svg" id="9_6kqv6"]
 [ext_resource type="Texture2D" uid="uid://b1w5j2hfw4yn7" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco4.svg" id="9_74jyd"]
 [ext_resource type="Texture2D" uid="uid://btoc6aiqntju2" path="res://Snake/Body/Sprites/Python/PythonCornerDeco4.svg" id="10_4agko"]
@@ -28,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://bt1qfyl7tpv13" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco2.svg" id="13_8uups"]
 [ext_resource type="Texture2D" uid="uid://bdg4m20hpayc8" path="res://Snake/Body/Sprites/Python/PythonCornerDeco7.svg" id="13_po6n4"]
 [ext_resource type="Texture2D" uid="uid://qhrlb5wnohjr" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco3.svg" id="14_lyed7"]
-[ext_resource type="Texture2D" uid="uid://bi83rui4wv04f" path="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco2.svg" id="15_s05ry"]
 [ext_resource type="Texture2D" uid="uid://dcoami0xjookl" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco4.svg" id="18_egwse"]
 [ext_resource type="Texture2D" uid="uid://bvlwk1vvj4b4y" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco2.svg" id="19_vhjhm"]
 [ext_resource type="Texture2D" uid="uid://cymdsxj387ixg" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco4.svg" id="21_lx60m"]
@@ -36,9 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://3i3t6j6s6hgt" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco6.svg" id="23_fkg3s"]
 [ext_resource type="Texture2D" uid="uid://b60hho23elbnp" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco3.svg" id="23_ie8xo"]
 [ext_resource type="Texture2D" uid="uid://bn0334kuvfdkf" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco7.svg" id="26_1ry8j"]
-[ext_resource type="Texture2D" uid="uid://cyq7ehja2s4g6" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco6.svg" id="27_s05ry"]
+[ext_resource type="Texture2D" uid="uid://bsx5w2swp6v8q" path="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco4.svg" id="28_avfd8"]
 [ext_resource type="Texture2D" uid="uid://b6p27yux38ejy" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco4.svg" id="29_xkymc"]
-[ext_resource type="Texture2D" uid="uid://bofigr8h18sce" path="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco6.svg" id="30_ifccg"]
 [ext_resource type="Texture2D" uid="uid://doglw7dag23r0" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco7.svg" id="31_ifccg"]
 [ext_resource type="Texture2D" uid="uid://d0xtfm83p3nel" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco5.svg" id="33_k2hvb"]
 [ext_resource type="Texture2D" uid="uid://dg6ov8448pt5j" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco6.svg" id="38_fnk1d"]
@@ -98,7 +95,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_1ry8j")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -133,7 +130,7 @@ animations = [{
 "texture": ExtResource("13_8uups")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_s05ry")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -197,7 +194,7 @@ animations = [{
 "texture": ExtResource("21_lx60m")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("28_avfd8")
 }, {
 "duration": 1.0,
 "texture": null
@@ -258,10 +255,10 @@ animations = [{
 "texture": ExtResource("23_fkg3s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_s05ry")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_ifccg")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -322,7 +319,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_1ry8j")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -357,7 +354,7 @@ animations = [{
 "texture": ExtResource("13_8uups")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_s05ry")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -421,7 +418,7 @@ animations = [{
 "texture": ExtResource("21_lx60m")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("28_avfd8")
 }, {
 "duration": 1.0,
 "texture": null
@@ -482,10 +479,10 @@ animations = [{
 "texture": ExtResource("23_fkg3s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_s05ry")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_ifccg")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null

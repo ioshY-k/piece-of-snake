@@ -677,12 +677,12 @@ rotation = -7.85397
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
-[node name="SnakeBody7" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+[node name="SnakeBody6" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(40, 0.000453949)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
-[node name="SnakeBody8" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+[node name="SnakeBody7" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(-40, 0.000453949)
 sprite = ExtResource("29_c58bg")
 char_id = 4
@@ -702,7 +702,7 @@ position = Vector2(-280, 0.000453949)
 sprite = ExtResource("29_c58bg")
 char_id = 4
 
-[node name="SnakeBody6" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
+[node name="SnakeBody8" parent="CharacterSelection/Character4Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(-360, 0.000453949)
 rotation = 4.71239
 sprite = ExtResource("29_c58bg")
@@ -1056,7 +1056,7 @@ is_corner = true
 sprite = ExtResource("16_5x28t")
 char_id = 2
 
-[node name="SnakeBody8" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
+[node name="SnakeBody6" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(-120, -40)
 rotation = 0.0
 scale = Vector2(-1, 1)
@@ -1081,7 +1081,7 @@ rotation = -7.85398
 sprite = ExtResource("15_dbhad")
 char_id = 2
 
-[node name="SnakeBody6" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
+[node name="SnakeBody8" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(-360, -120)
 rotation = 4.71239
 sprite = ExtResource("15_dbhad")
@@ -1246,7 +1246,7 @@ rotation = 0.0
 sprite = ExtResource("26_o1f7t")
 char_id = 3
 
-[node name="SnakeBody8" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
+[node name="SnakeBody6" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(41, 60.0002)
 rotation = 0.0
 sprite = ExtResource("26_o1f7t")
@@ -1270,7 +1270,7 @@ is_corner = true
 sprite = ExtResource("27_dhpph")
 char_id = 3
 
-[node name="SnakeBody6" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
+[node name="SnakeBody8" parent="CharacterSelection/Character3Select" instance=ExtResource("8_r0x8f")]
 position = Vector2(-39, -180)
 rotation = 4.71239
 sprite = ExtResource("26_o1f7t")
@@ -1573,6 +1573,14 @@ position = Vector2(80, 80)
 rotation = 0.0
 texture = ExtResource("42_aslwg")
 sprite = ExtResource("42_aslwg")
+char_id = 7
+
+[node name="SnakeBody8" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
+clip_children = 0
+position = Vector2(80, 0)
+rotation = 0.0
+texture = ExtResource("41_dx3h0")
+sprite = ExtResource("41_dx3h0")
 char_id = 7
 
 [node name="Character7Area" type="Area2D" parent="CharacterSelection"]

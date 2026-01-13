@@ -90,7 +90,7 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.TRAIN,
+		maporder = [GameConsts.MAP_LIST.STADIUM,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
 		mapmodorder = [GameConsts.MAP_MODS.UFO,

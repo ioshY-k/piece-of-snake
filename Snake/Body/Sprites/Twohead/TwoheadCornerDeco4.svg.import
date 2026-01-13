@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi83rui4wv04f"
-path="res://.godot/imported/TwoheadCornerDeco2.svg-8e8e132f3d16579c1f45f8e572183b76.ctex"
+uid="uid://bsx5w2swp6v8q"
+path="res://.godot/imported/TwoheadCornerDeco4.svg-0df772f4b33d9f5b6b15bf9dfef0b5ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco2.svg"
-dest_files=["res://.godot/imported/TwoheadCornerDeco2.svg-8e8e132f3d16579c1f45f8e572183b76.ctex"]
+source_file="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco4.svg"
+dest_files=["res://.godot/imported/TwoheadCornerDeco4.svg-0df772f4b33d9f5b6b15bf9dfef0b5ac.ctex"]
 
 [params]
 

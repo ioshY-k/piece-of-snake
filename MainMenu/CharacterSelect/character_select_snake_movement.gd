@@ -26,7 +26,6 @@ func play_snake_anim():
 	for i in bodyparts.size()+1:
 		if i < bodyparts.size():
 			bodyparts[i].hide()
-			bodyparts[(i-1)%bodyparts.size()].modulate.a = 0.0
 			show_bodypart_later(bodyparts[i], decreasing_menu_snake_speed * 2)
 		next_tile_reached.emit()
 		var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).set_parallel()
@@ -36,10 +35,12 @@ func play_snake_anim():
 			tween.tween_method(_set_animation_progress, 0.0, head_follow.get_node("LegAnimationPlayer").current_animation_length, decreasing_menu_snake_speed).set_trans(Tween.TRANS_LINEAR)
 		if has_back_legs:
 			tween.tween_method(_set_animation_progress, 0.0, tail_follow.get_node("LegAnimationPlayer").current_animation_length, decreasing_menu_snake_speed).set_trans(Tween.TRANS_LINEAR)
-		decreasing_menu_snake_speed += 0.014
+		decreasing_menu_snake_speed += 0.005
 		await tween.finished
 	decreasing_menu_snake_speed = get_parent().menu_snake_speed
 	snake_anim_plays = false
+	for bodypart in bodyparts:
+		bodypart.hide_body_behind_end()
 
 func show_bodypart_later(part: Node, delay_time: float) -> void:
 	await get_tree().create_timer(delay_time).timeout

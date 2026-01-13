@@ -1,6 +1,6 @@
 extends Node2D
 
-var shadow_offset = Vector2(5,10)
+var shadow_offset = Vector2(7,15)
 @onready var shadow: Sprite2D = $Shadow
 
 func _ready() -> void:
