@@ -1,5 +1,7 @@
 class_name SnakeBody extends AnimatedSprite2D
 
+const SNAKE_CORNER_APPEAR_GRADIENT = preload("res://Snake/Body/snake_corner_appear_gradient.gdshader")
+const BLACK_CORNER = preload("res://Shader/black_corner.gdshader")
 
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
 enum BODY_TYPE {STRAIGHT_U, STRAIGHT_R, STRAIGHT_D, STRAIGHT_L, CORNER_UR, CORNER_DR, CORNER_DL, CORNER_UL, CORNER_RU, CORNER_RD, CORNER_LD, CORNER_LU}
@@ -15,6 +17,7 @@ var is_overlapped: bool = false
 const snake_body_scene = preload("res://Snake/Body/snake_body.tscn")
 
 @onready var solid_element: SolidElement = $SolidElement
+@onready var snake_shadow_component: Node2D = $SnakeShadowComponent
 
 @onready var snake_body_deco_edge: AnimatedSprite2D = $SnakeBodyDecoEdge
 @onready var snake_body_deco_corner: Node2D = $SnakeBodyCornerDeco
@@ -32,8 +35,6 @@ static func new_snakebody(snake_path, next_direction) -> SnakeBody:
 	return snake_body
 
 func _ready() -> void:
-	material = material.duplicate()
-	snake_body_deco_edge.material = snake_body_deco_edge.material.duplicate()
 	if is_tetris:
 		map = get_parent().get_parent()
 		frame = 2 + (RunSettings.current_char * 9) #frames per snake
@@ -45,10 +46,21 @@ func _ready() -> void:
 		snake_body_deco_edge.hide()
 		for deco in snake_body_deco_corner.get_children():
 			deco.frame = RunSettings.current_char
+			
+		var corner_material = ShaderMaterial.new()
+		corner_material.shader = SNAKE_CORNER_APPEAR_GRADIENT
+		material = corner_material.duplicate()
+		
+		var corner_shadow_material = ShaderMaterial.new()
+		corner_shadow_material.shader = BLACK_CORNER
+		snake_shadow_component.shadow.material = corner_shadow_material.duplicate()
 		play_corner_deco_anim_tweens()
 	else:
 		snake_body_deco_corner.hide()
 		snake_body_deco_edge.frame = RunSettings.current_char
+		material = material.duplicate()
+		snake_body_deco_edge.material = snake_body_deco_edge.material.duplicate()
+		snake_shadow_component.shadow.material = snake_shadow_component.shadow.material.duplicate()
 		play_edge_deco_anim_tweens()
 	
 	if map.diffusing:
@@ -251,6 +263,8 @@ func disappear_shader():
 	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_method(func(value):
 		material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
+	tween.tween_method(func(value):
+		snake_shadow_component.shadow.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
 	if is_corner:
 		hide_deco_corner_in_order()
 	else:
@@ -261,6 +275,8 @@ func appear_shader():
 	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_method(func(value):
 		material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
+	tween.tween_method(func(value):
+		snake_shadow_component.shadow.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
 	if is_corner:
 		show_deco_corner_in_order()
 	else:

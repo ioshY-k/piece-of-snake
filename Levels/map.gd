@@ -202,6 +202,8 @@ func teleport_to_starting_position():
 		snake_body.frame = 1 + (RunSettings.current_char * 9) #frames per snake
 		add_child(snake_body)
 		snake_path_bodyparts.append(snake_body)
+		snake_body.material.set_shader_parameter("mask_height", 1.0)
+		snake_body.snake_shadow_component.shadow.material.set_shader_parameter("mask_height", 1.0)
 	
 	#place snake head
 	snake_head.current_tile = (starting_position / GameConsts.TILE_SIZE)

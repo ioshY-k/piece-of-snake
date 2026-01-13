@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c4ocnud8k5oe4"]
+[gd_scene load_steps=27 format=3 uid="uid://c4ocnud8k5oe4"]
 
 [ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="1_42lf2"]
 [ext_resource type="Texture2D" uid="uid://blke1i7mxvqa4" path="res://Snake/Tail/PythonTail.svg" id="1_d2p80"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://carx8odv71g11" path="res://Snake/Tail/CentipedeTail.svg" id="8_8pog0"]
 [ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="9_hgmfj"]
 [ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="11_xk7qb"]
+[ext_resource type="PackedScene" uid="uid://d3u2m1t45c6pb" path="res://Snake/snake_shadow_component.tscn" id="16_u817d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pp2ak"]
 animations = [{
@@ -480,3 +481,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_8pog0")
 }
 autoplay = "salmander_walk_anim"
+
+[node name="SnakeShadowComponent" parent="." instance=ExtResource("16_u817d")]

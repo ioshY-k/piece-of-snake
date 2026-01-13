@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dadpidbo1my0e"]
+[gd_scene load_steps=43 format=3 uid="uid://dadpidbo1my0e"]
 
 [ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="1_2n2vc"]
 [ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="1_v1ci8"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://b6frh331lojjo" path="res://Snake/Head/CentipedeHead.svg" id="22_ydbpe"]
 [ext_resource type="Texture2D" uid="uid://bdo851t4ohvji" path="res://Snake/Head/CentipedeHeadLeft.svg" id="23_0fthv"]
 [ext_resource type="Texture2D" uid="uid://brfh5pqv870qe" path="res://Snake/Head/CentipedeHeadRight.svg" id="24_ynhfq"]
+[ext_resource type="PackedScene" uid="uid://d3u2m1t45c6pb" path="res://Snake/snake_shadow_component.tscn" id="34_0fthv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_naox3"]
 animations = [{
@@ -544,3 +545,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_ihijh")
 }
 autoplay = "salamander_walk_anim"
+
+[node name="SnakeShadowComponent" parent="." instance=ExtResource("34_0fthv")]

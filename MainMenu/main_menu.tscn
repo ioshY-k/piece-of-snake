@@ -1501,7 +1501,7 @@ clip_children = 1
 texture = ExtResource("25_r7e3w")
 
 [node name="TailFollow" type="PathFollow2D" parent="CharacterSelection/Character7Select/Path2D"]
-position = Vector2(1260, 460.003)
+position = Vector2(1260, 460.004)
 rotation = -1.5708
 progress = 80.0
 
