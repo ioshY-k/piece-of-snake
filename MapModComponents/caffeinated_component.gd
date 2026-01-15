@@ -10,7 +10,7 @@ func _ready() -> void:
 	map.snake_head.current_snake_speed /= 1.2
 	map.snake_tail.base_snake_speed /= 1.2
 	map.snake_tail.current_snake_speed /= 1.2
-	if RunSettings.current_char == GameConsts.CHAR_LIST.GODOT:
+	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH:
 		for obstacle in map.obstacle_elements.get_children(false):
 			if obstacle.tween != null:
 				obstacle.tween.set_speed_scale(1.2*1.4)
@@ -25,7 +25,7 @@ func self_destruct():
 	map.snake_head.current_snake_speed *= 1.2
 	map.snake_tail.base_snake_speed *= 1.2
 	map.snake_tail.current_snake_speed *= 1.2
-	if RunSettings.current_char == GameConsts.CHAR_LIST.GODOT:
+	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH:
 		for obstacle in map.obstacle_elements.get_children(false):
 			if obstacle.tween != null:
 				obstacle.tween.set_speed_scale(1.4)

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="79.999985"
+   height="79.999527"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="OstrichCornerDeco.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.026553"
+     inkscape:cx="12.965573"
+     inkscape:cy="28.374657"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6">
+    <sodipodi:guide
+       position="-17.851514,128.00025"
+       orientation="0,128"
+       id="guide7"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="110.14849,128.00025"
+       orientation="128,0"
+       id="guide8"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="110.14849,0.00025472552"
+       orientation="0,-128"
+       id="guide9"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-17.851514,0.00025472552"
+       orientation="-128,0"
+       id="guide10"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <ellipse
+     style="fill:#a69f79;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linecap:round;paint-order:fill markers stroke"
+     id="path1"
+     cx="32.299725"
+     cy="12.764738"
+     rx="2.2567494"
+     ry="3.878788" />
+  <ellipse
+     style="fill:#a69f79;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linecap:round;paint-order:fill markers stroke"
+     id="path1-8"
+     cx="47.251453"
+     cy="12.681966"
+     rx="2.2567494"
+     ry="3.878788" />
+  <ellipse
+     style="fill:#a69f79;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linecap:round;paint-order:fill markers stroke"
+     id="path1-2"
+     cx="39.999992"
+     cy="39.999763"
+     rx="3.0691376"
+     ry="5.2750802" />
+  <ellipse
+     style="fill:#a69f79;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linecap:round;paint-order:fill markers stroke"
+     id="path1-5"
+     cx="45.653042"
+     cy="58.999714"
+     rx="1.4443611"
+     ry="2.4824955" />
+  <ellipse
+     style="fill:#a69f79;fill-opacity:1;stroke:#1b1b1b;stroke-width:0;stroke-linecap:round;paint-order:fill markers stroke"
+     id="path1-5-1"
+     cx="34.454956"
+     cy="59.083553"
+     rx="1.4443611"
+     ry="2.4824955" />
+</svg>

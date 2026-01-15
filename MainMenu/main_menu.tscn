@@ -1,15 +1,15 @@
-[gd_scene load_steps=122 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=155 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
 [ext_resource type="Script" uid="uid://bxtwe3vmh1r3t" path="res://MainMenu/CharacterSelect/character_selection.gd" id="3_ajn5b"]
 [ext_resource type="Script" uid="uid://do7c0otvtn8cf" path="res://MainMenu/CharacterSelect/character_select_snake_movement.gd" id="5_id3bs"]
 [ext_resource type="FontFile" uid="uid://gocqippkw1ds" path="res://Fonts/Odin Rounded - Bold.otf" id="6_ashh5"]
-[ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/snake_head_placeholder.svg" id="6_b3er0"]
-[ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="7_qmlj8"]
-[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Godoticon/GodoticonCorner.svg" id="8_e240q"]
+[ext_resource type="Texture2D" uid="uid://oivymajq3u0k" path="res://Snake/Head/OstrichHead.svg" id="6_b3er0"]
+[ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/OstrichTail.svg" id="7_qmlj8"]
+[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Ostrich/OstrichCorner.svg" id="8_e240q"]
 [ext_resource type="PackedScene" uid="uid://wm1t2vil6cf3" path="res://MainMenu/CharacterSelect/snake_body_char_select.tscn" id="8_r0x8f"]
-[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdge.svg" id="9_8n28k"]
+[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Ostrich/OstrichEdge.svg" id="9_8n28k"]
 [ext_resource type="Texture2D" uid="uid://db8iystjruos5" path="res://Snake/Head/PythonHead.svg" id="11_qmlj8"]
 [ext_resource type="Texture2D" uid="uid://blke1i7mxvqa4" path="res://Snake/Tail/PythonTail.svg" id="12_e240q"]
 [ext_resource type="Texture2D" uid="uid://cun27qgpp0q2v" path="res://Snake/Body/Sprites/Python/PythonEdge.svg" id="13_dbhad"]
@@ -55,14 +55,24 @@
 [ext_resource type="Texture2D" uid="uid://dkl1bses52k5x" path="res://Shop/UpgradeCards/PiggyBank.svg" id="42_w8io1"]
 [ext_resource type="Texture2D" uid="uid://kdourpai0vr6" path="res://Shop/UpgradeCards/PlantSnake.svg" id="43_r03wj"]
 [ext_resource type="Texture2D" uid="uid://uldq0vvhi3m4" path="res://Shop/UpgradeCards/PowerNap.svg" id="44_hg2b4"]
+[ext_resource type="Texture2D" uid="uid://c2day5kv1wveg" path="res://MainMenu/CharSelectBackgroundsvg.svg" id="44_ohsmc"]
 [ext_resource type="Texture2D" uid="uid://bbpwacdc1jvg4" path="res://Shop/UpgradeCards/RubberBand.svg" id="45_fi7gv"]
+[ext_resource type="Texture2D" uid="uid://bekjkpim1b3ee" path="res://MainMenu/CharSelectBackgroundCentipede.svg" id="45_l1oxh"]
 [ext_resource type="Texture2D" uid="uid://br2gk6nyd7rj3" path="res://Shop/UpgradeCards/ShinyGhost.svg" id="46_bqfl2"]
+[ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="46_cnps2"]
+[ext_resource type="Texture2D" uid="uid://dar25tr52iskj" path="res://MainMenu/CharSelectBackgroundChameleon.svg" id="46_nhp1e"]
 [ext_resource type="PackedScene" uid="uid://bc2jtreq5e56n" path="res://Shop/UpgradeCards/upgrade_card.tscn" id="46_wclgf"]
 [ext_resource type="Texture2D" uid="uid://ihytxj6bny85" path="res://MainMenu/PlayButtonSlot.svg" id="47_2384g"]
+[ext_resource type="Texture2D" uid="uid://3c36ip7s70jk" path="res://MainMenu/CharSelectBackgroundOstrich.svg" id="47_cnps2"]
 [ext_resource type="Texture2D" uid="uid://cnyoy2hjcisf2" path="res://Shop/UpgradeCards/snek1.png" id="47_g521o"]
+[ext_resource type="Texture2D" uid="uid://cbkouwqe8c2yd" path="res://MainMenu/CharSelectBackgroundPython.svg" id="48_cl1ps"]
 [ext_resource type="Texture2D" uid="uid://7a4e3l6e3ots" path="res://Shop/UpgradeCards/TimeStop1.svg" id="48_ib2n2"]
 [ext_resource type="Texture2D" uid="uid://c7obdob4kbeny" path="res://MainMenu/GameLogo.png" id="49_12kcr"]
+[ext_resource type="Texture2D" uid="uid://byte0bqmjmtk0" path="res://MainMenu/CharSelectBackgroundRetro.svg" id="49_k32k8"]
+[ext_resource type="Texture2D" uid="uid://bn4gqxh4jwiga" path="res://MainMenu/CharSelectBackgroundSalamander.svg" id="50_0xf51"]
 [ext_resource type="Texture2D" uid="uid://43j8mxxjuxa4" path="res://MainMenu/WanderingFruit.png" id="50_bh756"]
+[ext_resource type="Texture2D" uid="uid://8uwy0ctehdjx" path="res://MainMenu/CharSelectBackgroundTwoHead.svg" id="51_xgqc5"]
+[ext_resource type="Texture2D" uid="uid://buo10ffxg1ypm" path="res://MainMenu/CharSelectBackgroundElephant.svg" id="52_wbja4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x28t"]
 texture = ExtResource("3_5de1l")
@@ -407,6 +417,83 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="Curve" id="Curve_cl1ps"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_k32k8"]
+colors = PackedColorArray(1, 0.686667, 0.53, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nhp1e"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_cnps2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_cl1ps"]
+colors = PackedColorArray(0.36, 1, 0.925333, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k32k8"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_0xf51"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_xgqc5"]
+colors = PackedColorArray(1, 0.86, 0.3, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wbja4"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_bfl83"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_42kjd"]
+colors = PackedColorArray(0.601333, 1, 0.48, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kl84b"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_6dgjd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_5epgp"]
+colors = PackedColorArray(1, 0.964, 0.28, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1slrq"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_cilnp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_y4ohu"]
+colors = PackedColorArray(1, 0.34, 0.28, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3633"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_h58yn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_8lox4"]
+colors = PackedColorArray(0.5375, 0.25, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ipvhp"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_vpfv2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.248941, 0.756342), 0.0, 0.0, 0, 0, Vector2(0.486229, 0.109388), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_46os7"]
+colors = PackedColorArray(0.9, 0.9, 0.9, 1, 1, 1, 1, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wclgf"]
 size = Vector2(174, 161)
 
@@ -625,7 +712,7 @@ script = ExtResource("3_ajn5b")
 [node name="Character4Select" type="TileMapLayer" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1199, 78)
-tile_map_data = PackedByteArray("AAD7/wAAAAABAAIAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAMAAAA=")
+tile_map_data = PackedByteArray("AAD7/wAAAAABAAIAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAMAAAD//wcAAAABAAAAAAD8/wYAAAABAAAAAAD6/wUAAAABAAAAAAD4/wUAAAABAAAAAAD4/wYAAAABAAAAAAD5/wYAAAABAAAAAAD5/wcAAAABAAAAAAD6/wcAAAABAAAAAAD8/wUAAAAAAAMAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
 script = ExtResource("5_id3bs")
 
@@ -752,27 +839,22 @@ rotation = 1.5708
 texture = ExtResource("7_qmlj8")
 
 [node name="SnakeBody0" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(360, 40.0002)
 sprite = ExtResource("9_8n28k")
 
 [node name="SnakeBody1" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(280, 40.0002)
 sprite = ExtResource("9_8n28k")
 
 [node name="SnakeBody2" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(200, 40.0002)
 sprite = ExtResource("9_8n28k")
 
 [node name="SnakeBody3" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(120, 40.0002)
 sprite = ExtResource("9_8n28k")
 
 [node name="SnakeBody4" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(40, 40.0002)
 rotation = 0.0
 scale = Vector2(-1, 1)
@@ -780,23 +862,19 @@ is_corner = true
 sprite = ExtResource("8_e240q")
 
 [node name="SnakeBody5" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(40, -39.9998)
 is_corner = true
 sprite = ExtResource("8_e240q")
 
 [node name="SnakeBody6" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(-40, -39.9998)
 sprite = ExtResource("9_8n28k")
 
 [node name="SnakeBody7" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(-120, -39.9998)
 sprite = ExtResource("9_8n28k")
 
 [node name="SnakeBody8" parent="CharacterSelection/Character0Select" instance=ExtResource("8_r0x8f")]
-self_modulate = Color(0.62, 1, 0.778333, 1)
 position = Vector2(-200, -39.9998)
 sprite = ExtResource("9_8n28k")
 
@@ -1512,7 +1590,6 @@ rotation = 1.5708
 texture = ExtResource("40_ohsmc")
 
 [node name="SnakeBody0" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(-80, 160)
 rotation = 0.0
 texture = ExtResource("41_dx3h0")
@@ -1520,7 +1597,6 @@ sprite = ExtResource("41_dx3h0")
 char_id = 7
 
 [node name="SnakeBody1" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(-80, 80)
 rotation = 0.0
 texture = ExtResource("41_dx3h0")
@@ -1528,7 +1604,6 @@ sprite = ExtResource("41_dx3h0")
 char_id = 7
 
 [node name="SnakeBody2" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(-80, 0)
 rotation = 0.0
 texture = ExtResource("41_dx3h0")
@@ -1536,7 +1611,6 @@ sprite = ExtResource("41_dx3h0")
 char_id = 7
 
 [node name="SnakeBody3" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(-80, -80)
 scale = Vector2(1, -1)
 texture = ExtResource("42_aslwg")
@@ -1544,7 +1618,6 @@ sprite = ExtResource("42_aslwg")
 char_id = 7
 
 [node name="SnakeBody4" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(0, -80)
 rotation = 0.0
 scale = Vector2(1, -1)
@@ -1553,14 +1626,12 @@ sprite = ExtResource("42_aslwg")
 char_id = 7
 
 [node name="SnakeBody5" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 rotation = -3.14159
 texture = ExtResource("41_dx3h0")
 sprite = ExtResource("41_dx3h0")
 char_id = 7
 
 [node name="SnakeBody6" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(0, 80)
 rotation = 1.5708
 texture = ExtResource("42_aslwg")
@@ -1568,7 +1639,6 @@ sprite = ExtResource("42_aslwg")
 char_id = 7
 
 [node name="SnakeBody7" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(80, 80)
 rotation = 0.0
 texture = ExtResource("42_aslwg")
@@ -1576,7 +1646,6 @@ sprite = ExtResource("42_aslwg")
 char_id = 7
 
 [node name="SnakeBody8" parent="CharacterSelection/Character7Select" instance=ExtResource("8_r0x8f")]
-clip_children = 0
 position = Vector2(80, 0)
 rotation = 0.0
 texture = ExtResource("41_dx3h0")
@@ -1590,10 +1659,230 @@ position = Vector2(1319, 318)
 polygon = PackedVector2Array(-280, -120, -280, 40, -440, 40, -440, 120, -520, 120, -520, -200, -360, -200, -360, -120)
 
 [node name="BG" type="Sprite2D" parent="CharacterSelection"]
-self_modulate = Color(1, 1, 1, 0.501961)
-position = Vector2(1152, 374)
-scale = Vector2(1.03056, 0.899057)
+self_modulate = Color(1, 1, 1, 0.717647)
+position = Vector2(1159, 358)
+scale = Vector2(1.06444, 0.970595)
 texture = ExtResource("31_bh756")
+
+[node name="BGColors" type="Sprite2D" parent="CharacterSelection"]
+position = Vector2(1159, 358)
+texture = ExtResource("44_ohsmc")
+
+[node name="BGColorsCentipede" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("45_l1oxh")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsCentipede"]
+position = Vector2(-260, -100)
+emitting = false
+amount = 504
+texture = ExtResource("46_cnps2")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(80, 80)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_cl1ps")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_k32k8")
+
+[node name="BGColorsChameleon" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("46_nhp1e")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsChameleon"]
+position = Vector2(280, -20)
+emitting = false
+amount = 504
+texture = SubResource("CompressedTexture2D_nhp1e")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(80, 210.045)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_cnps2")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_cl1ps")
+
+[node name="BGColorsOstrich" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("47_cnps2")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsOstrich"]
+position = Vector2(40, 240)
+emitting = false
+amount = 504
+texture = SubResource("CompressedTexture2D_k32k8")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(256.25, 53.26)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_0xf51")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_xgqc5")
+
+[node name="BGColorsPython" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("48_cl1ps")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsPython"]
+position = Vector2(-200, 200)
+emitting = false
+amount = 504
+texture = SubResource("CompressedTexture2D_wbja4")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(148.515, 125.35)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_bfl83")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_42kjd")
+
+[node name="BGColorsRetro" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("49_k32k8")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsRetro"]
+position = Vector2(160, -60)
+emitting = false
+amount = 504
+texture = SubResource("CompressedTexture2D_kl84b")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(80, 80)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_6dgjd")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_5epgp")
+
+[node name="BGColorsSalamander" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("50_0xf51")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsSalamander"]
+position = Vector2(0, 80)
+emitting = false
+amount = 504
+texture = SubResource("CompressedTexture2D_1slrq")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(255.515, 108.43)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_cilnp")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_y4ohu")
+
+[node name="BGColorsTwohead" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("51_xgqc5")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsTwohead"]
+position = Vector2(0, -160)
+emitting = false
+amount = 504
+texture = SubResource("CompressedTexture2D_r3633")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(211.23, 80)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_h58yn")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_8lox4")
+
+[node name="BGColorsElephant" type="Sprite2D" parent="CharacterSelection"]
+visible = false
+position = Vector2(1159, 358)
+texture = ExtResource("52_wbja4")
+
+[node name="CharselectParticles" type="CPUParticles2D" parent="CharacterSelection/BGColorsElephant"]
+position = Vector2(-20, -280)
+emitting = false
+amount = 504
+texture = SubResource("CompressedTexture2D_ipvhp")
+lifetime = 1.66
+one_shot = true
+explosiveness = 0.94
+lifetime_randomness = 0.64
+emission_shape = 3
+emission_rect_extents = Vector2(327.28, 80)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 333.33
+initial_velocity_max = 333.33
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_vpfv2")
+color = Color(1, 1, 1, 0.470588)
+color_ramp = SubResource("Gradient_46os7")
 
 [node name="CharacterInfo" type="Sprite2D" parent="."]
 position = Vector2(393, 908)
@@ -1763,6 +2052,8 @@ scale = Vector2(1.285, 1.285)
 gamemode = 2
 
 [node name="CardParticles" type="Node2D" parent="."]
+z_index = -1
+z_as_relative = false
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CardParticles"]
 position = Vector2(920, -65)
@@ -1954,8 +2245,6 @@ scale_curve_x = SubResource("Curve_ce477")
 scale_curve_y = SubResource("Curve_0aybo")
 color = Color(1, 1, 1, 0.231373)
 
-[node name="WanderingSnakesBackground" parent="." instance=ExtResource("39_ce477")]
-
 [node name="WanderingFruit" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.117647)
 position = Vector2(1486, 371)
@@ -2043,6 +2332,8 @@ text = "Show Banners"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(961, 541)
+
+[node name="WanderingSnakesBackground" parent="." instance=ExtResource("39_ce477")]
 
 [connection signal="mouse_entered" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_exited"]

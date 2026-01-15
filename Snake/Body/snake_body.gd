@@ -68,9 +68,6 @@ func _ready() -> void:
 		$SnakeBodyCornerDeco/SnakeBodyCornerDecoBack4/CornerDiffusionHoleBack.show()
 		$SnakeBodyCornerDeco/SnakeBodyCornerDecoFront4/CornerDiffusionHoleFront.show()
 	
-	if RunSettings.current_char == GameConsts.CHAR_LIST.CENTIPEDE:
-		clip_children = CanvasItem.CLIP_CHILDREN_DISABLED
-	
 	SignalBus.stop_moving.connect(_on_stop_moving)
 	SignalBus.continue_moving.connect(_on_continue_moving)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
@@ -269,8 +266,12 @@ func disappear_shader():
 		hide_deco_corner_in_order()
 	else:
 		tween.tween_method(func(value):
-			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
-		
+			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed*2)
+	SignalBus.round_over.connect(func():
+		tween.pause())
+	SignalBus.round_started.connect(func():
+		tween.play())
+
 func appear_shader():
 	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_method(func(value):
@@ -281,7 +282,7 @@ func appear_shader():
 		show_deco_corner_in_order()
 	else:
 		tween.tween_method(func(value):
-			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
+			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed/2.5)
 
 func show_deco_corner_in_order():
 	if snake_body_deco_corner.get_children().size() != 14:

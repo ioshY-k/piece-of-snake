@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://c4ocnud8k5oe4"]
+[gd_scene load_steps=31 format=3 uid="uid://c4ocnud8k5oe4"]
 
-[ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/snake_tail_placeholder.svg" id="1_42lf2"]
+[ext_resource type="Texture2D" uid="uid://dqpvcsxdfpwpx" path="res://Snake/Tail/OstrichTail.svg" id="1_42lf2"]
 [ext_resource type="Texture2D" uid="uid://blke1i7mxvqa4" path="res://Snake/Tail/PythonTail.svg" id="1_d2p80"]
 [ext_resource type="Script" uid="uid://dvg2ys4h7imig" path="res://Snake/Tail/snake_tail.gd" id="2_d2p80"]
 [ext_resource type="Texture2D" uid="uid://bern8n2x7rbkn" path="res://Snake/Tail/SalamanderTail.svg" id="3_016m1"]
@@ -15,7 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://carx8odv71g11" path="res://Snake/Tail/CentipedeTail.svg" id="8_8pog0"]
 [ext_resource type="Texture2D" uid="uid://dog1juipog1id" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg2.svg" id="9_hgmfj"]
 [ext_resource type="Texture2D" uid="uid://cmh6m6nnvqkjc" path="res://Snake/Body/Sprites/Chameleon/ChameleonLeg3.svg" id="11_xk7qb"]
+[ext_resource type="Texture2D" uid="uid://c1ostv386a8eq" path="res://Snake/Body/Sprites/Ostrich/OstrichLeg1.svg" id="16_bm0yp"]
 [ext_resource type="PackedScene" uid="uid://d3u2m1t45c6pb" path="res://Snake/snake_shadow_component.tscn" id="16_u817d"]
+[ext_resource type="Texture2D" uid="uid://ca567kccmo71s" path="res://Snake/Body/Sprites/Ostrich/OstrichLeg2.svg" id="17_3kkl3"]
+[ext_resource type="Texture2D" uid="uid://cetikjikta42x" path="res://Snake/Body/Sprites/Ostrich/OstrichLeg3.svg" id="18_nco4k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pp2ak"]
 animations = [{
@@ -57,6 +60,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_i358e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bm0yp")
 }],
 "loop": true,
 "name": &"default",
@@ -71,6 +77,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_hgmfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3kkl3")
 }],
 "loop": true,
 "name": &"default",
@@ -85,6 +94,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_xk7qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nco4k")
 }],
 "loop": true,
 "name": &"default",
@@ -99,6 +111,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_i358e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bm0yp")
 }],
 "loop": true,
 "name": &"default",
@@ -113,6 +128,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_hgmfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3kkl3")
 }],
 "loop": true,
 "name": &"default",
@@ -127,6 +145,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_xk7qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nco4k")
 }],
 "loop": true,
 "name": &"default",
@@ -278,6 +299,155 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-0.416995]
+}
+
+[sub_resource type="Animation" id="Animation_bm0yp"]
+resource_name = "ostrich_walk_anim"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightLeg1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6, -18.8822), Vector2(7, 1.76309), Vector2(6, -18.8822), Vector2(7, 1.76309)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightLeg1:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.35339, 1.87762, 1.35339, 1.87762]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightLeg1/RightLeg2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, -7), Vector2(16, -7), Vector2(16, -7), Vector2(16, -7)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightLeg1/RightLeg2:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.70665, -1.79133, -0.70665, -1.79133]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightLeg1/RightLeg2/RightLeg3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, 17), Vector2(4, 17)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RightLeg1/RightLeg2/RightLeg3:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.416995, -0.416995]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LeftLeg1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-6, 1.11777), Vector2(-7, -21.2369), Vector2(-6, 1.11777), Vector2(-7, -21.2369)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LeftLeg1:rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.45509, -0.687936, -1.45509, -0.687936]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LeftLeg1/LeftLeg2:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, -7), Vector2(16, -7), Vector2(16, -7), Vector2(16, -7)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LeftLeg1/LeftLeg2:rotation")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.41016, -0.745314, -1.41016, -0.745314]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("LeftLeg1/LeftLeg2/LeftLeg3:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0437512, 18.8035), Vector2(0.0437512, 18.8035), Vector2(0.0437512, 18.8035), Vector2(0.0437512, 18.8035)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("LeftLeg1/LeftLeg2/LeftLeg3:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.72132, -0.239795, -0.72132, -0.239795]
 }
 
 [sub_resource type="Animation" id="Animation_xk7qb"]
@@ -432,6 +602,7 @@ tracks/11/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8pog0"]
 _data = {
 &"RESET": SubResource("Animation_7d5ul"),
+&"ostrich_walk_anim": SubResource("Animation_bm0yp"),
 &"salmander_walk_anim": SubResource("Animation_xk7qb")
 }
 
@@ -439,13 +610,13 @@ _data = {
 z_index = 15
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_pp2ak")
-frame = 2
-frame_progress = 0.420714
+frame_progress = 0.44455
 script = ExtResource("2_d2p80")
 
 [node name="RightLeg1" type="AnimatedSprite2D" parent="."]
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_j2wxc")
+frame_progress = 0.258522
 offset = Vector2(7.5, -5)
 
 [node name="RightLeg2" type="AnimatedSprite2D" parent="RightLeg1"]
@@ -462,12 +633,16 @@ z_index = -1
 position = Vector2(-12, -34)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_r6okd")
+frame = 2
+frame_progress = 0.358965
 offset = Vector2(7.5, -5)
 
 [node name="LeftLeg2" type="AnimatedSprite2D" parent="LeftLeg1"]
 z_index = -1
 position = Vector2(16, -7)
 sprite_frames = SubResource("SpriteFrames_i358e")
+frame = 2
+frame_progress = 0.440425
 offset = Vector2(1, 10)
 
 [node name="LeftLeg3" type="AnimatedSprite2D" parent="LeftLeg1/LeftLeg2"]
@@ -475,6 +650,8 @@ z_index = -1
 position = Vector2(4, 17)
 rotation = -0.416995
 sprite_frames = SubResource("SpriteFrames_hgmfj")
+frame = 2
+frame_progress = 0.249988
 
 [node name="LegAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

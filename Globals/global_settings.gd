@@ -6,22 +6,22 @@ var language = languages.GERMAN
 var masteries_json_path = "user://masteries.json"
 var masteries = {
 	"EASY" : {
-		"GODOT" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
 		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
 	},
 	"NORMAL" : {
-		"GODOT" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
 		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
 	},
 	"HARD" : {
-		"GODOT" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
 		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
 	},
 	"ASCENSION" : {
-		"GODOT" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
 		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
 	}

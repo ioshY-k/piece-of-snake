@@ -35,12 +35,12 @@ var hovering_char_selects: Array[bool] = [	hovering_char_0_select,
 											hovering_char_7_select]
 
 var char_descriptions:Dictionary = {
-	str(GameConsts.CHAR_LIST.GODOT) : "Faster than the others.",
+	str(GameConsts.CHAR_LIST.OSTRICH) : "Faster than the others.",
 	str(GameConsts.CHAR_LIST.PYTHON) : "The fruit requirement for every round has 1 less fruit\n\n(recommended for the first run)",
 	str(GameConsts.CHAR_LIST.SALAMANDER) : "Start with a random active Item",
 	str(GameConsts.CHAR_LIST.ELEPHANT) : "Carry over your Currency from one map to the next",
 	str(GameConsts.CHAR_LIST.CHAMELEON) : "Gain an additional multi colored Upgrade slot (not implemented yet)",
-	str(GameConsts.CHAR_LIST.TWOHEAD) : "Switch directions everytime they collect a fruit",
+	str(GameConsts.CHAR_LIST.TWOHEAD) : "Switch directions everytime you collect a fruit",
 	str(GameConsts.CHAR_LIST.RETRO) : "When exiting the screen, enter at the opposite side. On hit you lose the game.",
 	str(GameConsts.CHAR_LIST.CENTIPEDE) : "If no direction is held, you won't move forward.",
 	
@@ -115,7 +115,6 @@ func char_hovered(char_number):
 	hovering_char_selects[char_number] = true
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(character_selects[char_number],"scale",Vector2(HOVER_SCALE_CHANGE,HOVER_SCALE_CHANGE),0.3)
-	label.text = char_descriptions[str(char_number)]
 	
 	
 
@@ -127,4 +126,5 @@ func char_unhovered(char_number):
 
 func click_animation(char_number):
 	if char_number != -1 and not character_selects[char_number].snake_anim_plays:
-			character_selects[char_number].play_snake_anim()
+		character_selects[char_number].play_snake_anim()
+		label.text = char_descriptions[str(char_number)]

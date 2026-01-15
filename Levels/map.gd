@@ -103,6 +103,9 @@ func _ready() -> void:
 		GameConsts.CHAR_LIST.CHAMELEON:
 			snake_head.enable_legs(GameConsts.CHAR_LIST.CHAMELEON)
 			snake_tail.enable_legs(GameConsts.CHAR_LIST.CHAMELEON)
+		GameConsts.CHAR_LIST.OSTRICH:
+			snake_tail.enable_legs(GameConsts.CHAR_LIST.OSTRICH)
+			snake_head.disable_legs()
 		_:
 			snake_head.disable_legs()
 			snake_tail.disable_legs()
@@ -204,6 +207,7 @@ func teleport_to_starting_position():
 		snake_path_bodyparts.append(snake_body)
 		snake_body.material.set_shader_parameter("mask_height", 1.0)
 		snake_body.snake_shadow_component.shadow.material.set_shader_parameter("mask_height", 1.0)
+		snake_body.snake_body_deco_edge.material.set_shader_parameter("mask_height", 1.0)
 	
 	#place snake head
 	snake_head.current_tile = (starting_position / GameConsts.TILE_SIZE)
@@ -304,8 +308,9 @@ func pop_snake_bodyparts():
 	snake_path_bodyparts.pop_front().queue_free()
 	if snake_path_bodyparts.size()==0:
 		get_tree().quit()
-	unload_solidElement(snake_path_bodyparts[0])
-	snake_path_bodyparts[0].disappear_shader()
+	else:
+		unload_solidElement(snake_path_bodyparts[0])
+		snake_path_bodyparts[0].disappear_shader()
 	
 #called for moving objects like snake tail or moving obstacles so that no collision is anticipated
 func unload_solidElement(obj: Node):

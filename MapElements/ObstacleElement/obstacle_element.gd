@@ -26,11 +26,11 @@ func _ready() -> void:
 func _walk_path():
 	await SignalBus.next_tile_reached
 	tween = self.create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	if RunSettings.current_char == GameConsts.CHAR_LIST.GODOT and get_parent().get_parent().caffeinated:
+	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH and get_parent().get_parent().caffeinated:
 		tween.set_speed_scale(1.2*1.4)
 	elif get_parent().get_parent().caffeinated:
 			tween.set_speed_scale(1.2)
-	elif RunSettings.current_char == GameConsts.CHAR_LIST.GODOT:
+	elif RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH:
 			tween.set_speed_scale(1.4)
 	if loops:
 		tween.set_loops()

@@ -22,7 +22,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="40.106211"
      inkscape:cx="22.864289"
-     inkscape:cy="10.459726"
+     inkscape:cy="10.459727"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -60,10 +60,10 @@
        empspacing="5"
        enabled="true"
        visible="true" /></sodipodi:namedview><path
-     style="fill:#b6564e;fill-opacity:1;stroke:#582727;stroke-width:2.9;stroke-linecap:round;stroke-linejoin:round"
+     style="fill:#b6564e;fill-opacity:1;stroke:#582727;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
      d="m 18.763158,14.151186 -8.9914682,3.378106 -8.321763,1.410469 2.405972,-6.858393 7.0441662,-3.296979 7.334436,-7.3344357 5.78292,4.3724517"
      id="path2-8"
      sodipodi:nodetypes="ccccccc" /><path
-     style="fill:#b6564e;stroke:#582727;stroke-width:2.9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+     style="fill:#b6564e;stroke:#582727;stroke-width:0.00000037;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
      d="m 18.763158,14.151186 2.380699,-3.554324"
      id="path1" /></svg>

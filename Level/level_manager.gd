@@ -85,6 +85,8 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 	current_map.position = MapData.get_map_data0(map_index)[0]
 	current_map.scale = MapData.get_map_data0(map_index)[1]
 	disable_map()
+	snake_head = $Map/SnakeHead
+	snake_tail = $Map/SnakeTail
 	
 	if RunSettings.current_char == GameConsts.CHAR_LIST.TWOHEAD:
 		var headswap = current_map.head_swap_component_scene.instantiate()
@@ -98,9 +100,9 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 	if RunSettings.current_char == GameConsts.CHAR_LIST.CENTIPEDE:
 		var anchor = current_map.anchor_component_scene.instantiate()
 		current_map.snake_head.add_child(anchor)
-	
-	snake_head = $Map/SnakeHead
-	snake_tail = $Map/SnakeTail
+	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH:
+		snake_head.base_snake_speed /= 1.4
+		snake_tail.base_snake_speed /= 1.4
 	
 	for upgrade_id in range(len(get_parent().current_upgrades)):
 		if get_parent().current_upgrades[upgrade_id]:
@@ -118,7 +120,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	
 	snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
 	snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
-	if RunSettings.current_char == GameConsts.CHAR_LIST.GODOT:
+	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH:
 		snake_head.current_snake_speed /= 1.4
 		snake_tail.current_snake_speed /= 1.4
 	speed_boost_bar.value  = speed_boost_bar.max_value
@@ -156,8 +158,8 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 func on_snake_got_hit():
 	#disable the speedboost so that fruit cant be lost in high frequency
 	if speed_boost_bar.value < speed_boost_bar.max_value:
-		snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
-		snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
+		snake_head.current_snake_speed = snake_head.base_snake_speed
+		snake_tail.current_snake_speed = snake_tail.base_snake_speed
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 	

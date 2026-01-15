@@ -12,8 +12,30 @@ var scene_loader: SceneLoader
 @onready var normal_slot_area: Area2D = $NormalSlot/NormalSlotArea
 @onready var hard_slot_area: Area2D = $HardSlot/HardSlotArea
 
+@onready var bg_colors_centipede: Sprite2D = $CharacterSelection/BGColorsCentipede
+@onready var bg_colors_chameleon: Sprite2D = $CharacterSelection/BGColorsChameleon
+@onready var bg_colors_ostrich: Sprite2D = $CharacterSelection/BGColorsOstrich
+@onready var bg_colors_python: Sprite2D = $CharacterSelection/BGColorsPython
+@onready var bg_colors_retro: Sprite2D = $CharacterSelection/BGColorsRetro
+@onready var bg_colors_salamander: Sprite2D = $CharacterSelection/BGColorsSalamander
+@onready var bg_colors_twohead: Sprite2D = $CharacterSelection/BGColorsTwohead
+@onready var bg_colors_elephant: Sprite2D = $CharacterSelection/BGColorsElephant
+
+
+var character_panels: Dictionary
+
 
 func _ready() -> void:
+	character_panels =  {
+		str(GameConsts.CHAR_LIST.SALAMANDER) : bg_colors_salamander,
+		str(GameConsts.CHAR_LIST.OSTRICH) : bg_colors_ostrich,
+		str(GameConsts.CHAR_LIST.PYTHON) : bg_colors_python,
+		str(GameConsts.CHAR_LIST.CHAMELEON) : bg_colors_chameleon,
+		str(GameConsts.CHAR_LIST.ELEPHANT) : bg_colors_elephant,
+		str(GameConsts.CHAR_LIST.TWOHEAD) : bg_colors_twohead,
+		str(GameConsts.CHAR_LIST.RETRO) : bg_colors_retro,
+		str(GameConsts.CHAR_LIST.CENTIPEDE) : bg_colors_centipede,
+	}
 	scene_loader = get_parent()
 	character_selection.char_changed.connect(_on_char_changed)
 	play_button.turn_into_playbutton()
@@ -28,6 +50,10 @@ func _ready() -> void:
 
 func _on_char_changed(char_id: int):
 	RunSettings.current_char = char_id
+	for panel in character_panels:
+		character_panels[panel].hide()
+	character_panels[str(char_id)].show()
+	character_panels[str(char_id)].get_child(0).emitting = true
 
 
 func create_run() -> void:

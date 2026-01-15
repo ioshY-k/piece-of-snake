@@ -90,11 +90,11 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.STADIUM,
+		maporder = [GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
 		mapmodorder = [GameConsts.MAP_MODS.UFO,
-						GameConsts.MAP_MODS.UFO,
+						GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.HEAD_SWAP,
 						GameConsts.MAP_MODS.HEAD_SWAP,
 						GameConsts.MAP_MODS.HEAD_SWAP,
@@ -200,8 +200,8 @@ func update_masteries():
 		GameConsts.GAMEMODES.ASCENSION:
 			gamemode = "ASCENSION"
 	match RunSettings.current_char:
-		GameConsts.CHAR_LIST.GODOT:
-			character = "GODOT"
+		GameConsts.CHAR_LIST.OSTRICH:
+			character = "OSTRICH"
 		GameConsts.CHAR_LIST.PYTHON:
 			character = "PYTHON"
 		GameConsts.CHAR_LIST.SALAMANDER:

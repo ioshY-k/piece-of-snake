@@ -88,6 +88,10 @@ func enable_legs(char_id):
 		GameConsts.CHAR_LIST.CHAMELEON:
 			for leg in legs:
 				leg.frame = 1
+		GameConsts.CHAR_LIST.OSTRICH:
+			for leg in legs:
+				leg.frame = 2
+			leg_animation_player.play("ostrich_walk_anim")
 
 func disable_legs():
 	$LeftLeg1.hide()

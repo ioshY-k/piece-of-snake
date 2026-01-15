@@ -1,19 +1,19 @@
-[gd_scene load_steps=102 format=3 uid="uid://dobkpr5ucg8no"]
+[gd_scene load_steps=98 format=3 uid="uid://dobkpr5ucg8no"]
 
-[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Godoticon/GodoticonCorner.svg" id="1_3khtg"]
+[ext_resource type="Texture2D" uid="uid://cw6eviw6ryrd6" path="res://Snake/Body/Sprites/Ostrich/OstrichCorner.svg" id="1_3khtg"]
 [ext_resource type="Texture2D" uid="uid://rh01wewcgxxn" path="res://Snake/Body/Sprites/Python/PythonCorner.svg" id="1_r0xmd"]
 [ext_resource type="Shader" uid="uid://bd26hmnsr8mqx" path="res://Snake/Body/snake_edge_appear_gradient.gdshader" id="1_uwu44"]
 [ext_resource type="Texture2D" uid="uid://cun27qgpp0q2v" path="res://Snake/Body/Sprites/Python/PythonEdge.svg" id="2_8jmg2"]
-[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdge.svg" id="2_r0xmd"]
+[ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Ostrich/OstrichEdge.svg" id="2_r0xmd"]
 [ext_resource type="Script" uid="uid://bt650ng55hf75" path="res://Snake/Body/snake_body.gd" id="2_vx0cu"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_2xe0v"]
-[ext_resource type="Texture2D" uid="uid://ds8thpxvy448c" path="res://Snake/Body/Sprites/Godoticon/GodoticonTetri.svg" id="3_8jmg2"]
-[ext_resource type="Texture2D" uid="uid://d4lbldjc1a0u2" path="res://Snake/Body/Sprites/Godoticon/GodoticonCornerCuttable.svg" id="4_swg5f"]
-[ext_resource type="Texture2D" uid="uid://ckjtuv8dyud8g" path="res://Snake/Body/Sprites/Godoticon/GodoticonEdgeCuttable.svg" id="5_2i62l"]
-[ext_resource type="Texture2D" uid="uid://crj6in3rcg5sp" path="res://Snake/Body/Sprites/Godoticon/GodoticonRubber.svg" id="6_o0fqg"]
-[ext_resource type="Texture2D" uid="uid://ps6ic4fmgd2e" path="res://Snake/Body/Sprites/Godoticon/GodoticonRubberStart.svg" id="7_e7fu4"]
-[ext_resource type="Texture2D" uid="uid://8trjmyw4in30" path="res://Snake/Body/Sprites/Godoticon/GodoticonRubberEnd.svg" id="8_rju27"]
-[ext_resource type="Texture2D" uid="uid://cj0r2q26mi1bj" path="res://Snake/Body/Sprites/Godoticon/GodoticonRubberCenter.svg" id="9_pnw4c"]
+[ext_resource type="Texture2D" uid="uid://ds8thpxvy448c" path="res://Snake/Body/Sprites/Ostrich/GodoticonTetri.svg" id="3_8jmg2"]
+[ext_resource type="Texture2D" uid="uid://d4lbldjc1a0u2" path="res://Snake/Body/Sprites/Ostrich/GodoticonCornerCuttable.svg" id="4_swg5f"]
+[ext_resource type="Texture2D" uid="uid://ckjtuv8dyud8g" path="res://Snake/Body/Sprites/Ostrich/GodoticonEdgeCuttable.svg" id="5_2i62l"]
+[ext_resource type="Texture2D" uid="uid://crj6in3rcg5sp" path="res://Snake/Body/Sprites/Ostrich/GodoticonRubber.svg" id="6_o0fqg"]
+[ext_resource type="Texture2D" uid="uid://ps6ic4fmgd2e" path="res://Snake/Body/Sprites/Ostrich/GodoticonRubberStart.svg" id="7_e7fu4"]
+[ext_resource type="Texture2D" uid="uid://8trjmyw4in30" path="res://Snake/Body/Sprites/Ostrich/GodoticonRubberEnd.svg" id="8_rju27"]
+[ext_resource type="Texture2D" uid="uid://cj0r2q26mi1bj" path="res://Snake/Body/Sprites/Ostrich/GodoticonRubberCenter.svg" id="9_pnw4c"]
 [ext_resource type="Texture2D" uid="uid://bpn11muqc4tih" path="res://Snake/Body/Sprites/Python/PythonEdgeDeco.svg" id="10_swg5f"]
 [ext_resource type="Texture2D" uid="uid://b3bl7kqotdjy3" path="res://Snake/Body/Sprites/Python/PythonRubber.svg" id="12_egqnd"]
 [ext_resource type="Texture2D" uid="uid://df60u4h843ky6" path="res://Snake/Body/Sprites/Python/PythonRubberStart.svg" id="13_45k87"]
@@ -34,24 +34,17 @@
 [ext_resource type="Texture2D" uid="uid://dpjirwwc2dah3" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdge.svg" id="23_pehkl"]
 [ext_resource type="Texture2D" uid="uid://bxrvlvhn6xghu" path="res://Snake/Body/Sprites/Elephant/ElephantCorner.svg" id="24_bmnuf"]
 [ext_resource type="Texture2D" uid="uid://cylor60les28q" path="res://Snake/Body/Sprites/Elephant/ElephantEdge.svg" id="25_cmfqk"]
-[ext_resource type="Texture2D" uid="uid://cg4t76a33038e" path="res://Snake/Body/Sprites/Godoticon/GodotEdgeDeco.svg" id="26_15hkn"]
 [ext_resource type="Texture2D" uid="uid://sqbl7il81wfd" path="res://Snake/Body/Sprites/Twohead/TwoheadCorner.svg" id="27_vh5ly"]
-[ext_resource type="Texture2D" uid="uid://dcgqbesxba5ay" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco1.svg" id="28_15hkn"]
 [ext_resource type="Texture2D" uid="uid://davhdqla26joo" path="res://Snake/Body/Sprites/Salamander/SalamanderEdgeDeco.svg" id="28_j03uc"]
 [ext_resource type="Texture2D" uid="uid://khnfjxhlfodo" path="res://Snake/Body/Sprites/Twohead/TwoheadEdge.svg" id="28_ythfm"]
 [ext_resource type="Texture2D" uid="uid://dlo0pbcaoij6y" path="res://Snake/Body/Sprites/Chameleon/ChameleonEdgeDeco.svg" id="29_3hmgf"]
 [ext_resource type="Texture2D" uid="uid://cu8ignm4lf8fn" path="res://Snake/Body/Sprites/Retro/RetroBody.svg" id="29_aees1"]
-[ext_resource type="Texture2D" uid="uid://dorw1lhh3eldc" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco2.svg" id="29_towqx"]
-[ext_resource type="Texture2D" uid="uid://c533nc6l2tr2q" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco3.svg" id="30_pehkl"]
 [ext_resource type="Texture2D" uid="uid://djr0isdrr7oa7" path="res://Snake/Body/Sprites/Centipede/CentipedeCorner.svg" id="30_st1h7"]
 [ext_resource type="Texture2D" uid="uid://fmrt4cfnf0x3" path="res://Snake/Body/Sprites/Centipede/CentipedeEdge.svg" id="31_cmflm"]
-[ext_resource type="Texture2D" uid="uid://b1w5j2hfw4yn7" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco4.svg" id="31_wigrb"]
 [ext_resource type="Texture2D" uid="uid://hq6cw4ctfwwi" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco2.svg" id="32_bkuq3"]
 [ext_resource type="Texture2D" uid="uid://bf2v06l0oqwtw" path="res://Snake/Body/Sprites/Elephant/ElephantEdgeDeco.svg" id="32_kgumr"]
-[ext_resource type="Texture2D" uid="uid://c1u63dn06jeth" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco5.svg" id="32_tq0ap"]
-[ext_resource type="Texture2D" uid="uid://c28og01tmmejm" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco6.svg" id="33_0u3ak"]
 [ext_resource type="Texture2D" uid="uid://b51co2g1ccwns" path="res://UpgradeComponents/Diffusion/EdgeHoles.svg" id="34_52di7"]
-[ext_resource type="Texture2D" uid="uid://cflx380ns7ajo" path="res://Snake/Body/Sprites/Godoticon/GodotCornerDeco7.svg" id="34_pmbl3"]
+[ext_resource type="Texture2D" uid="uid://dew4t6lprro8k" path="res://Snake/Body/Sprites/Ostrich/OstrichEdgeDeco.svg" id="34_cmflm"]
 [ext_resource type="Texture2D" uid="uid://qhrlb5wnohjr" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco3.svg" id="35_3hmgf"]
 [ext_resource type="Texture2D" uid="uid://di6uyaq3i0ipk" path="res://Snake/Body/Sprites/Salamander/SalamanderCornerDeco.svg" id="36_hoayf"]
 [ext_resource type="Texture2D" uid="uid://rwv5twyug4vd" path="res://Snake/Body/Sprites/Twohead/TwoheadEdgeDeco.svg" id="36_ythfm"]
@@ -59,14 +52,17 @@
 [ext_resource type="Texture2D" uid="uid://dcoami0xjookl" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco4.svg" id="39_bultr"]
 [ext_resource type="Texture2D" uid="uid://dm1jvfxu35edw" path="res://Snake/Body/Sprites/Centipede/CentipedeEdgeDeco.svg" id="40_tje8h"]
 [ext_resource type="Texture2D" uid="uid://dpd8t7ycmptuc" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco5.svg" id="42_bmnuf"]
+[ext_resource type="Texture2D" uid="uid://c56822e1xccwn" path="res://Snake/Body/Sprites/Ostrich/OstrichCornerDeco2.svg" id="43_5qb7a"]
 [ext_resource type="Texture2D" uid="uid://rfdy8dcan36e" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco1.svg" id="44_35xk1"]
 [ext_resource type="Texture2D" uid="uid://3i3t6j6s6hgt" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco6.svg" id="44_cmfqk"]
 [ext_resource type="Texture2D" uid="uid://cymdsxj387ixg" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco4.svg" id="45_uwu44"]
 [ext_resource type="Texture2D" uid="uid://bn0334kuvfdkf" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco7.svg" id="47_moy07"]
 [ext_resource type="Texture2D" uid="uid://bhaj12eon1evl" path="res://UpgradeComponents/Diffusion/CornerHoles.svg" id="49_wkua3"]
 [ext_resource type="Texture2D" uid="uid://bvlwk1vvj4b4y" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco2.svg" id="50_rxl8o"]
+[ext_resource type="Texture2D" uid="uid://cdtkeaojq3n2y" path="res://Snake/Body/Sprites/Ostrich/OstrichCornerDeco4.svg" id="51_wfwtg"]
 [ext_resource type="Texture2D" uid="uid://b60hho23elbnp" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco3.svg" id="54_kt6ix"]
 [ext_resource type="Texture2D" uid="uid://doglw7dag23r0" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco7.svg" id="55_wkua3"]
+[ext_resource type="Texture2D" uid="uid://dyuxqvxnan4hj" path="res://Snake/Body/Sprites/Ostrich/OstrichCornerDeco5.svg" id="59_n7166"]
 [ext_resource type="Texture2D" uid="uid://bsx5w2swp6v8q" path="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco4.svg" id="59_tje8h"]
 [ext_resource type="Texture2D" uid="uid://b6p27yux38ejy" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco4.svg" id="60_5kuy0"]
 [ext_resource type="Texture2D" uid="uid://d0xtfm83p3nel" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco5.svg" id="65_b4b0e"]
@@ -301,15 +297,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwu44"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmflm"]
 shader = ExtResource("1_uwu44")
-shader_parameter/mask_height = 0.555
+shader_parameter/mask_height = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0u3ak"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("26_15hkn")
+"texture": ExtResource("34_cmflm")
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_swg5f")
@@ -352,7 +348,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("28_15hkn")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -384,7 +380,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("29_towqx")
+"texture": ExtResource("43_5qb7a")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_ese67")
@@ -416,7 +412,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("30_pehkl")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_718ry")
@@ -448,7 +444,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("31_wigrb")
+"texture": ExtResource("51_wfwtg")
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_2fwst")
@@ -491,7 +487,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("32_tq0ap")
+"texture": ExtResource("59_n7166")
 }, {
 "duration": 1.0,
 "texture": ExtResource("16_ese67")
@@ -523,7 +519,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_0u3ak")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -555,7 +551,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_pmbl3")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_e7fu4")
@@ -590,7 +586,7 @@ load_path = "res://.godot/imported/PythonCornerDeco1.svg-dbde01441bca644d7440a23
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("28_15hkn")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_0u3ak")
@@ -622,7 +618,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("29_towqx")
+"texture": ExtResource("43_5qb7a")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_ese67")
@@ -654,7 +650,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("30_pehkl")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_718ry")
@@ -686,7 +682,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("31_wigrb")
+"texture": ExtResource("51_wfwtg")
 }, {
 "duration": 1.0,
 "texture": null
@@ -718,7 +714,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("32_tq0ap")
+"texture": ExtResource("59_n7166")
 }, {
 "duration": 1.0,
 "texture": ExtResource("16_ese67")
@@ -753,7 +749,7 @@ load_path = "res://.godot/imported/PythonCornerDeco6.svg-13415304514542ba657b141
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_0u3ak")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_pmbl3")
@@ -788,7 +784,7 @@ load_path = "res://.godot/imported/PythonCornerDeco7.svg-e817863ebfa9c96d36aa40f
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_pmbl3")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_j03uc")
@@ -1604,7 +1600,7 @@ collision_layer = 32
 collision_mask = 96
 
 [node name="SnakeBodyDecoEdge" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_uwu44")
+material = SubResource("ShaderMaterial_cmflm")
 sprite_frames = SubResource("SpriteFrames_0u3ak")
 offset = Vector2(0, 40)
 
