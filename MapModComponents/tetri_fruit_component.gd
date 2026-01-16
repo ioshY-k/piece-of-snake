@@ -19,9 +19,10 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 		return
 	var tetris = constellations[randi()%constellations.size()].instantiate()
 	tetrises.append(tetris)
-	for child: SnakeBody in tetris.get_children():
-		child.is_tetris = true
-	map.add_child(tetris)
+	for child in tetris.get_children():
+		if child is SnakeBody:
+			child.is_tetris = true
+	map.find_child("ObstacleElements").add_child(tetris)
 	tetris.position = TileHelper.tile_to_position(map.snake_head.next_tile)
 	match map.snake_head.next_tile - map.snake_head.current_tile:
 		Vector2i.UP:
@@ -32,15 +33,35 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 			tetris.rotation_degrees = 180
 		Vector2i.LEFT:
 			tetris.rotation_degrees = -90
-	for tetris_block in tetris.get_children():
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	
+	var children_reverse_order = tetris.get_children().duplicate()
+	children_reverse_order.reverse()
+	for tetris_block in children_reverse_order:
 		map.temporary_obstacles.append(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
+		#spawn animation
+		tetris_block.scale.x = 0
+		tween.tween_property(tetris_block, "scale:x", 1, 0.15)
+	
 	
 func _check_tail_reached_tetri():
+	var tween = null
+	var tetrises_to_erase = []
 	for tetris in tetrises:
-		if TileHelper.position_to_tile(tetris.position) == TileHelper.position_to_tile(map.snake_tail.position):
+		if !is_instance_valid(tetris):
+			continue
+		if TileHelper.position_to_tile(tetris.get_child(-1).global_position) == TileHelper.position_to_tile(map.snake_tail.global_position):
 			for tetris_block in tetris.get_children():
 				map.temporary_obstacles.erase(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
 			tetrises.erase(tetris)
+			tetrises_to_erase.append(tetris)
+			if tween == null:
+				tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT).set_parallel(true)
+			tween.tween_property(tetris, "scale:x", 0, 0.2)
+	if tween != null:
+		await tween.finished
+	for tetris in tetrises_to_erase:
+		if is_instance_valid(tetris):
 			tetris.queue_free()
 
 func self_destruct():

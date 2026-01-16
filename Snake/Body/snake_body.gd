@@ -36,8 +36,10 @@ static func new_snakebody(snake_path, next_direction) -> SnakeBody:
 
 func _ready() -> void:
 	if is_tetris:
-		map = get_parent().get_parent()
+		map = get_parent().get_parent().get_parent()
 		frame = 2 + (RunSettings.current_char * 9) #frames per snake
+		material = null
+		snake_shadow_component.queue_free()
 	else:
 		map = get_parent()
 	snake_head = map.snake_head
@@ -58,7 +60,9 @@ func _ready() -> void:
 	else:
 		snake_body_deco_corner.hide()
 		snake_body_deco_edge.frame = RunSettings.current_char
-		material = material.duplicate()
+		#tetrifruit snakebodies lose their material
+		if material != null:
+			material = material.duplicate()
 		snake_body_deco_edge.material = snake_body_deco_edge.material.duplicate()
 		snake_shadow_component.shadow.material = snake_shadow_component.shadow.material.duplicate()
 		play_edge_deco_anim_tweens()
@@ -268,9 +272,11 @@ func disappear_shader():
 		tween.tween_method(func(value):
 			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed*2)
 	SignalBus.round_over.connect(func():
-		tween.pause())
+		if tween.is_valid():
+			tween.pause())
 	SignalBus.round_started.connect(func():
-		tween.play())
+		if tween.is_valid():
+			tween.play())
 
 func appear_shader():
 	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
@@ -283,6 +289,12 @@ func appear_shader():
 	else:
 		tween.tween_method(func(value):
 			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed/2.5)
+	SignalBus.round_over.connect(func():
+		if tween.is_valid():
+			tween.pause())
+	SignalBus.round_started.connect(func():
+		if tween.is_valid():
+			tween.play())
 
 func show_deco_corner_in_order():
 	if snake_body_deco_corner.get_children().size() != 14:

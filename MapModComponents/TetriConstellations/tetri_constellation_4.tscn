@@ -11,9 +11,14 @@ position = Vector2(160, 80)
 position = Vector2(-160, 80)
 flip_h = true
 
+[node name="SnakeBody2" parent="." instance=ExtResource("1_qdxnt")]
+position = Vector2(80, 80)
+frame = 47
+frame_progress = 0.996861
+
 [node name="SnakeBody" parent="." instance=ExtResource("1_qdxnt")]
 position = Vector2(-80, 80)
 flip_h = true
 
-[node name="SnakeBody2" parent="." instance=ExtResource("1_qdxnt")]
-position = Vector2(80, 80)
+[node name="ConstellationLocation" type="Node2D" parent="."]
+position = Vector2(0, 80)

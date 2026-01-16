@@ -17,7 +17,7 @@ func _ready():
 			slot.find_child("Area2D").add_child(dead_mouse)
 			dead_mouse.owned_slot_area = slot.find_child("Area2D")
 			dead_mouse.is_bought = true
-			dead_mouse.card_sprite.frame = 65
+			dead_mouse.card_sprite.frame = 66
 			dead_mouse.upgrade_id = GameConsts.UPGRADE_LIST.DEAD_MOUSE
 			var x_offset = randi_range(-300,300)
 			var y_offset = randi_range(-300,300)
@@ -40,11 +40,11 @@ func _random_item_on_area_size(upgrade_id):
 	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_3:
 		all_slots.shuffle()
 		var slot_found = false
-		var replaced_dead_mouse: UpgradeCard = null
 		for slot_type in all_slots:
 			if slot_found:
 				break
 			for slot in slot_type:
+				#slot contains a card and it is the dead mouse card
 				if not slot_found and slot.find_child("Area2D").get_child(-1) is UpgradeCard and\
 				slot.find_child("Area2D").get_child(-1).upgrade_id == GameConsts.UPGRADE_LIST.DEAD_MOUSE:
 					slot_found = true
@@ -53,13 +53,15 @@ func _random_item_on_area_size(upgrade_id):
 					var random_upgrade_id
 					match slot_type:
 						shop.passive_slots:
-							random_upgrade_id = shop.select_random_upgrade(GameConsts.UPGRADE_TYPE.PASSIVE)
+							random_upgrade_id = shop.select_random_base_upgrade(GameConsts.UPGRADE_TYPE.PASSIVE)
 						shop.bodymod_slots:
-							random_upgrade_id = shop.select_random_upgrade(GameConsts.UPGRADE_TYPE.BODYMOD)
+							random_upgrade_id = shop.select_random_base_upgrade(GameConsts.UPGRADE_TYPE.BODYMOD)
 						shop.synergy_slots:
-							random_upgrade_id = shop.select_random_upgrade(GameConsts.UPGRADE_TYPE.SYNERGY)
+							random_upgrade_id = shop.select_random_base_upgrade(GameConsts.UPGRADE_TYPE.SYNERGY)
 						shop.active_slots:
-							random_upgrade_id = shop.select_random_upgrade(GameConsts.UPGRADE_TYPE.ACTIVE)
+							random_upgrade_id = shop.select_random_base_upgrade(GameConsts.UPGRADE_TYPE.ACTIVE)
+					if random_upgrade_id == null:
+						return
 					
 					var upgrade_card: UpgradeCard = upgrade_card_scene.instantiate()
 					slot.get_node("Area2D").add_child(upgrade_card)

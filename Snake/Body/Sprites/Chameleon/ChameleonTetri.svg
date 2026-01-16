@@ -4,7 +4,7 @@
    height="80"
    version="1.1"
    id="svg6"
-   sodipodi:docname="GodoticonTetri.svg"
+   sodipodi:docname="ChameleonTetri.svg"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -21,9 +21,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="7.0898438"
-     inkscape:cx="63.188981"
-     inkscape:cy="38.717355"
+     inkscape:zoom="7.089844"
+     inkscape:cx="94.995038"
+     inkscape:cy="-8.2512394"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -66,12 +66,16 @@
        enabled="true"
        visible="true" />
   </sodipodi:namedview>
-  <rect
-     style="fill:#363d52;fill-opacity:1;stroke:#100c0c;stroke-width:8.062;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0;stroke-dasharray:none"
-     id="rect1"
-     width="145.95375"
-     height="72.238266"
-     x="7.0231199"
-     y="3.8808675"
-     ry="19.231695" />
+  <path
+     id="rect1-0"
+     style="fill:#62bff2;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+     d="m 140.27006,44.256227 c 0.95465,20.424559 -28.1148,32.494246 -42.318864,32.65846 C 65.084626,77.276352 68.573092,64.862557 54.189761,58.074156 24.04397,43.846454 29.592421,40.691159 48.676354,30.73964 59.937545,24.867373 61.422799,3.5710457 100.874,3.9905222 128.65195,4.2858794 140.42212,24.185367 140.27006,44.256227 Z"
+     sodipodi:nodetypes="ccsssc" />
+  <path
+     id="rect1-0-1"
+     style="fill:#70e6e6;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+     d="m 124.6473,43.541772 c 7.06074,4.727407 -1.92975,12.259501 -4.01781,15.27502 -6.36816,9.19668 -14.11077,14.417729 -20.53804,8.427791 0.82418,-8.242907 -12.079421,1.661042 -14.036853,-6.705576 -1.086732,-4.645003 7.662585,-15.917801 8.95394,-21.914608 0.584147,-2.712669 -2.406239,-16.171407 -0.884469,-18.040826 3.988807,-4.900049 8.151652,-6.568106 15.467532,-5.025309 4.66932,0.984679 5.41309,7.101602 8.32324,7.624734 3.43439,0.617372 6.7448,-0.846555 9.27978,2.788345 4.74141,6.798691 -2.47556,8.099076 -2.54732,17.570429 z"
+     sodipodi:nodetypes="cscssssssc"
+     inkscape:transform-center-x="3.938274"
+     inkscape:transform-center-y="-8.1794907" />
 </svg>

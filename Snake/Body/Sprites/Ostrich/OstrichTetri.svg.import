@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds8thpxvy448c"
-path="res://.godot/imported/GodoticonTetri.svg-3b8fa546198be727d15cf16242af8c6f.ctex"
+path="res://.godot/imported/OstrichTetri.svg-786ed3f45c4b33bad12677c321f10fc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Snake/Body/Sprites/Ostrich/GodoticonTetri.svg"
-dest_files=["res://.godot/imported/GodoticonTetri.svg-3b8fa546198be727d15cf16242af8c6f.ctex"]
+source_file="res://Snake/Body/Sprites/Ostrich/OstrichTetri.svg"
+dest_files=["res://.godot/imported/OstrichTetri.svg-786ed3f45c4b33bad12677c321f10fc9.ctex"]
 
 [params]
 

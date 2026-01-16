@@ -137,10 +137,11 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	fruits_left_symbol.modulate = Color(1, 1, 1)
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
-		time_meter.initiate_time_bar(10)
+	################################################################################################################
+		time_meter.initiate_time_bar(60)
 	else:
-		time_meter.initiate_time_bar(50)
-	
+		time_meter.initiate_time_bar(60)
+	################################################################################################################
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
 	round_count_down = round_count_down_scene.instantiate()

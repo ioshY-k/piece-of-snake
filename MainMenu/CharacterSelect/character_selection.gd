@@ -114,7 +114,11 @@ func char_hovered(char_number):
 		char_select = false
 	hovering_char_selects[char_number] = true
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(character_selects[char_number],"scale",Vector2(HOVER_SCALE_CHANGE,HOVER_SCALE_CHANGE),0.3)
+	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y-5,0.1)
+	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y,0.1)
+	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y-5,0.1)
+	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y,0.1)
+	label.text = char_descriptions[str(char_number)]
 	
 	
 
@@ -127,4 +131,3 @@ func char_unhovered(char_number):
 func click_animation(char_number):
 	if char_number != -1 and not character_selects[char_number].snake_anim_plays:
 		character_selects[char_number].play_snake_anim()
-		label.text = char_descriptions[str(char_number)]

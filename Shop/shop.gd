@@ -88,10 +88,10 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.EDGE_WRAP,
-									GameConsts.UPGRADE_LIST.IMMUTABLE,
-									GameConsts.UPGRADE_LIST.ANCHOR,
-									GameConsts.UPGRADE_LIST.EDGE_WRAP,
+									GameConsts.UPGRADE_LIST.PACMAN_1,
+									GameConsts.UPGRADE_LIST.DIET_2,
+									GameConsts.UPGRADE_LIST.DIET_2,
+									GameConsts.UPGRADE_LIST.OVERFED,
 									]
 									
 	
@@ -177,11 +177,12 @@ func _on_let_go():
 		slot.get_node("HighlightBuy").visible = false
 		slot.get_node("BuyZone").visible = false
 
-func select_random_upgrade(type):
+func select_random_base_upgrade(type):
 	upgrade_card_pool.shuffle()
 	for upgrade in upgrade_card_pool:
-		if GameConsts.get_upgrade_type(upgrade) == type:
+		if GameConsts.get_upgrade_type(upgrade) == type and !GameConsts.advanced_upgrades.has(upgrade):
 			return upgrade
+	print_debug("no random Upgrade found")
 
 func can_afford(slot):
 	if slot.get_node("Area2D").get_child(-1) is UpgradeCard and\

@@ -93,12 +93,12 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.CAVE,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.UFO,
-						GameConsts.MAP_MODS.CAFFEINATED,
-						GameConsts.MAP_MODS.HEAD_SWAP,
-						GameConsts.MAP_MODS.HEAD_SWAP,
-						GameConsts.MAP_MODS.HEAD_SWAP,
-						GameConsts.MAP_MODS.HEAD_SWAP,
+		mapmodorder = [GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
+						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.LASER,
@@ -110,7 +110,7 @@ func create_new_run():
 	add_child(level)
 	level.prepare_new_act(maporder[current_act], fruit_thresholds[current_act*4 + current_round], GameConsts.ROUND_TIME_SEC, mapmodorder[current_act*4 + current_round])
 	if RunSettings.current_char == GameConsts.CHAR_LIST.SALAMANDER:
-		var random_active_upgrade: int = shop.select_random_upgrade(GameConsts.UPGRADE_TYPE.ACTIVE)
+		var random_active_upgrade: int = shop.select_random_base_upgrade(GameConsts.UPGRADE_TYPE.ACTIVE)
 		shop.equip_item(random_active_upgrade, shop.active_slots)
 	
 	SignalBus.round_over.connect(_on_round_over)

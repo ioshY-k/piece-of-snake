@@ -11,3 +11,6 @@ flip_h = true
 [node name="SnakeBody" parent="." instance=ExtResource("1_txfs0")]
 position = Vector2(-80, 80)
 flip_h = true
+
+[node name="ConstellationLocation" type="Node2D" parent="."]
+position = Vector2(0, 80)
