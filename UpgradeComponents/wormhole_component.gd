@@ -55,11 +55,11 @@ func _on_item_activated(_uses):
 func _on_item_deactivated():
 	var new_teleporter: Teleporter = teleport_element_scene.instantiate()
 	new_teleporter.one_use = true
+	new_teleporter.destination_tile = TileHelper.position_to_tile(current_map.to_local(tile_select_cursor.global_position))
 	current_map.add_child(new_teleporter)
 	var teleporter_tile = TileHelper.get_next_tile(current_map.snake_head.next_tile, current_map.snake_head.current_direction)
 	new_teleporter.position = TileHelper.tile_to_position(teleporter_tile)
 	new_teleporter.rotation_degrees = current_map.snake_head.get_orientation(current_map.snake_head.current_direction, 0.0) + 180
-	new_teleporter.destination_tile = TileHelper.position_to_tile(current_map.to_local(tile_select_cursor.global_position))
 	
 	print(current_map.temporary_obstacles)
 	print(current_map.temporary_obstacles.size())

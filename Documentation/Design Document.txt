@@ -1,9 +1,11 @@
 Z index:
 	Map: 0
+	Created Obstacle Elements: 1
 	BodyPart: 10
 	SankeTail: 15
 	TailPLant:16
 	SnakeHead: 20
+	Wormhole Destination Tile: 21
 	Darkness: 23
 	Fruit: 25-50
 	FruitParticles: 25-50
