@@ -61,8 +61,6 @@ func _on_item_deactivated():
 	new_teleporter.position = TileHelper.tile_to_position(teleporter_tile)
 	new_teleporter.rotation_degrees = current_map.snake_head.get_orientation(current_map.snake_head.current_direction, 0.0) + 180
 	
-	print(current_map.temporary_obstacles)
-	print(current_map.temporary_obstacles.size())
 	current_map.temporary_obstacles.append(teleporter_tile)
 	
 	current_teleporters.append(new_teleporter)

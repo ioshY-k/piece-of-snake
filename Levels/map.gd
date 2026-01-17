@@ -111,11 +111,6 @@ func _ready() -> void:
 			snake_tail.disable_legs()
 	
 	spawn_fruit([])
-	spawn_fruit([])
-	spawn_fruit([])
-	spawn_fruit([])
-	spawn_fruit([])
-	spawn_fruit([])
 	
 	SignalBus.round_over.connect(_on_round_over)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)

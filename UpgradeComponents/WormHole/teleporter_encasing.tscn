@@ -1,17 +1,111 @@
-[gd_scene load_steps=3 format=3 uid="uid://xstmapmgd2ie"]
+[gd_scene load_steps=8 format=3 uid="uid://xstmapmgd2ie"]
 
-[ext_resource type="Texture2D" uid="uid://db2bok1jpg01i" path="res://MapElements/ObstacleElement/WarningShape.svg" id="1_hjaqp"]
+[ext_resource type="Texture2D" uid="uid://db2bok1jpg01i" path="res://Shop/UpgradeCards/Wormhole/Wormhole.svg" id="1_hjaqp"]
+[ext_resource type="Texture2D" uid="uid://dhfjkvyjfhgpq" path="res://Shop/UpgradeCards/Wormhole/WormholeCasing.svg" id="1_ugqc5"]
+
+[sub_resource type="Curve" id="Curve_ugqc5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.363271, 0.618622), 0.0, 0.0, 0, 0, Vector2(0.781501, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ugqc5"]
 size = Vector2(80, 80)
 
+[sub_resource type="Animation" id="Animation_ugqc5"]
+resource_name = "spiraling"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spiral:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spiral:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1.03333, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.175, 1.175), Vector2(1.026, 1.026), Vector2(1.105, 1.105), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fraco"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spiral:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spiral:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyoyn"]
+_data = {
+&"RESET": SubResource("Animation_fraco"),
+&"spiraling": SubResource("Animation_ugqc5")
+}
+
 [node name="TeleporterEncasing" type="Area2D"]
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, -2.5)
-scale = Vector2(0.733333, 2.88095)
+[node name="Casing" type="Sprite2D" parent="."]
+z_index = 21
+z_as_relative = false
+texture = ExtResource("1_ugqc5")
+
+[node name="Spiral" type="Sprite2D" parent="."]
+z_index = 21
+z_as_relative = false
+rotation = 6.28319
 texture = ExtResource("1_hjaqp")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 21
+z_as_relative = false
+amount = 12
+emission_shape = 1
+emission_sphere_radius = 42.66
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 9.43
+initial_velocity_max = 9.43
+scale_amount_min = 10.43
+scale_amount_max = 10.43
+scale_amount_curve = SubResource("Curve_ugqc5")
+color = Color(0.796, 0.76, 1, 0.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ugqc5")
+
+[node name="SpiralAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hyoyn")
+}
+autoplay = "spiraling"

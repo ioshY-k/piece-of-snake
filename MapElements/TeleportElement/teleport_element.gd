@@ -15,6 +15,7 @@ func _ready() -> void:
 		SignalBus.tail_teleported.connect(_check_if_destroyed)
 		destination_obstacle = OBSTACLE_ELEMENT.instantiate()
 		map.obstacle_elements.add_child(destination_obstacle)
+		destination_obstacle.frame = 1
 		destination_obstacle.z_index = 21
 		destination_obstacle.position = TileHelper.tile_to_position(destination_tile)
 		destination_obstacle_hitbox = OBSTACLE_HITBOX_ELEMENT.instantiate()
@@ -28,11 +29,15 @@ func _check_if_destroyed():
 	if TileHelper.position_to_tile(map.snake_tail.position) == destination_tile:
 		SignalBus.teleport_finished.emit(self)
 		map.update_free_map_tiles(destination_tile, true)
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN).set_parallel(true)
 		if destination_obstacle != null:
-			destination_obstacle.queue_free()
+			tween.tween_property(destination_obstacle, "scale", Vector2.ZERO, 0.2)
+			tween.finished.connect(func():destination_obstacle.queue_free())
 		if destination_obstacle_hitbox != null:
-			destination_obstacle_hitbox.queue_free()
-		queue_free()
+			tween.tween_property(destination_obstacle_hitbox, "scale", Vector2.ZERO, 0.2)
+			tween.finished.connect(func():destination_obstacle_hitbox.queue_free())
+		tween.tween_property(self, "scale", Vector2.ZERO, 0.2)
+		tween.finished.connect(func():queue_free())
 
 
 func disable():

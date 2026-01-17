@@ -1,10 +1,11 @@
 extends Node
 
+@onready var tetrispawn: AudioStreamPlayer = $Tetrispawn
 var constellations: Array = [
-								preload("res://MapModComponents/TetriConstellations/tetri_constellation_1.tscn"),
-								preload("res://MapModComponents/TetriConstellations/tetri_constellation_2.tscn"),
-								preload("res://MapModComponents/TetriConstellations/tetri_constellation_3.tscn"),
-								preload("res://MapModComponents/TetriConstellations/tetri_constellation_4.tscn")
+								preload("res://MapModComponents/Tetris/tetri_constellation_1.tscn"),
+								preload("res://MapModComponents/Tetris/tetri_constellation_2.tscn"),
+								preload("res://MapModComponents/Tetris/tetri_constellation_3.tscn"),
+								preload("res://MapModComponents/Tetris/tetri_constellation_4.tscn")
 							]
 var map: Map
 var tetrises: Array[Node2D]
@@ -41,6 +42,9 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 		DIRECTION.LEFT:
 			tetris.rotation_degrees = -90
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	tween.step_finished.connect(func(_idx): 
+			tetrispawn.pitch_scale = randf_range(0.7,1.3)
+			tetrispawn.play())
 	
 	var children_reverse_order = tetris.get_children().duplicate()
 	children_reverse_order.reverse()
@@ -66,6 +70,9 @@ func _check_tail_reached_tetri():
 			tetrises_to_erase.append(tetris)
 			if tween == null:
 				tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT).set_parallel(true)
+				tween.step_finished.connect(func(_idx): 
+					tetrispawn.pitch_scale = 0.6
+					tetrispawn.play())
 			tween.tween_property(tetris, "scale:x", 0, 0.2)
 	if tween != null:
 		await tween.finished

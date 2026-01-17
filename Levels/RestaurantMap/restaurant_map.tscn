@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dujvrq0khjgry"]
+[gd_scene load_steps=14 format=3 uid="uid://dujvrq0khjgry"]
 
 [ext_resource type="Texture2D" uid="uid://clesuob25t4r2" path="res://Levels/RestaurantMap/RestaurantMap.svg" id="1_2clpy"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_kni5d"]
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="3_2pckm"]
 [ext_resource type="PackedScene" uid="uid://dkprk4s6ac21r" path="res://MapElements/SolidElements/solid_element_wall.tscn" id="4_xbxwu"]
+[ext_resource type="Texture2D" uid="uid://cnk0yhho87tog" path="res://Levels/RestaurantMap/RestaurantKitchen.svg" id="5_2pckm"]
+[ext_resource type="Texture2D" uid="uid://bk4ao4yhdl5tn" path="res://Levels/RestaurantMap/RestaurantContainer.svg" id="5_nagf8"]
+[ext_resource type="Texture2D" uid="uid://cmjum10a5bgnd" path="res://Levels/RestaurantMap/RestaurantChairUp.svg" id="6_jw5l7"]
+[ext_resource type="Texture2D" uid="uid://dncm6d1yrl4fg" path="res://Levels/RestaurantMap/RestaurantChairRight.svg" id="7_sej6p"]
+[ext_resource type="Texture2D" uid="uid://cgg8fdylxrrak" path="res://Levels/RestaurantMap/RestaurantChairDown.svg" id="8_hoipf"]
+[ext_resource type="Texture2D" uid="uid://cmvgnqkfc3h45" path="res://Levels/RestaurantMap/RestaurantChairLeft.svg" id="9_nagf8"]
+[ext_resource type="Texture2D" uid="uid://d3mxdlj71cdii" path="res://Levels/RestaurantMap/RestaurantTable.svg" id="10_eb5ce"]
+[ext_resource type="Texture2D" uid="uid://b6wygqodrmvyq" path="res://Levels/RestaurantMap/RestaurantWall1.svg" id="11_hoipf"]
+[ext_resource type="Texture2D" uid="uid://w3l5cnnove2n" path="res://Levels/RestaurantMap/RestaurantWall2.svg" id="12_nagf8"]
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -759,3 +768,152 @@ position = Vector2(0, 160)
 position = Vector2(0, 80)
 
 [node name="ObstacleElements" type="Node2D" parent="."]
+
+[node name="Container" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(158, 178)
+texture = ExtResource("5_nagf8")
+
+[node name="Kitchen" type="Sprite2D" parent="."]
+z_index = 26
+z_as_relative = false
+position = Vector2(1320, 407)
+texture = ExtResource("5_2pckm")
+
+[node name="Chair1" type="Sprite2D" parent="."]
+z_index = 29
+z_as_relative = false
+position = Vector2(721, 346)
+texture = ExtResource("6_jw5l7")
+
+[node name="Chair2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(805, 414)
+texture = ExtResource("7_sej6p")
+
+[node name="Chair3" type="Sprite2D" parent="."]
+z_index = 31
+z_as_relative = false
+position = Vector2(721, 486)
+texture = ExtResource("8_hoipf")
+
+[node name="Chair4" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(637, 413)
+texture = ExtResource("9_nagf8")
+
+[node name="Table1" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(723, 379)
+texture = ExtResource("10_eb5ce")
+
+[node name="Chair5" type="Sprite2D" parent="."]
+z_index = 26
+z_as_relative = false
+position = Vector2(400, 103.5)
+texture = ExtResource("6_jw5l7")
+
+[node name="Chair6" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(484, 171.5)
+texture = ExtResource("7_sej6p")
+
+[node name="Chair7" type="Sprite2D" parent="."]
+z_index = 28
+z_as_relative = false
+position = Vector2(400, 243.5)
+texture = ExtResource("8_hoipf")
+
+[node name="Chair8" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(316, 170.5)
+texture = ExtResource("9_nagf8")
+
+[node name="Table2" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(402, 136.5)
+texture = ExtResource("10_eb5ce")
+
+[node name="Chair9" type="Sprite2D" parent="."]
+z_index = 34
+z_as_relative = false
+position = Vector2(560, 742.5)
+texture = ExtResource("6_jw5l7")
+
+[node name="Chair10" type="Sprite2D" parent="."]
+z_index = 35
+z_as_relative = false
+position = Vector2(640, 810.5)
+texture = ExtResource("7_sej6p")
+
+[node name="Chair11" type="Sprite2D" parent="."]
+z_index = 36
+z_as_relative = false
+position = Vector2(482, 882.5)
+texture = ExtResource("8_hoipf")
+
+[node name="Chair12" type="Sprite2D" parent="."]
+z_index = 35
+z_as_relative = false
+position = Vector2(398, 809.5)
+texture = ExtResource("9_nagf8")
+
+[node name="Table3" type="Sprite2D" parent="."]
+z_index = 35
+z_as_relative = false
+position = Vector2(525, 776)
+scale = Vector2(1.7, 1)
+texture = ExtResource("10_eb5ce")
+
+[node name="Wall1" type="Sprite2D" parent="."]
+z_index = 35
+z_as_relative = false
+position = Vector2(1318, 816)
+texture = ExtResource("11_hoipf")
+
+[node name="Wall2" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(1160, 584)
+texture = ExtResource("12_nagf8")
+
+[node name="Wall3" type="Sprite2D" parent="."]
+z_index = 25
+z_as_relative = false
+position = Vector2(1160, -58)
+texture = ExtResource("12_nagf8")
+
+[node name="Wall4" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(200, 179)
+scale = Vector2(1, 0.39)
+texture = ExtResource("12_nagf8")
+
+[node name="Wall5" type="Sprite2D" parent="."]
+z_index = 30
+z_as_relative = false
+position = Vector2(200, 706)
+scale = Vector2(1, 1.415)
+texture = ExtResource("12_nagf8")
+
+[node name="Wall6" type="Sprite2D" parent="."]
+z_index = 38
+z_as_relative = false
+position = Vector2(481, 1061.94)
+scale = Vector2(1.755, 0.77)
+texture = ExtResource("11_hoipf")
+
+[node name="Wall7" type="Sprite2D" parent="."]
+z_index = 38
+z_as_relative = false
+position = Vector2(1160, 1061.94)
+scale = Vector2(1.495, 0.77)
+texture = ExtResource("11_hoipf")

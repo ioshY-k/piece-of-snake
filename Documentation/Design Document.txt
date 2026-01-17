@@ -5,7 +5,7 @@ Z index:
 	SankeTail: 15
 	TailPLant:16
 	SnakeHead: 20
-	Wormhole Destination Tile: 21
+	Wormhole Tile: 21
 	Darkness: 23
 	Fruit: 25-50
 	FruitParticles: 25-50

@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjwr7leaxut0v"]
 
-[ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="1_dkpyb"]
+[ext_resource type="PackedScene" uid="uid://dobkpr5ucg8no" path="res://Snake/Body/snake_body.tscn" id="1_kuoc2"]
 
 [node name="TetriConstellation1" type="Node2D"]
 
-[node name="SnakeBody4" parent="." instance=ExtResource("1_dkpyb")]
+[node name="SnakeBody4" parent="." instance=ExtResource("1_kuoc2")]
 position = Vector2(160, 80)
 
-[node name="SnakeBody2" parent="." instance=ExtResource("1_dkpyb")]
+[node name="SnakeBody2" parent="." instance=ExtResource("1_kuoc2")]
 position = Vector2(80, 80)
 
 [node name="ConstellationLocation" type="Node2D" parent="."]
