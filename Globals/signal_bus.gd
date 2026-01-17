@@ -13,7 +13,8 @@ signal round_over
 signal act_over
 signal teleported
 signal overlapped
-signal teleport_finished
+signal teleport_finished #used to destroy one time teleporters
+signal tail_teleported #used for tail interactions like dissolving telefruits after a teleporter
 signal tail_grows
 signal tail_skip
 signal pre_next_tile_reached

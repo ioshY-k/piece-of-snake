@@ -16,7 +16,8 @@ func _check_if_destroyed():
 	if TileHelper.position_to_tile(map.snake_tail.position) == TileHelper.position_to_tile(position):
 		SignalBus.teleport_finished.emit(self)
 		queue_free()
-	
+
+
 func disable():
 	cpu_particles_2d.hide()
 	process_mode = Node.PROCESS_MODE_DISABLED

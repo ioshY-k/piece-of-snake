@@ -17,8 +17,6 @@ var base_snake_speed: float = GameConsts.NORMAL_SPEED
 func _ready() -> void:
 	await map.initialized
 	
-	
-	
 	current_direction = DIRECTION.UP
 	next_tile = current_tile
 	
@@ -56,7 +54,6 @@ func get_moving_tween(moves: bool) -> Tween:
 		tile_to_move_to = next_tile
 	else:
 		tile_to_move_to = current_tile
-	print("current_snake_speed: ", current_snake_speed)
 	leg_animation_player.seek(0.0, true)
 	moving_tween = create_tween().set_parallel()
 	moving_tween.tween_property(self, "position", TileHelper.tile_to_position(tile_to_move_to), current_snake_speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)

@@ -17,6 +17,7 @@ var colliding_element: MapElement
 var buffered_input_direction: int = -10
 var second_buffered_input_direction: int = -10
 var moves: bool = true
+var just_teleported: bool = false
 var push_overlap_bodypart: bool = false
 var hit_signal_muted: bool = false
 
@@ -38,7 +39,7 @@ func _on_next_tile_reached():
 
 	if last_call_time != 0:
 		var elapsed_ms = now - last_call_time
-		print("Zeit seit letztem Aufruf: ", elapsed_ms, " ms (", elapsed_ms / 1000.0, " s)")
+		#print("Zeit seit letztem Aufruf: ", elapsed_ms, " ms (", elapsed_ms / 1000.0, " s)")
 		
 	last_call_time = now
 	
@@ -85,7 +86,6 @@ func _on_next_tile_reached():
 		var temp_position = position
 		var temp_teleporter = colliding_element
 		
-		print(temp_teleporter.name, " ", temp_teleporter.is_in_group("Edge Wrap Teleporter"))
 		
 		position = TileHelper.tile_to_position(colliding_element.destination_tile)
 		next_tile = TileHelper.get_next_tile(colliding_element.destination_tile, current_direction)
@@ -103,6 +103,7 @@ func _on_next_tile_reached():
 		else:
 			SignalBus.teleported.emit(temp_teleporter)
 			$TeleportAudio.play()
+			just_teleported = true
 		
 	if colliding_element != null and moves:
 		if colliding_element.get_collision_layer_value(10): #Overlapping because Iframes
@@ -134,9 +135,8 @@ func _on_next_tile_reached():
 	if colliding_element != null and colliding_element.get_collision_layer_value(7) :#Overlap
 		push_overlap_bodypart = true
 		
-	
 	SignalBus.next_tile_reached.emit()
-	
+	just_teleported = false
 	get_moving_tween(moves)
 	get_turning_tween(current_direction)
 

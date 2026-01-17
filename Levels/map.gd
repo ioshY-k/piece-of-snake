@@ -111,6 +111,11 @@ func _ready() -> void:
 			snake_tail.disable_legs()
 	
 	spawn_fruit([])
+	spawn_fruit([])
+	spawn_fruit([])
+	spawn_fruit([])
+	spawn_fruit([])
+	spawn_fruit([])
 	
 	SignalBus.round_over.connect(_on_round_over)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
@@ -219,7 +224,7 @@ func teleport_to_starting_position():
 		bodypart.position = starting_position + Vector2(0, GameConsts.TILE_SIZE * snake_body_num) 
 		snake_body_num -= 1
 	
-	#place snake tail as far below head ass body parts exist
+	#place snake tail as far below head as body parts exist
 	snake_tail.current_tile = snake_head.current_tile
 	for i in range(len(snake_path_bodyparts)):
 		snake_tail.current_tile = TileHelper.get_next_tile(snake_tail.current_tile, DIRECTION.DOWN)

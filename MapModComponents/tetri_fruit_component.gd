@@ -8,15 +8,21 @@ var constellations: Array = [
 							]
 var map: Map
 var tetrises: Array[Node2D]
+enum DIRECTION {UP,RIGHT,DOWN,LEFT}
 
 func _ready() -> void:
 	map = get_parent()
 	SignalBus.fruit_collected.connect(_on_fruit_collected)
 	SignalBus.next_tile_reached.connect(_check_tail_reached_tetri)
+	SignalBus.tail_teleported.connect(_check_tail_reached_tetri)
 
 func _on_fruit_collected(_element, _is_real_collection: bool):
 	if not _is_real_collection:
 		return
+	if map.snake_head.just_teleported:
+		await SignalBus.next_tile_reached
+		await SignalBus.next_tile_reached
+		
 	var tetris = constellations[randi()%constellations.size()].instantiate()
 	tetrises.append(tetris)
 	for child in tetris.get_children():
@@ -24,14 +30,15 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 			child.is_tetris = true
 	map.find_child("ObstacleElements").add_child(tetris)
 	tetris.position = TileHelper.tile_to_position(map.snake_head.next_tile)
-	match map.snake_head.next_tile - map.snake_head.current_tile:
-		Vector2i.UP:
+	print("direction: ", map.snake_head.next_tile - map.snake_head.current_tile)
+	match map.snake_head.current_direction:
+		DIRECTION.UP:
 			pass
-		Vector2i.RIGHT:
+		DIRECTION.RIGHT:
 			tetris.rotation_degrees = 90
-		Vector2i.DOWN:
+		DIRECTION.DOWN:
 			tetris.rotation_degrees = 180
-		Vector2i.LEFT:
+		DIRECTION.LEFT:
 			tetris.rotation_degrees = -90
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	
@@ -50,6 +57,8 @@ func _check_tail_reached_tetri():
 	for tetris in tetrises:
 		if !is_instance_valid(tetris):
 			continue
+		#print("tetris: ", TileHelper.position_to_tile(tetris.get_child(-1).global_position))
+		#print("Tail: ", TileHelper.position_to_tile(map.snake_tail.global_position))
 		if TileHelper.position_to_tile(tetris.get_child(-1).global_position) == TileHelper.position_to_tile(map.snake_tail.global_position):
 			for tetris_block in tetris.get_children():
 				map.temporary_obstacles.erase(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
