@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://83pqpwtuppyt"]
+[gd_scene load_steps=30 format=3 uid="uid://83pqpwtuppyt"]
 
 [ext_resource type="Texture2D" uid="uid://lshghrulnhsv" path="res://Levels/WoodsMap/WoodsMap.svg" id="1_qpv76"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_1lku0"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://biliiwnosj8db" path="res://Levels/bouncing_deco.tscn" id="12_i1ocd"]
 [ext_resource type="Texture2D" uid="uid://dgth0fie1usk1" path="res://Levels/WoodsMap/WoodsFallenTree2.svg" id="12_udpgi"]
 [ext_resource type="Texture2D" uid="uid://bgskgtb1s1sjk" path="res://Levels/WoodsMap/WoodsFallenTree3.svg" id="13_wy0ts"]
+[ext_resource type="Texture2D" uid="uid://qk2ete32124m" path="res://Levels/WoodsMap/WoodsShroomSpore.svg" id="22_lha3p"]
 [ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="24_tajmh"]
 [ext_resource type="Texture2D" uid="uid://bnrx847xbepwd" path="res://Levels/WoodsMap/WoodsStumpTop.svg" id="25_lha3p"]
 
@@ -810,6 +811,7 @@ texture = ExtResource("9_kv02n")
 z_index = 31
 z_as_relative = false
 position = Vector2(-53, -127)
+deco_sprite = ExtResource("22_lha3p")
 animation = "GrowInverse"
 scaling = 0.7
 
@@ -817,17 +819,20 @@ scaling = 0.7
 z_index = 31
 z_as_relative = false
 position = Vector2(59, -113)
+deco_sprite = ExtResource("22_lha3p")
 
 [node name="BouncingDeco3" parent="Shrooms1" instance=ExtResource("12_i1ocd")]
 z_index = 31
 z_as_relative = false
 position = Vector2(-63, -67)
+deco_sprite = ExtResource("22_lha3p")
 scaling = 1.3
 
 [node name="BouncingDeco4" parent="Shrooms1" instance=ExtResource("12_i1ocd")]
 z_index = 31
 z_as_relative = false
 position = Vector2(30, -32)
+deco_sprite = ExtResource("22_lha3p")
 animation = "GrowInverse"
 scaling = 0.6
 
@@ -835,6 +840,7 @@ scaling = 0.6
 z_index = 31
 z_as_relative = false
 position = Vector2(-35, 18)
+deco_sprite = ExtResource("22_lha3p")
 scaling = 0.4
 
 [node name="Shrooms2" type="Sprite2D" parent="."]
@@ -847,6 +853,7 @@ texture = ExtResource("9_kv02n")
 z_index = 31
 z_as_relative = false
 position = Vector2(-53, -127)
+deco_sprite = ExtResource("22_lha3p")
 animation = "GrowInverse"
 scaling = 0.7
 
@@ -854,17 +861,20 @@ scaling = 0.7
 z_index = 31
 z_as_relative = false
 position = Vector2(59, -113)
+deco_sprite = ExtResource("22_lha3p")
 
 [node name="BouncingDeco3" parent="Shrooms2" instance=ExtResource("12_i1ocd")]
 z_index = 31
 z_as_relative = false
 position = Vector2(-63, -67)
+deco_sprite = ExtResource("22_lha3p")
 scaling = 1.3
 
 [node name="BouncingDeco4" parent="Shrooms2" instance=ExtResource("12_i1ocd")]
 z_index = 31
 z_as_relative = false
 position = Vector2(30, -32)
+deco_sprite = ExtResource("22_lha3p")
 animation = "GrowInverse"
 scaling = 0.6
 
@@ -872,6 +882,7 @@ scaling = 0.6
 z_index = 31
 z_as_relative = false
 position = Vector2(-35, 18)
+deco_sprite = ExtResource("22_lha3p")
 scaling = 0.4
 
 [node name="FallenTree3" type="Sprite2D" parent="."]

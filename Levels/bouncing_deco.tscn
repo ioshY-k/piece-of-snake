@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://biliiwnosj8db"]
 
 [ext_resource type="Script" uid="uid://bk2tmh8ht5d6w" path="res://Levels/bouncing_deco.gd" id="1_yw55l"]
-[ext_resource type="Texture2D" uid="uid://qk2ete32124m" path="res://Levels/WoodsMap/WoodsShroomSpore.svg" id="2_kn514"]
+[ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="2_kn514"]
 
 [sub_resource type="Animation" id="Animation_ojdvs"]
 resource_name = "Grow"

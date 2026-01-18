@@ -8,4 +8,4 @@ script = ExtResource("1_ue5q1")
 
 [node name="Tetrispawn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_mwsb8")
-volume_db = -7.33
+volume_db = -9.163

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dujvrq0khjgry"]
+[gd_scene load_steps=19 format=3 uid="uid://dujvrq0khjgry"]
 
 [ext_resource type="Texture2D" uid="uid://clesuob25t4r2" path="res://Levels/RestaurantMap/RestaurantMap.svg" id="1_2clpy"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_kni5d"]
@@ -7,12 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://cnk0yhho87tog" path="res://Levels/RestaurantMap/RestaurantKitchen.svg" id="5_2pckm"]
 [ext_resource type="Texture2D" uid="uid://bk4ao4yhdl5tn" path="res://Levels/RestaurantMap/RestaurantContainer.svg" id="5_nagf8"]
 [ext_resource type="Texture2D" uid="uid://cmjum10a5bgnd" path="res://Levels/RestaurantMap/RestaurantChairUp.svg" id="6_jw5l7"]
+[ext_resource type="PackedScene" uid="uid://biliiwnosj8db" path="res://Levels/bouncing_deco.tscn" id="7_eb5ce"]
 [ext_resource type="Texture2D" uid="uid://dncm6d1yrl4fg" path="res://Levels/RestaurantMap/RestaurantChairRight.svg" id="7_sej6p"]
+[ext_resource type="Texture2D" uid="uid://gxwxpu4d54e4" path="res://Levels/RestaurantMap/RestaurantSoupBall.svg" id="8_3oo41"]
 [ext_resource type="Texture2D" uid="uid://cgg8fdylxrrak" path="res://Levels/RestaurantMap/RestaurantChairDown.svg" id="8_hoipf"]
 [ext_resource type="Texture2D" uid="uid://cmvgnqkfc3h45" path="res://Levels/RestaurantMap/RestaurantChairLeft.svg" id="9_nagf8"]
+[ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="9_ys44b"]
 [ext_resource type="Texture2D" uid="uid://d3mxdlj71cdii" path="res://Levels/RestaurantMap/RestaurantTable.svg" id="10_eb5ce"]
 [ext_resource type="Texture2D" uid="uid://b6wygqodrmvyq" path="res://Levels/RestaurantMap/RestaurantWall1.svg" id="11_hoipf"]
 [ext_resource type="Texture2D" uid="uid://w3l5cnnove2n" path="res://Levels/RestaurantMap/RestaurantWall2.svg" id="12_nagf8"]
+[ext_resource type="Texture2D" uid="uid://blxtf4aqadnmp" path="res://Levels/RestaurantMap/Flame.svg" id="15_58ncb"]
+
+[sub_resource type="Curve" id="Curve_58ncb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.853887, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -781,6 +789,50 @@ z_as_relative = false
 position = Vector2(1320, 407)
 texture = ExtResource("5_2pckm")
 
+[node name="BouncingDeco" parent="Kitchen" instance=ExtResource("7_eb5ce")]
+modulate = Color(0.2562, 0.61, 0.30927, 1)
+position = Vector2(-18, -209)
+offset = Vector2(0, 5)
+deco_sprite = ExtResource("8_3oo41")
+animation = "Bounce"
+
+[node name="BouncingDeco2" parent="Kitchen" instance=ExtResource("7_eb5ce")]
+modulate = Color(0.2562, 0.61, 0.30927, 1)
+position = Vector2(17, -219)
+offset = Vector2(0, 5)
+deco_sprite = ExtResource("8_3oo41")
+animation = "BounceInverse"
+
+[node name="BouncingDeco3" parent="Kitchen" instance=ExtResource("7_eb5ce")]
+modulate = Color(0.2562, 0.61, 0.30927, 1)
+position = Vector2(9, -197)
+offset = Vector2(0, 5)
+deco_sprite = ExtResource("8_3oo41")
+animation = "Bounce"
+
+[node name="BouncingDeco4" parent="Kitchen" instance=ExtResource("7_eb5ce")]
+modulate = Color(0.61, 0.2562, 0.2562, 1)
+position = Vector2(-4, -221)
+offset = Vector2(0, 5)
+deco_sprite = ExtResource("8_3oo41")
+animation = "BounceInverse"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Kitchen"]
+position = Vector2(2, -210)
+amount = 63
+texture = ExtResource("9_ys44b")
+lifetime = 3.85
+emission_shape = 1
+emission_sphere_radius = 22.12
+direction = Vector2(0, 1)
+gravity = Vector2(0, -30)
+initial_velocity_min = 4.72
+initial_velocity_max = 14.15
+scale_amount_min = 0.4
+scale_amount_max = 0.4
+scale_amount_curve = SubResource("Curve_58ncb")
+color = Color(1, 1, 1, 0.313726)
+
 [node name="Chair1" type="Sprite2D" parent="."]
 z_index = 29
 z_as_relative = false
@@ -810,6 +862,13 @@ z_index = 30
 z_as_relative = false
 position = Vector2(723, 379)
 texture = ExtResource("10_eb5ce")
+
+[node name="BouncingDeco" parent="Table1" instance=ExtResource("7_eb5ce")]
+modulate = Color(1, 0.7585, 0.37, 1)
+position = Vector2(0, -61)
+deco_sprite = ExtResource("15_58ncb")
+animation = "GrowInverse"
+scaling = 0.8
 
 [node name="Chair5" type="Sprite2D" parent="."]
 z_index = 26
@@ -841,6 +900,12 @@ z_as_relative = false
 position = Vector2(402, 136.5)
 texture = ExtResource("10_eb5ce")
 
+[node name="BouncingDeco" parent="Table2" instance=ExtResource("7_eb5ce")]
+modulate = Color(1, 0.7585, 0.37, 1)
+position = Vector2(0, -61)
+deco_sprite = ExtResource("15_58ncb")
+scaling = 0.8
+
 [node name="Chair9" type="Sprite2D" parent="."]
 z_index = 34
 z_as_relative = false
@@ -871,6 +936,14 @@ z_as_relative = false
 position = Vector2(525, 776)
 scale = Vector2(1.7, 1)
 texture = ExtResource("10_eb5ce")
+
+[node name="BouncingDeco" parent="." instance=ExtResource("7_eb5ce")]
+modulate = Color(1, 0.7585, 0.37, 1)
+z_index = 35
+z_as_relative = false
+position = Vector2(525, 715)
+deco_sprite = ExtResource("15_58ncb")
+scaling = 0.8
 
 [node name="Wall1" type="Sprite2D" parent="."]
 z_index = 35
