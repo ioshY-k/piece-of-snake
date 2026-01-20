@@ -10,6 +10,7 @@ const teleport_element_scene = preload("res://MapElements/TeleportElement/telepo
 var tile_select_cursor: Sprite2D
 var current_teleporters: Array[Teleporter] = []
 var current_map: Map
+var local_cursor_position
 
 func _ready() -> void:
 	super._ready()
@@ -31,22 +32,64 @@ func _set_UI():
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed(active_item_button) and uses > 0 and not shop_phase:
+	if Input.is_action_just_pressed(active_item_button) and uses > 0 and not shop_phase and !button_held:
 		current_map = active_item_slot.get_parent().current_map
 		current_map.process_mode = Node.PROCESS_MODE_DISABLED
-		button_held = true
+		SignalBus.map_paused.emit()
 		item_activated.emit(uses-1)
 		tile_select_cursor = TILE_SELECT_CURSOR.instantiate()
 		active_item_slot.get_parent().add_child(tile_select_cursor)
-	if Input.is_action_just_released(active_item_button) and button_held:
+		await get_tree().process_frame
+		local_cursor_position = TileHelper.tile_to_position(TileHelper.position_to_tile(current_map.snake_head.position))
+		button_held = true
+	if Input.is_action_just_pressed(active_item_button) and button_held:
 		button_held = false
 		item_deactivated.emit()
 		tile_select_cursor.queue_free()
 		#uses-1 is the light index for the itembag to go out
 		uses -= 1
 	if button_held:
-		tile_select_cursor.global_position = current_map.to_global( TileHelper.tile_to_position(TileHelper.position_to_tile(current_map.get_local_mouse_position())))
+		if !GlobalSettings.keyboard_only:
+			local_cursor_position = TileHelper.tile_to_position(TileHelper.position_to_tile(current_map.get_local_mouse_position()))
+		var upper_left_corner
+		var lower_right_corner
+		match current_map.zoom_state:
+			0:
+				upper_left_corner = MapData.get_map_data0(current_map.get_parent().current_map_index)[3]
+				lower_right_corner = MapData.get_map_data0(current_map.get_parent().current_map_index)[4]
+			1:
+				upper_left_corner = MapData.get_map_data1(current_map.get_parent().current_map_index)[3]
+				lower_right_corner = MapData.get_map_data1(current_map.get_parent().current_map_index)[4]
+			2:
+				upper_left_corner = MapData.get_map_data2(current_map.get_parent().current_map_index)[3]
+				lower_right_corner = MapData.get_map_data2(current_map.get_parent().current_map_index)[4]
+			3:
+				upper_left_corner = MapData.get_map_data3(current_map.get_parent().current_map_index)[3]
+				lower_right_corner = MapData.get_map_data3(current_map.get_parent().current_map_index)[4]
 		
+		print("Position: ", TileHelper.position_to_tile(local_cursor_position))
+		print("upperleft: ", upper_left_corner)
+		print("lowerright: ", lower_right_corner)
+		if GlobalSettings.keyboard_only:
+			if Input.is_action_just_pressed("move_up") and TileHelper.position_to_tile(local_cursor_position).y > upper_left_corner.y+1:
+				local_cursor_position = TileHelper.get_next_tile(TileHelper.position_to_tile(local_cursor_position),TileHelper.DIRECTION.UP)
+				local_cursor_position = TileHelper.tile_to_position(local_cursor_position)
+			if Input.is_action_just_pressed("move_right") and TileHelper.position_to_tile(local_cursor_position).x < lower_right_corner.x-1:
+				local_cursor_position = TileHelper.get_next_tile(TileHelper.position_to_tile(local_cursor_position),TileHelper.DIRECTION.RIGHT)
+				local_cursor_position = TileHelper.tile_to_position(local_cursor_position)
+			if Input.is_action_just_pressed("move_down") and TileHelper.position_to_tile(local_cursor_position).y < lower_right_corner.y-1:
+				local_cursor_position = TileHelper.get_next_tile(TileHelper.position_to_tile(local_cursor_position),TileHelper.DIRECTION.DOWN)
+				local_cursor_position = TileHelper.tile_to_position(local_cursor_position)
+			if Input.is_action_just_pressed("move_left") and TileHelper.position_to_tile(local_cursor_position).x > upper_left_corner.x+1:
+				local_cursor_position = TileHelper.get_next_tile(TileHelper.position_to_tile(local_cursor_position),TileHelper.DIRECTION.LEFT)
+				local_cursor_position = TileHelper.tile_to_position(local_cursor_position)
+			tile_select_cursor.global_position = current_map.to_global(local_cursor_position)
+		else:
+			if TileHelper.position_to_tile(local_cursor_position).x > upper_left_corner.x and\
+			TileHelper.position_to_tile(local_cursor_position).y > upper_left_corner.y and\
+			TileHelper.position_to_tile(local_cursor_position).x < lower_right_corner.x and\
+			TileHelper.position_to_tile(local_cursor_position).y < lower_right_corner.y:
+				tile_select_cursor.global_position = current_map.to_global(local_cursor_position)
 
 func _on_item_activated(_uses):
 	active_item_slot.get_parent().time_meter.stop_timer()
@@ -65,6 +108,7 @@ func _on_item_deactivated():
 	
 	current_teleporters.append(new_teleporter)
 	current_map.process_mode = Node.PROCESS_MODE_INHERIT
+	SignalBus.map_continued.emit()
 	active_item_slot.get_parent().time_meter.continue_timer()
 	
 	

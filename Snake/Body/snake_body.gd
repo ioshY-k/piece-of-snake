@@ -263,36 +263,46 @@ func _on_continue_moving(current_direction):
 func disappear_shader():
 	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_method(func(value):
-		material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
+		if material != null:
+			material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
 	tween.tween_method(func(value):
 		snake_shadow_component.shadow.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
-	if is_corner:
-		hide_deco_corner_in_order()
-	else:
+	if !is_corner:
 		tween.tween_method(func(value):
 			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed*2)
 	SignalBus.round_over.connect(func():
 		if tween.is_valid():
 			tween.pause())
+	SignalBus.map_paused.connect(func():
+		if tween.is_valid():
+			tween.pause())
 	SignalBus.round_started.connect(func():
+		if tween.is_valid():
+			tween.play())
+	SignalBus.map_continued.connect(func():
 		if tween.is_valid():
 			tween.play())
 
 func appear_shader():
 	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_method(func(value):
-		material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
+		if material != null:
+			material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
 	tween.tween_method(func(value):
 		snake_shadow_component.shadow.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
-	if is_corner:
-		show_deco_corner_in_order()
-	else:
+	if !is_corner:
 		tween.tween_method(func(value):
 			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed/2.5)
 	SignalBus.round_over.connect(func():
 		if tween.is_valid():
 			tween.pause())
+	SignalBus.map_paused.connect(func():
+		if tween.is_valid():
+			tween.pause())
 	SignalBus.round_started.connect(func():
+		if tween.is_valid():
+			tween.play())
+	SignalBus.map_continued.connect(func():
 		if tween.is_valid():
 			tween.play())
 
@@ -307,13 +317,3 @@ func show_deco_corner_in_order():
 	for deco in reverse_deco:
 		deco.show()
 		await get_tree().create_timer(map.snake_head.current_snake_speed / 14)
-	
-	
-func hide_deco_corner_in_order():
-	if snake_body_deco_corner.get_children().size() != 14:
-		print_debug("Showing is not synced since there are no longer 14 deco pieces on snake body! Adjust number in timer below")
-		var reverse_deco: Array = snake_body_deco_corner.get_children()
-		#reverse_deco.reverse()
-		for deco in reverse_deco:
-			deco.hide()
-			await get_tree().create_timer(map.snake_head.current_snake_speed / 14)

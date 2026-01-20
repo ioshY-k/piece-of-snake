@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr0dbax8tth7u"]
+
+[ext_resource type="Script" uid="uid://dnsv2lwiuk7h7" path="res://UpgradeComponents/wormhole_component.gd" id="1_lavbx"]
+[ext_resource type="Texture2D" uid="uid://1lq4k2l8vt1a" path="res://Shop/UpgradeCards/Wormhole1.svg" id="2_lavbx"]
+[ext_resource type="Texture2D" uid="uid://dy88np1cv7pp3" path="res://Shop/UpgradeCards/Wormhole2.svg" id="3_mqv56"]
+[ext_resource type="Texture2D" uid="uid://7gdhiwpj3vxx" path="res://Shop/UpgradeCards/Wormhole3.svg" id="4_3hq2g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q846u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lavbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mqv56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3hq2g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WormholeComponent" type="Node2D"]
+script = ExtResource("1_lavbx")
+
+[node name="ActiveItemUI" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q846u")

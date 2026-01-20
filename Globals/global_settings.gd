@@ -2,6 +2,7 @@ extends Node
 
 enum languages {ENGLISH, GERMAN}
 var language = languages.GERMAN
+var keyboard_only: bool = true
 
 var masteries_json_path = "user://masteries.json"
 var masteries = {
