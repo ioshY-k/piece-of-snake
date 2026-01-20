@@ -83,13 +83,13 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("move_left") and TileHelper.position_to_tile(local_cursor_position).x > upper_left_corner.x+1:
 				local_cursor_position = TileHelper.get_next_tile(TileHelper.position_to_tile(local_cursor_position),TileHelper.DIRECTION.LEFT)
 				local_cursor_position = TileHelper.tile_to_position(local_cursor_position)
-			tile_select_cursor.global_position = current_map.to_global(local_cursor_position)
+			tile_select_cursor.global_position = tile_select_cursor.global_position.lerp(current_map.to_global(local_cursor_position), 0.3)
 		else:
 			if TileHelper.position_to_tile(local_cursor_position).x > upper_left_corner.x and\
 			TileHelper.position_to_tile(local_cursor_position).y > upper_left_corner.y and\
 			TileHelper.position_to_tile(local_cursor_position).x < lower_right_corner.x and\
 			TileHelper.position_to_tile(local_cursor_position).y < lower_right_corner.y:
-				tile_select_cursor.global_position = current_map.to_global(local_cursor_position)
+				tile_select_cursor.global_position = tile_select_cursor.global_position.lerp(current_map.to_global(local_cursor_position),0.3)
 
 func _on_item_activated(_uses):
 	active_item_slot.get_parent().time_meter.stop_timer()

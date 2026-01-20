@@ -31,7 +31,6 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 			child.is_tetris = true
 	map.find_child("ObstacleElements").add_child(tetris)
 	tetris.position = TileHelper.tile_to_position(map.snake_head.next_tile)
-	print("direction: ", map.snake_head.next_tile - map.snake_head.current_tile)
 	match map.snake_head.current_direction:
 		DIRECTION.UP:
 			pass
@@ -61,8 +60,6 @@ func _check_tail_reached_tetri():
 	for tetris in tetrises:
 		if !is_instance_valid(tetris):
 			continue
-		#print("tetris: ", TileHelper.position_to_tile(tetris.get_child(-1).global_position))
-		#print("Tail: ", TileHelper.position_to_tile(map.snake_tail.global_position))
 		if TileHelper.position_to_tile(tetris.get_child(-1).global_position) == TileHelper.position_to_tile(map.snake_tail.global_position):
 			for tetris_block in tetris.get_children():
 				map.temporary_obstacles.erase(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))

@@ -82,8 +82,6 @@ func create_new_run():
 			modstring += "0"
 		modstring += str(mod)
 		RunHistoryCodeManager.mapmods.append(modstring)
-	print(RunHistoryCodeManager.mapmods)
-	print(RunHistoryCodeManager.maps)
 	
 	if RunSettings.current_char == GameConsts.CHAR_LIST.PYTHON:
 		for index in range(fruit_thresholds.size()-1):

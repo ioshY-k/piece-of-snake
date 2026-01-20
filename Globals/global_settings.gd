@@ -38,23 +38,16 @@ func load_masteries():
 		var json_object = JSON.new()
 		json_object.parse(masteries_json)
 		masteries = json_object.data
-	print(masteries)
 	save_masteries()
 
 func save_masteries():
-	if FileAccess.file_exists(masteries_json_path):
-		print("File exists. writing into masteries file.")
-	else:
-		print("masteries file didn't exist. Creating new file.")
-	
 	var masteries_file = FileAccess.open(masteries_json_path,FileAccess.WRITE)
 	
 	if masteries_file:
 		var masteries_json = JSON.stringify(masteries, "\t")
 		masteries_file.store_string(masteries_json)
-		print("masteries data written to files")
 	else:
-		print("failed to open or create the file")
+		print_debug("failed to open or create the file")
 
 func reset_masteries():
 	for difficulty in masteries.keys():

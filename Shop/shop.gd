@@ -269,7 +269,6 @@ func _on_continue_next_round_pressed() -> void:
 	finished_buying.emit()
 	
 	RunHistoryCodeManager.buys.append("")
-	print("buys: " , RunHistoryCodeManager.buys)
 
 func generate_items(current_round):
 	upgrade_card_pool.shuffle()
