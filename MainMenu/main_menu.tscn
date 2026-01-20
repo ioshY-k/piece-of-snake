@@ -982,7 +982,7 @@ polygon = PackedVector2Array(-320, -0.000244141, -320, 79.9998, -80, 79.9998, -8
 
 [node name="Character2Select" type="TileMapLayer" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1280, 520)
+position = Vector2(1199, 478)
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAIAAAD//wAAAAAAAAMAAAAAAAAAAAACAAIAAAD/////AAACAAAAAAD+////AAAAAAMAAAD+//7/AAACAAAAAAD9//7/AAABAAAAAAD8//7/AAABAAAAAAD7//7/AAABAAIAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
 script = ExtResource("5_id3bs")
@@ -990,7 +990,7 @@ has_front_legs = true
 has_back_legs = true
 
 [node name="Path2D" type="Path2D" parent="CharacterSelection/Character2Select"]
-position = Vector2(-880, -560)
+position = Vector2(-800, -520)
 curve = SubResource("Curve2D_cqjde")
 
 [node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character2Select/Path2D"]
@@ -1108,20 +1108,20 @@ libraries = {
 autoplay = "salmander_walk_anim"
 
 [node name="SnakeBody0" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(40, -40)
+position = Vector2(120, 0.000244141)
 rotation = -3.14159
 sprite = ExtResource("15_dbhad")
 char_id = 2
 
 [node name="SnakeBody1" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(40, 40)
+position = Vector2(120, 80.0002)
 scale = Vector2(-1, 1)
 is_corner = true
 sprite = ExtResource("16_5x28t")
 char_id = 2
 
 [node name="SnakeBody2" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-40, 40)
+position = Vector2(40, 80.0002)
 rotation = -6.28319
 scale = Vector2(-1, 1)
 is_corner = true
@@ -1129,13 +1129,13 @@ sprite = ExtResource("16_5x28t")
 char_id = 2
 
 [node name="SnakeBody7" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-40, -39.9998)
+position = Vector2(40, 0.000442505)
 is_corner = true
 sprite = ExtResource("16_5x28t")
 char_id = 2
 
 [node name="SnakeBody6" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-120, -40)
+position = Vector2(-40, 0.000244141)
 rotation = 0.0
 scale = Vector2(-1, 1)
 is_corner = true
@@ -1143,24 +1143,24 @@ sprite = ExtResource("16_5x28t")
 char_id = 2
 
 [node name="SnakeBody3" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-120, -120)
+position = Vector2(-40, -79.9998)
 is_corner = true
 sprite = ExtResource("16_5x28t")
 char_id = 2
 
 [node name="SnakeBody4" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-200, -120)
+position = Vector2(-120, -79.9998)
 sprite = ExtResource("15_dbhad")
 char_id = 2
 
 [node name="SnakeBody5" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-280, -120)
+position = Vector2(-200, -79.9998)
 rotation = -7.85398
 sprite = ExtResource("15_dbhad")
 char_id = 2
 
 [node name="SnakeBody8" parent="CharacterSelection/Character2Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-360, -120)
+position = Vector2(-280, -79.9998)
 rotation = 4.71239
 sprite = ExtResource("15_dbhad")
 char_id = 2
@@ -1173,7 +1173,7 @@ polygon = PackedVector2Array(160, 79.9998, 0, 79.9998, 0, -0.000244141, -80, -0.
 
 [node name="Character3Select" type="TileMapLayer" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1439, 338)
+position = Vector2(1440, 338)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAIAAAABAAAAAAAAAAMAAAACAAAAAAACAAIAAAACAP//AAACAAEAAAACAP7/AAACAAEAAAACAP3/AAACAAEAAAACAPz/AAACAAEAAAABAPv/AAABAAIAAAACAPv/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_gcf2c")
 script = ExtResource("5_id3bs")
@@ -1362,13 +1362,13 @@ polygon = PackedVector2Array(160, 79.9998, 160, -80, 240, -80, 240, -320, 160, -
 
 [node name="Character5Select" type="TileMapLayer" parent="CharacterSelection"]
 self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1059, 238)
+position = Vector2(1118, 241)
 tile_map_data = PackedByteArray("AAABAP//AAAAAAIAAAABAAAAAAAAAAMAAAACAAAAAAACAAIAAAACAP//AAACAAEAAAACAP7/AAACAAEAAAACAP3/AAACAAEAAAACAPz/AAACAAEAAAABAPv/AAABAAIAAAACAPv/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_g521o")
 script = ExtResource("5_id3bs")
 
 [node name="Path2D" type="Path2D" parent="CharacterSelection/Character5Select"]
-position = Vector2(-659, -278)
+position = Vector2(-718, -281)
 curve = SubResource("Curve2D_cbxrr")
 
 [node name="HeadFollow" type="PathFollow2D" parent="CharacterSelection/Character5Select/Path2D"]
@@ -1396,56 +1396,56 @@ rotation = 1.5708
 texture = ExtResource("33_fi7gv")
 
 [node name="SnakeBody0" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(-60, -79.9998)
+position = Vector2(-119, -82.9997)
 rotation = 1.5708
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody1" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(20, -79.9998)
+position = Vector2(-39, -82.9997)
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody2" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(20, 0.000244141)
+position = Vector2(-39, -2.99969)
 rotation = -3.14159
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody3" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(20, 80.0002)
+position = Vector2(-39, 77.0003)
 rotation = 1.5708
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody4" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(100, 80.0002)
+position = Vector2(41, 77.0003)
 rotation = 0.0
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody5" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(100, 0.000244141)
+position = Vector2(41, -2.99969)
 rotation = 0.0
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody6" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(100, -79.9998)
+position = Vector2(41, -82.9997)
 scale = Vector2(1, -1)
 texture = ExtResource("35_g521o")
 sprite = ExtResource("35_g521o")
 char_id = 5
 
 [node name="SnakeBody7" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(180, -79.9998)
+position = Vector2(121, -82.9997)
 rotation = 1.5708
 texture = ExtResource("34_bqfl2")
 sprite = ExtResource("34_bqfl2")
 char_id = 5
 
 [node name="SnakeBody8" parent="CharacterSelection/Character5Select" instance=ExtResource("8_r0x8f")]
-position = Vector2(260, -79.9998)
+position = Vector2(201, -82.9997)
 rotation = 1.5708
 texture = ExtResource("34_bqfl2")
 sprite = ExtResource("34_bqfl2")

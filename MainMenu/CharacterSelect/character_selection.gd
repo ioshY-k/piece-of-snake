@@ -113,11 +113,13 @@ func char_hovered(char_number):
 	for char_select in hovering_char_selects:
 		char_select = false
 	hovering_char_selects[char_number] = true
-	var tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y-5,0.1)
-	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y,0.1)
-	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y-5,0.1)
-	tween.tween_property(character_selects[char_number],"position:y", character_selects[char_number].position.y,0.1)
+	var tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT).set_parallel(true)
+	tween.tween_property(character_selects[char_number],"scale", Vector2(1.03,1.03),0.1)
+	tween.tween_property(character_selects[char_number],"rotation_degrees", 3,0.1)
+	tween.set_parallel(false)
+	tween.tween_property(character_selects[char_number],"rotation_degrees", 0,0.1)
+	tween.tween_property(character_selects[char_number],"rotation_degrees", -1,0.1)
+	tween.tween_property(character_selects[char_number],"rotation_degrees", 0,0.1)
 	label.text = char_descriptions[str(char_number)]
 	
 	
@@ -125,9 +127,12 @@ func char_hovered(char_number):
 func char_unhovered(char_number):
 	hovering_char_selects[char_number] = false
 	var tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(character_selects[char_number],"scale",Vector2(1.0,1.0),0.3)
+	tween.tween_property(character_selects[char_number],"scale",Vector2(0.97,0.97),0.3)
 	
 
 func click_animation(char_number):
 	if char_number != -1 and not character_selects[char_number].snake_anim_plays:
+		for body in character_selects[char_number].bodyparts:
+			if body.name == "SnakeBody0" or body.name == "SnakeBody8":
+				body.show()
 		character_selects[char_number].play_snake_anim()
