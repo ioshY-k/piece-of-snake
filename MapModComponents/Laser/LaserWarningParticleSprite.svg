@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="2080"
-   height="27.106239"
-   viewBox="0 0 550.33332 7.1718589"
+   width="53.705658mm"
+   height="6.2287464mm"
+   viewBox="0 0 53.705658 6.2287464"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="LaserWarning.svg"
+   sodipodi:docname="LaserWarningParticleSprite.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.1370204"
-     inkscape:cx="708.87033"
-     inkscape:cy="245.81794"
+     inkscape:zoom="9.096163"
+     inkscape:cx="87.289553"
+     inkscape:cy="-7.9703937"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -38,14 +38,13 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-0.81536782,-1.705737)">
-    <rect
-       style="fill:#ff26cd;fill-opacity:0.613363;stroke:#e35454;stroke-width:0.975394;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.79299"
-       id="rect1"
-       width="547.52356"
-       height="6.196465"
-       x="1.3030648"
-       y="2.193434"
-       ry="0.85595441" />
+     transform="translate(-71.543839,-120.951)">
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:#0b0c1c;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.999272"
+       id="path1"
+       cx="98.396667"
+       cy="124.06538"
+       rx="26.852829"
+       ry="3.1143732" />
   </g>
 </svg>

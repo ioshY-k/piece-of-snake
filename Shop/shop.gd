@@ -88,8 +88,8 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.WORMHOLE_1,
-									GameConsts.UPGRADE_LIST.WORMHOLE_2,
+									GameConsts.UPGRADE_LIST.COATING,
+									GameConsts.UPGRADE_LIST.COATING,
 									GameConsts.UPGRADE_LIST.WORMHOLE_2,
 									GameConsts.UPGRADE_LIST.WORMHOLE_1,
 									]

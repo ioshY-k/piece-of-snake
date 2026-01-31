@@ -1,0 +1,799 @@
+[gd_scene load_steps=16 format=3 uid="uid://bmgerfbr0ovlx"]
+
+[ext_resource type="Script" uid="uid://0l8u5f08ohyi" path="res://MapModComponents/Laser/laser.gd" id="1_0imkv"]
+[ext_resource type="Texture2D" uid="uid://dx1oxt8x70x25" path="res://MapModComponents/Laser/LaserWarning.svg" id="2_0imkv"]
+[ext_resource type="Texture2D" uid="uid://b04htnrcu5k0s" path="res://MapModComponents/Laser/LaserParticleSprite.svg" id="2_efa7t"]
+[ext_resource type="Texture2D" uid="uid://bfmoxcshx0taq" path="res://MapModComponents/Laser/LaserWarningParticleSprite.svg" id="3_70t6x"]
+[ext_resource type="AudioStream" uid="uid://b6t5dkax10f7y" path="res://MapModComponents/Laser/LaserSound.wav" id="5_70t6x"]
+
+[sub_resource type="Curve" id="Curve_746cx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.301609, 0.38648), 1.95592, 1.95592, 0, 0, Vector2(0.752011, 0.342262), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6lnv4"]
+load_path = "res://.godot/imported/LaserParticleSprite.svg-87bfaf5eb4cf94a9a4a36845d229cd65.ctex"
+
+[sub_resource type="Curve" id="Curve_lihan"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.301609, 0.38648), 1.95592, 1.95592, 0, 0, Vector2(0.752011, 0.342262), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_m1usi"]
+_data = [Vector2(0.00938338, 0), 0.0, 0.0, 0, 0, Vector2(0.0683646, 1), 0.0, 0.0, 0, 0, Vector2(0.939678, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_jp7rr"]
+offsets = PackedFloat32Array(0, 0.178571, 0.744505, 1)
+colors = PackedColorArray(0.89, 0.5696, 0.77786, 0, 0.88, 0.8096, 0.85536, 0.764706, 0.88, 0.8096, 0.85536, 1, 0.88, 0.8096, 0.85536, 0)
+
+[sub_resource type="Curve" id="Curve_yvw68"]
+_data = [Vector2(0, 0.419643), 0.0, 0.0, 0, 0, Vector2(0.489276, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.403061), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_is722"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.162198, 1), 0.0, 0.0, 0, 0, Vector2(0.891421, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olqxu"]
+size = Vector2(60, 60)
+
+[sub_resource type="Animation" id="Animation_tr1l8"]
+resource_name = "laser"
+length = 4.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LaserWarning:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 1.8, 2, 2.2, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.584314), Color(1, 1, 1, 0), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacles/Area2D:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Obstacles/Area2D2:collision_layer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Obstacles/Area2D3:collision_layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Obstacles/Area2D4:collision_layer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Obstacles/Area2D5:collision_layer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Obstacles/Area2D6:collision_layer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Obstacles/Area2D7:collision_layer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Obstacles/Area2D8:collision_layer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Obstacles/Area2D9:collision_layer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Obstacles/Area2D10:collision_layer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Obstacles/Area2D11:collision_layer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Obstacles/Area2D12:collision_layer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Obstacles/Area2D13:collision_layer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Obstacles/Area2D14:collision_layer")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Obstacles/Area2D15:collision_layer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Obstacles/Area2D16:collision_layer")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Obstacles/Area2D17:collision_layer")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Obstacles/Area2D18:collision_layer")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Obstacles/Area2D19:collision_layer")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Obstacles/Area2D20:collision_layer")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Obstacles/Area2D21:collision_layer")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Obstacles/Area2D22:collision_layer")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Obstacles/Area2D23:collision_layer")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Obstacles/Area2D24:collision_layer")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Obstacles/Area2D25:collision_layer")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Obstacles/Area2D26:collision_layer")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 32, 0]
+}
+tracks/27/type = "method"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath(".")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(4.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_animplayer_kill"
+}]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("ParticlesWarning:emitting")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("ParticlesLaser:emitting")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 2.2, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("ParticlesLaserBubble1:emitting")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 2.2, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("ParticlesLaserBubble2:emitting")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 2.2, 2.4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("ParticlesLaserBubble2:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("ParticlesLaserBubble1:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("ParticlesLaser:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atfb4"]
+_data = {
+&"laser": SubResource("Animation_tr1l8")
+}
+
+[node name="Laser" type="Node2D"]
+z_index = 60
+z_as_relative = false
+script = ExtResource("1_0imkv")
+
+[node name="ParticlesLaserBubble2" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(0, -40)
+emitting = false
+amount = 35
+texture = ExtResource("2_efa7t")
+lifetime = 0.42
+emission_shape = 3
+emission_rect_extents = Vector2(1058.56, 10.53)
+direction = Vector2(1.545, -0.685)
+spread = 20.48
+gravity = Vector2(0, 0)
+initial_velocity_min = 112.36
+initial_velocity_max = 207.87
+scale_amount_curve = SubResource("Curve_746cx")
+color = Color(0.89, 0.7832, 0.85262, 0.513726)
+
+[node name="ParticlesLaserBubble1" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(0, 40)
+emitting = false
+amount = 35
+texture = SubResource("CompressedTexture2D_6lnv4")
+lifetime = 0.42
+emission_shape = 3
+emission_rect_extents = Vector2(1058.56, 10.53)
+direction = Vector2(1.545, 0.685)
+spread = 20.48
+gravity = Vector2(0, 0)
+initial_velocity_min = 112.36
+initial_velocity_max = 207.87
+scale_amount_curve = SubResource("Curve_lihan")
+color = Color(0.89, 0.7832, 0.85262, 0.513726)
+
+[node name="ParticlesWarning" type="CPUParticles2D" parent="."]
+amount = 67
+texture = ExtResource("3_70t6x")
+emission_shape = 3
+emission_rect_extents = Vector2(1033.38, 23.195)
+spread = 0.0
+gravity = Vector2(100, 0)
+initial_velocity_max = 301.88
+tangential_accel_min = -37.08
+tangential_accel_max = 39.33
+damping_min = 16.037
+damping_max = 82.547
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+split_scale = true
+scale_curve_x = null
+scale_curve_y = SubResource("Curve_m1usi")
+color = Color(0.89, 0.712, 0.8277, 1)
+color_ramp = SubResource("Gradient_jp7rr")
+
+[node name="ParticlesLaser" type="CPUParticles2D" parent="."]
+visible = false
+emitting = false
+amount = 381
+texture = ExtResource("3_70t6x")
+lifetime = 0.23
+emission_shape = 3
+emission_rect_extents = Vector2(1033.38, 43.615)
+spread = 0.0
+gravity = Vector2(500, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+damping_min = 16.037
+damping_max = 82.547
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+split_scale = true
+scale_curve_x = SubResource("Curve_yvw68")
+scale_curve_y = SubResource("Curve_is722")
+color = Color(1, 0.78, 0.923, 0.792157)
+
+[node name="LaserWarning" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(40, 0)
+texture = ExtResource("2_0imkv")
+
+[node name="Obstacles" type="Node2D" parent="."]
+position = Vector2(40, 0)
+
+[node name="Area2D" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-1000, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D2" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-920, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D2"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D3" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-840, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D3"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D4" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-760, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D4"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D5" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-680, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D5"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D6" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-600, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D6"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D7" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-520, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D7"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D8" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-440, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D8"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D9" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-360, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D9"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D10" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-280, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D10"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D11" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-200, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D11"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D12" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-120, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D12"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D13" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(-40, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D13"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D14" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(40, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D14"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D15" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(120, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D15"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D16" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(200, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D16"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D17" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(280, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D17"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D18" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(360, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D18"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D19" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(440, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D19"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D20" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(520, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D20"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D21" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(600, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D21"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D22" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(680, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D22"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D23" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(760, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D23"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D24" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(840, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D24"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D25" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(920, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D25"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="Area2D26" type="Area2D" parent="Obstacles"]
+visible = false
+position = Vector2(1000, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="ElementShape" type="CollisionShape2D" parent="Obstacles/Area2D26"]
+shape = SubResource("RectangleShape2D_olqxu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_atfb4")
+}
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_70t6x")

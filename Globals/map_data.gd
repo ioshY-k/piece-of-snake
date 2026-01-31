@@ -86,6 +86,17 @@ func get_map_data3(map: int):
 		GameConsts.MAP_LIST.TRAIN:
 			return [Vector2(-295.0,-508.0), Vector2(0.85,0.794), Vector2i(19,17), Vector2i(-1,-1), Vector2i(19,17)]
 
+func call_map_data_at_zoom(zoom: int, map:int):
+	match zoom:
+		0:
+			return get_map_data0(map)
+		1:
+			return get_map_data1(map)
+		2:
+			return get_map_data2(map)
+		3:
+			return get_map_data3(map)
+
 func get_map_scene(map:int):
 	match map:
 		GameConsts.MAP_LIST.WOODS:

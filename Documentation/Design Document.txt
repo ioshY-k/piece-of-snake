@@ -12,7 +12,7 @@ Z index:
 	ForegroundMapDeco: 25-50
 	CoverCeiling: 55
 	Shadow/Fog: 60
-	UFO: 60
+	UFO/Laser: 60
 	Level: 100
 	MapmodInfoPanel: 200
 

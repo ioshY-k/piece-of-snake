@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqgq0di61w5dx"
-path="res://.godot/imported/Laser.svg-5b4945f6a8ca1d7e5330c0c701955a54.ctex"
+uid="uid://b04htnrcu5k0s"
+path="res://.godot/imported/LaserParticleSprite.svg-87bfaf5eb4cf94a9a4a36845d229cd65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://VisualEffects/Laser.svg"
-dest_files=["res://.godot/imported/Laser.svg-5b4945f6a8ca1d7e5330c0c701955a54.ctex"]
+source_file="res://MapModComponents/Laser/LaserParticleSprite.svg"
+dest_files=["res://.godot/imported/LaserParticleSprite.svg-87bfaf5eb4cf94a9a4a36845d229cd65.ctex"]
 
 [params]
 

@@ -73,11 +73,14 @@ func _on_next_tile_reached():
 		
 	#prevent snake from turning into a wall
 	if  original_direction != current_direction and colliding_element != null and\
-	(colliding_element.get_collision_layer_value(1) or colliding_element.get_collision_layer_value(6)):
-		print("case there!")
+	(colliding_element.get_collision_layer_value(1) or colliding_element.get_collision_layer_value(6)) and\
+	!colliding_element.get_collision_layer_value(10):
 		next_tile = TileHelper.get_next_tile(current_tile, original_direction)
 		colliding_element = check_upcoming_collision(original_direction, original_direction)
 		current_direction = original_direction
+		SignalBus.stop_moving.emit(false)
+		if not hit_signal_muted:
+			SignalBus.got_hit.emit()
 	
 	SignalBus.pre_next_tile_reached.emit()
 	
