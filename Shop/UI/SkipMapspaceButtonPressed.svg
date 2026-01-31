@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="295.10229"
+   height="139.45338"
+   viewBox="0 0 78.079148 36.897041"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="SkipMapspaceButton2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.2124158"
+     inkscape:cx="77.823051"
+     inkscape:cy="60.857626"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,2.2702672,0,1 @ F,0,1,1,0,2.2702672,0,1 @ F,0,1,1,0,2.2702672,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(27.895237,-3.7615828)">
+    <path
+       id="path1"
+       style="opacity:1;fill:#e4999b;fill-opacity:1;stroke:#29251b;stroke-width:0;stroke-linecap:round;stroke-opacity:0.995995;paint-order:fill markers stroke"
+       inkscape:transform-center-x="-4.8926381"
+       d="m 23.025685,7.2217855 c -1.014192,0.031188 -2.07911,0.8123639 -2.251542,1.7988566 -0.203336,1.1632979 -0.36814,2.7386879 -0.494026,4.5692299 h -43.574602 c -2.548899,0 -4.600752,2.051854 -4.600752,4.600752 v 11.332642 c 0,2.548899 2.051853,4.60127 4.600752,4.60127 h 43.573568 c 0.126003,1.836272 0.291228,3.416513 0.49506,4.582666 0.212226,1.214173 1.776078,2.117234 2.933671,1.693953 5.823664,-2.129458 20.953488,-10.8648 25.709542,-14.843538 0.945392,-0.79088 0.945368,-2.596526 0,-3.38739 C 44.661359,18.191515 29.531529,9.4561834 23.707814,7.3266887 23.490761,7.2473212 23.25973,7.2145883 23.025685,7.2217855 Z" />
+  </g>
+</svg>

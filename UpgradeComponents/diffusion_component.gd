@@ -25,7 +25,9 @@ func _move_all_fruits(_diffusing_bodypart):
 		fruit.move(fruit.move_type.TOWARDS, false)
 
 func _diffuse_animation(diffusing_body: SnakeBody):
-	diffusing_body.hole_animation_player.play("suck_anim")
+	for body in map.snake_path_bodyparts:
+		if body != null:
+			body.hole_animation_player.play("suck_anim")
 	var effect_trigger_text: EffectTriggerText = EFFECT_TRIGGER_TEXT.instantiate()
 	effect_trigger_text.initialize(effect_trigger_text.EFFECTS.DIFFUSION, diffusing_body.position)
 	map.add_child(effect_trigger_text)

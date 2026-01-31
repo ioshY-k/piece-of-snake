@@ -7,9 +7,9 @@ var snake_tail_scene = preload("res://Snake/Tail/snake_tail.tscn")
 var fruit_element_scene = load("res://MapElements/FruitElements/fruit_element.tscn")
 
 #instantiated upgrade components
-var fruit_magnet_1_component_scene = load("res://UpgradeComponents/fruit_magnet_1_component.tscn")
-var fruit_magnet_2_component_scene = load("res://UpgradeComponents/fruit_magnet_2_component.tscn")
-var fruit_magnet_3_component_scene = load("res://UpgradeComponents/fruit_magnet_3_component.tscn")
+var fruit_magnet_1_component_scene = load("res://UpgradeComponents/FruitMagnet/fruit_magnet_1_component.tscn")
+var fruit_magnet_2_component_scene = load("res://UpgradeComponents/FruitMagnet/fruit_magnet_2_component.tscn")
+var fruit_magnet_3_component_scene = load("res://UpgradeComponents/FruitMagnet/fruit_magnet_3_component.tscn")
 var diet_1_component_scene = load("res://UpgradeComponents/diet_1_component.tscn")
 var diet_2_component_scene = load("res://UpgradeComponents/diet_2_component.tscn")
 var diet_3_component_scene = load("res://UpgradeComponents/diet_3_component.tscn")

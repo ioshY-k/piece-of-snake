@@ -11,7 +11,6 @@
    sodipodi:docname="SymbolDefault.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -34,36 +33,14 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs1">
-    <linearGradient
-       id="linearGradient33"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#d1d1d1;stop-opacity:1;"
-         offset="0"
-         id="stop33" />
-      <stop
-         style="stop-color:#606060;stop-opacity:1;"
-         offset="0.69575757"
-         id="stop34" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient33"
-       id="linearGradient34"
-       x1="10.4214"
-       y1="0.81991923"
-       x2="8.2597179"
-       y2="7.4728928"
-       gradientUnits="userSpaceOnUse" />
-  </defs>
+     id="defs1" />
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1">
     <path
        sodipodi:type="star"
-       style="fill:url(#linearGradient34);fill-opacity:1;fill-rule:nonzero;stroke:#322d21;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995;opacity:1"
+       style="opacity:1;fill:#4a4a4a;fill-opacity:1;fill-rule:nonzero;stroke:#29251b;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
        id="path1"
        inkscape:flatsided="false"
        sodipodi:sides="2"
@@ -76,8 +53,8 @@
        inkscape:rounded="0.12173243"
        inkscape:randomized="0"
        d="M 11.385772,7.2216663 C 10.977939,7.5221754 7.7580971,6.2556281 7.4575881,5.8477944 7.1570791,5.4399606 6.9011915,1.9894472 7.3090253,1.6889381 7.7168589,1.3884291 10.9367,2.6549764 11.237209,3.0628101 c 0.300509,0.4078337 0.556397,3.8583472 0.148563,4.1588562 z"
-       inkscape:transform-center-x="3.0232413"
-       inkscape:transform-center-y="-1.9594"
-       transform="matrix(2.4508467,-3.5902239,3.3808514,2.602625,-20.947005,38.867421)" />
+       inkscape:transform-center-x="2.2783293"
+       inkscape:transform-center-y="-1.4766151"
+       transform="matrix(1.8469709,-2.7056115,2.5478273,1.9613518,-10.846051,33.938447)" />
   </g>
 </svg>

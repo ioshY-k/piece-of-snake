@@ -18,7 +18,8 @@ var fruits_currency: int
 @onready var currency_number_label: Label = $ItemShelf/CurrencySymbol/CurrencyNumber
 @onready var fruit_count_particle: CPUParticles2D = $FruitCountParticle
 
-@onready var deal_new_cards: Button = $ItemShelf/DealNewCards
+@onready var deal_new_cards: TextureButton = $ItemShelf/DealNewCards
+@onready var skip_mapspace: TextureButton = $ItemShelf/SkipMapspace
 @onready var reroll_cost_label: Label = $ItemShelf/DealNewCards/RerollCost
 
 
@@ -80,7 +81,7 @@ var special_upgrade_card_pool: Array[int] = [
 											]
 var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
-@onready var upgrade_overview: Sprite2D = $UpgradeOverview
+@onready var upgrade_overview: AnimatedSprite2D = $UpgradeOverview
 
 @onready var card_deal_audio: AudioStreamPlayer = $CardDealAudio
 @onready var button_press_audio: AudioStreamPlayer = $ButtonPressAudio
@@ -88,10 +89,10 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.COATING,
-									GameConsts.UPGRADE_LIST.COATING,
-									GameConsts.UPGRADE_LIST.WORMHOLE_2,
-									GameConsts.UPGRADE_LIST.WORMHOLE_1,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
+									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
 									]
 									
 	
@@ -118,8 +119,17 @@ func _ready() -> void:
 	slots.append_array(synergy_slots)
 	slots.append_array(active_slots)
 	slots.append_array(special_slots)
-		
-	hide_shop()
+	$ItemShelf.hide()
+	
+	#mechanism to hide salamander upgrade added at start
+	hide()
+	await get_tree().create_timer(0.5).timeout
+	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).set_parallel(true)
+	for slot in slots:
+		tween.tween_property(slot, "scale", Vector2(0,0), 0.5)
+	await tween.finished
+	show()
+	
 
 func initiate_map_preview(maporder: Array):
 	if maporder.size() != 3:
@@ -200,6 +210,11 @@ func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
 	fruits_currency -= int(slot.get_node("BuyZone").get_node("Price").text)
 	currency_number_label.text = str(fruits_currency)
 	update_upgrade_pool(upgrade_id, true)
+	#automatically deal new cards after map space was bought
+	if upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_1 or\
+	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_2 or\
+	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_2:
+		_on_skip_mapspace_pressed()
 	SignalBus.upgrade_bought.emit(upgrade_id)
 	
 
@@ -253,6 +268,8 @@ func update_upgrade_pool(upgrade_id: int, bought_not_destroyed: bool):
 
 func _on_continue_next_round_pressed() -> void:
 	button_press_audio.play()
+	skip_mapspace.disabled = true
+	deal_new_cards.disabled = true
 	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	shelf_tween.tween_property($ItemShelf, "rotation_degrees", -180, 0.8)
 	await  shelf_tween.finished
@@ -294,18 +311,14 @@ func generate_items(current_round):
 		offered_upgrades.append(upgrade_card_pool[1])
 		offered_upgrades.append(upgrade_card_pool[2])
 	deal_upgrade_cards(offered_upgrades)
-	first_deal = false
-	reroll_cost_label.show()
-	deal_new_cards.disabled = false
+	map_space_deal = false
 
 func generate_mapspace_item():
 	for upgrade_card in get_node("ItemShelf").get_children():
 		if upgrade_card is UpgradeCard:
 			upgrade_card.queue_free()
 	deal_upgrade_cards([default_upgrade_card])
-	first_deal = true
-	reroll_cost_label.hide()
-	deal_new_cards.disabled = false
+	map_space_deal = true
 
 func deal_upgrade_cards(offered_upgrades: Array[int]):
 	var itemcounter: int = 0
@@ -325,8 +338,6 @@ func deal_upgrade_cards(offered_upgrades: Array[int]):
 	upgrade_cards_instantiated.emit()
 	await card_tween.finished
 	card_tween.stop()
-	if not upgrades_expanded:
-		toggle_upgrade_panel()
 
 func reset_area_and_currency():
 	reroll_cost_number = reroll_cost_start_number
@@ -344,36 +355,49 @@ func reset_area_and_currency():
 func show_shop() -> Tween:
 	$ItemShelf.show()
 	upgrade_info.hide()
-	deal_new_cards.disabled = true
-	if run_manager.current_round == 3:
-		if run_manager.current_act == 2:
-			RunHistoryCodeManager.generate_code()
-			RunHistoryCodeManager.codestring += "Y"
-			var datetime = Time.get_datetime_dict_from_system()
-			RunHistoryCodeManager.codestring += str(datetime.day)
-			RunHistoryCodeManager.codestring += str(datetime.hour)
-			$EndScreen.show()
+	deal_new_cards.position.y = 1928
+	skip_mapspace.position.y = 1928
+	if run_manager.current_round == 3 and run_manager.current_act == 2:
+		RunHistoryCodeManager.generate_code()
+		RunHistoryCodeManager.codestring += "Y"
+		var datetime = Time.get_datetime_dict_from_system()
+		RunHistoryCodeManager.codestring += str(datetime.day)
+		RunHistoryCodeManager.codestring += str(datetime.hour)
+		$EndScreen.show()
 	$ItemShelf.rotation_degrees = -180
-	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
-	shelf_tween.tween_property($ItemShelf, "rotation_degrees", 0, 0.8)
+	var shelf_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	shelf_tween.tween_property($ItemShelf, "rotation_degrees", 0, 0.5)
 	return shelf_tween
 
 func hide_shop():
-	if upgrades_expanded:
-		toggle_upgrade_panel()
+	toggle_upgrade_panel(true)
 	$ItemShelf.hide()
 
+func deal_new_cards_button_appear():
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(deal_new_cards, "position:y", 1104.98, 0.4)
+	await tween.finished
+	deal_new_cards.disabled = false
 
-var upgrades_expanded: bool = false
-func toggle_upgrade_panel() -> void:
-	var tween = create_tween()
+func skip_mapspace_button_appear():
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(skip_mapspace, "position:y", 900, 0.4)
+	await tween.finished
+	skip_mapspace.disabled = false
+
+func toggle_upgrade_panel(upgrades_expanded) -> void:
+	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).set_parallel(true)
 	if not upgrades_expanded:
-		tween.tween_property(upgrade_overview, "position:x", 210, 0.4).\
-		set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN)
+		upgrade_overview.play_backwards("disappear")
+		for slot in slots:
+			print(slot.find_child("Area2D").get_child(-1).name)
+			tween.tween_property(slot, "scale", Vector2(1,1), 0.5)
 		upgrades_expanded = true
 	else:
-		tween.tween_property(upgrade_overview, "position:x", -425, 0.4).\
-		set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+		upgrade_overview.play("disappear")
+		for slot in slots:
+			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+			tween.tween_property(slot, "scale", Vector2(0,0), 0.5)
 		upgrades_expanded = false
 
 
@@ -385,13 +409,13 @@ func _on_continue_next_round_mouse_entered() -> void:
 func _on_continue_next_round_mouse_exited() -> void:
 	item_shelf.hide_mapmod_description()
 
-var first_deal: bool = true
+var map_space_deal: bool = true
 func _on_deal_new_cards_pressed() -> void:
 	if GameConsts.test_mode:
 		reroll_cost_number = 0
 		reroll_cost_label.text = str(reroll_cost_number)
 	
-	if first_deal:
+	if map_space_deal:
 		for upgrade_card in get_node("ItemShelf").get_children():
 			if upgrade_card is UpgradeCard:
 				upgrade_card.queue_free()
@@ -412,3 +436,13 @@ func _on_deal_new_cards_pressed() -> void:
 		generate_items(run_manager.current_round)
 	else:
 		print_debug("not enough money to reroll")
+
+
+func _on_skip_mapspace_pressed() -> void:
+	skip_mapspace.disabled = true
+	deal_new_cards.disabled = true
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(skip_mapspace, "position:y", 1928, 0.4)
+	await tween.finished
+	_on_deal_new_cards_pressed()
+	deal_new_cards_button_appear()

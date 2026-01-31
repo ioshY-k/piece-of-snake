@@ -138,7 +138,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
 	################################################################################################################
-		time_meter.initiate_time_bar(60)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(60)
 	################################################################################################################

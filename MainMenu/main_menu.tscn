@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=156 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
@@ -73,6 +73,7 @@
 [ext_resource type="Texture2D" uid="uid://43j8mxxjuxa4" path="res://MainMenu/WanderingFruit.png" id="50_bh756"]
 [ext_resource type="Texture2D" uid="uid://8uwy0ctehdjx" path="res://MainMenu/CharSelectBackgroundTwoHead.svg" id="51_xgqc5"]
 [ext_resource type="Texture2D" uid="uid://buo10ffxg1ypm" path="res://MainMenu/CharSelectBackgroundElephant.svg" id="52_wbja4"]
+[ext_resource type="Texture2D" uid="uid://btim8f53ku78x" path="res://MainMenu/BackGroundMosaik.svg" id="71_cnps2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x28t"]
 texture = ExtResource("3_5de1l")
@@ -2310,6 +2311,19 @@ libraries = {
 }
 autoplay = "Shift"
 
+[node name="WanderingSnakesBackground" parent="." instance=ExtResource("39_ce477")]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.631373)
+z_index = -1
+z_as_relative = false
+offset_left = -77.0
+offset_top = -168.0
+offset_right = 2338.0
+offset_bottom = 1688.0
+scale = Vector2(0.874503, 0.828805)
+texture = ExtResource("71_cnps2")
+
 [node name="PlayButton" parent="." instance=ExtResource("46_wclgf")]
 offset_left = 1249.0
 offset_top = 529.0
@@ -2332,8 +2346,6 @@ text = "Show Banners"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(961, 541)
-
-[node name="WanderingSnakesBackground" parent="." instance=ExtResource("39_ce477")]
 
 [connection signal="mouse_entered" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_exited"]

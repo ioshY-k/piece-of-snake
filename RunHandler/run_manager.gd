@@ -140,6 +140,7 @@ func _on_round_over():
 		await get_tree().create_timer(0.5).timeout
 		var particle_speed := 0.3
 		shop.fruit_count_particle.emitting = true
+		#cash in bonus fruit points
 		while level.fruits_overload > 0:
 			level.fruits_overload -= 1
 			shop.fruit_count_particle.position = Vector2(300,85)
@@ -155,14 +156,19 @@ func _on_round_over():
 			fruit_payout_audio.play()
 		shop.fruit_count_particle.emitting = false
 		await get_tree().create_timer(0.5).timeout
+		#last act, last round
 		if (current_act == 2 and current_round == 3):
-			#goal or act 4 reached
 			update_masteries()
 			GlobalSettings.save_masteries()
+		#last round
 		elif (current_round == 3):
 			shop.generate_items(current_round)
+			shop.deal_new_cards_button_appear()
+			shop.toggle_upgrade_panel(false)
 		else:
 			shop.generate_mapspace_item()
+			shop.skip_mapspace_button_appear()
+			shop.toggle_upgrade_panel(false)
 		
 		await shop.finished_buying
 		

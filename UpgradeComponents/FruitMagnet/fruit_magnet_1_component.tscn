@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu0maqxrfidwd"]
+
+[ext_resource type="Script" uid="uid://cwas45hvfwiw0" path="res://UpgradeComponents/FruitMagnet/fruit_magnet_component.gd" id="1_fntuq"]
+[ext_resource type="Texture2D" uid="uid://pydt5yeyf5kk" path="res://UpgradeComponents/FruitMagnet/FruitMagnetParticle.svg" id="2_o31ig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_naiko"]
+size = Vector2(60, 60)
+
+[sub_resource type="Curve" id="Curve_51uca"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.256032, 0.132228), 0.0, 0.0, 0, 0, Vector2(0.658177, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ba7dc"]
+offsets = PackedFloat32Array(0, 0.241758, 1)
+colors = PackedColorArray(0.209, 0.38, 0.3458, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfjuu"]
+size = Vector2(60, 60)
+
+[node name="FruitMagnet1Component" type="Node2D"]
+script = ExtResource("1_fntuq")
+
+[node name="MagnetField2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField2"]
+position = Vector2(-80, -80)
+shape = SubResource("RectangleShape2D_naiko")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField2/ComponentShape"]
+position = Vector2(0, -40)
+amount = 2
+texture = ExtResource("2_o31ig")
+lifetime = 0.92
+gravity = Vector2(0, 0)
+scale_amount_min = 0.35
+scale_amount_max = 0.35
+scale_amount_curve = SubResource("Curve_51uca")
+color = Color(1, 1, 1, 0.478431)
+color_ramp = SubResource("Gradient_ba7dc")
+
+[node name="MagnetField3" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField3"]
+position = Vector2(80, -80)
+shape = SubResource("RectangleShape2D_vfjuu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField3/ComponentShape"]
+position = Vector2(0, -40)
+amount = 2
+texture = ExtResource("2_o31ig")
+lifetime = 0.92
+gravity = Vector2(0, 0)
+scale_amount_min = 0.35
+scale_amount_max = 0.35
+scale_amount_curve = SubResource("Curve_51uca")
+color = Color(1, 1, 1, 0.478431)
+color_ramp = SubResource("Gradient_ba7dc")
+
+[node name="MagnetField4" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_vertical_guides_ = [-710.0]
+
+[node name="ComponentShape" type="CollisionShape2D" parent="MagnetField4"]
+position = Vector2(0, -80)
+shape = SubResource("RectangleShape2D_vfjuu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField4/ComponentShape"]
+position = Vector2(0, -40)
+amount = 2
+texture = ExtResource("2_o31ig")
+lifetime = 0.92
+gravity = Vector2(0, 0)
+scale_amount_min = 0.35
+scale_amount_max = 0.35
+scale_amount_curve = SubResource("Curve_51uca")
+color = Color(1, 1, 1, 0.478431)
+color_ramp = SubResource("Gradient_ba7dc")
