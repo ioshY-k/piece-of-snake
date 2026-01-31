@@ -33,6 +33,7 @@ var is_advanced: bool
 var has_advancements: bool
 
 var owned_slot_area: Area2D = null
+var shelf_position: Vector2
 
 var base_price: int = 4
 var price: int
@@ -50,11 +51,13 @@ var item_shelf
 func _ready() -> void:
 	if is_play_button:
 		let_go.connect(play_hovered_mode)
+		shelf_position = Vector2(1249,529) + Vector2(size.x/2,size.y/2)
 		return
 	#globally accessed since salamander start Item is not added to Itemshelf as parent
 	shop = get_node("/root/MainSceneLoader/RunManager/Shop")
 	item_shelf = get_node("/root/MainSceneLoader/RunManager/Shop/ItemShelf")
-	
+	#setting the position to something on initialization for safety
+	shelf_position = item_shelf.find_child("Itemslot1").global_position + Vector2(size.x/2,size.y/2)
 	got_clicked.connect(shop._on_got_clicked)
 	bought.connect(shop._on_upgrade_card_bought)
 	destroyed.connect(shop._on_upgrade_destroyed)
@@ -172,14 +175,11 @@ func drag_logic(delta: float):
 
 func decide_on_let_go():
 	if is_bought:
-		_snap_to_slot(owned_slot_area)
+		_snap_to_slot(owned_slot_area.global_position)
 		card_snap_audio.play()
 		return
 	if card_area.get_overlapping_areas().is_empty():
-		var start_position = global_position
-		var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-		var direction = ((get_viewport().get_visible_rect().size*0.5)-global_position).normalized()
-		tween.tween_property(self, "global_position", global_position + direction*200, 0.2)
+		_snap_to_slot(shelf_position)
 		return
 	owned_slot_area = card_area.get_overlapping_areas()[0]
 	
@@ -194,7 +194,7 @@ func decide_on_let_go():
 		
 		if shop.can_afford(owned_slot_area.get_parent()):
 			card_sprite.rotation_degrees = 0
-			_snap_to_slot(owned_slot_area)
+			_snap_to_slot(owned_slot_area.global_position)
 			card_buy_audio.play()
 			if replaced_card != null:
 				replaced_card.destroyed.emit(replaced_card.upgrade_id)
@@ -208,10 +208,8 @@ func decide_on_let_go():
 			sale_number.get_parent().hide()
 			bought.emit(upgrade_id, owned_slot_area.get_parent())
 	elif not is_play_button:
-		var start_position = global_position
-		var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-		var direction = ((get_viewport().get_visible_rect().size*0.5)-global_position).normalized()
-		tween.tween_property(self, "global_position", global_position + direction*250, 0.2)
+		_snap_to_slot(shelf_position)
+		return
 
 var current_goal_scale: Vector2 = Vector2(1.2,1.2)
 var scale_tween: Tween
@@ -235,10 +233,10 @@ func _set_rotation(delta: float) -> void:
 	last_pos = global_position
 
 
-func _snap_to_slot(upgrade_slot: Area2D):
+func _snap_to_slot(slot_pos: Vector2):
 	var start_position = global_position
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_property(self, "global_position", upgrade_slot.global_position - (size/2), 0.3).from(start_position)
+	tween.tween_property(self, "global_position", slot_pos - (size/2), 0.3).from(start_position)
 
 func _on_mouse_entered() -> void:
 	if not is_dragging:

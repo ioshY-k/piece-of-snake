@@ -4,7 +4,7 @@
 	  "NAME_ENG": "MAP SPACE 1",
 	  "DESC_ENG": "Uncover more area for your map.\n\nThis card is lost upon reaching the next map.",
 	  "SWISSDESC_ENG": null,
-	  "NAME_GER": "KARTENVERGRÖSSERUNG 1",
+	  "NAME_GER": "KARTENPLATZ 1",
 	  "DESC_GER": "Decke mehr von deiner Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren.",
 	  "SWISSDESC_GER": null
 	},
@@ -12,7 +12,7 @@
 	  "NAME_ENG": "MAP SPACE 2",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Uncover even more area for your map.\n\nThis card is lost upon reaching the next map.",
 	  "SWISSDESC_ENG": null,
-	  "NAME_GER": "KARTENVERGRÖSSERUNG 2",
+	  "NAME_GER": "KARTENPLATZ 2",
 	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Decke noch mehr von deiner Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren.",
 	  "SWISSDESC_GER": null
 	},
@@ -20,7 +20,7 @@
 	  "NAME_ENG": "MAP SPACE 3",
 	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Uncover the maximum amount of area.\n\nThis Upgrade is lost upon reaching the next map.",
 	  "SWISSDESC_ENG": null,
-	  "NAME_GER": "KARTENVERGRÖSSERUNG 3",
+	  "NAME_GER": "KARTENPLATZ 3",
 	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Decke die maximale Karte auf.\n\nDieses Upgrade geht auf der nächsten Karte verloren.",
 	  "SWISSDESC_GER": null
 	},

@@ -22,7 +22,7 @@ func _ready():
 			var x_offset = randi_range(-300,300)
 			var y_offset = randi_range(-300,300)
 			dead_mouse.position += Vector2(x_offset,y_offset)
-			dead_mouse._snap_to_slot(slot.find_child("Area2D"))
+			dead_mouse._snap_to_slot(slot.find_child("Area2D").global_position)
 			match slot.get_groups():
 				["Slot Passive"]:
 					passive_dead_mice.append(dead_mouse)
@@ -69,7 +69,7 @@ func _random_item_on_area_size(upgrade_id):
 					upgrade_card.is_bought = true
 					upgrade_card.owned_slot_area = slot.get_node("Area2D")
 					await get_tree().process_frame
-					upgrade_card._snap_to_slot(slot.get_node("Area2D"))
+					upgrade_card._snap_to_slot(slot.get_node("Area2D").global_position)
 					shop.update_upgrade_pool(random_upgrade_id, true)
 					SignalBus.upgrade_bought.emit(random_upgrade_id)
 					break

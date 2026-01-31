@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=72 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://Shop/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://obnifq5ymbgd" path="res://Shop/Backgrounds/ItemShelfPanel.svg" id="2_7wam5"]
@@ -36,8 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://bo08ghbj5d5ts" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel20.svg" id="21_t5lin"]
 [ext_resource type="Script" uid="uid://pq7y75ujgns1" path="res://Shop/item_shelf.gd" id="23_qix85"]
 [ext_resource type="Texture2D" uid="uid://cdhi6mv1qy6aw" path="res://Shop/UI/Divider.svg" id="24_7hl21"]
-[ext_resource type="Texture2D" uid="uid://4wvixiopwjjg" path="res://Shop/UI/UpgradeInfo.svg" id="25_kcery"]
-[ext_resource type="Texture2D" uid="uid://c03gm4jg38h81" path="res://Shop/UI/NextRoundButton.png" id="25_kh3o2"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="26_qix85"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="27_fpme6"]
 [ext_resource type="Texture2D" uid="uid://ojgdj14q4kww" path="res://Shop/Slots/UpgradeSlotSpecial.svg" id="27_tnl66"]
@@ -57,6 +55,10 @@
 [ext_resource type="Texture2D" uid="uid://b01ruv64lpkgs" path="res://Shop/Slottypes/SlotTypePassive.png" id="38_3rb3p"]
 [ext_resource type="AudioStream" uid="uid://x0jm6gfjswja" path="res://Shop/Sfx/CardDeal.wav" id="40_12c50"]
 [ext_resource type="AudioStream" uid="uid://c1jyabebv6bq2" path="res://UI/ButtonPress.wav" id="41_cug3m"]
+[ext_resource type="Texture2D" uid="uid://wh7th4c8vkru" path="res://Shop/UI/NextRoundButtonNormal.svg" id="49_ypgte"]
+[ext_resource type="Texture2D" uid="uid://bjlidxc30mrxj" path="res://Shop/UI/NextRoundButtonPressed.svg" id="50_vnaoq"]
+[ext_resource type="Texture2D" uid="uid://drkdhwnb6m6px" path="res://Shop/UI/NextRoundButtonHovered.svg" id="51_dha0m"]
+[ext_resource type="Texture2D" uid="uid://6lixqqj8ygux" path="res://Shop/UI/NextRoundButtonDisabled.svg" id="52_fiogm"]
 [ext_resource type="Texture2D" uid="uid://bmeoylt7n2ykv" path="res://Shop/UI/DealNewCardsButtonPressed.svg" id="54_1i5pt"]
 [ext_resource type="Texture2D" uid="uid://btw8wqms20i46" path="res://Shop/UI/DealNewCardsButtonNormal.svg" id="55_dv0vd"]
 [ext_resource type="Texture2D" uid="uid://1p6ksbukwcwj" path="res://Shop/UI/DealNewCardsButtonHovered.svg" id="56_dv0vd"]
@@ -159,6 +161,8 @@ position = Vector2(292, 545)
 sprite_frames = SubResource("SpriteFrames_doc8j")
 animation = &"disappear"
 autoplay = "default"
+frame = 19
+frame_progress = 1.0
 
 [node name="UpgradeSlotSpecial" type="Control" parent="UpgradeOverview" groups=["Slot Special"]]
 z_index = 5
@@ -1078,20 +1082,33 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ContinueNextRound" type="Button" parent="ItemShelf"]
+[node name="ContinueNextRound" type="TextureButton" parent="ItemShelf"]
 z_index = 1
-offset_left = 337.928
-offset_top = 318.552
-offset_right = 512.928
-offset_bottom = 509.552
+offset_left = 302.633
+offset_top = 335.747
+offset_right = 492.633
+offset_bottom = 526.747
 scale = Vector2(0.96966, 0.861435)
-theme_override_font_sizes/font_size = 26
-icon = ExtResource("25_kh3o2")
+texture_normal = ExtResource("49_ypgte")
+texture_pressed = ExtResource("50_vnaoq")
+texture_hover = ExtResource("51_dha0m")
+texture_disabled = ExtResource("52_fiogm")
 
-[node name="UpgradeInfo" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(17.5656, 901.357)
+[node name="Label" type="Label" parent="ItemShelf/ContinueNextRound"]
+custom_minimum_size = Vector2(188.6, 125.09)
+layout_mode = 0
+offset_right = 188.6
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("56_qjec7")
+theme_override_font_sizes/font_size = 46
+text = "Next Round"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UpgradeInfo" type="Node2D" parent="ItemShelf"]
+position = Vector2(225.71, 860.633)
 scale = Vector2(0.934879, 0.902998)
-texture = ExtResource("25_kcery")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ItemShelf/UpgradeInfo"]
 offset_left = -213.0
@@ -1104,7 +1121,6 @@ size_flags_stretch_ratio = 1.06
 clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.70656, 0.5376, 0.96, 1)
-theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("9_0a76l")
 theme_override_fonts/bold_font = ExtResource("26_qix85")
 theme_override_font_sizes/bold_italics_font_size = 40
@@ -1122,7 +1138,6 @@ vertical_alignment = 1
 [node name="Underline" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
-theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("9_0a76l")
 theme_override_fonts/bold_font = ExtResource("26_qix85")
 theme_override_font_sizes/bold_italics_font_size = 40
@@ -1140,7 +1155,6 @@ vertical_alignment = 1
 [node name="UpgradeInfoText" type="RichTextLabel" parent="ItemShelf/UpgradeInfo/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
-theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("9_0a76l")
 theme_override_fonts/bold_font = ExtResource("26_qix85")
 theme_override_font_sizes/bold_italics_font_size = 40
@@ -1160,7 +1174,6 @@ vertical_alignment = 1
 clip_contents = false
 custom_minimum_size = Vector2(0, 60.02)
 layout_mode = 2
-theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("9_0a76l")
 theme_override_fonts/bold_font = ExtResource("26_qix85")
 theme_override_font_sizes/bold_italics_font_size = 40
@@ -1178,7 +1191,6 @@ vertical_alignment = 1
 clip_contents = false
 custom_minimum_size = Vector2(0, 237.305)
 layout_mode = 2
-theme_override_constants/outline_size = 16
 theme_override_constants/line_separation = -5
 theme_override_fonts/normal_font = ExtResource("9_0a76l")
 theme_override_fonts/bold_font = ExtResource("26_qix85")

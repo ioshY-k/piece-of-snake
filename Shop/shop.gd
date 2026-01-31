@@ -30,12 +30,12 @@ var synergy_slots: Array[Control]
 var active_slots: Array[Control]
 var special_slots: Array[Control]
 
-@onready var items_shop_lots: Array[Sprite2D] = [	$ItemShelf/Itemslot1,
+@onready var items_shop_slots: Array[Sprite2D] = [	$ItemShelf/Itemslot1,
 													$ItemShelf/Itemslot2,
 													$ItemShelf/Itemslot3]
 
 var slots: Array[Control] = []
-@onready var upgrade_info: Sprite2D = $ItemShelf/UpgradeInfo
+@onready var upgrade_info: Node2D = $ItemShelf/UpgradeInfo
 @onready var item_shelf: ItemShelf = $ItemShelf
 
 
@@ -213,7 +213,7 @@ func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
 	#automatically deal new cards after map space was bought
 	if upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_1 or\
 	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_2 or\
-	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_2:
+	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_3:
 		_on_skip_mapspace_pressed()
 	SignalBus.upgrade_bought.emit(upgrade_id)
 	
@@ -239,7 +239,7 @@ func equip_item(upgrade_id, slot_type):
 	upgrade_card.is_bought = true
 	upgrade_card.owned_slot_area = free_slot.get_node("Area2D")
 	await get_tree().process_frame
-	upgrade_card._snap_to_slot(free_slot.get_node("Area2D"))
+	upgrade_card._snap_to_slot(free_slot.get_node("Area2D").global_position)
 	update_upgrade_pool(upgrade_id, true)
 	SignalBus.upgrade_bought.emit(upgrade_id)
 	
@@ -331,9 +331,10 @@ func deal_upgrade_cards(offered_upgrades: Array[int]):
 		upgrade_card.instantiate_upgrade_card( offered_upgrade )
 		card_tween = create_tween()
 		card_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-		card_tween.tween_property(upgrade_card, "position" ,items_shop_lots[itemcounter].position + offset_vector, 0.2 + itemcounter * 0.1)
+		card_tween.tween_property(upgrade_card, "position" ,items_shop_slots[itemcounter].position + offset_vector, 0.2 + itemcounter * 0.1)
 		card_tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
-		card_tween.tween_property(upgrade_card, "position", items_shop_lots[itemcounter].position, 0.4)
+		card_tween.tween_property(upgrade_card, "position", items_shop_slots[itemcounter].position, 0.4)
+		upgrade_card.shelf_position = items_shop_slots[itemcounter].global_position  + Vector2(upgrade_card.size.x/2,upgrade_card.size.y/2)
 		itemcounter += 1
 	upgrade_cards_instantiated.emit()
 	await card_tween.finished
@@ -375,13 +376,13 @@ func hide_shop():
 
 func deal_new_cards_button_appear():
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.tween_property(deal_new_cards, "position:y", 1104.98, 0.4)
+	tween.tween_property(deal_new_cards, "position:y", 1104, 0.4)
 	await tween.finished
 	deal_new_cards.disabled = false
 
 func skip_mapspace_button_appear():
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.tween_property(skip_mapspace, "position:y", 900, 0.4)
+	tween.tween_property(skip_mapspace, "position:y", 1104, 0.4)
 	await tween.finished
 	skip_mapspace.disabled = false
 
