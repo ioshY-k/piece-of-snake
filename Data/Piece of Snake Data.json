@@ -579,5 +579,141 @@
 	  "DESC_GER": "Leckere Früchte geben beim Einsammeln einen zusätzlichen Punkt.\n\n",
 	  "Spalte 6": null
 	}
+  },
+  "Map Mods": {
+	"NO_MAPMOD": {
+	  "NAME_ENG": "Default Run",
+	  "DESC_ENG": "Collect enough fruits before the timer runs out.",
+	  "NAME_GER": "Standard Run",
+	  "DESC_GER": "Sammle genug Früchte, bevor die Zeit abläuft."
+	},
+	"CAFFEINATED": {
+	  "NAME_ENG": "Caffeinated",
+	  "DESC_ENG": "Move faster than usual.",
+	  "NAME_GER": "Koffeinhaltig",
+	  "DESC_GER": "Du bewegst dich schneller als sonst."
+	},
+	"TAILVIRUS": {
+	  "NAME_ENG": "Tail Virus",
+	  "DESC_ENG": "Your tail surrounds an aura. Lose points on contact.",
+	  "NAME_GER": "Schwanzvirus",
+	  "DESC_GER": "Deinen Schwanz umgibt eine Aura, die bei Berührung Punkte abzieht."
+	},
+	"EDIBLE_PAPER": {
+	  "NAME_ENG": "Edible Paper",
+	  "DESC_ENG": "Using active items causes you to grow.",
+	  "NAME_GER": "Esspapier",
+	  "DESC_GER": "Wenn du ein aktives Item benutzt, wächst du."
+	},
+	"LASER": {
+	  "NAME_ENG": "Laser",
+	  "DESC_ENG": "Dangerous lasers shoot over the map.",
+	  "NAME_GER": "Laser",
+	  "DESC_GER": "Gefährliche Laser schießen über die Karte."
+	},
+	"FRUIT_BODY": {
+	  "NAME_ENG": "Flaking",
+	  "DESC_ENG": "Surpassing your own body leves a permanent obstacle at that place.",
+	  "NAME_GER": "Schuppig",
+	  "DESC_GER": "Wenn du mit deinem eigenen Körper überlappst, wird dort ein permanentes Hindernis platziert."
+	},
+	"TETRI_FRUIT": {
+	  "NAME_ENG": "Blocky Fruits",
+	  "DESC_ENG": "Collected fruits form a shape inside your body.",
+	  "NAME_GER": "Steinfüchte",
+	  "DESC_GER": "Eingesammelte Früchte Formen Blöcke in deinem Körper."
+	},
+	"MOVING_FRUIT": {
+	  "NAME_ENG": "Moving Fruits",
+	  "DESC_ENG": "Fruits occasionally move around.",
+	  "NAME_GER": "Bewegliche Früchte",
+	  "DESC_GER": "Früchte bewegen sich ab und zu umher."
+	},
+	"ANTI_MAGNET": {
+	  "NAME_ENG": "Anti Magnet",
+	  "DESC_ENG": "Stopping in place causes fruits to move away from you.",
+	  "NAME_GER": "Gegenmagnet",
+	  "DESC_GER": "Wenn du stehen bleibst, bewegen sich Früchte von dir weg."
+	},
+	"GHOST_INVASION": {
+	  "NAME_ENG": "Ghost Fruit Invasion",
+	  "DESC_ENG": "Normal fruits give no points and growth, but they spawn Ghost Fruits.",
+	  "NAME_GER": "Geisterfrucht Invasion",
+	  "DESC_GER": "Normale Früchte geben keine Punkte und kein Wachstum, lassen jedoch Geisterfrüchte erscheinen."
+	},
+	"FAR_AWAY": {
+	  "NAME_ENG": "Shy Fruits",
+	  "DESC_ENG": "Fruits tend to spawn far away.",
+	  "NAME_GER": "Schüchterne Früchte",
+	  "DESC_GER": "Früchte tendieren dazu, weiter weg zu erscheinen."
+	},
+	"DARK": {
+	  "NAME_ENG": "Darkness",
+	  "DESC_ENG": "Darkness blocks the view and must be chased away.",
+	  "NAME_GER": "Dunkelheit",
+	  "DESC_GER": "Dunkelheit blockiert die Sicht und muss erst verjagt werden."
+	},
+	"UFO": {
+	  "NAME_ENG": "UFO",
+	  "DESC_ENG": "UFOs are blocking your view.",
+	  "NAME_GER": "UFO",
+	  "DESC_GER": "Ein UFO blockiert die Sicht."
+	},
+	"HEAD_SWAP": {
+	  "NAME_ENG": "Head Swap",
+	  "DESC_ENG": "Everytime you collect a fruit, your head and tail swap places.",
+	  "NAME_GER": "Kopftausch",
+	  "DESC_GER": "Wenn du eine Frucht einsammelst, tauschen Kopf und Schwanz die Plätze."
+	}
+  },
+  "Characters": {
+	"OSTRICH": {
+	  "NAME_ENG": "Wile E.",
+	  "DESC_ENG": "Faster than the others.",
+	  "NAME_GER": "Wile E.",
+	  "DESC_GER": "Schneller, als der Rest."
+	},
+	"PYTHON": {
+	  "NAME_ENG": "Rattoriel",
+	  "DESC_ENG": "The fruit requirements have 1 less fruit.",
+	  "NAME_GER": "Rattoriel",
+	  "DESC_GER": "Die Fruchtanforderungen haben 1 Frucht weniger."
+	},
+	"SALAMANDER": {
+	  "NAME_ENG": "Sam",
+	  "DESC_ENG": "Start with a random active upgrade.",
+	  "NAME_GER": "Sam",
+	  "DESC_GER": "Starte mit einem zufälligen aktiven Upgrade."
+	},
+	"CHAMELEON": {
+	  "NAME_ENG": "Camillo",
+	  "DESC_ENG": "Gain an additional multi colored upgrade slot. (not implemented yet)",
+	  "NAME_GER": "Camillo",
+	  "DESC_GER": "Erhalte einen zusätzlichen bunten Upgradeslot."
+	},
+	"ELEPHANT": {
+	  "NAME_ENG": "Barbella",
+	  "DESC_ENG": "Carry your points over to the next map.",
+	  "NAME_GER": "Barbella",
+	  "DESC_GER": "Behalte deine Punkte über die Karten hinweg."
+	},
+	"TWOHEAD": {
+	  "NAME_ENG": "Noel & Leon",
+	  "DESC_ENG": "Switch directions everytime you collect a fruit.",
+	  "NAME_GER": "Noel & Leon",
+	  "DESC_GER": "Ändere die Richtung bei jeder eingesammelten Frucht"
+	},
+	"RETRO": {
+	  "NAME_ENG": "Nikao",
+	  "DESC_ENG": "When exiting the screen, enter at the opposite side. On hit you immediately lose the game.",
+	  "NAME_GER": "Nikao",
+	  "DESC_GER": "Wenn du den Bildschirm verlässt, tauchst du auf der anderen Seite wieder auf. Bei einem Treffer verlierst du das Spiel sofort."
+	},
+	"CENTIPEDE": {
+	  "NAME_ENG": "Willy",
+	  "DESC_ENG": "If no direction is held, you won't move forward.",
+	  "NAME_GER": "Willy",
+	  "DESC_GER": "Wenn du nicht in eine Richtung steuerst, bewegst du dich auch nicht vorwärts."
+	}
   }
 }

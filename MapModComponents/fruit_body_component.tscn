@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq5k7uyrbb726"]
-
-[ext_resource type="Script" uid="uid://cx83qcmsxe7ms" path="res://MapModComponents/fruit_body_component.gd" id="1_cq5aj"]
-
-[node name="FruitBodyComponent" type="Node" groups=["MapMod"]]
-script = ExtResource("1_cq5aj")

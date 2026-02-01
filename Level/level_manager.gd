@@ -138,7 +138,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
 	################################################################################################################
-		time_meter.initiate_time_bar(1)
+		time_meter.initiate_time_bar(10)
 	else:
 		time_meter.initiate_time_bar(60)
 	################################################################################################################
@@ -147,9 +147,10 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	round_count_down = round_count_down_scene.instantiate()
 	add_child(round_count_down)
 	if RunSettings.mapmods_enabled:
-		round_count_down.change_text(Descriptions.mapmod_descriptions[str(mapmod)])
+		var key_string = TextConsts.get_id_string(GameConsts.MAP_MODS, mapmod)
+		round_count_down.change_text( TextConsts.get_text(TextConsts.TABLES.MAPMODS, key_string, "DESC" ))
 	else:
-		round_count_down.change_text("collect enough fruits before the timer runs out!")
+		round_count_down.change_text( TextConsts.get_text(TextConsts.TABLES.MAPMODS, "NO_MAPMOD", "DESC" ))
 	await round_count_down.count_down_finished
 	
 	SignalBus.round_started.emit()

@@ -9,7 +9,7 @@ radius = 1848.96
 [node name="HeadLightComponent" type="Sprite2D"]
 scale = Vector2(1.61, 1.73)
 texture = ExtResource("1_7g17r")
-offset = Vector2(4, -282)
+offset = Vector2(4, -259.095)
 script = ExtResource("1_kobhq")
 
 [node name="Area2DDefault" type="Area2D" parent="."]

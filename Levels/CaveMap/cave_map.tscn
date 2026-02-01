@@ -102,15 +102,6 @@ position = Vector2(800, 640)
 [node name="SolidElementArea24" parent="SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(720, 400)
 
-[node name="SolidElementArea25" parent="SolidElements" instance=ExtResource("3_mdymt")]
-position = Vector2(1360, 320)
-
-[node name="SolidElementArea26" parent="SolidElements" instance=ExtResource("3_mdymt")]
-position = Vector2(1360, 160)
-
-[node name="SolidElementArea27" parent="SolidElements" instance=ExtResource("3_mdymt")]
-position = Vector2(1280, 0)
-
 [node name="SolidElementArea28" parent="SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(880, 0)
 
@@ -339,6 +330,12 @@ position = Vector2(1360, -80)
 [node name="SolidElementArea103" parent="SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(1440, -80)
 
+[node name="SolidElementArea104" parent="SolidElements" instance=ExtResource("3_mdymt")]
+position = Vector2(1200, 0)
+
+[node name="SolidElementArea25" parent="SolidElements" instance=ExtResource("3_mdymt")]
+position = Vector2(1440, 320)
+
 [node name="TeleportElements" type="Node2D" parent="."]
 
 [node name="AreaSize1SolidElements" type="Node2D" parent="."]
@@ -430,6 +427,12 @@ position = Vector2(1360, 240)
 [node name="SolidElementArea31" parent="AreaSize1SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(1360, 80)
 
+[node name="SolidElementArea32" parent="AreaSize1SolidElements" instance=ExtResource("3_mdymt")]
+position = Vector2(1360, 160)
+
+[node name="SolidElementArea33" parent="AreaSize1SolidElements" instance=ExtResource("3_mdymt")]
+position = Vector2(1360, 320)
+
 [node name="AreaSize2SolidElements" type="Node2D" parent="."]
 
 [node name="SolidElementArea" parent="AreaSize2SolidElements" instance=ExtResource("3_mdymt")]
@@ -515,11 +518,11 @@ position = Vector2(1040, 0)
 [node name="SolidElementArea30" parent="AreaSize2SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(1120, 0)
 
-[node name="SolidElementArea31" parent="AreaSize2SolidElements" instance=ExtResource("3_mdymt")]
-position = Vector2(1200, 0)
-
 [node name="SolidElementArea33" parent="AreaSize2SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(1360, 0)
+
+[node name="SolidElementArea27" parent="AreaSize2SolidElements" instance=ExtResource("3_mdymt")]
+position = Vector2(1280, 0)
 
 [node name="AreaSize3SolidElements" type="Node2D" parent="."]
 
@@ -534,9 +537,6 @@ position = Vector2(1440, 160)
 
 [node name="SolidElementArea4" parent="AreaSize3SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(1440, 240)
-
-[node name="SolidElementArea5" parent="AreaSize3SolidElements" instance=ExtResource("3_mdymt")]
-position = Vector2(1440, 320)
 
 [node name="SolidElementArea6" parent="AreaSize3SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(1440, 400)

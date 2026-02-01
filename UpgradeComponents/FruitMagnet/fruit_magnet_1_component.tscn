@@ -7,7 +7,7 @@
 size = Vector2(60, 60)
 
 [sub_resource type="Curve" id="Curve_51uca"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.256032, 0.132228), 0.0, 0.0, 0, 0, Vector2(0.658177, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.462466, 0.154337), 0.0, 0.0, 0, 0, Vector2(1, 0.0769559), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_ba7dc"]
@@ -31,9 +31,9 @@ shape = SubResource("RectangleShape2D_naiko")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField2/ComponentShape"]
 position = Vector2(0, -40)
-amount = 2
+amount = 1
 texture = ExtResource("2_o31ig")
-lifetime = 0.92
+lifetime = 0.38
 gravity = Vector2(0, 0)
 scale_amount_min = 0.35
 scale_amount_max = 0.35
@@ -52,9 +52,9 @@ shape = SubResource("RectangleShape2D_vfjuu")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField3/ComponentShape"]
 position = Vector2(0, -40)
-amount = 2
+amount = 1
 texture = ExtResource("2_o31ig")
-lifetime = 0.92
+lifetime = 0.38
 gravity = Vector2(0, 0)
 scale_amount_min = 0.35
 scale_amount_max = 0.35
@@ -73,9 +73,9 @@ shape = SubResource("RectangleShape2D_vfjuu")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField4/ComponentShape"]
 position = Vector2(0, -40)
-amount = 2
+amount = 1
 texture = ExtResource("2_o31ig")
-lifetime = 0.92
+lifetime = 0.38
 gravity = Vector2(0, 0)
 scale_amount_min = 0.35
 scale_amount_max = 0.35

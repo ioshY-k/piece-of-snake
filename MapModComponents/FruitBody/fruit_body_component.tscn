@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq5k7uyrbb726"]
+
+[ext_resource type="Script" uid="uid://cx83qcmsxe7ms" path="res://MapModComponents/FruitBody/fruit_body_component.gd" id="1_cq5aj"]
+[ext_resource type="AudioStream" uid="uid://e400atxddqwr" path="res://MapModComponents/FruitBody/scaling.wav" id="2_q2iw1"]
+
+[node name="FruitBodyComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_cq5aj")
+
+[node name="ScaleAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q2iw1")

@@ -91,10 +91,10 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.RESTAURANT,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
-						GameConsts.MAP_MODS.LASER,
+		mapmodorder = [GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.LASER,
@@ -194,26 +194,9 @@ func update_masteries():
 	var map2
 	var map3
 	
-	match RunSettings.gamemode:
-		GameConsts.GAMEMODES.EASY:
-			gamemode = "EASY"
-		GameConsts.GAMEMODES.NORMAL:
-			gamemode = "NORMAL"
-		GameConsts.GAMEMODES.HARD:
-			gamemode = "HARD"
-		GameConsts.GAMEMODES.ASCENSION:
-			gamemode = "ASCENSION"
-	match RunSettings.current_char:
-		GameConsts.CHAR_LIST.OSTRICH:
-			character = "OSTRICH"
-		GameConsts.CHAR_LIST.PYTHON:
-			character = "PYTHON"
-		GameConsts.CHAR_LIST.SALAMANDER:
-			character = "SALAMANDER"
-		GameConsts.CHAR_LIST.CHAMELEON:
-			character = "CHAMELEON"
-		GameConsts.CHAR_LIST.ELEPHANT:
-			character = "ELEPHANT"
+	gamemode = TextConsts.get_id_string(GameConsts.GAMEMODES, RunSettings.gamemode)
+	character = TextConsts.get_id_string(GameConsts.CHAR_LIST, RunSettings.current_char)
+	
 	if shop.is_filled(shop.special_slots[0]):
 		special_upgrade = shop.special_slots[0].get_node("Area2D").get_child(-1).upgrade_id_string
 		
@@ -226,10 +209,11 @@ func update_masteries():
 			map3 = name
 	
 	GlobalSettings.masteries[gamemode][character] = true
-	GlobalSettings.masteries[gamemode][special_upgrade] = true
 	GlobalSettings.masteries[gamemode][map1] = true
 	GlobalSettings.masteries[gamemode][map2] = true
 	GlobalSettings.masteries[gamemode][map3] = true
+	if special_upgrade != null:
+		GlobalSettings.masteries[gamemode][special_upgrade] = true
 	
 func game_over():
 	game_over_screen.show()

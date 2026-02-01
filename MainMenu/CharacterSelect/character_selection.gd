@@ -34,19 +34,7 @@ var hovering_char_selects: Array[bool] = [	hovering_char_0_select,
 											hovering_char_6_select,
 											hovering_char_7_select]
 
-var char_descriptions:Dictionary = {
-	str(GameConsts.CHAR_LIST.OSTRICH) : "Faster than the others.",
-	str(GameConsts.CHAR_LIST.PYTHON) : "The fruit requirement for every round has 1 less fruit\n\n(recommended for the first run)",
-	str(GameConsts.CHAR_LIST.SALAMANDER) : "Start with a random active Item",
-	str(GameConsts.CHAR_LIST.ELEPHANT) : "Carry over your Currency from one map to the next",
-	str(GameConsts.CHAR_LIST.CHAMELEON) : "Gain an additional multi colored Upgrade slot (not implemented yet)",
-	str(GameConsts.CHAR_LIST.TWOHEAD) : "Switch directions everytime you collect a fruit",
-	str(GameConsts.CHAR_LIST.RETRO) : "When exiting the screen, enter at the opposite side. On hit you lose the game.",
-	str(GameConsts.CHAR_LIST.CENTIPEDE) : "If no direction is held, you won't move forward.",
-	
-}
-@onready var label: Label = $"../CharacterInfo/Label"
-
+@onready var label: Label = $CharacterInfo/Label
 
 const HOVER_SCALE_CHANGE:float = 1.2
 
@@ -120,7 +108,8 @@ func char_hovered(char_number):
 	tween.tween_property(character_selects[char_number],"rotation_degrees", 0,0.1)
 	tween.tween_property(character_selects[char_number],"rotation_degrees", -1,0.1)
 	tween.tween_property(character_selects[char_number],"rotation_degrees", 0,0.1)
-	label.text = char_descriptions[str(char_number)]
+	var id_string = TextConsts.get_id_string(GameConsts.CHAR_LIST, char_number)
+	label.text = TextConsts.get_text(TextConsts.TABLES.CHARACTERS, id_string, "DESC")
 	
 	
 

@@ -1,30 +1,30 @@
 extends Node
 
-enum languages {ENGLISH, GERMAN}
-var language = languages.GERMAN
+enum LANGUAGES {ENGLISH, GERMAN}
+var language = LANGUAGES.ENGLISH
 var keyboard_only: bool = true
 
 var masteries_json_path = "user://masteries.json"
 var masteries = {
 	"EASY" : {
-		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"RETRO" : false,"CENTIPEDE" : false,"TWOHEAD" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
-		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
+		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"MAP4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"GARDEN" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"SPACE" : false
 	},
 	"NORMAL" : {
-		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"RETRO" : false,"CENTIPEDE" : false,"TWOHEAD" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
-		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
+		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"MAP4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"GARDEN" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"SPACE" : false
 	},
 	"HARD" : {
-		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"RETRO" : false,"CENTIPEDE" : false,"TWOHEAD" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
-		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
+		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"MAP4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"GARDEN" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"SPACE" : false
 	},
 	"ASCENSION" : {
-		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"CHAR6" : false,"CHAR7" : false,"CHAR8" : false,
+		"OSTRICH" : false,"PYTHON" : false,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"RETRO" : false,"CENTIPEDE" : false,"TWOHEAD" : false,
 		"IMMUTABLE" : false,"MOULTING" : false,"EDGE_WRAP" : false,"DANCE" : false,"HALF_GONE" : false,"ALLERGY" : false,"OVERFED" : false,"ANCHOR" : false,
-		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"Map4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"Map8" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"Map12" : false
+		"WOODS" : false,"STADIUM" : false,"RESTAURANT" : false,"MAP4" : false,"OFFICE" : false,"CAVE" : false,"TRAIN" : false,"GARDEN" : false,"DISCO" : false,"BEACH" : false,"TOMB" : false,"SPACE" : false
 	}
 }
 

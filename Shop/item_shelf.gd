@@ -9,23 +9,6 @@ var current_description_id: int = -1
 @onready var map_preview: MapPreview = $MapPreview
 @onready var mapmod_info: Sprite2D = $MapmodInfo
 
-var mapmod_descriptions = {
-	str(GameConsts.MAP_MODS.CAFFEINATED) : "Move Faster than usual",
-	str(GameConsts.MAP_MODS.TAILVIRUS) : "Your Tail surrounds an aura, which steals fruit on contact",
-	str(GameConsts.MAP_MODS.EDIBLE_PAPER) : "Using active Items causes the Snake to grow",
-	str(GameConsts.MAP_MODS.LASER) : "Lasers shoot over the map, that have to be avoided",
-	str(GameConsts.MAP_MODS.FRUIT_BODY) : "Surpassing your own body leves a permanent Block at that place",
-	str(GameConsts.MAP_MODS.TETRI_FRUIT) : "Collected Fruits form a shape inside your body",
-	str(GameConsts.MAP_MODS.MOVING_FRUIT) : "Fruits occasionally move around",
-	str(GameConsts.MAP_MODS.ANTI_MAGNET) : "Stopping in place causes fruits to move away from you",
-	str(GameConsts.MAP_MODS.GHOST_INVASION) : "Normal Fruits dont give Points and cause 1 less growth. For every collected normal Fruit, spawn Ghost Fruits",
-	str(GameConsts.MAP_MODS.FAR_AWAY) : "Fruits tend to spawn far away",
-	str(GameConsts.MAP_MODS.DARK) : "Darkness blocks the view and must be chased away",
-	str(GameConsts.MAP_MODS.UFO) : "UFOs are blocking your view",
-	str(GameConsts.MAP_MODS.HEAD_SWAP) : "Everytime you collect a fruit, your Head and Tail swap places"
-}
-	
-
 var upgrade_info_tween: Tween
 func change_item_description(upgrade_card: UpgradeCard):
 	if upgrade_card.upgrade_id != current_description_id:
@@ -55,7 +38,8 @@ func show_mapmod_description(upcoming_mapmod: int):
 		return
 	mapmod_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	mapmod_info_tween.tween_property(mapmod_info, "scale", Vector2(1,1), 1)
-	mapmod_info.get_node("MapmodInfoText").text = mapmod_descriptions[str(upcoming_mapmod)]
+	var id_string = TextConsts.get_id_string(GameConsts.MAP_MODS, upcoming_mapmod)
+	mapmod_info.get_node("MapmodInfoText").text = TextConsts.get_text(TextConsts.TABLES.MAPMODS, id_string, "DESC")
 	
 func hide_mapmod_description():
 	if not RunSettings.mapmods_enabled:

@@ -5,6 +5,13 @@ var scene_loader: SceneLoader
 @onready var character_selection: Node2D = $CharacterSelection
 @onready var play_button: UpgradeCard = $PlayButton
 
+@onready var language_button: OptionButton = $LanguageButton
+@onready var start_new_run: TextureButton = $HBoxContainer/StartNewRun
+@onready var play_challenge: TextureButton = $HBoxContainer/PlayChallenge
+@onready var show_progress: TextureButton = $HBoxContainer/ShowProgress
+@onready var options: TextureButton = $HBoxContainer/Options
+@onready var options_menu: Control = $OptionsMenu
+
 @onready var easy_slot: Sprite2D = $EasySlot
 @onready var normal_slot: Sprite2D = $NormalSlot
 @onready var hard_slot: Sprite2D = $HardSlot
@@ -23,7 +30,7 @@ var scene_loader: SceneLoader
 
 
 var character_panels: Dictionary
-
+var SLOT_HEIGHTS = {"INVISIBLE": 1374 , "NAME_VISIBLE": 1236.5, "DESC_VISIBLE":1104, "PROGRESS_VISIBLE":560}
 
 func _ready() -> void:
 	character_panels =  {
@@ -37,16 +44,18 @@ func _ready() -> void:
 		str(GameConsts.CHAR_LIST.CENTIPEDE) : bg_colors_centipede,
 	}
 	scene_loader = get_parent()
+	language_button.selected = GlobalSettings.language
 	character_selection.char_changed.connect(_on_char_changed)
 	play_button.turn_into_playbutton()
+	play_button.scale = Vector2.ZERO
 	play_button.got_clicked.connect(func(_card):
 		slot_rise_to(easy_slot,891)
 		slot_rise_to(normal_slot,891)
 		slot_rise_to(hard_slot,891))
 	play_button.let_go.connect(func():
-		slot_descend(easy_slot)
-		slot_descend(normal_slot)
-		slot_descend(hard_slot))
+		slot_rise_to(easy_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
+		slot_rise_to(normal_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
+		slot_rise_to(hard_slot, SLOT_HEIGHTS["NAME_VISIBLE"]))
 
 func _on_char_changed(char_id: int):
 	RunSettings.current_char = char_id
@@ -114,35 +123,82 @@ func slot_rise_to(slot, height):
 	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(slot, "position:y", height, 0.4)
 
-func slot_descend(slot):
+func play_button_appear(disappear: bool):
+	var playbutton_scale = Vector2(1,1)
+	if disappear:
+		playbutton_scale = Vector2.ZERO
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(slot, "position:y", 1236.5, 0.4)
+	tween.tween_property(play_button, "scale", playbutton_scale, 0.15)
+
+func options_menu_appear(disappear: bool):
+	var menu_pos = 583
+	var menu_alpha = 1
+	if disappear:
+		menu_pos = 662
+		menu_alpha = 0
+	options_menu.show()
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT).set_parallel(true)
+	tween.tween_property(options_menu, "position:y", menu_pos, 0.3)
+	tween.tween_property(options_menu, "modulate:a", menu_alpha, 0.3)
+	if disappear:
+		await tween.finished
+		options_menu.hide()
 
 func _on_easy_slot_area_mouse_entered() -> void:
-	slot_rise_to(easy_slot, 1104)
+	slot_rise_to(easy_slot, SLOT_HEIGHTS["DESC_VISIBLE"])
 
 func _on_normal_slot_area_mouse_entered() -> void:
-	slot_rise_to(normal_slot, 1104)
+	slot_rise_to(normal_slot, SLOT_HEIGHTS["DESC_VISIBLE"])
 
 func _on_hard_slot_area_mouse_entered() -> void:
-	slot_rise_to(hard_slot, 1104)
+	slot_rise_to(hard_slot, SLOT_HEIGHTS["DESC_VISIBLE"])
 
 func _on_easy_slot_area_mouse_exited() -> void:
-	slot_descend(easy_slot)
+	slot_rise_to(easy_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
 
 func _on_normal_slot_area_mouse_exited() -> void:
-	slot_descend(normal_slot)
+	slot_rise_to(normal_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
 
 func _on_hard_slot_area_mouse_exited() -> void:
-	slot_descend(hard_slot)
+	slot_rise_to(hard_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
 
-func _on_show_banners_mouse_entered() -> void:
-	slot_rise_to(easy_slot, 560)
-	slot_rise_to(normal_slot, 560)
-	slot_rise_to(hard_slot, 560)
+func _on_language_button_item_selected(index: int) -> void:
+	match index:
+		GlobalSettings.LANGUAGES.ENGLISH:
+			GlobalSettings.language = GlobalSettings.LANGUAGES.ENGLISH
+		GlobalSettings.LANGUAGES.GERMAN:
+			GlobalSettings.language = GlobalSettings.LANGUAGES.GERMAN
+	get_tree().reload_current_scene()
 
-func _on_show_banners_mouse_exited() -> void:
-	slot_descend(easy_slot)
-	slot_descend(normal_slot)
-	slot_descend(hard_slot)
+func _on_start_new_run_pressed() -> void:
+	if options_menu.visible:
+		options_menu_appear(true)
+	play_button_appear(false)
+	slot_rise_to(easy_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
+	slot_rise_to(normal_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
+	slot_rise_to(hard_slot, SLOT_HEIGHTS["NAME_VISIBLE"])
+	easy_slot_area.process_mode = Node.PROCESS_MODE_INHERIT
+	normal_slot_area.process_mode = Node.PROCESS_MODE_INHERIT
+	hard_slot_area.process_mode = Node.PROCESS_MODE_INHERIT
+	
+func _on_show_progress_pressed() -> void:
+	if options_menu.visible:
+		options_menu_appear(true)
+	play_button_appear(true)
+	slot_rise_to(easy_slot, SLOT_HEIGHTS["PROGRESS_VISIBLE"])
+	slot_rise_to(normal_slot, SLOT_HEIGHTS["PROGRESS_VISIBLE"])
+	slot_rise_to(hard_slot, SLOT_HEIGHTS["PROGRESS_VISIBLE"])
+	easy_slot_area.process_mode = Node.PROCESS_MODE_DISABLED
+	normal_slot_area.process_mode = Node.PROCESS_MODE_DISABLED
+	hard_slot_area.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _on_options_pressed() -> void:
+	if not options_menu.visible:
+		options_menu_appear(false)
+	play_button_appear(true)
+	slot_rise_to(easy_slot, SLOT_HEIGHTS["INVISIBLE"])
+	slot_rise_to(normal_slot, SLOT_HEIGHTS["INVISIBLE"])
+	slot_rise_to(hard_slot, SLOT_HEIGHTS["INVISIBLE"])

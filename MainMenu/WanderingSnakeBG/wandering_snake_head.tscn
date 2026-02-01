@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgthcqdygfvms"]
+
+[ext_resource type="Texture2D" uid="uid://bfopv5823uwdo" path="res://MainMenu/WanderingSnakeBG/WanderingSnakeHead.svg" id="1_4l4pl"]
+[ext_resource type="Script" uid="uid://bsjvlchc6aa1" path="res://MainMenu/WanderingSnakeBG/wandering_snake_head.gd" id="2_bov3k"]
+[ext_resource type="Texture2D" uid="uid://cfe3k6utrvj0y" path="res://MainMenu/WanderingSnakeBG/WanderingSnakeBodyParticle.svg" id="3_wpvn5"]
+
+[sub_resource type="Curve" id="Curve_45wq7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0398773, 1), 0.0, 0.0, 0, 0, Vector2(0.270961, 0.57635), 2.23606, 2.23606, 0, 0, Vector2(0.473415, 0.882992), 0.0, 0.0, 0, 0, Vector2(0.61043, 0.729671), 0.0, 0.0, 0, 0, Vector2(0.866053, 1), -2.50419, -2.50419, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="Gradient" id="Gradient_4l4pl"]
+offsets = PackedFloat32Array(0, 0.348901, 0.486264, 0.741758, 1)
+colors = PackedColorArray(0.1518, 0.24497, 0.66, 1, 0.115843, 0.164478, 0.394558, 1, 0.1334, 0.193277, 0.46, 1, 0.1584, 0.26136, 0.72, 1, 0.0837, 0.125188, 0.31, 1)
+
+[node name="WanderingSnakeHead" type="Sprite2D"]
+self_modulate = Color(0.165, 0.25575, 0.66, 1)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("1_4l4pl")
+script = ExtResource("2_bov3k")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+amount = 35
+texture = ExtResource("3_wpvn5")
+lifetime = 15.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.28
+scale_amount_max = 0.28
+scale_amount_curve = SubResource("Curve_45wq7")
+color_ramp = SubResource("Gradient_4l4pl")

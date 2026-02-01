@@ -82,10 +82,7 @@ func play_hovered_mode():
 	
 
 func instantiate_upgrade_card(id: int):
-	for name in GameConsts.UPGRADE_LIST.keys():
-		if GameConsts.UPGRADE_LIST[name] == id:
-			upgrade_id_string = name
-			break
+	upgrade_id_string = TextConsts.get_id_string(GameConsts.UPGRADE_LIST, id)
 	
 	upgrade_name = TextConsts.get_text(TextConsts.TABLES.CARDS,upgrade_id_string, "NAME")
 	upgrade_description = TextConsts.get_text(TextConsts.TABLES.CARDS,upgrade_id_string, "DESC").format({
@@ -207,6 +204,8 @@ func decide_on_let_go():
 			is_bought = true
 			sale_number.get_parent().hide()
 			bought.emit(upgrade_id, owned_slot_area.get_parent())
+		else:
+			_snap_to_slot(shelf_position)
 	elif not is_play_button:
 		_snap_to_slot(shelf_position)
 		return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=170 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
@@ -32,8 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://ddpiak6p1mtb7" path="res://Snake/Head/ElephantHead.svg" id="29_bmlrk"]
 [ext_resource type="Texture2D" uid="uid://cylor60les28q" path="res://Snake/Body/Sprites/Elephant/ElephantEdge.svg" id="29_c58bg"]
 [ext_resource type="Texture2D" uid="uid://do8vru8la3k2v" path="res://Snake/Tail/ElephantTail.svg" id="30_t31mw"]
-[ext_resource type="Texture2D" uid="uid://chbjrh02lc2sb" path="res://MainMenu/CharacterSelectBG.png" id="31_bh756"]
-[ext_resource type="Texture2D" uid="uid://c5rrcknlgrnt4" path="res://MainMenu/CharacterInfo.svg" id="32_bh756"]
+[ext_resource type="Texture2D" uid="uid://chbjrh02lc2sb" path="res://MainMenu/CharacterSelect/CharacterSelectBG.png" id="31_bh756"]
 [ext_resource type="Texture2D" uid="uid://cip3d8wpqfnt" path="res://Snake/Head/TwoheadHead.svg" id="32_hg2b4"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="33_cwel5"]
 [ext_resource type="Texture2D" uid="uid://boqwqs3dimyaa" path="res://Snake/Tail/TwoheadTail.svg" id="33_fi7gv"]
@@ -41,12 +40,12 @@
 [ext_resource type="Texture2D" uid="uid://sqbl7il81wfd" path="res://Snake/Body/Sprites/Twohead/TwoheadCorner.svg" id="35_g521o"]
 [ext_resource type="Texture2D" uid="uid://cfl68eu4wdxp8" path="res://Snake/Head/RetroHead.svg" id="36_cbxrr"]
 [ext_resource type="Texture2D" uid="uid://xojdee4mu1p7" path="res://Snake/Tail/RetroTail.svg" id="37_7npx2"]
-[ext_resource type="PackedScene" uid="uid://bch88i4suqn2b" path="res://MainMenu/banners.tscn" id="37_w8io1"]
-[ext_resource type="Texture2D" uid="uid://6f6gnkek4p1g" path="res://MainMenu/MainMenuBachground.svg" id="38_ce477"]
+[ext_resource type="PackedScene" uid="uid://bch88i4suqn2b" path="res://MainMenu/BannerIcons/banners.tscn" id="37_w8io1"]
+[ext_resource type="Texture2D" uid="uid://6f6gnkek4p1g" path="res://MainMenu/BG/MainMenuBackground.svg" id="38_ce477"]
 [ext_resource type="Texture2D" uid="uid://cu8ignm4lf8fn" path="res://Snake/Body/Sprites/Retro/RetroBody.svg" id="38_uuldf"]
 [ext_resource type="Texture2D" uid="uid://bpvwpmgpogfo2" path="res://Shop/UpgradeCards/Anchor.svg" id="39_12kcr"]
 [ext_resource type="Texture2D" uid="uid://b6frh331lojjo" path="res://Snake/Head/CentipedeHead.svg" id="39_67l25"]
-[ext_resource type="PackedScene" uid="uid://b4hoaxemc7x81" path="res://MainMenu/wandering_snakes_background.tscn" id="39_ce477"]
+[ext_resource type="PackedScene" uid="uid://b4hoaxemc7x81" path="res://MainMenu/WanderingSnakeBG/wandering_snakes_background.tscn" id="39_ce477"]
 [ext_resource type="Texture2D" uid="uid://cvskf4rlgc7j8" path="res://Shop/UpgradeCards/Catch.svg" id="40_bh756"]
 [ext_resource type="Texture2D" uid="uid://carx8odv71g11" path="res://Snake/Tail/CentipedeTail.svg" id="40_ohsmc"]
 [ext_resource type="Texture2D" uid="uid://fmrt4cfnf0x3" path="res://Snake/Body/Sprites/Centipede/CentipedeEdge.svg" id="41_dx3h0"]
@@ -54,26 +53,41 @@
 [ext_resource type="Texture2D" uid="uid://djr0isdrr7oa7" path="res://Snake/Body/Sprites/Centipede/CentipedeCorner.svg" id="42_aslwg"]
 [ext_resource type="Texture2D" uid="uid://dkl1bses52k5x" path="res://Shop/UpgradeCards/PiggyBank.svg" id="42_w8io1"]
 [ext_resource type="Texture2D" uid="uid://kdourpai0vr6" path="res://Shop/UpgradeCards/PlantSnake.svg" id="43_r03wj"]
+[ext_resource type="Texture2D" uid="uid://cvc4xskm6nrge" path="res://MainMenu/CharacterSelect/CharDescription.svg" id="44_cnps2"]
 [ext_resource type="Texture2D" uid="uid://uldq0vvhi3m4" path="res://Shop/UpgradeCards/PowerNap.svg" id="44_hg2b4"]
-[ext_resource type="Texture2D" uid="uid://c2day5kv1wveg" path="res://MainMenu/CharSelectBackgroundsvg.svg" id="44_ohsmc"]
+[ext_resource type="Texture2D" uid="uid://c2day5kv1wveg" path="res://MainMenu/CharacterSelect/CharSelectBackgroundsvg.svg" id="44_ohsmc"]
 [ext_resource type="Texture2D" uid="uid://bbpwacdc1jvg4" path="res://Shop/UpgradeCards/RubberBand.svg" id="45_fi7gv"]
-[ext_resource type="Texture2D" uid="uid://bekjkpim1b3ee" path="res://MainMenu/CharSelectBackgroundCentipede.svg" id="45_l1oxh"]
+[ext_resource type="Texture2D" uid="uid://bekjkpim1b3ee" path="res://MainMenu/CharacterSelect/CharSelectBackgroundCentipede.svg" id="45_l1oxh"]
 [ext_resource type="Texture2D" uid="uid://br2gk6nyd7rj3" path="res://Shop/UpgradeCards/ShinyGhost.svg" id="46_bqfl2"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="46_cnps2"]
-[ext_resource type="Texture2D" uid="uid://dar25tr52iskj" path="res://MainMenu/CharSelectBackgroundChameleon.svg" id="46_nhp1e"]
+[ext_resource type="Texture2D" uid="uid://dar25tr52iskj" path="res://MainMenu/CharacterSelect/CharSelectBackgroundChameleon.svg" id="46_nhp1e"]
 [ext_resource type="PackedScene" uid="uid://bc2jtreq5e56n" path="res://Shop/UpgradeCards/upgrade_card.tscn" id="46_wclgf"]
 [ext_resource type="Texture2D" uid="uid://ihytxj6bny85" path="res://MainMenu/PlayButtonSlot.svg" id="47_2384g"]
-[ext_resource type="Texture2D" uid="uid://3c36ip7s70jk" path="res://MainMenu/CharSelectBackgroundOstrich.svg" id="47_cnps2"]
+[ext_resource type="Texture2D" uid="uid://3c36ip7s70jk" path="res://MainMenu/CharacterSelect/CharSelectBackgroundOstrich.svg" id="47_cnps2"]
 [ext_resource type="Texture2D" uid="uid://cnyoy2hjcisf2" path="res://Shop/UpgradeCards/snek1.png" id="47_g521o"]
-[ext_resource type="Texture2D" uid="uid://cbkouwqe8c2yd" path="res://MainMenu/CharSelectBackgroundPython.svg" id="48_cl1ps"]
+[ext_resource type="Texture2D" uid="uid://cbkouwqe8c2yd" path="res://MainMenu/CharacterSelect/CharSelectBackgroundPython.svg" id="48_cl1ps"]
 [ext_resource type="Texture2D" uid="uid://7a4e3l6e3ots" path="res://Shop/UpgradeCards/TimeStop1.svg" id="48_ib2n2"]
-[ext_resource type="Texture2D" uid="uid://c7obdob4kbeny" path="res://MainMenu/GameLogo.png" id="49_12kcr"]
-[ext_resource type="Texture2D" uid="uid://byte0bqmjmtk0" path="res://MainMenu/CharSelectBackgroundRetro.svg" id="49_k32k8"]
-[ext_resource type="Texture2D" uid="uid://bn4gqxh4jwiga" path="res://MainMenu/CharSelectBackgroundSalamander.svg" id="50_0xf51"]
-[ext_resource type="Texture2D" uid="uid://43j8mxxjuxa4" path="res://MainMenu/WanderingFruit.png" id="50_bh756"]
-[ext_resource type="Texture2D" uid="uid://8uwy0ctehdjx" path="res://MainMenu/CharSelectBackgroundTwoHead.svg" id="51_xgqc5"]
-[ext_resource type="Texture2D" uid="uid://buo10ffxg1ypm" path="res://MainMenu/CharSelectBackgroundElephant.svg" id="52_wbja4"]
-[ext_resource type="Texture2D" uid="uid://btim8f53ku78x" path="res://MainMenu/BackGroundMosaik.svg" id="71_cnps2"]
+[ext_resource type="Texture2D" uid="uid://byte0bqmjmtk0" path="res://MainMenu/CharacterSelect/CharSelectBackgroundRetro.svg" id="49_k32k8"]
+[ext_resource type="Texture2D" uid="uid://bn4gqxh4jwiga" path="res://MainMenu/CharacterSelect/CharSelectBackgroundSalamander.svg" id="50_0xf51"]
+[ext_resource type="Texture2D" uid="uid://43j8mxxjuxa4" path="res://MainMenu/BG/WanderingFruit.png" id="50_bh756"]
+[ext_resource type="Texture2D" uid="uid://8uwy0ctehdjx" path="res://MainMenu/CharacterSelect/CharSelectBackgroundTwoHead.svg" id="51_xgqc5"]
+[ext_resource type="Texture2D" uid="uid://buo10ffxg1ypm" path="res://MainMenu/CharacterSelect/CharSelectBackgroundElephant.svg" id="52_wbja4"]
+[ext_resource type="Texture2D" uid="uid://btim8f53ku78x" path="res://MainMenu/BG/BackGroundMosaik.svg" id="71_cnps2"]
+[ext_resource type="Texture2D" uid="uid://brox6eu0lrvv7" path="res://UI/EnglishFlag.png" id="75_k32k8"]
+[ext_resource type="Texture2D" uid="uid://cif7emst4ih8e" path="res://UI/GermanFlag.png" id="76_0xf51"]
+[ext_resource type="Texture2D" uid="uid://wh7th4c8vkru" path="res://Shop/UI/NextRoundButtonNormal.svg" id="76_wbja4"]
+[ext_resource type="Texture2D" uid="uid://bjlidxc30mrxj" path="res://Shop/UI/NextRoundButtonPressed.svg" id="77_bfl83"]
+[ext_resource type="Texture2D" uid="uid://drkdhwnb6m6px" path="res://Shop/UI/NextRoundButtonHovered.svg" id="78_42kjd"]
+[ext_resource type="Texture2D" uid="uid://6lixqqj8ygux" path="res://Shop/UI/NextRoundButtonDisabled.svg" id="79_kl84b"]
+[ext_resource type="Texture2D" uid="uid://ckjpu33di0mtv" path="res://MainMenu/UI/ShowProgressButtonNormal.svg" id="80_y4ohu"]
+[ext_resource type="Texture2D" uid="uid://c0pc30678uwoy" path="res://MainMenu/UI/ShowProgressButtonPressed.svg" id="81_r3633"]
+[ext_resource type="Texture2D" uid="uid://ccptomwqmyei5" path="res://MainMenu/UI/ShowProgressButtonHovered.svg" id="82_h58yn"]
+[ext_resource type="Texture2D" uid="uid://bghoiqapyv4su" path="res://MainMenu/UI/ShowProgressButtonDisabled.svg" id="83_8lox4"]
+[ext_resource type="Texture2D" uid="uid://bghekh7ehwric" path="res://MainMenu/UI/OptionsButtonNormal.svg" id="84_ipvhp"]
+[ext_resource type="Texture2D" uid="uid://r7jh4tocd8om" path="res://MainMenu/UI/OptionsButtonPressed.svg" id="85_vpfv2"]
+[ext_resource type="Texture2D" uid="uid://nxmd4myrc5cn" path="res://MainMenu/UI/OptionsButtonHovered.svg" id="86_46os7"]
+[ext_resource type="Texture2D" uid="uid://dqg7svysstux5" path="res://MainMenu/UI/OptionsButtonDisabled.svg" id="87_kyoq2"]
+[ext_resource type="Texture2D" uid="uid://c03i7m7xr2wgc" path="res://MainMenu/GameLogo.svg" id="88_r3633"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x28t"]
 texture = ExtResource("3_5de1l")
@@ -707,7 +721,7 @@ _data = {
 script = ExtResource("1_hy30b")
 
 [node name="CharacterSelection" type="Node2D" parent="."]
-position = Vector2(-739, 2)
+position = Vector2(-733, 253)
 script = ExtResource("3_ajn5b")
 
 [node name="Character4Select" type="TileMapLayer" parent="CharacterSelection"]
@@ -1665,6 +1679,22 @@ position = Vector2(1159, 358)
 scale = Vector2(1.06444, 0.970595)
 texture = ExtResource("31_bh756")
 
+[node name="CharacterInfo" type="Sprite2D" parent="CharacterSelection"]
+z_as_relative = false
+position = Vector2(1158, 741)
+texture = ExtResource("44_cnps2")
+
+[node name="Label" type="Label" parent="CharacterSelection/CharacterInfo"]
+offset_left = -326.0
+offset_top = -40.0
+offset_right = 326.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("33_cwel5")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="BGColors" type="Sprite2D" parent="CharacterSelection"]
 position = Vector2(1159, 358)
 texture = ExtResource("44_ohsmc")
@@ -1885,23 +1915,9 @@ scale_amount_curve = SubResource("Curve_vpfv2")
 color = Color(1, 1, 1, 0.470588)
 color_ramp = SubResource("Gradient_46os7")
 
-[node name="CharacterInfo" type="Sprite2D" parent="."]
-position = Vector2(393, 908)
-scale = Vector2(0.620288, 0.620288)
-texture = ExtResource("32_bh756")
-
-[node name="Label" type="Label" parent="CharacterInfo"]
-offset_left = -437.0
-offset_top = -143.0
-offset_right = 453.0
-offset_bottom = 143.0
-theme_override_fonts/font = ExtResource("33_cwel5")
-theme_override_font_sizes/font_size = 51
-autowrap_mode = 2
-
 [node name="EasySlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
 z_index = 1
-position = Vector2(1104, 1236.5)
+position = Vector2(1104, 1374.31)
 texture = ExtResource("47_2384g")
 offset = Vector2(0, 311.685)
 
@@ -1951,7 +1967,7 @@ scale = Vector2(1.285, 1.285)
 
 [node name="NormalSlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
 z_index = 1
-position = Vector2(1345, 1236.5)
+position = Vector2(1345, 1374.31)
 texture = ExtResource("47_2384g")
 offset = Vector2(0, 311.685)
 
@@ -2002,7 +2018,7 @@ gamemode = 1
 
 [node name="HardSlot" type="Sprite2D" parent="." groups=["PlaySlot"]]
 z_index = 1
-position = Vector2(1582.5, 1236.5)
+position = Vector2(1582.5, 1374.31)
 texture = ExtResource("47_2384g")
 offset = Vector2(0, 311.685)
 
@@ -2324,28 +2340,155 @@ offset_bottom = 1688.0
 scale = Vector2(0.874503, 0.828805)
 texture = ExtResource("71_cnps2")
 
+[node name="OptionsMenu" type="Control" parent="."]
+visible = false
+z_index = 6
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1347.0
+offset_top = 662.0
+offset_right = 1387.0
+offset_bottom = 702.0
+
+[node name="PanelContainer" type="PanelContainer" parent="OptionsMenu"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OptionsMenuPlaceHolder" type="Sprite2D" parent="OptionsMenu/PanelContainer"]
+scale = Vector2(0.717877, 1.76307)
+texture = ExtResource("88_r3633")
+
 [node name="PlayButton" parent="." instance=ExtResource("46_wclgf")]
 offset_left = 1249.0
-offset_top = 529.0
+offset_top = 447.0
 offset_right = 1449.0
-offset_bottom = 719.0
+offset_bottom = 637.0
 is_play_button = true
-
-[node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(1345, 234)
-scale = Vector2(0.765, 0.765)
-texture = ExtResource("49_12kcr")
-
-[node name="ShowBanners" type="Button" parent="."]
-offset_left = 750.0
-offset_top = 998.0
-offset_right = 971.0
-offset_bottom = 1050.0
-theme_override_font_sizes/font_size = 31
-text = "Show Banners"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(961, 541)
+
+[node name="LanguageButton" type="OptionButton" parent="."]
+offset_left = 1781.0
+offset_top = 7.0
+offset_right = 1915.0
+offset_bottom = 80.0
+flat = true
+autowrap_mode = 2
+icon_alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/icon = ExtResource("75_k32k8")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("76_0xf51")
+popup/item_1/id = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 59.0
+offset_top = 58.0
+offset_right = 799.0
+offset_bottom = 206.0
+theme_override_constants/separation = 24
+
+[node name="StartNewRun" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("76_wbja4")
+texture_pressed = ExtResource("77_bfl83")
+texture_hover = ExtResource("78_42kjd")
+texture_disabled = ExtResource("79_kl84b")
+
+[node name="Label" type="Label" parent="HBoxContainer/StartNewRun"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 183.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 37
+text = "START NEW RUN"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayChallenge" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("76_wbja4")
+texture_pressed = ExtResource("77_bfl83")
+texture_hover = ExtResource("78_42kjd")
+texture_disabled = ExtResource("79_kl84b")
+
+[node name="Label" type="Label" parent="HBoxContainer/PlayChallenge"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 185.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 37
+text = "PLAY CHALLENGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ShowProgress" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("80_y4ohu")
+texture_pressed = ExtResource("81_r3633")
+texture_hover = ExtResource("82_h58yn")
+texture_disabled = ExtResource("83_8lox4")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/ShowProgress"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -43.5
+offset_right = 67.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 26
+text = "SHOW PROGRESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Options" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("84_ipvhp")
+texture_pressed = ExtResource("85_vpfv2")
+texture_hover = ExtResource("86_46os7")
+texture_disabled = ExtResource("87_kyoq2")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -32.0
+offset_right = 70.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_ashh5")
+theme_override_font_sizes/font_size = 32
+text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="mouse_entered" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterSelection/Character4Area" to="CharacterSelection" method="_on_area_4_mouse_exited"]
@@ -2369,5 +2512,7 @@ position = Vector2(961, 541)
 [connection signal="mouse_exited" from="NormalSlot/NormalSlotArea" to="." method="_on_normal_slot_area_mouse_exited"]
 [connection signal="mouse_entered" from="HardSlot/HardSlotArea" to="." method="_on_hard_slot_area_mouse_entered"]
 [connection signal="mouse_exited" from="HardSlot/HardSlotArea" to="." method="_on_hard_slot_area_mouse_exited"]
-[connection signal="mouse_entered" from="ShowBanners" to="." method="_on_show_banners_mouse_entered"]
-[connection signal="mouse_exited" from="ShowBanners" to="." method="_on_show_banners_mouse_exited"]
+[connection signal="item_selected" from="LanguageButton" to="." method="_on_language_button_item_selected"]
+[connection signal="pressed" from="HBoxContainer/StartNewRun" to="." method="_on_start_new_run_pressed"]
+[connection signal="pressed" from="HBoxContainer/ShowProgress" to="." method="_on_show_progress_pressed"]
+[connection signal="pressed" from="HBoxContainer/Options" to="." method="_on_options_pressed"]
