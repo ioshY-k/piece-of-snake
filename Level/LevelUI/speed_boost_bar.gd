@@ -2,6 +2,7 @@ class_name SpeedBoostBar extends ProgressBar
 
 signal boost_empty_or_full
 @onready var speed_boost_frame: AnimatedSprite2D = $SpeedBoostFrame
+@onready var infinite_particles: CPUParticles2D = $InfiniteParticles
 
 func _on_value_changed(value: float) -> void:
 	if value == min_value:

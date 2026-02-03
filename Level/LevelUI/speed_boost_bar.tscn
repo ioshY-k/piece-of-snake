@@ -1,9 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc4sb6dmfgooa"]
+[gd_scene load_steps=10 format=3 uid="uid://bc4sb6dmfgooa"]
 
 [ext_resource type="Script" uid="uid://chu777nlkdcqu" path="res://Level/LevelUI/speed_boost_bar.gd" id="1_510ua"]
 [ext_resource type="Texture2D" uid="uid://clb534tcycuf2" path="res://Level/LevelUI/SpeedMeterActive.svg" id="1_v7x50"]
+[ext_resource type="Texture2D" uid="uid://dhubsvqkmagxy" path="res://Level/LevelUI/SpeedMeterInfiniteParticle.svg" id="2_7rnju"]
 [ext_resource type="Texture2D" uid="uid://d21dxx1nooh7n" path="res://Level/LevelUI/SpeedMeterInactive.svg" id="2_510ua"]
 [ext_resource type="Texture2D" uid="uid://dkxtuwxkwgfee" path="res://Level/LevelUI/SpeedMeterActiveForever.svg" id="4_7qlf8"]
+
+[sub_resource type="Curve" id="Curve_qcl8k"]
+_data = [Vector2(0.25067, 0.380952), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_st7jl"]
+offsets = PackedFloat32Array(0, 0.532967, 0.733516, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.692308, 0.692308, 0.692308, 0.307692, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_m7ubn"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.580429, -0.260204), 0.0, 0.0, 0, 0, Vector2(0.995979, -1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5xqa"]
 animations = [{
@@ -44,6 +58,22 @@ step = 1.0
 value = 400.0
 show_percentage = false
 script = ExtResource("1_510ua")
+
+[node name="InfiniteParticles" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+z_index = -1
+position = Vector2(287.143, 68)
+emitting = false
+amount = 7
+texture = ExtResource("2_7rnju")
+gravity = Vector2(0, 0)
+scale_amount_min = 0.9
+scale_amount_max = 0.9
+scale_amount_curve = SubResource("Curve_qcl8k")
+color_ramp = SubResource("Gradient_st7jl")
+hue_variation_min = -0.25
+hue_variation_max = 0.3
+hue_variation_curve = SubResource("Curve_m7ubn")
 
 [node name="SpeedBoostFrame" type="AnimatedSprite2D" parent="."]
 z_index = -1

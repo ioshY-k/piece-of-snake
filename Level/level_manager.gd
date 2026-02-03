@@ -228,7 +228,7 @@ func increment_points():
 		fruits_left_number_label.text = str(fruits_overload)
 		SignalBus.fruits_left_changed.emit(fruits_left)
 	
-
+var infinite_speed_boost: bool = false
 func decide_speed_boost(delta):
 	if Input.is_action_just_released("speed_boost"):
 		snake_head.current_snake_speed = snake_head.base_snake_speed
@@ -236,7 +236,7 @@ func decide_speed_boost(delta):
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 	if Input.is_action_pressed("speed_boost"):
-		if speed_boost_available and speed_boost_bar.value>0:
+		if (speed_boost_available and speed_boost_bar.value>0) or infinite_speed_boost:
 			snake_head.current_snake_speed = GameConsts.SPEED_BOOST_SPEED
 			snake_tail.current_snake_speed = GameConsts.SPEED_BOOST_SPEED
 			speed_boost_bar.value -= speed_boost_drain_speed*delta
@@ -250,8 +250,9 @@ func _on_speed_boost_bar_value_changed(full: bool) -> void:
 		speed_boost_available = true
 		speed_boost_frame.frame = 0
 	else:
-		snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
-		snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
+		if not infinite_speed_boost:
+			snake_head.current_snake_speed = GameConsts.NORMAL_SPEED
+			snake_tail.current_snake_speed = GameConsts.NORMAL_SPEED
 		speed_boost_available = false
 		speed_boost_frame.frame = 1
 

@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://88lrqlhbbrgm" path="res://UpgradeComponents/Dragonfly/dragonfly_2_component.gd" id="1_d85bj"]
 
-[node name="Dragonfly1Component" type="Node"]
+[node name="Dragonfly2Component" type="Node"]
 script = ExtResource("1_d85bj")
