@@ -514,10 +514,10 @@
 	},
 	"HALF_GONE": {
 	  "NAME_ENG": "THE HALF EMPTY",
-	  "DESC_ENG": "After collecting a fruit, your front half becomes {PHASING_KEYWORD}.\n\nAll Fruits are {DENSE_KEYWORD}.",
+	  "DESC_ENG": "Your front half becomes {PHASING_KEYWORD}.\n\nAll Fruits are {DENSE_KEYWORD}.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DER HALB LEERE",
-	  "DESC_GER": "Nach dem EInsammeln einer Frucht wird die vordere Hälfte deines Körpers {PHASING_KEYWORD}.\n\nalle Früchte sind {DENSE_KEYWORD}.",
+	  "DESC_GER": "Die vordere Hälfte deines Körpers ist {PHASING_KEYWORD}.\n\nalle Früchte sind {DENSE_KEYWORD}.",
 	  "SWISSDESC_GER": null
 	},
 	"ALLERGY": {
@@ -526,6 +526,30 @@
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DIE ALLERGIE",
 	  "DESC_GER": "{GHOST_FRUIT_KEYWORD} spawn over time.\n\nGet points for every uncollected Fruit on the map instead of collected fruits.\n\nFruits move towards you.",
+	  "SWISSDESC_GER": null
+	},
+	"DRAGONFLY_1": {
+	  "NAME_ENG": "DRAGONFLY 1",
+	  "DESC_ENG": "At the start of every round a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 3 tries.",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "LIBELLE 1",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 3 Versuche",
+	  "SWISSDESC_GER": null
+	},
+	"DRAGONFLY_2": {
+	  "NAME_ENG": "DRAGONFLY 2",
+	  "DESC_ENG": "At the start of every round a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 2 tries.",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "LIBELLE 2",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 2 Versuche",
+	  "SWISSDESC_GER": null
+	},
+	"DRAGONFLY_3": {
+	  "NAME_ENG": "DRAGONFLY 3",
+	  "DESC_ENG": "At the start of every round a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 1 try.",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "LIBELLE 1",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 1 Versuche",
 	  "SWISSDESC_GER": null
 	}
   },

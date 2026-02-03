@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqm7ujuls0in7"]
+
+[ext_resource type="Script" uid="uid://dmb2oq1cj1hve" path="res://UpgradeComponents/Dragonfly/dragonfly_3_component.gd" id="1_h1ait"]
+
+[node name="Dragonfly1Component" type="Node"]
+script = ExtResource("1_h1ait")

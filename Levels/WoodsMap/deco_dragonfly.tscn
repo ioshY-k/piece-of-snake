@@ -1,16 +1,16 @@
 [gd_scene load_steps=10 format=3 uid="uid://7i23obmdlsqy"]
 
-[ext_resource type="Texture2D" uid="uid://cdr6drd6p4tsc" path="res://Levels/WoodsMap/WoodsDragonfly.svg" id="1_fqoid"]
-[ext_resource type="Texture2D" uid="uid://rg0xj8yadmtk" path="res://Levels/WoodsMap/WoodsDragonflyFlying1.svg" id="2_n3uwq"]
-[ext_resource type="Texture2D" uid="uid://2apeii8qvtgy" path="res://Levels/WoodsMap/WoodsDragonflyFlying2.svg" id="3_r3kqw"]
-[ext_resource type="Texture2D" uid="uid://ccyht1gadesw8" path="res://Levels/WoodsMap/WoodsDragonflyFlying3.svg" id="4_6qtk1"]
-[ext_resource type="Script" uid="uid://brvigqpv0asiy" path="res://Levels/WoodsMap/dragonfly.gd" id="5_n3uwq"]
+[ext_resource type="Texture2D" uid="uid://cdr6drd6p4tsc" path="res://Levels/WoodsMap/WoodsDragonfly.svg" id="1_s31jm"]
+[ext_resource type="Texture2D" uid="uid://rg0xj8yadmtk" path="res://Levels/WoodsMap/WoodsDragonflyFlying1.svg" id="2_4f8qh"]
+[ext_resource type="Texture2D" uid="uid://2apeii8qvtgy" path="res://Levels/WoodsMap/WoodsDragonflyFlying2.svg" id="3_x4ioy"]
+[ext_resource type="Texture2D" uid="uid://ccyht1gadesw8" path="res://Levels/WoodsMap/WoodsDragonflyFlying3.svg" id="4_e5xuw"]
+[ext_resource type="Script" uid="uid://brvigqpv0asiy" path="res://Levels/WoodsMap/deco_dragonfly.gd" id="5_xwwwo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ybqir"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_fqoid")
+"texture": ExtResource("1_s31jm")
 }],
 "loop": true,
 "name": &"default",
@@ -18,13 +18,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_n3uwq")
+"texture": ExtResource("2_4f8qh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_r3kqw")
+"texture": ExtResource("3_x4ioy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_6qtk1")
+"texture": ExtResource("4_e5xuw")
 }],
 "loop": true,
 "name": &"fly",
@@ -68,7 +68,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_fqoid"]
 radius = 131.216
 
-[node name="Dragonfly" type="AnimatedSprite2D"]
+[node name="DecoDragonfly" type="AnimatedSprite2D"]
 z_index = 30
 z_as_relative = false
 scale = Vector2(0.7, 0.7)
@@ -76,7 +76,7 @@ sprite_frames = SubResource("SpriteFrames_ybqir")
 animation = &"fly"
 frame = 2
 frame_progress = 0.39208
-script = ExtResource("5_n3uwq")
+script = ExtResource("5_xwwwo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

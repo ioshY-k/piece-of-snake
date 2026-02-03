@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://diiqv3jfd82f7" path="res://Levels/WoodsMap/WoodsShadow.png" id="5_gdw1h"]
 [ext_resource type="Script" uid="uid://brbfjt0qs3t7u" path="res://Levels/WoodsMap/woods_shadow.gd" id="6_kron4"]
 [ext_resource type="Texture2D" uid="uid://c3mb0kdm34u2" path="res://Levels/WoodsMap/WoodsStumpShadow.svg" id="7_558am"]
-[ext_resource type="PackedScene" uid="uid://7i23obmdlsqy" path="res://Levels/WoodsMap/dragonfly.tscn" id="7_ghhkh"]
+[ext_resource type="PackedScene" uid="uid://7i23obmdlsqy" path="res://Levels/WoodsMap/deco_dragonfly.tscn" id="7_ghhkh"]
 [ext_resource type="Texture2D" uid="uid://hvnlhtaq0dde" path="res://Levels/WoodsMap/WoodsStump1.svg" id="7_udpgi"]
 [ext_resource type="Texture2D" uid="uid://cutkb0xjwek0n" path="res://Levels/WoodsMap/WoodsStumpSmall.svg" id="8_piet2"]
 [ext_resource type="Texture2D" uid="uid://byhfkhblmqlgd" path="res://Levels/WoodsMap/WoodsStump2.svg" id="8_wy0ts"]

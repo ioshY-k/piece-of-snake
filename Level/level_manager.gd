@@ -62,6 +62,9 @@ var big_fruit_1_component_scene = load("res://UpgradeComponents/big_fruit_1_comp
 var big_fruit_2_component_scene = load("res://UpgradeComponents/big_fruit_2_component.tscn")
 var big_fruit_3_component_scene = load("res://UpgradeComponents/big_fruit_3_component.tscn")
 var overfed_component_scene = load("res://UpgradeComponents/overfed_component.tscn")
+var dragonfly_1_component_scene = load("res://UpgradeComponents/Dragonfly/dragonfly_1_component.tscn")
+var dragonfly_2_component_scene = load("res://UpgradeComponents/Dragonfly/dragonfly_2_component.tscn")
+var dragonfly_3_component_scene = load("res://UpgradeComponents/Dragonfly/dragonfly_3_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -138,7 +141,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	time_meter.reset()
 	if GameConsts.test_mode and get_parent().current_round == 0:
 	################################################################################################################
-		time_meter.initiate_time_bar(10)
+		time_meter.initiate_time_bar(1)
 	else:
 		time_meter.initiate_time_bar(60)
 	################################################################################################################
@@ -422,6 +425,15 @@ func instantiate_upgrade(upgrade_id: int):
 			crossroad_3_component.big_crossroad = true
 			current_active_item_slot.add_child(crossroad_3_component)
 			crossroad_3_component.initiate_active_item(2, slot)
+		GameConsts.UPGRADE_LIST.DRAGONFLY_1:
+			var dragonfly_1_component = dragonfly_1_component_scene.instantiate()
+			add_child(dragonfly_1_component)
+		GameConsts.UPGRADE_LIST.DRAGONFLY_2:
+			var dragonfly_2_component = dragonfly_2_component_scene.instantiate()
+			add_child(dragonfly_2_component)
+		GameConsts.UPGRADE_LIST.DRAGONFLY_3:
+			var dragonfly_3_component = dragonfly_3_component_scene.instantiate()
+			add_child(dragonfly_3_component)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
@@ -589,6 +601,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = current_map.find_child("HalfGoneComponent",false,false)
 		GameConsts.UPGRADE_LIST.POWER_NAP:
 			component = find_child("PowerNapComponent",false,false)
+		GameConsts.UPGRADE_LIST.DRAGONFLY_1:
+			component = find_child("Dragonfly1Component",false,false)
+		GameConsts.UPGRADE_LIST.DRAGONFLY_2:
+			component = find_child("Dragonfly2Component",false,false)
+		GameConsts.UPGRADE_LIST.DRAGONFLY_3:
+			component = find_child("Dragonfly3Component",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -627,6 +645,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.SNEK_1,\
 		GameConsts.UPGRADE_LIST.SNEK_2,\
 		GameConsts.UPGRADE_LIST.SNEK_3,\
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_1,\
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_2,\
+		GameConsts.UPGRADE_LIST.BIG_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_3,\

@@ -68,7 +68,8 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.BIG_FRUIT_1,
 									GameConsts.UPGRADE_LIST.CATCH,
 									GameConsts.UPGRADE_LIST.DIFFUSION,
-									GameConsts.UPGRADE_LIST.POWER_NAP
+									GameConsts.UPGRADE_LIST.POWER_NAP,
+									GameConsts.UPGRADE_LIST.DRAGONFLY_1
 									]
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
@@ -89,10 +90,10 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
-									GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
+									GameConsts.UPGRADE_LIST.DRAGONFLY_1,
+									GameConsts.UPGRADE_LIST.DRAGONFLY_1,
+									GameConsts.UPGRADE_LIST.DRAGONFLY_2,
+									GameConsts.UPGRADE_LIST.DRAGONFLY_3,
 									]
 									
 	

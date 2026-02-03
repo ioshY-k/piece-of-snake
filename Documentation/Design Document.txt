@@ -10,6 +10,7 @@ Z index:
 	Fruit: 25-50
 	FruitParticles: 25-50
 	ForegroundMapDeco: 25-50
+	Insects: 53
 	CoverCeiling: 55
 	Shadow/Fog: 60
 	UFO/Laser: 60
@@ -33,6 +34,6 @@ Worklow for adding new upgrade:
 	Add in Shop: upgrade_card_pool
 	In RunManager: resize current_upgrade array
 	Add in Level: instantiate_upgrade, destroy_upgrade, is_upgrade_reload_necessary
-	In Upgrade card: Add description, Make sure the frames are in order of GameConst.UPGRADE_LIST
-	In Upgrade card: add tooltip text
+	In Upgrade card: Add frame, Make sure the frames are in order of GameConst.UPGRADE_LIST
+	In PoS Data: Row to "Upgrade Cards" table
 	Add in Component Parent: packed Component scene
