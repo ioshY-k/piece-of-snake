@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ql6k0e8jmva5"
-path="res://.godot/imported/CountDownBarMask.svg-611c52ad705179927669d5ac898cdaa8.ctex"
+uid="uid://ckf3lgwsdw2lb"
+path="res://.godot/imported/CountDownContainerDecoNoMapMod.svg-c131504b47083502fc8545ff6c204dbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RoundCountDown/CountDownBarMask.svg"
-dest_files=["res://.godot/imported/CountDownBarMask.svg-611c52ad705179927669d5ac898cdaa8.ctex"]
+source_file="res://RoundCountDown/NoMapMod/CountDownContainerDecoNoMapMod.svg"
+dest_files=["res://.godot/imported/CountDownContainerDecoNoMapMod.svg-c131504b47083502fc8545ff6c204dbe.ctex"]
 
 [params]
 

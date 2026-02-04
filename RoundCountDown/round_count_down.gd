@@ -6,7 +6,6 @@ signal count_down_finished
 @onready var mod_info: Label = $CountDownPanel/CountdownPanelFG/ModInfo
 @onready var map_preview: MapPreview = $CountDownPanel/MapPreview
 
-var colors = [Color(0.907, 0.511, 0.662), Color(0.331, 0.682, 0.978), Color(0.127, 0.752, 0.689), Color(0.903, 0.748, 0.233), Color(0.485, 0.479, 0.945)]
 var level:LevelManager
 
 func _ready() -> void:
@@ -19,9 +18,9 @@ func _ready() -> void:
 	map_preview.set_round_indicators(level.get_parent().current_act, level.get_parent().current_round)
 	count_down_panel.visible = false
 	position = Vector2(300,0)
-	var color = colors[randi()%colors.size()]
-	$CountDownPanel/CountdownPanelDeco.modulate = color
-	$CountDownPanel/CountdownPanelFG.modulate = color
+	$CountDownPanel/CountdownPanelBG.self_modulate.a = 0.3
+	
+
 	$CountDownPanel/CountDownBarMask/CountDownBar.visible = false
 	$CountDownPanel/CountDownBarMask.position.x = -973
 	$CountDownPanel/CountdownPanelDeco.position.y = -107.0
