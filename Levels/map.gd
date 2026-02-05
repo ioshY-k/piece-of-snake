@@ -392,6 +392,7 @@ func add_upgrade_component(upgrade: int):
 
 func apply_mapmod(mapmod: int):
 	if not RunSettings.mapmods_enabled:
+		current_mapmod = GameConsts.MAP_MODS.NO_MAPMOD
 		return
 	print(GameConsts.MAP_MODS.find_key(mapmod))
 	match mapmod:

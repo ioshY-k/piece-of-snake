@@ -1,0 +1,190 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvhdvq6x4or8r"]
+
+[ext_resource type="Texture2D" uid="uid://yxpn2fe5oumg" path="res://VisualEffects/ParticleSprite2.png" id="1_lc5qj"]
+[ext_resource type="Texture2D" uid="uid://buur8pef4h5ww" path="res://RoundCountDown/NoMapMod/CountDownDeco1NoMapMod.svg" id="2_s5kyk"]
+
+[sub_resource type="Curve" id="Curve_8g06g"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.186327, 1), 0.0, 0.0, 0, 0, Vector2(0.601877, 0.679422), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_tknvg"]
+offsets = PackedFloat32Array(0, 0.576923, 1)
+colors = PackedColorArray(0.792, 0.8228, 0.88, 0.490196, 0.5896, 0.69124, 0.88, 0.537255, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_ob4tl"]
+resource_name = "default"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Switch1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.7, 2.03333, 2.6, 3.56667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(34, -61), Vector2(34, -62), Vector2(29, -74), Vector2(29, -74), Vector2(34, -62), Vector2(31, -69)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Switch2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.7, 2.03333, 2.6, 3.56667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(55, -62), Vector2(50, -74), Vector2(55, -63), Vector2(55, -63), Vector2(47, -80), Vector2(53, -66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Switch3:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.7, 2.6, 3.73333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(81, -46), Vector2(77, -57), Vector2(70, -73), Vector2(75, -61), Vector2(79, -53)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Switch4:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.9, 1.96667, 2.6, 3.56667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(91, -73), Vector2(91, -73), Vector2(96, -61), Vector2(91, -73), Vector2(97, -59), Vector2(95, -65)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Switch5:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.9, 1.7, 2.6, 3.56667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(121, -51), Vector2(121, -51), Vector2(108, -79), Vector2(116, -62), Vector2(121, -49), Vector2(117, -59)]
+}
+
+[sub_resource type="Animation" id="Animation_8g06g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Switch1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -62)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Switch2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, -74)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Switch3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(77, -57)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Switch4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, -61)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Switch5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, -79)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fnj8"]
+_data = {
+&"RESET": SubResource("Animation_8g06g"),
+&"default": SubResource("Animation_ob4tl")
+}
+
+[node name="ContainerAnimations" type="Node2D"]
+
+[node name="Steam" type="CPUParticles2D" parent="."]
+position = Vector2(300, -58)
+amount = 38
+texture = ExtResource("1_lc5qj")
+lifetime = 1.3
+speed_scale = 1.9
+emission_shape = 3
+emission_rect_extents = Vector2(40.02, 12.47)
+spread = 180.0
+gravity = Vector2(0, -300)
+initial_velocity_min = 56.6
+initial_velocity_max = 56.6
+scale_amount_max = 1.6
+scale_amount_curve = SubResource("Curve_8g06g")
+color_ramp = SubResource("Gradient_tknvg")
+
+[node name="Switch1" type="Sprite2D" parent="."]
+position = Vector2(35.0742, -58.9067)
+texture = ExtResource("2_s5kyk")
+
+[node name="Switch2" type="Sprite2D" parent="."]
+position = Vector2(51.6589, -70.0242)
+texture = ExtResource("2_s5kyk")
+
+[node name="Switch3" type="Sprite2D" parent="."]
+position = Vector2(79.2921, -50.6862)
+texture = ExtResource("2_s5kyk")
+
+[node name="Switch4" type="Sprite2D" parent="."]
+position = Vector2(93.1879, -67.749)
+texture = ExtResource("2_s5kyk")
+
+[node name="Switch5" type="Sprite2D" parent="."]
+position = Vector2(115.216, -63.4502)
+texture = ExtResource("2_s5kyk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7fnj8")
+}
+autoplay = "default"

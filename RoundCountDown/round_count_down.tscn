@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://fb2hhu3hvjml"]
+[gd_scene load_steps=20 format=3 uid="uid://fb2hhu3hvjml"]
 
 [ext_resource type="Script" uid="uid://dr2jn8qf7cehb" path="res://RoundCountDown/round_count_down.gd" id="1_rra43"]
 [ext_resource type="Texture2D" uid="uid://comm7jvphnn1i" path="res://RoundCountDown/CountDownPanelBG.svg" id="2_e5j6p"]
@@ -6,17 +6,158 @@
 [ext_resource type="Texture2D" uid="uid://cgxlh68t8ywla" path="res://RoundCountDown/CountDownPanelDeco.svg" id="3_pxsen"]
 [ext_resource type="Texture2D" uid="uid://ey5dhgxhtmpk" path="res://RoundCountDown/CountDownPanelFG.svg" id="4_b8ha1"]
 [ext_resource type="Texture2D" uid="uid://bvv8h6dff83qr" path="res://RoundCountDown/NoMapMod/CountDownContainerNoMapMod.svg" id="4_t8ktn"]
+[ext_resource type="Texture2D" uid="uid://b84kykpq3jgsc" path="res://RoundCountDown/GhostInvasion/CountDownContainerDecoGhostInvasion.svg" id="5_27i3i"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="5_t8ktn"]
 [ext_resource type="Texture2D" uid="uid://ckf3lgwsdw2lb" path="res://RoundCountDown/NoMapMod/CountDownContainerDecoNoMapMod.svg" id="6_8f1uk"]
 [ext_resource type="Texture2D" uid="uid://ql6k0e8jmva5" path="res://RoundCountDown/NoMapMod/CountDownBarMaskNoMapMod.svg" id="6_iqts5"]
 [ext_resource type="Texture2D" uid="uid://dmaqm1j6k78oy" path="res://RoundCountDown/CountDownBar.svg" id="7_8f1uk"]
+[ext_resource type="Texture2D" uid="uid://euwokkeh3p81" path="res://RoundCountDown/GhostInvasion/CountDownContainerGhostInvasion.svg" id="9_8g06g"]
 [ext_resource type="PackedScene" uid="uid://bs0m1mtsyjoc8" path="res://Shop/MapPreviews/map_preview.tscn" id="9_b8ha1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqts5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_t8ktn")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8g06g")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8f1uk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8f1uk")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_27i3i")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b8ha1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_iqts5")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -235,17 +376,17 @@ position = Vector2(0, 155)
 scale = Vector2(1.035, 2.288)
 texture = ExtResource("3_b8ha1")
 
-[node name="Container" type="Sprite2D" parent="CountDownPanel/CountdownPanelBG"]
+[node name="Container" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelBG"]
 position = Vector2(0, -104)
-texture = ExtResource("4_t8ktn")
+sprite_frames = SubResource("SpriteFrames_iqts5")
 
 [node name="CountdownPanelDeco" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -41)
 texture = ExtResource("3_pxsen")
 
-[node name="ContainerDeco" type="Sprite2D" parent="CountDownPanel/CountdownPanelDeco"]
+[node name="ContainerDeco" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelDeco"]
 position = Vector2(0, -106)
-texture = ExtResource("6_8f1uk")
+sprite_frames = SubResource("SpriteFrames_8f1uk")
 
 [node name="CountdownPanelFG" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -96)
