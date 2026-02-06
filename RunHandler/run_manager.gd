@@ -91,10 +91,10 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.RESTAURANT,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.FRUIT_BODY,
+		mapmodorder = [GameConsts.MAP_MODS.FAR_AWAY,
+						GameConsts.MAP_MODS.FAR_AWAY,
+						GameConsts.MAP_MODS.FAR_AWAY,
 						GameConsts.MAP_MODS.GHOST_INVASION,
-						GameConsts.MAP_MODS.FRUIT_BODY,
-						GameConsts.MAP_MODS.FRUIT_BODY,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.LASER,

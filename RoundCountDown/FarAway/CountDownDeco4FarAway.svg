@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="86.716583"
-   height="86.716583"
-   viewBox="0 0 22.943716 22.943698"
+   width="2000.11"
+   height="895.69"
+   viewBox="0 0 529.1947 236.98398"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="CountDownParticleGhostInvasion.svg"
+   sodipodi:docname="CountDownDeco4FarAway.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="3.2124158"
-     inkscape:cx="-29.105821"
-     inkscape:cy="57.433412"
+     inkscape:zoom="1.6062079"
+     inkscape:cx="968.74134"
+     inkscape:cy="602.973"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -36,8 +36,8 @@
     <inkscape:grid
        id="grid1"
        units="mm"
-       originx="-59.387947"
-       originy="-41.919283"
+       originx="139"
+       originy="10.68689"
        spacingx="0.99999999"
        spacingy="0.99999998"
        empcolor="#0099e5"
@@ -163,21 +163,19 @@
        only_selected="false"
        hide_knots="false" />
   </defs>
+  <path
+     style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#9778aa;fill-opacity:1;stroke-width:1;stroke-linecap:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000"
+     d="m 268.42431,101.9734 c -31.36386,0.0188 -60.68304,4.75148 -84.23633,12.95379 -23.55328,8.20229 -41.55209,19.70521 -49.71875,34.661 l -1.20312,2.20498 1.20312,2.20297 c 8.16641,14.95595 26.16349,26.46061 49.7168,34.66301 23.5533,8.20241 52.87423,12.93498 84.23828,12.95379 h 0.004 0.002 c 31.36404,-0.0188 60.68497,-4.75138 84.23828,-12.95379 23.55331,-8.2024 41.55039,-19.70706 49.7168,-34.66301 l 1.20312,-2.20297 -1.20312,-2.20498 c -8.16666,-14.95579 -26.16352,-26.45871 -49.7168,-34.66099 -23.55328,-8.20231 -52.87442,-12.93502 -84.23828,-12.95379 h -0.002 z m 0,8.97715 c 30.51468,0.0183 59.02583,4.66925 81.46094,12.48215 21.00588,7.31519 36.38932,17.55694 43.48047,28.35845 -7.09053,10.80207 -22.47173,21.04488 -43.47852,28.36047 -22.43366,7.81249 -50.94442,12.46325 -81.45703,12.48215 -30.51487,-0.0183 -59.02582,-4.66915 -81.46094,-12.48215 -21.00679,-7.31559 -36.38799,-17.5584 -43.47851,-28.36047 7.09115,-10.80151 22.47262,-21.04326 43.47851,-28.35845 22.43365,-7.81239 50.94264,-12.46327 81.45508,-12.48215 z"
+     id="path9" />
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-59.587861,-41.919301)">
-    <circle
-       style="fill:#c1e8f4;fill-opacity:1;stroke:#000000;stroke-width:1.2;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:0;paint-order:fill markers stroke"
-       id="path17"
-       cx="71.059715"
-       cy="53.391155"
-       r="10.871854" />
+     transform="translate(138.80001,10.686892)">
+    <path
+       d="m 126.34957,94.559633 c -30.512432,0.01888 -59.021642,4.669502 -81.455293,12.481897 -21.005887,7.31519 -37.2932158,18.70998 -44.38436584,29.51149 1.08267744,1.6494 2.77038704,2.87426 4.23017504,4.48916 11.5978308,-5.72771 16.8788178,-7.59829 37.6640588,-13.80029 23.422001,-6.98878 54.072119,-10.81629 84.584555,-10.83517 30.51468,0.0183 60.17895,0.88084 82.61406,8.69374 17.79853,6.19824 34.6082,8.89664 44.76855,15.83941 5.86939,-0.88538 -25.55488,-26.58315 -46.56076,-33.89834 -22.43511,-7.8129 -50.9463,-12.463622 -81.46098,-12.481897 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#9778aa;stroke-width:0.984398;stroke-linecap:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path2"
+       sodipodi:nodetypes="csccscscsc" />
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Ebene 2"
-     transform="translate(-198.38787,-52.606193)" />
 </svg>

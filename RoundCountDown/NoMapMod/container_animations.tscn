@@ -11,6 +11,69 @@ point_count = 4
 offsets = PackedFloat32Array(0, 0.576923, 1)
 colors = PackedColorArray(0.792, 0.8228, 0.88, 0.490196, 0.5896, 0.69124, 0.88, 0.537255, 1, 1, 1, 0)
 
+[sub_resource type="Animation" id="Animation_8g06g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Switch1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -62)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Switch2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, -74)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Switch3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(77, -57)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Switch4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, -61)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Switch5:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, -79)]
+}
+
 [sub_resource type="Animation" id="Animation_ob4tl"]
 resource_name = "default"
 length = 4.0
@@ -76,69 +139,6 @@ tracks/4/keys = {
 "values": [Vector2(121, -51), Vector2(121, -51), Vector2(108, -79), Vector2(116, -62), Vector2(121, -49), Vector2(117, -59)]
 }
 
-[sub_resource type="Animation" id="Animation_8g06g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Switch1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(34, -62)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Switch2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(50, -74)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Switch3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(77, -57)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Switch4:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(96, -61)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Switch5:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(108, -79)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7fnj8"]
 _data = {
 &"RESET": SubResource("Animation_8g06g"),
@@ -164,23 +164,23 @@ scale_amount_curve = SubResource("Curve_8g06g")
 color_ramp = SubResource("Gradient_tknvg")
 
 [node name="Switch1" type="Sprite2D" parent="."]
-position = Vector2(35.0742, -58.9067)
+position = Vector2(34, -62)
 texture = ExtResource("2_s5kyk")
 
 [node name="Switch2" type="Sprite2D" parent="."]
-position = Vector2(51.6589, -70.0242)
+position = Vector2(50, -74)
 texture = ExtResource("2_s5kyk")
 
 [node name="Switch3" type="Sprite2D" parent="."]
-position = Vector2(79.2921, -50.6862)
+position = Vector2(77, -57)
 texture = ExtResource("2_s5kyk")
 
 [node name="Switch4" type="Sprite2D" parent="."]
-position = Vector2(93.1879, -67.749)
+position = Vector2(96, -61)
 texture = ExtResource("2_s5kyk")
 
 [node name="Switch5" type="Sprite2D" parent="."]
-position = Vector2(115.216, -63.4502)
+position = Vector2(108, -79)
 texture = ExtResource("2_s5kyk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

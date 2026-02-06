@@ -143,7 +143,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	################################################################################################################
 		time_meter.initiate_time_bar(1)
 	else:
-		time_meter.initiate_time_bar(60)
+		time_meter.initiate_time_bar(1)
 	################################################################################################################
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
@@ -649,9 +649,6 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_3,\
-		GameConsts.UPGRADE_LIST.BIG_FRUIT_1,\
-		GameConsts.UPGRADE_LIST.BIG_FRUIT_2,\
-		GameConsts.UPGRADE_LIST.BIG_FRUIT_3,\
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
 		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
 		GameConsts.UPGRADE_LIST.MOULTING,\
@@ -672,6 +669,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
+		GameConsts.UPGRADE_LIST.DRAGONFLY_1,\
+		GameConsts.UPGRADE_LIST.DRAGONFLY_2,\
+		GameConsts.UPGRADE_LIST.DRAGONFLY_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.STEEL_HELMET,\

@@ -14,6 +14,7 @@ var component: DragonFlyBase
 func _ready() -> void:
 	map = get_parent()
 	fly_away_timer.timeout.connect(fly_away)
+	SignalBus.round_over.connect(func(): queue_free())
 
 func decrement_catches():
 	catches_left -= 1

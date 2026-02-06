@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4tsb0mua6m1q"]
+
+[ext_resource type="Texture2D" uid="uid://ojxdabyd8ues" path="res://MapElements/FruitElements/GhostFruit.svg" id="1_3l6lf"]
+
+[sub_resource type="Animation" id="Animation_hvjic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fruit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-170, -102)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fruit:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7fnj8"]
+resource_name = "default"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fruit:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.333333, 1.7, 3.16667, 4.63333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-173, -102), Vector2(-194.306, -100.52), Vector2(-101, -107), Vector2(-151.165, -103.516)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fruit:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333, 1.7, 3.16667, 4.63333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-2.09439, -2.71415, 0.0, -1.45923]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_npdvt"]
+_data = {
+&"RESET": SubResource("Animation_hvjic"),
+&"default": SubResource("Animation_7fnj8")
+}
+
+[node name="ContainerAnimations" type="Node2D"]
+
+[node name="Fruit" type="Sprite2D" parent="."]
+modulate = Color(0.82, 0.82, 0.82, 1)
+position = Vector2(-170, -102)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("1_3l6lf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_npdvt")
+}
+autoplay = "default"

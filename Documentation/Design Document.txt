@@ -37,3 +37,7 @@ Worklow for adding new upgrade:
 	In Upgrade card: Add frame, Make sure the frames are in order of GameConst.UPGRADE_LIST
 	In PoS Data: Row to "Upgrade Cards" table
 	Add in Component Parent: packed Component scene
+
+Workflow for adding new ROundCountDown style:
+	create Sprite for container and containerdeco, Make sure the frames are in order of GameConst.MAPMODS
+	Add Node2D Child "ContainerAnimation" to container, add animations and create scene out of branch

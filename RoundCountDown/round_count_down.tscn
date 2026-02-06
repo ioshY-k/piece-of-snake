@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://fb2hhu3hvjml"]
+[gd_scene load_steps=26 format=3 uid="uid://fb2hhu3hvjml"]
 
 [ext_resource type="Script" uid="uid://dr2jn8qf7cehb" path="res://RoundCountDown/round_count_down.gd" id="1_rra43"]
 [ext_resource type="Texture2D" uid="uid://comm7jvphnn1i" path="res://RoundCountDown/CountDownPanelBG.svg" id="2_e5j6p"]
@@ -6,13 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://cgxlh68t8ywla" path="res://RoundCountDown/CountDownPanelDeco.svg" id="3_pxsen"]
 [ext_resource type="Texture2D" uid="uid://ey5dhgxhtmpk" path="res://RoundCountDown/CountDownPanelFG.svg" id="4_b8ha1"]
 [ext_resource type="Texture2D" uid="uid://bvv8h6dff83qr" path="res://RoundCountDown/NoMapMod/CountDownContainerNoMapMod.svg" id="4_t8ktn"]
+[ext_resource type="Texture2D" uid="uid://df7odhtlgxx4b" path="res://RoundCountDown/Laser/CountDownContainerLaser.svg" id="5_8g06g"]
 [ext_resource type="Texture2D" uid="uid://b84kykpq3jgsc" path="res://RoundCountDown/GhostInvasion/CountDownContainerDecoGhostInvasion.svg" id="5_27i3i"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="5_t8ktn"]
 [ext_resource type="Texture2D" uid="uid://ckf3lgwsdw2lb" path="res://RoundCountDown/NoMapMod/CountDownContainerDecoNoMapMod.svg" id="6_8f1uk"]
 [ext_resource type="Texture2D" uid="uid://ql6k0e8jmva5" path="res://RoundCountDown/NoMapMod/CountDownBarMaskNoMapMod.svg" id="6_iqts5"]
 [ext_resource type="Texture2D" uid="uid://dmaqm1j6k78oy" path="res://RoundCountDown/CountDownBar.svg" id="7_8f1uk"]
+[ext_resource type="Texture2D" uid="uid://cts1o8cjhbunl" path="res://RoundCountDown/FarAway/CountDownContainerFarAway.svg" id="7_ob4tl"]
 [ext_resource type="Texture2D" uid="uid://euwokkeh3p81" path="res://RoundCountDown/GhostInvasion/CountDownContainerGhostInvasion.svg" id="9_8g06g"]
 [ext_resource type="PackedScene" uid="uid://bs0m1mtsyjoc8" path="res://Shop/MapPreviews/map_preview.tscn" id="9_b8ha1"]
+[ext_resource type="Texture2D" uid="uid://baamdxjuvb8ei" path="res://RoundCountDown/FarAway/CountDownContainerDecoFarAway.svg" id="11_7fnj8"]
+[ext_resource type="Texture2D" uid="uid://cn2jsl4uicg5d" path="res://RoundCountDown/Laser/CountDownContainerMaskLaser.svg" id="13_8g06g"]
+[ext_resource type="Texture2D" uid="uid://cb6c1trmdyife" path="res://RoundCountDown/GhostInvasion/CountDownContainerMaskGhostInvasion.svg" id="14_tknvg"]
+[ext_resource type="Texture2D" uid="uid://msk2mmv7i7eo" path="res://RoundCountDown/FarAway/CountDownContainerMaskFarAway.svg" id="17_hvjic"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqts5"]
 animations = [{
@@ -30,7 +36,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("5_8g06g")
 }, {
 "duration": 1.0,
 "texture": null
@@ -48,7 +54,7 @@ animations = [{
 "texture": ExtResource("9_8g06g")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("7_ob4tl")
 }, {
 "duration": 1.0,
 "texture": null
@@ -61,7 +67,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8f1uk"]
@@ -98,7 +104,7 @@ animations = [{
 "texture": ExtResource("5_27i3i")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("11_7fnj8")
 }, {
 "duration": 1.0,
 "texture": null
@@ -111,7 +117,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b8ha1"]
@@ -130,7 +136,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("13_8g06g")
 }, {
 "duration": 1.0,
 "texture": null
@@ -145,10 +151,10 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("14_tknvg")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("17_hvjic")
 }, {
 "duration": 1.0,
 "texture": null
@@ -301,7 +307,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.3, 4.4, 6.3, 8.4, 10.3, 12.4),
 "transitions": PackedFloat32Array(1, 0.707107, 1.51572, 0.707107, 1.51572, 0.707107, 1.51572),
 "update": 0,
-"values": [Vector2(0, -105), Vector2(0, -105), Vector2(0, -173), Vector2(0, -105), Vector2(0, -173), Vector2(0, -105), Vector2(0, -173)]
+"values": [Vector2(0, -105), Vector2(0, -105), Vector2(0, -159), Vector2(0, -105), Vector2(0, -173), Vector2(0, -105), Vector2(0, -173)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -335,9 +341,9 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 1.9, 2.8, 12.4, 13.2, 14),
-"transitions": PackedFloat32Array(0.406126, 1.93187, 2.21914, 0.435275, 2.37841, 1),
+"transitions": PackedFloat32Array(0.406126, 1.93187, 2.21914, 2.21914, 2.37841, 1),
 "update": 0,
-"values": [Vector2(0, -1142), Vector2(0, 90), Vector2(0, 0), Vector2(0, 0), Vector2(0, 90), Vector2(0, -1142)]
+"values": [Vector2(0, -1142), Vector2(0, 246), Vector2(0, 116), Vector2(0, 116), Vector2(0, 215), Vector2(0, -1142)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -370,6 +376,7 @@ position = Vector2(0, -96)
 texture = ExtResource("2_e5j6p")
 
 [node name="Shadow" type="Sprite2D" parent="CountDownPanel/CountdownPanelBG"]
+visible = false
 show_behind_parent = true
 z_index = -1
 position = Vector2(0, 155)
@@ -379,6 +386,8 @@ texture = ExtResource("3_b8ha1")
 [node name="Container" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelBG"]
 position = Vector2(0, -104)
 sprite_frames = SubResource("SpriteFrames_iqts5")
+frame = 10
+frame_progress = 0.695095
 
 [node name="CountdownPanelDeco" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -41)
@@ -387,6 +396,8 @@ texture = ExtResource("3_pxsen")
 [node name="ContainerDeco" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelDeco"]
 position = Vector2(0, -106)
 sprite_frames = SubResource("SpriteFrames_8f1uk")
+frame = 10
+frame_progress = 0.819556
 
 [node name="CountdownPanelFG" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -96)
@@ -418,7 +429,7 @@ position = Vector2(-74, 10)
 texture = ExtResource("7_8f1uk")
 
 [node name="MapPreview" parent="CountDownPanel" instance=ExtResource("9_b8ha1")]
-position = Vector2(0, 331)
+position = Vector2(0, 287)
 scale = Vector2(0.695, 0.695)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

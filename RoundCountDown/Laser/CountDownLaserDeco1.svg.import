@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byxu8ac2xw70a"
-path="res://.godot/imported/CountDownParticleGhostInvasion.svg-144940466545d35b471e2d650831fd4c.ctex"
+uid="uid://c6llkk5myf22b"
+path="res://.godot/imported/CountDownLaserDeco1.svg-4dbc64e8c7cc8b0b1629c82f6462b9aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RoundCountDown/GhostInvasion/CountDownParticleGhostInvasion.svg"
-dest_files=["res://.godot/imported/CountDownParticleGhostInvasion.svg-144940466545d35b471e2d650831fd4c.ctex"]
+source_file="res://RoundCountDown/Laser/CountDownLaserDeco1.svg"
+dest_files=["res://.godot/imported/CountDownLaserDeco1.svg-4dbc64e8c7cc8b0b1629c82f6462b9aa.ctex"]
 
 [params]
 
