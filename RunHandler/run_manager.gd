@@ -38,7 +38,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(76)
+	current_upgrades.resize(79)
 	current_upgrades.fill(false)
 	
 	SignalBus.upgrade_bought.connect(_on_upgrade_bought)

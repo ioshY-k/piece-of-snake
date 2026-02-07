@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://djf70rb4i806p"]
+
+[ext_resource type="Texture2D" uid="uid://yxpn2fe5oumg" path="res://VisualEffects/ParticleSprite2.png" id="1_pjsnw"]
+
+[sub_resource type="Gradient" id="Gradient_ntxw3"]
+offsets = PackedFloat32Array(0, 0.192308, 0.755495, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_255v2"]
+colors = PackedColorArray(0.92, 0.89976, 0.5152, 1, 0.5474, 0.92, 0.4232, 1)
+
+[node name="BumbleModeFruitParticle" type="CPUParticles2D"]
+z_index = -1
+amount = 33
+texture = ExtResource("1_pjsnw")
+lifetime = 2.29
+emission_shape = 3
+emission_rect_extents = Vector2(64.91, 1)
+gravity = Vector2(0, -70)
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_ntxw3")
+color_initial_ramp = SubResource("Gradient_255v2")

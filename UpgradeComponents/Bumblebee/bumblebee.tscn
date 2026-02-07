@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cb0cl367j3ova"]
+[gd_scene load_steps=14 format=3 uid="uid://cb0cl367j3ova"]
 
 [ext_resource type="Script" uid="uid://biwwdyosv45n8" path="res://UpgradeComponents/Bumblebee/bumblebee.gd" id="1_tb8a8"]
 [ext_resource type="Texture2D" uid="uid://bqwtw1gytuhxh" path="res://UpgradeComponents/Bumblebee/Bumblebee1.svg" id="2_8wbin"]
 [ext_resource type="Texture2D" uid="uid://33q2iv2sm3sg" path="res://UpgradeComponents/Bumblebee/Bumblebee2.svg" id="3_rg2f8"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="4_rg2f8"]
+[ext_resource type="Texture2D" uid="uid://flkwg3m6pt6m" path="res://MapElements/FruitElements/FruitShadow.svg" id="5_hv7qj"]
 
 [sub_resource type="Curve2D" id="Curve2D_8wbin"]
 _data = {
@@ -117,6 +118,11 @@ scale_amount_min = 0.2
 scale_amount_curve = SubResource("Curve_hv7qj")
 color = Color(0.959007, 0.97, 0.6402, 1)
 color_initial_ramp = SubResource("Gradient_kykr7")
+
+[node name="Shadow" type="Sprite2D" parent="Path2D/PathFollow2D/AnimatedSprite2D"]
+z_as_relative = false
+position = Vector2(0, 62)
+texture = ExtResource("5_hv7qj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

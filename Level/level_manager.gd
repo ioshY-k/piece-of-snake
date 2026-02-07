@@ -71,6 +71,8 @@ var may_fly_3_component_scene = load("res://UpgradeComponents/MayFly/may_fly_3_c
 var bumblebee_1_component_scene = load("res://UpgradeComponents/Bumblebee/bumblebee_1_component.tscn")
 var bumblebee_2_component_scene = load("res://UpgradeComponents/Bumblebee/bumblebee_2_component.tscn")
 var bumblebee_3_component_scene = load("res://UpgradeComponents/Bumblebee/bumblebee_3_component.tscn")
+var tongue_1_component_scene = load("res://UpgradeComponents/Tongue/tongue_1_component.tscn")
+var tongue_2_component_scene = load("res://UpgradeComponents/Tongue/tongue_2_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -317,6 +319,18 @@ func instantiate_upgrade(upgrade_id: int):
 			var pacman_component = pacman_component_scene.instantiate()
 			current_active_item_slot.add_child(pacman_component)
 			pacman_component.initiate_active_item(7, slot)
+		GameConsts.UPGRADE_LIST.TONGUE_1:
+			var tongue_component = tongue_1_component_scene.instantiate()
+			current_active_item_slot.add_child(tongue_component)
+			tongue_component.initiate_active_item(3, slot)
+		GameConsts.UPGRADE_LIST.TONGUE_2:
+			var tongue_component = tongue_2_component_scene.instantiate()
+			current_active_item_slot.add_child(tongue_component)
+			tongue_component.initiate_active_item(3, slot)
+		GameConsts.UPGRADE_LIST.TONGUE_3:
+			var tongue_component = tongue_2_component_scene.instantiate()
+			current_active_item_slot.add_child(tongue_component)
+			tongue_component.initiate_active_item(5, slot)
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			var time_stop_1_component = time_stop_1_component_scene.instantiate()
 			current_active_item_slot.add_child(time_stop_1_component)
@@ -524,6 +538,15 @@ func destroy_upgrade(upgrade_id: int):
 			component = active_item_slot_1.find_child("PacmanComponent", false, false)
 			if component == null:
 				component = active_item_slot_2.find_child("PacmanComponent", false, false)
+		GameConsts.UPGRADE_LIST.TONGUE_1:
+			component = active_item_slot_1.find_child("Tongue1Component", false, false)
+			if component == null:
+				component = active_item_slot_2.find_child("Tongue1Component", false, false)
+		GameConsts.UPGRADE_LIST.TONGUE_2,\
+		GameConsts.UPGRADE_LIST.TONGUE_3:
+			component = active_item_slot_1.find_child("Tongue2Component", false, false)
+			if component == null:
+				component = active_item_slot_2.find_child("Tongue2Component", false, false)
 		GameConsts.UPGRADE_LIST.SNEK_1:
 			component = active_item_slot_1.find_child("Snek1Component", false, false)
 			if component == null:
@@ -666,6 +689,9 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.PACMAN_1,\
 		GameConsts.UPGRADE_LIST.PACMAN_2,\
 		GameConsts.UPGRADE_LIST.PACMAN_3,\
+		GameConsts.UPGRADE_LIST.TONGUE_1,\
+		GameConsts.UPGRADE_LIST.TONGUE_2,\
+		GameConsts.UPGRADE_LIST.TONGUE_3,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_1,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_2,\
 		GameConsts.UPGRADE_LIST.TIME_STOP_3,\

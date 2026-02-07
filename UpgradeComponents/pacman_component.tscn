@@ -1,21 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cunsw7gg5gdl3"]
+[gd_scene load_steps=4 format=3 uid="uid://cunsw7gg5gdl3"]
 
 [ext_resource type="Script" uid="uid://idhk5clbwahd" path="res://UpgradeComponents/pacman_component.gd" id="1_7h60m"]
 [ext_resource type="Texture2D" uid="uid://4ltbpcy0alb1" path="res://Shop/UpgradeCards/Pacman1.svg" id="2_u8po5"]
-[ext_resource type="Texture2D" uid="uid://dmnx0w0qohpcc" path="res://Shop/UpgradeCards/Pacman2.svg" id="3_uwsjp"]
-[ext_resource type="Texture2D" uid="uid://dmj45rd0wwcci" path="res://Shop/UpgradeCards/Pacman3.svg" id="4_tc846"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6r5ai"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_u8po5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_uwsjp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_tc846")
 }],
 "loop": true,
 "name": &"default",

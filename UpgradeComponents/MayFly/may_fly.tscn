@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp8twsx7ghniq"]
+[gd_scene load_steps=14 format=3 uid="uid://bp8twsx7ghniq"]
 
 [ext_resource type="Script" uid="uid://st65n1ll0g7j" path="res://UpgradeComponents/MayFly/may_fly.gd" id="1_1xsc2"]
 [ext_resource type="Texture2D" uid="uid://by2c5f01tqefa" path="res://UpgradeComponents/MayFly/MayFly1.svg" id="2_vipjq"]
 [ext_resource type="Texture2D" uid="uid://cqcwccfowm8og" path="res://UpgradeComponents/MayFly/MayFly2.svg" id="3_2s0vi"]
+[ext_resource type="Texture2D" uid="uid://flkwg3m6pt6m" path="res://MapElements/FruitElements/FruitShadow.svg" id="4_2s0vi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2rtd"]
 animations = [{
@@ -31,23 +32,6 @@ point_count = 3
 [sub_resource type="Gradient" id="Gradient_g2rtd"]
 offsets = PackedFloat32Array(0.31044, 1)
 colors = PackedColorArray(0.52, 0.52, 0.52, 1, 1, 1, 1, 1)
-
-[sub_resource type="Animation" id="Animation_vipjq"]
-resource_name = "zip_around_anim"
-length = 3.4
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.686675, 1.11254, 1.59749, 2.01316, 2.48385, 2.85266, 3.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-18, 18), Vector2(8, 24), Vector2(34, -2), Vector2(36, -33), Vector2(8, -49), Vector2(-20, -34), Vector2(-38, -7), Vector2(-29, 24)]
-}
 
 [sub_resource type="Animation" id="Animation_2s0vi"]
 length = 0.001
@@ -189,6 +173,23 @@ tracks/4/keys = {
 "values": [Vector2(1, 1), Vector2(1.5, 1.5)]
 }
 
+[sub_resource type="Animation" id="Animation_vipjq"]
+resource_name = "zip_around_anim"
+length = 3.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.686675, 1.11254, 1.59749, 2.01316, 2.48385, 2.85266, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-18, 18), Vector2(8, 24), Vector2(34, -2), Vector2(36, -33), Vector2(8, -49), Vector2(-20, -34), Vector2(-38, -7), Vector2(-29, 24)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g2rtd"]
 _data = {
 &"RESET": SubResource("Animation_2s0vi"),
@@ -228,6 +229,12 @@ scale_amount_min = 0.2
 scale_amount_curve = SubResource("Curve_2s0vi")
 color = Color(0.97, 0.97, 0.97, 0.513726)
 color_initial_ramp = SubResource("Gradient_g2rtd")
+
+[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+z_as_relative = false
+position = Vector2(0, 48)
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("4_2s0vi")
 
 [node name="MayFlyAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

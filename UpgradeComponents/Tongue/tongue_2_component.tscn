@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtjcdl5ao4rbj"]
+
+[ext_resource type="Script" uid="uid://blk1lgqmtfnf0" path="res://UpgradeComponents/Tongue/tongue_2_component.gd" id="1_3v8tl"]
+[ext_resource type="Texture2D" uid="uid://bd0ypbxtcw5y7" path="res://Shop/UpgradeCards/Tongue2.svg" id="2_v04cb"]
+[ext_resource type="Texture2D" uid="uid://7bghp4cn5h4e" path="res://Shop/UpgradeCards/Tongue3.svg" id="3_fvn5g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ml3x6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v04cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fvn5g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tongue2Component" type="Node2D"]
+script = ExtResource("1_3v8tl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ml3x6")

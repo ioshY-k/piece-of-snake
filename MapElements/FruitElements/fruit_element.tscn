@@ -562,7 +562,7 @@ tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1e-05, 1)]
+"values": [Vector2(1, 1)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
@@ -584,7 +584,7 @@ _data = {
 &"RESET": SubResource("Animation_255v2")
 }
 
-[node name="FruitElementArea" type="Area2D" groups=["Fruit"]]
+[node name="FruitElement" type="Area2D" groups=["Fruit"]]
 z_index = 25
 z_as_relative = false
 collision_layer = 2
@@ -660,8 +660,8 @@ texture = ExtResource("3_8okd3")
 
 [node name="FruitElementSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 10)
-scale = Vector2(1e-05, 1)
 sprite_frames = SubResource("SpriteFrames_p6vlk")
+frame_progress = 0.520456
 offset = Vector2(0, -12)
 
 [node name="RaycastUp" type="RayCast2D" parent="."]

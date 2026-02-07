@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=93 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -86,6 +86,9 @@
 [ext_resource type="Texture2D" uid="uid://dn5y33gdbxwnb" path="res://Shop/UpgradeCards/Bumblebee1.svg" id="75_ierhw"]
 [ext_resource type="Texture2D" uid="uid://bccc0pr8nyh4l" path="res://Shop/UpgradeCards/Bumblebee2.svg" id="76_ckwj3"]
 [ext_resource type="Texture2D" uid="uid://c33hae8n5rdn7" path="res://Shop/UpgradeCards/Bumblebee3.svg" id="77_5ppmn"]
+[ext_resource type="Texture2D" uid="uid://h474owdl8qpe" path="res://Shop/UpgradeCards/Tongue1.svg" id="78_02voi"]
+[ext_resource type="Texture2D" uid="uid://bd0ypbxtcw5y7" path="res://Shop/UpgradeCards/Tongue2.svg" id="79_4ngss"]
+[ext_resource type="Texture2D" uid="uid://7bghp4cn5h4e" path="res://Shop/UpgradeCards/Tongue3.svg" id="80_wsase"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -317,6 +320,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("77_5ppmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_02voi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_4ngss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_wsase")
 }],
 "loop": true,
 "name": &"default",

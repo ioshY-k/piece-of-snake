@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cy5lfvsid6vwu"]
+[gd_scene load_steps=16 format=3 uid="uid://cy5lfvsid6vwu"]
 
 [ext_resource type="Script" uid="uid://61t0wsqhfxc1" path="res://UpgradeComponents/Dragonfly/dragon_fly.gd" id="1_3dpjo"]
 [ext_resource type="Texture2D" uid="uid://rg0xj8yadmtk" path="res://Levels/WoodsMap/WoodsDragonflyFlying1.svg" id="2_jed6x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ccyht1gadesw8" path="res://Levels/WoodsMap/WoodsDragonflyFlying3.svg" id="4_x6fwy"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="5_pbkyr"]
 [ext_resource type="AudioStream" uid="uid://cv4d5sifsf78f" path="res://UpgradeComponents/Dragonfly/dragonfly.wav" id="6_op7pb"]
+[ext_resource type="Texture2D" uid="uid://flkwg3m6pt6m" path="res://MapElements/FruitElements/FruitShadow.svg" id="6_qqwiq"]
 [ext_resource type="AudioStream" uid="uid://bagy42p68h0t8" path="res://UpgradeComponents/Dragonfly/CollectDragonfly.wav" id="7_qqwiq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_op7pb"]
@@ -172,6 +173,11 @@ scale_amount_min = 0.2
 scale_amount_curve = SubResource("Curve_x6fwy")
 color = Color(0.97, 0.97, 0.97, 1)
 color_initial_ramp = SubResource("Gradient_pbkyr")
+
+[node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+z_as_relative = false
+position = Vector2(8, 74)
+texture = ExtResource("6_qqwiq")
 
 [node name="FlyAwayTimer" type="Timer" parent="."]
 wait_time = 4.0
