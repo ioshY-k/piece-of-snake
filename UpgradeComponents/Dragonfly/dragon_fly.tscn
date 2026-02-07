@@ -144,7 +144,6 @@ script = ExtResource("1_3dpjo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-79, -12)
-scale = Vector2(1e-05, 1)
 sprite_frames = SubResource("SpriteFrames_op7pb")
 autoplay = "default"
 

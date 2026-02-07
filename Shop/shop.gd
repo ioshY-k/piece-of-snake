@@ -70,7 +70,8 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.DIFFUSION,
 									GameConsts.UPGRADE_LIST.POWER_NAP,
 									GameConsts.UPGRADE_LIST.DRAGONFLY_1,
-									GameConsts.UPGRADE_LIST.MAYFLY_1
+									GameConsts.UPGRADE_LIST.MAYFLY_1,
+									GameConsts.UPGRADE_LIST.BUMBLEBEE_1
 									]
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
@@ -91,10 +92,10 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.MAYFLY_1,
-									GameConsts.UPGRADE_LIST.MAYFLY_1,
-									GameConsts.UPGRADE_LIST.MAYFLY_2,
-									GameConsts.UPGRADE_LIST.MAYFLY_3,
+									GameConsts.UPGRADE_LIST.BUMBLEBEE_1,
+									GameConsts.UPGRADE_LIST.BUMBLEBEE_1,
+									GameConsts.UPGRADE_LIST.BUMBLEBEE_2,
+									GameConsts.UPGRADE_LIST.BUMBLEBEE_3,
 									]
 									
 	

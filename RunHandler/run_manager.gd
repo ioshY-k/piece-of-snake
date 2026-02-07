@@ -38,7 +38,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(73)
+	current_upgrades.resize(76)
 	current_upgrades.fill(false)
 	
 	SignalBus.upgrade_bought.connect(_on_upgrade_bought)
@@ -88,7 +88,7 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.RESTAURANT,
+		maporder = [GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
 		mapmodorder = [GameConsts.MAP_MODS.ANTI_MAGNET,

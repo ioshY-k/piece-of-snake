@@ -68,6 +68,9 @@ var dragonfly_3_component_scene = load("res://UpgradeComponents/Dragonfly/dragon
 var may_fly_1_component_scene = load("res://UpgradeComponents/MayFly/may_fly_1_component.tscn")
 var may_fly_2_component_scene = load("res://UpgradeComponents/MayFly/may_fly_2_component.tscn")
 var may_fly_3_component_scene = load("res://UpgradeComponents/MayFly/may_fly_3_component.tscn")
+var bumblebee_1_component_scene = load("res://UpgradeComponents/Bumblebee/bumblebee_1_component.tscn")
+var bumblebee_2_component_scene = load("res://UpgradeComponents/Bumblebee/bumblebee_2_component.tscn")
+var bumblebee_3_component_scene = load("res://UpgradeComponents/Bumblebee/bumblebee_3_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -113,6 +116,7 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 	for upgrade_id in range(len(get_parent().current_upgrades)):
 		if get_parent().current_upgrades[upgrade_id]:
 			if is_upgrade_reload_necessary(upgrade_id):
+				destroy_upgrade(upgrade_id)
 				instantiate_upgrade(upgrade_id)
 	
 	
@@ -146,7 +150,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	################################################################################################################
 		time_meter.initiate_time_bar(1)
 	else:
-		time_meter.initiate_time_bar(20)
+		time_meter.initiate_time_bar(60)
 	################################################################################################################
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
@@ -447,6 +451,15 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.MAYFLY_3:
 			var may_fly_3_component = may_fly_3_component_scene.instantiate()
 			add_child(may_fly_3_component)
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_1:
+			var bumblebee_1_component = bumblebee_1_component_scene.instantiate()
+			add_child(bumblebee_1_component)
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_2:
+			var bumblebee_2_component = bumblebee_2_component_scene.instantiate()
+			add_child(bumblebee_2_component)
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_3:
+			var bumblebee_3_component = bumblebee_3_component_scene.instantiate()
+			add_child(bumblebee_3_component)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
@@ -626,6 +639,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = find_child("MayFly2Component",false,false)
 		GameConsts.UPGRADE_LIST.MAYFLY_3:
 			component = find_child("MayFly3Component",false,false)
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_1:
+			component = find_child("Bumblebee1Component",false,false)
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_2:
+			component = find_child("Bumblebee2Component",false,false)
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_3:
+			component = find_child("Bumblebee3Component",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -690,6 +709,12 @@ func is_upgrade_reload_necessary(upgrade_id) -> bool:
 		GameConsts.UPGRADE_LIST.DRAGONFLY_1,\
 		GameConsts.UPGRADE_LIST.DRAGONFLY_2,\
 		GameConsts.UPGRADE_LIST.DRAGONFLY_3,\
+		GameConsts.UPGRADE_LIST.MAYFLY_1,\
+		GameConsts.UPGRADE_LIST.MAYFLY_2,\
+		GameConsts.UPGRADE_LIST.MAYFLY_3,\
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_1,\
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_2,\
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.STEEL_HELMET,\

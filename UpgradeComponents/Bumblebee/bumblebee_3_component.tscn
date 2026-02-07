@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://baxxe3d2tffb5"]
+
+[ext_resource type="Script" uid="uid://r4fq8ihkuw0x" path="res://UpgradeComponents/Bumblebee/bumblebee_base_component.gd" id="1_wgd42"]
+
+[node name="Bumblebee3Component" type="Node"]
+script = ExtResource("1_wgd42")
+
+[node name="BumblemodeTimer" type="Timer" parent="."]
+wait_time = 30.0

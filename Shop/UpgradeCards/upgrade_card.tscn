@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=90 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -83,6 +83,9 @@
 [ext_resource type="Texture2D" uid="uid://bj8jly132vvdx" path="res://Shop/UpgradeCards/MayFly1.svg" id="72_krigg"]
 [ext_resource type="Texture2D" uid="uid://cc6pp6l1cq1b5" path="res://Shop/UpgradeCards/MayFly2.svg" id="73_lwmcy"]
 [ext_resource type="Texture2D" uid="uid://eidduh23qdl3" path="res://Shop/UpgradeCards/MayFly3.svg" id="74_3imu4"]
+[ext_resource type="Texture2D" uid="uid://dn5y33gdbxwnb" path="res://Shop/UpgradeCards/Bumblebee1.svg" id="75_ierhw"]
+[ext_resource type="Texture2D" uid="uid://bccc0pr8nyh4l" path="res://Shop/UpgradeCards/Bumblebee2.svg" id="76_ckwj3"]
+[ext_resource type="Texture2D" uid="uid://c33hae8n5rdn7" path="res://Shop/UpgradeCards/Bumblebee3.svg" id="77_5ppmn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -305,6 +308,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("74_3imu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ierhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_ckwj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_5ppmn")
 }],
 "loop": true,
 "name": &"default",
