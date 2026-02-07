@@ -66,10 +66,7 @@ func _process(delta: float) -> void:
 			3:
 				upper_left_corner = MapData.get_map_data3(current_map.get_parent().current_map_index)[3]
 				lower_right_corner = MapData.get_map_data3(current_map.get_parent().current_map_index)[4]
-		
-		print("Position: ", TileHelper.position_to_tile(local_cursor_position))
-		print("upperleft: ", upper_left_corner)
-		print("lowerright: ", lower_right_corner)
+				
 		if GlobalSettings.keyboard_only:
 			if Input.is_action_just_pressed("move_up") and TileHelper.position_to_tile(local_cursor_position).y > upper_left_corner.y+1:
 				local_cursor_position = TileHelper.get_next_tile(TileHelper.position_to_tile(local_cursor_position),TileHelper.DIRECTION.UP)
@@ -116,8 +113,6 @@ func _on_teleport_finished(teleporter: Teleporter):
 	for tele in current_teleporters:
 		if tele == teleporter:
 			current_teleporters.erase(tele)
-			print(current_map.temporary_obstacles)
-			print(current_map.temporary_obstacles.size())
 			current_map.temporary_obstacles.erase(TileHelper.position_to_tile(tele.position))
 
 func self_destruct():

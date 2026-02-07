@@ -34,6 +34,13 @@ func _on_next_tile_reached():
 	
 	SignalBus.continue_moving.emit(snake_head.current_direction)
 
+func delayed_regrow_tiles(seconds: int, tiles: int):
+	await get_tree().create_timer(seconds).timeout
+	tiles_to_grow += tiles
+	while tiles > 0:
+		SignalBus.tail_grows.emit()
+		tiles -= 1
+
 func check_moves():
 	return snake_head.moves
 func _on_stop_moving(_tail_moves):

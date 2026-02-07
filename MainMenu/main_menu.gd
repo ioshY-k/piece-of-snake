@@ -62,7 +62,6 @@ func _on_char_changed(char_id: int):
 	for panel in character_panels:
 		character_panels[panel].hide()
 	character_panels[str(char_id)].show()
-	print("changed")
 	character_panels[str(char_id)].get_child(0).restart()
 	character_panels[str(char_id)].get_child(0).emitting = true
 

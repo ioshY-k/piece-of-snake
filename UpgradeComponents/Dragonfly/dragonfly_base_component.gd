@@ -16,10 +16,11 @@ func _ready():
 	SignalBus.round_over.connect(set_infinite_sprint_meter.bind(false))
 
 func spawn_dragonfly():
+	map = level.current_map
 	dragon_fly = dragonfly_scene.instantiate()
 	map.add_child(dragon_fly)
 	dragon_fly.component = self
-	dragon_fly.position = TileHelper.tile_to_position(map.free_map_tiles[0])
+	dragon_fly.position = TileHelper.tile_to_position(map.free_map_tiles[randi()%map.free_map_tiles.size()-1])
 
 func setup_dragonfly():
 	print_debug("this function should have been overloaded")

@@ -27,7 +27,6 @@ func fly_away():
 	var end_pos = TileHelper.tile_to_position(map.free_map_tiles[randi_range(0,map.free_map_tiles.size()-1)])
 	tween.tween_property(self, "position", end_pos, 0.4)
 	fly_away_sound.play()
-	print("im gone now!")
 	await tween.finished
 	dragon_fly_area.set_collision_mask_value(14,true)
 

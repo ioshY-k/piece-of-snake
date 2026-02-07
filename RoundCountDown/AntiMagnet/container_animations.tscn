@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpg474acw8g6f"]
+
+[ext_resource type="Texture2D" uid="uid://cssh6xn0ww3m" path="res://RoundCountDown/AntiMagnet/CountDownDeco1AntiMagnet.svg" id="1_dkjye"]
+[ext_resource type="Texture2D" uid="uid://00o0un88yhif" path="res://RoundCountDown/AntiMagnet/CountDownParticleAntiMagnet.svg" id="2_11x4f"]
+[ext_resource type="Texture2D" uid="uid://c0ploiui7u6n7" path="res://RoundCountDown/AntiMagnet/CountDownDeco2AntiMagnet.svg" id="3_dcerj"]
+
+[sub_resource type="Curve" id="Curve_ks522"]
+_data = [Vector2(0, 0), 0.0, -0.549773, 0, 0, Vector2(0.0549598, 0.436225), 0.0, 0.0, 0, 0, Vector2(0.121984, 0.463861), 1.60909, 1.60909, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_axerw"]
+offsets = PackedFloat32Array(0, 0.266484, 0.758242)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.472527, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_yw84v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Magnet1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Magnet2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.523598]
+}
+
+[sub_resource type="Animation" id="Animation_fkxob"]
+resource_name = "default"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Magnet1:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.33333, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, -0.523598]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Magnet2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.2, 4.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.523598, -0.523598]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lgfcf"]
+_data = {
+&"RESET": SubResource("Animation_yw84v"),
+&"default": SubResource("Animation_fkxob")
+}
+
+[node name="ContainerAnimations" type="Node2D"]
+
+[node name="Magnet1" type="Sprite2D" parent="."]
+position = Vector2(-409, 112)
+rotation = 0.261799
+texture = ExtResource("1_dkjye")
+offset = Vector2(-75, -12)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Magnet1"]
+position = Vector2(-167.196, -23.2731)
+amount = 6
+texture = ExtResource("2_11x4f")
+lifetime = 2.54
+explosiveness = 0.5
+particle_flag_align_y = true
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 207.77
+initial_velocity_max = 207.77
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+damping_min = 14.216
+damping_max = 14.216
+scale_amount_min = 1.4
+scale_amount_max = 1.4
+scale_amount_curve = SubResource("Curve_ks522")
+color = Color(0.78, 0.273, 0.3068, 0.768627)
+color_ramp = SubResource("Gradient_axerw")
+
+[node name="Magnet2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(418, 110)
+rotation = 0.523598
+texture = ExtResource("3_dcerj")
+offset = Vector2(70, -12)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Magnet2"]
+position = Vector2(153.364, -33.7549)
+amount = 6
+texture = ExtResource("2_11x4f")
+lifetime = 2.54
+explosiveness = 0.5
+particle_flag_align_y = true
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 207.77
+initial_velocity_max = 207.77
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+damping_min = 14.216
+damping_max = 14.216
+scale_amount_min = 1.4
+scale_amount_max = 1.4
+scale_amount_curve = SubResource("Curve_ks522")
+color = Color(0.78, 0.273, 0.3068, 0.768627)
+color_ramp = SubResource("Gradient_axerw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lgfcf")
+}
+autoplay = "default"

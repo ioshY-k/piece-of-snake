@@ -65,6 +65,9 @@ var overfed_component_scene = load("res://UpgradeComponents/overfed_component.ts
 var dragonfly_1_component_scene = load("res://UpgradeComponents/Dragonfly/dragonfly_1_component.tscn")
 var dragonfly_2_component_scene = load("res://UpgradeComponents/Dragonfly/dragonfly_2_component.tscn")
 var dragonfly_3_component_scene = load("res://UpgradeComponents/Dragonfly/dragonfly_3_component.tscn")
+var may_fly_1_component_scene = load("res://UpgradeComponents/MayFly/may_fly_1_component.tscn")
+var may_fly_2_component_scene = load("res://UpgradeComponents/MayFly/may_fly_2_component.tscn")
+var may_fly_3_component_scene = load("res://UpgradeComponents/MayFly/may_fly_3_component.tscn")
 
 @onready var hit_audio: AudioStreamPlayer = $HitAudio
 @onready var eat_fruit_audio: AudioStreamPlayer = $EatFruitAudio
@@ -143,7 +146,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	################################################################################################################
 		time_meter.initiate_time_bar(1)
 	else:
-		time_meter.initiate_time_bar(1)
+		time_meter.initiate_time_bar(20)
 	################################################################################################################
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
@@ -435,6 +438,15 @@ func instantiate_upgrade(upgrade_id: int):
 		GameConsts.UPGRADE_LIST.DRAGONFLY_3:
 			var dragonfly_3_component = dragonfly_3_component_scene.instantiate()
 			add_child(dragonfly_3_component)
+		GameConsts.UPGRADE_LIST.MAYFLY_1:
+			var may_fly_1_component = may_fly_1_component_scene.instantiate()
+			add_child(may_fly_1_component)
+		GameConsts.UPGRADE_LIST.MAYFLY_2:
+			var may_fly_2_component = may_fly_2_component_scene.instantiate()
+			add_child(may_fly_2_component)
+		GameConsts.UPGRADE_LIST.MAYFLY_3:
+			var may_fly_3_component = may_fly_3_component_scene.instantiate()
+			add_child(may_fly_3_component)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
@@ -608,6 +620,12 @@ func destroy_upgrade(upgrade_id: int):
 			component = find_child("Dragonfly2Component",false,false)
 		GameConsts.UPGRADE_LIST.DRAGONFLY_3:
 			component = find_child("Dragonfly3Component",false,false)
+		GameConsts.UPGRADE_LIST.MAYFLY_1:
+			component = find_child("MayFly1Component",false,false)
+		GameConsts.UPGRADE_LIST.MAYFLY_2:
+			component = find_child("MayFly2Component",false,false)
+		GameConsts.UPGRADE_LIST.MAYFLY_3:
+			component = find_child("MayFly3Component",false,false)
 	
 	if component != null:
 		component.self_destruct()

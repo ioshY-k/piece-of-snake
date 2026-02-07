@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=87 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -80,6 +80,9 @@
 [ext_resource type="Texture2D" uid="uid://ctfl7wdasathq" path="res://Shop/UpgradeCards/PlayButton.svg" id="70_jvq0k"]
 [ext_resource type="Texture2D" uid="uid://mhhcyww3lkhl" path="res://Shop/UpgradeCards/Dragonfly2.svg" id="70_v0dc1"]
 [ext_resource type="Texture2D" uid="uid://dnsgwx0i5xsg1" path="res://Shop/UpgradeCards/Dragonfly3.svg" id="71_n1h1x"]
+[ext_resource type="Texture2D" uid="uid://bj8jly132vvdx" path="res://Shop/UpgradeCards/MayFly1.svg" id="72_krigg"]
+[ext_resource type="Texture2D" uid="uid://cc6pp6l1cq1b5" path="res://Shop/UpgradeCards/MayFly2.svg" id="73_lwmcy"]
+[ext_resource type="Texture2D" uid="uid://eidduh23qdl3" path="res://Shop/UpgradeCards/MayFly3.svg" id="74_3imu4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -293,6 +296,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("71_n1h1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_krigg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_lwmcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_3imu4")
 }],
 "loop": true,
 "name": &"default",

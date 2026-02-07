@@ -4,7 +4,6 @@ signal item_deactivated
 var button_held: bool = false
 
 var level: LevelManager
-@onready var grow_back_count_down: Timer = $GrowBackCountDown
 var tiles_to_grow_back = 0
 
 func _ready() -> void:
@@ -15,7 +14,6 @@ func _ready() -> void:
 	item_deactivated.connect(_on_item_deactivated)
 	item_activated.connect(active_item_slot._on_item_activated.bind())
 	SignalBus.pre_next_tile_reached.connect(_on_next_tile_reached)
-	grow_back_count_down.timeout.connect(_grow_back)
 
 
 
@@ -38,17 +36,13 @@ func _on_next_tile_reached():
 			SignalBus.stop_moving.emit(true)
 			tiles_to_grow_back += 1
 		else:
-			grow_back_count_down.start()
+			level.current_map.snake_tail.delayed_regrow_tiles(5, tiles_to_grow_back)
 
 func _on_item_deactivated():
 	active_item_slot.get_parent().snake_head.moves = true
-	grow_back_count_down.start()
-
-func _grow_back():
-	level.current_map.snake_tail.tiles_to_grow += tiles_to_grow_back
-	while tiles_to_grow_back > 0:
-		SignalBus.tail_grows.emit()
-		tiles_to_grow_back -= 1
+	level.current_map.snake_tail.delayed_regrow_tiles(5, tiles_to_grow_back)
+	tiles_to_grow_back = 0
+	
 
 func self_destruct():
 	active_item_slot.remove_lights()

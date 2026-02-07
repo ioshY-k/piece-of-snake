@@ -38,7 +38,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(70)
+	current_upgrades.resize(73)
 	current_upgrades.fill(false)
 	
 	SignalBus.upgrade_bought.connect(_on_upgrade_bought)
@@ -91,8 +91,8 @@ func create_new_run():
 		maporder = [GameConsts.MAP_LIST.RESTAURANT,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.FAR_AWAY,
-						GameConsts.MAP_MODS.FAR_AWAY,
+		mapmodorder = [GameConsts.MAP_MODS.ANTI_MAGNET,
+						GameConsts.MAP_MODS.ANTI_MAGNET,
 						GameConsts.MAP_MODS.FAR_AWAY,
 						GameConsts.MAP_MODS.GHOST_INVASION,
 						GameConsts.MAP_MODS.TETRI_FRUIT,

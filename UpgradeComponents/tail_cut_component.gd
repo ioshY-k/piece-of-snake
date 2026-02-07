@@ -31,7 +31,6 @@ func _cuttable_tail_hit(colliding_element):
 		var body = map.snake_path_bodyparts.pop_front()
 		body.queue_free()
 		var direction = map.snake_path_directions.pop_front()
-		SignalBus.tail_skip.emit()
 	await get_tree().process_frame
 	already_cut = true
 	snake_tail.teleport_destination = TileHelper.position_to_tile(map.snake_path_bodyparts[0].position)

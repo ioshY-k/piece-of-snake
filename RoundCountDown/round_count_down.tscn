@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://fb2hhu3hvjml"]
+[gd_scene load_steps=32 format=3 uid="uid://fb2hhu3hvjml"]
 
 [ext_resource type="Script" uid="uid://dr2jn8qf7cehb" path="res://RoundCountDown/round_count_down.gd" id="1_rra43"]
 [ext_resource type="Texture2D" uid="uid://comm7jvphnn1i" path="res://RoundCountDown/CountDownPanelBG.svg" id="2_e5j6p"]
@@ -6,19 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://cgxlh68t8ywla" path="res://RoundCountDown/CountDownPanelDeco.svg" id="3_pxsen"]
 [ext_resource type="Texture2D" uid="uid://ey5dhgxhtmpk" path="res://RoundCountDown/CountDownPanelFG.svg" id="4_b8ha1"]
 [ext_resource type="Texture2D" uid="uid://bvv8h6dff83qr" path="res://RoundCountDown/NoMapMod/CountDownContainerNoMapMod.svg" id="4_t8ktn"]
+[ext_resource type="Texture2D" uid="uid://d2a445xbp4bqv" path="res://RoundCountDown/TailVirus/CountDownContainerTailVirus.svg" id="5_7kc02"]
 [ext_resource type="Texture2D" uid="uid://df7odhtlgxx4b" path="res://RoundCountDown/Laser/CountDownContainerLaser.svg" id="5_8g06g"]
 [ext_resource type="Texture2D" uid="uid://b84kykpq3jgsc" path="res://RoundCountDown/GhostInvasion/CountDownContainerDecoGhostInvasion.svg" id="5_27i3i"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="5_t8ktn"]
 [ext_resource type="Texture2D" uid="uid://ckf3lgwsdw2lb" path="res://RoundCountDown/NoMapMod/CountDownContainerDecoNoMapMod.svg" id="6_8f1uk"]
 [ext_resource type="Texture2D" uid="uid://ql6k0e8jmva5" path="res://RoundCountDown/NoMapMod/CountDownBarMaskNoMapMod.svg" id="6_iqts5"]
 [ext_resource type="Texture2D" uid="uid://dmaqm1j6k78oy" path="res://RoundCountDown/CountDownBar.svg" id="7_8f1uk"]
+[ext_resource type="Texture2D" uid="uid://dmdvs56hmf5r5" path="res://RoundCountDown/AntiMagnet/CountDownContainerAntiMagnet.svg" id="7_kihmd"]
 [ext_resource type="Texture2D" uid="uid://cts1o8cjhbunl" path="res://RoundCountDown/FarAway/CountDownContainerFarAway.svg" id="7_ob4tl"]
 [ext_resource type="Texture2D" uid="uid://euwokkeh3p81" path="res://RoundCountDown/GhostInvasion/CountDownContainerGhostInvasion.svg" id="9_8g06g"]
 [ext_resource type="PackedScene" uid="uid://bs0m1mtsyjoc8" path="res://Shop/MapPreviews/map_preview.tscn" id="9_b8ha1"]
+[ext_resource type="Texture2D" uid="uid://vphcc0w48641" path="res://RoundCountDown/TailVirus/CountDownContainerDecoTailVirus.svg" id="11_3qxre"]
 [ext_resource type="Texture2D" uid="uid://baamdxjuvb8ei" path="res://RoundCountDown/FarAway/CountDownContainerDecoFarAway.svg" id="11_7fnj8"]
 [ext_resource type="Texture2D" uid="uid://cn2jsl4uicg5d" path="res://RoundCountDown/Laser/CountDownContainerMaskLaser.svg" id="13_8g06g"]
 [ext_resource type="Texture2D" uid="uid://cb6c1trmdyife" path="res://RoundCountDown/GhostInvasion/CountDownContainerMaskGhostInvasion.svg" id="14_tknvg"]
+[ext_resource type="Texture2D" uid="uid://c30y0i8r3x07k" path="res://RoundCountDown/AntiMagnet/CountDownContainerDecoAntiMagnet.svg" id="16_n6hmd"]
+[ext_resource type="Texture2D" uid="uid://dq11q6fr8uypg" path="res://RoundCountDown/TailVirus/CountDownContainerMaskTailVirus.svg" id="17_chwrq"]
 [ext_resource type="Texture2D" uid="uid://msk2mmv7i7eo" path="res://RoundCountDown/FarAway/CountDownContainerMaskFarAway.svg" id="17_hvjic"]
+[ext_resource type="Texture2D" uid="uid://doviq51wnkyuh" path="res://RoundCountDown/AntiMagnet/CountDownContainerMaskAntiMagnet.svg" id="24_rsbde"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqts5"]
 animations = [{
@@ -27,28 +33,28 @@ animations = [{
 "texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("5_7kc02")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_8g06g")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("7_kihmd")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_8g06g")
@@ -57,13 +63,13 @@ animations = [{
 "texture": ExtResource("7_ob4tl")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_t8ktn")
 }],
 "loop": true,
 "name": &"default",
@@ -77,28 +83,28 @@ animations = [{
 "texture": ExtResource("6_8f1uk")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_8f1uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3qxre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8f1uk")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_8f1uk")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_8f1uk")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_8f1uk")
 }, {
 "duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
+"texture": ExtResource("16_n6hmd")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_27i3i")
@@ -107,13 +113,13 @@ animations = [{
 "texture": ExtResource("11_7fnj8")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_8f1uk")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_8f1uk")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_8f1uk")
 }],
 "loop": true,
 "name": &"default",
@@ -127,28 +133,28 @@ animations = [{
 "texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("17_chwrq")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
 "texture": ExtResource("13_8g06g")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("24_rsbde")
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_tknvg")
@@ -157,13 +163,13 @@ animations = [{
 "texture": ExtResource("17_hvjic")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iqts5")
 }],
 "loop": true,
 "name": &"default",
@@ -376,7 +382,6 @@ position = Vector2(0, -96)
 texture = ExtResource("2_e5j6p")
 
 [node name="Shadow" type="Sprite2D" parent="CountDownPanel/CountdownPanelBG"]
-visible = false
 show_behind_parent = true
 z_index = -1
 position = Vector2(0, 155)
@@ -386,8 +391,8 @@ texture = ExtResource("3_b8ha1")
 [node name="Container" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelBG"]
 position = Vector2(0, -104)
 sprite_frames = SubResource("SpriteFrames_iqts5")
-frame = 10
-frame_progress = 0.695095
+frame = 8
+frame_progress = 0.670011
 
 [node name="CountdownPanelDeco" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -41)
@@ -396,8 +401,8 @@ texture = ExtResource("3_pxsen")
 [node name="ContainerDeco" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelDeco"]
 position = Vector2(0, -106)
 sprite_frames = SubResource("SpriteFrames_8f1uk")
-frame = 10
-frame_progress = 0.819556
+frame = 8
+frame_progress = 0.849556
 
 [node name="CountdownPanelFG" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -96)
@@ -423,6 +428,8 @@ clip_children = 1
 z_index = -1
 position = Vector2(0, -96)
 sprite_frames = SubResource("SpriteFrames_b8ha1")
+frame = 9
+frame_progress = 0.409578
 
 [node name="CountDownBar" type="Sprite2D" parent="CountDownPanel/CountDownBarMask"]
 position = Vector2(-74, 10)

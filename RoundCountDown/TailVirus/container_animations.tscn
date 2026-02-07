@@ -1,0 +1,212 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsvael24kshew"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7kc02"]
+load_path = "res://.godot/imported/ParticleSprite.svg-577512088bf10b8f9cdcef051445ce05.ctex"
+
+[sub_resource type="Curve" id="Curve_3qxre"]
+_data = [Vector2(0, 0.502036), 0.0, 0.0, 0, 0, Vector2(0.0683646, 0.994473), 0.0, 0.0, 0, 0, Vector2(0.146113, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_chwrq"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.0170807, 1), 0.0, 0.0, 0, 0, Vector2(0.619565, 0.143597), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="ContainerAnimations" type="Node2D"]
+
+[node name="TailVirusParticles" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(201, -199)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 5.25
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+gravity = Vector2(0, -500)
+initial_velocity_max = 82.15
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles2" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(-112, -162)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 4.15
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+gravity = Vector2(0, -500)
+initial_velocity_max = 82.15
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles8" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(418, -56)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 2.54
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+gravity = Vector2(0, -500)
+initial_velocity_max = 82.15
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles9" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(460, 145)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 3.12
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+gravity = Vector2(0, -500)
+initial_velocity_max = 82.15
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles3" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(-263, -177)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 6.13
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+gravity = Vector2(0, -500)
+initial_velocity_max = 82.15
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles4" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(-499, 7)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 2.17
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+direction = Vector2(-1, 0)
+gravity = Vector2(0, -500)
+initial_velocity_min = 33.02
+initial_velocity_max = 96.3
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles5" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(-419, 209)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 4.5
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+direction = Vector2(-1, 1)
+gravity = Vector2(0, -500)
+initial_velocity_min = 137.29
+initial_velocity_max = 137.29
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles6" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(-249, 294)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 5.25
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+direction = Vector2(-1, 1)
+gravity = Vector2(0, -500)
+initial_velocity_min = 137.29
+initial_velocity_max = 137.29
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")
+
+[node name="TailVirusParticles7" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(84, 306)
+amount = 30
+texture = SubResource("CompressedTexture2D_7kc02")
+lifetime = 2.67
+explosiveness = 0.88
+randomness = 0.65
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 46.68
+direction = Vector2(0, 1)
+gravity = Vector2(0, -500)
+initial_velocity_min = 137.29
+initial_velocity_max = 137.29
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_3qxre")
+color = Color(0.54501, 0.3626, 0.74, 0.631373)
+hue_variation_min = -0.02
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("Curve_chwrq")

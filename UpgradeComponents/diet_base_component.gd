@@ -12,9 +12,6 @@ func _ready() -> void:
 	SignalBus.fruit_collected.connect(_prevent_growth)
 	SignalBus.next_tile_reached.connect(_lower_chance)
 
-func _process(delta: float) -> void:
-	print(no_grow_chance)
-
 func _lower_chance():
 	if no_grow_chance > 0.0:
 		no_grow_chance = max(0.0, no_grow_chance - decrease_step_size)

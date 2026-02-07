@@ -23,7 +23,3 @@ script = ExtResource("1_mw52h")
 
 [node name="ActiveItemUI" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8ka4q")
-
-[node name="GrowBackCountDown" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true

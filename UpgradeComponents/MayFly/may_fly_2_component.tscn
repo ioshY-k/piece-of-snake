@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b64r1ooxyxewc"]
+
+[ext_resource type="Script" uid="uid://bma7id6wnkqvc" path="res://UpgradeComponents/MayFly/may_fly_2_component.gd" id="1_g146o"]
+
+[node name="MayFly2Component" type="Node"]
+script = ExtResource("1_g146o")

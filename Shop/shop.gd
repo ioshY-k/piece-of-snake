@@ -69,7 +69,8 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.CATCH,
 									GameConsts.UPGRADE_LIST.DIFFUSION,
 									GameConsts.UPGRADE_LIST.POWER_NAP,
-									GameConsts.UPGRADE_LIST.DRAGONFLY_1
+									GameConsts.UPGRADE_LIST.DRAGONFLY_1,
+									GameConsts.UPGRADE_LIST.MAYFLY_1
 									]
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
@@ -90,10 +91,10 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.DRAGONFLY_1,
-									GameConsts.UPGRADE_LIST.DRAGONFLY_1,
-									GameConsts.UPGRADE_LIST.DRAGONFLY_2,
-									GameConsts.UPGRADE_LIST.DRAGONFLY_3,
+									GameConsts.UPGRADE_LIST.MAYFLY_1,
+									GameConsts.UPGRADE_LIST.MAYFLY_1,
+									GameConsts.UPGRADE_LIST.MAYFLY_2,
+									GameConsts.UPGRADE_LIST.MAYFLY_3,
 									]
 									
 	
@@ -392,7 +393,6 @@ func toggle_upgrade_panel(upgrades_expanded) -> void:
 	if not upgrades_expanded:
 		upgrade_overview.play_backwards("disappear")
 		for slot in slots:
-			print(slot.find_child("Area2D").get_child(-1).name)
 			tween.tween_property(slot, "scale", Vector2(1,1), 0.5)
 		upgrades_expanded = true
 	else:

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="6.3346796mm"
+   height="5.4552207mm"
+   viewBox="0 0 6.3346795 5.4552208"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="MayFly1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="9.2070302"
+     inkscape:cx="33.452698"
+     inkscape:cy="6.3538403"
+     inkscape:window-width="3840"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-180.19275,-133.21538)">
+    <path
+       style="fill:#cfcfcf;fill-opacity:0.543886;stroke:#000000;stroke-width:0;stroke-linecap:square;paint-order:fill markers stroke"
+       d="m 183.58085,135.96773 c 0,0 2.02196,-0.39626 2.5197,-1.17858 0.25452,-0.40003 0.36667,-1.12181 0,-1.42241 -0.42735,-0.35034 -1.20187,-0.0296 -1.62561,0.32512 -0.62501,0.52316 -0.89409,2.27587 -0.89409,2.27587 z"
+       id="path4-8"
+       sodipodi:nodetypes="caaac" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;paint-order:fill markers stroke"
+       id="path2"
+       cx="183.70872"
+       cy="137.20103"
+       rx="1.9032142"
+       ry="1.4695704" />
+    <ellipse
+       style="fill:#474747;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:square;paint-order:fill markers stroke"
+       id="path3"
+       cx="184.98558"
+       cy="136.57466"
+       rx="1.5418444"
+       ry="0.98774409" />
+    <path
+       style="fill:#cfcfcf;fill-opacity:0.543886;stroke:#000000;stroke-width:0;stroke-linecap:square;paint-order:fill markers stroke"
+       d="m 182.94726,136.07212 c 0,0 -2.02196,-0.39626 -2.5197,-1.17858 -0.25452,-0.40003 -0.36667,-1.12181 0,-1.42241 0.42735,-0.35034 1.20187,-0.0296 1.62561,0.32512 0.62501,0.52316 0.89409,2.27587 0.89409,2.27587 z"
+       id="path4"
+       sodipodi:nodetypes="caaac" />
+  </g>
+</svg>

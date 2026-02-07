@@ -530,26 +530,50 @@
 	},
 	"DRAGONFLY_1": {
 	  "NAME_ENG": "DRAGONFLY 1",
-	  "DESC_ENG": "At the start of every round a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 3 tries.",
+	  "DESC_ENG": "At the start of every round, a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 4 tries.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "LIBELLE 1",
-	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 3 Versuche",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 4 Versuche",
 	  "SWISSDESC_GER": null
 	},
 	"DRAGONFLY_2": {
 	  "NAME_ENG": "DRAGONFLY 2",
-	  "DESC_ENG": "At the start of every round a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 2 tries.",
+	  "DESC_ENG": "At the start of every round, a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 3 tries.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "LIBELLE 2",
-	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 2 Versuche",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 3 Versuche",
 	  "SWISSDESC_GER": null
 	},
 	"DRAGONFLY_3": {
 	  "NAME_ENG": "DRAGONFLY 3",
-	  "DESC_ENG": "At the start of every round a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 1 try.",
+	  "DESC_ENG": "At the start of every round, a dragonfly appears. After collecting it, you can sprint indefinetely.\n\nCollecting it takes 2 try.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "LIBELLE 1",
-	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 1 Versuche",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Libelle. Sammelst du sie ein, kannst du unbegrenzt sprinten.\n\nDas Einsammeln benötigt 2 Versuche",
+	  "SWISSDESC_GER": null
+	},
+	"MAYFLY_1": {
+	  "NAME_ENG": "MAYFLY 1",
+	  "DESC_ENG": "At the start of every round, a mayfly appears. After collecting it, you loose half your length.\n\n(length will regrow)",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "EINTAGSFLIEGE 1",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheint eine Eintagsfliege. Sammelst du sie ein, verlierst du die Hälfte deiner Länge.\n\n(Länge wächst wieder nach)",
+	  "SWISSDESC_GER": null
+	},
+	"MAYFLY_2": {
+	  "NAME_ENG": "MAYFLY 2",
+	  "DESC_ENG": "At the start of every round, two mayflies appear. After collecting it, you loose half your length.\n\n(length will regrow)",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "EINTAGSFLIEGE 2",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheinen zwei Eintagsfliegen. Sammelst du sie ein, verlierst du die Hälfte deiner Länge.\n\n(Länge wächst wieder nach)",
+	  "SWISSDESC_GER": null
+	},
+	"MAYFLY_3": {
+	  "NAME_ENG": "MAYFLY 3",
+	  "DESC_ENG": "At the start of every round, two mayflies appear. After collecting it, you loose half your length.\n\n(length will regrow after a short whille)",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "EINTAGSFLIEGE 3",
+	  "DESC_GER": "Zu Beginn jeder Runde erscheinen zwei Eintagsfliegen. Sammelst du sie ein, verlierst du die Hälfte deiner Länge.\n\n(Länge wächst nach einiger Zeit wieder nach)",
 	  "SWISSDESC_GER": null
 	}
   },
