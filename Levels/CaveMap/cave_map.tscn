@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://hbdvemiqt5xd"]
+[gd_scene load_steps=15 format=3 uid="uid://hbdvemiqt5xd"]
 
 [ext_resource type="Texture2D" uid="uid://weag2pxvsgq4" path="res://Levels/CaveMap/CaveMap.svg" id="1_50oai"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_mdymt"]
@@ -7,6 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://2prhasopicbn" path="res://MapElements/ObstacleElement/obstacle_element.tscn" id="4_s8r7k"]
 [ext_resource type="Texture2D" uid="uid://fyjc4k3sr1mq" path="res://Levels/CaveMap/CaveMapBoulder.svg" id="5_mfk4o"]
 [ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="6_mfk4o"]
+[ext_resource type="Texture2D" uid="uid://dsohwg40al62w" path="res://Levels/CaveMap/CaveMapBoulder2.svg" id="6_xfx8r"]
+[ext_resource type="Texture2D" uid="uid://dv44iftncn00k" path="res://Levels/CaveMap/CaveColumnar2.svg" id="8_g6atx"]
+[ext_resource type="Texture2D" uid="uid://crctlu10qty5m" path="res://Levels/CaveMap/CaveIce2.svg" id="9_oy8iq"]
+[ext_resource type="Texture2D" uid="uid://k4etw3blvvm0" path="res://Levels/CaveMap/CaveColumnar1.svg" id="10_xfx8r"]
+[ext_resource type="Texture2D" uid="uid://dtoshs4pbo4nm" path="res://Levels/CaveMap/CaveIce1.svg" id="11_ptwrc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oy8iq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xfx8r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mfk4o"]
 animations = [{
@@ -29,6 +45,7 @@ inbounds_grid_size = Vector2i(16, 14)
 starting_position = Vector2(8, 11)
 
 [node name="SolidElements" type="Node2D" parent="."]
+visible = false
 
 [node name="SolidElementArea" parent="SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(0, 880)
@@ -339,6 +356,7 @@ position = Vector2(1440, 320)
 [node name="TeleportElements" type="Node2D" parent="."]
 
 [node name="AreaSize1SolidElements" type="Node2D" parent="."]
+visible = false
 
 [node name="SolidElementArea" parent="AreaSize1SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(80, 1200)
@@ -434,6 +452,7 @@ position = Vector2(1360, 160)
 position = Vector2(1360, 320)
 
 [node name="AreaSize2SolidElements" type="Node2D" parent="."]
+visible = false
 
 [node name="SolidElementArea" parent="AreaSize2SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(0, 1200)
@@ -525,6 +544,7 @@ position = Vector2(1360, 0)
 position = Vector2(1280, 0)
 
 [node name="AreaSize3SolidElements" type="Node2D" parent="."]
+visible = false
 
 [node name="SolidElementArea" parent="AreaSize3SolidElements" instance=ExtResource("3_mdymt")]
 position = Vector2(1440, 0)
@@ -629,9 +649,11 @@ position = Vector2(0, 1280)
 script = ExtResource("4_p7gys")
 
 [node name="ObstacleElement" parent="ObstacleElements" instance=ExtResource("4_s8r7k")]
+z_index = 29
 position = Vector2(960, 320)
-sprite_frames = SubResource("SpriteFrames_mfk4o")
+sprite_frames = SubResource("SpriteFrames_oy8iq")
 offset = Vector2(40, 40)
+flip_h = true
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4])
 
@@ -656,6 +678,7 @@ loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
 [node name="ObstacleElement11" parent="ObstacleElements" instance=ExtResource("4_s8r7k")]
+z_index = 32
 position = Vector2(-80, 560)
 sprite_frames = SubResource("SpriteFrames_mfk4o")
 offset = Vector2(40, 40)
@@ -683,6 +706,7 @@ loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
 [node name="ObstacleElement6" parent="ObstacleElements" instance=ExtResource("4_s8r7k")]
+z_index = 34
 position = Vector2(726, 726)
 sprite_frames = SubResource("SpriteFrames_mfk4o")
 offset = Vector2(40, 40)
@@ -708,3 +732,618 @@ path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0
 position = Vector2(726, 886)
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
+
+[node name="Decoration" type="Node2D" parent="."]
+position = Vector2(0, 15)
+
+[node name="Column1" type="Sprite2D" parent="Decoration"]
+z_index = 26
+z_as_relative = false
+position = Vector2(80, 60)
+texture = ExtResource("8_g6atx")
+
+[node name="Column2" type="Sprite2D" parent="Decoration"]
+z_index = 26
+z_as_relative = false
+position = Vector2(560, 60)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_g6atx")
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column2"]
+position = Vector2(21, -43)
+texture = ExtResource("11_ptwrc")
+
+[node name="Column3" type="Sprite2D" parent="Decoration"]
+z_index = 25
+z_as_relative = false
+position = Vector2(880, -20)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_g6atx")
+
+[node name="Column4" type="Sprite2D" parent="Decoration"]
+z_index = 25
+z_as_relative = false
+position = Vector2(1200, -20)
+texture = ExtResource("8_g6atx")
+
+[node name="Column5" type="Sprite2D" parent="Decoration"]
+z_index = 25
+z_as_relative = false
+position = Vector2(1440, 300)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_g6atx")
+
+[node name="Column6" type="Sprite2D" parent="Decoration"]
+z_index = 32
+z_as_relative = false
+position = Vector2(881, 554)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_g6atx")
+
+[node name="Column7" type="Sprite2D" parent="Decoration"]
+z_index = 33
+z_as_relative = false
+position = Vector2(803, 622)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_g6atx")
+flip_h = true
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column7"]
+position = Vector2(13, -1)
+texture = ExtResource("9_oy8iq")
+
+[node name="Column8" type="Sprite2D" parent="Decoration"]
+z_index = 34
+z_as_relative = false
+position = Vector2(879, 694)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_g6atx")
+flip_h = true
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column8"]
+position = Vector2(12, -55)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceOnColumn2" type="Sprite2D" parent="Decoration/Column8"]
+position = Vector2(-20, 22)
+rotation = -0.0575959
+scale = Vector2(0.865, 0.818)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Column12" type="Sprite2D" parent="Decoration"]
+z_index = 31
+z_as_relative = false
+position = Vector2(1122, 455)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_xfx8r")
+flip_h = true
+
+[node name="Column15" type="Sprite2D" parent="Decoration"]
+z_index = 28
+z_as_relative = false
+position = Vector2(1035, 217)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_xfx8r")
+flip_h = true
+
+[node name="Column13" type="Sprite2D" parent="Decoration"]
+z_index = 32
+z_as_relative = false
+position = Vector2(1125, 533)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_xfx8r")
+flip_h = true
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column13"]
+position = Vector2(13, -1)
+texture = ExtResource("9_oy8iq")
+
+[node name="Column16" type="Sprite2D" parent="Decoration"]
+z_index = 38
+z_as_relative = false
+position = Vector2(961, 1018)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_xfx8r")
+flip_h = true
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column16"]
+position = Vector2(13, -1)
+texture = ExtResource("9_oy8iq")
+
+[node name="Column17" type="Sprite2D" parent="Decoration"]
+z_index = 36
+z_as_relative = false
+position = Vector2(1121, 856)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_xfx8r")
+flip_h = true
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column17"]
+position = Vector2(13, -1)
+texture = ExtResource("9_oy8iq")
+
+[node name="Column14" type="Sprite2D" parent="Decoration"]
+z_index = 32
+z_as_relative = false
+position = Vector2(1199, 535)
+scale = Vector2(-1, 1)
+texture = ExtResource("10_xfx8r")
+flip_h = true
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column14"]
+position = Vector2(12, -55)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceOnColumn2" type="Sprite2D" parent="Decoration/Column14"]
+position = Vector2(-20, 22)
+rotation = -0.0575959
+scale = Vector2(0.865, 0.818)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="IceField1" type="Node2D" parent="Decoration"]
+z_index = 27
+z_as_relative = false
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField1"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField1"]
+position = Vector2(720, 120)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField1"]
+position = Vector2(744, 134)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField1"]
+position = Vector2(700, 160)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField1"]
+position = Vector2(739, 170)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField5" type="Node2D" parent="Decoration"]
+z_index = 36
+z_as_relative = false
+position = Vector2(-561, 722)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField5"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField5"]
+position = Vector2(720, 120)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField5"]
+position = Vector2(744, 134)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField5"]
+position = Vector2(700, 160)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField5"]
+position = Vector2(739, 170)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField6" type="Node2D" parent="Decoration"]
+z_index = 36
+z_as_relative = false
+position = Vector2(-717, 722)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField6"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField6"]
+position = Vector2(720, 120)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField6"]
+position = Vector2(744, 134)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField6"]
+position = Vector2(700, 160)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField6"]
+position = Vector2(739, 170)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField10" type="Node2D" parent="Decoration"]
+z_index = 29
+z_as_relative = false
+position = Vector2(400, 154)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField10"]
+position = Vector2(702, 126)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField10"]
+position = Vector2(742, 132)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice6" type="Sprite2D" parent="Decoration/IceField10"]
+position = Vector2(723, 117)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField10"]
+position = Vector2(708, 149)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField10"]
+position = Vector2(734, 161)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField10"]
+position = Vector2(697, 169)
+rotation = -0.115192
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="IceField12" type="Node2D" parent="Decoration"]
+z_index = 35
+z_as_relative = false
+position = Vector2(151, 603)
+scale = Vector2(1.35, 1.275)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField12"]
+position = Vector2(702, 126)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField12"]
+position = Vector2(742, 132)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice6" type="Sprite2D" parent="Decoration/IceField12"]
+position = Vector2(723, 117)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField12"]
+position = Vector2(708, 149)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField12"]
+position = Vector2(734, 161)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField12"]
+position = Vector2(697, 169)
+rotation = -0.115192
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="IceField11" type="Node2D" parent="Decoration"]
+z_index = 30
+z_as_relative = false
+position = Vector2(400, 218)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField11"]
+position = Vector2(702, 126)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField11"]
+position = Vector2(742, 132)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice6" type="Sprite2D" parent="Decoration/IceField11"]
+position = Vector2(723, 117)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField11"]
+position = Vector2(708, 149)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField11"]
+position = Vector2(734, 161)
+rotation = -0.115192
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("9_oy8iq")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField11"]
+position = Vector2(697, 169)
+rotation = -0.115192
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice7" type="Sprite2D" parent="Decoration/IceField11"]
+position = Vector2(743, 176)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("11_ptwrc")
+
+[node name="IceField2" type="Node2D" parent="Decoration"]
+z_index = 30
+z_as_relative = false
+position = Vector2(1439, 242)
+scale = Vector2(-1, 1)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField2"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField2"]
+position = Vector2(720, 120)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField2"]
+position = Vector2(744, 134)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField2"]
+position = Vector2(700, 160)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField2"]
+position = Vector2(739, 170)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField3" type="Node2D" parent="Decoration"]
+z_index = 33
+z_as_relative = false
+position = Vector2(157, 486)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField3"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField3"]
+position = Vector2(720, 120)
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField3"]
+position = Vector2(744, 134)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice3" type="Sprite2D" parent="Decoration/IceField3"]
+position = Vector2(700, 160)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField3"]
+position = Vector2(739, 170)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField4" type="Node2D" parent="Decoration"]
+z_index = 31
+z_as_relative = false
+position = Vector2(162, 335)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField4"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice6" type="Sprite2D" parent="Decoration/IceField4"]
+position = Vector2(730, 106)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice2" type="Sprite2D" parent="Decoration/IceField4"]
+position = Vector2(713, 133)
+rotation = -0.459022
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice7" type="Sprite2D" parent="Decoration/IceField4"]
+position = Vector2(699, 179)
+skew = -0.459022
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField4"]
+position = Vector2(744, 134)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField4"]
+position = Vector2(739, 170)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField7" type="Node2D" parent="Decoration"]
+z_index = 33
+z_as_relative = false
+position = Vector2(400, 475)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField7"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice6" type="Sprite2D" parent="Decoration/IceField7"]
+position = Vector2(730, 106)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Ice7" type="Sprite2D" parent="Decoration/IceField7"]
+position = Vector2(695, 156)
+rotation = -0.230383
+skew = -0.143117
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField7"]
+position = Vector2(739, 123)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField7"]
+position = Vector2(732, 180)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField8" type="Node2D" parent="Decoration"]
+z_index = 28
+z_as_relative = false
+position = Vector2(240, 76)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField8"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice7" type="Sprite2D" parent="Decoration/IceField8"]
+position = Vector2(695, 156)
+rotation = -0.230383
+skew = -0.143117
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField8"]
+position = Vector2(739, 123)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField8"]
+position = Vector2(732, 180)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceField9" type="Node2D" parent="Decoration"]
+z_index = 28
+z_as_relative = false
+position = Vector2(405, 76)
+
+[node name="Ice4" type="Sprite2D" parent="Decoration/IceField9"]
+position = Vector2(700, 120)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice7" type="Sprite2D" parent="Decoration/IceField9"]
+position = Vector2(695, 156)
+rotation = -0.230383
+skew = -0.143117
+texture = ExtResource("11_ptwrc")
+flip_h = true
+
+[node name="Ice1" type="Sprite2D" parent="Decoration/IceField9"]
+position = Vector2(739, 123)
+skew = 0.272271
+texture = ExtResource("11_ptwrc")
+
+[node name="Ice5" type="Sprite2D" parent="Decoration/IceField9"]
+position = Vector2(732, 180)
+scale = Vector2(0.9, 0.775)
+texture = ExtResource("9_oy8iq")
+
+[node name="Column11" type="Sprite2D" parent="Decoration"]
+z_index = 36
+z_as_relative = false
+position = Vector2(84, 855)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("8_g6atx")
+
+[node name="Column18" type="Sprite2D" parent="Decoration"]
+z_index = 41
+z_as_relative = false
+position = Vector2(643, 1255)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("8_g6atx")
+
+[node name="Column9" type="Sprite2D" parent="Decoration"]
+z_index = 37
+z_as_relative = false
+position = Vector2(481, 940)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("8_g6atx")
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column9"]
+position = Vector2(-13, -57)
+texture = ExtResource("9_oy8iq")
+
+[node name="IceOnColumn2" type="Sprite2D" parent="Decoration/Column9"]
+position = Vector2(18, -22)
+rotation = -0.0575959
+scale = Vector2(0.865, 0.818)
+texture = ExtResource("9_oy8iq")
+flip_h = true
+
+[node name="Column10" type="Sprite2D" parent="Decoration"]
+z_index = 38
+z_as_relative = false
+position = Vector2(560, 1018)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("8_g6atx")
+
+[node name="IceOnColumn" type="Sprite2D" parent="Decoration/Column10"]
+position = Vector2(-15, -18)
+texture = ExtResource("11_ptwrc")
+
+[node name="IceOnColumn2" type="Sprite2D" parent="Decoration/Column10"]
+position = Vector2(18, -22)
+rotation = -0.0575959
+scale = Vector2(0.865, 0.818)
+texture = ExtResource("9_oy8iq")
+flip_h = true

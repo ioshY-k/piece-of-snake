@@ -41,12 +41,20 @@ func _walk_path():
 			next_pos = TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(next_pos), path[index_stepper]))
 			index_stepper -=1
 		tween.tween_property(self, "position", next_pos, GameConsts.NORMAL_SPEED)
-		if path[index] == 5:
+		if path[index] == DIRECTION.UP:
+			tween.set_parallel(true)
+			tween.tween_callback(func(): z_index -= 1)
+			tween.set_parallel(false)
+		if path[index] == DIRECTION.DOWN:
+			tween.set_parallel(true)
+			tween.tween_callback(func(): z_index += 1)
+			tween.set_parallel(false)
+		if path[index] == DIRECTION.DISAPPEAR:
 			tween.set_parallel(true)
 			tween.tween_property(self, "scale", Vector2(0.0,0.0), GameConsts.NORMAL_SPEED)
 			tween.tween_callback(_set_particles.bind(false))
 			tween.set_parallel(false)
-		if path[index] == 6:
+		if path[index] == DIRECTION.APPEAR:
 			tween.set_parallel(true)
 			tween.tween_property(self, "scale", Vector2(1.0,1.0), GameConsts.NORMAL_SPEED)
 			tween.tween_callback(_set_particles.bind(true))
