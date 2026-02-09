@@ -5,7 +5,6 @@ func spawn_mayflies():
 	var i = 2
 	while i > 0:
 		var may_fly = mayfly_scene.instantiate()
-		may_flies.append(may_fly)
 		map.add_child(may_fly)
 		may_fly.component = self
 		may_fly.position = TileHelper.tile_to_position(map.free_map_tiles[randi()%map.free_map_tiles.size()-1])

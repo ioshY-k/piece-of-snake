@@ -3,7 +3,6 @@ class_name MayFlyBase extends Node
 var map: Map
 var level: LevelManager
 var mayfly_scene = load("res://UpgradeComponents/MayFly/may_fly.tscn")
-var may_flies: Array[MayFly]
 
 signal caught
 

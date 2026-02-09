@@ -3,7 +3,6 @@ extends MayFlyBase
 func spawn_mayflies():
 	map = level.current_map
 	var may_fly = mayfly_scene.instantiate()
-	may_flies.append(may_fly)
 	map.add_child(may_fly)
 	may_fly.component = self
 	may_fly.position = TileHelper.tile_to_position(map.free_map_tiles[randi()%map.free_map_tiles.size()-1])

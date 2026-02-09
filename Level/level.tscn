@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbbha5rn0kflr"]
+[gd_scene load_steps=18 format=3 uid="uid://bbbha5rn0kflr"]
 
 [ext_resource type="Script" uid="uid://do0scnp22kly2" path="res://Level/level_manager.gd" id="1_vx8ih"]
+[ext_resource type="Script" uid="uid://cn7l2fhjrws3b" path="res://Level/upgrade_helper.gd" id="2_luomk"]
 [ext_resource type="Texture2D" uid="uid://nygc5koouovv" path="res://Shop/UI/Background.svg" id="2_ugh17"]
 [ext_resource type="Texture2D" uid="uid://4o5bt3kc2rjk" path="res://Shop/UI/FruitSymbol.svg" id="3_t80w2"]
 [ext_resource type="Texture2D" uid="uid://dsql3t48snojb" path="res://Level/LevelUI/ActiveItemSlot.svg" id="6_8a2b0"]
@@ -21,6 +22,9 @@
 z_index = 100
 z_as_relative = false
 script = ExtResource("1_vx8ih")
+
+[node name="UpgradeHelper" type="Node" parent="."]
+script = ExtResource("2_luomk")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_ugh17")

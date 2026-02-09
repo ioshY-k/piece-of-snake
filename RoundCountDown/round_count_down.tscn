@@ -384,8 +384,8 @@ texture = ExtResource("2_e5j6p")
 [node name="Shadow" type="Sprite2D" parent="CountDownPanel/CountdownPanelBG"]
 show_behind_parent = true
 z_index = -1
-position = Vector2(0, 155)
-scale = Vector2(1.035, 2.288)
+position = Vector2(0, 104)
+scale = Vector2(1.01, 1.898)
 texture = ExtResource("3_b8ha1")
 
 [node name="Container" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelBG"]

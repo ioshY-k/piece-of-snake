@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://btgl2x7dlxcgw"]
+
+[ext_resource type="Script" uid="uid://ddgbiyj0rj3e8" path="res://UpgradeComponents/FruitArea/fruit_area_base_component.gd" id="1_tdabl"]
+
+[node name="FruitArea2Component" type="Node"]
+script = ExtResource("1_tdabl")
+
+[node name="NextAreaTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
