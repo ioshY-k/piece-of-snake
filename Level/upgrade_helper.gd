@@ -69,75 +69,75 @@ func add_upgrade(upgrade_id: int, current_active_item_slot: Sprite2D, slot: int)
 			level.add_child(area_size_3_component)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
-			level.current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.initiate_active_item(2, slot)
+			current_active_item_slot.add_child(fruit_relocator_component)
+			fruit_relocator_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
-			level.current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.initiate_active_item(4, slot)
+			current_active_item_slot.add_child(fruit_relocator_component)
+			fruit_relocator_component.initiate_active_item(5, slot)
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
 			var fruit_relocator_component = fruit_relocator_component_scene.instantiate()
-			level.current_active_item_slot.add_child(fruit_relocator_component)
-			fruit_relocator_component.initiate_active_item(6, slot)
+			current_active_item_slot.add_child(fruit_relocator_component)
+			fruit_relocator_component.initiate_active_item(7, slot)
 		GameConsts.UPGRADE_LIST.PACMAN_1:
 			var pacman_component = pacman_component_scene.instantiate()
-			level.current_active_item_slot.add_child(pacman_component)
+			current_active_item_slot.add_child(pacman_component)
 			pacman_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.PACMAN_2:
 			var pacman_component = pacman_component_scene.instantiate()
-			level.current_active_item_slot.add_child(pacman_component)
+			current_active_item_slot.add_child(pacman_component)
 			pacman_component.initiate_active_item(5, slot)
 		GameConsts.UPGRADE_LIST.PACMAN_3:
 			var pacman_component = pacman_component_scene.instantiate()
-			level.current_active_item_slot.add_child(pacman_component)
+			current_active_item_slot.add_child(pacman_component)
 			pacman_component.initiate_active_item(7, slot)
 		GameConsts.UPGRADE_LIST.TONGUE_1:
 			var tongue_component = tongue_1_component_scene.instantiate()
-			level.current_active_item_slot.add_child(tongue_component)
-			tongue_component.initiate_active_item(3, slot)
+			current_active_item_slot.add_child(tongue_component)
+			tongue_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.TONGUE_2:
 			var tongue_component = tongue_2_component_scene.instantiate()
-			level.current_active_item_slot.add_child(tongue_component)
-			tongue_component.initiate_active_item(3, slot)
+			current_active_item_slot.add_child(tongue_component)
+			tongue_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.TONGUE_3:
 			var tongue_component = tongue_2_component_scene.instantiate()
-			level.current_active_item_slot.add_child(tongue_component)
-			tongue_component.initiate_active_item(5, slot)
+			current_active_item_slot.add_child(tongue_component)
+			tongue_component.initiate_active_item(4, slot)
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
 			var time_stop_1_component = time_stop_1_component_scene.instantiate()
-			level.current_active_item_slot.add_child(time_stop_1_component)
+			current_active_item_slot.add_child(time_stop_1_component)
 			time_stop_1_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.TIME_STOP_2:
 			var time_stop_2_component = time_stop_2_component_scene.instantiate()
-			level.current_active_item_slot.add_child(time_stop_2_component)
+			current_active_item_slot.add_child(time_stop_2_component)
 			time_stop_2_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.TIME_STOP_3:
 			var time_stop_3_component = time_stop_3_component_scene.instantiate()
-			level.current_active_item_slot.add_child(time_stop_3_component)
+			current_active_item_slot.add_child(time_stop_3_component)
 			time_stop_3_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_1:
 			var wormhole_component = wormhole_component_scene.instantiate()
-			level.current_active_item_slot.add_child(wormhole_component)
+			current_active_item_slot.add_child(wormhole_component)
 			wormhole_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_2:
 			var wormhole_component = wormhole_component_scene.instantiate()
-			level.current_active_item_slot.add_child(wormhole_component)
+			current_active_item_slot.add_child(wormhole_component)
 			wormhole_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.WORMHOLE_3:
 			var wormhole_component = wormhole_component_scene.instantiate()
-			level.current_active_item_slot.add_child(wormhole_component)
+			current_active_item_slot.add_child(wormhole_component)
 			wormhole_component.initiate_active_item(4, slot)
 		GameConsts.UPGRADE_LIST.SNEK_1:
 			var snek_1_component = snek_1_component_scene.instantiate()
-			level.current_active_item_slot.add_child(snek_1_component)
-			snek_1_component.initiate_active_item(2, slot)
+			current_active_item_slot.add_child(snek_1_component)
+			snek_1_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.SNEK_2:
 			var snek_2_component = snek_2_component_scene.instantiate()
-			level.current_active_item_slot.add_child(snek_2_component)
-			snek_2_component.initiate_active_item(2, slot)
+			current_active_item_slot.add_child(snek_2_component)
+			snek_2_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.SNEK_3:
 			var snek_2_component = snek_2_component_scene.instantiate()
-			level.current_active_item_slot.add_child(snek_2_component)
+			current_active_item_slot.add_child(snek_2_component)
 			snek_2_component.initiate_active_item(3, slot)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			var hyper_speed_1_component = hyper_speed_1_component_scene.instantiate()
@@ -207,17 +207,17 @@ func add_upgrade(upgrade_id: int, current_active_item_slot: Sprite2D, slot: int)
 			level.add_child(catch_component)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1:
 			var crossroad_1_component = crossroad_1_component_scene.instantiate()
-			level.current_active_item_slot.add_child(crossroad_1_component)
+			current_active_item_slot.add_child(crossroad_1_component)
 			crossroad_1_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2:
 			var crossroad_2_component = crossroad_1_component_scene.instantiate()
 			crossroad_2_component.big_crossroad = true
-			level.current_active_item_slot.add_child(crossroad_2_component)
+			current_active_item_slot.add_child(crossroad_2_component)
 			crossroad_2_component.initiate_active_item(1, slot)
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3:
 			var crossroad_3_component = crossroad_1_component_scene.instantiate()
 			crossroad_3_component.big_crossroad = true
-			level.current_active_item_slot.add_child(crossroad_3_component)
+			current_active_item_slot.add_child(crossroad_3_component)
 			crossroad_3_component.initiate_active_item(2, slot)
 		GameConsts.UPGRADE_LIST.DRAGONFLY_1:
 			var dragonfly_1_component = dragonfly_1_component_scene.instantiate()

@@ -6,5 +6,5 @@
 script = ExtResource("1_hey3m")
 
 [node name="NextAreaTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
