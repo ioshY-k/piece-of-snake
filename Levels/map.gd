@@ -45,6 +45,7 @@ var far_away_component_scene = load("res://MapModComponents/far_away_component.t
 var dark_component_scene = load("res://MapModComponents/dark_component.tscn")
 var ufo_component_scene = load("res://MapModComponents/ufo_component.tscn")
 var head_swap_component_scene = load("res://MapModComponents/head_swap_component.tscn")
+var slime_trail_component_scene = load("res://MapModComponents/SlimeTrail/slime_trail_component.tscn")
 
 #permanent snake parts
 @onready var snake_head: SnakeHead
@@ -448,6 +449,10 @@ func apply_mapmod(mapmod: int):
 			var head_swap_component = head_swap_component_scene.instantiate()
 			add_child(head_swap_component)
 			current_mapmod = GameConsts.MAP_MODS.HEAD_SWAP
+		GameConsts.MAP_MODS.SLIME_TRAIL:
+			var slime_trail_component = slime_trail_component_scene.instantiate()
+			add_child(slime_trail_component)
+			current_mapmod = GameConsts.MAP_MODS.SLIME_TRAIL
 
 func _on_round_over():
 	cleanup_ghost_fruits()

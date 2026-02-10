@@ -24,7 +24,8 @@ var container_anim_dict = {
 	str(GameConsts.MAP_MODS.FAR_AWAY) : load("res://RoundCountDown/FarAway/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.DARK) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.UFO) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
-	str(GameConsts.MAP_MODS.HEAD_SWAP) : load("res://RoundCountDown/NoMapMod/container_animations.tscn")
+	str(GameConsts.MAP_MODS.HEAD_SWAP) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
+	str(GameConsts.MAP_MODS.SLIME_TRAIL) : load("res://RoundCountDown/NoMapMod/container_animations.tscn")
 }
 
 var level:LevelManager

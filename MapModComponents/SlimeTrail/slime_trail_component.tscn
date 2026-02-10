@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3slise0xu5q"]
+
+[ext_resource type="Script" uid="uid://ddk0xeln8akdh" path="res://MapModComponents/SlimeTrail/slime_trail_component.gd" id="1_o2s5p"]
+
+[node name="SlimeTrailComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_o2s5p")

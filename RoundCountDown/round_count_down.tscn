@@ -70,6 +70,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_t8ktn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t8ktn")
 }],
 "loop": true,
 "name": &"default",
@@ -120,6 +123,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_8f1uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8f1uk")
 }],
 "loop": true,
 "name": &"default",
@@ -161,6 +167,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_hvjic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqts5")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_iqts5")

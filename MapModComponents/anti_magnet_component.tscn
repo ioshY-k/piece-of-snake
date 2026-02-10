@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cumkx3niic2mx"]
+[gd_scene load_steps=3 format=3 uid="uid://cumkx3niic2mx"]
 
 [ext_resource type="Script" uid="uid://cg3cf28lkkgf3" path="res://MapModComponents/anti_magnet_component.gd" id="1_4poky"]
+[ext_resource type="AudioStream" uid="uid://oyp212q3rojk" path="res://MapModComponents/AntiMagnet/Antimagnet.wav" id="2_3bpbv"]
 
 [node name="AntiMagnetComponent" type="Node" groups=["MapMod"]]
 script = ExtResource("1_4poky")
+
+[node name="AntiMagnetAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3bpbv")
