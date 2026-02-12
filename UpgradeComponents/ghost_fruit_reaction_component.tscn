@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3fslrhu1mc3x"]
+
+[ext_resource type="Script" uid="uid://csvoelh8durdg" path="res://UpgradeComponents/ghost_fruit_reaction_component.gd" id="1_8uuk1"]
+
+[node name="GhostFruitReactionComponent" type="Node"]
+script = ExtResource("1_8uuk1")

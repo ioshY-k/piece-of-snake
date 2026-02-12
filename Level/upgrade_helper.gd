@@ -49,6 +49,12 @@ var tongue_2_component_scene = load("res://UpgradeComponents/Tongue/tongue_2_com
 var fruit_area_1_component_scene = load("res://UpgradeComponents/FruitArea/fruit_area_1_component.tscn")
 var fruit_area_2_component_scene = load("res://UpgradeComponents/FruitArea/fruit_area_2_component.tscn")
 var fruit_area_3_component_scene = load("res://UpgradeComponents/FruitArea/fruit_area_3_component.tscn")
+var hit_action_component_scene = load("res://UpgradeComponents/hit_action_component.tscn")
+var ghost_fruit_reaction_component_scene = load("res://UpgradeComponents/ghost_fruit_reaction_component.tscn")
+var insect_reaction_component_scene = load("res://UpgradeComponents/insect_reaction_component.tscn")
+var shrink_reaction_component_scene = load("res://UpgradeComponents/shrink_reaction_component.tscn")
+var insect_action_component_scene = load("res://UpgradeComponents/insect_action_component.tscn")
+var active_item_action_component_scene = load("res://UpgradeComponents/active_item_action_component.tscn")
 
 var level: LevelManager
 
@@ -255,6 +261,24 @@ func add_upgrade(upgrade_id: int, current_active_item_slot: Sprite2D, slot: int)
 		GameConsts.UPGRADE_LIST.FRUIT_AREA_3:
 			var fruit_area_3_component = fruit_area_3_component_scene.instantiate()
 			level.add_child(fruit_area_3_component)
+		GameConsts.UPGRADE_LIST.HIT_ACTION:
+			var hit_action_component = hit_action_component_scene.instantiate()
+			level.add_child(hit_action_component)
+		GameConsts.UPGRADE_LIST.GHOST_FRUIT_REACTION:
+			var ghost_fruit_reaction_component = ghost_fruit_reaction_component_scene.instantiate()
+			level.add_child(ghost_fruit_reaction_component)
+		GameConsts.UPGRADE_LIST.INSECT_REACTION:
+			var insect_reaction_component = insect_reaction_component_scene.instantiate()
+			level.add_child(insect_reaction_component)
+		GameConsts.UPGRADE_LIST.SHRINK_REACTION:
+			var shrink_reaction_component = shrink_reaction_component_scene.instantiate()
+			level.add_child(shrink_reaction_component)
+		GameConsts.UPGRADE_LIST.INSECT_ACTION:
+			var insect_action_component = insect_action_component_scene.instantiate()
+			level.add_child(insect_action_component)
+		GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION:
+			var active_item_action_component = active_item_action_component_scene.instantiate()
+			level.add_child(active_item_action_component)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
@@ -455,6 +479,18 @@ func find_and_destroy_upgrade(upgrade_id):
 			component = level.find_child("FruitArea2Component",false,false)
 		GameConsts.UPGRADE_LIST.FRUIT_AREA_3:
 			component = level.find_child("FruitArea3Component",false,false)
+		GameConsts.UPGRADE_LIST.HIT_ACTION:
+			component = level.find_child("HitActionComponent",false,false)
+		GameConsts.UPGRADE_LIST.GHOST_FRUIT_REACTION:
+			component = level.find_child("GhostFruitReactionComponent",false,false)
+		GameConsts.UPGRADE_LIST.INSECT_REACTION:
+			component = level.find_child("InsectReactionComponent",false,false)
+		GameConsts.UPGRADE_LIST.SHRINK_REACTION:
+			component = level.find_child("ShrinkReactionComponent",false,false)
+		GameConsts.UPGRADE_LIST.INSECT_ACTION:
+			component = level.find_child("InsectActionComponent",false,false)
+		GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION:
+			component = level.find_child("ActiveItemActionComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -516,7 +552,13 @@ func determine_upgrade_reload_necessary(upgrade_id):
 		GameConsts.UPGRADE_LIST.BUMBLEBEE_1,\
 		GameConsts.UPGRADE_LIST.BUMBLEBEE_2,\
 		GameConsts.UPGRADE_LIST.BUMBLEBEE_3,\
-		GameConsts.UPGRADE_LIST.ALLERGY:
+		GameConsts.UPGRADE_LIST.ALLERGY,\
+		GameConsts.UPGRADE_LIST.HIT_ACTION,\
+		GameConsts.UPGRADE_LIST.GHOST_FRUIT_REACTION,\
+		GameConsts.UPGRADE_LIST.INSECT_REACTION,\
+		GameConsts.UPGRADE_LIST.SHRINK_REACTION,\
+		GameConsts.UPGRADE_LIST.INSECT_ACTION,\
+		GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION:
 			return false
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\

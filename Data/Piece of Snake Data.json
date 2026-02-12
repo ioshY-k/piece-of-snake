@@ -106,26 +106,26 @@
 	},
 	"FRUIT_RELOCATOR_1": {
 	  "NAME_ENG": "BLENDER 1",
-	  "DESC_ENG": "All Fruits change their position.\n\nUsable up to 2 times.",
+	  "DESC_ENG": "All Fruits change their position.\n\nUsable up to 3 times.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MIXER 1",
-	  "DESC_GER": "Alle Früchte ändern ihre Position\n\n2 Mal einsetzbar.",
+	  "DESC_GER": "Alle Früchte ändern ihre Position\n\n3 Mal einsetzbar.",
 	  "SWISSDESC_GER": null
 	},
 	"FRUIT_RELOCATOR_2": {
 	  "NAME_ENG": "BLENDER 2",
-	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. All fruits change their position.\n\nUsable up to [color=#fff87d]4[/color] times.",
+	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. All fruits change their position.\n\nUsable up to [color=#fff87d]5[/color] times.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MIXER 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n[color=#fff87d]4[/color] Mal einsetzbar.",
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n[color=#fff87d]5[/color] Mal einsetzbar.",
 	  "SWISSDESC_GER": null
 	},
 	"FRUIT_RELOCATOR_3": {
 	  "NAME_ENG": "BLENDER 3",
-	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. All fruits change their position.\n\nUsable up to [color=#fff87d]6[/color] times.",
+	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. All fruits change their position.\n\nUsable up to [color=#fff87d]7[/color] times.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "MIXER 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n[color=#fff87d]6[/color] Mal einsetzbar.",
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Alle Früchte ändern ihre Position\n\n[color=#fff87d]7[/color] Mal einsetzbar.",
 	  "SWISSDESC_GER": null
 	},
 	"CROSS_ROAD_1": {
@@ -602,26 +602,26 @@
 	},
 	"TONGUE_1": {
 	  "NAME_ENG": "STICKY TONGUE 1",
-	  "DESC_ENG": "Shoot your tongue in the direction you are facing. If it hits a fruit, you will collect it.\n\nUsable up to 3 times.",
+	  "DESC_ENG": "Shoot your tongue in the direction you are facing. If it hits a fruit, you will collect it.\n\nUsable up to 2 times.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KLEBEZUNGE 1",
-	  "DESC_GER": "Schieße deine Zunge in Blickrichtung. Wenn sie eine Frucht trifft, sammelst du sie ein.\n\n3 Mal einsetzbar.",
+	  "DESC_GER": "Schieße deine Zunge in Blickrichtung. Wenn sie eine Frucht trifft, sammelst du sie ein.\n\n2 Mal einsetzbar.",
 	  "SWISSDESC_GER": null
 	},
 	"TONGUE_2": {
 	  "NAME_ENG": "STICKY TONGUE 2",
-	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Shoot your tongue in the direction you are facing. [color=#fff87d]It will go through walls.[/color] If it hits a fruit, you will collect it.\n\nUsable up to 3 times.",
+	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Shoot your tongue in the direction you are facing. [color=#fff87d]It will go through walls.[/color] If it hits a fruit, you will collect it.\n\nUsable up to 2 times.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KLEBEZUNGE 2",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schieße deine Zunge in Blickrichtung. [color=#fff87d]Sie durchquert alle Wände.[/color] Wenn sie eine Frucht trifft, sammelst du sie ein.\n\n3 Mal einsetzbar.",
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schieße deine Zunge in Blickrichtung. [color=#fff87d]Sie durchquert alle Wände.[/color] Wenn sie eine Frucht trifft, sammelst du sie ein.\n\n2 Mal einsetzbar.",
 	  "SWISSDESC_GER": null
 	},
 	"TONGUE_3": {
 	  "NAME_ENG": "STICKY TONGUE 3",
-	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Shoot your tongue in the direction you are facing. It will go through walls. If it hits a fruit, you will collect it.\n\nUsable up to [color=#fff87d]5[/color] times.",
+	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Shoot your tongue in the direction you are facing. It will go through walls. If it hits a fruit, you will collect it.\n\nUsable up to [color=#fff87d]4[/color] times.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "KLEBEZUNGE 3",
-	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schieße deine Zunge in Blickrichtung. Sie durchquert alle Wände. Wenn sie eine Frucht trifft, sammelst du sie ein.\n\n[color=#fff87d]5[/color] Mal einsetzbar.",
+	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Schieße deine Zunge in Blickrichtung. Sie durchquert alle Wände. Wenn sie eine Frucht trifft, sammelst du sie ein.\n\n[color=#fff87d]4[/color] Mal einsetzbar.",
 	  "SWISSDESC_GER": null
 	},
 	"FRUIT_AREA_1": {
@@ -646,6 +646,54 @@
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "FRÜCHTEPLATTE 3",
 	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Eine Druckplatte erscheint. Betrittst du sie für 3 Sekunden, sammelst du sofort eine weitere Frucht ein.\n\n[color=#fff87d]Sofort[/color]nachdem du sie betreten hast, taucht die Nächste auf.",
+	  "SWISSDESC_GER": null
+	},
+	"HIT_ACTION": {
+	  "NAME_ENG": "ACTION: HIT",
+	  "DESC_ENG": "{ACTION_KEYWORD}: Every time you get hit...",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "AKTION: TREFFER",
+	  "DESC_GER": "{ACTION_KEYWORD}: Jedes Mal, wenn du getroffen wirst...",
+	  "SWISSDESC_GER": null
+	},
+	"ACTIVE_ITEM_ACTION": {
+	  "NAME_ENG": "ACTION: ACTIVE ITEM",
+	  "DESC_ENG": "{ACTION_KEYWORD}: Every 3 times you use an active Item...",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "AKTION: AKTIVES ITEM",
+	  "DESC_GER": "{ACTION_KEYWORD}: Jedes dritte Mal, wenn du ein aktives Item nutzt...",
+	  "SWISSDESC_GER": null
+	},
+	"INSECT_ACTION": {
+	  "NAME_ENG": "ACTION: INSECT",
+	  "DESC_ENG": "{ACTION_KEYWORD}: Every time you collect an insect...",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "AKTION: INSEKT",
+	  "DESC_GER": "{ACTION_KEYWORD}: Jedes Mal, wenn du ein Insekt einsammelst...",
+	  "SWISSDESC_GER": null
+	},
+	"SHRINK_REACTION": {
+	  "NAME_ENG": "REACTION: SHRINK",
+	  "DESC_ENG": "{REACTION_KEYWORD}: ...Your body length will shrink by 2.",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "REAKTION: SCHRUMPFEN",
+	  "DESC_GER": "{REACTION_KEYWORD}: ...schrumpft deine Körperlänge um 2.",
+	  "SWISSDESC_GER": null
+	},
+	"GHOST_FRUIT_REACTION": {
+	  "NAME_ENG": "REACTION: GHOST FRUIT",
+	  "DESC_ENG": "{REACTION_KEYWORD}: ...A {GHOST_FRUIT_KEYWORD} will spawn.",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "REAKTION: GEISTERFRUCHT",
+	  "DESC_GER": "{REACTION_KEYWORD}: ...erscheint eine Geisterfrucht.",
+	  "SWISSDESC_GER": null
+	},
+	"INSECT_REACTION": {
+	  "NAME_ENG": "REACTION: INSECT",
+	  "DESC_ENG": "{REACTION_KEYWORD}: ...A random insect will appear.",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "REAKTION: INSEKT",
+	  "DESC_GER": "{REACTION_KEYWORD}: ...Erscheint ein zufälliges Insekt.",
 	  "SWISSDESC_GER": null
 	}
   },
@@ -697,6 +745,20 @@
 	  "DESC_ENG": "Tasty fruits give an additional point when collected.\n\n",
 	  "NAME_GER": "[color=#5fedd1]Lecker[/color] [img=40]res://Shop/UI/KeywordTastySymbol.svg[/img]",
 	  "DESC_GER": "Leckere Früchte geben beim Einsammeln einen zusätzlichen Punkt.\n\n",
+	  "Spalte 6": null
+	},
+	"ACTION_KEYWORD": {
+	  "NAME_ENG": "[color=#fae5aa]Action[/color] [img=40]res://Shop/UI/KeywordActionSymbol.svg[/img]",
+	  "DESC_ENG": "An Reaction Upgrade must be placed to the right of this Upgrade to create a unique effect.\n\n",
+	  "NAME_GER": "[color=#fae5aa]Aktion[/color] [img=40]res://Shop/UI/KeywordActionSymbol.svg[/img]",
+	  "DESC_GER": "Ein Reaktions-Upgrade muss zur Rechten dieses Upgrades platziert werden, um einen einzigartigen Effekt zu kreieren.\n\n",
+	  "Spalte 6": null
+	},
+	"REACTION_KEYWORD": {
+	  "NAME_ENG": "[color=#eeb47dff]Reaction[/color] [img=40]res://Shop/UI/KeywordReactionSymbol.svg[/img]",
+	  "DESC_ENG": "An Action Upgrade must be placed to the left of this Upgrade to create a unique effect.\n\n",
+	  "NAME_GER": "[color=#eeb47dff]Reaktion[/color] [img=40]res://Shop/UI/KeywordReactionSymbol.svg[/img]",
+	  "DESC_GER": "Ein Aktions-Upgrade muss zur Linken dieses Upgrades platziert werden, um einen einzigartigen Effekt zu kreieren.\n\n",
 	  "Spalte 6": null
 	}
   },

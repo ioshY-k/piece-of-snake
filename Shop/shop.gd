@@ -73,7 +73,13 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.MAYFLY_1,
 									GameConsts.UPGRADE_LIST.BUMBLEBEE_1,
 									GameConsts.UPGRADE_LIST.TONGUE_1,
-									GameConsts.UPGRADE_LIST.FRUIT_AREA_1
+									GameConsts.UPGRADE_LIST.FRUIT_AREA_1,
+									GameConsts.UPGRADE_LIST.HIT_ACTION,
+									GameConsts.UPGRADE_LIST.GHOST_FRUIT_REACTION,
+									GameConsts.UPGRADE_LIST.INSECT_REACTION,
+									GameConsts.UPGRADE_LIST.SHRINK_REACTION,
+									GameConsts.UPGRADE_LIST.INSECT_ACTION,
+									GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION
 									]
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
@@ -94,10 +100,10 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
-									GameConsts.UPGRADE_LIST.HYPER_SPEED_2,
-									GameConsts.UPGRADE_LIST.HYPER_SPEED_2,
-									GameConsts.UPGRADE_LIST.HYPER_SPEED_2,
-									GameConsts.UPGRADE_LIST.HYPER_SPEED_2,
+									
+									GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
+									GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION,
+									GameConsts.UPGRADE_LIST.INSECT_REACTION,
 									]
 									
 	

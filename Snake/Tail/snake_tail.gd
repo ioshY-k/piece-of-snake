@@ -10,10 +10,13 @@ func _ready() -> void:
 	super._ready()
 
 func _on_next_tile_reached():
+	#correction for snake tail position if it is desynced
 	if TileHelper.position_to_tile(position) != TileHelper.position_to_tile(map.snake_path_bodyparts[0].position):
 		position = map.snake_path_bodyparts[0].position
 		next_tile = TileHelper.position_to_tile(position)
-	if TileHelper.position_to_tile(map.snake_path_bodyparts[1].position) != TileHelper.get_next_tile(TileHelper.position_to_tile(position),map.snake_path_directions[0]):
+	#When length got cut, teleport to the place before last bodypart
+	if map.snake_path_bodyparts.size() > 1 and\
+	TileHelper.position_to_tile(map.snake_path_bodyparts[1].position) != TileHelper.get_next_tile(TileHelper.position_to_tile(position),map.snake_path_directions[0]):
 		position = TileHelper.tile_to_position(TileHelper.get_next_tile(TileHelper.position_to_tile(map.snake_path_bodyparts[1].position),TileHelper.get_opposite(map.snake_path_directions[0])))
 		next_tile = TileHelper.position_to_tile(position)
 		SignalBus.tail_teleported.emit()

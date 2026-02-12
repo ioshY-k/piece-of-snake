@@ -1,5 +1,7 @@
 class_name DragonFlyBase extends Node
 
+var one_time_insect: bool = false
+
 var map: Map
 var level: LevelManager
 var dragonfly_scene = load("res://UpgradeComponents/Dragonfly/dragon_fly.tscn")
@@ -10,10 +12,14 @@ signal caught
 func _ready():
 	level = get_parent()
 	map = level.current_map
-	SignalBus.round_started.connect(spawn_dragonfly)
-	SignalBus.round_started.connect(setup_dragonfly)
 	caught.connect(set_infinite_sprint_meter.bind(true))
 	SignalBus.round_over.connect(set_infinite_sprint_meter.bind(false))
+	if one_time_insect:
+		spawn_dragonfly()
+		setup_dragonfly()
+	else:
+		SignalBus.round_started.connect(spawn_dragonfly)
+		SignalBus.round_started.connect(setup_dragonfly)
 
 func spawn_dragonfly():
 	map = level.current_map

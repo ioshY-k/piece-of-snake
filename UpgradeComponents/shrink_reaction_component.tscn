@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3plvgda7m8iv"]
+
+[ext_resource type="Script" uid="uid://do2ydb8eyhiwi" path="res://UpgradeComponents/shrink_reaction_component.gd" id="1_5jp1f"]
+
+[node name="ShrinkReactionComponent" type="Node"]
+script = ExtResource("1_5jp1f")

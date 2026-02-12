@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd0x733wygt4c"]
+
+[ext_resource type="Script" uid="uid://cblxi46201gsj" path="res://UpgradeComponents/active_item_action_component.gd" id="1_hgr7a"]
+
+[node name="ActiveItemActionComponent" type="Node"]
+script = ExtResource("1_hgr7a")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://e4alwaitcom1"]
+
+[ext_resource type="Script" uid="uid://6oar37u6l683" path="res://UpgradeComponents/insect_action_component.gd" id="1_8onhb"]
+
+[node name="InsectActionComponent" type="Node"]
+script = ExtResource("1_8onhb")

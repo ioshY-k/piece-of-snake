@@ -2,7 +2,7 @@ class_name MayFly extends Node2D
 
 const FLY_SPEED = 100
 var map: Map
-var component
+var component = null
 var top_left_bound: Vector2i
 var bottom_right_bound: Vector2i
 @onready var area_2d: Area2D = $AnimatedSprite2D/Area2D
@@ -32,5 +32,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	area_2d.set_collision_mask_value(14,false)
 	may_fly_animation_player.play("collected_anim")
 	component.caught.emit()
+	SignalBus.insect_caught.emit()
 	await may_fly_animation_player.animation_finished
 	queue_free()

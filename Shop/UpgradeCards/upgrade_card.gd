@@ -93,6 +93,8 @@ func instantiate_upgrade_card(id: int):
 		"DENSE_KEYWORD": TextConsts.get_text(TextConsts.TABLES.KEYWORDS,"DENSE_KEYWORD","NAME"),
 		"PHASING_KEYWORD": TextConsts.get_text(TextConsts.TABLES.KEYWORDS,"PHASING_KEYWORD","NAME"),
 		"SHIELDED_KEYWORD": TextConsts.get_text(TextConsts.TABLES.KEYWORDS,"SHIELDED_KEYWORD","NAME"),
+		"ACTION_KEYWORD": TextConsts.get_text(TextConsts.TABLES.KEYWORDS,"ACTION_KEYWORD","NAME"),
+		"REACTION_KEYWORD": TextConsts.get_text(TextConsts.TABLES.KEYWORDS,"REACTION_KEYWORD","NAME"),
 	})
 	if TextConsts.get_text(TextConsts.TABLES.CARDS,upgrade_id_string, "DESC").contains("{ADVANCEMENT_KEYWORD}"):
 		keyword_descriptions.append(TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "ADVANCEMENT_KEYWORD", "NAME")

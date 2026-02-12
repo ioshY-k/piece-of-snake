@@ -26,3 +26,5 @@ signal swiss_knive_synergy(active:bool)
 signal fruits_left_changed(fruits_left)
 signal map_paused
 signal map_continued
+signal action_triggered(slot_id: int)
+signal insect_caught

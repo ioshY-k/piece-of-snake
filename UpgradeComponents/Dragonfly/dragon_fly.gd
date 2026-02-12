@@ -54,3 +54,4 @@ func _on_dragon_fly_area_area_entered(area: Area2D) -> void:
 	else:
 		dragon_fly_area.set_collision_mask_value(14,false)
 		component.caught.emit()
+		SignalBus.insect_caught.emit()

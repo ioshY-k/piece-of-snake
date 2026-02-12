@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=98 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -92,6 +92,8 @@
 [ext_resource type="Texture2D" uid="uid://d3uwe1i4skb8j" path="res://Shop/UpgradeCards/FruitArea1.svg" id="81_xvqw4"]
 [ext_resource type="Texture2D" uid="uid://cnd5bh6aa4cbi" path="res://Shop/UpgradeCards/FruitArea2.svg" id="82_i4r65"]
 [ext_resource type="Texture2D" uid="uid://s8bhnmcu281c" path="res://Shop/UpgradeCards/FruitArea3.svg" id="83_deeo7"]
+[ext_resource type="Texture2D" uid="uid://bccsr7qykogbw" path="res://Shop/UpgradeCards/HitAction.svg" id="84_i4r65"]
+[ext_resource type="Texture2D" uid="uid://b2pds3o0fygnl" path="res://Shop/UpgradeCards/GhostfruitReaction.svg" id="85_deeo7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -341,6 +343,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("83_deeo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_i4r65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_deeo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_deeo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_deeo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_i4r65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_i4r65")
 }],
 "loop": true,
 "name": &"default",

@@ -42,6 +42,7 @@ func turn():
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	area_2d.set_collision_mask_value(14,false)
 	component.caught.emit()
+	SignalBus.insect_caught.emit()
 	bumblebee_animation_player.play("collected_anim")
 	await bumblebee_animation_player.animation_finished
 	queue_free()

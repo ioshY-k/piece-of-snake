@@ -263,13 +263,14 @@ func _on_continue_moving(current_direction):
 func disappear_shader():
 	var tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_method(func(value):
-		if material != null:
+		if map.snake_head.current_snake_speed != null:
 			material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
 	tween.tween_method(func(value):
 		snake_shadow_component.shadow.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed)
 	if !is_corner:
 		tween.tween_method(func(value):
-			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed*2)
+			if map.snake_head.current_snake_speed != null:
+				snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 1.0, 0.0, map.snake_head.current_snake_speed*2)
 	SignalBus.round_over.connect(func():
 		if tween.is_valid():
 			tween.pause())
@@ -289,10 +290,12 @@ func appear_shader():
 		if material != null:
 			material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
 	tween.tween_method(func(value):
-		snake_shadow_component.shadow.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
+		if map.snake_head.current_snake_speed != null:
+			snake_shadow_component.shadow.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed)
 	if !is_corner:
 		tween.tween_method(func(value):
-			snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed/2.5)
+			if map.snake_head.current_snake_speed != null:
+				snake_body_deco_edge.material.set_shader_parameter("mask_height", value), 0.0, -1.0, map.snake_head.current_snake_speed/2.5)
 	SignalBus.round_over.connect(func():
 		if tween.is_valid():
 			tween.pause())

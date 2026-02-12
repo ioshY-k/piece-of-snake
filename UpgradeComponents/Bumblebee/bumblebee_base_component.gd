@@ -1,5 +1,8 @@
 class_name BumblebeeBase extends Node
 
+#if spawned by insect reaction
+var one_time_insect = false
+
 var map: Map
 var level: LevelManager
 var bumblebee_scene = load("res://UpgradeComponents/Bumblebee/bumblebee.tscn")
@@ -15,12 +18,15 @@ func _ready():
 	print("bumblebee is here")
 	level = get_parent()
 	map = level.current_map
-	SignalBus.round_started.connect(spawn_bumblebee)
 	SignalBus.fruit_collected.connect(_tasty_while_bumblemode)
 	SignalBus.fruit_spawned.connect(_particles_while_bumblemode)
 	caught.connect(set_fruits_tasty.bind(true))
 	bumblemode_timer.timeout.connect(set_fruits_tasty.bind(false))
 	SignalBus.round_over.connect(set_fruits_tasty.bind(false))
+	if one_time_insect:
+		spawn_bumblebee()
+	else:
+		SignalBus.round_started.connect(spawn_bumblebee)
 
 func spawn_bumblebee():
 	map = level.current_map
