@@ -38,7 +38,7 @@ var current_upgrades: Array[bool] = []
 func _ready() -> void:
 	scene_loader = get_parent()
 	
-	current_upgrades.resize(88)
+	current_upgrades.resize(89)
 	current_upgrades.fill(false)
 	
 	SignalBus.upgrade_bought.connect(_on_upgrade_bought)
@@ -88,13 +88,13 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.WOODS,
+		maporder = [GameConsts.MAP_LIST.STADIUM,
 					GameConsts.MAP_LIST.WOODS,
 					GameConsts.MAP_LIST.TOMB]
-		mapmodorder = [GameConsts.MAP_MODS.TAILVIRUS,
-						GameConsts.MAP_MODS.FAR_AWAY,
-						GameConsts.MAP_MODS.ANTI_MAGNET,
-						GameConsts.MAP_MODS.GHOST_INVASION,
+		mapmodorder = [GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
+						GameConsts.MAP_MODS.FRUIT_BODY,
 						GameConsts.MAP_MODS.LASER,
 						GameConsts.MAP_MODS.TETRI_FRUIT,
 						GameConsts.MAP_MODS.LASER,
@@ -189,7 +189,7 @@ func _on_round_over():
 func update_masteries():
 	var gamemode
 	var character
-	var special_upgrade
+	var special_upgrades: Array[String]
 	var map1
 	var map2
 	var map3
@@ -198,7 +198,11 @@ func update_masteries():
 	character = TextConsts.get_id_string(GameConsts.CHAR_LIST, RunSettings.current_char)
 	
 	if shop.is_filled(shop.special_slots[0]):
-		special_upgrade = shop.special_slots[0].get_node("Area2D").get_child(-1).upgrade_id_string
+		special_upgrades.append(shop.special_slots[0].get_node("Area2D").get_child(-1).upgrade_id_string)
+	
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CHAMELEON and shop.is_filled(shop.rainbow_slots[0]) and\
+	shop.rainbow_slots[0].get_node("Area2D").get_child(-1).upgrade_type == GameConsts.UPGRADE_TYPE.SPECIAL:
+		special_upgrades.append(shop.rainbow_slots[0].get_node("Area2D").get_child(-1).upgrade_id_string)
 		
 	for name in GameConsts.MAP_LIST.keys():
 		if GameConsts.MAP_LIST[name] == maporder[0]:
@@ -212,8 +216,8 @@ func update_masteries():
 	GlobalSettings.masteries[gamemode][map1] = true
 	GlobalSettings.masteries[gamemode][map2] = true
 	GlobalSettings.masteries[gamemode][map3] = true
-	if special_upgrade != null:
-		GlobalSettings.masteries[gamemode][special_upgrade] = true
+	for special in special_upgrades:
+		GlobalSettings.masteries[gamemode][special] = true
 	
 func game_over():
 	game_over_screen.show()

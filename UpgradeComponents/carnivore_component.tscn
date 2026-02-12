@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csngjf3g4xfao"]
+
+[ext_resource type="Script" uid="uid://bg7wwm6ew6ijy" path="res://UpgradeComponents/carnivore_component.gd" id="1_2k8lu"]
+
+[node name="CarnivoreComponent" type="Node"]
+script = ExtResource("1_2k8lu")

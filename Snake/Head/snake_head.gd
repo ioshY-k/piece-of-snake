@@ -132,6 +132,7 @@ func _on_next_tile_reached():
 		if colliding_element.get_collision_layer_value(9): #TailCut
 			cut.emit(colliding_element)
 		if colliding_element.get_collision_layer_value(11): #Rubber
+			colliding_element.snake_overlapped.emit()
 			rubber.emit()
 	
 	

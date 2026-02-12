@@ -12,8 +12,15 @@ func _ready() -> void:
 	_add_swiss_knive_descriptions()
 
 func _add_swiss_knive_descriptions(_upgrade_id = 0):
-	for bodymod_slot in shop.bodymod_slots:
-		if bodymod_slot.find_child("Area2D").get_child(-1) is UpgradeCard:
+	var slots_with_bodymods: Array = shop.bodymod_slots.duplicate()
+	#add the bodymod in the rainbowslot, if there is one
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CHAMELEON and\
+	shop.is_filled(shop.rainbow_slots[0]) and\
+	shop.rainbow_slots[0].find_child("Area2D").get_child(-1).upgrade_type == GameConsts.UPGRADE_TYPE.BODYMOD:
+		slots_with_bodymods.append(shop.rainbow_slots[0])
+		
+	for bodymod_slot in slots_with_bodymods:
+		if shop.is_filled(bodymod_slot):
 			var bodymod_upgrade_card: UpgradeCard = bodymod_slot.find_child("Area2D").get_child(-1)
 			bodymod_upgrade_card.upgrade_description = TextConsts.get_text(TextConsts.TABLES.CARDS, bodymod_upgrade_card.upgrade_id_string, "SWISSDESC").format({
 		"GHOST_FRUIT_KEYWORD": TextConsts.get_text(TextConsts.TABLES.KEYWORDS,"GHOST_FRUIT_KEYWORD","NAME"),
@@ -26,8 +33,15 @@ func _add_swiss_knive_descriptions(_upgrade_id = 0):
 	})
 
 func _remove_swiss_knive_descriptions():
-	for bodymod_slot in shop.bodymod_slots:
-		if bodymod_slot.find_child("Area2D").get_child(-1) is UpgradeCard:
+	var slots_with_bodymods: Array = shop.bodymod_slots.duplicate()
+	#add the bodymod in the rainbowslot, if there is one
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CHAMELEON and\
+	shop.is_filled(shop.rainbow_slots[0]) and\
+	shop.rainbow_slots[0].find_child("Area2D").get_child(-1).upgrade_type == GameConsts.UPGRADE_TYPE.BODYMOD:
+		slots_with_bodymods.append(shop.rainbow_slots[0])
+		
+	for bodymod_slot in slots_with_bodymods:
+		if shop.is_filled(bodymod_slot):
 			var bodymod_upgrade_card: UpgradeCard = bodymod_slot.find_child("Area2D").get_child(-1)
 			bodymod_upgrade_card.upgrade_description = TextConsts.get_text(TextConsts.TABLES.CARDS, bodymod_upgrade_card.upgrade_id_string, "DESC").format({
 		"GHOST_FRUIT_KEYWORD": TextConsts.get_text(TextConsts.TABLES.KEYWORDS,"GHOST_FRUIT_KEYWORD","NAME"),

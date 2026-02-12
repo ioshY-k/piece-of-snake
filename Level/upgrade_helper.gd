@@ -55,6 +55,7 @@ var insect_reaction_component_scene = load("res://UpgradeComponents/insect_react
 var shrink_reaction_component_scene = load("res://UpgradeComponents/shrink_reaction_component.tscn")
 var insect_action_component_scene = load("res://UpgradeComponents/insect_action_component.tscn")
 var active_item_action_component_scene = load("res://UpgradeComponents/active_item_action_component.tscn")
+var carnivore_component_scene = load("res://UpgradeComponents/carnivore_component.tscn")
 
 var level: LevelManager
 
@@ -279,6 +280,9 @@ func add_upgrade(upgrade_id: int, current_active_item_slot: Sprite2D, slot: int)
 		GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION:
 			var active_item_action_component = active_item_action_component_scene.instantiate()
 			level.add_child(active_item_action_component)
+		GameConsts.UPGRADE_LIST.CARNIVORE:
+			var carnivore_component = carnivore_component_scene.instantiate()
+			level.add_child(carnivore_component)
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
@@ -491,6 +495,8 @@ func find_and_destroy_upgrade(upgrade_id):
 			component = level.find_child("InsectActionComponent",false,false)
 		GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION:
 			component = level.find_child("ActiveItemActionComponent",false,false)
+		GameConsts.UPGRADE_LIST.CARNIVORE:
+			component = level.find_child("CarnivoreComponent",false,false)
 	
 	if component != null:
 		component.self_destruct()
@@ -541,6 +547,7 @@ func determine_upgrade_reload_necessary(upgrade_id):
 		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
 		GameConsts.UPGRADE_LIST.MOULTING,\
 		GameConsts.UPGRADE_LIST.POWER_NAP,\
+		GameConsts.UPGRADE_LIST.CARNIVORE,\
 		GameConsts.UPGRADE_LIST.CATCH,\
 		GameConsts.UPGRADE_LIST.DIFFUSION,\
 		GameConsts.UPGRADE_LIST.DRAGONFLY_1,\

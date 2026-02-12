@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=73 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://Shop/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://obnifq5ymbgd" path="res://Shop/Backgrounds/ItemShelfPanel.svg" id="2_7wam5"]
@@ -55,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://b01ruv64lpkgs" path="res://Shop/Slottypes/SlotTypePassive.png" id="38_3rb3p"]
 [ext_resource type="AudioStream" uid="uid://x0jm6gfjswja" path="res://Shop/Sfx/CardDeal.wav" id="40_12c50"]
 [ext_resource type="AudioStream" uid="uid://c1jyabebv6bq2" path="res://UI/ButtonPress.wav" id="41_cug3m"]
+[ext_resource type="Texture2D" uid="uid://b8yrc1fq83qc1" path="res://Shop/Slots/UpgradeSlotRainbow.svg" id="45_ypgte"]
 [ext_resource type="Texture2D" uid="uid://wh7th4c8vkru" path="res://Shop/UI/NextRoundButtonNormal.svg" id="49_ypgte"]
 [ext_resource type="Texture2D" uid="uid://bjlidxc30mrxj" path="res://Shop/UI/NextRoundButtonPressed.svg" id="50_vnaoq"]
 [ext_resource type="Texture2D" uid="uid://drkdhwnb6m6px" path="res://Shop/UI/NextRoundButtonHovered.svg" id="51_dha0m"]
@@ -161,8 +162,6 @@ position = Vector2(292, 545)
 sprite_frames = SubResource("SpriteFrames_doc8j")
 animation = &"disappear"
 autoplay = "default"
-frame = 19
-frame_progress = 1.0
 
 [node name="UpgradeSlotSpecial" type="Control" parent="UpgradeOverview" groups=["Slot Special"]]
 z_index = 5
@@ -892,6 +891,62 @@ position = Vector2(31.125, 0)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
+[node name="UpgradeSlotRainbow" type="Control" parent="UpgradeOverview" groups=["Slot Active", "Slot Bodymod", "Slot Passive", "Slot Special", "Slot Synergy"]]
+z_index = 5
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -252.0
+offset_top = 395.0
+offset_right = -172.0
+offset_bottom = 475.0
+pivot_offset = Vector2(40, 40)
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="UpgradeOverview/UpgradeSlotRainbow"]
+position = Vector2(40, 40)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpgradeOverview/UpgradeSlotRainbow/Area2D"]
+shape = SubResource("RectangleShape2D_s1g7c")
+
+[node name="HighlightReplace" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotRainbow"]
+visible = false
+z_index = 10
+position = Vector2(40, 40)
+scale = Vector2(1.59, 1.59)
+texture = ExtResource("6_dcjh5")
+
+[node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotRainbow"]
+visible = false
+z_index = 10
+position = Vector2(40, 40)
+scale = Vector2(1.59, 1.59)
+texture = ExtResource("7_i0r2g")
+
+[node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotRainbow"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.572549)
+z_index = 9
+position = Vector2(40, 40)
+texture = ExtResource("8_xtrhb")
+
+[node name="Price" type="Label" parent="UpgradeOverview/UpgradeSlotRainbow/BuyZone"]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 3.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("9_0a76l")
+theme_override_font_sizes/font_size = 106
+text = "0"
+horizontal_alignment = 1
+
+[node name="FruitSymbol" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotRainbow/BuyZone"]
+position = Vector2(31.125, 0)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("10_7hl21")
+
 [node name="SlotSpriteSpecial" type="Sprite2D" parent="UpgradeOverview"]
 position = Vector2(2, 435)
 texture = ExtResource("27_tnl66")
@@ -1038,6 +1093,10 @@ texture = ExtResource("37_v001g")
 position = Vector2(2, -465)
 scale = Vector2(0.35, 0.28)
 texture = ExtResource("38_3rb3p")
+
+[node name="SlotSpriteRainbow" type="Sprite2D" parent="UpgradeOverview"]
+position = Vector2(-212, 435)
+texture = ExtResource("45_ypgte")
 
 [node name="Divider" type="Sprite2D" parent="."]
 z_index = 4

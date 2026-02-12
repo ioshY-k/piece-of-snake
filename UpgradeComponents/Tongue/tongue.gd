@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 			if obstacle.get_collision_layer_value(1):#solid
 				rolling_in = true
 				break
-			if obstacle.get_collision_layer_value(2) and not obstacle.collected:#uncollected fruit
+			elif obstacle.get_collision_layer_value(2) and not obstacle.collected and not rolling_in:#uncollected fruit
 				obstacle.set_collision_layer_value(2,false)
 				var tween = get_tree().create_tween()
 				tween.tween_property(obstacle, "global_position", get_parent().global_position, 0.1)

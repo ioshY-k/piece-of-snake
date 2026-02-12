@@ -194,10 +194,10 @@
 	},
 	"MOULTING": {
 	  "NAME_ENG": "THE MOULTING",
-	  "DESC_ENG": "Must be reworked.",
+	  "DESC_ENG": "Map Size Upgrades start at 0.\nRerolls start at 0.\nEvery Upgrade gets cheaper.\n\nYou lose every body modification",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DIE HÄUTUNG",
-	  "DESC_GER": "Muss überarbeitet werden.",
+	  "DESC_GER": "Kartengröße-Upgrades starten bei 0 Kosten.\nUpgrades neu würfeln startet bei 0 Kosten.\nAlle Upgrades kosten weniger.\n\nDu verlierst alle Body Modifications.",
 	  "SWISSDESC_GER": null
 	},
 	"ANCHOR": {
@@ -695,6 +695,14 @@
 	  "NAME_GER": "REAKTION: INSEKT",
 	  "DESC_GER": "{REACTION_KEYWORD}: ...Erscheint ein zufälliges Insekt.",
 	  "SWISSDESC_GER": null
+	},
+	"CARNIVORE": {
+	  "NAME_ENG": "CARNIVORE",
+	  "DESC_ENG": "Insects are {TASTY_KEYWORD}",
+	  "SWISSDESC_ENG": null,
+	  "NAME_GER": "FLEISCHFRESSER",
+	  "DESC_GER": "Insekten sind {TASTY_KEYWORD}",
+	  "SWISSDESC_GER": null
 	}
   },
   "Keywords": {
@@ -702,43 +710,37 @@
 	  "NAME_ENG": "[color=#fff87d]+[/color][img=40]res://Shop/UI/KeywordAdvancementSymbol.svg[/img]",
 	  "DESC_ENG": "Replaces earlier version of the same ability. Advancements are highlighted in yellow.\n\n",
 	  "NAME_GER": "[color=#fff87d]+[/color][img=40]res://Shop/UI/KeywordAdvancementSymbol.svg[/img]",
-	  "DESC_GER": "Ersetzt die vorherige Version dieser Fähigkeit. Verbesserungen sind gelb hervorgehoben.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Ersetzt die vorherige Version dieser Fähigkeit. Verbesserungen sind gelb hervorgehoben.\n\n"
 	},
 	"GHOST_FRUIT_KEYWORD": {
 	  "NAME_ENG": "[color=#b9c1eb]Ghost Fruit[/color] [img=40]res://Shop/UI/KeywordGhostFruitSymbol.svg[/img]",
 	  "DESC_ENG": "A fruit that does not cause another fruit to spawn when collected.\n\n",
 	  "NAME_GER": "[color=#b9c1eb]Geisterfrucht[/color] [img=40]res://Shop/UI/KeywordGhostFruitSymbol.svg[/img]",
-	  "DESC_GER": "Eine Frucht, nach deren Einsammeln keine weitere Frucht erscheint.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Eine Frucht, nach deren Einsammeln keine weitere Frucht erscheint.\n\n"
 	},
 	"HOLLOW_KEYWORD": {
 	  "NAME_ENG": "[color=#eb72d8]Hollow[/color] [img=40]res://Shop/UI/KeywordHollowSymbol.svg[/img]",
 	  "DESC_ENG": "Hollow fruits make you grow one less when collected.\n\n",
 	  "NAME_GER": "[color=#eb72d8]Hohl[/color] [img=40]res://Shop/UI/KeywordHollowSymbol.svg[/img]",
-	  "DESC_GER": "Hohle Früchte lassen dich beim Einsammeln um 1 weniger wachsen.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Hohle Früchte lassen dich beim Einsammeln um 1 weniger wachsen.\n\n"
 	},
 	"DENSE_KEYWORD": {
 	  "NAME_ENG": "[color=#ab3076]Dense[/color] [img=40]res://Shop/UI/KeywordDenseSymbol.svg[/img]",
 	  "DESC_ENG": "Dense fruits make you grow more when collected.\n\n",
 	  "NAME_GER": "[color=#ab3076]Dicht[/color] [img=40]res://Shop/UI/KeywordDenseSymbol.svg[/img]",
-	  "DESC_GER": "Dichte Früchte lassen dich beim EInsammeln um 1 mehr wachsen.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Dichte Früchte lassen dich beim EInsammeln um 1 mehr wachsen.\n\n"
 	},
 	"PHASING_KEYWORD": {
 	  "NAME_ENG": "[color=#d1ff94]Phasing[/color] [img=40]res://Shop/UI/KeywordPhasingSymbol.svg[/img]",
 	  "DESC_ENG": "Phasing Bodyparts are allowed to be overlapped once.\n\n",
 	  "NAME_GER": "[color=#d1ff94]Durchsichtig[/color] [img=40]res://Shop/UI/KeywordPhasingSymbol.svg[/img]",
-	  "DESC_GER": "Durchsichtige Körperteile dürfen ein mal mit anderen Körperteilen überlappen.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Durchsichtige Körperteile dürfen ein mal mit anderen Körperteilen überlappen.\n\n"
 	},
 	"SHIELDED_KEYWORD": {
 	  "NAME_ENG": "[color=#e0b798]Shielded[/color] [img=40]res://Shop/UI/EffectTriggerShieldedSymbol.svg[/img]",
 	  "DESC_ENG": "Don't lose points when running into an obstacle.\n\n",
 	  "NAME_GER": "[color=#e0b798]Geschützt[/color] [img=40]res://Shop/UI/EffectTriggerShieldedSymbol.svg[/img]",
-	  "DESC_GER": "Verliere keinen Punkt, wenn du gegen ein Hindernis läufst.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Verliere keinen Punkt, wenn du gegen ein Hindernis läufst.\n\n"
 	},
 	"TASTY_KEYWORD": {
 	  "NAME_ENG": "[color=#5fedd1]Tasty[/color] [img=40]res://Shop/UI/KeywordTastySymbol.svg[/img]",

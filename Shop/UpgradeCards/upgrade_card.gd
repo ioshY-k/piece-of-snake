@@ -126,7 +126,7 @@ func instantiate_upgrade_card(id: int):
 	is_advanced = GameConsts.advanced_upgrades.has(upgrade_id)
 	has_advancements = GameConsts.upgrades_with_advancement.has(upgrade_id)
 	upgrade_type = GameConsts.get_upgrade_type(id)
-	price = calculate_price()
+	calculate_price()
 	SignalBus.price_calculated.emit(self)
 
 
@@ -186,9 +186,14 @@ func decide_on_let_go():
 	if owned_slot_area.get_child(-1) is UpgradeCard:
 		replaced_card = owned_slot_area.get_child(-1)
 
-	#the upgrade type must be the same as the upgrade type for the slot
+	var slot_matches: bool = false
+	for group in owned_slot_area.get_parent().get_groups():
+		if upgrade_type == get_slot_type(group):
+			slot_matches = true
+			
+	#the upgrade types for the slot must contain the upgrade type of this card
+	if slot_matches and\
 	#also: if it is an advanced upgrade, the replaced upgrade has to be the prior version of it
-	if upgrade_type == get_slot_type(owned_slot_area.get_parent().get_groups()[0]) and\
 	(!is_advanced or (replaced_card != null and replaced_card.upgrade_id == upgrade_id - 1)):
 		
 		if shop.can_afford(owned_slot_area.get_parent()):
@@ -268,7 +273,6 @@ func get_slot_type(group) -> int:
 func calculate_price():
 	if GameConsts.test_mode:
 		return 0
-	
 	var modifier = 0
 	
 	match GameConsts.get_upgrade_type(upgrade_id):
@@ -289,5 +293,8 @@ func calculate_price():
 		modifier += 2
 		if not GameConsts.upgrades_with_advancement.has(upgrade_id):
 			modifier += 1
+			
+	if shop.moulted:
+		modifier -= 1
 	
-	return base_price + modifier
+	price = base_price + modifier

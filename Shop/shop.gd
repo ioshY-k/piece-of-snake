@@ -29,6 +29,7 @@ var bodymod_slots: Array[Control]
 var synergy_slots: Array[Control]
 var active_slots: Array[Control]
 var special_slots: Array[Control]
+var rainbow_slots: Array[Control]
 
 @onready var items_shop_slots: Array[Sprite2D] = [	$ItemShelf/Itemslot1,
 													$ItemShelf/Itemslot2,
@@ -79,7 +80,8 @@ var upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.INSECT_REACTION,
 									GameConsts.UPGRADE_LIST.SHRINK_REACTION,
 									GameConsts.UPGRADE_LIST.INSECT_ACTION,
-									GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION
+									GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION,
+									GameConsts.UPGRADE_LIST.CARNIVORE
 									]
 var special_upgrade_card_pool: Array[int] = [
 									GameConsts.UPGRADE_LIST.IMMUTABLE,
@@ -101,9 +103,11 @@ func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [		
 									
-									GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
-									GameConsts.UPGRADE_LIST.ACTIVE_ITEM_ACTION,
-									GameConsts.UPGRADE_LIST.INSECT_REACTION,
+									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
+									GameConsts.UPGRADE_LIST.RUBBER_BAND,
+									GameConsts.UPGRADE_LIST.MOULTING,
+									GameConsts.UPGRADE_LIST.PLANT_SNAKE,
+									GameConsts.UPGRADE_LIST.HIT_ACTION,
 									]
 									
 	
@@ -130,6 +134,13 @@ func _ready() -> void:
 	slots.append_array(synergy_slots)
 	slots.append_array(active_slots)
 	slots.append_array(special_slots)
+	
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CHAMELEON:
+		rainbow_slots = [$UpgradeOverview/UpgradeSlotRainbow]
+		slots.append($UpgradeOverview/UpgradeSlotRainbow)
+	else:
+		$UpgradeOverview/UpgradeSlotRainbow.queue_free()
+	
 	$ItemShelf.hide()
 	
 	#mechanism to hide salamander upgrade added at start
@@ -170,17 +181,22 @@ func _on_got_clicked(upgrade_card: UpgradeCard):
 		var chosen_slots: Array[Control]
 		match GameConsts.get_upgrade_type(upgrade_id):
 			GameConsts.UPGRADE_TYPE.DEFAULT:
-				chosen_slots = default_slots
+				chosen_slots = default_slots.duplicate()
 			GameConsts.UPGRADE_TYPE.PASSIVE:
-				chosen_slots = passive_slots
+				chosen_slots = passive_slots.duplicate()
 			GameConsts.UPGRADE_TYPE.BODYMOD:
-				chosen_slots = bodymod_slots
+				chosen_slots = bodymod_slots.duplicate()
 			GameConsts.UPGRADE_TYPE.SYNERGY:
-				chosen_slots = synergy_slots
+				chosen_slots = synergy_slots.duplicate()
 			GameConsts.UPGRADE_TYPE.ACTIVE:
-				chosen_slots = active_slots
+				chosen_slots = active_slots.duplicate()
 			GameConsts.UPGRADE_TYPE.SPECIAL:
-				chosen_slots = special_slots
+				chosen_slots = special_slots.duplicate()
+		
+		if RunSettings.current_char == GameConsts.CHAR_LIST.CHAMELEON and\
+		GameConsts.get_upgrade_type(upgrade_id) != GameConsts.UPGRADE_TYPE.DEFAULT:
+			chosen_slots.append(rainbow_slots[0])
+		
 		for slot in chosen_slots:
 			if is_filled(slot):
 				if slot.get_node("Area2D").get_child(-1).card_sprite.frame != GameConsts.UPGRADE_LIST.DEAD_MOUSE:
@@ -351,8 +367,11 @@ func deal_upgrade_cards(offered_upgrades: Array[int]):
 	await card_tween.finished
 	card_tween.stop()
 
-func reset_area_and_currency():
+func reset_reroll_cost():
 	reroll_cost_number = reroll_cost_start_number
+
+func reset_area_and_currency():
+	reset_reroll_cost()
 	reroll_cost_label.text = str(reroll_cost_number)
 	if RunSettings.current_char != GameConsts.CHAR_LIST.ELEPHANT:
 		fruits_currency = 0

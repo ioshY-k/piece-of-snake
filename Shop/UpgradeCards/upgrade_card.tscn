@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=103 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -94,6 +94,11 @@
 [ext_resource type="Texture2D" uid="uid://s8bhnmcu281c" path="res://Shop/UpgradeCards/FruitArea3.svg" id="83_deeo7"]
 [ext_resource type="Texture2D" uid="uid://bccsr7qykogbw" path="res://Shop/UpgradeCards/HitAction.svg" id="84_i4r65"]
 [ext_resource type="Texture2D" uid="uid://b2pds3o0fygnl" path="res://Shop/UpgradeCards/GhostfruitReaction.svg" id="85_deeo7"]
+[ext_resource type="Texture2D" uid="uid://ctjs0e65wsfa2" path="res://Shop/UpgradeCards/InsectReaction.svg" id="86_5wwqe"]
+[ext_resource type="Texture2D" uid="uid://clmwjgvhir0xa" path="res://Shop/UpgradeCards/ShrinkReaction.svg" id="87_4fv8p"]
+[ext_resource type="Texture2D" uid="uid://1ih5fbka24jb" path="res://Shop/UpgradeCards/InsectAction.svg" id="88_5jvk2"]
+[ext_resource type="Texture2D" uid="uid://cki0f608itts" path="res://Shop/UpgradeCards/ActiveItemAction.svg" id="89_jy7ni"]
+[ext_resource type="Texture2D" uid="uid://bvb6atf5833sk" path="res://Shop/UpgradeCards/carnivore.svg" id="90_4fv8p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -351,16 +356,19 @@ animations = [{
 "texture": ExtResource("85_deeo7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("85_deeo7")
+"texture": ExtResource("86_5wwqe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("85_deeo7")
+"texture": ExtResource("87_4fv8p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("84_i4r65")
+"texture": ExtResource("88_5jvk2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("84_i4r65")
+"texture": ExtResource("89_jy7ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_4fv8p")
 }],
 "loop": true,
 "name": &"default",

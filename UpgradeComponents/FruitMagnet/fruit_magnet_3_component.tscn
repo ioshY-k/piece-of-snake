@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ym08lpej2rga"]
+[gd_scene load_steps=7 format=3 uid="uid://ym08lpej2rga"]
 
 [ext_resource type="Script" uid="uid://cwas45hvfwiw0" path="res://UpgradeComponents/FruitMagnet/fruit_magnet_component.gd" id="1_8bsrj"]
 [ext_resource type="Texture2D" uid="uid://pydt5yeyf5kk" path="res://UpgradeComponents/FruitMagnet/FruitMagnetParticle.svg" id="2_3w78n"]
@@ -6,13 +6,68 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpa51"]
 size = Vector2(60, 60)
 
-[sub_resource type="Curve" id="Curve_3w78n"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.462466, 0.154337), 0.0, 0.0, 0, 0, Vector2(1, 0.0769559), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="Animation" id="Animation_o31ig"]
+resource_name = "magnet_anim"
+length = 0.76
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.76),
+"transitions": PackedFloat32Array(0.406126, 1.41421, 1),
+"update": 0,
+"values": [Vector2(0.32, 0.32), Vector2(0.12, 0.12), Vector2(0.03, 0.03)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.76),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.572549), Color(1, 1, 1, 0.34902), Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="Gradient" id="Gradient_3dl3a"]
-offsets = PackedFloat32Array(0, 0.241758, 1)
-colors = PackedColorArray(0.209, 0.38, 0.3458, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+[sub_resource type="Animation" id="Animation_51uca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.32, 0.32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ba7dc"]
+_data = {
+&"RESET": SubResource("Animation_51uca"),
+&"magnet_anim": SubResource("Animation_o31ig")
+}
 
 [node name="FruitMagnet3Component" type="Node2D"]
 script = ExtResource("1_8bsrj")
@@ -26,17 +81,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField1"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField1/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField1/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField1/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField2" type="Area2D" parent="."]
 position = Vector2(-80, -80)
@@ -47,17 +101,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField2"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField2/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField2/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField2/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField3" type="Area2D" parent="."]
 position = Vector2(80, -80)
@@ -68,17 +121,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField3"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField3/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField3/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField3/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField4" type="Area2D" parent="."]
 position = Vector2(-160, -80)
@@ -89,17 +141,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField4"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField4/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField4/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField4/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField5" type="Area2D" parent="."]
 position = Vector2(160, -80)
@@ -110,17 +161,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField5"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField5/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField5/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField5/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField6" type="Area2D" parent="."]
 position = Vector2(-160, 0)
@@ -131,17 +181,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField6"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField6/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField6/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField6/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField7" type="Area2D" parent="."]
 position = Vector2(160, 0)
@@ -152,17 +201,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField7"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField7/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField7/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField7/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField8" type="Area2D" parent="."]
 position = Vector2(80, -160)
@@ -173,17 +221,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField8"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField8/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField8/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField8/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField9" type="Area2D" parent="."]
 position = Vector2(-80, -160)
@@ -194,17 +241,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField9"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField9/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField9/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField9/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField15" type="Area2D" parent="."]
 position = Vector2(0, -80)
@@ -215,17 +261,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField15"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField15/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField15/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField15/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField16" type="Area2D" parent="."]
 position = Vector2(80, 0)
@@ -236,17 +281,16 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField16"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField16/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField16/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField16/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
 
 [node name="MagnetField17" type="Area2D" parent="."]
 position = Vector2(-80, 0)
@@ -257,14 +301,13 @@ metadata/_edit_vertical_guides_ = [-710.0]
 [node name="ComponentShape" type="CollisionShape2D" parent="MagnetField17"]
 shape = SubResource("RectangleShape2D_bpa51")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="MagnetField17/ComponentShape"]
-position = Vector2(0, -40)
-amount = 1
+[node name="MagnetSprite" type="Sprite2D" parent="MagnetField17/ComponentShape"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_3w78n")
-lifetime = 0.38
-gravity = Vector2(0, 0)
-scale_amount_min = 0.35
-scale_amount_max = 0.35
-scale_amount_curve = SubResource("Curve_3w78n")
-color = Color(1, 1, 1, 0.478431)
-color_ramp = SubResource("Gradient_3dl3a")
+
+[node name="MagnetAnimationPlayer" type="AnimationPlayer" parent="MagnetField17/ComponentShape/MagnetSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba7dc")
+}
+autoplay = "magnet_anim"
