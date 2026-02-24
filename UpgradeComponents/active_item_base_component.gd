@@ -16,10 +16,13 @@ func initiate_active_item(use_num: int, slot: int):
 	uses = use_num
 	for use in range(uses):
 		active_item_slot.add_light()
-	if slot == 1:
-		active_item_button = "item1"
-	else:
-		active_item_button = "item2"
+	match slot:
+		1:
+			active_item_button = "item1"
+		2:
+			active_item_button = "item2"
+		3:
+			active_item_button = "item3"
 
 func refresh_uses():
 	uses = max_uses

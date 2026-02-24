@@ -100,6 +100,26 @@ grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
 
+[node name="ActiveItemSlot3" type="Sprite2D" parent="."]
+position = Vector2(-720, 105)
+texture = ExtResource("6_8a2b0")
+script = ExtResource("7_ecu0b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActiveItemSlot3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = -39.5
+offset_right = -34.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
 [node name="TimeMeter" parent="." instance=ExtResource("7_8a2b0")]
 z_index = 1
 position = Vector2(-438, -81)
@@ -143,18 +163,21 @@ scale = Vector2(0.099, 0.099)
 texture = ExtResource("14_am3y4")
 
 [node name="WasdSymbol" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-724.828, 103.172)
 scale = Vector2(0.29831, 0.29831)
 texture = ExtResource("15_l5n2q")
 
 [node name="ArrowSymbol" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-722.828, 8)
 scale = Vector2(0.0771242, 0.0771242)
 texture = ExtResource("16_cv6tn")
 
 [node name="ArrowSymbol2" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-603, 129.172)
 rotation = 1.57079
@@ -162,6 +185,7 @@ scale = Vector2(0.0771242, 0.0771242)
 texture = ExtResource("16_cv6tn")
 
 [node name="ArrowSymbol3" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-847, 125.172)
 rotation = 4.71238
@@ -169,6 +193,7 @@ scale = Vector2(0.0771242, 0.0771242)
 texture = ExtResource("16_cv6tn")
 
 [node name="ArrowSymbol4" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.592157)
 position = Vector2(-726.828, 191)
 rotation = 3.14159

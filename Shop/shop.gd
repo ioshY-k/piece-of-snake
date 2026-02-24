@@ -101,14 +101,13 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 
 func _ready() -> void:
 	if GameConsts.test_mode:
-		upgrade_card_pool= [		
-									
-									GameConsts.UPGRADE_LIST.SWISS_KNIVE,
-									GameConsts.UPGRADE_LIST.RUBBER_BAND,
-									GameConsts.UPGRADE_LIST.MOULTING,
-									GameConsts.UPGRADE_LIST.PLANT_SNAKE,
-									GameConsts.UPGRADE_LIST.HIT_ACTION,
-									]
+		upgrade_card_pool= [
+								
+								GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
+								GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
+								GameConsts.UPGRADE_LIST.TONGUE_1,
+								GameConsts.UPGRADE_LIST.TONGUE_1,
+		]
 									
 	
 	reroll_cost_label.text = str(reroll_cost_number)
@@ -242,6 +241,9 @@ func _on_upgrade_card_bought(upgrade_id: int, slot) -> void:
 	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_2 or\
 	upgrade_id == GameConsts.UPGRADE_LIST.AREA_SIZE_3:
 		_on_skip_mapspace_pressed()
+	#giving levelmanager the information on which slot the upgrade got bought
+	if GameConsts.get_upgrade_type(upgrade_id) == GameConsts.UPGRADE_TYPE.ACTIVE:
+		SignalBus.update_active_slot_infos.emit(upgrade_id, slot.name)
 	SignalBus.upgrade_bought.emit(upgrade_id)
 	
 

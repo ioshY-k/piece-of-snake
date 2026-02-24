@@ -28,3 +28,4 @@ signal map_paused
 signal map_continued
 signal action_triggered(slot_id: int)
 signal insect_caught
+signal update_active_slot_infos(upgrade_id: int, slot: String)

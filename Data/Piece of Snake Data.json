@@ -877,9 +877,9 @@
 	},
 	"CHAMELEON": {
 	  "NAME_ENG": "Camillo",
-	  "DESC_ENG": "Gain an additional multi colored upgrade slot. (not implemented yet)",
+	  "DESC_ENG": "Gain an additional multi colored upgrade slot.",
 	  "NAME_GER": "Camillo",
-	  "DESC_GER": "Erhalte einen zusätzlichen bunten Upgradeslot."
+	  "DESC_GER": "Erhalte einen zusätzlichen mehrfarbigen Upgradeslot."
 	},
 	"ELEPHANT": {
 	  "NAME_ENG": "Barbella",

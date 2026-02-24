@@ -62,7 +62,14 @@ var level: LevelManager
 func _ready() -> void:
 	level = get_parent()
 
-func add_upgrade(upgrade_id: int, current_active_item_slot: Sprite2D, slot: int):
+func add_upgrade(upgrade_id: int, current_active_item_slot: Sprite2D):
+	var slot: int = 0
+	if current_active_item_slot.name.contains("1"):
+		slot = 1
+	elif current_active_item_slot.name.contains("2"):
+		slot = 2
+	elif current_active_item_slot.name.contains("3"):
+		slot = 3
 	
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.AREA_SIZE_1:
@@ -340,55 +347,68 @@ func find_and_destroy_upgrade(upgrade_id):
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_3:
-			component = level.active_item_slot_1.find_child("FruitRelocatorComponent", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("FruitRelocatorComponent", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.PACMAN_1,\
 		GameConsts.UPGRADE_LIST.PACMAN_2,\
 		GameConsts.UPGRADE_LIST.PACMAN_3:
-			component = level.active_item_slot_1.find_child("PacmanComponent", false, false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("PacmanComponent", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("PacmanComponent", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.TONGUE_1:
-			component = level.active_item_slot_1.find_child("Tongue1Component", false, false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("Tongue1Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("Tongue1Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.TONGUE_2,\
 		GameConsts.UPGRADE_LIST.TONGUE_3:
-			component = level.active_item_slot_1.find_child("Tongue2Component", false, false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("Tongue2Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("Tongue2Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.SNEK_1:
-			component = level.active_item_slot_1.find_child("Snek1Component", false, false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("Snek1Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("Snek1Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.SNEK_2,\
 		GameConsts.UPGRADE_LIST.SNEK_3:
-			component = level.active_item_slot_1.find_child("Snek2Component", false, false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("Snek2Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("Snek2Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_1,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_2,\
 		GameConsts.UPGRADE_LIST.CROSS_ROAD_3:
-			component = level.active_item_slot_1.find_child("Crossroad1Component", false, false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("Crossroad1Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("Crossroad1Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.TIME_STOP_1:
-			component = level.active_item_slot_1.find_child("TimeStop1Component",false,false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("TimeStop1Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("TimeStop1Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.TIME_STOP_2:
-			component = level.active_item_slot_1.find_child("TimeStop2Component",false,false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("TimeStop2Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("TimeStop2Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.TIME_STOP_3:
-			component = level.active_item_slot_1.find_child("TimeStop3Component",false,false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("TimeStop3Component", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("TimeStop3Component", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.WORMHOLE_1,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_2,\
 		GameConsts.UPGRADE_LIST.WORMHOLE_3:
-			component = level.active_item_slot_1.find_child("WormholeComponent",false,false)
-			if component == null:
-				component = level.active_item_slot_2.find_child("WormholeComponent", false, false)
+			for active_item_slot in level.active_item_slots:
+				component = active_item_slot.find_child("WormholeComonent", false, false)
+				if component != null:
+					break
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_1:
 			component = level.speed_boost_bar.find_child("HyperSpeed1Component",false,false)
 		GameConsts.UPGRADE_LIST.HYPER_SPEED_2:

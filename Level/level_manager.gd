@@ -13,9 +13,11 @@ var current_map_index: int
 @onready var fruits_left_number_label: Label = $FruitsLeftNumber
 @onready var active_item_slot_1: Sprite2D = $ActiveItemSlot1
 @onready var active_item_slot_2: Sprite2D = $ActiveItemSlot2
+@onready var active_item_slot_3: ActiveItemSlot = $ActiveItemSlot3
 @onready var upgrade_helper: UpgradeHelper = $UpgradeHelper
 
 var active_item_slots: Array[ActiveItemSlot]
+var current_active_items: Array[int] = [-1,-1,-1]
 @onready var time_meter: TimeMeter = $TimeMeter
 var speed_boost_drain_speed: int = 230
 var speed_boost_reload_speed: int = 75
@@ -33,9 +35,13 @@ var round_count_down: RoundCountDown
 
 func _ready() -> void:
 	active_item_slots = [active_item_slot_1, active_item_slot_2]
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CHAMELEON:
+		active_item_slots.append(active_item_slot_3)
+	active_item_slot_3.hide()
 	speed_boost_bar.boost_empty_or_full.connect(_on_speed_boost_bar_value_changed)
 	SignalBus.next_tile_reached.connect(_fix_stuck_speed_boost_bar)
 	SignalBus.fruit_collected.connect(_on_fruit_collected)
+	SignalBus.update_active_slot_infos.connect(_update_active_slot_infos)
 
 #called by run_manager at the start of a run and on new act
 func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod_index: int):
@@ -106,7 +112,7 @@ func prepare_new_round(fruit_threshold, time_sec, mapmod):
 	################################################################################################################
 		time_meter.initiate_time_bar(1)
 	else:
-		time_meter.initiate_time_bar(60)
+		time_meter.initiate_time_bar(15)
 	################################################################################################################
 	current_map.apply_mapmod(mapmod)
 	var round_count_down_scene = load("res://RoundCountDown/round_count_down.tscn")
@@ -232,14 +238,22 @@ func _on_timer_expired() -> void:
 
 func instantiate_upgrade(upgrade_id: int):
 	var current_active_item_slot
-	var slot: int = 0
-	for active_item_slot in active_item_slots:
-		slot += 1
-		if active_item_slot.get_child_count() == 1:
-			current_active_item_slot = active_item_slot
+	for i in range(3):
+		if upgrade_id == current_active_items[i]:
+			current_active_item_slot = active_item_slots[i]
 			break
-	upgrade_helper.add_upgrade(upgrade_id, current_active_item_slot, slot)
 	
+	upgrade_helper.add_upgrade(upgrade_id, current_active_item_slot)
+
+func _update_active_slot_infos(upgrade_id: int, slot_name: String):
+	if slot_name.contains("1"):
+		current_active_items[0] = upgrade_id
+	elif slot_name.contains("2"):
+		current_active_items[1] = upgrade_id
+	elif slot_name.contains("Rainbow"):
+		current_active_items[2] = upgrade_id
+		active_item_slot_3.show()
+
 func destroy_upgrade(upgrade_id: int):
 	upgrade_helper.find_and_destroy_upgrade(upgrade_id)
 	
