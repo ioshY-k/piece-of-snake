@@ -68,9 +68,6 @@ func prepare_new_act(map_index: int ,fruit_threshold: int, time_sec: int, mapmod
 		var edge_wrap = current_map.edge_wrap_component_scene.instantiate()
 		edge_wrap.instantiate_as_retro_ability()
 		current_map.add_child(edge_wrap)
-	if RunSettings.current_char == GameConsts.CHAR_LIST.CENTIPEDE:
-		var anchor = current_map.anchor_component_scene.instantiate()
-		current_map.snake_head.add_child(anchor)
 	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH:
 		snake_head.base_snake_speed /= 1.4
 		snake_tail.base_snake_speed /= 1.4

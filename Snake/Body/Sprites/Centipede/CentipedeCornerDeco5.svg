@@ -36,8 +36,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="5.0132766"
-     inkscape:cx="-2.5931144"
-     inkscape:cy="37.600159"
+     inkscape:cx="8.7766951"
+     inkscape:cy="83.478338"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -75,11 +75,6 @@
        empspacing="5"
        enabled="true"
        visible="false" /></sodipodi:namedview><path
-     style="fill:#90634d;fill-opacity:0;stroke:#634435;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
-     d="m 26.6189,56.292675 c 0,0 -2.523365,-1.901049 -6.290497,-1.393357 -3.567134,0.480739 -10.272218,3.873776 -10.272218,3.873776"
-     id="path3-2-3"
-     sodipodi:nodetypes="csc" /><path
-     style="fill:#90634d;fill-opacity:0;stroke:#634435;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
-     d="m 54.181422,58.067737 c 0,0 2.523365,-1.901049 6.290497,-1.393357 3.567134,0.480739 10.272218,3.873776 10.272218,3.873776"
-     id="path3-2-3-6"
-     sodipodi:nodetypes="csc" /></svg>
+     id="path11-5"
+     style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#ebc3dd;fill-opacity:1;stroke-width:0.999996;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;enable-background:accumulate;stop-color:#000000"
+     d="m 80.000003,40.000471 a 5.1628368,7.3863879 0 0 0 -2.653902,1.049585 c 0,0 -2.805816,2.47551 -9.350041,5.298093 -6.544223,2.822585 -16.504081,5.724532 -29.897338,5.732982 -13.39108,0.0084 -22.317436,-2.889342 -27.781229,-5.620077 C 4.8536976,43.730319 3.2823078,41.685659 3.2823078,41.685659 A 5.1628368,7.3863879 0 0 0 9.0734864e-7,40.004653 v 7.384715 8.655924 C 1.6865139,57.36737 4.0047632,58.953493 6.9124284,60.406706 c 6.6292606,3.31322 16.7518216,6.457127 31.1892156,6.448037 14.435215,-0.0092 25.427189,-3.147621 32.875671,-6.360222 3.976559,-1.715126 7.035236,-3.528583 9.022688,-4.846481 v -8.258672 z" /></svg>

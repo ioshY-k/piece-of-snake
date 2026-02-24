@@ -63,7 +63,7 @@ var current_mapmod: int
 
 #arrays containing Snake data for the tail to follow
 enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP}
-var snake_path_directions: Array[int] = [DIRECTION.UP, DIRECTION.UP, DIRECTION.UP, DIRECTION.UP]
+var snake_path_directions: Array[int]
 var snake_path_bodyparts: Array[SnakeBody]
 
 #array containing constantly free tiles for fruits to spawn in
@@ -198,10 +198,14 @@ func update_free_map_tiles(tile: Vector2i, add_tile: bool):
 func teleport_to_starting_position():
 	snake_head = snake_head_scene.instantiate()
 	snake_tail = snake_tail_scene.instantiate()
-	
 	add_child(snake_head)
 	add_child(snake_tail)
-	for snake_body_count in len(range(4)):
+	
+	var start_length = 5
+	if RunSettings.current_char == GameConsts.CHAR_LIST.CENTIPEDE:
+		start_length = 1
+	for snake_body_count in range(start_length):
+		snake_path_directions.append(DIRECTION.UP)
 		var snake_body: SnakeBody = snake_body_scene.instantiate()
 		snake_body.frame = 1 + (RunSettings.current_char * 9) #frames per snake
 		add_child(snake_body)
@@ -215,7 +219,7 @@ func teleport_to_starting_position():
 	snake_head.position = starting_position
 	
 	#place body parts below snake head
-	var snake_body_num = 4
+	var snake_body_num = start_length
 	for bodypart in snake_path_bodyparts:
 		bodypart.position = starting_position + Vector2(0, GameConsts.TILE_SIZE * snake_body_num) 
 		snake_body_num -= 1

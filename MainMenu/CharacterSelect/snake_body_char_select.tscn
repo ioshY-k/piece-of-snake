@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://wm1t2vil6cf3"]
+[gd_scene load_steps=52 format=3 uid="uid://wm1t2vil6cf3"]
 
 [ext_resource type="Texture2D" uid="uid://bo81k4ky6bpcx" path="res://Snake/Body/Sprites/Ostrich/OstrichEdge.svg" id="1_bvreb"]
 [ext_resource type="Script" uid="uid://d3jsbv4fevho1" path="res://MainMenu/CharacterSelect/snake_body_char_selesct.gd" id="3_3vutc"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://ogtl5ds36hks" path="res://Snake/Body/Sprites/Python/PythonCornerDeco5.svg" id="11_ng0u8"]
 [ext_resource type="Texture2D" uid="uid://c56822e1xccwn" path="res://Snake/Body/Sprites/Ostrich/OstrichCornerDeco2.svg" id="12_7ntab"]
 [ext_resource type="Texture2D" uid="uid://di6uyaq3i0ipk" path="res://Snake/Body/Sprites/Salamander/SalamanderCornerDeco.svg" id="13_4agko"]
-[ext_resource type="Texture2D" uid="uid://rfdy8dcan36e" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco1.svg" id="13_7c4mv"]
 [ext_resource type="Texture2D" uid="uid://bt1qfyl7tpv13" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco2.svg" id="13_8uups"]
 [ext_resource type="Texture2D" uid="uid://bdg4m20hpayc8" path="res://Snake/Body/Sprites/Python/PythonCornerDeco7.svg" id="13_po6n4"]
 [ext_resource type="Texture2D" uid="uid://qhrlb5wnohjr" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco3.svg" id="14_lyed7"]
@@ -27,14 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://cymdsxj387ixg" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco4.svg" id="21_lx60m"]
 [ext_resource type="Texture2D" uid="uid://dpd8t7ycmptuc" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco5.svg" id="21_wod30"]
 [ext_resource type="Texture2D" uid="uid://3i3t6j6s6hgt" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco6.svg" id="23_fkg3s"]
-[ext_resource type="Texture2D" uid="uid://b60hho23elbnp" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco3.svg" id="23_ie8xo"]
 [ext_resource type="Texture2D" uid="uid://bn0334kuvfdkf" path="res://Snake/Body/Sprites/Chameleon/ChameleonCornerDeco7.svg" id="26_1ry8j"]
 [ext_resource type="Texture2D" uid="uid://dyuxqvxnan4hj" path="res://Snake/Body/Sprites/Ostrich/OstrichCornerDeco5.svg" id="27_x06mj"]
 [ext_resource type="Texture2D" uid="uid://bsx5w2swp6v8q" path="res://Snake/Body/Sprites/Twohead/TwoheadCornerDeco4.svg" id="28_avfd8"]
-[ext_resource type="Texture2D" uid="uid://b6p27yux38ejy" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco4.svg" id="29_xkymc"]
 [ext_resource type="Texture2D" uid="uid://doglw7dag23r0" path="res://Snake/Body/Sprites/Elephant/ElephantCornerDeco7.svg" id="31_ifccg"]
 [ext_resource type="Texture2D" uid="uid://d0xtfm83p3nel" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco5.svg" id="33_k2hvb"]
-[ext_resource type="Texture2D" uid="uid://dg6ov8448pt5j" path="res://Snake/Body/Sprites/Centipede/CentipedeCornerDeco6.svg" id="38_fnk1d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5mbj"]
 
@@ -100,7 +96,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_7c4mv")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -164,7 +160,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_ie8xo")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -196,7 +192,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_xkymc")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -260,7 +256,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_fnk1d")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -324,7 +320,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_7c4mv")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -388,7 +384,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_ie8xo")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -420,7 +416,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_xkymc")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -484,7 +480,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_fnk1d")
+"texture": null
 }],
 "loop": true,
 "name": &"default",

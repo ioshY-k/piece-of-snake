@@ -894,16 +894,16 @@
 	  "DESC_GER": "Ändere die Richtung bei jeder eingesammelten Frucht"
 	},
 	"RETRO": {
-	  "NAME_ENG": "Nikao",
+	  "NAME_ENG": "Onika",
 	  "DESC_ENG": "When exiting the screen, enter at the opposite side. On hit you immediately lose the game.",
-	  "NAME_GER": "Nikao",
+	  "NAME_GER": "Onika",
 	  "DESC_GER": "Wenn du den Bildschirm verlässt, tauchst du auf der anderen Seite wieder auf. Bei einem Treffer verlierst du das Spiel sofort."
 	},
 	"CENTIPEDE": {
 	  "NAME_ENG": "Willy",
-	  "DESC_ENG": "If no direction is held, you won't move forward.",
+	  "DESC_ENG": "Shorter than the others.",
 	  "NAME_GER": "Willy",
-	  "DESC_GER": "Wenn du nicht in eine Richtung steuerst, bewegst du dich auch nicht vorwärts."
+	  "DESC_GER": "Kürzer, als der Rest."
 	}
   }
 }
