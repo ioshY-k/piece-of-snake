@@ -64,12 +64,13 @@ func _ready() -> void:
 
 func add_upgrade(upgrade_id: int, current_active_item_slot: Sprite2D):
 	var slot: int = 0
-	if current_active_item_slot.name.contains("1"):
-		slot = 1
-	elif current_active_item_slot.name.contains("2"):
-		slot = 2
-	elif current_active_item_slot.name.contains("3"):
-		slot = 3
+	if current_active_item_slot != null:
+		if current_active_item_slot.name.contains("1"):
+			slot = 1
+		elif current_active_item_slot.name.contains("2"):
+			slot = 2
+		elif current_active_item_slot.name.contains("3"):
+			slot = 3
 	
 	match upgrade_id:
 		GameConsts.UPGRADE_LIST.AREA_SIZE_1:

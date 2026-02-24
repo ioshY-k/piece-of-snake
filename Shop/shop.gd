@@ -100,14 +100,14 @@ var default_upgrade_card: int = GameConsts.UPGRADE_LIST.AREA_SIZE_1
 @onready var button_press_audio: AudioStreamPlayer = $ButtonPressAudio
 
 func _ready() -> void:
-	if GameConsts.test_mode:
-		upgrade_card_pool= [
-								
-								GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
-								GameConsts.UPGRADE_LIST.FRUIT_RELOCATOR_1,
-								GameConsts.UPGRADE_LIST.TONGUE_1,
-								GameConsts.UPGRADE_LIST.TONGUE_1,
-		]
+	#if GameConsts.test_mode:
+		#upgrade_card_pool= [
+								#
+								#GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
+								#GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
+								#GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
+								#GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,
+		#]
 									
 	
 	reroll_cost_label.text = str(reroll_cost_number)

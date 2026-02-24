@@ -11,7 +11,6 @@
    sodipodi:docname="CrossRoad1.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -102,51 +101,12 @@
        id="path-effect8-3"
        is_visible="true"
        lpeversion="1" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient33"
-       id="linearGradient34"
-       x1="9.157506"
-       y1="0.65352297"
-       x2="9.5236139"
-       y2="7.639287"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       id="linearGradient33"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#f3b5b5;stop-opacity:1;"
-         offset="0"
-         id="stop33" />
-      <stop
-         style="stop-color:#9f4848;stop-opacity:1;"
-         offset="0.69575757"
-         id="stop34" />
-    </linearGradient>
   </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-0.20000279)">
-    <rect
-       style="fill:#d97a7a;fill-opacity:1;stroke:#212532;stroke-width:1.29973;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
-       id="rect1"
-       width="51.616936"
-       height="51.616943"
-       x="0.84986776"
-       y="0.96118194"
-       ry="5.9818354"
-       rx="19.15794" />
-    <rect
-       style="fill:#f5dada;fill-opacity:1;stroke:#212532;stroke-width:0.689558;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
-       id="rect1-8"
-       width="45.94006"
-       height="45.940067"
-       x="3.6883085"
-       y="3.7996202"
-       ry="5.3239479"
-       rx="17.050934" />
     <path
        d="M 20.485214,7.5427702 V 21.498051 H 6.5299333 V 33.609683 H 20.485214 V 47.564964 H 32.596845 V 33.609683 H 46.552127 V 21.498051 H 32.596845 V 7.5427702 Z"
        style="fill:#d99090;fill-opacity:1;stroke:#332d21;stroke-width:1.09606;stroke-dasharray:none"
@@ -236,23 +196,5 @@
        style="fill:#df5e5e;fill-opacity:1;stroke:#332d21;stroke-width:0"
        id="path11"
        sodipodi:nodetypes="ccccc" />
-    <path
-       sodipodi:type="star"
-       style="fill:url(#linearGradient34);fill-opacity:1;fill-rule:nonzero;stroke:#322d21;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
-       id="path1-5"
-       inkscape:flatsided="false"
-       sodipodi:sides="6"
-       sodipodi:cx="9.3473988"
-       sodipodi:cy="4.4553022"
-       sodipodi:r1="3.4362388"
-       sodipodi:r2="2.3474281"
-       sodipodi:arg1="0.9357696"
-       sodipodi:arg2="1.4593684"
-       inkscape:rounded="0.12173243"
-       inkscape:randomized="0"
-       d="M 11.385772,7.2216663 C 11.206484,7.3537735 9.8297487,6.7634083 9.6084269,6.7881723 9.3871051,6.8129364 8.1748962,7.6929822 7.9708439,7.6037675 7.7667916,7.5145529 7.5896952,6.0270826 7.457588,5.8477943 7.3254809,5.668506 5.9572344,5.0587252 5.9324704,4.8374034 5.9077064,4.6160816 7.1073453,3.7189765 7.1965599,3.5149241 7.2857746,3.3108718 7.129737,1.8210453 7.3090253,1.6889381 7.4883136,1.556831 8.8650488,2.1471961 9.0863707,2.1224321 9.3076925,2.0976681 10.519901,1.2176223 10.723954,1.306837 c 0.204052,0.089215 0.381148,1.5766849 0.513255,1.7559732 0.132108,0.1792883 1.500354,0.789069 1.525118,1.0103908 0.02476,0.2213219 -1.174875,1.118427 -1.264089,1.3224793 -0.08922,0.2040523 0.06682,1.6938789 -0.112466,1.825986 z"
-       inkscape:transform-center-x="0.082178229"
-       inkscape:transform-center-y="-1.0343217"
-       transform="matrix(1.2232888,0,0,1.2232888,15.223631,-1.3137385)" />
   </g>
 </svg>

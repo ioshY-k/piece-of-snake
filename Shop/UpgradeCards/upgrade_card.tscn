@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=136 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -99,6 +99,37 @@
 [ext_resource type="Texture2D" uid="uid://1ih5fbka24jb" path="res://Shop/UpgradeCards/InsectAction.svg" id="88_5jvk2"]
 [ext_resource type="Texture2D" uid="uid://cki0f608itts" path="res://Shop/UpgradeCards/ActiveItemAction.svg" id="89_jy7ni"]
 [ext_resource type="Texture2D" uid="uid://bvb6atf5833sk" path="res://Shop/UpgradeCards/carnivore.svg" id="90_4fv8p"]
+[ext_resource type="Texture2D" uid="uid://bvxw27n2n7y5c" path="res://Shop/UpgradeCards/Frames/PassiveFrameBG1.svg" id="94_7s2od"]
+[ext_resource type="Texture2D" uid="uid://lajv0410w4f" path="res://Shop/UpgradeCards/Frames/SynergyFrameBG1.png" id="94_11yqb"]
+[ext_resource type="Texture2D" uid="uid://5rb4xeaseqdt" path="res://Shop/UpgradeCards/Frames/PassiveFrame1.svg" id="94_jy7ni"]
+[ext_resource type="PackedScene" uid="uid://c688ay14yx2es" path="res://Shop/UpgradeCards/CardAnimation/upgrade_card_animation.tscn" id="95_7s2od"]
+[ext_resource type="Texture2D" uid="uid://du6glo5qqsnxx" path="res://Shop/UpgradeCards/Frames/PassiveFrameBG2.svg" id="95_8y621"]
+[ext_resource type="Texture2D" uid="uid://bu8kf55vam7i" path="res://Shop/UpgradeCards/Frames/PassiveFrameMask.svg" id="95_kyeo8"]
+[ext_resource type="Texture2D" uid="uid://wdy0xgt45hta" path="res://Shop/UpgradeCards/Frames/PassiveFrameBG3.svg" id="96_lyog8"]
+[ext_resource type="Texture2D" uid="uid://cg2gl052xapvu" path="res://Shop/UpgradeCards/Frames/BodymodFrameBG2.png" id="98_ah0r4"]
+[ext_resource type="Texture2D" uid="uid://dprv2j3uxyt03" path="res://Shop/UpgradeCards/Frames/SpecialFrameBG.svg" id="99_ah0r4"]
+[ext_resource type="Texture2D" uid="uid://dajmst7nu74eh" path="res://Shop/UpgradeCards/Frames/ActiveFrameBG1.png" id="99_soo7m"]
+[ext_resource type="Texture2D" uid="uid://dkb4b0m2ifwlm" path="res://Shop/UpgradeCards/Frames/PassiveFrame2.svg" id="100_3jk1d"]
+[ext_resource type="Texture2D" uid="uid://b7ythctub7ot8" path="res://Shop/UpgradeCards/Frames/ActiveFrameBG2.png" id="100_ngfec"]
+[ext_resource type="Texture2D" uid="uid://58in2k7yp2lg" path="res://Shop/UpgradeCards/Frames/ActiveFrameBG3.png" id="101_8t1it"]
+[ext_resource type="Texture2D" uid="uid://c7qapdckkoy1h" path="res://Shop/UpgradeCards/Frames/PassiveFrame3.svg" id="101_qc608"]
+[ext_resource type="Texture2D" uid="uid://c1468q8mgnjcm" path="res://Shop/UpgradeCards/Frames/SynergyFrame3.png" id="102_mfan7"]
+[ext_resource type="Texture2D" uid="uid://detyu4uuy0ur7" path="res://Shop/UpgradeCards/Frames/DefaultFrameBG1.png" id="103_pu42q"]
+[ext_resource type="Texture2D" uid="uid://5wy7vrirsxmk" path="res://Shop/UpgradeCards/Frames/DefaultFrameBG2.png" id="104_2danw"]
+[ext_resource type="Texture2D" uid="uid://buqdg8d0bfspl" path="res://Shop/UpgradeCards/Frames/DefaultFrameBG3.png" id="105_18m2p"]
+[ext_resource type="Texture2D" uid="uid://otl705xhyl02" path="res://Shop/UpgradeCards/Frames/BodymodFrame1.png" id="105_dwyrn"]
+[ext_resource type="Texture2D" uid="uid://ciowg5utkhdv1" path="res://Shop/UpgradeCards/Frames/BodymodFrameMask.svg" id="107_4id3r"]
+[ext_resource type="Texture2D" uid="uid://bgpkhpke7nkjw" path="res://Shop/UpgradeCards/Frames/SpecialFrame.png" id="107_dwyrn"]
+[ext_resource type="Texture2D" uid="uid://yc6sax0gravl" path="res://Shop/UpgradeCards/Frames/SynergyFrameMask.svg" id="108_0rx7e"]
+[ext_resource type="Texture2D" uid="uid://y6kjpcgxrx8j" path="res://Shop/UpgradeCards/Frames/ActiveFrameMask.svg" id="109_fso0y"]
+[ext_resource type="Texture2D" uid="uid://om82l0jfie5u" path="res://Shop/UpgradeCards/Frames/SpecialFrameMask.svg" id="110_1pnwp"]
+[ext_resource type="Texture2D" uid="uid://144dijfuc5w1" path="res://Shop/UpgradeCards/Frames/DefaultFrameMask.svg" id="111_vw32o"]
+[ext_resource type="Texture2D" uid="uid://debunvtchlws0" path="res://Shop/UpgradeCards/Frames/ActiveFrame1.png" id="118_t5tjx"]
+[ext_resource type="Texture2D" uid="uid://1lr56l2hcvbf" path="res://Shop/UpgradeCards/Frames/ActiveFrame2.png" id="119_f53uw"]
+[ext_resource type="Texture2D" uid="uid://tnali68w8ngc" path="res://Shop/UpgradeCards/Frames/ActiveFrame3.png" id="120_pfeme"]
+[ext_resource type="Texture2D" uid="uid://yn6mi5hwjuvh" path="res://Shop/UpgradeCards/Frames/DefaultFrame1.png" id="122_ifegl"]
+[ext_resource type="Texture2D" uid="uid://ko8g1ycynvbe" path="res://Shop/UpgradeCards/Frames/DefaultFrame2.png" id="123_vbqcj"]
+[ext_resource type="Texture2D" uid="uid://cbdg8tk2dqi5p" path="res://Shop/UpgradeCards/Frames/DefaultFrame3.png" id="124_hqlnm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -397,8 +428,119 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1v4fj"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1wae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("94_7s2od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_8y621")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_lyog8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_ah0r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_11yqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_soo7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_ngfec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_8t1it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_ah0r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_pu42q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_2danw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_18m2p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uptm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_kyeo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_4id3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_0rx7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_fso0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_1pnwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_vw32o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1j32"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("94_jy7ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_3jk1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_qc608")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_dwyrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_mfan7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_t5tjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_f53uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_pfeme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_dwyrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_ifegl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_vbqcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_hqlnm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v4fj"]
 size = Vector2(160, 160)
@@ -421,10 +563,20 @@ sprite_frames = SubResource("SpriteFrames_222e7")
 frame = 4
 frame_progress = 0.424902
 
-[node name="CardShadow" type="Sprite2D" parent="CardSprite"]
-modulate = Color(0, 0, 0, 0.635294)
+[node name="BG" type="AnimatedSprite2D" parent="CardSprite"]
 show_behind_parent = true
-texture = SubResource("CompressedTexture2D_1v4fj")
+sprite_frames = SubResource("SpriteFrames_k1wae")
+
+[node name="Mask" type="AnimatedSprite2D" parent="CardSprite"]
+show_behind_parent = true
+clip_children = 1
+sprite_frames = SubResource("SpriteFrames_uptm5")
+
+[node name="UpgradeCardAnimation" parent="CardSprite/Mask" instance=ExtResource("95_7s2od")]
+
+[node name="Frame" type="AnimatedSprite2D" parent="CardSprite"]
+show_behind_parent = true
+sprite_frames = SubResource("SpriteFrames_p1j32")
 
 [node name="SaleTag" type="Sprite2D" parent="CardSprite"]
 visible = false
@@ -447,6 +599,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CardArea" type="Area2D" parent="."]
+visible = false
 position = Vector2(40, 40)
 collision_layer = 4
 collision_mask = 8

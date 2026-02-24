@@ -39,24 +39,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-0.20000279,-0.05477117)">
-    <rect
-       style="fill:#8d8d8d;fill-opacity:1;stroke:#212532;stroke-width:1.29973;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
-       id="rect1"
-       width="51.616936"
-       height="51.616943"
-       x="0.84986776"
-       y="0.93069875"
-       ry="5.9818354"
-       rx="19.15794" />
-    <rect
-       style="fill:#76eb76;fill-opacity:1;stroke:#212532;stroke-width:0.689558;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
-       id="rect1-8"
-       width="45.94006"
-       height="45.940067"
-       x="3.6883085"
-       y="3.7691371"
-       ry="5.3239479"
-       rx="17.050934" />
     <path
        sodipodi:type="star"
        style="fill:#deebde;fill-opacity:1;stroke:#171512;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"

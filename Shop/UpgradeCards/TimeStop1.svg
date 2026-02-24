@@ -32,7 +32,7 @@
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="layer3" />
   <defs
      id="defs1">
     <linearGradient
@@ -116,27 +116,6 @@
        lpeversion="1" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient33"
-       id="linearGradient34"
-       x1="9.157506"
-       y1="0.65352297"
-       x2="9.5236139"
-       y2="7.639287"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       id="linearGradient33"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#f3b5b5;stop-opacity:1;"
-         offset="0"
-         id="stop33" />
-      <stop
-         style="stop-color:#9f4848;stop-opacity:1;"
-         offset="0.69575757"
-         id="stop34" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient4"
        id="linearGradient5"
        x1="12.978838"
@@ -152,23 +131,6 @@
      id="layer1"
      style="display:inline"
      transform="translate(-0.20000279,-7.6333346e-5)">
-    <rect
-       style="fill:#d97a7a;fill-opacity:1;stroke:#212532;stroke-width:1.29973;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
-       id="rect1"
-       width="51.616936"
-       height="51.616943"
-       x="0.84986776"
-       y="0.96113932"
-       ry="5.9818354"
-       rx="19.15794" />
-    <path
-       d="M 26.708208,49.739384 A 22.314536,15.310713 35.249052 0 1 8.5172328,34.357292 22.314536,15.310713 35.249052 0 1 14.200957,15.974071 16.739624,20.409744 32.188054 0 1 3.6885606,12.685779 v 31.73024 c 0,2.949467 7.6041514,5.323365 17.0503694,5.323365 z"
-       style="fill:#f5dada;stroke:#212532;stroke-width:0.689558;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
-       id="path10" />
-    <path
-       d="m 31.295567,3.7998322 a 16.739624,20.409744 32.188054 0 1 -2.76062,4.1787359 16.739624,20.409744 32.188054 0 1 -9.881766,7.0632299 22.314536,15.310713 35.249052 0 1 26.723801,16.48811 22.314536,15.310713 35.249052 0 1 -3.552126,17.364075 c 4.701712,-0.945736 7.803257,-2.594382 7.803257,-4.477964 V 9.123196 c 0,-2.9494671 -7.604153,-5.3233638 -17.05037,-5.3233638 z"
-       style="fill:#f5dada;stroke:#212532;stroke-width:0.689558;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
-       id="path8" />
     <path
        sodipodi:type="spiral"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.365;stroke-linecap:round;stroke-dasharray:none"
@@ -328,24 +290,5 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Ebene 3"
-     transform="translate(-0.20000279,-7.6333346e-5)">
-    <path
-       sodipodi:type="star"
-       style="display:inline;fill:url(#linearGradient34);fill-opacity:1;fill-rule:nonzero;stroke:#322d21;stroke-width:0.44281;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-dasharray:none;stroke-opacity:0.995995"
-       id="path1-5"
-       inkscape:flatsided="false"
-       sodipodi:sides="6"
-       sodipodi:cx="9.3473988"
-       sodipodi:cy="4.4553022"
-       sodipodi:r1="3.4362388"
-       sodipodi:r2="2.3474281"
-       sodipodi:arg1="0.9357696"
-       sodipodi:arg2="1.4593684"
-       inkscape:rounded="0.12173243"
-       inkscape:randomized="0"
-       d="M 11.385772,7.2216663 C 11.206484,7.3537735 9.8297487,6.7634083 9.6084269,6.7881723 9.3871051,6.8129364 8.1748962,7.6929822 7.9708439,7.6037675 7.7667916,7.5145529 7.5896952,6.0270826 7.457588,5.8477943 7.3254809,5.668506 5.9572344,5.0587252 5.9324704,4.8374034 5.9077064,4.6160816 7.1073453,3.7189765 7.1965599,3.5149241 7.2857746,3.3108718 7.129737,1.8210453 7.3090253,1.6889381 7.4883136,1.556831 8.8650488,2.1471961 9.0863707,2.1224321 9.3076925,2.0976681 10.519901,1.2176223 10.723954,1.306837 c 0.204052,0.089215 0.381148,1.5766849 0.513255,1.7559732 0.132108,0.1792883 1.500354,0.789069 1.525118,1.0103908 0.02476,0.2213219 -1.174875,1.118427 -1.264089,1.3224793 -0.08922,0.2040523 0.06682,1.6938789 -0.112466,1.825986 z"
-       inkscape:transform-center-x="0.082178084"
-       inkscape:transform-center-y="-1.0343216"
-       transform="matrix(1.2232888,0,0,1.2232888,15.223631,-1.313781)" />
-  </g>
+     transform="translate(-0.20000279,-7.6333346e-5)" />
 </svg>

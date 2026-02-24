@@ -11,7 +11,6 @@
    sodipodi:docname="HitAction.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -72,28 +71,6 @@
        split_items="false"
        split_open="false"
        link_styles="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient33"
-       id="linearGradient34"
-       x1="9.157506"
-       y1="0.65352297"
-       x2="9.5236139"
-       y2="7.639287"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.5770797,0,0,1,10.911842,0)" />
-    <linearGradient
-       id="linearGradient33"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#ffd1a8;stop-opacity:1;"
-         offset="0"
-         id="stop33" />
-      <stop
-         style="stop-color:#a06c34;stop-opacity:1;"
-         offset="0.69575757"
-         id="stop34" />
-    </linearGradient>
     <inkscape:path-effect
        effect="spiro"
        id="path-effect8-8"
@@ -119,38 +96,12 @@
        id="path-effect8-3"
        is_visible="true"
        lpeversion="1" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient33"
-       id="linearGradient6"
-       gradientUnits="userSpaceOnUse"
-       x1="9.157506"
-       y1="0.65352297"
-       x2="9.5236139"
-       y2="7.639287"
-       gradientTransform="matrix(1.5770797,0,0,1,10.911842,0)" />
   </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-0.20000279)">
-    <path
-       d="M 52.466804,52.578186 V 49.7396 h -8.847406 c -14.897438,0 -26.891031,-2.374239 -26.891031,-5.323706 V 9.1234741 c 0,-2.9494671 11.993593,-5.323706 26.891031,-5.323706 h 3.422909 C 46.777432,3.5241652 46.602402,3.2964177 46.649487,3.2023885 46.796292,2.9092203 49.890502,2.3451219 50.281031,2.1626587 50.503851,2.0585534 51.175097,1.4580663 51.800152,0.96118164 h -9.334765 c -16.738333,0 -30.212882,2.66812706 -30.212882,5.98206376 V 46.596122 c 0,3.313937 13.474549,5.982064 30.212882,5.982064 z"
-       style="fill:#d9a87a;stroke:#212532;stroke-width:1.29973;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
-       id="path2" />
-    <path
-       d="M 52.466804,49.7396 V 7.4166016 C 51.441439,7.5945497 49.425199,8.0358307 49.107463,7.891508 48.713107,7.7123834 48.822813,5.6719264 48.669819,5.3800334 48.565889,5.1817606 47.603272,4.3834516 47.042307,3.7997681 h -3.422909 c -14.897438,0 -26.891031,2.3742389 -26.891031,5.323706 V 44.415894 c 0,2.949467 11.993593,5.323706 26.891031,5.323706 z"
-       style="fill:#f4e9de;stroke:#212532;stroke-width:0.689559;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
-       id="path3" />
-    <path
-       d="M 52.466804,0.96118164 V 0.47180583 c -0.197572,0.12606915 -0.428562,0.30010729 -0.666652,0.48937581 z"
-       style="fill:url(#linearGradient6);stroke:#322d21;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
-       id="path6" />
-    <path
-       id="path5"
-       style="fill:url(#linearGradient34);stroke:#322d21;stroke-width:0.443;stroke-linejoin:round;stroke-miterlimit:8.2;stroke-opacity:0.995995"
-       d="M 51.800152,0.96118164 C 51.175097,1.4580663 50.503851,2.0585534 50.281031,2.1626587 c -0.390529,0.1824632 -3.484739,0.7465616 -3.631544,1.0397298 -0.04709,0.094029 0.127948,0.3217767 0.39282,0.5973796 0.560965,0.5836835 1.523589,1.3819925 1.627512,1.5802653 0.152993,0.291893 0.04329,2.33235 0.437644,2.5114746 0.317736,0.1443227 2.333976,-0.2969583 3.359341,-0.4749064 V 3.7997681 0.96118164 Z" />
     <circle
        id="path4"
        style="fill:#000000;stroke:#342b21;stroke-width:0.264583"

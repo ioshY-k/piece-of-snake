@@ -11,7 +11,6 @@ var font_colors = {
 
 var mouse_in: bool = false
 var is_dragging: bool = false
-@onready var card_shadow: Sprite2D = $CardSprite/CardShadow
 @onready var card_sprite: AnimatedSprite2D = $CardSprite
 @onready var card_area: Area2D = $CardArea
 @onready var sale_number: Label = $CardSprite/SaleTag/SaleNumber
@@ -21,6 +20,11 @@ var is_dragging: bool = false
 @onready var card_select_audio: AudioStreamPlayer = $CardSelectAudio
 @onready var card_deselect_audio: AudioStreamPlayer = $CardDeselectAudio
 @onready var card_buy_audio: AudioStreamPlayer = $CardBuyAudio
+@onready var upgrade_card_animation: Node2D = $CardSprite/Mask/UpgradeCardAnimation
+@onready var mask: AnimatedSprite2D = $CardSprite/Mask
+@onready var frame: AnimatedSprite2D = $CardSprite/Frame
+@onready var bg: AnimatedSprite2D = $CardSprite/BG
+
 
 @export var is_play_button = false
 
@@ -58,6 +62,9 @@ func _ready() -> void:
 	item_shelf = get_node("/root/MainSceneLoader/RunManager/Shop/ItemShelf")
 	#setting the position to something on initialization for safety
 	shelf_position = item_shelf.find_child("Itemslot1").global_position + Vector2(size.x/2,size.y/2)
+	
+	upgrade_card_animation.get_node("AnimationPlayer").seek(randf_range(0.0,upgrade_card_animation.get_node("AnimationPlayer").get_current_animation_length()))
+
 	got_clicked.connect(shop._on_got_clicked)
 	bought.connect(shop._on_upgrade_card_bought)
 	destroyed.connect(shop._on_upgrade_destroyed)
@@ -120,12 +127,12 @@ func instantiate_upgrade_card(id: int):
 	
 	upgrade_id = id
 	card_sprite.frame = id
-	
+	upgrade_type = GameConsts.get_upgrade_type(id)
+	set_correct_card_frame()
 	#unused
 	font_color = font_colors[str(GameConsts.get_upgrade_type(id))]
 	is_advanced = GameConsts.advanced_upgrades.has(upgrade_id)
 	has_advancements = GameConsts.upgrades_with_advancement.has(upgrade_id)
-	upgrade_type = GameConsts.get_upgrade_type(id)
 	calculate_price()
 	SignalBus.price_calculated.emit(self)
 
@@ -133,10 +140,58 @@ func instantiate_upgrade_card(id: int):
 func _process(delta: float) -> void:
 	drag_logic(delta)
 
+func set_correct_card_frame():
+	match upgrade_type:
+		GameConsts.UPGRADE_TYPE.PASSIVE:
+			mask.frame = 0
+			if GameConsts.advanced_upgrades.has(upgrade_id):
+				if GameConsts.upgrades_with_advancement.has(upgrade_id):
+					bg.frame = 1
+					frame.frame = 1
+				else:
+					bg.frame = 2
+					frame.frame = 2
+			else:
+				bg.frame = 0
+				frame.frame = 0
+		GameConsts.UPGRADE_TYPE.BODYMOD:
+			mask.frame = 1
+			bg.frame = 3
+			frame.frame = 3
+		GameConsts.UPGRADE_TYPE.SYNERGY:
+			mask.frame = 2
+			bg.frame = 4
+			frame.frame = 4
+		GameConsts.UPGRADE_TYPE.ACTIVE:
+			mask.frame = 3
+			if GameConsts.advanced_upgrades.has(upgrade_id):
+				if GameConsts.upgrades_with_advancement.has(upgrade_id):
+					bg.frame = 6
+					frame.frame = 6
+				else:
+					bg.frame = 7
+					frame.frame = 7
+			else:
+				bg.frame = 5
+				frame.frame = 5
+		GameConsts.UPGRADE_TYPE.SPECIAL:
+			mask.frame = 4
+			bg.frame = 8
+			frame.frame = 8
+		GameConsts.UPGRADE_TYPE.DEFAULT:
+			mask.frame = 5
+			if GameConsts.advanced_upgrades.has(upgrade_id):
+				if GameConsts.upgrades_with_advancement.has(upgrade_id):
+					bg.frame = 10
+					frame.frame = 10
+				else:
+					bg.frame = 11
+					frame.frame = 11
+			else:
+				bg.frame = 9
+				frame.frame = 9
+
 func drag_logic(delta: float):
-	#shadow always follows card
-	card_shadow.position = Vector2(.12, 12).rotated(card_sprite.rotation)
-	
 	#all interacting logic works only on a single card, and only if mouse hovers or drags it
 	if (mouse_in or is_dragging) and (GameConsts.node_being_dragged == null or GameConsts.node_being_dragged == self):
 		#card is being dragged
