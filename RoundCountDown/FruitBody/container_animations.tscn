@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk82krytrn8f2"]
+
+[ext_resource type="Texture2D" uid="uid://cv1w6nyotiqh5" path="res://MapModComponents/FruitBody/ScaleParticle.svg" id="1_w2s3p"]
+
+[sub_resource type="Gradient" id="Gradient_gj083"]
+offsets = PackedFloat32Array(0, 0.686813, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="ContainerAnimations" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(0, 134.265)
+amount = 30
+texture = ExtResource("1_w2s3p")
+lifetime = 1.6
+emission_shape = 3
+emission_rect_extents = Vector2(442.14, 1)
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 400)
+initial_velocity_min = 301.89
+initial_velocity_max = 424.53
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.5
+scale_amount_max = 0.8
+color_ramp = SubResource("Gradient_gj083")

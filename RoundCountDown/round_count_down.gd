@@ -16,7 +16,7 @@ var container_anim_dict = {
 	str(GameConsts.MAP_MODS.TAILVIRUS) : load("res://RoundCountDown/TailVirus/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.EDIBLE_PAPER) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.LASER) : load("res://RoundCountDown/Laser/container_animations.tscn"),
-	str(GameConsts.MAP_MODS.FRUIT_BODY) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
+	str(GameConsts.MAP_MODS.FRUIT_BODY) : load("res://RoundCountDown/FruitBody/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.TETRI_FRUIT) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.MOVING_FRUIT) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.ANTI_MAGNET) : load("res://RoundCountDown/AntiMagnet/container_animations.tscn"),

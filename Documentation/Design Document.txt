@@ -39,5 +39,5 @@ Worklow for adding new upgrade:
 	Add in Component Parent: packed Component scene
 
 Workflow for adding new ROundCountDown style:
-	create Sprite for container and containerdeco, Make sure the frames are in order of GameConst.MAPMODS
+	create Sprite for container, containermask and containerdeco, Make sure the frames are in order of GameConst.MAPMODS
 	Add Node2D Child "ContainerAnimation" to container, add animations and create scene out of branch

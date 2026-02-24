@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://fb2hhu3hvjml"]
+[gd_scene load_steps=35 format=3 uid="uid://fb2hhu3hvjml"]
 
 [ext_resource type="Script" uid="uid://dr2jn8qf7cehb" path="res://RoundCountDown/round_count_down.gd" id="1_rra43"]
 [ext_resource type="Texture2D" uid="uid://comm7jvphnn1i" path="res://RoundCountDown/CountDownPanelBG.svg" id="2_e5j6p"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ckf3lgwsdw2lb" path="res://RoundCountDown/NoMapMod/CountDownContainerDecoNoMapMod.svg" id="6_8f1uk"]
 [ext_resource type="Texture2D" uid="uid://ql6k0e8jmva5" path="res://RoundCountDown/NoMapMod/CountDownBarMaskNoMapMod.svg" id="6_iqts5"]
 [ext_resource type="Texture2D" uid="uid://dmaqm1j6k78oy" path="res://RoundCountDown/CountDownBar.svg" id="7_8f1uk"]
+[ext_resource type="Texture2D" uid="uid://b62k72wiidtkl" path="res://RoundCountDown/FruitBody/CountDownContainerFruitBody.svg" id="7_8ynsf"]
 [ext_resource type="Texture2D" uid="uid://dmdvs56hmf5r5" path="res://RoundCountDown/AntiMagnet/CountDownContainerAntiMagnet.svg" id="7_kihmd"]
 [ext_resource type="Texture2D" uid="uid://cts1o8cjhbunl" path="res://RoundCountDown/FarAway/CountDownContainerFarAway.svg" id="7_ob4tl"]
 [ext_resource type="Texture2D" uid="uid://euwokkeh3p81" path="res://RoundCountDown/GhostInvasion/CountDownContainerGhostInvasion.svg" id="9_8g06g"]
@@ -20,10 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://vphcc0w48641" path="res://RoundCountDown/TailVirus/CountDownContainerDecoTailVirus.svg" id="11_3qxre"]
 [ext_resource type="Texture2D" uid="uid://baamdxjuvb8ei" path="res://RoundCountDown/FarAway/CountDownContainerDecoFarAway.svg" id="11_7fnj8"]
 [ext_resource type="Texture2D" uid="uid://cn2jsl4uicg5d" path="res://RoundCountDown/Laser/CountDownContainerMaskLaser.svg" id="13_8g06g"]
+[ext_resource type="Texture2D" uid="uid://04mnnst1frls" path="res://RoundCountDown/FruitBody/CountDownContainerFruitBodyDeco.svg" id="14_1cww8"]
 [ext_resource type="Texture2D" uid="uid://cb6c1trmdyife" path="res://RoundCountDown/GhostInvasion/CountDownContainerMaskGhostInvasion.svg" id="14_tknvg"]
 [ext_resource type="Texture2D" uid="uid://c30y0i8r3x07k" path="res://RoundCountDown/AntiMagnet/CountDownContainerDecoAntiMagnet.svg" id="16_n6hmd"]
 [ext_resource type="Texture2D" uid="uid://dq11q6fr8uypg" path="res://RoundCountDown/TailVirus/CountDownContainerMaskTailVirus.svg" id="17_chwrq"]
 [ext_resource type="Texture2D" uid="uid://msk2mmv7i7eo" path="res://RoundCountDown/FarAway/CountDownContainerMaskFarAway.svg" id="17_hvjic"]
+[ext_resource type="Texture2D" uid="uid://c8ajewkjy2m63" path="res://RoundCountDown/FruitBody/CountDownContainerFruitBodyMask.svg" id="23_025y4"]
 [ext_resource type="Texture2D" uid="uid://doviq51wnkyuh" path="res://RoundCountDown/AntiMagnet/CountDownContainerMaskAntiMagnet.svg" id="24_rsbde"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqts5"]
@@ -45,7 +48,7 @@ animations = [{
 "texture": ExtResource("5_8g06g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_t8ktn")
+"texture": ExtResource("7_8ynsf")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_t8ktn")
@@ -98,7 +101,7 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_8f1uk")
+"texture": ExtResource("14_1cww8")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_8f1uk")
@@ -151,7 +154,7 @@ animations = [{
 "texture": ExtResource("13_8g06g")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_iqts5")
+"texture": ExtResource("23_025y4")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_iqts5")
@@ -400,8 +403,8 @@ texture = ExtResource("3_b8ha1")
 [node name="Container" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelBG"]
 position = Vector2(0, -104)
 sprite_frames = SubResource("SpriteFrames_iqts5")
-frame = 8
-frame_progress = 0.670011
+frame = 5
+frame_progress = 0.135269
 
 [node name="CountdownPanelDeco" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -41)
@@ -410,8 +413,8 @@ texture = ExtResource("3_pxsen")
 [node name="ContainerDeco" type="AnimatedSprite2D" parent="CountDownPanel/CountdownPanelDeco"]
 position = Vector2(0, -106)
 sprite_frames = SubResource("SpriteFrames_8f1uk")
-frame = 8
-frame_progress = 0.849556
+frame = 5
+frame_progress = 0.162052
 
 [node name="CountdownPanelFG" type="Sprite2D" parent="CountDownPanel"]
 position = Vector2(0, -96)
