@@ -44,7 +44,7 @@ var ghost_invasion_component_scene = load("res://MapModComponents/ghost_invasion
 var far_away_component_scene = load("res://MapModComponents/far_away_component.tscn")
 var dark_component_scene = load("res://MapModComponents/dark_component.tscn")
 var ufo_component_scene = load("res://MapModComponents/ufo_component.tscn")
-var head_swap_component_scene = load("res://MapModComponents/head_swap_component.tscn")
+var head_swap_component_scene = load("res://MapModComponents/HeadSwap/head_swap_component.tscn")
 var slime_trail_component_scene = load("res://MapModComponents/SlimeTrail/slime_trail_component.tscn")
 
 #permanent snake parts

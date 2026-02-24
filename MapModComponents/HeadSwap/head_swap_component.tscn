@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cayej4w5cio5d"]
+
+[ext_resource type="Script" uid="uid://wgmyjxy7g2an" path="res://MapModComponents/HeadSwap/head_swap_component.gd" id="1_dutxd"]
+[ext_resource type="AudioStream" uid="uid://wuigjnn0uxvp" path="res://MapModComponents/HeadSwap/head_swap_sound.wav" id="2_b55hd"]
+
+[node name="HeadSwapComponent" type="Node" groups=["MapMod"]]
+script = ExtResource("1_dutxd")
+
+[node name="HeadSwapSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b55hd")

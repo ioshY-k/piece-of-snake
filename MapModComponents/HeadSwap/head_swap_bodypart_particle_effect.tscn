@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsyntfm6v18no"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pgpir"]
+load_path = "res://.godot/imported/SpiralParticle.svg-b37336b4d9cb008782ab87b6b199de1e.ctex"
+
+[sub_resource type="Curve" id="Curve_fsnhy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.491957, 1), 0.0, 0.0, 0, 0, Vector2(0.859249, 0.602041), -0.910667, -0.910667, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_m4na3"]
+offsets = PackedFloat32Array(0, 0.173077, 0.804945, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_6ttkq"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.134615, 0.318681, 0.53022, 0.681319, 0.837912)
+colors = PackedColorArray(0.905882, 0.929412, 0.623529, 1, 0.938125, 0.95, 0.8075, 1, 0.847733, 0.88, 0.4928, 1, 0.509804, 0.266667, 0.921569, 1, 0.319193, 0.1682, 0.58, 1, 0.37973, 0.2001, 0.69, 1)
+
+[node name="HeadSwapBodypartParticleEffect" type="CPUParticles2D"]
+z_index = 21
+z_as_relative = false
+amount = 5
+texture = SubResource("CompressedTexture2D_pgpir")
+lifetime = 2.41
+lifetime_randomness = 0.26
+emission_shape = 1
+emission_sphere_radius = 30.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 18.88
+angular_velocity_min = -183.4
+angular_velocity_max = 115.47
+scale_amount_min = 0.5
+scale_amount_max = 0.7
+scale_amount_curve = SubResource("Curve_fsnhy")
+color_ramp = SubResource("Gradient_m4na3")
+color_initial_ramp = SubResource("Gradient_6ttkq")
