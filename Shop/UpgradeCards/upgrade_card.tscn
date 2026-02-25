@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://bc2jtreq5e56n"]
+[gd_scene load_steps=138 format=3 uid="uid://bc2jtreq5e56n"]
 
 [ext_resource type="Script" uid="uid://8jw71fnp2q5i" path="res://Shop/UpgradeCards/upgrade_card.gd" id="1_1v4fj"]
 [ext_resource type="Texture2D" uid="uid://xxtsio3wfcfu" path="res://Shop/UpgradeCards/DefaultUpgrade1.svg" id="2_gtu6c"]
@@ -130,6 +130,12 @@
 [ext_resource type="Texture2D" uid="uid://yn6mi5hwjuvh" path="res://Shop/UpgradeCards/Frames/DefaultFrame1.png" id="122_ifegl"]
 [ext_resource type="Texture2D" uid="uid://ko8g1ycynvbe" path="res://Shop/UpgradeCards/Frames/DefaultFrame2.png" id="123_vbqcj"]
 [ext_resource type="Texture2D" uid="uid://cbdg8tk2dqi5p" path="res://Shop/UpgradeCards/Frames/DefaultFrame3.png" id="124_hqlnm"]
+[ext_resource type="Shader" uid="uid://oyo66l4pinc3" path="res://Shop/UpgradeCards/shadow.gdshader" id="131_ngfec"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8t1it"]
+shader = ExtResource("131_ngfec")
+shader_parameter/shadow_offset = Vector2(-3.84, -7.605)
+shader_parameter/shadow_alpha = 0.375
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_222e7"]
 animations = [{
@@ -558,6 +564,7 @@ size_flags_vertical = 4
 script = ExtResource("1_1v4fj")
 
 [node name="CardSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_8t1it")
 position = Vector2(100, 100)
 sprite_frames = SubResource("SpriteFrames_222e7")
 frame = 4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5mlenp041rga"]
+[gd_scene load_steps=23 format=3 uid="uid://b5mlenp041rga"]
 
 [ext_resource type="Texture2D" uid="uid://ds5363e62qki2" path="res://Levels/OfficeMap/OfficeMap.svg" id="1_ta381"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_jw1gu"]
@@ -9,9 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://bxh1e3n0oiku5" path="res://Levels/OfficeMap/OfficeMapDoor.svg" id="6_qiay7"]
 [ext_resource type="PackedScene" uid="uid://bx41eoxlwhwu6" path="res://MapElements/ObstacleElement/wall_obstacle_hitbox_element.tscn" id="7_ffyae"]
 [ext_resource type="Texture2D" uid="uid://bbxebxn04plfk" path="res://Levels/OfficeMap/OfficeMapDoorPreview3.svg" id="8_har54"]
-[ext_resource type="Texture2D" uid="uid://b53ksgmrlln7o" path="res://Levels/OfficeMap/OfficeMapWalls.svg" id="8_qiay7"]
 [ext_resource type="Texture2D" uid="uid://cjfxat7wh1e0x" path="res://Levels/OfficeMap/OfficeMapDoorPreview2.svg" id="9_pmm2k"]
 [ext_resource type="Texture2D" uid="uid://drsl83l07f33u" path="res://Levels/OfficeMap/OfficeMapDoorPreview1.svg" id="10_gg168"]
+[ext_resource type="Texture2D" uid="uid://btxximib6ivlc" path="res://Levels/OfficeMap/OfficeMapWall1.svg" id="12_df3ye"]
+[ext_resource type="Texture2D" uid="uid://qofak1c8mljp" path="res://Levels/OfficeMap/OfficeMapWall2.svg" id="13_6v0sw"]
+[ext_resource type="Texture2D" uid="uid://d3qhfffl3iivx" path="res://Levels/OfficeMap/OfficeMapWall3.svg" id="14_p8wh3"]
+[ext_resource type="Texture2D" uid="uid://xiqvcajb0w7c" path="res://Levels/OfficeMap/OfficeMapWall4.svg" id="15_exusb"]
+[ext_resource type="Texture2D" uid="uid://dn3irwpgtmo4q" path="res://Levels/OfficeMap/OfficeMapWall5.svg" id="16_xm6gp"]
+[ext_resource type="Texture2D" uid="uid://tidn0qg5asm8" path="res://Levels/OfficeMap/OfficeMapWall6.svg" id="17_70uuy"]
+[ext_resource type="Texture2D" uid="uid://c4ib80kfg81rm" path="res://Levels/OfficeMap/OfficeMapWall7.svg" id="18_hnq2o"]
+[ext_resource type="Texture2D" uid="uid://4l6mgw6frwym" path="res://Levels/OfficeMap/OfficeMapWall8.svg" id="19_eg5li"]
+[ext_resource type="Texture2D" uid="uid://ynpm0qct5ifa" path="res://Levels/OfficeMap/OfficeMapWall9.svg" id="20_graw1"]
+[ext_resource type="Texture2D" uid="uid://263nn361nlwc" path="res://Levels/OfficeMap/OfficeMapWall10.svg" id="21_hfeye"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0ial"]
 animations = [{
@@ -1045,6 +1054,42 @@ rotation = 1.5708
 signal_id = 6
 path = Array[int]([4, 4, 3, 4, 4, 4, 4, 4, 1, 4])
 
-[node name="OfficeWalls" type="Sprite2D" parent="."]
+[node name="Wall1" type="Sprite2D" parent="."]
 position = Vector2(720, 640)
-texture = ExtResource("8_qiay7")
+texture = ExtResource("12_df3ye")
+
+[node name="Wall2" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("13_6v0sw")
+
+[node name="Wall3" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("14_p8wh3")
+
+[node name="Wall4" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("15_exusb")
+
+[node name="Wall5" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("16_xm6gp")
+
+[node name="Wall6" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("17_70uuy")
+
+[node name="Wall7" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("18_hnq2o")
+
+[node name="Wall8" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("19_eg5li")
+
+[node name="Wall9" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("20_graw1")
+
+[node name="Wall10" type="Sprite2D" parent="."]
+position = Vector2(720, 640)
+texture = ExtResource("21_hfeye")

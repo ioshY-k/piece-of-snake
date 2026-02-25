@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs5c3n7dbyo14"
-path="res://.godot/imported/CrossRoad1.png-86ba465622a7cd4340a7b80475f47fce.ctex"
+uid="uid://btxximib6ivlc"
+path="res://.godot/imported/OfficeMapWall1.svg-873e4403d301122e51a0600ff847d23f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/UpgradeCards/CrossRoad1.png"
-dest_files=["res://.godot/imported/CrossRoad1.png-86ba465622a7cd4340a7b80475f47fce.ctex"]
+source_file="res://Levels/OfficeMap/OfficeMapWall1.svg"
+dest_files=["res://.godot/imported/OfficeMapWall1.svg-873e4403d301122e51a0600ff847d23f.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

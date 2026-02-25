@@ -106,6 +106,12 @@ func instantiate_upgrade_card(id: int):
 	if TextConsts.get_text(TextConsts.TABLES.CARDS,upgrade_id_string, "DESC").contains("{ADVANCEMENT_KEYWORD}"):
 		keyword_descriptions.append(TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "ADVANCEMENT_KEYWORD", "NAME")
 		+ " " + TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "ADVANCEMENT_KEYWORD", "DESC"))
+	if TextConsts.get_text(TextConsts.TABLES.CARDS,upgrade_id_string, "DESC").contains("{ACTION_KEYWORD}"):
+		keyword_descriptions.append(TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "ACTION_KEYWORD", "NAME")
+		+ " " + TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "ACTION_KEYWORD", "DESC"))
+	if TextConsts.get_text(TextConsts.TABLES.CARDS,upgrade_id_string, "DESC").contains("{REACTION_KEYWORD}"):
+		keyword_descriptions.append(TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "REACTION_KEYWORD", "NAME")
+		+ " " + TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "REACTION_KEYWORD", "DESC"))
 	if TextConsts.get_text(TextConsts.TABLES.CARDS,upgrade_id_string, "DESC").contains("{GHOST_FRUIT_KEYWORD}"):
 		keyword_descriptions.append(TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "GHOST_FRUIT_KEYWORD", "NAME")
 		+ " " + TextConsts.get_text(TextConsts.TABLES.KEYWORDS, "GHOST_FRUIT_KEYWORD", "DESC"))

@@ -751,7 +751,7 @@
 	},
 	"ACTION_KEYWORD": {
 	  "NAME_ENG": "[color=#fae5aa]Action[/color] [img=40]res://Shop/UI/KeywordActionSymbol.svg[/img]",
-	  "DESC_ENG": "An Reaction Upgrade must be placed to the right of this Upgrade to create a unique effect.\n\n",
+	  "DESC_ENG": "A Reaction Upgrade must be placed to the right of this Upgrade to create a unique effect.\n\n",
 	  "NAME_GER": "[color=#fae5aa]Aktion[/color] [img=40]res://Shop/UI/KeywordActionSymbol.svg[/img]",
 	  "DESC_GER": "Ein Reaktions-Upgrade muss zur Rechten dieses Upgrades platziert werden, um einen einzigartigen Effekt zu kreieren.\n\n",
 	  "Spalte 6": null
