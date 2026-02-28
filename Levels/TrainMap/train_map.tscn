@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dhf4trfl7kprx"]
+[gd_scene load_steps=21 format=3 uid="uid://dhf4trfl7kprx"]
 
 [ext_resource type="Texture2D" uid="uid://dbmnic3piame1" path="res://Levels/TrainMap/TrainMap.svg" id="1_ipgus"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_fkbrw"]
@@ -6,12 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="4_lshr8"]
 [ext_resource type="PackedScene" uid="uid://cvyaocdswofuq" path="res://MapElements/TeleportElement/teleport_element.tscn" id="5_b4rw7"]
 [ext_resource type="Script" uid="uid://djsh74lj0tvq0" path="res://Levels/TrainMap/train_obstacle_element_manager.gd" id="6_dx61a"]
-[ext_resource type="Texture2D" uid="uid://2s8ug0ifjkwl" path="res://Levels/TrainMap/Train1.svg" id="7_rdnci"]
 [ext_resource type="Script" uid="uid://wdhaxjf7gg2h" path="res://MapElements/ObstacleElement/obstacle_element.gd" id="8_vhny7"]
 [ext_resource type="Texture2D" uid="uid://bx5byxuf30jb5" path="res://Levels/TrainMap/TrainHeadlight.svg" id="9_6p4ef"]
-[ext_resource type="Texture2D" uid="uid://cdu050js5ghat" path="res://Levels/TrainMap/Train2.svg" id="9_rty63"]
 [ext_resource type="Texture2D" uid="uid://bajr025dq2t0n" path="res://Levels/TrainMap/Train.svg" id="10_6uvjd"]
-[ext_resource type="Texture2D" uid="uid://carbh82imqcxt" path="res://Levels/TrainMap/Train3.svg" id="10_mmild"]
 [ext_resource type="PackedScene" uid="uid://dompb7mk0mpyh" path="res://MapModComponents/Dark/darkness_banisher.tscn" id="10_o5p86"]
 [ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="10_q3fa0"]
 [ext_resource type="Script" uid="uid://cfxaspaqj3akq" path="res://MapElements/ObstacleElement/obstacle_disabler.gd" id="12_hslk7"]
@@ -21,36 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://4hcucgrff62g" path="res://Levels/TrainMap/TrainCactus.svg" id="18_0tmrk"]
 [ext_resource type="Texture2D" uid="uid://bqhxuw2grb5gg" path="res://Levels/TrainMap/TrainCactus2.svg" id="19_6hcfm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6p4ef"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_rdnci")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tmrk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_rty63")
-}, {
-"duration": 1.0,
 "texture": ExtResource("10_6uvjd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6hcfm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_mmild")
 }],
 "loop": true,
 "name": &"default",
@@ -911,63 +883,19 @@ position = Vector2(0, 1280)
 [node name="ObstacleElements" type="Node2D" parent="."]
 script = ExtResource("6_dx61a")
 
-[node name="Train1SpriteL" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1680, 160)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL2" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1760, 160)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL3" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1840, 160)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL4" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1920, 160)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteL5" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 27
+z_as_relative = false
 position = Vector2(2000, 160)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL6" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2080, 160)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL7" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2160, 160)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL8" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(1600, 160)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
@@ -1050,70 +978,20 @@ position = Vector2(2080, 160)
 collision_layer = 4128
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
 
-[node name="Train1SpriteL9" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1678, 560)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL10" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1758, 560)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL11" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1838, 560)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL12" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1918, 560)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteL13" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 31
+z_as_relative = false
 position = Vector2(1998, 560)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL14" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2078, 560)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL15" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2158, 560)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 signal_id = 1
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL16" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(1600, 560)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
@@ -1211,70 +1089,20 @@ collision_layer = 4128
 signal_id = 1
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
 
-[node name="Train1SpriteL17" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1678, 720)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL18" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1758, 720)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL19" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1838, 720)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL20" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1918, 720)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteL21" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 33
+z_as_relative = false
 position = Vector2(1998, 720)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL22" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2078, 720)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL23" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2158, 720)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 signal_id = 2
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL24" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(1600, 720)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
@@ -1372,70 +1200,20 @@ collision_layer = 4128
 signal_id = 2
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
 
-[node name="Train1SpriteL25" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1678, 1120)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL26" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1758, 1120)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL27" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1838, 1120)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL28" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(1918, 1120)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteL29" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 38
+z_as_relative = false
 position = Vector2(1998, 1120)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL30" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2078, 1120)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteL31" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(2158, 1120)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 signal_id = 3
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL32" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(1600, 1120)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
@@ -1533,77 +1311,21 @@ collision_layer = 4128
 signal_id = 3
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
 
-[node name="Train1SpriteR" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-240, 1120)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 4
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR2" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-320, 1120)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 4
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR3" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-400, 1120)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 4
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR4" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-480, 1120)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 4
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteR5" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 38
+z_as_relative = false
 position = Vector2(-560, 1120)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 4
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR6" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-640, 1120)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 4
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR7" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-720, 1120)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR8" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(-160, 1120)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
@@ -1702,77 +1424,20 @@ collision_layer = 4128
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1SpriteR9" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-240, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR10" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-320, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR11" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-400, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR12" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-480, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteR13" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 33
 position = Vector2(-560, 720)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR14" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-640, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR15" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-720, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR16" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(-160, 720)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
@@ -1871,77 +1536,21 @@ collision_layer = 4128
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1SpriteR17" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-240, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR18" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-320, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR19" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-400, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR20" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-480, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteR21" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 31
+z_as_relative = false
 position = Vector2(-560, 560)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR22" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-640, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR23" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-720, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR24" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(-160, 560)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
@@ -2040,77 +1649,21 @@ collision_layer = 4128
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1SpriteR25" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-240, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6p4ef")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR26" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-320, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR27" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-400, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR28" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-480, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
 [node name="Train1SpriteR29" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 26
+z_as_relative = false
 position = Vector2(-560, 160)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR30" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-640, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(0, -40)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR31" type="AnimatedSprite2D" parent="ObstacleElements"]
-position = Vector2(-720, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_6hcfm")
-offset = Vector2(0, -40)
+offset = Vector2(-100, -100)
 script = ExtResource("8_vhny7")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR32" type="AnimatedSprite2D" parent="ObstacleElements"]
+z_index = 54
+z_as_relative = false
 position = Vector2(-160, 160)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
@@ -2209,10 +1762,6 @@ collision_layer = 4128
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="MapBridge" type="Sprite2D" parent="."]
-position = Vector2(560, 640)
-texture = ExtResource("14_rdnci")
-
 [node name="ObstacleDisabler" type="Area2D" parent="."]
 position = Vector2(720, 40)
 collision_layer = 0
@@ -2270,6 +1819,12 @@ script = ExtResource("12_hslk7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDisabler6"]
 position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_o5p86")
+
+[node name="MapBridge" type="Sprite2D" parent="."]
+z_index = 50
+z_as_relative = false
+position = Vector2(560, 640)
+texture = ExtResource("14_rdnci")
 
 [node name="CoverCeiling" parent="." instance=ExtResource("16_mmild")]
 position = Vector2(560, 640)
