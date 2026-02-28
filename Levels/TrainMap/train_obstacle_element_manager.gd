@@ -1,9 +1,15 @@
 extends Node2D
 
-@onready var obstacles: Array = get_children()
+@onready var obstacles: Array
 var tick_counter: int
 
 func _ready() -> void:
+	for node in get_children():
+		if node is ObstacleElement or node is ObstacleHitboxElement:
+			obstacles.append(node)
+		else:
+			for masked_node in node.get_children():
+				obstacles.append(masked_node)
 	SignalBus.next_tile_reached.connect(call_obstacle_movements)
 
 func call_obstacle_movements():

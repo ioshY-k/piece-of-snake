@@ -644,88 +644,103 @@ position = Vector2(0, 1280)
 [node name="ObstacleElements" type="Node2D" parent="."]
 script = ExtResource("4_p7gys")
 
-[node name="ObstacleElement" parent="ObstacleElements" instance=ExtResource("4_s8r7k")]
+[node name="ObstacleElement" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("4_s8r7k")]
 z_index = 29
 position = Vector2(960, 320)
 sprite_frames = SubResource("SpriteFrames_oy8iq")
 offset = Vector2(40, 40)
 flip_h = true
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4])
 
-[node name="ObstacleElement2" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement2" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(960, 400)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement3" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement3" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(1040, 400)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement4" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement4" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(1040, 480)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement5" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement5" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(960, 480)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement11" parent="ObstacleElements" instance=ExtResource("4_s8r7k")]
+[node name="ObstacleElement11" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("4_s8r7k")]
 z_index = 32
 position = Vector2(-80, 560)
 sprite_frames = SubResource("SpriteFrames_mfk4o")
 offset = Vector2(40, 40)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4])
 
-[node name="ObstacleElement12" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement12" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(-80, 640)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement13" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement13" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(0, 640)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement14" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement14" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(0, 720)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement15" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement15" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(-80, 720)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement6" parent="ObstacleElements" instance=ExtResource("4_s8r7k")]
+[node name="ObstacleElement6" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("4_s8r7k")]
 z_index = 34
 position = Vector2(726, 726)
 sprite_frames = SubResource("SpriteFrames_mfk4o")
 offset = Vector2(40, 40)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4])
 
-[node name="ObstacleElement7" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement7" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(726, 806)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement8" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement8" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(806, 806)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement9" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement9" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(806, 886)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 
-[node name="ObstacleElement10" parent="ObstacleElements" instance=ExtResource("6_mfk4o")]
+[node name="ObstacleElement10" parent="ObstacleElements" node_paths=PackedStringArray("map") instance=ExtResource("6_mfk4o")]
 position = Vector2(726, 886)
+map = NodePath("../..")
 loops = true
 path = Array[int]([2, 2, 2, 2, 2, 2, 4, 3, 3, 3, 3, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 2, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 2, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 3, 4, 0, 0, 0, 0, 4, 3, 3, 3, 3, 3, 4, 2, 2, 2, 4, 1, 1, 4, 2])
 

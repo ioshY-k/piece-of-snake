@@ -4,6 +4,7 @@ enum DIRECTION {UP,RIGHT,DOWN,LEFT,STOP,DISAPPEAR,APPEAR}
 
 var tween: Tween
 
+@export var map: Map
 @export var loops: bool
 @export var signal_id: int
 @export var path: Array[int]
@@ -26,9 +27,9 @@ func _ready() -> void:
 func _walk_path():
 	await SignalBus.next_tile_reached
 	tween = self.create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH and get_parent().get_parent().caffeinated:
+	if RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH and map.caffeinated:
 		tween.set_speed_scale(1.2*1.4)
-	elif get_parent().get_parent().caffeinated:
+	elif map.caffeinated:
 			tween.set_speed_scale(1.2)
 	elif RunSettings.current_char == GameConsts.CHAR_LIST.OSTRICH:
 			tween.set_speed_scale(1.4)

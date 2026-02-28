@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dhf4trfl7kprx"]
+[gd_scene load_steps=22 format=3 uid="uid://dhf4trfl7kprx"]
 
 [ext_resource type="Texture2D" uid="uid://dbmnic3piame1" path="res://Levels/TrainMap/TrainMap.svg" id="1_ipgus"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_fkbrw"]
@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://ddncewppoowpx" path="res://MapElements/SolidElements/solid_element.tscn" id="4_lshr8"]
 [ext_resource type="PackedScene" uid="uid://cvyaocdswofuq" path="res://MapElements/TeleportElement/teleport_element.tscn" id="5_b4rw7"]
 [ext_resource type="Script" uid="uid://djsh74lj0tvq0" path="res://Levels/TrainMap/train_obstacle_element_manager.gd" id="6_dx61a"]
+[ext_resource type="Texture2D" uid="uid://bka21c5g75x24" path="res://Levels/TrainMap/TrainMapBridgeMask.svg" id="7_0tmrk"]
 [ext_resource type="Script" uid="uid://wdhaxjf7gg2h" path="res://MapElements/ObstacleElement/obstacle_element.gd" id="8_vhny7"]
 [ext_resource type="Texture2D" uid="uid://bx5byxuf30jb5" path="res://Levels/TrainMap/TrainHeadlight.svg" id="9_6p4ef"]
 [ext_resource type="Texture2D" uid="uid://bajr025dq2t0n" path="res://Levels/TrainMap/Train.svg" id="10_6uvjd"]
 [ext_resource type="PackedScene" uid="uid://dompb7mk0mpyh" path="res://MapModComponents/Dark/darkness_banisher.tscn" id="10_o5p86"]
 [ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="10_q3fa0"]
 [ext_resource type="Script" uid="uid://cfxaspaqj3akq" path="res://MapElements/ObstacleElement/obstacle_disabler.gd" id="12_hslk7"]
-[ext_resource type="Texture2D" uid="uid://oneg5gkw7e6" path="res://Levels/TrainMap/TrainMapBridge.png" id="14_rdnci"]
+[ext_resource type="Texture2D" uid="uid://dtas1wmyca1s" path="res://Levels/TrainMap/TrainMapBridge.svg" id="14_0tmrk"]
 [ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="16_mmild"]
 [ext_resource type="Texture2D" uid="uid://sj42hxclgf48" path="res://Levels/TrainMap/TrainMapCeiling.svg" id="17_0tmrk"]
 [ext_resource type="Texture2D" uid="uid://4hcucgrff62g" path="res://Levels/TrainMap/TrainCactus.svg" id="18_0tmrk"]
@@ -883,882 +884,1047 @@ position = Vector2(0, 1280)
 [node name="ObstacleElements" type="Node2D" parent="."]
 script = ExtResource("6_dx61a")
 
-[node name="Train1SpriteL5" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 27
+[node name="TrainMask1" type="Sprite2D" parent="ObstacleElements"]
+clip_children = 1
+z_index = 26
+z_as_relative = false
+texture = ExtResource("7_0tmrk")
+offset = Vector2(719.885, 632.745)
+
+[node name="Train1SpriteL5" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask1" node_paths=PackedStringArray("map")]
+z_index = 26
 z_as_relative = false
 position = Vector2(2000, 160)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
+offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1SpriteL8" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
+[node name="Train1SpriteL8" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask1" node_paths=PackedStringArray("map")]
+z_index = 26
 z_as_relative = false
 position = Vector2(1600, 160)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteL8" instance=ExtResource("10_o5p86")]
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask1/Train1SpriteL8" instance=ExtResource("10_o5p86")]
 position = Vector2(216.77, -40)
 rotation = -1.5708
 scale = Vector2(0.65, 1)
 
-[node name="Train1L" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1600, 80)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="Train1SpriteR29" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask1" node_paths=PackedStringArray("map")]
+z_index = 26
+z_as_relative = false
+position = Vector2(-560, 160)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_0tmrk")
+offset = Vector2(-68.92, -100)
+script = ExtResource("8_vhny7")
+map = NodePath("../../..")
+signal_id = 7
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1L2" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1600, 160)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="Train1SpriteR32" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask1" node_paths=PackedStringArray("map")]
+z_index = 26
+z_as_relative = false
+position = Vector2(-160, 160)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_q3fa0")
+offset = Vector2(-20, -40)
+script = ExtResource("8_vhny7")
+map = NodePath("../../..")
+signal_id = 7
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1L3" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1680, 80)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask1/Train1SpriteR32" instance=ExtResource("10_o5p86")]
+position = Vector2(216.77, -40)
+rotation = -1.5708
+scale = Vector2(0.65, 1)
 
-[node name="Train1L4" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1680, 160)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="TrainMask2" type="Sprite2D" parent="ObstacleElements"]
+clip_children = 1
+z_index = 31
+z_as_relative = false
+texture = ExtResource("7_0tmrk")
+offset = Vector2(719.885, 632.745)
 
-[node name="Train1L5" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1760, 80)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L6" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1760, 160)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L7" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1840, 80)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L8" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1840, 160)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L9" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1920, 80)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L10" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1920, 160)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L11" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2000, 80)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L12" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2000, 160)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L13" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2080, 80)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L14" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2080, 160)
-collision_layer = 4128
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1SpriteL13" type="AnimatedSprite2D" parent="ObstacleElements"]
+[node name="Train1SpriteL13" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask2" node_paths=PackedStringArray("map")]
 z_index = 31
 z_as_relative = false
 position = Vector2(1998, 560)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
+offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 1
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1SpriteL16" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
+[node name="Train1SpriteL16" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask2" node_paths=PackedStringArray("map")]
+z_index = 31
 z_as_relative = false
 position = Vector2(1600, 560)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 1
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteL16" instance=ExtResource("10_o5p86")]
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask2/Train1SpriteL16" instance=ExtResource("10_o5p86")]
 position = Vector2(216.77, -40)
 rotation = -1.5708
 scale = Vector2(0.65, 1)
 
-[node name="Train1L15" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1598, 480)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="Train1SpriteR21" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask2" node_paths=PackedStringArray("map")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-560, 560)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_0tmrk")
+offset = Vector2(-68.92, -100)
+script = ExtResource("8_vhny7")
+map = NodePath("../../..")
+signal_id = 6
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1L16" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1598, 560)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="Train1SpriteR24" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask2" node_paths=PackedStringArray("map")]
+z_index = 31
+z_as_relative = false
+position = Vector2(-160, 560)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_q3fa0")
+offset = Vector2(-20, -40)
+script = ExtResource("8_vhny7")
+map = NodePath("../../..")
+signal_id = 6
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1L17" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1678, 480)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask2/Train1SpriteR24" instance=ExtResource("10_o5p86")]
+position = Vector2(216.77, -40)
+rotation = -1.5708
+scale = Vector2(0.65, 1)
 
-[node name="Train1L18" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1678, 560)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="TrainMask3" type="Sprite2D" parent="ObstacleElements"]
+clip_children = 1
+z_index = 33
+z_as_relative = false
+texture = ExtResource("7_0tmrk")
+offset = Vector2(719.885, 632.745)
 
-[node name="Train1L19" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1758, 480)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L20" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1758, 560)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L21" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1838, 480)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L22" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1838, 560)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L23" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1918, 480)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L24" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1918, 560)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L25" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1998, 480)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L26" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1998, 560)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L27" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2078, 480)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L28" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2078, 560)
-collision_layer = 4128
-signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1SpriteL21" type="AnimatedSprite2D" parent="ObstacleElements"]
+[node name="Train1SpriteL21" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask3" node_paths=PackedStringArray("map")]
 z_index = 33
 z_as_relative = false
 position = Vector2(1998, 720)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
+offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 2
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1SpriteL24" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
+[node name="Train1SpriteL24" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask3" node_paths=PackedStringArray("map")]
+z_index = 33
 z_as_relative = false
 position = Vector2(1600, 720)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 2
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteL24" instance=ExtResource("10_o5p86")]
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask3/Train1SpriteL24" instance=ExtResource("10_o5p86")]
 position = Vector2(216.77, -40)
 rotation = -1.5708
 scale = Vector2(0.65, 1)
 
-[node name="Train1L29" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1598, 640)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="Train1SpriteR13" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask3" node_paths=PackedStringArray("map")]
+z_index = 33
+z_as_relative = false
+position = Vector2(-560, 720)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_0tmrk")
+offset = Vector2(-68.92, -100)
+script = ExtResource("8_vhny7")
+map = NodePath("../../..")
+signal_id = 5
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1L30" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1598, 720)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="Train1SpriteR16" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask3" node_paths=PackedStringArray("map")]
+z_index = 33
+z_as_relative = false
+position = Vector2(-160, 720)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_q3fa0")
+offset = Vector2(-20, -40)
+script = ExtResource("8_vhny7")
+map = NodePath("../../..")
+signal_id = 5
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1L31" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1678, 640)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask3/Train1SpriteR16" instance=ExtResource("10_o5p86")]
+position = Vector2(216.77, -40)
+rotation = -1.5708
+scale = Vector2(0.65, 1)
 
-[node name="Train1L32" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1678, 720)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+[node name="TrainMask4" type="Sprite2D" parent="ObstacleElements"]
+clip_children = 1
+z_index = 38
+z_as_relative = false
+texture = ExtResource("7_0tmrk")
+offset = Vector2(719.885, 632.745)
 
-[node name="Train1L33" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1758, 640)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L34" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1758, 720)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L35" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1838, 640)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L36" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1838, 720)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L37" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1918, 640)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L38" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1918, 720)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L39" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1998, 640)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L40" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1998, 720)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L41" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2078, 640)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L42" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2078, 720)
-collision_layer = 4128
-signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1SpriteL29" type="AnimatedSprite2D" parent="ObstacleElements"]
+[node name="Train1SpriteL29" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask4" node_paths=PackedStringArray("map")]
 z_index = 38
 z_as_relative = false
 position = Vector2(1998, 1120)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
+offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 3
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1SpriteL32" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
+[node name="Train1SpriteL32" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask4" node_paths=PackedStringArray("map")]
+z_index = 38
 z_as_relative = false
 position = Vector2(1600, 1120)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 3
 path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteL32" instance=ExtResource("10_o5p86")]
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask4/Train1SpriteL32" instance=ExtResource("10_o5p86")]
 position = Vector2(216.77, -40)
 rotation = -1.5708
 scale = Vector2(0.65, 1)
 
-[node name="Train1L43" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1598, 1040)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L44" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1598, 1120)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L45" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1678, 1040)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L46" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1678, 1120)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L47" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1758, 1040)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L48" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1758, 1120)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L49" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1838, 1040)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L50" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1838, 1120)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L51" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1918, 1040)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L52" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1918, 1120)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L53" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1998, 1040)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L54" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(1998, 1120)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L55" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2078, 1040)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1L56" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
-position = Vector2(2078, 1120)
-collision_layer = 4128
-signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
-
-[node name="Train1SpriteR5" type="AnimatedSprite2D" parent="ObstacleElements"]
+[node name="Train1SpriteR5" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask4" node_paths=PackedStringArray("map")]
 z_index = 38
 z_as_relative = false
 position = Vector2(-560, 1120)
-scale = Vector2(-1, 1)
+rotation = 3.14159
+scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
+offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="Train1SpriteR8" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
+[node name="Train1SpriteR8" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask4" node_paths=PackedStringArray("map")]
+z_index = 38
 z_as_relative = false
 position = Vector2(-160, 1120)
-scale = Vector2(-1, 1)
+rotation = 3.14159
+scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_q3fa0")
 offset = Vector2(-20, -40)
 script = ExtResource("8_vhny7")
+map = NodePath("../../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteR8" instance=ExtResource("10_o5p86")]
+[node name="DarknessBanisher" parent="ObstacleElements/TrainMask4/Train1SpriteR8" instance=ExtResource("10_o5p86")]
 position = Vector2(216.77, -40)
 rotation = -1.5708
 scale = Vector2(0.65, 1)
 
-[node name="Train1R" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1L" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1600, 80)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L2" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1600, 160)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L3" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1680, 80)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L4" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1680, 160)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L5" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1760, 80)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L6" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1760, 160)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L7" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1840, 80)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L8" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1840, 160)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L9" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1920, 80)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L10" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1920, 160)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L11" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2000, 80)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L12" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2000, 160)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L13" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2080, 80)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L14" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2080, 160)
+collision_layer = 4128
+map = NodePath("../..")
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L15" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1598, 480)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L16" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1598, 560)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L17" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1678, 480)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L18" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1678, 560)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L19" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1758, 480)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L20" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1758, 560)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L21" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1838, 480)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L22" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1838, 560)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L23" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1918, 480)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L24" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1918, 560)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L25" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1998, 480)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L26" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1998, 560)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L27" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2078, 480)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L28" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2078, 560)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 1
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L29" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1598, 640)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L30" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1598, 720)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L31" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1678, 640)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L32" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1678, 720)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L33" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1758, 640)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L34" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1758, 720)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L35" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1838, 640)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L36" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1838, 720)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L37" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1918, 640)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L38" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1918, 720)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L39" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1998, 640)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L40" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1998, 720)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L41" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2078, 640)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L42" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2078, 720)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 2
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L43" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1598, 1040)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L44" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1598, 1120)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L45" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1678, 1040)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L46" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1678, 1120)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L47" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1758, 1040)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L48" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1758, 1120)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L49" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1838, 1040)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L50" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1838, 1120)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L51" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1918, 1040)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L52" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1918, 1120)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L53" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1998, 1040)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L54" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(1998, 1120)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L55" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2078, 1040)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1L56" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+position = Vector2(2078, 1120)
+collision_layer = 4128
+map = NodePath("../..")
+signal_id = 3
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3])
+
+[node name="Train1R" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 1040)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R2" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R2" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 1120)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R3" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R3" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 1040)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R4" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R4" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 1120)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R5" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R5" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 1040)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R6" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R6" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 1120)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R7" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R7" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 1040)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R8" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R8" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 1120)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R9" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R9" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 1040)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R10" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R10" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 1120)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R11" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R11" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 1040)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R12" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R12" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 1120)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R13" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R13" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 1040)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R14" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R14" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 1120)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 4
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1SpriteR13" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 33
-position = Vector2(-560, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR16" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
-z_as_relative = false
-position = Vector2(-160, 720)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_q3fa0")
-offset = Vector2(-20, -40)
-script = ExtResource("8_vhny7")
-signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteR16" instance=ExtResource("10_o5p86")]
-position = Vector2(216.77, -40)
-rotation = -1.5708
-scale = Vector2(0.65, 1)
-
-[node name="Train1R15" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R15" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 640)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R16" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R16" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 720)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R17" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R17" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 640)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R18" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R18" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 720)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R19" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R19" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 640)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R20" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R20" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 720)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R21" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R21" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 640)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R22" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R22" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 720)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R23" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R23" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 640)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R24" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R24" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 720)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R25" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R25" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 640)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R26" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R26" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 720)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R27" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R27" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 640)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R28" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R28" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 720)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 5
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1SpriteR21" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 31
-z_as_relative = false
-position = Vector2(-560, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR24" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
-z_as_relative = false
-position = Vector2(-160, 560)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_q3fa0")
-offset = Vector2(-20, -40)
-script = ExtResource("8_vhny7")
-signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteR24" instance=ExtResource("10_o5p86")]
-position = Vector2(216.77, -40)
-rotation = -1.5708
-scale = Vector2(0.65, 1)
-
-[node name="Train1R29" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R29" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 480)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R30" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R30" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 560)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R31" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R31" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 480)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R32" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R32" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 560)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R33" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R33" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 480)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R34" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R34" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 560)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R35" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R35" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 480)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R36" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R36" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 560)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R37" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R37" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 480)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R38" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R38" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 560)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R39" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R39" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 480)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R40" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R40" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 560)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R41" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R41" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 480)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R42" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R42" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 560)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 6
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1SpriteR29" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 26
-z_as_relative = false
-position = Vector2(-560, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_0tmrk")
-offset = Vector2(-100, -100)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="Train1SpriteR32" type="AnimatedSprite2D" parent="ObstacleElements"]
-z_index = 54
-z_as_relative = false
-position = Vector2(-160, 160)
-scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_q3fa0")
-offset = Vector2(-20, -40)
-script = ExtResource("8_vhny7")
-signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
-metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
-
-[node name="DarknessBanisher" parent="ObstacleElements/Train1SpriteR32" instance=ExtResource("10_o5p86")]
-position = Vector2(216.77, -40)
-rotation = -1.5708
-scale = Vector2(0.65, 1)
-
-[node name="Train1R43" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R43" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 80)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R44" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R44" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-160, 160)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R45" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R45" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 80)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R46" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R46" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-240, 160)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R47" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R47" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 80)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R48" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R48" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-320, 160)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R49" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R49" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 80)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R50" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R50" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-400, 160)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R51" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R51" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 80)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R52" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R52" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-480, 160)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R53" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R53" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 80)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R54" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R54" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-560, 160)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R55" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R55" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 80)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
-[node name="Train1R56" parent="ObstacleElements" groups=["Tide4"] instance=ExtResource("10_q3fa0")]
+[node name="Train1R56" parent="ObstacleElements" node_paths=PackedStringArray("map") groups=["Tide4"] instance=ExtResource("10_q3fa0")]
 position = Vector2(-640, 160)
 collision_layer = 4128
+map = NodePath("../..")
 signal_id = 7
 path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1])
 
@@ -1821,12 +1987,13 @@ position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_o5p86")
 
 [node name="MapBridge" type="Sprite2D" parent="."]
-z_index = 50
+z_index = 1
 z_as_relative = false
-position = Vector2(560, 640)
-texture = ExtResource("14_rdnci")
+position = Vector2(720, 640)
+texture = ExtResource("14_0tmrk")
 
 [node name="CoverCeiling" parent="." instance=ExtResource("16_mmild")]
+visible = false
 position = Vector2(560, 640)
 texture = ExtResource("17_0tmrk")
 sprite = ExtResource("17_0tmrk")
