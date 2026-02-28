@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dhf4trfl7kprx"]
+[gd_scene load_steps=25 format=3 uid="uid://dhf4trfl7kprx"]
 
 [ext_resource type="Texture2D" uid="uid://dbmnic3piame1" path="res://Levels/TrainMap/TrainMap.svg" id="1_ipgus"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_fkbrw"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://oneg5gkw7e6" path="res://Levels/TrainMap/TrainMapBridge.png" id="14_rdnci"]
 [ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="16_mmild"]
 [ext_resource type="Texture2D" uid="uid://sj42hxclgf48" path="res://Levels/TrainMap/TrainMapCeiling.svg" id="17_0tmrk"]
+[ext_resource type="Texture2D" uid="uid://4hcucgrff62g" path="res://Levels/TrainMap/TrainCactus.svg" id="18_0tmrk"]
+[ext_resource type="Texture2D" uid="uid://bqhxuw2grb5gg" path="res://Levels/TrainMap/TrainCactus2.svg" id="19_6hcfm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6p4ef"]
 animations = [{
@@ -223,6 +225,12 @@ position = Vector2(1280, 320)
 
 [node name="SolidElementArea42" parent="SolidElements" instance=ExtResource("4_lshr8")]
 position = Vector2(1120, 880)
+
+[node name="SolidElementArea137" parent="SolidElements" instance=ExtResource("4_lshr8")]
+position = Vector2(80, 880)
+
+[node name="SolidElementArea138" parent="SolidElements" instance=ExtResource("4_lshr8")]
+position = Vector2(1360, 880)
 
 [node name="SolidElementArea43" parent="SolidElements" instance=ExtResource("4_lshr8")]
 position = Vector2(720, 1280)
@@ -737,9 +745,6 @@ position = Vector2(1360, 720)
 
 [node name="SolidElementArea10" parent="AreaSize2SolidElements" instance=ExtResource("4_lshr8")]
 position = Vector2(1360, 800)
-
-[node name="SolidElementArea11" parent="AreaSize2SolidElements" instance=ExtResource("4_lshr8")]
-position = Vector2(1360, 880)
 
 [node name="SolidElementArea12" parent="AreaSize2SolidElements" instance=ExtResource("4_lshr8")]
 position = Vector2(1360, 960)
@@ -2269,6 +2274,48 @@ sprite = ExtResource("17_0tmrk")
 
 [node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
 polygon = PackedVector2Array(280, -760, -280, -760, -280, 760, 280, 760)
+
+[node name="Cactus1" type="Sprite2D" parent="."]
+z_index = 29
+z_as_relative = false
+position = Vector2(1026, 474)
+texture = ExtResource("18_0tmrk")
+
+[node name="Cactus3" type="Sprite2D" parent="."]
+z_index = 29
+z_as_relative = false
+position = Vector2(-105, 449)
+scale = Vector2(1.09764, 0.828861)
+texture = ExtResource("18_0tmrk")
+
+[node name="Cactus2" type="Sprite2D" parent="."]
+z_index = 36
+z_as_relative = false
+position = Vector2(1283, 1042)
+scale = Vector2(0.84739, 1.07078)
+texture = ExtResource("18_0tmrk")
+
+[node name="Cactus4" type="Sprite2D" parent="."]
+z_index = 28
+z_as_relative = false
+position = Vector2(987, 1019)
+scale = Vector2(0.759509, 0.764759)
+texture = ExtResource("19_6hcfm")
+flip_h = true
+
+[node name="Cactus5" type="Sprite2D" parent="."]
+z_index = 36
+z_as_relative = false
+position = Vector2(1455, 474)
+scale = Vector2(1.02868, 0.848095)
+texture = ExtResource("19_6hcfm")
+
+[node name="Cactus6" type="Sprite2D" parent="."]
+z_index = 28
+z_as_relative = false
+position = Vector2(255, 1027)
+scale = Vector2(1.02868, 0.848095)
+texture = ExtResource("19_6hcfm")
 
 [connection signal="area_entered" from="ObstacleDisabler" to="ObstacleDisabler" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler2" to="ObstacleDisabler2" method="_on_area_entered"]
