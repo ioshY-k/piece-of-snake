@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		rolling_in = true
 	if tongue_area.has_overlapping_areas():
 		for obstacle in tongue_area.get_overlapping_areas():
-			if obstacle.get_collision_layer_value(1):#solid
+			if obstacle.get_collision_layer_value(1) or obstacle.get_collision_layer_value(6):#solid or obstacle
 				rolling_in = true
 				break
 			elif obstacle.get_collision_layer_value(2) and not obstacle.collected and not rolling_in:#uncollected fruit

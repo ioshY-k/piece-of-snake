@@ -31,6 +31,7 @@ func _on_item_activated(_uses):
 	var tongue: Tongue = TONGUE.instantiate()
 	current_map.snake_head.add_child(tongue)
 	tongue.tongue_area.set_collision_mask_value(1,false)
+	tongue.tongue_area.set_collision_mask_value(6,false)
 
 func self_destruct():
 	active_item_slot.remove_lights()

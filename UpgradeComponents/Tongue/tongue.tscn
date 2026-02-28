@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d4nsba4effe14" path="res://UpgradeComponents/Tongue/TongueMask.svg" id="2_x1y6y"]
 [ext_resource type="Texture2D" uid="uid://6xtir5bqbbbr" path="res://UpgradeComponents/Tongue/Tongue.svg" id="3_o2fgc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x1y6y"]
-radius = 23.0214
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1y6y"]
+radius = 23.0
+height = 132.0
 
 [node name="Tongue" type="Node2D"]
 script = ExtResource("1_b8bgl")
@@ -21,10 +22,11 @@ position = Vector2(-1758, 0.00389688)
 texture = ExtResource("3_o2fgc")
 
 [node name="TongueArea" type="Area2D" parent="TongueMask/TongueSprite"]
-position = Vector2(3, 0.00711466)
+position = Vector2(-28, 0.00730917)
 collision_layer = 0
-collision_mask = 3
+collision_mask = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TongueMask/TongueSprite/TongueArea"]
 position = Vector2(860, -0.00539597)
-shape = SubResource("CircleShape2D_x1y6y")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_x1y6y")
