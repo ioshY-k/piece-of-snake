@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dhf4trfl7kprx"]
+[gd_scene load_steps=26 format=3 uid="uid://dhf4trfl7kprx"]
 
 [ext_resource type="Texture2D" uid="uid://dbmnic3piame1" path="res://Levels/TrainMap/TrainMap.svg" id="1_ipgus"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_fkbrw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://wdhaxjf7gg2h" path="res://MapElements/ObstacleElement/obstacle_element.gd" id="8_vhny7"]
 [ext_resource type="Texture2D" uid="uid://bx5byxuf30jb5" path="res://Levels/TrainMap/TrainHeadlight.svg" id="9_6p4ef"]
 [ext_resource type="Texture2D" uid="uid://cdu050js5ghat" path="res://Levels/TrainMap/Train2.svg" id="9_rty63"]
+[ext_resource type="Texture2D" uid="uid://bajr025dq2t0n" path="res://Levels/TrainMap/Train.svg" id="10_6uvjd"]
 [ext_resource type="Texture2D" uid="uid://carbh82imqcxt" path="res://Levels/TrainMap/Train3.svg" id="10_mmild"]
 [ext_resource type="PackedScene" uid="uid://dompb7mk0mpyh" path="res://MapModComponents/Dark/darkness_banisher.tscn" id="10_o5p86"]
 [ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="10_q3fa0"]
@@ -36,6 +37,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("9_rty63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6uvjd")
 }],
 "loop": true,
 "name": &"default",
