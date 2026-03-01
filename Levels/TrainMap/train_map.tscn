@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhf4trfl7kprx"]
+[gd_scene load_steps=25 format=3 uid="uid://dhf4trfl7kprx"]
 
 [ext_resource type="Texture2D" uid="uid://dbmnic3piame1" path="res://Levels/TrainMap/TrainMap.svg" id="1_ipgus"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_fkbrw"]
@@ -14,10 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://8x8nslmvyjj6" path="res://MapElements/ObstacleElement/obstacle_hitbox_element.tscn" id="10_q3fa0"]
 [ext_resource type="Script" uid="uid://cfxaspaqj3akq" path="res://MapElements/ObstacleElement/obstacle_disabler.gd" id="12_hslk7"]
 [ext_resource type="Texture2D" uid="uid://dtas1wmyca1s" path="res://Levels/TrainMap/TrainMapBridge.svg" id="14_0tmrk"]
+[ext_resource type="Texture2D" uid="uid://d17emtua8x0fr" path="res://Levels/TrainMap/TrainMapBarrel.svg" id="15_6hcfm"]
+[ext_resource type="Texture2D" uid="uid://boowfpprqp5ku" path="res://Levels/TrainMap/TrainMapStairs.svg" id="15_6uvjd"]
 [ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="16_mmild"]
 [ext_resource type="Texture2D" uid="uid://sj42hxclgf48" path="res://Levels/TrainMap/TrainMapCeiling.svg" id="17_0tmrk"]
 [ext_resource type="Texture2D" uid="uid://4hcucgrff62g" path="res://Levels/TrainMap/TrainCactus.svg" id="18_0tmrk"]
 [ext_resource type="Texture2D" uid="uid://bqhxuw2grb5gg" path="res://Levels/TrainMap/TrainCactus2.svg" id="19_6hcfm"]
+[ext_resource type="Texture2D" uid="uid://t0p82ub4ou8b" path="res://Levels/TrainMap/TrainMapCeilingShadow.svg" id="19_ocblt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tmrk"]
 animations = [{
@@ -899,7 +902,7 @@ sprite_frames = SubResource("SpriteFrames_0tmrk")
 offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL8" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask1" node_paths=PackedStringArray("map")]
@@ -929,7 +932,7 @@ offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
 signal_id = 7
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR32" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask1" node_paths=PackedStringArray("map")]
@@ -967,7 +970,7 @@ offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
 signal_id = 1
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL16" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask2" node_paths=PackedStringArray("map")]
@@ -998,7 +1001,7 @@ offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
 signal_id = 6
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR24" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask2" node_paths=PackedStringArray("map")]
@@ -1036,7 +1039,7 @@ offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
 signal_id = 2
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL24" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask3" node_paths=PackedStringArray("map")]
@@ -1067,7 +1070,7 @@ offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
 signal_id = 5
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR16" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask3" node_paths=PackedStringArray("map")]
@@ -1105,7 +1108,7 @@ offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
 signal_id = 3
-path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3])
+path = Array[int]([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteL32" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask4" node_paths=PackedStringArray("map")]
@@ -1136,7 +1139,7 @@ offset = Vector2(-68.92, -100)
 script = ExtResource("8_vhny7")
 map = NodePath("../../..")
 signal_id = 4
-path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1])
+path = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 metadata/_custom_type_script = "uid://wdhaxjf7gg2h"
 
 [node name="Train1SpriteR8" type="AnimatedSprite2D" parent="ObstacleElements/TrainMask4" node_paths=PackedStringArray("map")]
@@ -1992,14 +1995,192 @@ z_as_relative = false
 position = Vector2(720, 640)
 texture = ExtResource("14_0tmrk")
 
+[node name="Stairs1" type="Sprite2D" parent="."]
+position = Vector2(276, 327)
+texture = ExtResource("15_6uvjd")
+
+[node name="Stairs2" type="Sprite2D" parent="."]
+position = Vector2(276, 887)
+texture = ExtResource("15_6uvjd")
+
+[node name="Stairs3" type="Sprite2D" parent="."]
+position = Vector2(848.5, 327)
+texture = ExtResource("15_6uvjd")
+flip_h = true
+
+[node name="Stairs4" type="Sprite2D" parent="."]
+position = Vector2(848.5, 887)
+texture = ExtResource("15_6uvjd")
+flip_h = true
+
+[node name="Barrel1" type="Sprite2D" parent="."]
+z_index = 25
+z_as_relative = false
+position = Vector2(404, -9)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel2" type="Sprite2D" parent="."]
+z_index = 25
+z_as_relative = false
+position = Vector2(711, -7)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel3" type="Sprite2D" parent="."]
+z_index = 26
+z_as_relative = false
+position = Vector2(407, 79)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel4" type="Sprite2D" parent="."]
+z_index = 26
+z_as_relative = false
+position = Vector2(720, 62)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel5" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(390.31, 130.42)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel6" type="Sprite2D" parent="."]
+z_index = 27
+z_as_relative = false
+position = Vector2(715.81, 130.42)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel7" type="Sprite2D" parent="."]
+z_index = 31
+z_as_relative = false
+position = Vector2(404, 459)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel8" type="Sprite2D" parent="."]
+z_index = 31
+z_as_relative = false
+position = Vector2(720, 459)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel9" type="Sprite2D" parent="."]
+z_index = 32
+z_as_relative = false
+position = Vector2(404, 533)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel10" type="Sprite2D" parent="."]
+z_index = 32
+z_as_relative = false
+position = Vector2(720, 533)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel11" type="Sprite2D" parent="."]
+z_index = 33
+z_as_relative = false
+position = Vector2(399.81, 609.42)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel12" type="Sprite2D" parent="."]
+z_index = 33
+z_as_relative = false
+position = Vector2(720, 616)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel13" type="Sprite2D" parent="."]
+z_index = 34
+z_as_relative = false
+position = Vector2(404, 698)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel14" type="Sprite2D" parent="."]
+z_index = 34
+z_as_relative = false
+position = Vector2(725.5, 692)
+scale = Vector2(0.905, 0.905)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel15" type="Sprite2D" parent="."]
+z_index = 38
+z_as_relative = false
+position = Vector2(404, 1013)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel16" type="Sprite2D" parent="."]
+z_index = 38
+z_as_relative = false
+position = Vector2(710.31, 1012.42)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel17" type="Sprite2D" parent="."]
+z_index = 39
+z_as_relative = false
+position = Vector2(404, 1089)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel18" type="Sprite2D" parent="."]
+z_index = 39
+z_as_relative = false
+position = Vector2(710.31, 1088.42)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel19" type="Sprite2D" parent="."]
+z_index = 40
+z_as_relative = false
+position = Vector2(409.5, 1167)
+scale = Vector2(0.905, 0.905)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel20" type="Sprite2D" parent="."]
+z_index = 40
+z_as_relative = false
+position = Vector2(725.5, 1167)
+scale = Vector2(0.905, 0.905)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel21" type="Sprite2D" parent="."]
+z_index = 41
+z_as_relative = false
+position = Vector2(404, 1253)
+texture = ExtResource("15_6hcfm")
+
+[node name="Barrel22" type="Sprite2D" parent="."]
+z_index = 41
+z_as_relative = false
+position = Vector2(710.31, 1252.42)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("15_6hcfm")
+
+[node name="CeilingShadow1" type="Sprite2D" parent="."]
+z_index = 55
+z_as_relative = false
+position = Vector2(562, 1000)
+texture = ExtResource("19_ocblt")
+
+[node name="CeilingShadow2" type="Sprite2D" parent="."]
+z_index = 55
+z_as_relative = false
+position = Vector2(562, 209)
+texture = ExtResource("19_ocblt")
+
 [node name="CoverCeiling" parent="." instance=ExtResource("16_mmild")]
-visible = false
-position = Vector2(560, 640)
+position = Vector2(500, 1020)
 texture = ExtResource("17_0tmrk")
 sprite = ExtResource("17_0tmrk")
 
 [node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
-polygon = PackedVector2Array(280, -760, -280, -760, -280, 760, 280, 760)
+polygon = PackedVector2Array(260, -600, -280, -380, -280, 520, 260, 300)
+
+[node name="CoverCeiling2" parent="." instance=ExtResource("16_mmild")]
+position = Vector2(500, 120)
+texture = ExtResource("17_0tmrk")
+sprite = ExtResource("17_0tmrk")
+
+[node name="CollisionPolygon2D" parent="CoverCeiling2/Area2D" index="0"]
+polygon = PackedVector2Array(260, -600, -280, -380, -280, 520, 260, 300)
 
 [node name="Cactus1" type="Sprite2D" parent="."]
 z_index = 29
@@ -2022,7 +2203,7 @@ scale = Vector2(0.84739, 1.07078)
 texture = ExtResource("18_0tmrk")
 
 [node name="Cactus4" type="Sprite2D" parent="."]
-z_index = 28
+z_index = 36
 z_as_relative = false
 position = Vector2(987, 1019)
 scale = Vector2(0.759509, 0.764759)
@@ -2030,14 +2211,14 @@ texture = ExtResource("19_6hcfm")
 flip_h = true
 
 [node name="Cactus5" type="Sprite2D" parent="."]
-z_index = 36
+z_index = 29
 z_as_relative = false
 position = Vector2(1455, 474)
 scale = Vector2(1.02868, 0.848095)
 texture = ExtResource("19_6hcfm")
 
 [node name="Cactus6" type="Sprite2D" parent="."]
-z_index = 28
+z_index = 36
 z_as_relative = false
 position = Vector2(255, 1027)
 scale = Vector2(1.02868, 0.848095)
@@ -2051,3 +2232,4 @@ texture = ExtResource("19_6hcfm")
 [connection signal="area_entered" from="ObstacleDisabler6" to="ObstacleDisabler6" method="_on_area_entered"]
 
 [editable path="CoverCeiling"]
+[editable path="CoverCeiling2"]
