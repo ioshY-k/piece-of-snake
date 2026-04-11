@@ -16,7 +16,7 @@ func spawn(pos):
 	position = pos
 	while scale <= Vector2(0.27,0.27):
 		scale = lerp(scale, Vector2(0.28,0.28), 0.1)
-		if get_tree() != null:
+		if is_inside_tree():
 			await get_tree().process_frame
 	cpu_particles_2d.emitting = true
 
