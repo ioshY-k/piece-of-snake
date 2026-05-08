@@ -103,10 +103,21 @@ func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [
 								
+								GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
+								GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
+								GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,
+								GameConsts.UPGRADE_LIST.TONGUE_1,
 								GameConsts.UPGRADE_LIST.DANCE,
+								GameConsts.UPGRADE_LIST.COATING,
+								GameConsts.UPGRADE_LIST.CATCH,
+								GameConsts.UPGRADE_LIST.TONGUE_1,
 								GameConsts.UPGRADE_LIST.DANCE,
+								GameConsts.UPGRADE_LIST.COATING,
+								GameConsts.UPGRADE_LIST.CATCH,
+								GameConsts.UPGRADE_LIST.TONGUE_1,
 								GameConsts.UPGRADE_LIST.DANCE,
-								GameConsts.UPGRADE_LIST.DANCE,
+								GameConsts.UPGRADE_LIST.COATING,
+								GameConsts.UPGRADE_LIST.CATCH,
 		]
 									
 	
@@ -139,7 +150,7 @@ func _ready() -> void:
 		slots.append($UpgradeOverview/UpgradeSlotRainbow)
 	else:
 		$UpgradeOverview/UpgradeSlotRainbow.queue_free()
-	
+		$UpgradeOverview/SlotSpriteRainbow.hide()
 	$ItemShelf.hide()
 	
 	#mechanism to hide salamander upgrade added at start

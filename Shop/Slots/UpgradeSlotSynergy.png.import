@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b01ruv64lpkgs"
-path="res://.godot/imported/SlotTypePassive.png-dc707e1b897d2359b845b0f0b4ba474b.ctex"
+uid="uid://bmtfx2m2psmdj"
+path="res://.godot/imported/UpgradeSlotSynergy.png-4b355dbcf25332476e52e18d8c214e44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/Slottypes/SlotTypePassive.png"
-dest_files=["res://.godot/imported/SlotTypePassive.png-dc707e1b897d2359b845b0f0b4ba474b.ctex"]
+source_file="res://Shop/Slots/UpgradeSlotSynergy.png"
+dest_files=["res://.godot/imported/UpgradeSlotSynergy.png-4b355dbcf25332476e52e18d8c214e44.ctex"]
 
 [params]
 

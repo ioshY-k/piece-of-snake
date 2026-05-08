@@ -25,9 +25,9 @@ func change_item_description(upgrade_card: UpgradeCard):
 			upgrade_info.get_node("VBoxContainer/ToolTipText").text += keyword_description
 		upgrade_info.show()
 		upgrade_info.modulate.a = 0.0
-		upgrade_info.position.y = 911
+		upgrade_info.position.y = 941
 		upgrade_info_tween = create_tween().set_parallel().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-		upgrade_info_tween.tween_property(upgrade_info, "position:y", 870, 0.5)
+		upgrade_info_tween.tween_property(upgrade_info, "position:y", 896, 0.5)
 		upgrade_info_tween.tween_property(upgrade_info, "modulate:a", 1.0, 0.5)
 
 		current_description_id = upgrade_card.upgrade_id

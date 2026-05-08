@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://l38062djgpxk"]
+[gd_scene load_steps=67 format=3 uid="uid://l38062djgpxk"]
 
 [ext_resource type="Script" uid="uid://bimpm2g7vcrk" path="res://Shop/shop.gd" id="1_oy471"]
 [ext_resource type="Texture2D" uid="uid://obnifq5ymbgd" path="res://Shop/Backgrounds/ItemShelfPanel.svg" id="2_7wam5"]
@@ -38,24 +38,18 @@
 [ext_resource type="Texture2D" uid="uid://cdhi6mv1qy6aw" path="res://Shop/UI/Divider.svg" id="24_7hl21"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="26_qix85"]
 [ext_resource type="Texture2D" uid="uid://dnbllgiivo7ym" path="res://VisualEffects/ParticleSprite.svg" id="27_fpme6"]
-[ext_resource type="Texture2D" uid="uid://ojgdj14q4kww" path="res://Shop/Slots/UpgradeSlotSpecial.svg" id="27_tnl66"]
+[ext_resource type="Texture2D" uid="uid://be5678d0lka3a" path="res://Shop/Slots/UpgradeSlotSpecial.png" id="27_ypgte"]
 [ext_resource type="Texture2D" uid="uid://jcvukqga3igs" path="res://Shop/UI/MapmodInfo.svg" id="28_6exio"]
 [ext_resource type="PackedScene" uid="uid://bs0m1mtsyjoc8" path="res://Shop/MapPreviews/map_preview.tscn" id="29_m3qfn"]
-[ext_resource type="Texture2D" uid="uid://lvju0bof44i" path="res://Shop/Slots/UpgradeSlotDefault.svg" id="29_tnl66"]
-[ext_resource type="Texture2D" uid="uid://cqdokogdfha3l" path="res://Shop/Slots/UpgradeSlotActive.svg" id="31_tnl66"]
-[ext_resource type="Texture2D" uid="uid://l2ktv7yb4t63" path="res://Shop/Slots/UpgradeSlotSynergy.svg" id="33_72w2q"]
-[ext_resource type="Texture2D" uid="uid://b3tfulqktu4dm" path="res://Shop/Slottypes/SlotTypeBodymod.png" id="33_jykkx"]
+[ext_resource type="Texture2D" uid="uid://bexlf81lg6j68" path="res://Shop/Slots/UpgradeSlotDefault.png" id="29_vnaoq"]
+[ext_resource type="Texture2D" uid="uid://bhlsldx2k3bd" path="res://Shop/Slots/UpgradeSlotActive.png" id="31_ypgte"]
+[ext_resource type="Texture2D" uid="uid://bmtfx2m2psmdj" path="res://Shop/Slots/UpgradeSlotSynergy.png" id="33_dha0m"]
 [ext_resource type="PackedScene" uid="uid://8hfpxbbs5ejs" path="res://Shop/end_screen.tscn" id="33_m3qfn"]
-[ext_resource type="Texture2D" uid="uid://8ob8i1lcfscf" path="res://Shop/Slottypes/SlotTypeSynergy.png" id="34_2rn4p"]
-[ext_resource type="Texture2D" uid="uid://bx8nrjt1buh0i" path="res://Shop/Slottypes/SlotTypeActive.png" id="35_doc8j"]
-[ext_resource type="Texture2D" uid="uid://b7gyck5pps0q8" path="res://Shop/Slots/UpgradeSlotPassive.svg" id="35_u0rrs"]
-[ext_resource type="Texture2D" uid="uid://d321vlqgj2u63" path="res://Shop/Slottypes/SlotTypeSpecial.png" id="36_y2q02"]
-[ext_resource type="Texture2D" uid="uid://5oullil0kwrd" path="res://Shop/Slots/UpgradeSlotBodymod.svg" id="37_tnl66"]
-[ext_resource type="Texture2D" uid="uid://b5mbkf6mg1oat" path="res://Shop/Slottypes/SlotTypeDefault.png" id="37_v001g"]
-[ext_resource type="Texture2D" uid="uid://b01ruv64lpkgs" path="res://Shop/Slottypes/SlotTypePassive.png" id="38_3rb3p"]
+[ext_resource type="Texture2D" uid="uid://c8alk1gab8nqo" path="res://Shop/Slots/UpgradeSlotPassive.png" id="35_ypgte"]
+[ext_resource type="Texture2D" uid="uid://ch1moe0xu2vlx" path="res://Shop/Slots/UpgradeSlotBodymod.png" id="37_ypgte"]
 [ext_resource type="AudioStream" uid="uid://x0jm6gfjswja" path="res://Shop/Sfx/CardDeal.wav" id="40_12c50"]
 [ext_resource type="AudioStream" uid="uid://c1jyabebv6bq2" path="res://UI/ButtonPress.wav" id="41_cug3m"]
-[ext_resource type="Texture2D" uid="uid://b8yrc1fq83qc1" path="res://Shop/Slots/UpgradeSlotRainbow.svg" id="45_ypgte"]
+[ext_resource type="Texture2D" uid="uid://dyd2y4kpniq4n" path="res://Shop/Slots/UpgradeSlotRainbow.png" id="45_fiogm"]
 [ext_resource type="Texture2D" uid="uid://wh7th4c8vkru" path="res://Shop/UI/NextRoundButtonNormal.svg" id="49_ypgte"]
 [ext_resource type="Texture2D" uid="uid://bjlidxc30mrxj" path="res://Shop/UI/NextRoundButtonPressed.svg" id="50_vnaoq"]
 [ext_resource type="Texture2D" uid="uid://drkdhwnb6m6px" path="res://Shop/UI/NextRoundButtonHovered.svg" id="51_dha0m"]
@@ -280,9 +274,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -118.0
+offset_left = -132.0
 offset_top = 195.0
-offset_right = -38.0
+offset_right = -52.0
 offset_bottom = 275.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -336,9 +330,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 32.0
+offset_left = 48.0
 offset_top = 195.0
-offset_right = 112.0
+offset_right = 128.0
 offset_bottom = 275.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -728,9 +722,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -198.0
+offset_left = -212.0
 offset_top = -205.0
-offset_right = -118.0
+offset_right = -132.0
 offset_bottom = -125.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -784,9 +778,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -38.0
+offset_left = -42.0
 offset_top = -205.0
-offset_right = 42.0
+offset_right = 38.0
 offset_bottom = -125.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -840,9 +834,9 @@ z_index = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_left = 122.0
+offset_left = 128.0
 offset_top = -205.0
-offset_right = 202.0
+offset_right = 208.0
 offset_bottom = -125.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
@@ -948,62 +942,80 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("10_7hl21")
 
 [node name="SlotSpriteSpecial" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(2, 435)
-texture = ExtResource("27_tnl66")
+position = Vector2(-0.75, 432.508)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_ypgte")
+offset = Vector2(3.945, 12.625)
 
 [node name="Symbol" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
 position = Vector2(2, 435)
 texture = ExtResource("4_ymhk7")
+offset = Vector2(0, 6.665)
 
 [node name="SlotSpriteDefault" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(227, 435)
-texture = ExtResource("29_tnl66")
+position = Vector2(224.25, 432.508)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("29_vnaoq")
+offset = Vector2(0, 20.51)
 
 [node name="Symbol2" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
 position = Vector2(227, 435)
 texture = ExtResource("6_7wam5")
+offset = Vector2(0, 6.005)
 
 [node name="SlotSpriteActive1" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(-78, 235)
-texture = ExtResource("31_tnl66")
+position = Vector2(-94.75, 232.508)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("31_ypgte")
+offset = Vector2(2.41, 27.37)
 
 [node name="Symbol3" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
-position = Vector2(-78, 235)
+position = Vector2(-92, 235)
 texture = ExtResource("6_n3cld")
 
 [node name="SlotSpriteActive2" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(72, 235)
-texture = ExtResource("31_tnl66")
+position = Vector2(85.25, 232.508)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("31_ypgte")
+offset = Vector2(2.41, 27.37)
 
 [node name="Symbol4" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
-position = Vector2(72, 235)
+position = Vector2(88, 235)
 texture = ExtResource("6_n3cld")
 
 [node name="SlotSpriteSynergy1" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(122, 35)
-texture = ExtResource("33_72w2q")
+position = Vector2(119.25, 32.5075)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_dha0m")
+offset = Vector2(4.385, 13.715)
 
 [node name="Symbol5" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
 position = Vector2(122, 35)
 texture = ExtResource("10_mq2pp")
+offset = Vector2(0, 13.15)
 
 [node name="SlotSpriteSynergy2" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(-118, 35)
-texture = ExtResource("33_72w2q")
+position = Vector2(-120.75, 32.5075)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_dha0m")
+offset = Vector2(4.385, 13.715)
 
 [node name="Symbol6" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
 position = Vector2(-118, 35)
 texture = ExtResource("10_mq2pp")
+offset = Vector2(0, 13.15)
 
 [node name="SlotSpritePassive1" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(-218, -365)
-texture = ExtResource("35_u0rrs")
+position = Vector2(-220.75, -367.492)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("35_ypgte")
+offset = Vector2(0, 7.985)
 
 [node name="Symbol7" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
@@ -1011,8 +1023,10 @@ position = Vector2(-218, -365)
 texture = ExtResource("12_dcjh5")
 
 [node name="SlotSpritePassive2" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(-68, -365)
-texture = ExtResource("35_u0rrs")
+position = Vector2(-70.75, -367.492)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("35_ypgte")
+offset = Vector2(0, 7.985)
 
 [node name="Symbol8" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
@@ -1020,8 +1034,10 @@ position = Vector2(-68, -365)
 texture = ExtResource("12_dcjh5")
 
 [node name="SlotSpritePassive3" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(82, -365)
-texture = ExtResource("35_u0rrs")
+position = Vector2(79.25, -367.492)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("35_ypgte")
+offset = Vector2(0, 7.985)
 
 [node name="Symbol9" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
@@ -1029,8 +1045,10 @@ position = Vector2(82, -365)
 texture = ExtResource("12_dcjh5")
 
 [node name="SlotSpritePassive4" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(232, -365)
-texture = ExtResource("35_u0rrs")
+position = Vector2(229.25, -367.492)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("35_ypgte")
+offset = Vector2(0, 7.985)
 
 [node name="Symbol10" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
@@ -1038,65 +1056,42 @@ position = Vector2(232, -365)
 texture = ExtResource("12_dcjh5")
 
 [node name="SlotSpriteBodymod1" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(-158, -165)
-texture = ExtResource("37_tnl66")
+position = Vector2(-174.75, -167.492)
+texture = ExtResource("37_ypgte")
+offset = Vector2(2.41, 7.985)
 
 [node name="Symbol11" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
-position = Vector2(-158, -165)
+position = Vector2(-172, -165)
 texture = ExtResource("14_i0r2g")
+offset = Vector2(0, 11.975)
 
 [node name="SlotSpriteBodymod2" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(2, -165)
-texture = ExtResource("37_tnl66")
+position = Vector2(-4.75, -167.492)
+texture = ExtResource("37_ypgte")
+offset = Vector2(2.41, 7.985)
 
 [node name="Symbol12" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
-position = Vector2(2, -165)
+position = Vector2(-2, -165)
 texture = ExtResource("14_i0r2g")
+offset = Vector2(0, 11.975)
 
 [node name="SlotSpriteBodymod3" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(162, -165)
-texture = ExtResource("37_tnl66")
+position = Vector2(165.25, -167.492)
+texture = ExtResource("37_ypgte")
+offset = Vector2(2.41, 7.985)
 
 [node name="Symbol13" type="Sprite2D" parent="UpgradeOverview"]
 modulate = Color(1, 1, 1, 0.576471)
-position = Vector2(162, -165)
+position = Vector2(168, -165)
 texture = ExtResource("14_i0r2g")
-
-[node name="SlotTypeBodymod" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(2, -265)
-scale = Vector2(0.35, 0.28)
-texture = ExtResource("33_jykkx")
-
-[node name="SlotTypeSynergy" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(2, -65)
-scale = Vector2(0.35, 0.28)
-texture = ExtResource("34_2rn4p")
-
-[node name="SlotTypeActive" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(2, 135)
-scale = Vector2(0.35, 0.28)
-texture = ExtResource("35_doc8j")
-
-[node name="SlotTypeSpecial" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(2, 335)
-scale = Vector2(0.35, 0.28)
-texture = ExtResource("36_y2q02")
-
-[node name="SlotTypeDefault" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(222, 335)
-scale = Vector2(0.35, 0.28)
-texture = ExtResource("37_v001g")
-
-[node name="SlotTypePassive" type="Sprite2D" parent="UpgradeOverview"]
-position = Vector2(2, -465)
-scale = Vector2(0.35, 0.28)
-texture = ExtResource("38_3rb3p")
+offset = Vector2(0, 11.975)
 
 [node name="SlotSpriteRainbow" type="Sprite2D" parent="UpgradeOverview"]
 position = Vector2(-212, 435)
-texture = ExtResource("45_ypgte")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("45_fiogm")
 
 [node name="Divider" type="Sprite2D" parent="."]
 z_index = 4
@@ -1122,7 +1117,8 @@ position = Vector2(-400.534, 731.222)
 position = Vector2(-532.661, 926.697)
 
 [node name="CurrencySymbol" type="Sprite2D" parent="ItemShelf"]
-position = Vector2(-380.624, 398.19)
+position = Vector2(-414.109, 398.19)
+scale = Vector2(0.78, 0.78)
 texture = ExtResource("3_0a76l")
 
 [node name="CurrencyNumber" type="Label" parent="ItemShelf/CurrencySymbol"]
@@ -1166,7 +1162,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="UpgradeInfo" type="Node2D" parent="ItemShelf"]
-position = Vector2(225.71, 860.633)
+position = Vector2(225.71, 941.176)
 scale = Vector2(0.934879, 0.902998)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ItemShelf/UpgradeInfo"]

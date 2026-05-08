@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3tfulqktu4dm"
-path="res://.godot/imported/SlotTypeBodymod.png-7d8a291e2326b43fb9b5d4e33c0e4b0a.ctex"
+uid="uid://bhlsldx2k3bd"
+path="res://.godot/imported/UpgradeSlotActive.png-f28eb5f21128385ccf896e47817f98fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/Slottypes/SlotTypeBodymod.png"
-dest_files=["res://.godot/imported/SlotTypeBodymod.png-7d8a291e2326b43fb9b5d4e33c0e4b0a.ctex"]
+source_file="res://Shop/Slots/UpgradeSlotActive.png"
+dest_files=["res://.godot/imported/UpgradeSlotActive.png-f28eb5f21128385ccf896e47817f98fa.ctex"]
 
 [params]
 

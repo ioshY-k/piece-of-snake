@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ob8i1lcfscf"
-path="res://.godot/imported/SlotTypeSynergy.png-d65ca6489f60f5d7046a50aa12ca16de.ctex"
+uid="uid://dyd2y4kpniq4n"
+path="res://.godot/imported/UpgradeSlotRainbow.png-040183bcf1cfd6dae084b2a4c8cee1f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shop/Slottypes/SlotTypeSynergy.png"
-dest_files=["res://.godot/imported/SlotTypeSynergy.png-d65ca6489f60f5d7046a50aa12ca16de.ctex"]
+source_file="res://Shop/Slots/UpgradeSlotRainbow.png"
+dest_files=["res://.godot/imported/UpgradeSlotRainbow.png-040183bcf1cfd6dae084b2a4c8cee1f9.ctex"]
 
 [params]
 
