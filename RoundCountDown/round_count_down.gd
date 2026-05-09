@@ -12,7 +12,7 @@ signal count_down_finished
 
 var container_anim_dict = {
 	str(GameConsts.MAP_MODS.NO_MAPMOD) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
-	str(GameConsts.MAP_MODS.CAFFEINATED) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
+	str(GameConsts.MAP_MODS.CAFFEINATED) : load("res://RoundCountDown/Caffeinated/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.TAILVIRUS) : load("res://RoundCountDown/TailVirus/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.EDIBLE_PAPER) : load("res://RoundCountDown/NoMapMod/container_animations.tscn"),
 	str(GameConsts.MAP_MODS.LASER) : load("res://RoundCountDown/Laser/container_animations.tscn"),

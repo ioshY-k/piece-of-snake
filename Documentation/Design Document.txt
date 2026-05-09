@@ -40,4 +40,4 @@ Worklow for adding new upgrade:
 
 Workflow for adding new ROundCountDown style:
 	create Sprite for container, containermask and containerdeco, Make sure the frames are in order of GameConst.MAPMODS
-	Add Node2D Child "ContainerAnimation" to container, add animations and create scene out of branch
+	Add Node2D Child "ContainerAnimations" to container, add animations and create scene out of branch

@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo84l85lphy0y"]
+
+[ext_resource type="Texture2D" uid="uid://dlaod557txr8b" path="res://RoundCountDown/Caffeinated/CountDownDeco1Caffeinated.svg" id="1_xovgn"]
+[ext_resource type="Texture2D" uid="uid://83b7ni8pdbmk" path="res://RoundCountDown/Caffeinated/CountDownDeco2Caffeinated.svg" id="2_jbnu7"]
+
+[sub_resource type="Animation" id="Animation_fkxob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tablet:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tablet:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(31, 266)]
+}
+
+[sub_resource type="Animation" id="Animation_axerw"]
+resource_name = "tablet_shake"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tablet:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.693032, 0.966667, 1.33333, 1.83333, 2.26667, 2.93333, 3.65053, 4.0172, 4.5172),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.04545, 0.081086, -0.0148046, 0.0298569, 0.0, -0.04545, 0.081086, -0.0148046, 0.0298569]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tablet:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.56586, 3.20691),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(31, 266), Vector2(30, 281), Vector2(31, 266)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yw84v"]
+_data = {
+&"RESET": SubResource("Animation_fkxob"),
+&"tablet_shake": SubResource("Animation_axerw")
+}
+
+[sub_resource type="Curve" id="Curve_lgfcf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0648022, 0.997427), 0.0, 0.0, 0, 0, Vector2(0.281719, 0.951109), -1.72217, -1.72217, 0, 0, Vector2(0.433151, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="ContainerAnimations" type="Node2D"]
+
+[node name="Tablet" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(31, 266)
+scale = Vector2(1.46, 1.255)
+texture = ExtResource("1_xovgn")
+
+[node name="TabletAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yw84v")
+}
+autoplay = "tablet_shake"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(316, -84)
+amount = 4
+texture = ExtResource("2_jbnu7")
+lifetime = 2.84
+explosiveness = 0.38
+randomness = 0.28
+emission_shape = 1
+emission_sphere_radius = 90.0
+particle_flag_align_y = true
+direction = Vector2(1, -1)
+spread = 35.0
+initial_velocity_min = 399.44
+initial_velocity_max = 399.44
+scale_amount_curve = SubResource("Curve_lgfcf")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(-271, -88)
+amount = 4
+texture = ExtResource("2_jbnu7")
+lifetime = 2.84
+explosiveness = 0.38
+randomness = 0.28
+emission_shape = 1
+emission_sphere_radius = 90.0
+particle_flag_align_y = true
+direction = Vector2(-1, -1)
+spread = 35.0
+initial_velocity_min = 399.44
+initial_velocity_max = 399.44
+scale_amount_curve = SubResource("Curve_lgfcf")
