@@ -9,6 +9,7 @@ var constellations: Array = [
 							]
 var map: Map
 var tetrises: Array[Node2D]
+var tetris_growing: bool = false
 enum DIRECTION {UP,RIGHT,DOWN,LEFT}
 
 func _ready() -> void:
@@ -23,7 +24,7 @@ func _on_fruit_collected(_element, _is_real_collection: bool):
 	if map.snake_head.just_teleported:
 		await SignalBus.next_tile_reached
 		await SignalBus.next_tile_reached
-		
+	tetris_growing = true
 	var tetris = constellations[randi()%constellations.size()].instantiate()
 	tetrises.append(tetris)
 	for child in tetris.get_children():
@@ -60,7 +61,10 @@ func _check_tail_reached_tetri():
 	for tetris in tetrises:
 		if !is_instance_valid(tetris):
 			continue
-		if TileHelper.position_to_tile(tetris.get_child(-1).global_position) == TileHelper.position_to_tile(map.snake_tail.global_position):
+		var tetris_area: Area2D = tetris.get_node("Area2D")
+		print(tetris_area.has_overlapping_areas())
+		if TileHelper.position_to_tile(tetris.get_child(-1).global_position) == TileHelper.position_to_tile(map.snake_tail.global_position) or\
+		(not tetris_growing and not tetris_area.has_overlapping_areas()):
 			for tetris_block in tetris.get_children():
 				map.temporary_obstacles.erase(TileHelper.position_to_tile(map.to_local(tetris_block.global_position)))
 			tetrises.erase(tetris)
@@ -76,6 +80,7 @@ func _check_tail_reached_tetri():
 	for tetris in tetrises_to_erase:
 		if is_instance_valid(tetris):
 			tetris.queue_free()
+	tetris_growing = false
 
 func self_destruct():
 	for tetris in tetrises:

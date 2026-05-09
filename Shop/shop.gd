@@ -103,9 +103,11 @@ func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [
 								
-								GameConsts.UPGRADE_LIST.TONGUE_1,
-								GameConsts.UPGRADE_LIST.TONGUE_1,
-								GameConsts.UPGRADE_LIST.TONGUE_1,
+								GameConsts.UPGRADE_LIST.TAIL_CUT,
+								GameConsts.UPGRADE_LIST.TAIL_CUT,
+								GameConsts.UPGRADE_LIST.TAIL_CUT,
+								GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
+								GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
 								GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
 		]
 									
