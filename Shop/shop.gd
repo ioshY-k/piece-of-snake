@@ -252,7 +252,7 @@ func _on_upgrade_destroyed(upgrade_id: int) -> void:
 		update_upgrade_pool(upgrade_id, false)
 	upgrade_destroyed.emit(upgrade_id)
 
-func equip_item(upgrade_id, slot_type):
+func equip_item(upgrade_id, slot_type, active: bool):
 	var no_space: bool = true
 	var free_slot
 	for slot in slot_type:
@@ -270,6 +270,8 @@ func equip_item(upgrade_id, slot_type):
 	await get_tree().process_frame
 	upgrade_card._snap_to_slot(free_slot.get_node("Area2D").global_position)
 	update_upgrade_pool(upgrade_id, true)
+	if active:
+		SignalBus.update_active_slot_infos.emit(upgrade_id, free_slot.name)
 	SignalBus.upgrade_bought.emit(upgrade_id)
 	
 	
