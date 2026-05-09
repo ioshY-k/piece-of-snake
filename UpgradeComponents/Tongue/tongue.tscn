@@ -1,12 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://cde01fycdmxp5"]
+[gd_scene load_steps=10 format=3 uid="uid://cde01fycdmxp5"]
 
 [ext_resource type="Script" uid="uid://b3ajuqry1uyoh" path="res://UpgradeComponents/Tongue/tongue.gd" id="1_b8bgl"]
 [ext_resource type="Texture2D" uid="uid://d4nsba4effe14" path="res://UpgradeComponents/Tongue/TongueMask.svg" id="2_x1y6y"]
 [ext_resource type="Texture2D" uid="uid://6xtir5bqbbbr" path="res://UpgradeComponents/Tongue/Tongue.svg" id="3_o2fgc"]
+[ext_resource type="Texture2D" uid="uid://pyp2l6ae7w2y" path="res://UpgradeComponents/Tongue/Tongue2.svg" id="4_skxmq"]
+[ext_resource type="Texture2D" uid="uid://bm214pwhn85vp" path="res://UpgradeComponents/Tongue/Tongue3.svg" id="5_1mjwa"]
+[ext_resource type="Texture2D" uid="uid://db0cmvxutnnwb" path="res://UpgradeComponents/Tongue/Tongue4.svg" id="6_mfsix"]
+[ext_resource type="Texture2D" uid="uid://85tv2vbtb0ih" path="res://UpgradeComponents/Tongue/Tongue5.svg" id="7_b87ch"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwacf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o2fgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_skxmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1mjwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mfsix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b87ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mfsix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1mjwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_skxmq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1y6y"]
-radius = 23.0
-height = 132.0
+radius = 20.1
+height = 40.2
 
 [node name="Tongue" type="Node2D"]
 script = ExtResource("1_b8bgl")
@@ -17,16 +53,18 @@ position = Vector2(0, -900)
 rotation = -1.57079
 texture = ExtResource("2_x1y6y")
 
-[node name="TongueSprite" type="Sprite2D" parent="TongueMask"]
+[node name="TongueSprite" type="AnimatedSprite2D" parent="TongueMask"]
 position = Vector2(-1758, 0.00389688)
-texture = ExtResource("3_o2fgc")
+sprite_frames = SubResource("SpriteFrames_lwacf")
+autoplay = "default"
+frame_progress = 0.461529
 
 [node name="TongueArea" type="Area2D" parent="TongueMask/TongueSprite"]
 position = Vector2(-28, 0.00730917)
 collision_layer = 0
-collision_mask = 35
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TongueMask/TongueSprite/TongueArea"]
-position = Vector2(860, -0.00539597)
+position = Vector2(900, -0.00508721)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_x1y6y")
