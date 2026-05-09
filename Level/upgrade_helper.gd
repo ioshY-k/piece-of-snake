@@ -561,9 +561,6 @@ func determine_upgrade_reload_necessary(upgrade_id):
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_1,\
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_2,\
 		GameConsts.UPGRADE_LIST.BIG_FRUIT_3,\
-		GameConsts.UPGRADE_LIST.FRUIT_AREA_1,\
-		GameConsts.UPGRADE_LIST.FRUIT_AREA_2,\
-		GameConsts.UPGRADE_LIST.FRUIT_AREA_3,\
 		GameConsts.UPGRADE_LIST.SWISS_KNIVE,\
 		GameConsts.UPGRADE_LIST.SHINY_GHOST,\
 		GameConsts.UPGRADE_LIST.MOULTING,\
@@ -571,15 +568,6 @@ func determine_upgrade_reload_necessary(upgrade_id):
 		GameConsts.UPGRADE_LIST.CARNIVORE,\
 		GameConsts.UPGRADE_LIST.CATCH,\
 		GameConsts.UPGRADE_LIST.DIFFUSION,\
-		GameConsts.UPGRADE_LIST.DRAGONFLY_1,\
-		GameConsts.UPGRADE_LIST.DRAGONFLY_2,\
-		GameConsts.UPGRADE_LIST.DRAGONFLY_3,\
-		GameConsts.UPGRADE_LIST.MAYFLY_1,\
-		GameConsts.UPGRADE_LIST.MAYFLY_2,\
-		GameConsts.UPGRADE_LIST.MAYFLY_3,\
-		GameConsts.UPGRADE_LIST.BUMBLEBEE_1,\
-		GameConsts.UPGRADE_LIST.BUMBLEBEE_2,\
-		GameConsts.UPGRADE_LIST.BUMBLEBEE_3,\
 		GameConsts.UPGRADE_LIST.ALLERGY,\
 		GameConsts.UPGRADE_LIST.HIT_ACTION,\
 		GameConsts.UPGRADE_LIST.GHOST_FRUIT_REACTION,\
@@ -591,6 +579,9 @@ func determine_upgrade_reload_necessary(upgrade_id):
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_1,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_2,\
 		GameConsts.UPGRADE_LIST.FRUIT_MAGNET_3,\
+		GameConsts.UPGRADE_LIST.FRUIT_AREA_1,\
+		GameConsts.UPGRADE_LIST.FRUIT_AREA_2,\
+		GameConsts.UPGRADE_LIST.FRUIT_AREA_3,\
 		GameConsts.UPGRADE_LIST.DIET_1,\
 		GameConsts.UPGRADE_LIST.DIET_2,\
 		GameConsts.UPGRADE_LIST.DIET_3,\
@@ -600,6 +591,15 @@ func determine_upgrade_reload_necessary(upgrade_id):
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_1,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_2,\
 		GameConsts.UPGRADE_LIST.MAGIC_FLUTE_3,\
+		GameConsts.UPGRADE_LIST.DRAGONFLY_1,\
+		GameConsts.UPGRADE_LIST.DRAGONFLY_2,\
+		GameConsts.UPGRADE_LIST.DRAGONFLY_3,\
+		GameConsts.UPGRADE_LIST.MAYFLY_1,\
+		GameConsts.UPGRADE_LIST.MAYFLY_2,\
+		GameConsts.UPGRADE_LIST.MAYFLY_3,\
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_1,\
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_2,\
+		GameConsts.UPGRADE_LIST.BUMBLEBEE_3,\
 		GameConsts.UPGRADE_LIST.EDGE_WRAP,\
 		GameConsts.UPGRADE_LIST.TAIL_CUT,\
 		GameConsts.UPGRADE_LIST.STEEL_HELMET,\

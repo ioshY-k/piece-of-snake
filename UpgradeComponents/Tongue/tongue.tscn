@@ -57,7 +57,7 @@ texture = ExtResource("2_x1y6y")
 position = Vector2(-1758, 0.00389688)
 sprite_frames = SubResource("SpriteFrames_lwacf")
 autoplay = "default"
-frame_progress = 0.461529
+frame_progress = 0.0522883
 
 [node name="TongueArea" type="Area2D" parent="TongueMask/TongueSprite"]
 position = Vector2(-28, 0.00730917)
