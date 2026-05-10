@@ -10,10 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cjgeqoquho4fg" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel4.svg" id="5_u0rrs"]
 [ext_resource type="Texture2D" uid="uid://bqjkiwpwavev4" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel5.svg" id="6_1i5pt"]
 [ext_resource type="Texture2D" uid="uid://dmypfpf7o4deq" path="res://Shop/Symbols/SymbolDefault.svg" id="6_7wam5"]
-[ext_resource type="Texture2D" uid="uid://bx11chgwwvqj2" path="res://Shop/UI/HighlightReplace.png" id="6_dcjh5"]
 [ext_resource type="Texture2D" uid="uid://cc3lpmpfxdowe" path="res://Shop/Symbols/SymbolActive.svg" id="6_n3cld"]
 [ext_resource type="Texture2D" uid="uid://sq8d0wtlg4s2" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel6.svg" id="7_dv0vd"]
-[ext_resource type="Texture2D" uid="uid://cixdb6y2jjm17" path="res://Shop/UI/HighlightBuy.png" id="7_i0r2g"]
 [ext_resource type="Texture2D" uid="uid://bt24khicygnfx" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel7.svg" id="8_qjec7"]
 [ext_resource type="Texture2D" uid="uid://ga8gt3rtdqat" path="res://Shop/Slots/BuyZone.png" id="8_xtrhb"]
 [ext_resource type="FontFile" uid="uid://q0cdino8xm1j" path="res://Fonts/BRLNSR.TTF" id="9_0a76l"]
@@ -34,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://ck5vmj03c7i6j" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel18.svg" id="19_70kfq"]
 [ext_resource type="Texture2D" uid="uid://bntmcptmrp1qu" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel19.svg" id="20_4t5o1"]
 [ext_resource type="Texture2D" uid="uid://bo08ghbj5d5ts" path="res://Shop/Backgrounds/UpgradeOverviewAppearAnimation/UpgrageOverviewPanel20.svg" id="21_t5lin"]
+[ext_resource type="Texture2D" uid="uid://cidsew4tqesy1" path="res://Shop/UI/HighlightReplace.svg" id="22_66wmq"]
+[ext_resource type="Texture2D" uid="uid://cxv82je0lcy4f" path="res://Shop/UI/HighlightBuy.svg" id="23_dg4rh"]
 [ext_resource type="Script" uid="uid://pq7y75ujgns1" path="res://Shop/item_shelf.gd" id="23_qix85"]
 [ext_resource type="Texture2D" uid="uid://cdhi6mv1qy6aw" path="res://Shop/UI/Divider.svg" id="24_7hl21"]
 [ext_resource type="FontFile" uid="uid://c2j1n75n5m4wk" path="res://Fonts/BRLNSDB.TTF" id="26_qix85"]
@@ -182,18 +182,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSpecial"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -238,18 +238,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotDefault1"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -294,18 +294,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive1"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -350,18 +350,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotActive2"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -406,18 +406,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy1"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -462,18 +462,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotSynergy2"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -518,18 +518,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive1"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -574,18 +574,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive2"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -630,18 +630,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive3"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -686,18 +686,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotPassive4"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -742,18 +742,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod1"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -798,18 +798,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlot1Bodymod2"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -854,18 +854,18 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotBodymod3"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.572549)
+self_modulate = Color(1, 1, 1, 0)
 z_index = 9
 position = Vector2(40, 40)
 texture = ExtResource("8_xtrhb")
@@ -910,14 +910,14 @@ visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("6_dcjh5")
+texture = ExtResource("22_66wmq")
 
 [node name="HighlightBuy" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotRainbow"]
 visible = false
 z_index = 10
 position = Vector2(40, 40)
 scale = Vector2(1.59, 1.59)
-texture = ExtResource("7_i0r2g")
+texture = ExtResource("23_dg4rh")
 
 [node name="BuyZone" type="Sprite2D" parent="UpgradeOverview/UpgradeSlotRainbow"]
 visible = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnn1xmc2b43mm"]
+[gd_scene load_steps=10 format=3 uid="uid://bnn1xmc2b43mm"]
 
 [ext_resource type="Texture2D" uid="uid://btgw2n20bn68a" path="res://Level/LevelUI/TimeMeter.svg" id="1_1kptn"]
 [ext_resource type="Script" uid="uid://bovnqu0hp4t36" path="res://Level/LevelUI/time_meter.gd" id="2_yci6l"]
 [ext_resource type="Texture2D" uid="uid://dj58udh3ffytw" path="res://Level/LevelUI/TimeMeterBar.svg" id="3_enuh3"]
 [ext_resource type="Texture2D" uid="uid://c0m5gt08opemv" path="res://Level/LevelUI/TimeMeterBg.svg" id="3_qkf1t"]
+[ext_resource type="PackedScene" uid="uid://c688ay14yx2es" path="res://Shop/UpgradeCards/CardAnimation/upgrade_card_animation.tscn" id="5_a6d1g"]
 [ext_resource type="Shader" uid="uid://bvegwg3krs5ih" path="res://Level/LevelUI/grow_and_vanish.gdshader" id="5_qkf1t"]
 [ext_resource type="Texture2D" uid="uid://bkvnaakcolxq4" path="res://Level/LevelUI/TimeMeterindicatorEffect.svg" id="7_40pqe"]
 
@@ -26,12 +27,32 @@ script = ExtResource("2_yci6l")
 [node name="TimeMeterBg" type="Sprite2D" parent="."]
 clip_children = 1
 z_index = -1
+position = Vector2(1, 30)
 scale = Vector2(1.004, 0.989)
 texture = ExtResource("3_qkf1t")
 
 [node name="TimeBar" type="Sprite2D" parent="TimeMeterBg"]
 modulate = Color(0.573753, 0.89, 0.5251, 1)
 texture = ExtResource("3_enuh3")
+
+[node name="UpgradeCardAnimation" parent="TimeMeterBg/TimeBar" instance=ExtResource("5_a6d1g")]
+position = Vector2(-43.8247, -499.494)
+scale = Vector2(3, 3)
+
+[node name="UpgradeCardAnimation2" parent="TimeMeterBg/TimeBar" instance=ExtResource("5_a6d1g")]
+position = Vector2(37.8486, -132.457)
+rotation = -1.6249
+scale = Vector2(3, 3)
+
+[node name="UpgradeCardAnimation3" parent="TimeMeterBg/TimeBar" instance=ExtResource("5_a6d1g")]
+position = Vector2(-36.8526, 273.003)
+rotation = 1.67028
+scale = Vector2(3, 3)
+
+[node name="UpgradeCardAnimation4" parent="TimeMeterBg/TimeBar" instance=ExtResource("5_a6d1g")]
+position = Vector2(98.6056, 585.44)
+rotation = -4.18006
+scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.52, 0.52)
@@ -46,6 +67,7 @@ rotation = 1.5708
 
 [node name="Indicator" type="Sprite2D" parent="Path2D/IndicatorPath"]
 material = SubResource("ShaderMaterial_40pqe")
-position = Vector2(0, 3.05176e-05)
+position = Vector2(-12, 5.2529e-07)
 rotation = -1.58575
+scale = Vector2(1.23, 1.23)
 texture = ExtResource("7_40pqe")

@@ -103,12 +103,12 @@ func _ready() -> void:
 	if GameConsts.test_mode:
 		upgrade_card_pool= [
 								
-								GameConsts.UPGRADE_LIST.TAIL_CUT,
-								GameConsts.UPGRADE_LIST.TAIL_CUT,
-								GameConsts.UPGRADE_LIST.TAIL_CUT,
-								GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
-								GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
-								GameConsts.UPGRADE_LIST.DOUBLE_FRUIT_1,
+								GameConsts.UPGRADE_LIST.PACMAN_1,
+								GameConsts.UPGRADE_LIST.PACMAN_1,
+								GameConsts.UPGRADE_LIST.PACMAN_1,
+								GameConsts.UPGRADE_LIST.PACMAN_2,
+								GameConsts.UPGRADE_LIST.PACMAN_3,
+								GameConsts.UPGRADE_LIST.PACMAN_1,
 		]
 									
 	
@@ -176,6 +176,7 @@ func _on_got_clicked(upgrade_card: UpgradeCard):
 			if is_filled(slot) and\
 			slot.get_node("Area2D").get_child(-1).upgrade_id == upgrade_id -1:
 				slot.get_node("HighlightReplace").visible = true
+				show_highlight(slot.get_node("HighlightReplace"))
 				slot.get_node("BuyZone").visible = true
 				slot.get_node("BuyZone").get_node("Price").text = str(replace_price)
 	else:
@@ -202,12 +203,20 @@ func _on_got_clicked(upgrade_card: UpgradeCard):
 			if is_filled(slot):
 				if slot.get_node("Area2D").get_child(-1).card_sprite.frame != GameConsts.UPGRADE_LIST.DEAD_MOUSE:
 					slot.get_node("HighlightReplace").visible = true
+					show_highlight(slot.get_node("HighlightReplace"))
 					slot.get_node("BuyZone").visible = true
 					slot.get_node("BuyZone").get_node("Price").text = str(replace_price)
 			else:
 				slot.get_node("HighlightBuy").visible = true
+				show_highlight(slot.get_node("HighlightBuy"))
 				slot.get_node("BuyZone").visible = true
 				slot.get_node("BuyZone").get_node("Price").text = str(buy_price)
+				
+func show_highlight(highlight):
+	var highlight_tween = get_tree().create_tween().set_parallel(true).set_trans(Tween.TRANS_SPRING)
+	highlight.scale = Vector2.ZERO
+	highlight_tween.tween_property(highlight, "scale", Vector2(1.4,1.4), 0.2)
+		
 
 func _on_let_go():
 	for slot in slots:

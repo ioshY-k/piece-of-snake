@@ -116,6 +116,7 @@ func _ready() -> void:
 	SignalBus.round_over.connect(_on_round_over)
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
 	SignalBus.got_hit.connect(collision_iframes.bind(GameConsts.COLLISION_IFRAMES))
+	SignalBus.got_hit_and_punished.connect(_camera_shake)
 	
 	initialized.emit()
 
@@ -482,7 +483,13 @@ func collision_iframes(ticks: int):
 	if invincible_ticks == 0:
 		invincible_ticks = ticks
 	
-	
+func _camera_shake():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", position+Vector2(6,6).rotated(randf()), 0.05)
+	tween.tween_property(self, "position", position+Vector2(6,6).rotated(randf()), 0.05)
+	tween.tween_property(self, "position", position+Vector2(6,6).rotated(randf()), 0.05)
+	tween.tween_property(self, "position", position+Vector2(6,6).rotated(randf()), 0.05)
+	tween.tween_property(self, "position", position, 0.05)
 
 #region helper functions
 
