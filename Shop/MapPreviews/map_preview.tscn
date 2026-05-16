@@ -1,10 +1,10 @@
 [gd_scene load_steps=22 format=3 uid="uid://bs0m1mtsyjoc8"]
 
 [ext_resource type="Texture2D" uid="uid://b4plst0mdel4p" path="res://Shop/UI/MapPreview.svg" id="1_s2gmj"]
-[ext_resource type="Texture2D" uid="uid://m1vtyl4oq3m2" path="res://Shop/MapPreviews/WoodsPreview.png" id="2_8wgow"]
 [ext_resource type="Script" uid="uid://g2myrugqegl7" path="res://Shop/MapPreviews/map_preview.gd" id="2_foyxi"]
-[ext_resource type="Texture2D" uid="uid://bpwmwtdrgfcrq" path="res://Shop/MapPreviews/StadiumPreview.png" id="3_foyxi"]
+[ext_resource type="Texture2D" uid="uid://6f1wbguwbmmi" path="res://Shop/MapPreviews/WoodsPreview.svg" id="3_g2gh4"]
 [ext_resource type="Texture2D" uid="uid://c34nbgcv0661t" path="res://Shop/MapPreviews/OfficePreview.png" id="4_ev52b"]
+[ext_resource type="Texture2D" uid="uid://csowa0wbld2mq" path="res://Shop/MapPreviews/StadiumPreview.svg" id="4_g2gh4"]
 [ext_resource type="Texture2D" uid="uid://d1hsmnh3wvrk1" path="res://Shop/MapPreviews/CavePreview.png" id="5_xkdc6"]
 [ext_resource type="Texture2D" uid="uid://b4068c28qurgg" path="res://Shop/MapPreviews/DiscoPreview.png" id="6_uvmiw"]
 [ext_resource type="Texture2D" uid="uid://id2dwak6pey3" path="res://Shop/MapPreviews/BeachPreview.png" id="7_g2gh4"]
@@ -22,10 +22,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8wgow")
+"texture": ExtResource("3_g2gh4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_foyxi")
+"texture": ExtResource("4_g2gh4")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_ev52b")
@@ -80,10 +80,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8wgow")
+"texture": ExtResource("3_g2gh4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_foyxi")
+"texture": ExtResource("4_g2gh4")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_ev52b")
@@ -115,10 +115,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8wgow")
+"texture": ExtResource("3_g2gh4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_foyxi")
+"texture": ExtResource("4_g2gh4")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_ev52b")
