@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://83pqpwtuppyt"]
+[gd_scene load_steps=34 format=3 uid="uid://83pqpwtuppyt"]
 
 [ext_resource type="Texture2D" uid="uid://lshghrulnhsv" path="res://Levels/WoodsMap/WoodsMap.svg" id="1_qpv76"]
 [ext_resource type="Script" uid="uid://bgao2kkf8mvx0" path="res://Levels/map.gd" id="2_1lku0"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://qk2ete32124m" path="res://Levels/WoodsMap/WoodsShroomSpore.svg" id="22_lha3p"]
 [ext_resource type="PackedScene" uid="uid://b0pevb4hdbfat" path="res://Levels/cover_ceiling.tscn" id="24_tajmh"]
 [ext_resource type="Texture2D" uid="uid://bnrx847xbepwd" path="res://Levels/WoodsMap/WoodsStumpTop.svg" id="25_lha3p"]
+[ext_resource type="Script" uid="uid://cc13oupp5gs11" path="res://Levels/WoodsMap/water_path.gd" id="27_58k0b"]
 
 [sub_resource type="Animation" id="Animation_kron4"]
 length = 0.001
@@ -65,6 +66,37 @@ _data = {
 &"RESET": SubResource("Animation_kron4"),
 &"shadow_move_anim": SubResource("Animation_4wwhg")
 }
+
+[sub_resource type="Curve2D" id="Curve2D_vpegp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 478, -169, -14.0667, -84.3505, 14.0667, 84.3505, 479, 114, -22.7656, -39.933, 22.7656, 39.933, 541, 282, -7.46412, -42.9187, 7.46412, 42.9187, 566, 371, -15.6746, -49.6364, 15.6746, 49.6364, 571, 591, -6.3445, -45.5311, 6.3445, 45.5311, 609, 669, -32.0957, -28.7368, 32.0957, 28.7368, 634, 854, -15.3014, -41.0526, 15.3014, 41.0526, 706, 922, 0, 0, 0, 0, 715, 1114, 0, 0, 0, 0, 715, 1176, 0, 0, 0, 0, 715, 1239)
+}
+point_count = 11
+
+[sub_resource type="Curve2D" id="Curve2D_6pdal"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 478, -169, -26.7109, -82.9957, 26.7109, 82.9957, 474, 114, -22.7656, -39.933, 22.7656, 39.933, 544, 275, -7.46412, -42.9187, 7.46412, 42.9187, 561, 377, 1.48536, -74.9248, -1.48536, 74.9248, 574, 562, 10.9825, -50.2959, -10.9825, 50.2959, 553, 729, -2.75554, -30.4493, 2.75554, 30.4493, 548, 804, 7.90204, -21.1571, -7.90204, 21.1571, 536, 903, 5.7338, -22.7316, -5.7338, 22.7316, 532, 976, 4.07134, -29.5172, -4.07134, 29.5172, 513, 1025, 0, 0, 0, 0, 513, 1201, 0, 0, 0, 0, 513, 1258)
+}
+point_count = 12
+
+[sub_resource type="GDScript" id="GDScript_r0rhn"]
+script/source = "extends Path2D
+
+@onready var timer: Timer = $Timer
+const WATER_DROP_PATH_FOLLOW = preload(\"res://Levels/WoodsMap/water_drop_path_follow.tscn\")
+
+func _ready() -> void:
+	timer.timeout.connect(spawn_waterdrop)
+
+func spawn_waterdrop():
+	var drop: PathFollow2D = WATER_DROP_PATH_FOLLOW.instantiate()
+	add_child(drop)
+	var tween = get_tree().create_tween()
+	tween.tween_property(drop, \"progress_ratio\", 1, randf_range(2.3,2.9))
+	timer.wait_time = randf_range(0.4,1.4)
+	await tween.finished
+	drop.queue_free()
+"
 
 [node name="Map" type="Sprite2D"]
 z_as_relative = false
@@ -903,5 +935,28 @@ sprite = ExtResource("25_lha3p")
 [node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
 position = Vector2(36, -4)
 polygon = PackedVector2Array(120, 280, 120, 200, 200, 200, 200, -120, 120, -120, 120, -200, -200, -200, -200, -120, -280, -120, -280, 200, -200, 200, -200, 280, -80, 280)
+
+[node name="WaterPath" type="Path2D" parent="."]
+position = Vector2(1374.92, 1207.33)
+rotation = -4.71239
+scale = Vector2(-0.975, 1.24)
+curve = SubResource("Curve2D_vpegp")
+script = ExtResource("27_58k0b")
+
+[node name="Timer" type="Timer" parent="WaterPath"]
+autostart = true
+
+[node name="FruitEatenDistortionLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="WaterPath3" type="Path2D" parent="."]
+position = Vector2(1374.92, 1207.33)
+rotation = -4.71239
+scale = Vector2(-0.975, 1.24)
+curve = SubResource("Curve2D_6pdal")
+script = SubResource("GDScript_r0rhn")
+
+[node name="Timer" type="Timer" parent="WaterPath3"]
+autostart = true
 
 [editable path="CoverCeiling"]

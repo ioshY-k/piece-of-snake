@@ -2224,6 +2224,9 @@ position = Vector2(255, 1027)
 scale = Vector2(1.02868, 0.848095)
 texture = ExtResource("19_6hcfm")
 
+[node name="FruitEatenDistortionLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="area_entered" from="ObstacleDisabler" to="ObstacleDisabler" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler2" to="ObstacleDisabler2" method="_on_area_entered"]
 [connection signal="area_entered" from="ObstacleDisabler3" to="ObstacleDisabler3" method="_on_area_entered"]

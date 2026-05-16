@@ -1,5 +1,7 @@
 class_name Map extends Sprite2D
 
+const FRUIT_EATEN_DISTORTION_SHADER = preload("res://Shader/fruit_eaten_distortion.gdshader")
+
 #temporary instatiated map elements
 var snake_body_scene = load("res://Snake/Body/snake_body.tscn")
 var snake_head_scene = preload("res://Snake/Head/snake_head.tscn")
@@ -117,6 +119,7 @@ func _ready() -> void:
 	SignalBus.next_tile_reached.connect(_on_next_tile_reached)
 	SignalBus.got_hit.connect(collision_iframes.bind(GameConsts.COLLISION_IFRAMES))
 	SignalBus.got_hit_and_punished.connect(_camera_shake)
+	SignalBus.tail_grows.connect(fruit_eaten_distortion)
 	
 	initialized.emit()
 
@@ -323,6 +326,33 @@ func unload_solidElement(obj: Node):
 	for child in obj.get_children():
 		if child is SolidElement:
 			child.set_collision_layer_value(6,false)
+
+const FRUIT_EATEN_DISTORTION_RECT = preload("res://VisualEffects/fruit_eaten_distortion_rect.tscn")
+func fruit_eaten_distortion():
+	var color_rect: ColorRect = FRUIT_EATEN_DISTORTION_RECT.instantiate()
+	%FruitEatenDistortionLayer.add_child(color_rect)
+
+	var mat := ShaderMaterial.new()
+	mat.shader = FRUIT_EATEN_DISTORTION_SHADER
+	color_rect.material = mat.duplicate()
+	
+	color_rect.global_position = snake_head.global_position
+	var tween = get_tree().create_tween()
+	var bodyparts_reversed = snake_path_bodyparts.duplicate()
+	bodyparts_reversed.reverse()
+	
+	var i: int = snake_path_bodyparts.size()/4
+	while i > 0:
+		bodyparts_reversed.pop_back()
+		i -= 1
+	
+	for body: SnakeBody in bodyparts_reversed:
+		tween.tween_property(color_rect, "global_position", body.global_position, 0.08)
+	await tween.finished
+	color_rect.queue_free()
+
+func remap_to_range(t: float, min_val: float, max_val: float) -> float:
+	return min_val + t * (max_val - min_val)
 
 func add_upgrade_component(upgrade: int):
 	match upgrade:

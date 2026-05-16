@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2j1yw00us4hc"]
+
+[ext_resource type="Shader" uid="uid://d1udswq1qpwou" path="res://Shader/fruit_eaten_distortion.gdshader" id="1_dah2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dah2t"]
+shader = ExtResource("1_dah2t")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.025
+shader_parameter/max_offset = -0.005
+shader_parameter/exponent = 0.24
+shader_parameter/ellipse_scale = Vector2(1, 1.8)
+
+[node name="FruitEatenDistortionRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_dah2t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

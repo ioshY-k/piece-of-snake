@@ -1355,3 +1355,6 @@ position = Vector2(-364, -40)
 scale = Vector2(1, 0.865)
 energy = 0.79
 texture = ExtResource("28_6ksap")
+
+[node name="FruitEatenDistortionLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true

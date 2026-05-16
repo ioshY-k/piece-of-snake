@@ -837,12 +837,15 @@ position = Vector2(320, 1360)
 
 [node name="CoverCeiling" parent="." groups=["Spinning Ceiling"] instance=ExtResource("6_c7qdi")]
 position = Vector2(720, 640)
-rotation = 1.66193
+rotation = 4.60711
 texture = ExtResource("7_expxy")
 sprite = ExtResource("7_expxy")
 
 [node name="CollisionPolygon2D" parent="CoverCeiling/Area2D" index="0"]
 scale = Vector2(1.1582, 1.1582)
 polygon = PackedVector2Array(-40, -280, -160, -240, -240, -160, -280, -40, -280, 40, -240, 160, -160, 240, -40, 280, 40, 280, 160, 240, 240, 160, 280, 40, 280, -40, 240, -160, 160, -240, 40, -280)
+
+[node name="FruitEatenDistortionLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
 [editable path="CoverCeiling"]

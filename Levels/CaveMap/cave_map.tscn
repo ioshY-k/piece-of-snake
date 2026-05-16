@@ -1358,3 +1358,6 @@ rotation = -0.0575959
 scale = Vector2(0.865, 0.818)
 texture = ExtResource("9_oy8iq")
 flip_h = true
+
+[node name="FruitEatenDistortionLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true

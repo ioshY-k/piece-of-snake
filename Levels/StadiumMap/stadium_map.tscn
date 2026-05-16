@@ -1310,3 +1310,6 @@ z_index = 50
 z_as_relative = false
 position = Vector2(681, 580)
 texture = ExtResource("17_oyysv")
+
+[node name="FruitEatenDistortionLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true

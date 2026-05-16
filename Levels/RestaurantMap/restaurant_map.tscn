@@ -990,3 +990,6 @@ z_as_relative = false
 position = Vector2(1160, 1061.94)
 scale = Vector2(1.495, 0.77)
 texture = ExtResource("11_hoipf")
+
+[node name="FruitEatenDistortionLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true

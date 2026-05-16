@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvdto41u8c10p"]
+
+[ext_resource type="Texture2D" uid="uid://6f6gnkek4p1g" path="res://MainMenu/BG/MainMenuBackground.svg" id="1_dliop"]
+[ext_resource type="PackedScene" uid="uid://c688ay14yx2es" path="res://Shop/UpgradeCards/CardAnimation/upgrade_card_animation.tscn" id="2_ljc3u"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(1810, 1000)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.35, 0.35, 0.35, 1)
+scale = Vector2(1.55936, 1.15336)
+texture = ExtResource("1_dliop")
+
+[node name="UpgradeCardAnimation" parent="." instance=ExtResource("2_ljc3u")]
+modulate = Color(1, 1, 1, 0.423529)
+position = Vector2(-600, -390)
+scale = Vector2(3.875, 2.531)
+
+[node name="UpgradeCardAnimation2" parent="." instance=ExtResource("2_ljc3u")]
+modulate = Color(1, 1, 1, 0.423529)
+position = Vector2(300, -140)
+rotation = -0.977742
+scale = Vector2(3.875, 2.531)
+
+[node name="UpgradeCardAnimation3" parent="." instance=ExtResource("2_ljc3u")]
+modulate = Color(1, 1, 1, 0.423529)
+position = Vector2(-1150, -340)
+rotation = -3.83478
+scale = Vector2(3.875, 2.531)
+
+[node name="UpgradeCardAnimation4" parent="." instance=ExtResource("2_ljc3u")]
+modulate = Color(1, 1, 1, 0.423529)
+position = Vector2(-120, 660)
+rotation = -2.7472
+scale = Vector2(3.875, 2.531)

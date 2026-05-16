@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbk82e7d7id0x"]
+
+[ext_resource type="Texture2D" uid="uid://b04htnrcu5k0s" path="res://MapModComponents/Laser/LaserParticleSprite.svg" id="1_r61ta"]
+[ext_resource type="Script" uid="uid://c5ylp48p4hfrm" path="res://Levels/WoodsMap/waterdrop.gd" id="2_bbehh"]
+
+[node name="WaterDropPathFollow" type="PathFollow2D"]
+rotation = 1.18121
+
+[node name="Waterdrop" type="Sprite2D" parent="."]
+scale = Vector2(0.21, 0.13)
+texture = ExtResource("1_r61ta")
+script = ExtResource("2_bbehh")
