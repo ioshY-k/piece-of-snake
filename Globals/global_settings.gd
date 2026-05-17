@@ -28,8 +28,14 @@ var masteries = {
 	}
 }
 
+var character_unlocks_json_path = "user://character_unlocks.json"
+var character_unlocks = {
+	"OSTRICH" : false,"PYTHON" : true,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"RETRO" : false,"CENTIPEDE" : false,"TWOHEAD" : false
+}
+
 func _ready() -> void:
 	load_masteries()
+	load_character_unlocks()
 	
 func load_masteries():
 	var masteries_file = FileAccess.open(masteries_json_path, FileAccess.READ)
@@ -55,3 +61,32 @@ func reset_masteries():
 		for mastery in mastery_dict.keys():
 			mastery_dict[mastery] = false
 	save_masteries()
+
+func load_character_unlocks():
+	var character_unlocks_file = FileAccess.open(character_unlocks_json_path, FileAccess.READ)
+	if character_unlocks_file != null:
+		var character_unlocks_json = character_unlocks_file.get_as_text()
+		var json_object = JSON.new()
+		json_object.parse(character_unlocks_json)
+		character_unlocks = json_object.data
+	save_character_unlocks()
+
+func save_character_unlocks():
+	var character_unlocks_file = FileAccess.open(character_unlocks_json_path,FileAccess.WRITE)
+	
+	if character_unlocks_file:
+		var character_unlocks_json = JSON.stringify(character_unlocks, "\t")
+		character_unlocks_file.store_string(character_unlocks_json)
+	else:
+		print_debug("failed to open or create the file")
+
+func reset_character_unlocks():
+	for char in character_unlocks.keys():
+		character_unlocks[char] = false
+	character_unlocks["PYTHON"] = true
+	save_character_unlocks()
+	
+func unlock_all_characters():
+	for char in character_unlocks.keys():
+		character_unlocks[char] = true
+	save_character_unlocks()

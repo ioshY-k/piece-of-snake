@@ -274,10 +274,10 @@
 	},
 	"SALE": {
 	  "NAME_ENG": "SALE",
-	  "DESC_ENG": "Whenever cards are dealt \nReduce the cost of a random card by 1 for each filled card category",
+	  "DESC_ENG": "For each filled row of upgrades, prices of shop upgrades get reduced.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "SALE",
-	  "DESC_GER": "Immer wenn Karten ausgeteilt werden, wird für jede deiner vollen Kartenkategorien ein Kartenpreis um 1 reduziert.",
+	  "DESC_GER": "Für jede volle Upgrade-Reihe wird der Preis der Shop-Upgrades reduziert.",
 	  "SWISSDESC_GER": null
 	},
 	"DIET_1": {
@@ -386,7 +386,7 @@
 	},
 	"BIG_FRUIT_2": {
 	  "NAME_ENG": "FERTILIZER 2",
-	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Spawning fruits are[color=#fff87d]often[/color] bigger than usual. Fruits grown that way can't move anymore.",
+	  "DESC_ENG": "{ADVANCEMENT_KEYWORD}. Spawning fruits are [color=#fff87d]often[/color] bigger than usual. Fruits grown that way can't move anymore.",
 	  "SWISSDESC_ENG": null,
 	  "NAME_GER": "DÜNGER 2",
 	  "DESC_GER": "{ADVANCEMENT_KEYWORD}. Früchte sind [color=#fff87d]häufig[/color] größer als üblich. Auf diese Weise gewachsene Früchte können sich nicht mehr bewegen.",
@@ -714,9 +714,9 @@
 	},
 	"GHOST_FRUIT_KEYWORD": {
 	  "NAME_ENG": "[color=#b9c1eb]Ghost Fruit[/color] [img=40]res://Shop/UI/KeywordGhostFruitSymbol.svg[/img]",
-	  "DESC_ENG": "A fruit that does not cause another fruit to spawn when collected.\n\n",
+	  "DESC_ENG": "An extra fruit spawned from effects, that act like normal fruits.\n\n",
 	  "NAME_GER": "[color=#b9c1eb]Geisterfrucht[/color] [img=40]res://Shop/UI/KeywordGhostFruitSymbol.svg[/img]",
-	  "DESC_GER": "Eine Frucht, nach deren Einsammeln keine weitere Frucht erscheint.\n\n"
+	  "DESC_GER": "Eine Extrafrucht, die durch Effekte erzeugt werden kann. Verhält sich wie eine normale Frucht.\n\n"
 	},
 	"HOLLOW_KEYWORD": {
 	  "NAME_ENG": "[color=#eb72d8]Hollow[/color] [img=40]res://Shop/UI/KeywordHollowSymbol.svg[/img]",
@@ -746,22 +746,19 @@
 	  "NAME_ENG": "[color=#5fedd1]Tasty[/color] [img=40]res://Shop/UI/KeywordTastySymbol.svg[/img]",
 	  "DESC_ENG": "Tasty fruits give an additional point when collected.\n\n",
 	  "NAME_GER": "[color=#5fedd1]Lecker[/color] [img=40]res://Shop/UI/KeywordTastySymbol.svg[/img]",
-	  "DESC_GER": "Leckere Früchte geben beim Einsammeln einen zusätzlichen Punkt.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Leckere Früchte geben beim Einsammeln einen zusätzlichen Punkt.\n\n"
 	},
 	"ACTION_KEYWORD": {
 	  "NAME_ENG": "[color=#fae5aa]Action[/color] [img=40]res://Shop/UI/KeywordActionSymbol.svg[/img]",
-	  "DESC_ENG": "A Reaction Upgrade must be placed to the right of this Upgrade to create a unique effect.\n\n",
+	  "DESC_ENG": "You have to place a Reaction Upgrade to the right of this to create a unique effect.\n\n",
 	  "NAME_GER": "[color=#fae5aa]Aktion[/color] [img=40]res://Shop/UI/KeywordActionSymbol.svg[/img]",
-	  "DESC_GER": "Ein Reaktions-Upgrade muss zur Rechten dieses Upgrades platziert werden, um einen einzigartigen Effekt zu kreieren.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Zur Rechten dieses Upgrades muss ein Reaktions-Upgrade platziert werden, um einen einzigartigen Effekt zu kreieren.\n\n"
 	},
 	"REACTION_KEYWORD": {
 	  "NAME_ENG": "[color=#eeb47dff]Reaction[/color] [img=40]res://Shop/UI/KeywordReactionSymbol.svg[/img]",
-	  "DESC_ENG": "An Action Upgrade must be placed to the left of this Upgrade to create a unique effect.\n\n",
+	  "DESC_ENG": "You have to place an Action Upgrade to the left of this to create a unique effect.\n\n",
 	  "NAME_GER": "[color=#eeb47dff]Reaktion[/color] [img=40]res://Shop/UI/KeywordReactionSymbol.svg[/img]",
-	  "DESC_GER": "Ein Aktions-Upgrade muss zur Linken dieses Upgrades platziert werden, um einen einzigartigen Effekt zu kreieren.\n\n",
-	  "Spalte 6": null
+	  "DESC_GER": "Zur Linken dieses Upgrades muss ein Aktions-Upgrade platziert werden, um einen einzigartigen Effekt zu kreieren.\n\n"
 	}
   },
   "Map Mods": {
@@ -879,7 +876,7 @@
 	  "NAME_ENG": "Camillo",
 	  "DESC_ENG": "Gain an additional multi colored upgrade slot.",
 	  "NAME_GER": "Camillo",
-	  "DESC_GER": "Erhalte einen zusätzlichen mehrfarbigen Upgradeslot."
+	  "DESC_GER": "Erhalte einen zusätzlichen bunten Upgradeslot."
 	},
 	"ELEPHANT": {
 	  "NAME_ENG": "Barbella",

@@ -61,8 +61,16 @@ func _ready() -> void:
 	count_down_finished.emit()
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("click"):
-		animation_player.speed_scale = 6
+	if Input.is_action_pressed("click")\
+	or Input.is_action_pressed("speed_boost")\
+	or Input.is_action_pressed("move_left")\
+	or Input.is_action_pressed("move_up")\
+	or Input.is_action_pressed("move_right")\
+	or Input.is_action_pressed("move_down"):
+		if GameConsts.test_mode:
+			animation_player.speed_scale = 200
+		else:
+			animation_player.speed_scale = 6
 	else:
 		animation_player.speed_scale = 1
 		

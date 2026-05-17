@@ -1,6 +1,6 @@
 extends Node
 
-var current_char = GameConsts.CHAR_LIST.OSTRICH
+var current_char = GameConsts.CHAR_LIST.PYTHON
 
 var gamemode = GameConsts.GAMEMODES.NORMAL
 var fruit_growth = 1

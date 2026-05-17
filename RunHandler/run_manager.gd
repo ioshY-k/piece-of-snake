@@ -88,8 +88,8 @@ func create_new_run():
 			fruit_thresholds[index] -= 1
 	
 	if GameConsts.test_mode:
-		maporder = [GameConsts.MAP_LIST.WOODS,
-					GameConsts.MAP_LIST.CAVE,
+		maporder = [GameConsts.MAP_LIST.RESTAURANT,
+					GameConsts.MAP_LIST.OFFICE,
 					GameConsts.MAP_LIST.TOMB]
 		mapmodorder = [GameConsts.MAP_MODS.CAFFEINATED,
 						GameConsts.MAP_MODS.CAFFEINATED,

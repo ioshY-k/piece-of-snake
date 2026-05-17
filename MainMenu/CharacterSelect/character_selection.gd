@@ -9,6 +9,8 @@ extends Node2D
 @onready var character_6_select: TileMapLayer = $Character6Select
 @onready var character_7_select: TileMapLayer = $Character7Select
 
+
+
 @onready var character_selects = [	character_0_select,
 									character_1_select,
 									character_2_select,
@@ -17,6 +19,24 @@ extends Node2D
 									character_5_select,
 									character_6_select,
 									character_7_select]
+									
+@onready var character_0_area: Area2D = $Character0Area
+@onready var character_1_area: Area2D = $Character1Area
+@onready var character_2_area: Area2D = $Character2Area
+@onready var character_3_area: Area2D = $Character3Area
+@onready var character_4_area: Area2D = $Character4Area
+@onready var character_5_area: Area2D = $Character5Area
+@onready var character_6_area: Area2D = $Character6Area
+@onready var character_7_area: Area2D = $Character7Area
+@onready var character_areas: Array[Area2D] = [	character_0_area,
+									character_1_area,
+									character_2_area,
+									character_3_area,
+									character_4_area,
+									character_5_area,
+									character_6_area,
+									character_7_area]
+
 var hovering_char_0_select: bool = false
 var hovering_char_1_select: bool = false
 var hovering_char_2_select: bool = false
@@ -41,6 +61,15 @@ const HOVER_SCALE_CHANGE:float = 1.2
 var menu_snake_speed: float = 0.06
 
 signal char_changed
+
+func _ready() -> void:
+	for character_name in GlobalSettings.character_unlocks:
+		var unlocked = GlobalSettings.character_unlocks[character_name]
+
+		if not unlocked:
+			var char_enum = GameConsts.CHAR_LIST[character_name]
+			character_selects[char_enum].hide()
+			character_areas[char_enum].process_mode = Node.PROCESS_MODE_DISABLED
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
