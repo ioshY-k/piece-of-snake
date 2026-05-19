@@ -65,7 +65,6 @@ signal char_changed
 func _ready() -> void:
 	for character_name in GlobalSettings.character_unlocks:
 		var unlocked = GlobalSettings.character_unlocks[character_name]
-
 		if not unlocked:
 			var char_enum = GameConsts.CHAR_LIST[character_name]
 			character_selects[char_enum].hide()

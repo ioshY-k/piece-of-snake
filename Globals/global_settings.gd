@@ -33,9 +33,15 @@ var character_unlocks = {
 	"OSTRICH" : false,"PYTHON" : true,"SALAMANDER" : false,"CHAMELEON" : false,"ELEPHANT" : false,"RETRO" : false,"CENTIPEDE" : false,"TWOHEAD" : false
 }
 
+var difficulty_unlocks_json_path = "user://difficulty_unlocks.json"
+var difficulty_unlocks = {
+	"EASY" : true,"NORMAL" : false,"HARD" : false,"ASCENSION" : false
+}
+
 func _ready() -> void:
 	load_masteries()
 	load_character_unlocks()
+	load_difficulty_unlocks()
 	
 func load_masteries():
 	var masteries_file = FileAccess.open(masteries_json_path, FileAccess.READ)
@@ -90,3 +96,33 @@ func unlock_all_characters():
 	for char in character_unlocks.keys():
 		character_unlocks[char] = true
 	save_character_unlocks()
+	
+func load_difficulty_unlocks():
+	var difficulty_unlocks_file = FileAccess.open(difficulty_unlocks_json_path, FileAccess.READ)
+	if difficulty_unlocks_file != null:
+		var difficulty_unlocks_json = difficulty_unlocks_file.get_as_text()
+		var json_object = JSON.new()
+		json_object.parse(difficulty_unlocks_json)
+		difficulty_unlocks = json_object.data
+	save_difficulty_unlocks()
+
+func save_difficulty_unlocks():
+	var difficulty_unlocks_file = FileAccess.open(difficulty_unlocks_json_path,FileAccess.WRITE)
+	
+	if difficulty_unlocks_file:
+		var difficulty_unlocks_json = JSON.stringify(difficulty_unlocks, "\t")
+		difficulty_unlocks_file.store_string(difficulty_unlocks_json)
+	else:
+		print_debug("failed to open or create the file")
+		
+func unlock_all_difficulties():
+	for diff in difficulty_unlocks.keys():
+		difficulty_unlocks[diff] = true
+	save_difficulty_unlocks()
+	
+func reset_difficulty_unlocks():
+	for char in difficulty_unlocks.keys():
+		difficulty_unlocks[char] = false
+	difficulty_unlocks["EASY"] = true
+	save_difficulty_unlocks()
+	

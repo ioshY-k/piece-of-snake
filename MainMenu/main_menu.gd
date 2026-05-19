@@ -15,6 +15,7 @@ var scene_loader: SceneLoader
 @onready var easy_slot: Sprite2D = $EasySlot
 @onready var normal_slot: Sprite2D = $NormalSlot
 @onready var hard_slot: Sprite2D = $HardSlot
+var slots = [easy_slot,normal_slot,hard_slot,null]
 @onready var easy_slot_area: Area2D = $EasySlot/EasySlotArea
 @onready var normal_slot_area: Area2D = $NormalSlot/NormalSlotArea
 @onready var hard_slot_area: Area2D = $HardSlot/HardSlotArea
@@ -45,6 +46,17 @@ func _ready() -> void:
 	}
 	scene_loader = get_parent()
 	language_button.selected = GlobalSettings.language
+	
+	if not GlobalSettings.difficulty_unlocks["EASY"]:
+		easy_slot.hide()
+		easy_slot_area.process_mode = Node.PROCESS_MODE_DISABLED
+	if not GlobalSettings.difficulty_unlocks["NORMAL"]:
+		normal_slot.hide()
+		normal_slot_area.process_mode = Node.PROCESS_MODE_DISABLED
+	if not GlobalSettings.difficulty_unlocks["HARD"]:
+		hard_slot.hide()
+		hard_slot_area.process_mode = Node.PROCESS_MODE_DISABLED
+			
 	character_selection.char_changed.connect(_on_char_changed)
 	play_button.turn_into_playbutton()
 	play_button.scale = Vector2.ZERO

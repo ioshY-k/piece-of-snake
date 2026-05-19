@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=4 uid="uid://c5ds1gbyf4iit"]
+[gd_scene load_steps=174 format=4 uid="uid://c5ds1gbyf4iit"]
 
 [ext_resource type="Script" uid="uid://b35ax3d027tq5" path="res://MainMenu/main_menu.gd" id="1_hy30b"]
 [ext_resource type="Texture2D" uid="uid://1om1xoukgi4l" path="res://MainMenu/CharacterSelect/CharacterSelectTileset.svg" id="3_5de1l"]
@@ -91,6 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://c03i7m7xr2wgc" path="res://MainMenu/GameLogo.svg" id="88_r3633"]
 [ext_resource type="Script" uid="uid://cmfrwwqq0ads6" path="res://MainMenu/unlock_all_chars.gd" id="90_8lox4"]
 [ext_resource type="Script" uid="uid://cvmrn4ae4wrfh" path="res://MainMenu/reset_chars.gd" id="91_ipvhp"]
+[ext_resource type="Script" uid="uid://cbw7k0foibwpa" path="res://MainMenu/unlock_all_gamemodes.gd" id="91_vpfv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x28t"]
 texture = ExtResource("3_5de1l")
@@ -2509,6 +2510,14 @@ offset_bottom = 962.0
 text = "Unlock all Characters"
 script = ExtResource("90_8lox4")
 
+[node name="UnlockAllGamemodes" type="Button" parent="."]
+offset_left = 1715.0
+offset_top = 893.0
+offset_right = 1901.0
+offset_bottom = 924.0
+text = "Unlock all Gamemodes"
+script = ExtResource("91_vpfv2")
+
 [node name="ResetChars" type="Button" parent="."]
 offset_left = 1715.0
 offset_top = 973.0
@@ -2545,4 +2554,5 @@ script = ExtResource("91_ipvhp")
 [connection signal="pressed" from="HBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="ResetMasteries" to="ResetMasteries" method="_on_pressed"]
 [connection signal="pressed" from="UnlockAllChars" to="UnlockAllChars" method="_on_pressed"]
+[connection signal="pressed" from="UnlockAllGamemodes" to="UnlockAllGamemodes" method="_on_pressed"]
 [connection signal="pressed" from="ResetChars" to="ResetChars" method="_on_pressed"]
